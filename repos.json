@@ -1,3 +1,10 @@
 {
-  "repos": []
+  "repos": [
+    {
+      "name": "Omni-Components",
+      "versions": [
+        "beta"
+      ]
+    }
+  ]
 }

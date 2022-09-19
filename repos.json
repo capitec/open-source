@@ -3,7 +3,8 @@
     {
       "name": "Omni-Components",
       "versions": [
-        "beta"
+        "beta",
+        "next"
       ]
     }
   ]

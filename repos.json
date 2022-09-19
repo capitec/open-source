@@ -1,6 +1,15 @@
 {
   "repos": [
     {
+      "display": "Omni Components",
+      "repo": "https://github.com/capitec/omni-components",
+      "links": [
+        {
+          "name": "NPM",
+          "icon": "https://avatars.githubusercontent.com/u/6078720",
+          "url": "https://www.npmjs.com/package/@capitec/omni-components"
+        }
+      ],
       "name": "Omni-Components",
       "versions": [
         "0.1.1",

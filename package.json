@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "description": "Open Source Documentation",
+  "main": "index.js",
+  "scripts": {
+    "serve": "http-server .",
+    "repos": "node update-repos-list.js",
+    "docs": "npm run repos && npm run serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

@@ -1,0 +1,18 @@
+// Workspace settings
+{
+    "files.exclude": {
+        "docs/**": false,
+        "docs/**/.oss-docs.json": false,
+
+        "docs/**/*.js": true,
+        "docs/**/*.txt": true,
+        "docs/**/*.ico": true,
+        "docs/**/*.html": true,
+
+        "docs/**/themes": true,
+        "docs/**/static": true,
+        "docs/**/assets": true,
+        "docs/**/icons": true,
+        "docs/**/images": true,
+    }
+}

@@ -73,7 +73,9 @@ async function load(pushState = true, loadUrl = undefined) {
     clearElements();
 
     function displayFor(repo, versions, displayVersion, pushState, display) {
-        welcome.parentElement.removeChild(welcome);
+        if (welcome && welcome.parentElement) {
+            welcome.parentElement.removeChild(welcome);
+        }
 
         if (select && selectChange) {
             select.removeEventListener(`change`, selectChange);

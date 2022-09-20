@@ -16,6 +16,9 @@
         "beta",
         "next"
       ]
+    },
+    {
+      "name": "observable-store"
     }
   ]
 }

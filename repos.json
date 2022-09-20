@@ -18,6 +18,15 @@
       ]
     },
     {
+      "display": "Observable Store",
+      "repo": "https://github.com/capitec/observable-store",
+      "links": [
+        {
+          "name": "NPM",
+          "icon": "https://avatars.githubusercontent.com/u/6078720",
+          "url": "https://www.npmjs.com/package/@capitec/observable-store"
+        }
+      ],
       "name": "observable-store"
     }
   ]

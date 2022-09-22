@@ -443,11 +443,11 @@
         },
         {
           "kind": "variable",
-          "name": "Error",
+          "name": "ErrorLabel",
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" error=\"${args.error}\"></omni-check>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const errorElement = check.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(errorElement).toBeTruthy();\n      await expect(errorElement).toHaveTextContent(Error.args.error);\n\n  }\n}"
+          "default": "{\n  name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" error=\"${args.error}\"></omni-check>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const errorElement = check.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(errorElement).toBeTruthy();\n      await expect(errorElement).toHaveTextContent(ErrorLabel.args.error);\n\n  }\n}"
         },
         {
           "kind": "variable",
@@ -524,9 +524,9 @@
         },
         {
           "kind": "js",
-          "name": "Error",
+          "name": "ErrorLabel",
           "declaration": {
-            "name": "Error",
+            "name": "ErrorLabel",
             "module": "src/check/Check.stories.ts"
           }
         },
@@ -2491,11 +2491,11 @@
         },
         {
           "kind": "variable",
-          "name": "Error",
+          "name": "ErrorLabel",
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" error=\"${args.error}\"></omni-radio>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const element = radio.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(element).toHaveTextContent(Error.args.error);\n  }\n}"
+          "default": "{\n  name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" error=\"${args.error}\"></omni-radio>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const element = radio.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(element).toHaveTextContent(ErrorLabel.args.error);\n  }\n}"
         },
         {
           "kind": "variable",
@@ -2548,9 +2548,9 @@
         },
         {
           "kind": "js",
-          "name": "Error",
+          "name": "ErrorLabel",
           "declaration": {
-            "name": "Error",
+            "name": "ErrorLabel",
             "module": "src/radio/Radio.stories.ts"
           }
         },
@@ -2929,11 +2929,11 @@
         },
         {
           "kind": "variable",
-          "name": "Error",
+          "name": "ErrorLabel",
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" error=\"${args.error}\"></omni-switch>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const element = switchElement.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(element).toHaveTextContent(Error.args.error);\n  }\n}"
+          "default": "{\n  name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" error=\"${args.error}\"></omni-switch>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const element = switchElement.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(element).toHaveTextContent(ErrorLabel.args.error);\n  }\n}"
         },
         {
           "kind": "variable",
@@ -2986,9 +2986,9 @@
         },
         {
           "kind": "js",
-          "name": "Error",
+          "name": "ErrorLabel",
           "declaration": {
-            "name": "Error",
+            "name": "ErrorLabel",
             "module": "src/switch/Switch.stories.ts"
           }
         },

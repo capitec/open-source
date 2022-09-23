@@ -12,7 +12,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-button\"\n            type=\"${args.type}\"\n            label=\"${ifNotEmpty(args.label)}\"\n            slot-position=\"${args.slotPosition}\"\n            ?disabled=${args.disabled}>\n            ${unsafeHTML(args.slot)}\n        </omni-button>\n    `,\n    name: 'Interactive',\n    args: {\n        type: 'secondary',\n        label: 'Button',\n        slotPosition: 'top',\n        disabled: false,\n        slot: raw`<omni-icon icon=\"@material/thumb_up\"></omni-icon>`\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button);\n        await userEvent.click(button);\n        await expect(click).toBeCalledTimes(2);\n    },\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-button\"\n            type=\"${args.type}\"\n            label=\"${ifNotEmpty(args.label)}\"\n            slot-position=\"${args.slotPosition}\"\n            ?disabled=${args.disabled}>\n            ${unsafeHTML(args.slot)}\n        </omni-button>\n    `,\n    name: 'Interactive',\n    args: {\n        type: 'secondary',\n        label: 'Button',\n        slotPosition: 'top',\n        disabled: false,\n        slot: raw`<omni-icon icon=\"@material/thumb_up\"></omni-icon>`\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button);\n        await userEvent.click(button);\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -20,7 +20,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-button type=\"${args.type}\" label=\"${args.label}\" data-testid=\"test-button\"></omni-button>\n    `,\n    name: 'Type',\n    args: {\n        type: 'primary',\n        label: 'Click',\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const buttonElement = button.shadowRoot.getElementById('button');\n        const foundPrimaryClass = buttonElement.classList.contains('primary');\n        await expect(foundPrimaryClass).toBeTruthy();\n    },\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-button type=\"${args.type}\" label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Type',\n    args: {\n        type: 'primary',\n        label: 'Click'\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const buttonElement = button.shadowRoot.getElementById('button');\n        const foundPrimaryClass = buttonElement.classList.contains('primary');\n        await expect(foundPrimaryClass).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -28,7 +28,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-button label=\"${args.label}\" data-testid=\"test-button\"></omni-button>\n    `,\n    name: 'Label',\n    args: {\n        label: 'Click',\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const labelElement = button.shadowRoot.getElementById('label');\n        const labelMatches = labelElement.innerText === Label.args.label;\n        await expect(labelMatches).toBeTruthy();\n    },\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-button label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Label',\n    args: {\n        label: 'Click'\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const labelElement = button.shadowRoot.getElementById('label');\n        const labelMatches = labelElement.innerText === Label.args.label;\n        await expect(labelMatches).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -36,7 +36,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: () => html`\n        <omni-button data-testid=\"test-button\">\n          <omni-icon size=\"default\" icon=\"assets/direction.svg\"></omni-icon>\n        </omni-button>\n    `,\n    name: 'Slot',\n    args: {},\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const slotElement = button.shadowRoot.querySelector('slot');\n        const foundSlottedOmniIconElement = slotElement\n            .assignedElements()\n            .find((e) => e.tagName.toLowerCase() === 'omni-icon');\n        await expect(foundSlottedOmniIconElement).toBeTruthy();\n    },\n}"
+          "default": "{\n    render: () => html`\n        <omni-button data-testid=\"test-button\">\n            <omni-icon size=\"default\" icon=\"assets/direction.svg\"></omni-icon>\n        </omni-button>\n    `,\n    name: 'Slot',\n    args: {},\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const slotElement = button.shadowRoot.querySelector('slot');\n        const foundSlottedOmniIconElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'omni-icon');\n        await expect(foundSlottedOmniIconElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -44,7 +44,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-button disabled label=\"${args.label}\" data-testid=\"test-button\"></omni-button>\n    `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled',\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button'); // Test for disabled CSS.\n\n        const buttonElement = button.shadowRoot.getElementById('button');\n        const foundDisabledClass = buttonElement.classList.contains('disabled');\n        await expect(foundDisabledClass).toBeTruthy(); // Test for not clickable.\n\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button);\n        await userEvent.click(button);\n        await expect(click).toBeCalledTimes(0);\n    },\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-button disabled label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled'\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button'); // Test for disabled CSS.\n\n        const buttonElement = button.shadowRoot.getElementById('button');\n        const foundDisabledClass = buttonElement.classList.contains('disabled');\n        await expect(foundDisabledClass).toBeTruthy(); // Test for not clickable.\n\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button);\n        await userEvent.click(button);\n        await expect(click).toBeCalledTimes(0);\n    }\n}"
         }
       ],
       "exports": [
@@ -103,7 +103,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A control that allows an action to be executed.\n\n```js \nimport '@capitec/omni-components/button'; \n```",
+          "description": "A control that allows an action to be executed.\n\n```js\n\nimport '@capitec/omni-components/button';\n```",
           "name": "Button",
           "cssProperties": [
             {
@@ -423,7 +423,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${ifNotEmpty(args.label)}\" .data=\"${args.data}\" hint=\"${ifNotEmpty(args.hint)}\" error=\"${ifNotEmpty(args.error)}\" ?checked=\"${args.checked}\" ?disabled=\"${args.disabled}\" ?indeterminate=\"${args.indeterminate}\">${(args.indeterminate_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('indeterminate_icon',args.indeterminate_icon))}` : nothing)}${(args.check_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('check_icon',args.check_icon))}` : nothing)}${args.check_icon || args.indeterminate_icon ? '\\r\\n' : nothing}</omni-check>\n  `,\n  name: 'Interactive',\n  parameters: {},\n  args: {\n    label: '',\n    data: {},\n    hint: '',\n    error: '',\n    checked: false,\n    disabled: false,\n    indeterminate: false,\n    check_icon: '',\n    indeterminate_icon: '',\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const valueChange = jest.fn();\n      check.addEventListener('value-change', valueChange);\n      await userEvent.click(check);\n\n      const content = check.shadowRoot.getElementById('content');\n    \n      await fireEvent.keyDown(content, {\n        key: ' ',\n        code: 'Space',\n      });\n      await expect(valueChange).toBeCalledTimes(2);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-check\n            data-testid=\"test-check\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?checked=\"${args.checked}\"\n            ?disabled=\"${args.disabled}\"\n            ?indeterminate=\"${args.indeterminate}\"\n            >${args.indeterminate_icon\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('indeterminate_icon', args.indeterminate_icon))}`\n                : nothing}${args.check_icon\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('check_icon', args.check_icon))}`\n                : nothing}${args.check_icon || args.indeterminate_icon ? '\\r\\n' : nothing}</omni-check\n        >\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false,\n        indeterminate: false,\n        check_icon: '',\n        indeterminate_icon: ''\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const valueChange = jest.fn();\n        check.addEventListener('value-change', valueChange);\n        await userEvent.click(check);\n\n        const content = check.shadowRoot.getElementById('content');\n\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -431,7 +431,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\"></omni-check>\n  `,\n  args: {\n    label: 'Label'\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const labelElement = check.shadowRoot.querySelector('label');\n      await expect(labelElement).toBeTruthy();\n      await expect(labelElement).toHaveTextContent(Label.args.label);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\"></omni-check> `,\n    args: {\n        label: 'Label'\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const labelElement = check.shadowRoot.querySelector('label');\n        await expect(labelElement).toBeTruthy();\n        await expect(labelElement).toHaveTextContent(Label.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -439,7 +439,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-check>\n  `,\n  args: {\n    label: 'Hint',\n    hint: 'This is a hint'\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const hintElement = check.shadowRoot.querySelector<HTMLElement>('.hint');\n      await expect(hintElement).toBeTruthy();\n      await expect(hintElement).toHaveTextContent(Hint.args.hint);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-check> `,\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const hintElement = check.shadowRoot.querySelector<HTMLElement>('.hint');\n        await expect(hintElement).toBeTruthy();\n        await expect(hintElement).toHaveTextContent(Hint.args.hint);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -447,7 +447,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" error=\"${args.error}\"></omni-check>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const errorElement = check.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(errorElement).toBeTruthy();\n      await expect(errorElement).toHaveTextContent(ErrorLabel.args.error);\n\n  }\n}"
+          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: ArgTypes) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" error=\"${args.error}\"></omni-check> `,\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const errorElement = check.shadowRoot.querySelector<HTMLElement>('.error');\n        await expect(errorElement).toBeTruthy();\n        await expect(errorElement).toHaveTextContent(ErrorLabel.args.error);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -455,7 +455,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-check>\n  `,\n  args: {\n    label: 'Checked',\n    checked: true\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const checkedElement = check.shadowRoot.querySelector<HTMLElement>('.checked');\n      await expect(checkedElement).toBeTruthy();\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-check> `,\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const checkedElement = check.shadowRoot.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -463,7 +463,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\"></omni-check>\n  `,\n  args: {\n    label: 'Indeterminate',\n    indeterminate: true,\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const indeterminateElement = check.shadowRoot.querySelector<HTMLElement>('.indeterminate');\n      await expect(indeterminateElement).toBeTruthy();\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\"></omni-check>\n    `,\n    args: {\n        label: 'Indeterminate',\n        indeterminate: true\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const indeterminateElement = check.shadowRoot.querySelector<HTMLElement>('.indeterminate');\n        await expect(indeterminateElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -471,7 +471,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-check>\n  `,\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const valueChange = jest.fn();\n      check.addEventListener('value-change', valueChange);\n\n      const disabledElement = check.shadowRoot.querySelector<HTMLElement>('.disabled');\n      await expect(disabledElement).toBeTruthy();\n      \n      const content = check.shadowRoot.getElementById('content');\n      await userEvent.click(content);    \n      await fireEvent.keyDown(content, {\n        key: ' ',\n        code: 'Space',\n      });\n      await expect(valueChange).toBeCalledTimes(0);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-check>\n    `,\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const valueChange = jest.fn();\n        check.addEventListener('value-change', valueChange);\n\n        const disabledElement = check.shadowRoot.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = check.shadowRoot.getElementById('content');\n        await userEvent.click(content);\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -479,7 +479,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\">\n      ${unsafeHTML(args.check_icon)} \n    </omni-check>\n  `,\n  args: {\n    label: 'Custom Check Icon',\n    checked: true,\n    check_icon: raw`<svg slot=\"check_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 442.79 410.38\" version=\"1.0\" width=\"100%\"\n                      height=\"100%\">\n                      <path style=\"stroke:#000;stroke-width:19.892;fill:#ffffff\"\n                        d=\"m-1747.2-549.3 287.72 333.9c146.6-298.83 326.06-573.74 614.52-834.75-215.89 121.82-453.86 353.14-657.14 639.38l-245.1-138.53z\"\n                        transform=\"translate(843.77 509.04) scale(.48018)\" />\n                    </svg>`,\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const slotElement = check.shadowRoot.querySelector<HTMLSlotElement>('slot[name=check_icon]');\n      await expect(slotElement).toBeTruthy();\n\n      const foundSlottedSvgElement = slotElement\n          .assignedElements()\n          .find((e) => e.tagName.toLowerCase() === 'svg');\n      await expect(foundSlottedSvgElement).toBeTruthy();\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\"> ${unsafeHTML(args.check_icon)} </omni-check>\n    `,\n    args: {\n        label: 'Custom Check Icon',\n        checked: true,\n        check_icon: raw`<svg slot=\"check_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 442.79 410.38\" version=\"1.0\" width=\"100%\"\n                      height=\"100%\">\n                      <path style=\"stroke:#000;stroke-width:19.892;fill:#ffffff\"\n                        d=\"m-1747.2-549.3 287.72 333.9c146.6-298.83 326.06-573.74 614.52-834.75-215.89 121.82-453.86 353.14-657.14 639.38l-245.1-138.53z\"\n                        transform=\"translate(843.77 509.04) scale(.48018)\" />\n                    </svg>`\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slotElement = check.shadowRoot.querySelector<HTMLSlotElement>('slot[name=check_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -487,7 +487,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\">\n      ${unsafeHTML(args.indeterminate_icon)}\n    </omni-check>\n  `,\n  args: {\n    label: 'Custom Indeterminate Icon',\n    indeterminate: true,\n    indeterminate_icon: raw`<svg slot=\"indeterminate_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" width=\"100%\" height=\"100%\">\n                              <defs>\n                                <linearGradient id=\"b\" y2=\"28.275\" gradientUnits=\"userSpaceOnUse\" x2=\"20.07\" y1=\"3.976\" x1=\"12.113\">\n                                  <stop style=\"stop-color:#ffffff\" offset=\"0\" />\n                                  <stop style=\"stop-color:#ffffff\" offset=\"1\" />\n                                </linearGradient>\n                                <linearGradient id=\"a\" y2=\"30\" gradientUnits=\"userSpaceOnUse\" x2=\"20.214\" y1=\"2\" x1=\"12.031\">\n                                  <stop style=\"stop-color:#ffffff\" offset=\"0\" />\n                                  <stop style=\"stop-color:#ffffff\" offset=\"1\" />\n                                </linearGradient>\n                              </defs>\n                              <path d=\"M2.875 13C1.281 13 0 14.338 0 16s1.28 3 2.875 3h26.25C30.719 19 32 17.662 32 16s-1.281-3-2.875-3H2.875z\" />\n                              <path style=\"fill:url(#b)\" transform=\"translate(-.063 .063)\"\n                                d=\"M2.875 13.938c-1.067 0-1.938.884-1.938 2.062s.87 2.062 1.938 2.062h26.25c1.067 0 1.937-.884 1.937-2.062s-.87-2.062-1.937-2.062H2.875z\" />\n                            </svg>`,\n  },\n  play: async (context: StoryContext) => {\n      const check = within(context.canvasElement).getByTestId<Check>('test-check');\n      const slotElement = check.shadowRoot.querySelector<HTMLSlotElement>('slot[name=indeterminate_icon]');\n      await expect(slotElement).toBeTruthy();\n      \n      const foundSlottedSvgElement = slotElement\n          .assignedElements()\n          .find((e) => e.tagName.toLowerCase() === 'svg');\n      await expect(foundSlottedSvgElement).toBeTruthy();\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\">\n            ${unsafeHTML(args.indeterminate_icon)}\n        </omni-check>\n    `,\n    args: {\n        label: 'Custom Indeterminate Icon',\n        indeterminate: true,\n        indeterminate_icon: raw`\n\t\t\t<svg slot=\"indeterminate_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" width=\"100%\" height=\"100%\">\n\t\t\t\t<defs>\n\t\t\t\t<linearGradient id=\"b\" y2=\"28.275\" gradientUnits=\"userSpaceOnUse\" x2=\"20.07\" y1=\"3.976\" x1=\"12.113\">\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"0\" />\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"1\" />\n\t\t\t\t</linearGradient>\n\t\t\t\t<linearGradient id=\"a\" y2=\"30\" gradientUnits=\"userSpaceOnUse\" x2=\"20.214\" y1=\"2\" x1=\"12.031\">\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"0\" />\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"1\" />\n\t\t\t\t</linearGradient>\n\t\t\t\t</defs>\n\t\t\t\t<path d=\"M2.875 13C1.281 13 0 14.338 0 16s1.28 3 2.875 3h26.25C30.719 19 32 17.662 32 16s-1.281-3-2.875-3H2.875z\" />\n\t\t\t\t<path style=\"fill:url(#b)\" transform=\"translate(-.063 .063)\"\n\t\t\t\td=\"M2.875 13.938c-1.067 0-1.938.884-1.938 2.062s.87 2.062 1.938 2.062h26.25c1.067 0 1.937-.884 1.937-2.062s-.87-2.062-1.937-2.062H2.875z\" />\n\t\t\t</svg>\n\t\t`\n    },\n    play: async (context: StoryContext) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slotElement = check.shadowRoot.querySelector<HTMLSlotElement>('slot[name=indeterminate_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         }
       ],
       "exports": [
@@ -578,7 +578,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A control that allows a user to check a value on or off.\n\n```js \nimport '@capitec/omni-components/check'; \n```",
+          "description": "A control that allows a user to check a value on or off.\n\n```js\n\nimport '@capitec/omni-components/check';\n```",
           "name": "Check",
           "cssProperties": [
             {
@@ -778,6 +778,57 @@
             {
               "kind": "method",
               "name": "focus"
+            },
+            {
+              "kind": "method",
+              "name": "_click",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_keyDown",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_toggleChecked",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent | KeyboardEvent"
+                  }
+                }
+              ]
             }
           ],
           "events": [
@@ -912,7 +963,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-chip\n            data-testid=\"test-chip\"\n            label=\"${ifNotEmpty(args.label)}\"\n            ?closable=${args.closable}\n            ?disabled=\"${args.disabled}\"\n            >${(args.chip_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('chip_icon', args.chip_icon))}` : nothing)}${(args.close_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close_icon', args.close_icon))}` : nothing)}\n        </omni-chip>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Chip',\n        closable: true,\n        disabled: false,\n        chip_icon: raw`<svg slot=\"chip_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>`,\n        close_icon: '',\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const click = jest.fn();\n\n        chip.addEventListener('click', click);\n        await userEvent.click(chip);\n        await userEvent.click(chip);\n\n        await expect(click).toBeCalledTimes(2);\n  \n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-chip data-testid=\"test-chip\" label=\"${ifNotEmpty(args.label)}\" ?closable=${args.closable} ?disabled=\"${args.disabled}\"\n            >${args.chip_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('chip_icon', args.chip_icon))}` : nothing}${args.close_icon\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close_icon', args.close_icon))}`\n                : nothing}\n        </omni-chip>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Chip',\n        closable: true,\n        disabled: false,\n        chip_icon: raw`<svg slot=\"chip_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>`,\n        close_icon: ''\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const click = jest.fn();\n\n        chip.addEventListener('click', click);\n        await userEvent.click(chip);\n        await userEvent.click(chip);\n\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -920,7 +971,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-chip\n            data-testid=\"test-chip\"\n            label=\"${ifNotEmpty(args.label)}\">\n        </omni-chip>\n    `,\n    name: 'Label',\n    args: {\n        label: 'Label'\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        await expect(chip.shadowRoot.getElementById('label')).toHaveTextContent(Label.args.label);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-chip data-testid=\"test-chip\" label=\"${ifNotEmpty(args.label)}\"> </omni-chip> `,\n    name: 'Label',\n    args: {\n        label: 'Label'\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        await expect(chip.shadowRoot.getElementById('label')).toHaveTextContent(Label.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -928,7 +979,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-chip\n            data-testid=\"test-chip\"\n            label=\"${ifNotEmpty(args.label)}\"\n            ?closable=${args.closable}>\n        </omni-chip>\n    `,\n    name: 'Closable',\n    args: {\n        label: 'Closable',\n        closable: true\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const remove = jest.fn();\n        chip.addEventListener('remove', remove);\n\n        const closeButton = chip.shadowRoot.getElementById('closeButton');\n\n        await userEvent.click(closeButton);\n        await userEvent.click(closeButton);\n        await expect(remove).toBeCalledTimes(2);\n  \n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-chip data-testid=\"test-chip\" label=\"${ifNotEmpty(args.label)}\" ?closable=${args.closable}> </omni-chip>\n    `,\n    name: 'Closable',\n    args: {\n        label: 'Closable',\n        closable: true\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const remove = jest.fn();\n        chip.addEventListener('remove', remove);\n\n        const closeButton = chip.shadowRoot.getElementById('closeButton');\n\n        await userEvent.click(closeButton);\n        await userEvent.click(closeButton);\n        await expect(remove).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -936,7 +987,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-chip\n            data-testid=\"test-chip\"\n            label=\"${ifNotEmpty(args.label)}\"\n            ?disabled=\"${args.disabled}\">\n        </omni-chip>\n    `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context: StoryContext) => {\n\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const chipElement = chip.shadowRoot.getElementById('chip');\n        const foundDisabledClass = chipElement.classList.contains('disabled');\n        await expect(foundDisabledClass).toBeTruthy(); // Test for not clickable.\n\n        const click = jest.fn();\n        chip.addEventListener('click', click);\n        await userEvent.click(chip);\n        await userEvent.click(chip);\n\n        await expect(click).toBeCalledTimes(0);\n  \n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-chip data-testid=\"test-chip\" label=\"${ifNotEmpty(args.label)}\" ?disabled=\"${args.disabled}\"> </omni-chip>\n    `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const chipElement = chip.shadowRoot.getElementById('chip');\n        const foundDisabledClass = chipElement.classList.contains('disabled');\n        await expect(foundDisabledClass).toBeTruthy(); // Test for not clickable.\n\n        const click = jest.fn();\n        chip.addEventListener('click', click);\n        await userEvent.click(chip);\n        await userEvent.click(chip);\n\n        await expect(click).toBeCalledTimes(0);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -944,7 +995,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-chip\n            data-testid=\"test-chip\"\n            label=\"${ifNotEmpty(args.label)}\"\n            ?closable=${args.closable}>\n            ${unsafeHTML(args.chip_icon)} \n        </omni-chip>\n    `,\n    name: 'Chip Icon',\n    args: {\n        label: 'Chip',\n        closable: false,\n        chip_icon: raw`<svg slot=\"chip_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>`\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const slotElement = chip.shadowRoot.querySelector<HTMLSlotElement>('slot[name=\"chip_icon\"]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n  \n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-chip data-testid=\"test-chip\" label=\"${ifNotEmpty(args.label)}\" ?closable=${args.closable}>\n            ${unsafeHTML(args.chip_icon)}\n        </omni-chip>\n    `,\n    name: 'Chip Icon',\n    args: {\n        label: 'Chip',\n        closable: false,\n        chip_icon: raw`<svg slot=\"chip_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>`\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const slotElement = chip.shadowRoot.querySelector<HTMLSlotElement>('slot[name=\"chip_icon\"]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -952,7 +1003,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-chip\n            data-testid=\"test-chip\"\n            label=\"${ifNotEmpty(args.label)}\"\n            ?closable=${args.closable}>\n            ${unsafeHTML(args.chip_icon)} \n            ${unsafeHTML(args.close_icon)} \n        </omni-chip>\n    `,\n    name: 'Custom Close Icon',\n    args: {\n        label: 'Close',\n        closable: true,\n        close_icon: raw`<svg slot=\"close_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>`\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const slotElement = chip.shadowRoot.querySelector<HTMLSlotElement>('slot[name=close_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-chip data-testid=\"test-chip\" label=\"${ifNotEmpty(args.label)}\" ?closable=${args.closable}>\n            ${unsafeHTML(args.chip_icon)} ${unsafeHTML(args.close_icon)}\n        </omni-chip>\n    `,\n    name: 'Custom Close Icon',\n    args: {\n        label: 'Close',\n        closable: true,\n        close_icon: raw`<svg slot=\"close_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>`\n    },\n    play: async (context: StoryContext) => {\n        const chip = within(context.canvasElement).getByTestId<Chip>('test-chip');\n        const slotElement = chip.shadowRoot.querySelector<HTMLSlotElement>('slot[name=close_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         }
       ],
       "exports": [
@@ -1019,7 +1070,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A control that can be used for input, setting attributes, or performing actions.\n\n```js \nimport '@capitec/omni-components/chip'; \n```",
+          "description": "A control that can be used for input, setting attributes, or performing actions.\n\n```js\n\nimport '@capitec/omni-components/chip';\n```",
           "name": "Chip",
           "cssProperties": [
             {
@@ -1249,7 +1300,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-code language=\"${ifNotEmpty(args.language)}\" data-testid=\"test-code\" header=\"${ifNotEmpty(args.header)}\" content=\"${ifNotEmpty(args.content)}\"></omni-code>\n  `,\n  name: 'Interactive',\n  parameters: {},\n  args: {\n    header: '',\n    content: 'Hello',\n    language: 'html',\n  },\n  play: async (context: StoryContext) => {\n      const code = within(context.canvasElement).getByTestId<Code>('test-code');\n      await expect(code).toBeTruthy();\n\n      const htmlCodeBlock = code.shadowRoot.querySelector('.language-html');\n      await expect(htmlCodeBlock).toBeTruthy();\n\n  },\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-code\n            data-testid=\"test-code\"\n            language=\"${ifNotEmpty(args.language)}\"\n            header=\"${ifNotEmpty(args.header)}\"\n            content=\"${ifNotEmpty(args.content)}\"></omni-code>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        header: '',\n        content: 'Hello',\n        language: 'html'\n    },\n    play: async (context: StoryContext) => {\n        const code = within(context.canvasElement).getByTestId<Code>('test-code');\n        await expect(code).toBeTruthy();\n\n        const htmlCodeBlock = code.shadowRoot.querySelector('.language-html');\n        await expect(htmlCodeBlock).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1257,7 +1308,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-code\n      language=\"${args.language}\"\n      data-testid=\"test-code\"\n      header=\"${args.header}\"\n      content=\"${args.content}\"\n    >\n    </omni-code>\n  `,\n  args: {\n    header: 'HTML',\n    content: `  \n   <div>\n     <h1>Hello World</h1>\n   </div>\n  `,\n    language: 'html',\n  },\n  play: async (context: StoryContext) => {\n      const code = within(context.canvasElement).getByTestId<Code>('test-code');\n      await expect(code).toBeTruthy();\n\n      const htmlCodeBlock = code.shadowRoot.querySelector('.language-html');\n      await expect(htmlCodeBlock).toBeTruthy();\n\n  },\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-code language=\"${args.language}\" data-testid=\"test-code\" header=\"${args.header}\" content=\"${args.content}\"> </omni-code>\n    `,\n    args: {\n        header: 'HTML',\n        content: `\n<div>\n    <h1>Hello World</h1>\n</div>\n\t`,\n        language: 'html'\n    },\n    play: async (context: StoryContext) => {\n        const code = within(context.canvasElement).getByTestId<Code>('test-code');\n        await expect(code).toBeTruthy();\n\n        const htmlCodeBlock = code.shadowRoot.querySelector('.language-html');\n        await expect(htmlCodeBlock).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1265,7 +1316,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-code\n      language=\"${args.language}\"\n      data-testid=\"test-code\"\n      header=\"${args.header}\"\n      content=\"${args.content}\"\n    >\n      <div>\n        <h1>Hello World</h1>\n      </div>\n    </omni-code>\n  `,\n  args: {\n    header: 'HTML as child element',\n    language: 'html',\n  },\n  play: async (context: StoryContext) => {\n      const code = within(context.canvasElement).getByTestId<Code>('test-code');\n      await expect(code).toBeTruthy();\n\n      const htmlCodeBlock = code.shadowRoot.querySelector('.language-html');\n      await expect(htmlCodeBlock).toBeTruthy();\n\n  },\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-code language=\"${args.language}\" data-testid=\"test-code\" header=\"${args.header}\" content=\"${args.content}\">\n            <div>\n                <h1>Hello World</h1>\n            </div>\n        </omni-code>\n    `,\n    args: {\n        header: 'HTML as child element',\n        language: 'html'\n    },\n    play: async (context: StoryContext) => {\n        const code = within(context.canvasElement).getByTestId<Code>('test-code');\n        await expect(code).toBeTruthy();\n\n        const htmlCodeBlock = code.shadowRoot.querySelector('.language-html');\n        await expect(htmlCodeBlock).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1273,7 +1324,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-code\n      language=\"${args.language}\"\n      data-testid=\"test-code\"\n      header=\"${args.header}\"\n      content=\"${args.content}\"\n    >\n    </omni-code>\n  `,\n  name: 'JavaScript',\n  args: {\n    header: 'JavaScript',\n    content: `  \n    alert('this is javascript');\n  `,\n    language: 'javascript',\n  },\n  play: async (context: StoryContext) => {\n      const code = within(context.canvasElement).getByTestId<Code>('test-code');\n      await expect(code).toBeTruthy();\n\n      const jsCodeBlock = code.shadowRoot.querySelector('.language-javascript');\n      await expect(jsCodeBlock).toBeTruthy();\n\n  },\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-code language=\"${args.language}\" data-testid=\"test-code\" header=\"${args.header}\" content=\"${args.content}\"> </omni-code>\n    `,\n    name: 'JavaScript',\n    args: {\n        header: 'JavaScript',\n        content: 'alert(\"This is JavaScript\");',\n        language: 'javascript'\n    },\n    play: async (context: StoryContext) => {\n        const code = within(context.canvasElement).getByTestId<Code>('test-code');\n        await expect(code).toBeTruthy();\n\n        const jsCodeBlock = code.shadowRoot.querySelector('.language-javascript');\n        await expect(jsCodeBlock).toBeTruthy();\n    }\n}"
         }
       ],
       "exports": [
@@ -1324,7 +1375,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A control to syntax highlight and display source code.\n\n```js \nimport '@capitec/omni-components/code'; \n```",
+          "description": "A control to syntax highlight and display source code.\n\n```js\n\nimport '@capitec/omni-components/code';\n```",
           "name": "Code",
           "cssProperties": [
             {
@@ -1542,7 +1593,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-hyperlink\n      data-testid=\"test-hyperlink\"\n      label=\"${ifNotEmpty(args.label)}\"\n      href=\"${ifNotEmpty(args.href)}\"\n      target=\"${ifNotEmpty(args.target)}\"\n      ?disabled=\"${args.disabled}\"\n      ?inline=\"${args.inline}\"\n      size=\"${args.size}\"\n    ></omni-hyperlink>\n  `,\n  name: 'Interactive',\n  args: {\n    label: 'Click',\n    href: '',\n    target: '',\n    disabled: false,\n    inline: false,\n    size: '',\n  },\n  play: async (context :{ canvasElement: HTMLElement;}) => {\n    const canvas = within(context.canvasElement);\n    const Hyperlink = canvas.getByTestId('test-hyperlink');\n    const click = jest.fn();\n    Hyperlink.addEventListener('click', () => click());\n    await userEvent.click(Hyperlink);\n    await userEvent.click(Hyperlink);\n    await expect(click).toBeCalledTimes(2);\n  },\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-hyperlink\n            data-testid=\"test-hyperlink\"\n            label=\"${ifNotEmpty(args.label)}\"\n            href=\"${ifNotEmpty(args.href)}\"\n            target=\"${ifNotEmpty(args.target)}\"\n            ?disabled=\"${args.disabled}\"\n            ?inline=\"${args.inline}\"\n            size=\"${args.size}\"></omni-hyperlink>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Click',\n        href: '',\n        target: '',\n        disabled: false,\n        inline: false,\n        size: ''\n    },\n    play: async (context: { canvasElement: HTMLElement }) => {\n        const canvas = within(context.canvasElement);\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n        const click = jest.fn();\n        Hyperlink.addEventListener('click', () => click());\n        await userEvent.click(Hyperlink);\n        await userEvent.click(Hyperlink);\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1550,7 +1601,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\"></omni-hyperlink>`,\n  name:'Label',\n  args: {\n    label:'Click',\n  },\n  play: async (context :{ canvasElement: HTMLElement;}) => {\n    const canvas = within(context.canvasElement);\n    const Hyperlink = canvas.getByTestId('test-hyperlink');\n    await expect(Hyperlink.shadowRoot.querySelector('a')).toHaveTextContent(Label.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\"></omni-hyperlink>`,\n    name: 'Label',\n    args: {\n        label: 'Click'\n    },\n    play: async (context: { canvasElement: HTMLElement }) => {\n        const canvas = within(context.canvasElement);\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n        await expect(Hyperlink.shadowRoot.querySelector('a')).toHaveTextContent(Label.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1558,7 +1609,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\" size=\"${args.size}\"></omni-hyperlink>`,\n  name:'Size',\n  args: {\n    label:'Click',\n    size:'small',\n  },\n  play: async (context :{ canvasElement: HTMLElement;}) => {\n    const canvas = within(context.canvasElement);\n    const Hyperlink = canvas.getByTestId('test-hyperlink');\n    await expect(Hyperlink).toHaveAttribute('size', Size.args.size);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) =>\n        html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\" size=\"${args.size}\"></omni-hyperlink>`,\n    name: 'Size',\n    args: {\n        label: 'Click',\n        size: 'small'\n    },\n    play: async (context: { canvasElement: HTMLElement }) => {\n        const canvas = within(context.canvasElement);\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n        await expect(Hyperlink).toHaveAttribute('size', Size.args.size);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1566,7 +1617,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\" href=\"${args.href}\"></omni-hyperlink>`,\n  name: 'Href',\n  args: {\n    label:'Click',\n    href:'http://example.com'\n  },\n  play: async (context :{ canvasElement: HTMLElement;}) => {\n    const canvas = within(context.canvasElement);\n    const Hyperlink = canvas.getByTestId('test-hyperlink');\n    await expect(Hyperlink).toHaveAttribute('href', Href.args.href);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) =>\n        html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\" href=\"${args.href}\" target=\"_blank\"></omni-hyperlink>`,\n    name: 'Href',\n    args: {\n        label: 'Click',\n        href: 'https://example.com'\n    },\n    play: async (context: { canvasElement: HTMLElement }) => {\n        const canvas = within(context.canvasElement);\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n        await expect(Hyperlink).toHaveAttribute('href', Href.args.href);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1574,7 +1625,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`<omni-hyperlink data-testid=\"test-hyperlink\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-hyperlink>`,\n  name:'Disabled',\n  args: {\n    label:'Click',\n    disabled:true,\n  },\n  play: async (context: { canvasElement: HTMLElement; }) => {\n    const canvas = within(context.canvasElement);\n\n    const Hyperlink = canvas.getByTestId('test-hyperlink');\n\n    const click = jest.fn();\n    Hyperlink.addEventListener('click', () => click());\n\n    await userEvent.click(Hyperlink);\n    await userEvent.click(Hyperlink);\n    await expect(click).toBeCalledTimes(0);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) =>\n        html`<omni-hyperlink\n            data-testid=\"test-hyperlink\"\n            href=\"https://example.com\"\n            label=\"${args.label}\"\n            ?disabled=\"${args.disabled}\"></omni-hyperlink>`,\n    name: 'Disabled',\n    args: {\n        label: 'Click',\n        disabled: true\n    },\n    play: async (context: { canvasElement: HTMLElement }) => {\n        const canvas = within(context.canvasElement);\n\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n\n        const click = jest.fn();\n        Hyperlink.addEventListener('click', () => click());\n\n        await userEvent.click(Hyperlink);\n        await userEvent.click(Hyperlink);\n        await expect(click).toBeCalledTimes(0);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1582,7 +1633,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`<p data-testid=\"test-paragraph\">Inline <omni-hyperlink label=\"${args.label}\" ?inline=\"${args.inline}\"></omni-hyperlink> example</p>`,\n  name:'Inline',\n  args: {\n    label:'click',\n    inline:true\n  },\n  play: async (context: { canvasElement: HTMLElement; }) => {\n    const canvas = within(context.canvasElement);\n\n    const paragraph = canvas.getByTestId('test-paragraph');\n    const hyperlinkElement = paragraph.querySelector<HTMLElement>('omni-hyperlink');\n\n    await expect(paragraph).toContainElement(hyperlinkElement);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) =>\n        html`<p data-testid=\"test-paragraph\">\n            Inline <omni-hyperlink label=\"${args.label}\" ?inline=\"${args.inline}\"></omni-hyperlink> example\n        </p>`,\n    name: 'Inline',\n    args: {\n        label: 'click',\n        inline: true\n    },\n    play: async (context: { canvasElement: HTMLElement }) => {\n        const canvas = within(context.canvasElement);\n\n        const paragraph = canvas.getByTestId('test-paragraph');\n        const hyperlinkElement = paragraph.querySelector<HTMLElement>('omni-hyperlink');\n\n        await expect(paragraph).toContainElement(hyperlinkElement);\n    }\n}"
         }
       ],
       "exports": [
@@ -1649,7 +1700,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A link control that allows a user to indicate an action to be executed. Typically used for navigational purposes.\n\n```js \nimport '@capitec/omni-components/hyperlink'; \n```",
+          "description": "A link control that allows a user to indicate an action to be executed. Typically used for navigational purposes.\n\n```js\n\nimport '@capitec/omni-components/hyperlink';\n```",
           "name": "Hyperlink",
           "cssProperties": [
             {
@@ -1770,6 +1821,18 @@
               "description": "Size of the Hyperlink text.",
               "attribute": "size",
               "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_click",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
             }
           ],
           "attributes": [
@@ -1887,7 +1950,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${ifNotEmpty(args.size)}\" icon=\"${ifNotEmpty(args.icon)}\">\n      ${unsafeHTML(args.slot)}\n    </omni-icon>\n  `,\n  name: 'Interactive',\n  parameters: {},\n  args: {\n    size: 'default',\n    slot: raw`<svg\n    version=\"1.1\"\n    viewBox=\"0 0 16 16\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"100%\"\n    height=\"100%\"\n  >\n    <g transform=\"translate(-2,-2)\">\n      <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n    </g>\n  </svg>`,\n    icon: undefined as string,\n  },\n  play: async (context: StoryContext) => {\n      const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n      const slotElement = icon.shadowRoot.querySelector('slot');\n      const foundSlottedSvgElement = slotElement\n          .assignedElements()\n          .find((e) => e.tagName.toLowerCase() === 'svg');\n      await expect(foundSlottedSvgElement).toBeTruthy();\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n        <omni-icon data-testid=\"test-icon\" size=\"${ifNotEmpty(args.size)}\" icon=\"${ifNotEmpty(args.icon)}\">\n            ${unsafeHTML(args.slot)}\n        </omni-icon>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        size: 'default',\n        slot: raw`<svg\n    version=\"1.1\"\n    viewBox=\"0 0 16 16\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"100%\"\n    height=\"100%\"\n  >\n    <g transform=\"translate(-2,-2)\">\n      <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n    </g>\n  </svg>`,\n        icon: undefined as string\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot.querySelector('slot');\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1895,7 +1958,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\"> \n      ${unsafeHTML(args.slot)} \n    </omni-icon>\n  `,\n  name: 'SVG',\n  parameters: {},\n  args: {\n    size: 'large',\n    slot: `<svg\n                version=\"1.1\"\n                viewBox=\"0 0 16 16\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                width=\"100%\"\n                height=\"100%\"\n              >\n                <g transform=\"translate(-2,-2)\">\n                  <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n                </g>\n              </svg>`,\n  },\n  play: async (context: StoryContext) => {\n      const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n      const slotElement = icon.shadowRoot.querySelector('slot');\n      const foundSlottedSvgElement = slotElement\n          .assignedElements()\n          .find((e) => e.tagName.toLowerCase() === 'svg');\n      await expect(foundSlottedSvgElement).toBeTruthy();\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-icon data-testid=\"test-icon\" size=\"${args.size}\"> ${unsafeHTML(args.slot)} </omni-icon> `,\n    name: 'SVG',\n    parameters: {},\n    args: {\n        size: 'large',\n        slot: `<svg\n                version=\"1.1\"\n                viewBox=\"0 0 16 16\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                width=\"100%\"\n                height=\"100%\"\n              >\n                <g transform=\"translate(-2,-2)\">\n                  <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n                </g>\n              </svg>`\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot.querySelector('slot');\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1903,7 +1966,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n  name: 'Local Source',\n  parameters: {},\n  args: {\n    size: 'default',\n    icon: 'assets/colors.svg',\n  },\n  play: async (context: StoryContext) => {\n      const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n      const imgElement = icon.shadowRoot.querySelector('img');\n      await expect(imgElement).toBeTruthy();\n      await expect(imgElement.src.endsWith(IconPath.args.icon)).toBeTruthy();\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n        <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n    `,\n    name: 'Local Source',\n    parameters: {},\n    args: {\n        size: 'default',\n        icon: 'assets/colors.svg'\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot.querySelector('img');\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(IconPath.args.icon)).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1911,7 +1974,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n  name: 'Remote Source',\n  parameters: {},\n  args: {\n    size: 'default',\n    icon: 'https://img.shields.io/badge/Source-remote-lightgrey.svg'\n  },\n  play: async (context: StoryContext) => {\n      const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n      const imgElement = icon.shadowRoot.querySelector('img');\n      await expect(imgElement).toBeTruthy();\n      await expect(imgElement.src).toEqual(URL.args.icon);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n        <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n    `,\n    name: 'Remote Source',\n    parameters: {},\n    args: {\n        size: 'default',\n        icon: 'https://img.shields.io/badge/Source-remote-lightgrey.svg'\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot.querySelector('img');\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src).toEqual(URL.args.icon);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1919,7 +1982,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <!-- Add Material to your project, e.g. Adding below link in <head>-->\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\" />\n    <!-- ------------------------------------------------------------- -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"> </omni-icon>\n  `,\n  args: {\n    size: 'default',\n    icon: '@material/receipt_long'\n  },\n  play: async (context: StoryContext) => {\n      const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n      const materialElement = icon.shadowRoot.querySelector<HTMLElement>('.material-icon');\n      await expect(materialElement).toBeTruthy();\n      await expect(materialElement.innerText).toEqual(Material.args.icon.replace('@material/',''));\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <!-- Add Material to your project, e.g. Adding below link in <head>-->\n        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\" />\n        <!-- ------------------------------------------------------------- -->\n\n        <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"> </omni-icon>\n    `,\n    args: {\n        size: 'default',\n        icon: '@material/receipt_long'\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const materialElement = icon.shadowRoot.querySelector<HTMLElement>('.material-icon');\n        await expect(materialElement).toBeTruthy();\n        await expect(materialElement.innerText).toEqual(Material.args.icon.replace('@material/', ''));\n    }\n}"
         }
       ],
       "exports": [
@@ -1978,7 +2041,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Component that displays an icon\n\n```js \nimport '@capitec/omni-components/icon'; \n```",
+          "description": "Component that displays an icon\n\n```js\n\nimport '@capitec/omni-components/icon';\n```",
           "name": "Icon",
           "cssProperties": [
             {
@@ -2114,7 +2177,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A check icon component\n\n```js \nimport '@capitec/omni-components/icons/Check.icon.js'; \n```",
+          "description": "A check icon component.\n\n```js\nimport '@capitec/omni-components/icons/Check.icon.js';\n```",
           "name": "CheckIcon",
           "members": [],
           "superclass": {
@@ -2150,7 +2213,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A Close icon component\n\n```js \nimport '@capitec/omni-components/icons/Close.icon.js'; \n```",
+          "description": "A Close icon component.\n\n```js\nimport '@capitec/omni-components/icons/Close.icon.js';\n```",
           "name": "CloseIcon",
           "members": [],
           "superclass": {
@@ -2186,7 +2249,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An indeterminate icon component\n\n```js \nimport '@capitec/omni-components/icons/Indeterminate.icon.js'; \n```",
+          "description": "An indeterminate icon component.\n\n```js\nimport '@capitec/omni-components/icons/Indeterminate.icon.js';\n```",
           "name": "IndeterminateIcon",
           "members": [],
           "superclass": {
@@ -2232,7 +2295,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-label data-testid=\"test-label\" label=\"${ifNotEmpty(args.label)}\" type=\"${args.type}\"> </omni-label>\n  `,\n  name: 'Interactive',\n  parameters: {},\n  args: {\n    label: 'Label',\n    type: 'default',\n  },\n  play: async (context: StoryContext) => {\n      const label = within(context.canvasElement).getByTestId<Label>('test-label');\n      await expect(label.shadowRoot).toHaveTextContent(Interactive.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-label data-testid=\"test-label\" label=\"${ifNotEmpty(args.label)}\" type=\"${args.type}\"> </omni-label>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: 'Label',\n        type: 'default'\n    },\n    play: async (context: StoryContext) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Interactive.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2240,7 +2303,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label>\n  `,\n  args: {\n    label: 'Title',\n    type: 'title',\n  },\n  play: async (context: StoryContext) => {\n      const label = within(context.canvasElement).getByTestId<Label>('test-label');\n      await expect(label.shadowRoot).toHaveTextContent(Title.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label> `,\n    args: {\n        label: 'Title',\n        type: 'title'\n    },\n    play: async (context: StoryContext) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Title.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2248,7 +2311,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label>\n  `,\n  args: {\n    label: 'Subtitle',\n    type: 'subtitle',\n  },\n  play: async (context: StoryContext) => {\n      const label = within(context.canvasElement).getByTestId<Label>('test-label');\n      await expect(label.shadowRoot).toHaveTextContent(Subtitle.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label> `,\n    args: {\n        label: 'Subtitle',\n        type: 'subtitle'\n    },\n    play: async (context: StoryContext) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Subtitle.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2256,7 +2319,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label>\n  `,\n  args: {\n    label: 'Strong',\n    type: 'strong',\n  },\n  play: async (context: StoryContext) => {\n      const label = within(context.canvasElement).getByTestId<Label>('test-label');\n      await expect(label.shadowRoot).toHaveTextContent(Strong.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label> `,\n    args: {\n        label: 'Strong',\n        type: 'strong'\n    },\n    play: async (context: StoryContext) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Strong.args.label);\n    }\n}"
         }
       ],
       "exports": [
@@ -2307,7 +2370,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A simple label component that renders a styled text string.\n\n```js \nimport '@capitec/omni-components/label'; \n```",
+          "description": "A simple label component that renders styled text.\n\n```js\n\nimport '@capitec/omni-components/label';\n```",
           "name": "Label",
           "cssProperties": [
             {
@@ -2471,7 +2534,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${ifNotEmpty(args.label)}\" .data=\"${args.data}\" hint=\"${ifNotEmpty(args.hint)}\" error=\"${ifNotEmpty(args.error)}\" ?checked=\"${args.checked}\" ?disabled=\"${args.disabled}\"></omni-radio>\n  `,\n  name: 'Interactive',\n  parameters: {},\n  args: {\n    label: '',\n    data: {},\n    hint: '',\n    error: '',\n    checked: false,\n    disabled: false,\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      radio.focus();\n\n      const content = radio.shadowRoot.getElementById('content');\n      const valueChange = jest.fn();\n      radio.addEventListener('value-change', valueChange);\n\n      await userEvent.click(content);    \n      await fireEvent.keyDown(content, {\n        key: ' ',\n        code: 'Space',\n      });\n\n      await expect(valueChange).toBeCalledTimes(2);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-radio\n            data-testid=\"test-radio\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?checked=\"${args.checked}\"\n            ?disabled=\"${args.disabled}\"></omni-radio>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false\n    },\n    play: async (context: StoryContext) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        radio.focus();\n\n        const content = radio.shadowRoot.getElementById('content');\n        const valueChange = jest.fn();\n        radio.addEventListener('value-change', valueChange);\n\n        await userEvent.click(content);\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2479,7 +2542,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\"></omni-radio>\n  `,\n  args: {\n    label: 'Label',\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const labelElement = radio.shadowRoot.getElementById('label');\n      await expect(labelElement).toHaveTextContent(Label.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\"></omni-radio> `,\n    args: {\n        label: 'Label'\n    },\n    play: async (context: StoryContext) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const labelElement = radio.shadowRoot.getElementById('label');\n        await expect(labelElement).toHaveTextContent(Label.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2487,7 +2550,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-radio>\n  `,\n  args: {\n    label: 'Hint',\n    hint: 'This is a hint'\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const element = radio.shadowRoot.querySelector<HTMLElement>('.hint');\n      await expect(element).toHaveTextContent(Hint.args.hint);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-radio> `,\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context: StoryContext) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const element = radio.shadowRoot.querySelector<HTMLElement>('.hint');\n        await expect(element).toHaveTextContent(Hint.args.hint);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2495,7 +2558,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" error=\"${args.error}\"></omni-radio>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const element = radio.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(element).toHaveTextContent(ErrorLabel.args.error);\n  }\n}"
+          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: ArgTypes) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" error=\"${args.error}\"></omni-radio> `,\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context: StoryContext) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const element = radio.shadowRoot.querySelector<HTMLElement>('.error');\n        await expect(element).toHaveTextContent(ErrorLabel.args.error);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2503,7 +2566,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-radio>\n  `,\n  args: {\n    label: 'Checked',\n    checked: true,\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const checkedElement = radio.shadowRoot.querySelector<HTMLElement>('.checked');\n      await expect(checkedElement).toBeTruthy();\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-radio> `,\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context: StoryContext) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const checkedElement = radio.shadowRoot.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2511,7 +2574,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-radio>\n  `,\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n  play: async (context: StoryContext) => {\n      const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n      const valueChange = jest.fn();\n      radio.addEventListener('value-change', valueChange);\n\n      const disabledElement = radio.shadowRoot.querySelector<HTMLElement>('.disabled');\n      await expect(disabledElement).toBeTruthy();\n      \n      const content = radio.shadowRoot.getElementById('content');\n      await userEvent.click(content);    \n      await fireEvent.keyDown(content, {\n        key: ' ',\n        code: 'Space',\n      });\n      await expect(valueChange).toBeCalledTimes(0);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-radio>\n    `,\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context: StoryContext) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const valueChange = jest.fn();\n        radio.addEventListener('value-change', valueChange);\n\n        const disabledElement = radio.shadowRoot.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = radio.shadowRoot.getElementById('content');\n        await userEvent.click(content);\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
         }
       ],
       "exports": [
@@ -2578,7 +2641,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A control that allows a user to select a single value from a small group of values.\n\n```js \nimport '@capitec/omni-components/radio'; \n```",
+          "description": "A control that allows a user to select a single value from a group of values.\n\n```js\n\nimport '@capitec/omni-components/radio';\n```",
           "name": "Radio",
           "cssProperties": [
             {
@@ -2770,6 +2833,49 @@
             {
               "kind": "method",
               "name": "focus"
+            },
+            {
+              "kind": "method",
+              "name": "_click",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_keyDown",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_toggleChecked",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
             }
           ],
           "events": [
@@ -2909,7 +3015,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${ifNotEmpty(args.label)}\" .data=\"${args.data}\" hint=\"${ifNotEmpty(args.hint)}\" error=\"${ifNotEmpty(args.error)}\" ?checked=\"${args.checked}\" ?disabled=\"${args.disabled}\"></omni-switch>\n  `,\n  name: 'Interactive',\n  parameters: {},\n  args: {\n    label: '',\n    data: {},\n    hint: '',\n    error: '',\n    checked: false,\n    disabled: false,\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const valueChange = jest.fn();\n      switchElement.addEventListener('value-change', valueChange);\n\n      const content = switchElement.shadowRoot.getElementById('content');\n      await userEvent.click(content);    \n      await fireEvent.keyDown(content, {\n        key: ' ',\n        code: 'Space',\n      });\n\n      await expect(valueChange).toBeCalledTimes(2);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-switch\n            data-testid=\"test-switch\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?checked=\"${args.checked}\"\n            ?disabled=\"${args.disabled}\"></omni-switch>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false\n    },\n    play: async (context: StoryContext) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const valueChange = jest.fn();\n        switchElement.addEventListener('value-change', valueChange);\n\n        const content = switchElement.shadowRoot.getElementById('content');\n        await userEvent.click(content);\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2917,7 +3023,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${args.label}\"></omni-switch>\n  `,\n  args: {\n    label: 'Label'\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const labelElement = switchElement.shadowRoot.querySelector<HTMLElement>('.label');\n      await expect(labelElement).toHaveTextContent(Label.args.label);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-switch data-testid=\"test-switch\" label=\"${args.label}\"></omni-switch> `,\n    args: {\n        label: 'Label'\n    },\n    play: async (context: StoryContext) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const labelElement = switchElement.shadowRoot.querySelector<HTMLElement>('.label');\n        await expect(labelElement).toHaveTextContent(Label.args.label);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2925,7 +3031,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-switch>\n  `,\n  args: {\n    label: 'Hint',\n    hint: 'This is a hint'\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const element = switchElement.shadowRoot.querySelector<HTMLElement>('.hint');\n      await expect(element).toHaveTextContent(Hint.args.hint);\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html` <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-switch> `,\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context: StoryContext) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const element = switchElement.shadowRoot.querySelector<HTMLElement>('.hint');\n        await expect(element).toHaveTextContent(Hint.args.hint);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2933,7 +3039,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" error=\"${args.error}\"></omni-switch>\n  `,\n  args: {\n    label: 'Error',\n    error: 'This is an error state'\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const element = switchElement.shadowRoot.querySelector<HTMLElement>('.error');\n      await expect(element).toHaveTextContent(ErrorLabel.args.error);\n  }\n}"
+          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: ArgTypes) => html` <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" error=\"${args.error}\"></omni-switch> `,\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context: StoryContext) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const element = switchElement.shadowRoot.querySelector<HTMLElement>('.error');\n        await expect(element).toHaveTextContent(ErrorLabel.args.error);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2941,7 +3047,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-switch>\n  `,\n  args: {\n    label: 'Checked',\n    checked: true,\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const checkedElement = switchElement.shadowRoot.querySelector<HTMLElement>('.checked');\n      await expect(checkedElement).toBeTruthy();\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-switch>\n    `,\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context: StoryContext) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const checkedElement = switchElement.shadowRoot.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -2949,7 +3055,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n  render: (args: ArgTypes) => html`\n    <omni-switch\n      data-testid=\"test-switch\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-switch>\n  `,\n  args: {\n    label: 'Disabled',\n    disabled: true,\n  },\n  play: async (context: StoryContext) => {\n      const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n      const valueChange = jest.fn();\n      switchElement.addEventListener('value-change', valueChange);\n\n      const disabledElement = switchElement.shadowRoot.querySelector<HTMLElement>('.disabled');\n      await expect(disabledElement).toBeTruthy();\n      \n      const content = switchElement.shadowRoot.getElementById('content');\n      await userEvent.click(content);    \n      await fireEvent.keyDown(content, {\n        key: ' ',\n        code: 'Space',\n      });\n      await expect(valueChange).toBeCalledTimes(0);\n\n  }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-switch>\n    `,\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context: StoryContext) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const valueChange = jest.fn();\n        switchElement.addEventListener('value-change', valueChange);\n\n        const disabledElement = switchElement.shadowRoot.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = switchElement.shadowRoot.getElementById('content');\n        await userEvent.click(content);\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
         }
       ],
       "exports": [
@@ -3016,7 +3122,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A control that allows a user to switch a value on or off.\n\n```js \nimport '@capitec/omni-components/switch'; \n```",
+          "description": "A control that allows a user to switch a value on or off.\n\n```js\n\nimport '@capitec/omni-components/switch';\n```",
           "name": "Switch",
           "cssProperties": [
             {
@@ -3200,6 +3306,49 @@
             {
               "kind": "method",
               "name": "focus"
+            },
+            {
+              "kind": "method",
+              "name": "_click",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_switchChecked",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_keyDown",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
             }
           ],
           "events": [
@@ -3316,6 +3465,11 @@
         {
           "kind": "function",
           "name": "ifNotEmpty",
+          "return": {
+            "type": {
+              "text": ""
+            }
+          },
           "parameters": [
             {
               "name": "value",
@@ -3324,12 +3478,7 @@
               }
             }
           ],
-          "description": "Lit directive that only applies when provided value is not falsy(undefined, null, or empty string)",
-          "return": {
-            "type": {
-              "text": ""
-            }
-          }
+          "description": "Lit directive that only applies when provided value is not falsy(undefined, null, or empty string)"
         }
       ],
       "exports": [

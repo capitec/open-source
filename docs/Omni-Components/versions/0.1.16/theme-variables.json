@@ -1,0 +1,163 @@
+{
+  "omni-theme-primary-color": {
+    "control": "color",
+    "description": "Theme primary color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-primary-hover-color": {
+    "control": "color",
+    "description": "Theme primary hover color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-primary-active-color": {
+    "control": "color",
+    "description": "Theme primary active color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-accent-color": {
+    "control": "color",
+    "description": "Theme accent color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-accent-hover-color": {
+    "control": "color",
+    "description": "Theme accent hover color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-accent-active-color": {
+    "control": "color",
+    "description": "Theme accent active color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-background-color": {
+    "control": "color",
+    "description": "Theme background color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-background-hover-color": {
+    "control": "color",
+    "description": "Theme background hover color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-background-active-color": {
+    "control": "color",
+    "description": "Theme background active color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-font-color": {
+    "control": "color",
+    "description": "Theme font color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-disabled-border-color": {
+    "control": "color",
+    "description": "Theme disabled border color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-disabled-background-color": {
+    "control": "color",
+    "description": "Theme disabled background color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-error-font-color": {
+    "control": "color",
+    "description": "Theme disabled background color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-error-border-color": {
+    "control": "color",
+    "description": "Theme error border color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-hint-font-color": {
+    "control": "color",
+    "description": "Theme hint font color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-inactive-color": {
+    "control": "color",
+    "description": "Theme inactive color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-box-shadow-color": {
+    "control": "color",
+    "description": "Theme inactive color.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-font-family": {
+    "control": "text",
+    "description": "Theme font family.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-font-size": {
+    "control": "text",
+    "description": "Theme font size.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-font-weight": {
+    "control": "text",
+    "description": "Theme font weight.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-border-radius": {
+    "control": "text",
+    "description": "Theme border radius.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-border-width": {
+    "control": "text",
+    "description": "Theme border width.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  },
+  "omni-theme-box-shadow": {
+    "control": "text",
+    "description": "Theme box shadow.",
+    "category": "CSS Variables",
+    "subcategory": "Theme Variables",
+    "value": ""
+  }
+}

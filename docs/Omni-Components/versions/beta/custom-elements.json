@@ -12,7 +12,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-button\"\n            type=\"${args.type}\"\n            label=\"${ifNotEmpty(args.label)}\"\n            slot-position=\"${args.slotPosition}\"\n            ?disabled=${args.disabled}>\n            ${unsafeHTML(args.slot)}\n        </omni-button>\n    `,\n    name: 'Interactive',\n    args: {\n        type: 'secondary',\n        label: 'Button',\n        slotPosition: 'top',\n        disabled: false,\n        slot: raw`<omni-icon icon=\"@material/thumb_up\"></omni-icon>`\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button);\n        await userEvent.click(button);\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-button\"\n            type=\"${args.type}\"\n            label=\"${ifNotEmpty(args.label)}\"\n            slot-position=\"${args.slotPosition}\"\n            ?disabled=${args.disabled}>\n            ${unsafeHTML(args['[Default Slot]'])}\n        </omni-button>\n    `,\n    name: 'Interactive',\n    args: {\n        type: 'secondary',\n        label: 'Button',\n        slotPosition: 'top',\n        disabled: false,\n        '[Default Slot]': raw`<omni-icon icon=\"@material/thumb_up\"></omni-icon>`\n    },\n    play: async (context: StoryContext) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button);\n        await userEvent.click(button);\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -278,7 +278,7 @@
           "slots": [
             {
               "description": "Content to render inside button, can be positioned using {@link slotPosition} property.",
-              "name": ""
+              "name": "[Default Slot]"
             }
           ],
           "members": [
@@ -1292,6 +1292,576 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/core/OmniFormElement.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Base class used by form components to share common properties, styles and functionality.",
+          "name": "OmniFormElement",
+          "cssProperties": [
+            {
+              "description": "Form container width.",
+              "name": "--omni-form-container-width"
+            },
+            {
+              "description": "Form container font family.",
+              "name": "--omni-form-container-font-family"
+            },
+            {
+              "description": "Form layout background color.",
+              "name": "--omni-form-field-background-color"
+            },
+            {
+              "description": "Form border top.",
+              "name": "--omni-form-border-top"
+            },
+            {
+              "description": "Form border bottom.",
+              "name": "--omni-form-border-bottom"
+            },
+            {
+              "description": "Form border left.",
+              "name": "--omni-form-border-left"
+            },
+            {
+              "description": "Form border right.",
+              "name": "--omni-form-border-right"
+            },
+            {
+              "description": "Form border width.",
+              "name": "--omni-form-border-width"
+            },
+            {
+              "description": "Form border radius.",
+              "name": "--omni-form-border-radius"
+            },
+            {
+              "description": "Form border style.",
+              "name": "--omni-form-border-style"
+            },
+            {
+              "description": "Form border color.",
+              "name": "--omni-form-border-color"
+            },
+            {
+              "description": "Form label text align",
+              "name": "--omni-form-label-transform-origin"
+            },
+            {
+              "description": "Form label text align.",
+              "name": "--omni-form-label-text-align"
+            },
+            {
+              "description": "Form label color.",
+              "name": "--omni-form-label-color"
+            },
+            {
+              "description": "Form label font size.",
+              "name": "--omni-form-label-font-size"
+            },
+            {
+              "description": "Form label font weight.",
+              "name": "--omni-form-label-font-weight"
+            },
+            {
+              "description": "Form label left margin.",
+              "name": "--omni-form-label-left"
+            },
+            {
+              "description": "Form focussed border width.",
+              "name": "--omni-form-focussed-border-width"
+            },
+            {
+              "description": "Form focussed border color.",
+              "name": "--omni-form-focussed-border-color"
+            },
+            {
+              "description": "Form focussed label color.",
+              "name": "--omni-form-focussed-label-color"
+            },
+            {
+              "description": "Form error label color.",
+              "name": "--omni-form-error-label-color"
+            },
+            {
+              "description": "Form error border color.",
+              "name": "--omni-form-error-border-color"
+            },
+            {
+              "description": "Form label disabled color.",
+              "name": "--omni-form-label-disabled-color"
+            },
+            {
+              "description": "Form disabled border color.",
+              "name": "--omni-form-disabled-border-color"
+            },
+            {
+              "description": "Form disabled background color.",
+              "name": "--omni-form-disabled-background-color"
+            },
+            {
+              "description": "Form disabled label focussed background color.",
+              "name": "--omni-form-disabled-focussed-label-background-color"
+            },
+            {
+              "description": "Form hint label font color.",
+              "name": "--omni-form-hint-label-font-color"
+            },
+            {
+              "description": "Form hint label font family.",
+              "name": "--omni-form-hint-label-font-family"
+            },
+            {
+              "description": "Form hint label font size.",
+              "name": "--omni-form-hint-label-font-size"
+            },
+            {
+              "description": "Form hint label font weight.",
+              "name": "--omni-form-hint-label-font-weight"
+            },
+            {
+              "description": "Form hint label top padding.",
+              "name": "--omni-form-hint-label-padding-top"
+            },
+            {
+              "description": "Form hint label left padding.",
+              "name": "--omni-form-hint-label-padding-left"
+            },
+            {
+              "description": "-",
+              "name": "--omni-form-hint-label-border-width"
+            },
+            {
+              "description": "Form error label font color.",
+              "name": "--omni-form-error-label-font-color"
+            },
+            {
+              "description": "Form error label font family.",
+              "name": "--omni-form-error-label-font-family"
+            },
+            {
+              "description": "Form error label font size.",
+              "name": "--omni-form-error-label-font-size"
+            },
+            {
+              "description": "Form error label font weight.",
+              "name": "--omni-form-error-label-font-weight"
+            },
+            {
+              "description": "Form error label top padding.",
+              "name": "--omni-form-error-label-padding-top"
+            },
+            {
+              "description": "Form error label left padding.",
+              "name": "--omni-form-error-label-padding-left"
+            },
+            {
+              "name": "--omni-form-error-label-border-width"
+            },
+            {
+              "description": "Form hover color.",
+              "name": "--omni-form-hover-color"
+            },
+            {
+              "description": "Form disabled hover color.",
+              "name": "--omni-form-disabled-hover-color"
+            },
+            {
+              "description": "Form error hover color.",
+              "name": "--omni-form-error-hover-color"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix"
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_formContainerElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_labelElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_focusGained"
+            },
+            {
+              "kind": "method",
+              "name": "_focusLost"
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value"
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data"
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint"
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "cssCategory": "Base Form Variables",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ifDefined",
+          "declaration": {
+            "name": "ifDefined",
+            "package": "lit/directives/if-defined.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OmniFormElement",
+          "declaration": {
+            "name": "OmniFormElement",
+            "module": "src/core/OmniFormElement.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/OmniInputStories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "BaseArgTypeDefinitions",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    suffix: {\n        control: 'text'\n    },\n    prefix: {\n        control: 'text'\n    }\n}"
+        },
+        {
+          "kind": "function",
+          "name": "LabelStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "HintStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "ErrorStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "ValueStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "inputValue",
+              "default": "'The input value'",
+              "type": {
+                "text": "string | number | string[]"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "PrefixStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "SuffixStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "DisabledStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BaseArgTypeDefinitions",
+          "declaration": {
+            "name": "BaseArgTypeDefinitions",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "LabelStory",
+          "declaration": {
+            "name": "LabelStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "HintStory",
+          "declaration": {
+            "name": "HintStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorStory",
+          "declaration": {
+            "name": "ErrorStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ValueStory",
+          "declaration": {
+            "name": "ValueStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "PrefixStory",
+          "declaration": {
+            "name": "PrefixStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "SuffixStory",
+          "declaration": {
+            "name": "SuffixStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "DisabledStory",
+          "declaration": {
+            "name": "DisabledStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/hyperlink/Hyperlink.stories.ts",
       "declarations": [
         {
@@ -1657,7 +2227,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: ArgTypes) => html`\n        <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n        <omni-icon data-testid=\"test-icon\" size=\"${ifNotEmpty(args.size)}\" icon=\"${ifNotEmpty(args.icon)}\">\n            ${unsafeHTML(args.slot)}\n        </omni-icon>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        size: 'default',\n        slot: raw`<svg\n    version=\"1.1\"\n    viewBox=\"0 0 16 16\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"100%\"\n    height=\"100%\"\n  >\n    <g transform=\"translate(-2,-2)\">\n      <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n    </g>\n  </svg>`,\n        icon: undefined as string\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot.querySelector('slot');\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n        <omni-icon data-testid=\"test-icon\" size=\"${ifNotEmpty(args.size)}\" icon=\"${ifNotEmpty(args.icon)}\">\n            ${unsafeHTML(args['[Default Slot]'])}\n        </omni-icon>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        size: 'default',\n        '[Default Slot]': raw`<svg\n    version=\"1.1\"\n    viewBox=\"0 0 16 16\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"100%\"\n    height=\"100%\"\n  >\n    <g transform=\"translate(-2,-2)\">\n      <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n    </g>\n  </svg>`,\n        icon: undefined as string\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot.querySelector('slot');\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1665,7 +2235,7 @@
           "type": {
             "text": "object"
           },
-          "default": "{\n    render: (args: ArgTypes) => html` <omni-icon data-testid=\"test-icon\" size=\"${args.size}\"> ${unsafeHTML(args.slot)} </omni-icon> `,\n    name: 'SVG',\n    parameters: {},\n    args: {\n        size: 'large',\n        slot: `<svg\n                version=\"1.1\"\n                viewBox=\"0 0 16 16\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                width=\"100%\"\n                height=\"100%\"\n              >\n                <g transform=\"translate(-2,-2)\">\n                  <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n                </g>\n              </svg>`\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot.querySelector('slot');\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-icon data-testid=\"test-icon\" size=\"${args.size}\"> ${unsafeHTML(args['[Default Slot]'])} </omni-icon>\n    `,\n    name: 'SVG',\n    parameters: {},\n    args: {\n        size: 'large',\n        '[Default Slot]': `<svg\n                version=\"1.1\"\n                viewBox=\"0 0 16 16\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                width=\"100%\"\n                height=\"100%\"\n              >\n                <g transform=\"translate(-2,-2)\">\n                  <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n                </g>\n              </svg>`\n    },\n    play: async (context: StoryContext) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot.querySelector('slot');\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1783,7 +2353,7 @@
           "slots": [
             {
               "description": "The icon to be displayed",
-              "name": ""
+              "name": "[Default Slot]"
             }
           ],
           "members": [
@@ -1952,6 +2522,78 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/EyeHidden.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A hidden eye icon component\n\n```js\nimport '@capitec/omni-components/icons/EyeHidden.icon.js';\n```",
+          "name": "EyeHiddenIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "omni-eye-hidden-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "EyeHiddenIcon",
+          "declaration": {
+            "name": "EyeHiddenIcon",
+            "module": "src/icons/EyeHidden.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-eye-hidden-icon",
+          "declaration": {
+            "name": "EyeHiddenIcon",
+            "module": "src/icons/EyeHidden.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/EyeVisible.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A visible eye icon component\n\n```js\nimport '@capitec/omni-components/icons/EyeVisible.icon.js';\n```",
+          "name": "EyeVisibleIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "omni-eye-visible-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "EyeVisibleIcon",
+          "declaration": {
+            "name": "EyeVisibleIcon",
+            "module": "src/icons/EyeVisible.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-eye-visible-icon",
+          "declaration": {
+            "name": "EyeVisibleIcon",
+            "module": "src/icons/EyeVisible.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/Indeterminate.icon.ts",
       "declarations": [
         {
@@ -1982,6 +2624,150 @@
           "declaration": {
             "name": "IndeterminateIcon",
             "module": "src/icons/Indeterminate.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/LockClosed.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A closed lock icon component\n\n```js\nimport '@capitec/omni-components/icons/LockClosed.icon.js';\n```",
+          "name": "LockClosedIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "omni-lock-closed-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LockClosedIcon",
+          "declaration": {
+            "name": "LockClosedIcon",
+            "module": "src/icons/LockClosed.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-lock-closed-icon",
+          "declaration": {
+            "name": "LockClosedIcon",
+            "module": "src/icons/LockClosed.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/LockOpen.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A open lock icon component\n\n```js\nimport '@capitec/omni-components/icons/LockOpen.icon.js';\n```",
+          "name": "LockOpenIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "omni-lock-open-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LockOpenIcon",
+          "declaration": {
+            "name": "LockOpenIcon",
+            "module": "src/icons/LockOpen.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-lock-open-icon",
+          "declaration": {
+            "name": "LockOpenIcon",
+            "module": "src/icons/LockOpen.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/Minus.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A minus icon component\n\n```js\nimport '@capitec/omni-components/icons/Minus.icon.js';\n```",
+          "name": "MinusIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "omni-minus-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MinusIcon",
+          "declaration": {
+            "name": "MinusIcon",
+            "module": "src/icons/Minus.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-minus-icon",
+          "declaration": {
+            "name": "MinusIcon",
+            "module": "src/icons/Minus.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/Plus.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A plus icon component\n\n```js\nimport '@capitec/omni-components/icons/Plus.icon.js';\n```",
+          "name": "PlusIcon",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "omni-plus-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PlusIcon",
+          "declaration": {
+            "name": "PlusIcon",
+            "module": "src/icons/Plus.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-plus-icon",
+          "declaration": {
+            "name": "PlusIcon",
+            "module": "src/icons/Plus.icon.ts"
           }
         }
       ]
@@ -2221,6 +3007,1086 @@
           "declaration": {
             "name": "*",
             "package": "./Label.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/numeric-field/NumericField.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-numeric-field\n            data-testid=\"test-numeric-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${args.suffix\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}`\n                : nothing}${args.increase ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('increase', args.increase))}` : nothing}${args.decrease\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('decrease', args.decrease))}`\n                : nothing}${args.prefix || args.suffix || args.increase || args.decrease ? '\\r\\n' : nothing}</omni-numeric-field\n        >\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        increase: '',\n        decrease: ''\n    },\n    play: async (context: StoryContext) => {\n        const numericField = within(context.canvasElement).getByTestId<NumericField>('test-numeric-field');\n        const interaction = jest.fn();\n        numericField.addEventListener('input', interaction);\n        numericField.addEventListener('click', interaction);\n\n        const increaseSlotElement = numericField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=increase]');\n        const decreaseSlotElement = numericField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=decrease]');\n\n        await expect(increaseSlotElement).toBeTruthy();\n        await expect(decreaseSlotElement).toBeTruthy();\n\n        await userEvent.click(decreaseSlotElement);\n        await userEvent.click(increaseSlotElement);\n        await userEvent.click(decreaseSlotElement);\n        await userEvent.click(increaseSlotElement);\n        await userEvent.click(increaseSlotElement);\n\n        const inputField = numericField.shadowRoot.getElementById('inputField');\n        const value = '12345';\n        await userEvent.type(inputField, value);\n\n        await expect(inputField).toHaveValue(212345);\n\n        await expect(interaction).toBeCalledTimes(11);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Hint"
+        },
+        {
+          "kind": "variable",
+          "name": "ErrorLabel"
+        },
+        {
+          "kind": "variable",
+          "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Prefix"
+        },
+        {
+          "kind": "variable",
+          "name": "Suffix"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomIconSlot",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-numeric-field data-testid=\"test-password-field\" label=\"${ifNotEmpty(args.label)}\" ?disabled=\"${args.disabled}\">\n            <omni-lock-open-icon slot=\"increase\"></omni-lock-open-icon>\n            <omni-lock-closed-icon slot=\"decrease\"></omni-lock-closed-icon>\n        </omni-numeric-field>\n    `,\n    name: 'Custom Icon Slot',\n    args: {\n        label: 'Custom Icon Slot'\n    },\n    play: async (context: StoryContext) => {\n        const passwordField = within(context.canvasElement).getByTestId<NumericField>('test-password-field');\n        const increaseElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=increase]');\n        const decreaseElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=decrease]');\n        await expect(increaseElement).toBeTruthy();\n        await expect(decreaseElement).toBeTruthy();\n\n        const foundSlottedIncreaseElement = increaseElement\n            .assignedElements()\n            .find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-open-icon');\n        const foundSlottedDecreaseElement = decreaseElement\n            .assignedElements()\n            .find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-closed-icon');\n        await expect(foundSlottedIncreaseElement).toBeTruthy();\n        await expect(foundSlottedDecreaseElement).toBeTruthy();\n    }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hint",
+          "declaration": {
+            "name": "Hint",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorLabel",
+          "declaration": {
+            "name": "ErrorLabel",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Value",
+          "declaration": {
+            "name": "Value",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Prefix",
+          "declaration": {
+            "name": "Prefix",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Suffix",
+          "declaration": {
+            "name": "Suffix",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomIconSlot",
+          "declaration": {
+            "name": "CustomIconSlot",
+            "module": "src/numeric-field/NumericField.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/numeric-field/NumericField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An input control that allows a user to enter a single line of numbers.\n\n```js\n\nimport '@capitec/omni-components/numeric-field';\n```",
+          "name": "NumericField",
+          "cssProperties": [
+            {
+              "description": "Numeric input quantity container height.",
+              "name": "--omni-numeric-input-quantity-height"
+            },
+            {
+              "description": "Numeric input slot width.",
+              "name": "--omni-numeric-input-slot-width"
+            },
+            {
+              "description": "Numeric input control divider width.",
+              "name": "--omni-numeric-input-divider-width"
+            },
+            {
+              "description": "Numeric input field text align.",
+              "name": "--omni-numeric-field-text-align"
+            },
+            {
+              "description": "Numeric input field font color.",
+              "name": "--omni-numeric-field-font-color"
+            },
+            {
+              "description": "Numeric input field font family.",
+              "name": "--omni-numeric-field-font-family"
+            },
+            {
+              "description": "Numeric input field font size.",
+              "name": "--omni-numeric-field-font-size"
+            },
+            {
+              "description": "Numeric input field font weight.",
+              "name": "--omni-numeric-field-font-weight"
+            },
+            {
+              "description": "Numeric input field height.",
+              "name": "--omni-numeric-field-height"
+            },
+            {
+              "description": "Numeric input field padding.",
+              "name": "--omni-numeric-field-padding"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Slot for the increase icon.",
+              "name": "increase"
+            },
+            {
+              "description": "Slot for the decrease icon.",
+              "name": "decrease"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_inputElement",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_keyInput"
+            },
+            {
+              "kind": "method",
+              "name": "_onAddClick"
+            },
+            {
+              "kind": "method",
+              "name": "_onMinusClick"
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_formContainerElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_labelElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusGained",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusLost",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniFormElement",
+            "module": "/src/core/OmniFormElement.js"
+          },
+          "tagName": "omni-numeric-field",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NumericField",
+          "declaration": {
+            "name": "NumericField",
+            "module": "src/numeric-field/NumericField.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-numeric-field",
+          "declaration": {
+            "name": "NumericField",
+            "module": "src/numeric-field/NumericField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/numeric-field/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./NumericField.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/password-field/PasswordField.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-password-field\n            data-testid=\"test-password-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\">\n            ${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing}\n            ${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}\n            ${args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing}</omni-password-field\n        >\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: ''\n    },\n    play: async (context: StoryContext) => {\n        const passwordField = within(context.canvasElement).getByTestId<PasswordField>('test-password-field');\n        const interactions = jest.fn();\n        passwordField.addEventListener('input', interactions);\n        passwordField.addEventListener('click', interactions);\n\n        const inputField = passwordField.shadowRoot.getElementById('inputField');\n\n        const showSlotElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement);\n        const hideSlotElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement);\n\n        await userEvent.type(inputField, 'Value{space}Update');\n        const value = 'Value Update';\n        await expect(inputField).toHaveValue(value);\n\n        await expect(interactions).toBeCalledTimes(value.length + 1);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Hint"
+        },
+        {
+          "kind": "variable",
+          "name": "ErrorLabel"
+        },
+        {
+          "kind": "variable",
+          "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Prefix"
+        },
+        {
+          "kind": "variable",
+          "name": "Suffix"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled"
+        },
+        {
+          "kind": "variable",
+          "name": "CustomIconSlot",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-password-field data-testid=\"test-password-field\" label=\"${ifNotEmpty(args.label)}\" ?disabled=\"${args.disabled}\">\n            <omni-lock-open-icon slot=\"show\"></omni-lock-open-icon>\n            <omni-lock-closed-icon slot=\"hide\"></omni-lock-closed-icon>\n        </omni-password-field>\n    `,\n    name: 'Custom Icon Slot',\n    args: {\n        label: 'Custom Icon Slot'\n    },\n    play: async (context: StoryContext) => {\n        const passwordField = within(context.canvasElement).getByTestId<PasswordField>('test-password-field');\n        const slotElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-open-icon');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hint",
+          "declaration": {
+            "name": "Hint",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorLabel",
+          "declaration": {
+            "name": "ErrorLabel",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Value",
+          "declaration": {
+            "name": "Value",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Prefix",
+          "declaration": {
+            "name": "Prefix",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Suffix",
+          "declaration": {
+            "name": "Suffix",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomIconSlot",
+          "declaration": {
+            "name": "CustomIconSlot",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/password-field/PasswordField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A password input control.\n\n```js\n\nimport '@capitec/omni-components/password-field';\n```",
+          "name": "PasswordField",
+          "cssProperties": [
+            {
+              "description": "Password field control padding right.",
+              "name": "--omni-password-field-control-padding-right"
+            },
+            {
+              "description": "Password field control padding left.",
+              "name": "--omni-password-field-control-padding-left"
+            },
+            {
+              "description": "Password field control padding top.",
+              "name": "--omni-password-field-control-padding-top"
+            },
+            {
+              "description": "Password field control padding bottom.",
+              "name": "--omni-password-field-control-padding-bottom"
+            },
+            {
+              "description": "Password field slot icon color.",
+              "name": "--omni-password-field-icon-color"
+            },
+            {
+              "description": "Password field slot width.",
+              "name": "--omni-password-field-icon-width"
+            },
+            {
+              "description": "Password field text align.",
+              "name": "--omni-password-field-text-align"
+            },
+            {
+              "description": "Password field font family.",
+              "name": "--omni-password-field-font-family"
+            },
+            {
+              "description": "Password field font size.",
+              "name": "--omni-password-field-font-size"
+            },
+            {
+              "description": "Password field font weight.",
+              "name": "--omni-password-field-font-weight"
+            },
+            {
+              "description": "Password field height.",
+              "name": "--omni-password-field-height"
+            },
+            {
+              "description": "Password field width.",
+              "name": "--omni-password-field-padding"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the password value hidden state.",
+              "name": "hide"
+            },
+            {
+              "description": "Replaces the icon for the checked value visible state.",
+              "name": "show"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_inputElement",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_keyInput"
+            },
+            {
+              "kind": "method",
+              "name": "_iconClicked",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_formContainerElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_labelElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusGained",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusLost",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniFormElement",
+            "module": "/src/core/OmniFormElement.js"
+          },
+          "tagName": "omni-password-field",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PasswordField",
+          "declaration": {
+            "name": "PasswordField",
+            "module": "src/password-field/PasswordField.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-password-field",
+          "declaration": {
+            "name": "PasswordField",
+            "module": "src/password-field/PasswordField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/password-field/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./PasswordField.js"
           }
         }
       ]
@@ -3161,6 +5027,492 @@
           "declaration": {
             "name": "*",
             "package": "./Switch.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/text-field/TextField.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: BaseArgTypes) => html`\n        <omni-text-field\n            data-testid=\"test-text-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${args.suffix\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}`\n                : nothing}${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-text-field\n        >\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context: StoryContext) => {\n        const textField = within(context.canvasElement).getByTestId<TextField>('test-text-field');\n        const input = jest.fn();\n        textField.addEventListener('input', input);\n\n        const inputField = textField.shadowRoot.getElementById('inputField');\n\n        await userEvent.type(inputField, 'Value{space}Update');\n        const value = 'Value Update';\n        await expect(inputField).toHaveValue(value);\n\n        await expect(input).toBeCalledTimes(value.length);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Hint"
+        },
+        {
+          "kind": "variable",
+          "name": "ErrorLabel"
+        },
+        {
+          "kind": "variable",
+          "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Prefix"
+        },
+        {
+          "kind": "variable",
+          "name": "Suffix"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hint",
+          "declaration": {
+            "name": "Hint",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorLabel",
+          "declaration": {
+            "name": "ErrorLabel",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Value",
+          "declaration": {
+            "name": "Value",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Prefix",
+          "declaration": {
+            "name": "Prefix",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Suffix",
+          "declaration": {
+            "name": "Suffix",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/text-field/TextField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A text input control.\n\n```js\n\nimport '@capitec/omni-components/text-field';\n```",
+          "name": "TextField",
+          "cssProperties": [
+            {
+              "description": "Text field text align.",
+              "name": "--omni-text-field-text-align"
+            },
+            {
+              "description": "Text field font family.",
+              "name": "--omni-text-field-font-family"
+            },
+            {
+              "description": "Text field font size.",
+              "name": "--omni-text-field-font-size"
+            },
+            {
+              "description": "Text field font weight.",
+              "name": "--omni-text-field-font-weight"
+            },
+            {
+              "description": "Text field height.",
+              "name": "--omni-text-field-height"
+            },
+            {
+              "description": "Text field width.",
+              "name": "--omni-text-field-padding"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_inputElement",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_keyInput"
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_formContainerElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_labelElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusGained",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusLost",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniFormElement",
+            "module": "/src/core/OmniFormElement.js"
+          },
+          "tagName": "omni-text-field",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TextField",
+          "declaration": {
+            "name": "TextField",
+            "module": "src/text-field/TextField.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-text-field",
+          "declaration": {
+            "name": "TextField",
+            "module": "src/text-field/TextField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/text-field/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./TextField.js"
           }
         }
       ]

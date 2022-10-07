@@ -277,6 +277,14 @@
           ],
           "slots": [
             {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
               "description": "Content to render inside button, can be positioned using {@link slotPosition} property.",
               "name": "[Default Slot]"
             }
@@ -323,6 +331,55 @@
               "description": "Indicator if the component is disabled.",
               "attribute": "disabled",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -363,11 +420,37 @@
               "description": "Indicator if the component is disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-button",
           "customElement": true
@@ -696,6 +779,14 @@
           ],
           "slots": [
             {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
               "description": "Replaces the icon for the indeterminate state",
               "name": "indeterminate_icon"
             },
@@ -829,6 +920,55 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "events": [
@@ -903,11 +1043,37 @@
               "description": "Indicator if the component is in and indeterminate state.",
               "fieldName": "indeterminate",
               "attribute": "indeterminate"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-check",
           "customElement": true
@@ -1152,6 +1318,14 @@
           ],
           "slots": [
             {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
               "description": "Replaces the icon for the chip slot",
               "name": "chip_icon"
             },
@@ -1202,6 +1376,55 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "events": [
@@ -1240,11 +1463,37 @@
               "description": "Indicator if the component is disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-chip",
           "customElement": true
@@ -1286,6 +1535,237 @@
           "declaration": {
             "name": "*",
             "package": "./Chip.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/DOMTreeElement.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An custom web component that renders the template directly into the main DOM tree instead of the ShadowRoot",
+          "name": "DOMTreeElement",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DOMTreeElement",
+          "declaration": {
+            "name": "DOMTreeElement",
+            "module": "src/core/DOMTreeElement.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "DOMTreeElement",
+            "module": "src/core/DOMTreeElement.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/core/OmniElement.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "\nBase element class that manages element properties and attributes, and\nrenders a lit template with asynchronous rendering support and themed styles.",
+          "name": "OmniElement",
+          "cssProperties": [
+            {
+              "description": "Theme primary color.",
+              "name": "--omni-theme-primary-color"
+            },
+            {
+              "description": "Theme primary hover color.",
+              "name": "--omni-theme-primary-hover-color"
+            },
+            {
+              "description": "Theme primary active color.",
+              "name": "--omni-theme-primary-active-color"
+            },
+            {
+              "description": "Theme accent color.",
+              "name": "--omni-theme-accent-color"
+            },
+            {
+              "description": "Theme accent hover color.",
+              "name": "--omni-theme-accent-hover-color"
+            },
+            {
+              "description": "Theme accent active color.",
+              "name": "--omni-theme-accent-active-color"
+            },
+            {
+              "description": "Theme background color.",
+              "name": "--omni-theme-background-color"
+            },
+            {
+              "description": "Theme background hover color.",
+              "name": "--omni-theme-background-hover-color"
+            },
+            {
+              "description": "Theme background active color.",
+              "name": "--omni-theme-background-active-color"
+            },
+            {
+              "description": "Theme font color.",
+              "name": "--omni-theme-font-color"
+            },
+            {
+              "description": "Theme disabled border color.",
+              "name": "--omni-theme-disabled-border-color"
+            },
+            {
+              "description": "Theme disabled background color.",
+              "name": "--omni-theme-disabled-background-color"
+            },
+            {
+              "description": "Theme disabled background color.",
+              "name": "--omni-theme-error-font-color"
+            },
+            {
+              "description": "Theme error border color.",
+              "name": "--omni-theme-error-border-color"
+            },
+            {
+              "description": "Theme hint font color.",
+              "name": "--omni-theme-hint-font-color"
+            },
+            {
+              "description": "Theme inactive color.",
+              "name": "--omni-theme-inactive-color"
+            },
+            {
+              "description": "Theme inactive color.",
+              "name": "--omni-theme-box-shadow-color"
+            },
+            {
+              "description": "Theme font family.",
+              "name": "--omni-theme-font-family"
+            },
+            {
+              "description": "Theme font size.",
+              "name": "--omni-theme-font-size"
+            },
+            {
+              "description": "Theme font weight.",
+              "name": "--omni-theme-font-weight"
+            },
+            {
+              "description": "Theme border radius.",
+              "name": "--omni-theme-border-radius"
+            },
+            {
+              "description": "Theme border width.",
+              "name": "--omni-theme-border-width"
+            },
+            {
+              "description": "Theme box shadow.",
+              "name": "--omni-theme-box-shadow"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir"
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang"
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir"
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "cssCategory": "Theme Variables",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OmniElement",
+          "declaration": {
+            "name": "OmniElement",
+            "module": "src/core/OmniElement.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "name": "OmniElement",
+            "module": "src/core/OmniElement.ts"
           }
         }
       ]
@@ -1473,6 +1953,14 @@
           ],
           "slots": [
             {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
               "description": "Replaces the icon for the prefix slot.",
               "name": "prefix"
             },
@@ -1602,6 +2090,55 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -1660,14 +2197,39 @@
               "description": "Indicator if the component should be disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
-          "cssCategory": "Base Form Variables",
-          "customElement": true
+          "cssCategory": "Base Form Variables"
         }
       ],
       "exports": [
@@ -2110,6 +2672,55 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -2167,14 +2778,50 @@
               "description": "Size of the Hyperlink text.",
               "fieldName": "size",
               "attribute": "size"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-hyperlink",
-          "customElement": true
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -2352,6 +2999,14 @@
           ],
           "slots": [
             {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
               "description": "The icon to be displayed",
               "name": "[Default Slot]"
             }
@@ -2377,6 +3032,55 @@
               "description": "The name of the icon to display. Takes preference over the slotted icon.",
               "attribute": "icon",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -2398,11 +3102,37 @@
               "description": "The name of the icon to display. Takes preference over the slotted icon.",
               "fieldName": "icon",
               "attribute": "icon"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-icon",
           "customElement": true
@@ -2454,12 +3184,22 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A check icon component.\n\n```js\nimport '@capitec/omni-components/icons/Check.icon.js';\n```",
+          "description": "A check icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Check.icon.js';\n```",
           "name": "CheckIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-check-icon",
           "customElement": true
@@ -2490,12 +3230,22 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A Close icon component.\n\n```js\nimport '@capitec/omni-components/icons/Close.icon.js';\n```",
+          "description": "A Close icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Close.icon.js';\n```",
           "name": "CloseIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-close-icon",
           "customElement": true
@@ -2526,12 +3276,22 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A hidden eye icon component\n\n```js\nimport '@capitec/omni-components/icons/EyeHidden.icon.js';\n```",
+          "description": "A hidden eye icon component\n\n```js\n\nimport '@capitec/omni-components/icons/EyeHidden.icon.js';\n```",
           "name": "EyeHiddenIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-eye-hidden-icon",
           "customElement": true
@@ -2562,12 +3322,22 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A visible eye icon component\n\n```js\nimport '@capitec/omni-components/icons/EyeVisible.icon.js';\n```",
+          "description": "A visible eye icon component\n\n```js\n\nimport '@capitec/omni-components/icons/EyeVisible.icon.js';\n```",
           "name": "EyeVisibleIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-eye-visible-icon",
           "customElement": true
@@ -2598,12 +3368,22 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An indeterminate icon component.\n\n```js\nimport '@capitec/omni-components/icons/Indeterminate.icon.js';\n```",
+          "description": "An indeterminate icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Indeterminate.icon.js';\n```",
           "name": "IndeterminateIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-indeterminate-icon",
           "customElement": true
@@ -2630,16 +3410,150 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/Loading.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A loading icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Loading.icon.js';\n```",
+          "name": "LoadingIcon",
+          "members": [
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-loading-icon",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "LoadingIcon",
+          "declaration": {
+            "name": "LoadingIcon",
+            "module": "src/icons/Loading.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-loading-icon",
+          "declaration": {
+            "name": "LoadingIcon",
+            "module": "src/icons/Loading.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/LockClosed.icon.ts",
       "declarations": [
         {
           "kind": "class",
-          "description": "A closed lock icon component\n\n```js\nimport '@capitec/omni-components/icons/LockClosed.icon.js';\n```",
+          "description": "A closed lock icon component\n\n```js\n\nimport '@capitec/omni-components/icons/LockClosed.icon.js';\n```",
           "name": "LockClosedIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement"
           },
           "tagName": "omni-lock-closed-icon",
           "customElement": true
@@ -2670,12 +3584,22 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A open lock icon component\n\n```js\nimport '@capitec/omni-components/icons/LockOpen.icon.js';\n```",
+          "description": "A open lock icon component\n\n```js\n\nimport '@capitec/omni-components/icons/LockOpen.icon.js';\n```",
           "name": "LockOpenIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement"
           },
           "tagName": "omni-lock-open-icon",
           "customElement": true
@@ -2708,10 +3632,20 @@
           "kind": "class",
           "description": "A minus icon component\n\n```js\nimport '@capitec/omni-components/icons/Minus.icon.js';\n```",
           "name": "MinusIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement"
           },
           "tagName": "omni-minus-icon",
           "customElement": true
@@ -2744,10 +3678,20 @@
           "kind": "class",
           "description": "A plus icon component\n\n```js\nimport '@capitec/omni-components/icons/Plus.icon.js';\n```",
           "name": "PlusIcon",
-          "members": [],
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement"
           },
           "tagName": "omni-plus-icon",
           "customElement": true
@@ -2940,6 +3884,55 @@
               "description": "The type of label to display.",
               "attribute": "type",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -2961,14 +3954,50 @@
               "description": "The type of label to display.",
               "fieldName": "type",
               "attribute": "type"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-label",
-          "customElement": true
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -3193,6 +4222,22 @@
             }
           ],
           "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
             {
               "description": "Replaces the icon for the prefix slot.",
               "name": "prefix",
@@ -3419,6 +4464,55 @@
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
@@ -3507,6 +4601,32 @@
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ]
         }
@@ -3529,6 +4649,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/numeric-field/README.md",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -3735,6 +4861,22 @@
             }
           ],
           "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
             {
               "description": "Replaces the icon for the prefix slot.",
               "name": "prefix",
@@ -3965,6 +5107,55 @@
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
@@ -4053,6 +5244,32 @@
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ]
         }
@@ -4075,6 +5292,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/password-field/README.md",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -4449,6 +5672,55 @@
                   "text": "void"
                 }
               }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "events": [
@@ -4514,14 +5786,50 @@
               "description": "Indicator if the component is disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-radio",
-          "customElement": true
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -4560,14 +5868,316 @@
     },
     {
       "kind": "javascript-module",
-      "path": "src/styles/ComponentStyles.ts",
+      "path": "src/render-element/README.md",
       "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/render-element/RenderElement.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => html`\n        <omni-render-element data-testid=\"test-render\" .data=\"${args.data}\" .renderer=\"${args.renderer}\"\n            >${args.loading_indicator\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}`\n                : nothing}</omni-render-element\n        >\n    `,\n    argTypes: {\n        renderer: {\n            control: false\n        }\n    },\n    args: {\n        data: {\n            hello: 'world',\n            'other-data': false\n        },\n        renderer: renderAsLit,\n        loading_indicator: ''\n    } as ArgTypes,\n    play: async (context: StoryContext) => {\n        const renderElement = within(context.canvasElement).getByTestId<RenderElement>('test-render');\n        const data = JSON.parse(JSON.stringify(context.args.data));\n\n        await expect(renderElement.renderRoot.querySelector('omni-loading-icon')).toBeTruthy();\n\n        console.log(`Running as '${navigator.userAgent}'`);\n        if (navigator.userAgent === 'Storybook Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await new Promise<void>((r) => setTimeout(() => r(), 10000));\n        }\n\n        const span1 = await querySelectorAsync(renderElement.renderRoot, 'span');\n        await expect(span1).toHaveTextContent(JSON.stringify(data));\n\n        data.hello = 'everyone';\n        renderElement.data = { ...data };\n\n        const loading = await querySelectorAsync(renderElement.renderRoot, 'omni-loading-icon');\n        await expect(loading).toBeTruthy();\n\n        const span2 = await querySelectorAsync(renderElement.renderRoot, 'span');\n        await expect(span2).toHaveTextContent(JSON.stringify(data));\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "AsLit",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    ...Interactive,\n    parameters: {\n        docs: {\n            source: {\n                code: `\n                \n<!-- Bound function used (<script> tags only for syntax highlighting) -->\n<script>\nasync function renderAsLit(data: object) {\n    await new Promise<void>((r) => setTimeout(() => r(), 3000));\n    return html\\`<span>\\${JSON.stringify(data)}</span>\\`;\n}\n</script>\n\n...\n                \n<omni-render-element .data=\"\\${this.someData}\" .renderer=\"\\${this.renderAsLit}\"></omni-render-element>\n`,\n                language: 'html'\n            }\n        }\n    },\n    name: 'As Lit'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "AsHTMLElement",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => {\n        const addValues = async () => {\n            let renderEl: RenderElement = undefined;\n            while (!renderEl) {\n                await new Promise<void>((r) => setTimeout(() => r(), 200));\n                renderEl = document.getElementById('renderElI') as RenderElement;\n            }\n\n            renderEl.renderer = args.renderer;\n            renderEl.data = args.data;\n        };\n        addValues();\n        return html` <omni-render-element id=\"renderElI\" data-testid=\"test-render\"></omni-render-element> `;\n    },\n    name: 'As HTML Element',\n    parameters: {\n        docs: {\n            source: {\n                code: `\n<omni-render-element id=\"renderElI\"></omni-render-element>\n<script defer>\n    async function renderAsElement(data) {\n        await new Promise((r) => setTimeout(() => r(), 3000));\n        const span = document.createElement('span');\n        span.appendChild(document.createTextNode(JSON.stringify(data)));\n        span.addEventListener('click', (ev) => alert('Clicked'));\n        return span;\n    }\n    renderEl = document.getElementById('renderElI');\n\n\n    renderEl.renderer = renderAsElement;\n    renderEl.data = {\n            hello: 'world',\n            'other-data': false\n    };\n</script>`,\n                language: 'html'\n            }\n        }\n    },\n    args: {\n        data: {\n            hello: 'world',\n            'other-data': false\n        },\n        renderer: renderAsElement\n    } as ArgTypes,\n    play: async (context: StoryContext) => {\n        const renderElement = within(context.canvasElement).getByTestId<RenderElement>('test-render');\n        const data = JSON.parse(JSON.stringify(context.args.data));\n        clicked = jest.fn();\n\n        await expect(renderElement.renderRoot.querySelector('omni-loading-icon')).toBeTruthy();\n\n        console.log(`Running as '${navigator.userAgent}'`);\n        if (navigator.userAgent === 'Storybook Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await new Promise<void>((r) => setTimeout(() => r(), 10000));\n        }\n\n        const span1 = (await querySelectorAsync(renderElement.renderRoot, 'span')) as HTMLSpanElement;\n        await expect(span1).toHaveTextContent(JSON.stringify(data));\n\n        data.hello = 'everyone';\n        renderElement.data = { ...data };\n\n        const load = await querySelectorAsync(renderElement.renderRoot, 'omni-loading-icon');\n        await expect(load).toBeTruthy();\n\n        const span2 = (await querySelectorAsync(renderElement.renderRoot, 'span')) as HTMLSpanElement;\n        await expect(span2).toHaveTextContent(JSON.stringify(data));\n        await userEvent.click(span2);\n        await userEvent.click(span2);\n        await expect(clicked).toBeCalledTimes(2);\n\n        clicked = () => alert('Clicked');\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "AsString",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: ArgTypes) => {\n        const addValues = async () => {\n            let renderEl: RenderElement = undefined;\n            while (!renderEl) {\n                renderEl = document.getElementById('renderElS') as RenderElement;\n                if (!renderEl) await new Promise<void>((r) => setTimeout(() => r(), 200));\n            }\n\n            renderEl.renderer = args.renderer;\n            renderEl.data = args.data;\n        };\n        addValues();\n        return html` <omni-render-element id=\"renderElS\" data-testid=\"test-render\"> </omni-render-element> `;\n    },\n    name: 'As String',\n    parameters: {\n        docs: {\n            source: {\n                code: `\n<omni-render-element id=\"renderElS\"></omni-render-element>\n<script defer>\n    async function renderAsString(data) {\n        await new Promise<void>((r) => setTimeout(() => r(), 3000));\n        return \\`<span>\\${JSON.stringify(data)}</span>\\`;\n    }\n    renderEl = document.getElementById('renderElS');\n\n\n    renderEl.renderer = renderAsString;\n    renderEl.data = {\n            hello: 'world',\n            'other-data': false\n    };\n</script>`,\n                language: 'html'\n            }\n        }\n    },\n    args: {\n        data: {\n            hello: 'world',\n            'other-data': false\n        },\n        renderer: renderAsString\n    } as ArgTypes,\n    play: async (context: StoryContext) => {\n        const renderElement = within(context.canvasElement).getByTestId<RenderElement>('test-render');\n        const data = JSON.parse(JSON.stringify(context.args.data));\n\n        await expect(renderElement.renderRoot.querySelector('omni-loading-icon')).toBeTruthy();\n\n        console.log(`Running as '${navigator.userAgent}'`);\n        if (navigator.userAgent === 'Storybook Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await new Promise<void>((r) => setTimeout(() => r(), 10000));\n        }\n\n        const span1 = await querySelectorAsync(renderElement.renderRoot, 'span');\n        await expect(span1).toHaveTextContent(JSON.stringify(data));\n\n        data.hello = 'everyone';\n        renderElement.data = { ...data };\n\n        const loading = await querySelectorAsync(renderElement.renderRoot, 'omni-loading-icon');\n        await expect(loading).toBeTruthy();\n\n        const span2 = await querySelectorAsync(renderElement.renderRoot, 'span');\n        await expect(span2).toHaveTextContent(JSON.stringify(data));\n    }\n}"
+        }
+      ],
       "exports": [
         {
           "kind": "js",
           "name": "default",
           "declaration": {
-            "module": "src/styles/ComponentStyles.ts"
+            "module": "src/render-element/RenderElement.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/render-element/RenderElement.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AsLit",
+          "declaration": {
+            "name": "AsLit",
+            "module": "src/render-element/RenderElement.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AsHTMLElement",
+          "declaration": {
+            "name": "AsHTMLElement",
+            "module": "src/render-element/RenderElement.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AsString",
+          "declaration": {
+            "name": "AsString",
+            "module": "src/render-element/RenderElement.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/render-element/RenderElement.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An element that defers content rendering to a provided function/promise.\n\n```js\n\nimport '@capitec/omni-components/render-element';\n```",
+          "name": "RenderElement",
+          "cssProperties": [
+            {
+              "description": "Loading Indicator width",
+              "name": "--omni-render-element-loading-indicator-width"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "renderer",
+              "type": {
+                "text": "RenderFunction"
+              },
+              "description": "The renderer function",
+              "attribute": "renderer"
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object | Promise<object>"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setChildInstance",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "result",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_updateChildInstance",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "result",
+                  "type": {
+                    "text": "HTMLElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_internalRenderer",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "Promise<TemplateResult | typeof nothing>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearElements",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "el",
+                  "default": "undefined",
+                  "type": {
+                    "text": "Element | ShadowRoot"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "data",
+              "type": {
+                "text": "object | Promise<object>"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data"
+            },
+            {
+              "name": "renderer",
+              "type": {
+                "text": "RenderFunction"
+              },
+              "description": "The renderer function",
+              "fieldName": "renderer"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-render-element",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RenderElement",
+          "declaration": {
+            "name": "RenderElement",
+            "module": "src/render-element/RenderElement.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-render-element",
+          "declaration": {
+            "name": "RenderElement",
+            "module": "src/render-element/RenderElement.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/render-element/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./RenderElement.js"
           }
         }
       ]
@@ -4922,6 +6532,55 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "events": [
@@ -4987,14 +6646,50 @@
               "description": "Indicator if the component is disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
-            "name": "LitElement",
-            "package": "lit"
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-switch",
-          "customElement": true
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -5030,6 +6725,12 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/text-field/README.md",
+      "declarations": [],
+      "exports": []
     },
     {
       "kind": "javascript-module",
@@ -5373,6 +7074,55 @@
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "superclass": {
@@ -5461,9 +7211,51 @@
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
             }
           ],
           "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
             {
               "description": "Replaces the icon for the prefix slot.",
               "name": "prefix",
@@ -5871,9 +7663,47 @@
               "type": {
                 "text": "TemplateStringsArray"
               }
+            },
+            {
+              "name": "values",
+              "type": {
+                "text": "unknown[]"
+              }
             }
           ],
           "description": "Interprets a template literal as a raw HTML string.\n\n```ts\nconst header = (title: string) => raw`<h1>${title}</h1>`;\n```\n\nThe `raw` tag returns a string that can be used directly as ```innerHTML``` or as ```unsafeHTML``` via lit."
+        },
+        {
+          "kind": "function",
+          "name": "querySelectorAsync",
+          "parameters": [
+            {
+              "name": "parent",
+              "type": {
+                "text": "Element | ShadowRoot"
+              }
+            },
+            {
+              "name": "selector",
+              "type": {
+                "text": "any"
+              }
+            },
+            {
+              "name": "checkFrequencyMs",
+              "default": "500",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "name": "timeoutMs",
+              "default": "15000",
+              "type": {
+                "text": "number"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -6034,6 +7864,14 @@
           "name": "raw",
           "declaration": {
             "name": "raw",
+            "module": "src/utils/StoryUtils.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "querySelectorAsync",
+          "declaration": {
+            "name": "querySelectorAsync",
             "module": "src/utils/StoryUtils.ts"
           }
         }

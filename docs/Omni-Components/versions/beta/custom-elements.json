@@ -701,6 +701,10 @@
               "name": "--omni-check-hint-label-font-weight"
             },
             {
+              "description": "Hint top padding.",
+              "name": "--omni-check-hint-label-padding-top"
+            },
+            {
               "description": "Error font color.",
               "name": "--omni-check-error-label-font-color"
             },
@@ -715,6 +719,10 @@
             {
               "description": "Error font weight.",
               "name": "--omni-check-error-label-font-weight"
+            },
+            {
+              "description": "Error top padding.",
+              "name": "--omni-check-error-label-padding-top"
             },
             {
               "description": "Width.",
@@ -1260,6 +1268,14 @@
               "name": "--omni-chip-padding"
             },
             {
+              "description": "Component hover border.",
+              "name": "--omni-chip-hover-border"
+            },
+            {
+              "description": "Component hover shadow.",
+              "name": "--omni-chip-hover-shadow"
+            },
+            {
               "description": "Component label left padding.",
               "name": "--omni-chip-label-padding-left"
             },
@@ -1300,20 +1316,16 @@
               "name": "--omni-chip-disabled-hover-background-color"
             },
             {
-              "description": "Component close icon left padding.",
-              "name": "--omni-chip-icon-padding-left"
-            },
-            {
-              "description": "Component close icon height.",
-              "name": "--omni-chip-icon-height"
-            },
-            {
-              "description": "Component close icon width.",
+              "description": "Component slotted icon width.",
               "name": "--omni-chip-icon-width"
             },
             {
+              "description": "Component close icon width.",
+              "name": "--omni-chip-close-icon-width"
+            },
+            {
               "description": "Component close icon color.",
-              "name": "--omni-chip-icon-color"
+              "name": "--omni-chip-close-icon-color"
             }
           ],
           "slots": [
@@ -1908,7 +1920,7 @@
               "name": "--omni-form-hint-label-padding-left"
             },
             {
-              "description": "-",
+              "description": "Form hint label border width.",
               "name": "--omni-form-hint-label-border-width"
             },
             {
@@ -4189,6 +4201,14 @@
               "name": "--omni-numeric-input-slot-width"
             },
             {
+              "description": " Numeric input slot height.",
+              "name": "--omni-numeric-input-slot-height"
+            },
+            {
+              "description": "Numeric input control divider color.",
+              "name": "--omni-numeric-input-divider-color"
+            },
+            {
               "description": "Numeric input control divider width.",
               "name": "--omni-numeric-input-divider-width"
             },
@@ -4219,6 +4239,10 @@
             {
               "description": "Numeric input field padding.",
               "name": "--omni-numeric-field-padding"
+            },
+            {
+              "description": "Numeric input control hover color.",
+              "name": "--omni-numeric-control-hover"
             }
           ],
           "slots": [
@@ -4838,6 +4862,10 @@
             {
               "description": "Password field text align.",
               "name": "--omni-password-field-text-align"
+            },
+            {
+              "description": "Password field font color.",
+              "name": "--omni-password-field-font-color"
             },
             {
               "description": "Password field font family.",
@@ -6859,6 +6887,10 @@
             {
               "description": "Text field text align.",
               "name": "--omni-text-field-text-align"
+            },
+            {
+              "description": "Text field font color.",
+              "name": "--omni-text-field-font-color"
             },
             {
               "description": "Text field font family.",

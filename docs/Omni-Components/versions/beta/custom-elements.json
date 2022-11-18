@@ -3270,6 +3270,12 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/currency-field/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/currency-field/index.ts",
       "declarations": [],
       "exports": [
@@ -4087,6 +4093,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/Clear.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A clear icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Clear.icon.js';\n```",
+          "name": "ClearIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-clear-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ClearIcon",
+          "declaration": {
+            "name": "ClearIcon",
+            "module": "src/icons/Clear.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-clear-icon",
+          "declaration": {
+            "name": "ClearIcon",
+            "module": "src/icons/Clear.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/Close.icon.ts",
       "declarations": [
         {
@@ -4582,6 +4634,52 @@
       "path": "src/icons/README.md",
       "declarations": [],
       "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/Search.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A search icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Search.icon.js';\n```",
+          "name": "SearchIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-search-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SearchIcon",
+          "declaration": {
+            "name": "SearchIcon",
+            "module": "src/icons/Search.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-search-icon",
+          "declaration": {
+            "name": "SearchIcon",
+            "module": "src/icons/Search.icon.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -7684,6 +7782,645 @@
           "declaration": {
             "name": "*",
             "package": "./RenderElement.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/search-field/SearchField.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n    render: (args: BaseArgTypes) => html`\n        <omni-search-field\n            data-testid=\"test-search-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\">\n            ${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${args.suffix\n                ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}`\n                : nothing}${args.prefix || args.suffix ? '\\r\\n' : nothing}\n        </omni-search-field>\n    `,\n    name: 'Interactive',\n    parameters: {},\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context: StoryContext) => {\n        const searchField = within(context.canvasElement).getByTestId<SearchField>('test-search-field');\n        const interaction = jest.fn();\n        const click = jest.fn();\n        searchField.addEventListener('input', interaction);\n        searchField.addEventListener('click', click);\n\n        const inputField = searchField.shadowRoot.getElementById('inputField');\n\n        const value = 'Batman';\n        await userEvent.type(inputField, value);\n        await expect(inputField).toHaveValue(value);\n        await expect(interaction).toBeCalledTimes(value.length);\n\n        const clearButton = searchField.shadowRoot.getElementById(`control`);\n        await userEvent.click(clearButton);\n\n        await expect(inputField).toHaveValue('');\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Hint"
+        },
+        {
+          "kind": "variable",
+          "name": "ErrorLabel"
+        },
+        {
+          "kind": "variable",
+          "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Prefix"
+        },
+        {
+          "kind": "variable",
+          "name": "Suffix"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hint",
+          "declaration": {
+            "name": "Hint",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ErrorLabel",
+          "declaration": {
+            "name": "ErrorLabel",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Value",
+          "declaration": {
+            "name": "Value",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Prefix",
+          "declaration": {
+            "name": "Prefix",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Suffix",
+          "declaration": {
+            "name": "Suffix",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/search-field/SearchField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A search input control.\n\n```js\n\nimport '@capitec/omni-components/search-field';\n```",
+          "name": "SearchField",
+          "cssProperties": [
+            {
+              "description": "Search field text align.",
+              "name": "--omni-search-field-text-align"
+            },
+            {
+              "description": "Search field font color.",
+              "name": "--omni-search-field-font-color"
+            },
+            {
+              "description": "Search field font family.",
+              "name": "--omni-search-field-font-family"
+            },
+            {
+              "description": "Search field font size.",
+              "name": "--omni-search-field-font-size"
+            },
+            {
+              "description": "Search field font weight.",
+              "name": "--omni-search-field-font-weight"
+            },
+            {
+              "description": "Search field height.",
+              "name": "--omni-search-field-height"
+            },
+            {
+              "description": "Search field width.",
+              "name": "--omni-search-field-padding"
+            },
+            {
+              "description": "Search field control right margin.",
+              "name": "--omni-search-field-control-margin-right"
+            },
+            {
+              "description": "Search field control left margin.",
+              "name": "--omni-search-field-control-margin-left"
+            },
+            {
+              "description": "Search field control width.",
+              "name": "--omni-search-field-control-width"
+            },
+            {
+              "description": "Search field clear icon color.",
+              "name": "--omni-search-field-clear-icon-color"
+            },
+            {
+              "description": "Search field clear icon width.",
+              "name": "--omni-search-field-clear-icon-width"
+            },
+            {
+              "description": "Search field search icon color.",
+              "name": "--omni-search-field-search-icon-color"
+            },
+            {
+              "description": "Search field search icon width.",
+              "name": "--omni-search-field-search-icon-width"
+            },
+            {
+              "description": "Search field search icon left margin.",
+              "name": "--omni-search-field-search-icon-margin-left"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_inputElement",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_keyInput"
+            },
+            {
+              "kind": "method",
+              "name": "_clearField",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderPrefix",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_formContainerElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_labelElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusGained",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusLost",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniFormElement",
+            "module": "/src/core/OmniFormElement.js"
+          },
+          "tagName": "omni-search-field",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SearchField",
+          "declaration": {
+            "name": "SearchField",
+            "module": "src/search-field/SearchField.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-search-field",
+          "declaration": {
+            "name": "SearchField",
+            "module": "src/search-field/SearchField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/search-field/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./SearchField.js"
           }
         }
       ]

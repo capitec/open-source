@@ -5,15 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omni Components</title>
+    <base href="/" >
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <style id="theme-styles"></style>
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <script type="module" src="/dist/utils/StoryRenderer.js"></script>
-    <script type="module" src="/dist/omni-components.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="./dist/utils/StoryRenderer.js"></script>
+    <script type="module" src="./dist/omni-components.js"></script>
     <script type="module" defer>
-        import { setupEleventy } from '/dist/utils/StoryUtils.js';
+        import { setupEleventy } from './dist/utils/StoryUtils.js';
         setupEleventy();
     </script>
 </head>
@@ -28,7 +30,7 @@
                 </div>
                 <div class="header-logo">
                     <div class="header-container">
-                        <img src="/assets/images/logo.png" width="30" height: "30" alt="logo">
+                        <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
                         <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
                     </div>
                 </div>
@@ -40,7 +42,7 @@
                         <select class="docs-select theme-select transparent-after-760" id="header-theme-select"></select>
                     </span>
                     <a href="https://github.com/capitec/omni-components" target="_blank" class="action">
-                        <img src="/assets/images/github.svg" style="cursor: pointer;">
+                        <img src="./assets/images/github.svg" style="cursor: pointer;">
                     </a>
                 </div>
             </header>
@@ -50,128 +52,128 @@
 <nav class="menu">
     <div class="menu-container">
         <div class="menu-item ">
-            <a class="menu-link "  href="/">Home</a>
+            <a class="menu-link "  href="./">Home</a>
         </div>
         <div class="menu-item ">
-            <a class="menu-link "  href="/getting-started/">Getting Started</a>
+            <a class="menu-link "  href="./getting-started/">Getting Started</a>
         </div>
         <div class="menu-item ">
-            <a class="menu-link "  href="/theme-support/">Theme Support</a>
+            <a class="menu-link "  href="./theme-support/">Theme Support</a>
         </div>
         <div class="menu-item ">
-            <a class="menu-link "  href="/contributing/">Contributing</a>
+            <a class="menu-link "  href="./contributing/">Contributing</a>
         </div>
         <div class="menu-item separator"><div class="line"></div></div>
         
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/button">
+            href="./components/button">
                 Button
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/check">
+            href="./components/check">
                 Check
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/chip">
+            href="./components/chip">
                 Chip
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/colorfield">
+            href="./components/colorfield">
                 ColorField
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/currencyfield">
+            href="./components/currencyfield">
                 CurrencyField
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/hyperlink">
+            href="./components/hyperlink">
                 Hyperlink
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/icon">
+            href="./components/icon">
                 Icon
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/label">
+            href="./components/label">
                 Label
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/numberfield">
+            href="./components/numberfield">
                 NumberField
             </a>
         </div>
         <div class="menu-item selected">
             <a class="menu-link selected"
             aria-current="page" 
-            href="/components/numericfield">
+            href="./components/numericfield">
                 NumericField
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/passwordfield">
+            href="./components/passwordfield">
                 PasswordField
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/radio">
+            href="./components/radio">
                 Radio
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/renderelement">
+            href="./components/renderelement">
                 RenderElement
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/searchfield">
+            href="./components/searchfield">
                 SearchField
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/switch">
+            href="./components/switch">
                 Switch
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="/components/textfield">
+            href="./components/textfield">
                 TextField
             </a>
         </div>
@@ -201,7 +203,7 @@
                 <div>Source</div>
                 <div>
                     <a href="https://github.com/capitec/omni-components/tree/develop/src/numeric-field/NumericField.ts" target="blank" class="component-info-item-link">
-                        <img src="/assets/images/github.svg" class="component-info-item-img">
+                        <img src="./assets/images/github.svg" class="component-info-item-img">
                         View on GitHub
                     </a>
                 </div>
@@ -210,7 +212,7 @@
                 <div>Package</div>
                 <div>
                     <a href="https://www.npmjs.com/package/@capitec/omni-components" target="blank" class="component-info-item-link">
-                        <img src="/assets/images/npm.svg" class="component-info-item-img">
+                        <img src="./assets/images/npm.svg" class="component-info-item-img">
                         @capitec/omni-components
                     </a>
                 </div>
@@ -236,7 +238,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Interactive"
                                     interactive 
@@ -248,7 +250,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Label"
                                      
@@ -260,7 +262,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Hint"
                                      
@@ -272,7 +274,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Error_Label"
                                      
@@ -284,7 +286,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Value"
                                      
@@ -296,7 +298,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Prefix"
                                      
@@ -308,7 +310,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Suffix"
                                      
@@ -320,7 +322,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Disabled"
                                      
@@ -332,7 +334,7 @@
                                 
 
                                 <story-renderer 
-                                    path="/dist/numeric-field/NumericField.stories.js" 
+                                    path="./dist/numeric-field/NumericField.stories.js" 
                                     tag="omni-numeric-field" 
                                     key="Custom_Icon_Slot"
                                      
@@ -1043,7 +1045,7 @@
 
             <footer>
                 <div class="logo">
-                    <img src="/assets/images/logo.png" width="30" height: "30" alt="logo">
+                    <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
                     <div style="font-weight: bold">Omni Components</div>
                 </div>
                 <div class="links">

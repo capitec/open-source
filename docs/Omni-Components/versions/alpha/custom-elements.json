@@ -24,7 +24,7 @@
         {
           "kind": "variable",
           "name": "Slot",
-          "default": "{\n    render: () => html`\n    <omni-button data-testid=\"test-button\">\n      <omni-icon size=\"default\" icon=\"/assets/images/direction.svg\"></omni-icon>\n    </omni-button>\n  `,\n    name: 'Slot',\n    args: {},\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const slotElement = button.shadowRoot.querySelector('slot');\n        const foundSlottedOmniIconElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'omni-icon');\n        await expect(foundSlottedOmniIconElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: () => html`\n    <omni-button data-testid=\"test-button\">\n      <omni-icon size=\"default\" icon=\"./assets/images/direction.svg\"></omni-icon>\n    </omni-button>\n  `,\n    name: 'Slot',\n    args: {},\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const slotElement = button.shadowRoot.querySelector('slot');\n        const foundSlottedOmniIconElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'omni-icon');\n        await expect(foundSlottedOmniIconElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4364,7 +4364,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Local Source',\n    args: {\n        size: 'default',\n        icon: '/assets/images/colors.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot.querySelector('img');\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(Icon_Path.args.icon)).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Local Source',\n    args: {\n        size: 'default',\n        icon: './assets/images/colors.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot.querySelector('img');\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(Icon_Path.args.icon)).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -10642,7 +10642,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'/custom-elements.json'",
+              "default": "'./custom-elements.json'",
               "attribute": "custom-elements",
               "reflects": true
             },
@@ -10777,7 +10777,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'/custom-elements.json'",
+              "default": "'./custom-elements.json'",
               "fieldName": "customElementsPath"
             },
             {
@@ -11429,7 +11429,7 @@
           "parameters": [
             {
               "name": "path",
-              "default": "'/custom-elements.json'"
+              "default": "'./custom-elements.json'"
             }
           ]
         },
@@ -11439,7 +11439,7 @@
           "parameters": [
             {
               "name": "path",
-              "default": "'/custom-elements.json'"
+              "default": "'./custom-elements.json'"
             }
           ]
         },

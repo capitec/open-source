@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/search-field/index.ts"],
+  "mappings": "mfAAAA,IAAAC",
+  "names": ["init_define_process_argv", "init_global"]
+}

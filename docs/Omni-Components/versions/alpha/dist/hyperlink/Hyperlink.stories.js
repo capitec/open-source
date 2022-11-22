@@ -1,0 +1,15 @@
+import"../chunks-js/chunk.TTB6IPDT.js";import{b as s,c as d}from"../chunks-js/chunk.LME64W74.js";import{a as o}from"../chunks-js/chunk.R4IMIBZU.js";import{c as a}from"../chunks-js/chunk.QC5ZUB6O.js";import{d as l}from"../chunks-js/chunk.YQLTAQFI.js";import"../chunks-js/chunk.WVW5AE5A.js";import"../chunks-js/chunk.CHYIO324.js";import"../chunks-js/chunk.2UFE7DL7.js";import{b as i}from"../chunks-js/chunk.3GEUDTAZ.js";import{h as y,l as c,o as m}from"../chunks-js/chunk.2ZZQBHAA.js";c();m();var p=y(d(),1);var k=["_self","_blank","_parent","_top"],B={title:"UI Components/Hyperlink",component:"omni-hyperlink",argTypes:{size:{control:"radio",options:["default","small"]},target:{control:"radio",options:k}}},L={render:e=>i`
+    <omni-hyperlink
+      data-testid="test-hyperlink"
+      label="${o(e.label)}"
+      href="${o(e.href)}"
+      target="${o(e.target)}"
+      ?disabled="${e.disabled}"
+      ?inline="${e.inline}"
+      size="${e.size}"></omni-hyperlink>
+  `,name:"Interactive",args:{label:"Click",href:"",disabled:!1,inline:!1,size:""},play:async e=>{let t=a(e.canvasElement).getByTestId("test-hyperlink"),n=p.fn();t.addEventListener("click",()=>n()),await s.click(t,{pointerEventsCheck:0}),await s.click(t,{pointerEventsCheck:0}),await l(n).toBeCalledTimes(2)}},h={render:e=>i`<omni-hyperlink data-testid="test-hyperlink" label="${e.label}"></omni-hyperlink>`,name:"Label",args:{label:"Click"},play:async e=>{let t=a(e.canvasElement).getByTestId("test-hyperlink");await l(t.shadowRoot.querySelector("a")).toHaveTextContent(h.args.label)}},b={render:e=>i`<omni-hyperlink data-testid="test-hyperlink" label="${e.label}" size="${e.size}"></omni-hyperlink>`,name:"Size",args:{label:"Click",size:"small"},play:async e=>{let t=a(e.canvasElement).getByTestId("test-hyperlink");await l(t).toHaveAttribute("size",b.args.size)}},g={render:e=>i`<omni-hyperlink data-testid="test-hyperlink" label="${e.label}" href="${e.href}" target="_blank"></omni-hyperlink>`,name:"Href",args:{label:"Click",href:"https://example.com"},play:async e=>{let t=a(e.canvasElement).getByTestId("test-hyperlink");await l(t).toHaveAttribute("href",g.args.href)}},_={render:e=>i`<omni-hyperlink
+      data-testid="test-hyperlink"
+      href="https://example.com"
+      label="${e.label}"
+      ?disabled="${e.disabled}"></omni-hyperlink>`,name:"Disabled",args:{label:"Click",disabled:!0},play:async e=>{let t=a(e.canvasElement).getByTestId("test-hyperlink"),n=p.fn();t.addEventListener("click",()=>n()),await s.click(t,{pointerEventsCheck:0}),await s.click(t,{pointerEventsCheck:0}),await l(n).toBeCalledTimes(0)}},j={render:e=>i`<p data-testid="test-paragraph"> Inline <omni-hyperlink label="${e.label}" ?inline="${e.inline}"></omni-hyperlink> example </p>`,name:"Inline",args:{label:"click",inline:!0},play:async e=>{let t=a(e.canvasElement).getByTestId("test-paragraph"),n=t.querySelector("omni-hyperlink");await l(t).toContainElement(n)}};export{_ as Disabled,g as Href,j as Inline,L as Interactive,h as Label,b as Size,B as default};
+//# sourceMappingURL=Hyperlink.stories.js.map

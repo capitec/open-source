@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/hyperlink/index.ts"],
+  "mappings": "yQAAAA,IAAAC",
+  "names": ["init_define_process_argv", "init_global"]
+}

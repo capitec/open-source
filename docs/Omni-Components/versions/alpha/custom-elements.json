@@ -8271,8 +8271,7 @@
               "type": {
                 "text": "RenderFunction"
               },
-              "description": "The renderer function",
-              "attribute": "renderer"
+              "description": "The renderer function"
             },
             {
               "kind": "field",
@@ -8393,14 +8392,6 @@
               "description": "Data associated with the component.",
               "fieldName": "data",
               "attribute": "data"
-            },
-            {
-              "name": "renderer",
-              "type": {
-                "text": "RenderFunction"
-              },
-              "description": "The renderer function",
-              "fieldName": "renderer"
             },
             {
               "name": "dir",

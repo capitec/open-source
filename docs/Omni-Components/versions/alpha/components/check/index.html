@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omni Components</title>
-    <base href="/open-source/docs/Omni-Components/versions/alpha/">
+    <base href="/open-source/docs/Omni-Components/versions/alpha/" >
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
@@ -28,15 +28,20 @@
                         menu
                     </span>
                 </div>
-                <div class="header-logo">
-                    <div class="header-container">
-                        <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
-                        <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                <div style="display: flex;">
+                    <div class="header-logo">
+                        <div class="header-container" id="header-container">
+                            <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                            <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                        </div>
+                    </div>
+                    <div class="header-version">
+                        LOCAL
                     </div>
                 </div>
                 <div class="header-actions">
                     <span class="header-theme-section">
-                        <span class="material-icons action hidden-until-760" id="header-theme-select-btn">
+                        <span class="material-icons action hidden-until-760 action" id="header-theme-select-btn">
                             format_color_fill
                         </span>
                         <select class="docs-select theme-select transparent-after-760" id="header-theme-select"></select>
@@ -224,7 +229,7 @@
             <div class="component-tab-wrapper">
                 <div class="component-tab-list" role="tablist">
                     <div role="tab" class="component-tab-button active" data-name="examples" onclick="openTab(event.currentTarget, 'examples')">Examples</div>
-                    <div role="tab" class="component-tab-button" data-name="docs" onclick="openTab(event.currentTarget, 'docs')">Documentation</div>
+                    <div role="tab" class="component-tab-button" data-name="docs" onclick="openTab(event.currentTarget, 'docs')">Docs</div>
                     <div role="tab" class="component-tab-button" data-name="styles" onclick="openTab(event.currentTarget, 'styles')">Styles</div>
                 </div>
             </div>
@@ -345,31 +350,31 @@
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
-                                    <a href="#story-interactive" id="story-interactive" class="item">
+                                    <a href="components/check/#story-interactive" id="story-interactive" class="item">
                                         Interactive
                                     </a>
-                                    <a href="#story-label" id="story-label" class="item">
+                                    <a href="components/check/#story-label" id="story-label" class="item">
                                         Label
                                     </a>
-                                    <a href="#story-hint" id="story-hint" class="item">
+                                    <a href="components/check/#story-hint" id="story-hint" class="item">
                                         Hint
                                     </a>
-                                    <a href="#story-error-label" id="story-error_label" class="item">
+                                    <a href="components/check/#story-error-label" id="story-error_label" class="item">
                                         Error Label
                                     </a>
-                                    <a href="#story-checked" id="story-checked" class="item">
+                                    <a href="components/check/#story-checked" id="story-checked" class="item">
                                         Checked
                                     </a>
-                                    <a href="#story-indeterminate" id="story-indeterminate" class="item">
+                                    <a href="components/check/#story-indeterminate" id="story-indeterminate" class="item">
                                         Indeterminate
                                     </a>
-                                    <a href="#story-disabled" id="story-disabled" class="item">
+                                    <a href="components/check/#story-disabled" id="story-disabled" class="item">
                                         Disabled
                                     </a>
-                                    <a href="#story-custom-check-icon" id="story-custom_check_icon" class="item">
+                                    <a href="components/check/#story-custom-check-icon" id="story-custom_check_icon" class="item">
                                         Custom Check Icon
                                     </a>
-                                    <a href="#story-custom-indeterminate-icon" id="story-custom_indeterminate_icon" class="item">
+                                    <a href="components/check/#story-custom-indeterminate-icon" id="story-custom_indeterminate_icon" class="item">
                                         Custom Indeterminate Icon
                                     </a>
                             </div>
@@ -379,7 +384,7 @@
             </div>
             <div class="component-tab" id="docs" role="tabpanel">
 
-                <h2 class="component-props-table-header" style="padding-top: 24px;">Attributes</h2>
+                <h2 class="component-props-table-header" style="padding-top: 24px;">Properties</h2>
                 <div class="docs-search-area">
                     <div class="docs-search-wrapper">
                         <div class="docs-search-icon">
@@ -387,7 +392,7 @@
                                 search
                             </span>
                         </div>
-                        <input class="docs-search-input" id="attribute-search" type="text" placeholder="Search attributes" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
+                        <input class="docs-search-input" id="attribute-search" type="text" placeholder="Search properties" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
                     </div>
                 </div>
                 <div class="component-props-table-wrapper">
@@ -395,6 +400,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
+                                <th scope="col">Attribute</th>
                                 <th scope="col">Type</th>
                                 <th scope="col">Description</th>
                             </tr>
@@ -403,54 +409,63 @@
                             
                             <tr>
                                 <td data-label="Name" scope="row">label</td>
+                                <td data-label="Attribute" scope="row">label&nbsp;</td>
                                 <td data-label="Type">string</td>
                                 <td data-label="Description">Text label.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">data</td>
+                                <td data-label="Attribute" scope="row">data&nbsp;</td>
                                 <td data-label="Type">object</td>
                                 <td data-label="Description">Data associated with the component.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">hint</td>
+                                <td data-label="Attribute" scope="row">hint&nbsp;</td>
                                 <td data-label="Type">string</td>
                                 <td data-label="Description">A hint message to assist the user.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">error</td>
+                                <td data-label="Attribute" scope="row">error&nbsp;</td>
                                 <td data-label="Type">string</td>
                                 <td data-label="Description">An error message to guide users to correct a mistake.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">checked</td>
+                                <td data-label="Attribute" scope="row">checked&nbsp;</td>
                                 <td data-label="Type">boolean</td>
                                 <td data-label="Description">Indicator if the component is checked or not.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">disabled</td>
+                                <td data-label="Attribute" scope="row">disabled&nbsp;</td>
                                 <td data-label="Type">boolean</td>
                                 <td data-label="Description">Indicator if the component is disabled.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">indeterminate</td>
+                                <td data-label="Attribute" scope="row">indeterminate&nbsp;</td>
                                 <td data-label="Type">boolean</td>
                                 <td data-label="Description">Indicator if the component is in and indeterminate state.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">dir</td>
+                                <td data-label="Attribute" scope="row">dir&nbsp;</td>
                                 <td data-label="Type">string</td>
                                 <td data-label="Description">Used to set the base direction of text for display</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">lang</td>
+                                <td data-label="Attribute" scope="row">lang&nbsp;</td>
                                 <td data-label="Type">string</td>
                                 <td data-label="Description">Used to identify the language of text content on the web</td>
                             </tr>
@@ -532,8 +547,9 @@
                 </div>
             </div>
             <div class="component-tab" id="styles" role="tabpanel">
+                <div style="padding-top: 24px;"></div>
                 
-                <h2 class="component-props-table-header"  style="padding-top: 24px;">CSS Properties</h2>
+                <h2 class="component-props-table-header" >Theme Variables</h2>
                 <div class="docs-search-area">
                     <div class="docs-search-wrapper">
                         <div class="docs-search-icon">
@@ -541,7 +557,7 @@
                                 search
                             </span>
                         </div>
-                        <input class="docs-search-input" id="css-prop-search" type="text" placeholder="Search CSS properties" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
+                        <input class="docs-search-input css-category" data-category="Theme Variables" type="text" placeholder="Search Theme Variables" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
                     </div>
                 </div>
                 <div class="component-props-table-wrapper">
@@ -550,332 +566,304 @@
                             <tr>
                                 <th scope="col">Name</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Category</th>
                             </tr>
                         </thead>
-                        <tbody id="component-css-props">
+                        <tbody data-category="Theme Variables" class="component-css-props">
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-primary-color</td>
                                 <td data-label="Description">Theme primary color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-primary-hover-color</td>
                                 <td data-label="Description">Theme primary hover color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-primary-active-color</td>
                                 <td data-label="Description">Theme primary active color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-accent-color</td>
                                 <td data-label="Description">Theme accent color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-accent-hover-color</td>
                                 <td data-label="Description">Theme accent hover color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-accent-active-color</td>
                                 <td data-label="Description">Theme accent active color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-background-color</td>
                                 <td data-label="Description">Theme background color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-background-hover-color</td>
                                 <td data-label="Description">Theme background hover color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-background-active-color</td>
                                 <td data-label="Description">Theme background active color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-font-color</td>
                                 <td data-label="Description">Theme font color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-disabled-border-color</td>
                                 <td data-label="Description">Theme disabled border color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-disabled-background-color</td>
                                 <td data-label="Description">Theme disabled background color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-error-font-color</td>
                                 <td data-label="Description">Theme disabled background color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-error-border-color</td>
                                 <td data-label="Description">Theme error border color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-hint-font-color</td>
                                 <td data-label="Description">Theme hint font color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-inactive-color</td>
                                 <td data-label="Description">Theme inactive color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-box-shadow-color</td>
                                 <td data-label="Description">Theme inactive color.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-font-family</td>
                                 <td data-label="Description">Theme font family.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-font-size</td>
                                 <td data-label="Description">Theme font size.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-font-weight</td>
                                 <td data-label="Description">Theme font weight.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-border-radius</td>
                                 <td data-label="Description">Theme border radius.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-border-width</td>
                                 <td data-label="Description">Theme border width.</td>
-                                <td data-label="Category">Theme Variables</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">--omni-theme-box-shadow</td>
                                 <td data-label="Description">Theme box shadow.</td>
-                                <td data-label="Category">Theme Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-label-font-color</td>
-                                <td data-label="Description">Label font color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-label-font-family</td>
-                                <td data-label="Description">Label font family.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-label-font-size</td>
-                                <td data-label="Description">Label font size.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-label-font-weight</td>
-                                <td data-label="Description">Label font weight.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-label-spacing</td>
-                                <td data-label="Description">Label spacing.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hint-label-font-color</td>
-                                <td data-label="Description">Hint font color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hint-label-font-family</td>
-                                <td data-label="Description">Hint font family.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hint-label-font-size</td>
-                                <td data-label="Description">Hint font size.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hint-label-font-weight</td>
-                                <td data-label="Description">Hint font weight.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hint-label-padding-top</td>
-                                <td data-label="Description">Hint top padding.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-error-label-font-color</td>
-                                <td data-label="Description">Error font color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-error-label-font-family</td>
-                                <td data-label="Description">Error font family.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-error-label-font-size</td>
-                                <td data-label="Description">Error font size.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-error-label-font-weight</td>
-                                <td data-label="Description">Error font weight.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-error-label-padding-top</td>
-                                <td data-label="Description">Error top padding.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-width</td>
-                                <td data-label="Description">Width.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-height</td>
-                                <td data-label="Description">Height.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-background-color</td>
-                                <td data-label="Description">Background color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-border-width</td>
-                                <td data-label="Description">Border width.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-border-color</td>
-                                <td data-label="Description">Border color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-border-radius</td>
-                                <td data-label="Description">Border radius.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-indicator-border-width</td>
-                                <td data-label="Description">Indicator Border width.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-indicator-border-color</td>
-                                <td data-label="Description">Indicator Border color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-indicator-color</td>
-                                <td data-label="Description">Indicator color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-checked-background-color</td>
-                                <td data-label="Description">Checked Background color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-indeterminate-background-color</td>
-                                <td data-label="Description">Indeterminate Background color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-disabled-background-color</td>
-                                <td data-label="Description">Disabled Background color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-disabled-border-color</td>
-                                <td data-label="Description">Disabled border color.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hover-box-shadow</td>
-                                <td data-label="Description">Hover box shadow.</td>
-                                <td data-label="Category">Component Variables</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">--omni-check-hover-background-color</td>
-                                <td data-label="Description">Hover background color.</td>
-                                <td data-label="Category">Component Variables</td>
                             </tr>
                             
                         </tbody>
                     </table>
                 </div>
+                
+                <h2 class="component-props-table-header" >Component Variables</h2>
+                <div class="docs-search-area">
+                    <div class="docs-search-wrapper">
+                        <div class="docs-search-icon">
+                            <span class="material-icons">
+                                search
+                            </span>
+                        </div>
+                        <input class="docs-search-input css-category" data-category="Component Variables" type="text" placeholder="Search Component Variables" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
+                    </div>
+                </div>
+                <div class="component-props-table-wrapper">
+                    <table class="component-props-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody data-category="Component Variables" class="component-css-props">
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-label-font-color</td>
+                                <td data-label="Description">Label font color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-label-font-family</td>
+                                <td data-label="Description">Label font family.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-label-font-size</td>
+                                <td data-label="Description">Label font size.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-label-font-weight</td>
+                                <td data-label="Description">Label font weight.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-label-spacing</td>
+                                <td data-label="Description">Label spacing.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hint-label-font-color</td>
+                                <td data-label="Description">Hint font color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hint-label-font-family</td>
+                                <td data-label="Description">Hint font family.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hint-label-font-size</td>
+                                <td data-label="Description">Hint font size.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hint-label-font-weight</td>
+                                <td data-label="Description">Hint font weight.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hint-label-padding-top</td>
+                                <td data-label="Description">Hint top padding.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-error-label-font-color</td>
+                                <td data-label="Description">Error font color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-error-label-font-family</td>
+                                <td data-label="Description">Error font family.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-error-label-font-size</td>
+                                <td data-label="Description">Error font size.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-error-label-font-weight</td>
+                                <td data-label="Description">Error font weight.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-error-label-padding-top</td>
+                                <td data-label="Description">Error top padding.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-width</td>
+                                <td data-label="Description">Width.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-height</td>
+                                <td data-label="Description">Height.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-background-color</td>
+                                <td data-label="Description">Background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-border-width</td>
+                                <td data-label="Description">Border width.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-border-color</td>
+                                <td data-label="Description">Border color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-border-radius</td>
+                                <td data-label="Description">Border radius.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-indicator-border-width</td>
+                                <td data-label="Description">Indicator Border width.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-indicator-border-color</td>
+                                <td data-label="Description">Indicator Border color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-indicator-color</td>
+                                <td data-label="Description">Indicator color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-checked-background-color</td>
+                                <td data-label="Description">Checked Background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-indeterminate-background-color</td>
+                                <td data-label="Description">Indeterminate Background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-disabled-background-color</td>
+                                <td data-label="Description">Disabled Background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-disabled-border-color</td>
+                                <td data-label="Description">Disabled border color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hover-box-shadow</td>
+                                <td data-label="Description">Hover box shadow.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">--omni-check-hover-background-color</td>
+                                <td data-label="Description">Hover background color.</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -905,9 +893,8 @@
                     <div class="item">
                         <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
                     </div>
-                    <div class="spacer"></div>
-                    <div class="item copyright" style="">Copyright &copy; 2022</div>
                 </div>
+                <div class="copyright" style="">Copyright &copy; 2022</div>
             </footer>
         </div>
     </div>

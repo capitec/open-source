@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Omni Components - Getting Started</title>
-    <base href="/open-source/docs/Omni-Components/versions/alpha/">
+    <base href="/open-source/docs/Omni-Components/versions/alpha/" >
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
@@ -28,15 +28,20 @@
                         menu
                     </span>
                 </div>
-                <div class="header-logo">
-                    <div class="header-container">
-                        <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
-                        <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                <div style="display: flex;">
+                    <div class="header-logo">
+                        <div class="header-container" id="header-container">
+                            <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                            <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                        </div>
+                    </div>
+                    <div class="header-version">
+                        LOCAL
                     </div>
                 </div>
                 <div class="header-actions">
                     <span class="header-theme-section">
-                        <span class="material-icons action hidden-until-760" id="header-theme-select-btn">
+                        <span class="material-icons action hidden-until-760 action" id="header-theme-select-btn">
                             format_color_fill
                         </span>
                         <select class="docs-select theme-select transparent-after-760" id="header-theme-select"></select>
@@ -251,9 +256,8 @@ npm install @capitec/omni-components
                     <div class="item">
                         <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
                     </div>
-                    <div class="spacer"></div>
-                    <div class="item copyright" style="">Copyright &copy; 2022</div>
                 </div>
+                <div class="copyright" style="">Copyright &copy; 2022</div>
             </footer>
         </div>
     </div>

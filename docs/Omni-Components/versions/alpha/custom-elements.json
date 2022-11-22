@@ -3060,7 +3060,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            currency=\"${ifNotEmpty(args.currency)}\"\n            locale=\"${ifNotEmpty(args.locale)}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}\n        </omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        currency: '',\n        locale: ''\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n        // Check the following value as input value is formatted to currency value;\n        await expect(inputField).toHaveValue('1,200,000.15');\n        await expect(input).toBeCalledTimes(value.length);\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 10,\n            initialSelectionEnd: 10\n        });\n\n        await currencyField.updateComplete;\n\n        await expect(inputField).toHaveValue('1,200,000');\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n        await expect(inputField).toHaveValue('120,000');\n\n        // Set currency property to be invalid value.\n        currencyField.currency = 'cents';\n    }\n}"
+          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            currency=\"${ifNotEmpty(args.currency)}\"\n            locale=\"${ifNotEmpty(args.locale)}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}\n        </omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        currency: '',\n        locale: ''\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 10,\n            initialSelectionEnd: 10\n        });\n\n        await currencyField.updateComplete;\n\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000'), {\n            timeout: 3000\n        });\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n        await waitFor(() => expect(inputField).toHaveValue('120,000'), {\n            timeout: 3000\n        });\n\n        // Set currency property to be invalid value.\n        currencyField.currency = 'cents';\n    }\n}"
         },
         {
           "kind": "variable",
@@ -3179,7 +3179,7 @@
         },
         {
           "kind": "class",
-          "description": "A currency input control that formats input based on currency and locale.\n\n```js\n\nimport '@capitec/omni-components/currency-field';\n```",
+          "description": "A currency input control that formats input based on currency and locale.",
           "name": "CurrencyField",
           "cssProperties": [
             {
@@ -3810,6 +3810,7 @@
             "module": "/src/core/OmniFormElement.js"
           },
           "tagName": "omni-currency-field",
+          "import": "```js\nimport '@capitec/omni-components/currency-field';\n```",
           "customElement": true,
           "slots": [
             {
@@ -4364,7 +4365,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Local Source',\n    args: {\n        size: 'default',\n        icon: './assets/images/colors.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot.querySelector('img');\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(Icon_Path.args.icon)).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Local Source',\n    args: {\n        size: 'default',\n        icon: './assets/images/colors.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot.querySelector('img');\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(Icon_Path.args.icon.replace('./', '/'))).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -8608,7 +8609,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A search input control.\n\n```js\n\nimport '@capitec/omni-components/search-field';\n```",
+          "description": "A search input control.",
           "name": "SearchField",
           "cssProperties": [
             {
@@ -8947,6 +8948,7 @@
             "module": "/src/core/OmniFormElement.js"
           },
           "tagName": "omni-search-field",
+          "import": "```js\nimport '@capitec/omni-components/search-field';\n```",
           "customElement": true,
           "attributes": [
             {

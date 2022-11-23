@@ -201,8 +201,8 @@
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code">
-                    <pre><code class="language-js" id="component-import-code">import &#39;@capitec/omni-components/button&#39;;</code></pre>
-                    <span class="copy-icon material-icons" style="font-size: 16px; cursor: pointer; margin-left: 6px;" onclick="copyToClipboard('component-import-code');return false;">
+                    <pre><code class="language-js" style="white-space: pre; !important" id="component-import-code">import &#39;@capitec/omni-components/button&#39;;</code></pre>
+                    <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
                         content_copy
                     </span>
                 </div>
@@ -243,62 +243,47 @@
                             
                             <div class="name" id="story-interactive">Interactive</div>
                             <div class="story">
-                                
-
                                 <story-renderer 
                                     path="./dist/button/Button.stories.js" 
                                     tag="omni-button" 
                                     key="Interactive"
-                                    interactive 
-                                >
+                                    interactive >
                                 </story-renderer>
                             </div>
                             <div class="name" id="story-type">Type</div>
                             <div class="story">
-                                
-
                                 <story-renderer 
                                     path="./dist/button/Button.stories.js" 
                                     tag="omni-button" 
                                     key="Type"
-                                     
-                                >
+                                     >
                                 </story-renderer>
                             </div>
                             <div class="name" id="story-label">Label</div>
                             <div class="story">
-                                
-
                                 <story-renderer 
                                     path="./dist/button/Button.stories.js" 
                                     tag="omni-button" 
                                     key="Label"
-                                     
-                                >
+                                     >
                                 </story-renderer>
                             </div>
                             <div class="name" id="story-slot">Slot</div>
                             <div class="story">
-                                
-
                                 <story-renderer 
                                     path="./dist/button/Button.stories.js" 
                                     tag="omni-button" 
                                     key="Slot"
-                                     
-                                >
+                                     >
                                 </story-renderer>
                             </div>
                             <div class="name" id="story-disabled">Disabled</div>
                             <div class="story">
-                                
-
                                 <story-renderer 
                                     path="./dist/button/Button.stories.js" 
                                     tag="omni-button" 
                                     key="Disabled"
-                                     
-                                >
+                                     >
                                 </story-renderer>
                             </div>
                         </div>
@@ -353,42 +338,42 @@
                             <tr>
                                 <td data-label="Name" scope="row">type</td>
                                 <td data-label="Attribute" scope="row">type&nbsp;</td>
-                                <td data-label="Type">&#39;primary&#39; | &#39;secondary&#39; | &#39;clear&#39; | &#39;white&#39;</td>
+                                <td data-label="Type"><pre><code class="language-js">&#39;primary&#39; | &#39;secondary&#39; | &#39;clear&#39; | &#39;white&#39;</code></pre></td>
                                 <td data-label="Description">Display type.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">label</td>
                                 <td data-label="Attribute" scope="row">label&nbsp;</td>
-                                <td data-label="Type">string</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                 <td data-label="Description">Text label.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">slotPosition</td>
                                 <td data-label="Attribute" scope="row">slot-position&nbsp;</td>
-                                <td data-label="Type">&#39;left&#39; | &#39;top&#39; | &#39;right&#39; | &#39;bottom&#39;</td>
+                                <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;top&#39; | &#39;right&#39; | &#39;bottom&#39;</code></pre></td>
                                 <td data-label="Description">Position of slotted content.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">disabled</td>
                                 <td data-label="Attribute" scope="row">disabled&nbsp;</td>
-                                <td data-label="Type">boolean</td>
+                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
                                 <td data-label="Description">Indicator if the component is disabled.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">dir</td>
                                 <td data-label="Attribute" scope="row">dir&nbsp;</td>
-                                <td data-label="Type">string</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                 <td data-label="Description">Used to set the base direction of text for display</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">lang</td>
                                 <td data-label="Attribute" scope="row">lang&nbsp;</td>
-                                <td data-label="Type">string</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                 <td data-label="Description">Used to identify the language of text content on the web</td>
                             </tr>
                             
@@ -444,12 +429,12 @@
                         <tbody id="component-slots">
                             
                             <tr>
-                                <td data-label="Name" scope="row">loading_indicator</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
                                 <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">[Default Slot]</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
                                 <td data-label="Description">Content to render inside button, can be positioned using <strong>slotPosition</strong> property.</td>
                             </tr>
                             
@@ -482,117 +467,117 @@
                         <tbody data-category="Theme Variables" class="component-css-props">
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-primary-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-primary-color</code></pre></td>
                                 <td data-label="Description">Theme primary color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-primary-hover-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-primary-hover-color</code></pre></td>
                                 <td data-label="Description">Theme primary hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-primary-active-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-primary-active-color</code></pre></td>
                                 <td data-label="Description">Theme primary active color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-accent-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-accent-color</code></pre></td>
                                 <td data-label="Description">Theme accent color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-accent-hover-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-accent-hover-color</code></pre></td>
                                 <td data-label="Description">Theme accent hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-accent-active-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-accent-active-color</code></pre></td>
                                 <td data-label="Description">Theme accent active color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-background-color</code></pre></td>
                                 <td data-label="Description">Theme background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-background-hover-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-background-hover-color</code></pre></td>
                                 <td data-label="Description">Theme background hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-background-active-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-background-active-color</code></pre></td>
                                 <td data-label="Description">Theme background active color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-font-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-color</code></pre></td>
                                 <td data-label="Description">Theme font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-disabled-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-disabled-border-color</code></pre></td>
                                 <td data-label="Description">Theme disabled border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-disabled-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-disabled-background-color</code></pre></td>
                                 <td data-label="Description">Theme disabled background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-error-font-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-error-font-color</code></pre></td>
                                 <td data-label="Description">Theme disabled background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-error-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-error-border-color</code></pre></td>
                                 <td data-label="Description">Theme error border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-hint-font-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-hint-font-color</code></pre></td>
                                 <td data-label="Description">Theme hint font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-inactive-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-inactive-color</code></pre></td>
                                 <td data-label="Description">Theme inactive color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-box-shadow-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-box-shadow-color</code></pre></td>
                                 <td data-label="Description">Theme inactive color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-font-family</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-family</code></pre></td>
                                 <td data-label="Description">Theme font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-font-size</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-size</code></pre></td>
                                 <td data-label="Description">Theme font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-font-weight</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-weight</code></pre></td>
                                 <td data-label="Description">Theme font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-border-radius</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-border-radius</code></pre></td>
                                 <td data-label="Description">Theme border radius.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-border-width</code></pre></td>
                                 <td data-label="Description">Theme border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-theme-box-shadow</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-box-shadow</code></pre></td>
                                 <td data-label="Description">Theme box shadow.</td>
                             </tr>
                             
@@ -622,212 +607,212 @@
                         <tbody data-category="Component Variables" class="component-css-props">
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-font-family</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-font-family</code></pre></td>
                                 <td data-label="Description">Component font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-font-size</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-font-size</code></pre></td>
                                 <td data-label="Description">Component font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-font-weight</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-font-weight</code></pre></td>
                                 <td data-label="Description">Component font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-line-height</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-line-height</code></pre></td>
                                 <td data-label="Description">Component line height.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-border-radius</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-border-radius</code></pre></td>
                                 <td data-label="Description">Component border radius.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-padding-top</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-padding-top</code></pre></td>
                                 <td data-label="Description">Component padding top.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-padding-bottom</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-padding-bottom</code></pre></td>
                                 <td data-label="Description">Component padding bottom.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-padding-left</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-padding-left</code></pre></td>
                                 <td data-label="Description">Component padding left.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-padding-right</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-padding-right</code></pre></td>
                                 <td data-label="Description">Component padding right.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-primary-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-primary-background-color</code></pre></td>
                                 <td data-label="Description">Primary "type" background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-primary-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-primary-border-color</code></pre></td>
                                 <td data-label="Description">Primary "type" border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-primary-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-primary-border-width</code></pre></td>
                                 <td data-label="Description">Primary "type" border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-primary-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-primary-color</code></pre></td>
                                 <td data-label="Description">Primary "type" color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-primary-active-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-primary-active-background-color</code></pre></td>
                                 <td data-label="Description">Primary "type" active back color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-secondary-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-secondary-background-color</code></pre></td>
                                 <td data-label="Description">Secondary "type" background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-secondary-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-secondary-border-color</code></pre></td>
                                 <td data-label="Description">Secondary "type" border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-secondary-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-secondary-border-width</code></pre></td>
                                 <td data-label="Description">Secondary "type" border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-secondary-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-secondary-color</code></pre></td>
                                 <td data-label="Description">Secondary "type" color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-secondary-active-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-secondary-active-background-color</code></pre></td>
                                 <td data-label="Description">Secondary "type" active background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-background-color</code></pre></td>
                                 <td data-label="Description">Clear "type" background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-border-color</code></pre></td>
                                 <td data-label="Description">Clear "type" border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-border-width</code></pre></td>
                                 <td data-label="Description">Clear "type" border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-color</code></pre></td>
                                 <td data-label="Description">Clear "type" color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-hover-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-hover-background-color</code></pre></td>
                                 <td data-label="Description">Clear "type" hover background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-active-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-active-background-color</code></pre></td>
                                 <td data-label="Description">Clear "type" active background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-active-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-active-border-color</code></pre></td>
                                 <td data-label="Description">Clear "type" active border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-clear-active-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-clear-active-border-width</code></pre></td>
                                 <td data-label="Description">Clear "type" active border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-background-color</code></pre></td>
                                 <td data-label="Description">White "type" background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-border-color</code></pre></td>
                                 <td data-label="Description">White "type" border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-border-width</code></pre></td>
                                 <td data-label="Description">White "type" border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-color</code></pre></td>
                                 <td data-label="Description">White "type" color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-hover-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-hover-background-color</code></pre></td>
                                 <td data-label="Description">White "type" hover background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-active-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-active-background-color</code></pre></td>
                                 <td data-label="Description">White "type" active background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-active-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-active-border-color</code></pre></td>
                                 <td data-label="Description">White "type" active border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-white-active-border-width</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-white-active-border-width</code></pre></td>
                                 <td data-label="Description">White "type" active border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-disabled-border-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-disabled-border-color</code></pre></td>
                                 <td data-label="Description">Disabled border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-disabled-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-disabled-background-color</code></pre></td>
                                 <td data-label="Description">Disabled background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-disabled-active-hover-background-color</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-disabled-active-hover-background-color</code></pre></td>
                                 <td data-label="Description">Disabled active background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-slot-margin-right</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-slot-margin-right</code></pre></td>
                                 <td data-label="Description">Slot margin left (When positioned right of label).</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-slot-margin-bottom</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-slot-margin-bottom</code></pre></td>
                                 <td data-label="Description">Slot margin bottom (When positioned top of label).</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-slot-margin-left</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-slot-margin-left</code></pre></td>
                                 <td data-label="Description">Slot margin left (When positioned right of label).</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">--omni-button-slot-margin-top</td>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-button-slot-margin-top</code></pre></td>
                                 <td data-label="Description">Slot margin top (When positioned bottom of label).</td>
                             </tr>
                             

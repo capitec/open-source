@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="assets/css/default-light-theme.css">
     <style id="theme-styles"></style>
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="module" src="./dist/utils/StoryRenderer.js"></script>
@@ -49,8 +50,10 @@
                         </span>
                         <select class="docs-select theme-select transparent-after-760" id="header-theme-select"></select>
                     </span>
-                    <a href="https://github.com/capitec/omni-components" target="_blank" class="action">
-                        <img src="./assets/images/github.svg" style="cursor: pointer;">
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="action">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
                     </a>
                 </div>
             </header>
@@ -201,7 +204,7 @@
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code">
-                    <pre><code class="language-js" style="white-space: pre; !important" id="component-import-code">import &#39;@capitec/omni-components/number-field&#39;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/number-field&#39;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
                         content_copy
                     </span>
@@ -211,7 +214,9 @@
                 <div>Source</div>
                 <div>
                     <a href="https://github.com/capitec/omni-components/tree/develop/src/number-field/NumberField.ts" target="blank" class="component-info-item-link">
-                        <img src="./assets/images/github.svg" class="component-info-item-img">
+                        <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
                         View on GitHub
                     </a>
                 </div>
@@ -317,28 +322,28 @@
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
-                                    <a href="components/numberfield/#story-interactive" id="story-interactive" class="item">
+                                    <a href="components/numberfield/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
                                     </a>
-                                    <a href="components/numberfield/#story-label" id="story-label" class="item">
+                                    <a href="components/numberfield/#story-label" id="story-label-a" class="item">
                                         Label
                                     </a>
-                                    <a href="components/numberfield/#story-hint" id="story-hint" class="item">
+                                    <a href="components/numberfield/#story-hint" id="story-hint-a" class="item">
                                         Hint
                                     </a>
-                                    <a href="components/numberfield/#story-error-label" id="story-error_label" class="item">
+                                    <a href="components/numberfield/#story-error-label" id="story-error-label-a" class="item">
                                         Error Label
                                     </a>
-                                    <a href="components/numberfield/#story-value" id="story-value" class="item">
+                                    <a href="components/numberfield/#story-value" id="story-value-a" class="item">
                                         Value
                                     </a>
-                                    <a href="components/numberfield/#story-prefix" id="story-prefix" class="item">
+                                    <a href="components/numberfield/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
                                     </a>
-                                    <a href="components/numberfield/#story-suffix" id="story-suffix" class="item">
+                                    <a href="components/numberfield/#story-suffix" id="story-suffix-a" class="item">
                                         Suffix
                                     </a>
-                                    <a href="components/numberfield/#story-disabled" id="story-disabled" class="item">
+                                    <a href="components/numberfield/#story-disabled" id="story-disabled-a" class="item">
                                         Disabled
                                     </a>
                             </div>
@@ -356,7 +361,7 @@
                                 search
                             </span>
                         </div>
-                        <input class="docs-search-input" id="attribute-search" type="text" placeholder="Search properties" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
+                        <input class="docs-search-input" id="attribute-search" type="text" placeholder="Search Properties" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
                     </div>
                 </div>
                 <div class="component-props-table-wrapper">
@@ -460,7 +465,7 @@
                                 search
                             </span>
                         </div>
-                        <input class="docs-search-input" id="event-search" type="text" placeholder="Search events" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
+                        <input class="docs-search-input" id="event-search" type="text" placeholder="Search Events" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
                     </div>
                 </div>
                 <div class="component-props-table-wrapper">
@@ -486,7 +491,7 @@
                                 search
                             </span>
                         </div>
-                        <input class="docs-search-input" id="slot-search" type="text" placeholder="Search slots" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
+                        <input class="docs-search-input" id="slot-search" type="text" placeholder="Search Slots" aria-invalid="false" value="" spellcheck="false" data-ms-editor="true">
                     </div>
                 </div>
                 <div class="component-props-table-wrapper">
@@ -548,117 +553,117 @@
                         <tbody data-category="Theme Variables" class="component-css-props">
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-primary-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-color</code></pre></td>
                                 <td data-label="Description">Theme primary color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-primary-hover-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-hover-color</code></pre></td>
                                 <td data-label="Description">Theme primary hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-primary-active-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-active-color</code></pre></td>
                                 <td data-label="Description">Theme primary active color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-accent-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-color</code></pre></td>
                                 <td data-label="Description">Theme accent color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-accent-hover-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-hover-color</code></pre></td>
                                 <td data-label="Description">Theme accent hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-accent-active-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-active-color</code></pre></td>
                                 <td data-label="Description">Theme accent active color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-background-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-color</code></pre></td>
                                 <td data-label="Description">Theme background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-background-hover-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-hover-color</code></pre></td>
                                 <td data-label="Description">Theme background hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-background-active-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-active-color</code></pre></td>
                                 <td data-label="Description">Theme background active color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-color</code></pre></td>
                                 <td data-label="Description">Theme font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-disabled-border-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-border-color</code></pre></td>
                                 <td data-label="Description">Theme disabled border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-disabled-background-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-background-color</code></pre></td>
                                 <td data-label="Description">Theme disabled background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-error-font-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-font-color</code></pre></td>
                                 <td data-label="Description">Theme disabled background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-error-border-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-border-color</code></pre></td>
                                 <td data-label="Description">Theme error border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-hint-font-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-hint-font-color</code></pre></td>
                                 <td data-label="Description">Theme hint font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-inactive-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-inactive-color</code></pre></td>
                                 <td data-label="Description">Theme inactive color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-box-shadow-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow-color</code></pre></td>
                                 <td data-label="Description">Theme inactive color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-family</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-family</code></pre></td>
                                 <td data-label="Description">Theme font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-size</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-size</code></pre></td>
                                 <td data-label="Description">Theme font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-font-weight</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-weight</code></pre></td>
                                 <td data-label="Description">Theme font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-border-radius</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-radius</code></pre></td>
                                 <td data-label="Description">Theme border radius.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-border-width</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-width</code></pre></td>
                                 <td data-label="Description">Theme border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-theme-box-shadow</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow</code></pre></td>
                                 <td data-label="Description">Theme box shadow.</td>
                             </tr>
                             
@@ -688,217 +693,217 @@
                         <tbody data-category="Base Form Variables" class="component-css-props">
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-container-width</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-container-width</code></pre></td>
                                 <td data-label="Description">Form container width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-container-font-family</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-container-font-family</code></pre></td>
                                 <td data-label="Description">Form container font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-field-background-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-field-background-color</code></pre></td>
                                 <td data-label="Description">Form layout background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-top</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-top</code></pre></td>
                                 <td data-label="Description">Form border top.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-bottom</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-bottom</code></pre></td>
                                 <td data-label="Description">Form border bottom.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-left</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-left</code></pre></td>
                                 <td data-label="Description">Form border left.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-right</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-right</code></pre></td>
                                 <td data-label="Description">Form border right.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-width</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-width</code></pre></td>
                                 <td data-label="Description">Form border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-radius</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-radius</code></pre></td>
                                 <td data-label="Description">Form border radius.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-style</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-style</code></pre></td>
                                 <td data-label="Description">Form border style.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-border-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-color</code></pre></td>
                                 <td data-label="Description">Form border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-transform-origin</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-transform-origin</code></pre></td>
                                 <td data-label="Description">Form label text align</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-text-align</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-text-align</code></pre></td>
                                 <td data-label="Description">Form label text align.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-color</code></pre></td>
                                 <td data-label="Description">Form label color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-font-size</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-font-size</code></pre></td>
                                 <td data-label="Description">Form label font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-font-weight</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-font-weight</code></pre></td>
                                 <td data-label="Description">Form label font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-left</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-left</code></pre></td>
                                 <td data-label="Description">Form label left margin.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-focussed-border-width</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-border-width</code></pre></td>
                                 <td data-label="Description">Form focussed border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-focussed-border-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-border-color</code></pre></td>
                                 <td data-label="Description">Form focussed border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-focussed-label-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-color</code></pre></td>
                                 <td data-label="Description">Form focussed label color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-color</code></pre></td>
                                 <td data-label="Description">Form error label color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-border-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-border-color</code></pre></td>
                                 <td data-label="Description">Form error border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-label-disabled-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-disabled-color</code></pre></td>
                                 <td data-label="Description">Form label disabled color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-disabled-border-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-border-color</code></pre></td>
                                 <td data-label="Description">Form disabled border color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-disabled-background-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-background-color</code></pre></td>
                                 <td data-label="Description">Form disabled background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-disabled-focussed-label-background-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-focussed-label-background-color</code></pre></td>
                                 <td data-label="Description">Form disabled label focussed background color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-font-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-color</code></pre></td>
                                 <td data-label="Description">Form hint label font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-font-family</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-family</code></pre></td>
                                 <td data-label="Description">Form hint label font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-font-size</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-size</code></pre></td>
                                 <td data-label="Description">Form hint label font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-font-weight</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-weight</code></pre></td>
                                 <td data-label="Description">Form hint label font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-padding-top</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-padding-top</code></pre></td>
                                 <td data-label="Description">Form hint label top padding.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-padding-left</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-padding-left</code></pre></td>
                                 <td data-label="Description">Form hint label left padding.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hint-label-border-width</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-border-width</code></pre></td>
                                 <td data-label="Description">Form hint label border width.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-font-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-color</code></pre></td>
                                 <td data-label="Description">Form error label font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-font-family</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-family</code></pre></td>
                                 <td data-label="Description">Form error label font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-font-size</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-size</code></pre></td>
                                 <td data-label="Description">Form error label font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-font-weight</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-weight</code></pre></td>
                                 <td data-label="Description">Form error label font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-padding-top</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-padding-top</code></pre></td>
                                 <td data-label="Description">Form error label top padding.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-padding-left</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-padding-left</code></pre></td>
                                 <td data-label="Description">Form error label left padding.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-label-border-width</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-border-width</code></pre></td>
                                 <td data-label="Description"></td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-hover-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hover-color</code></pre></td>
                                 <td data-label="Description">Form hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-disabled-hover-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-hover-color</code></pre></td>
                                 <td data-label="Description">Form disabled hover color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-form-error-hover-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-hover-color</code></pre></td>
                                 <td data-label="Description">Form error hover color.</td>
                             </tr>
                             
@@ -928,37 +933,37 @@
                         <tbody data-category="Component Variables" class="component-css-props">
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-text-align</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-text-align</code></pre></td>
                                 <td data-label="Description">Number field text align.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-font-color</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-font-color</code></pre></td>
                                 <td data-label="Description">Number field font color.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-font-family</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-font-family</code></pre></td>
                                 <td data-label="Description">Number field font family.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-font-size</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-font-size</code></pre></td>
                                 <td data-label="Description">Number field font size.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-font-weight</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-font-weight</code></pre></td>
                                 <td data-label="Description">Number field font weight.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-height</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-height</code></pre></td>
                                 <td data-label="Description">Number field height.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">--omni-number-field-padding</code></pre></td>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-number-field-padding</code></pre></td>
                                 <td data-label="Description">Number field width.</td>
                             </tr>
                             

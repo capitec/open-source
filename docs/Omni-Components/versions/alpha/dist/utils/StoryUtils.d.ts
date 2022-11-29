@@ -1,5 +1,6 @@
 import { TagSpec } from '@codemirror/lang-html';
 import { Package } from 'custom-elements-manifest/schema';
+export { Package, ClassDeclaration, CustomElementDeclaration, Declaration, CustomElement } from 'custom-elements-manifest/schema';
 declare function loadCssProperties(element: string, customElements: Package, cssDeclarations?: Record<string, {
     control: 'color' | 'text';
     description: string;
@@ -76,6 +77,12 @@ declare function setupThemes(): Promise<void>;
 declare function setupEleventy(): Promise<void>;
 declare function setupTheming(): Promise<void>;
 declare function uploadTheme(e: Event): Promise<void>;
+declare global {
+    interface Window {
+        srCount: number;
+        srCompleteCount: number;
+    }
+}
 export declare type PlayFunctionContext<T> = {
     args: T;
     story: ComponentStoryFormat<T>;

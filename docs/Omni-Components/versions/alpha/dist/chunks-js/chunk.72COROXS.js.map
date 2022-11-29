@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/utils/StoryController.ts"],
-  "mappings": "0CAAAA,IAAAC,IAEO,IAAMC,EAAN,KAAoD,CAKvD,YAAYC,EAA8BC,EAAmB,CACzD,KAAK,UAAYA,GAChB,KAAK,KAAOD,GAAM,cAAc,IAAI,CACzC,CAEA,MAAM,eAAgB,CAClB,KAAK,MAAQ,MAAM,OAAO,SAAS,QAAU,KAAK,WAClD,KAAK,KAAK,cAAc,CAC5B,CACJ",
-  "names": ["init_define_process_argv", "init_global", "StoryController", "host", "storyPath"]
-}

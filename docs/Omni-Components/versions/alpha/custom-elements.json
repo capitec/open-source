@@ -10356,6 +10356,12 @@
               "default": "new Compartment()"
             },
             {
+              "kind": "field",
+              "name": "userExtensions",
+              "privacy": "private",
+              "default": "new Compartment()"
+            },
+            {
               "kind": "method",
               "name": "refresh",
               "privacy": "public",
@@ -10368,6 +10374,11 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "updateExtensions",
+              "privacy": "public"
             },
             {
               "kind": "method",
@@ -10433,6 +10444,26 @@
                   "default": "undefined",
                   "type": {
                     "text": "Element | ShadowRoot"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_clearOtherElements",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "el",
+                  "default": "undefined",
+                  "type": {
+                    "text": "Element | ShadowRoot"
+                  }
+                },
+                {
+                  "name": "onlyChild",
+                  "type": {
+                    "text": "Element"
                   }
                 }
               ]
@@ -10596,14 +10627,6 @@
             },
             {
               "kind": "field",
-              "name": "cssValueReader",
-              "type": {
-                "text": "(variable: CSSVariable) => CSSVariable"
-              },
-              "attribute": "cssValueReader"
-            },
-            {
-              "kind": "field",
               "name": "element",
               "type": {
                 "text": "string"
@@ -10648,10 +10671,26 @@
             },
             {
               "kind": "field",
-              "name": "slotCodeMirrors",
+              "name": "slotCodeEditors",
               "type": {
                 "text": "NodeListOf<CodeEditor>"
               }
+            },
+            {
+              "kind": "field",
+              "name": "_firstRenderCompleted",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private"
             },
             {
               "kind": "method",
@@ -10670,6 +10709,11 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "_currentCodeTheme",
+              "privacy": "private"
             },
             {
               "kind": "field",
@@ -10727,6 +10771,12 @@
               "type": {
                 "text": "CustomEvent"
               }
+            },
+            {
+              "name": "component-render-complete",
+              "type": {
+                "text": "CustomEvent"
+              }
             }
           ],
           "attributes": [
@@ -10736,13 +10786,6 @@
                 "text": "ComponentStoryFormat<any>"
               },
               "fieldName": "data"
-            },
-            {
-              "name": "cssValueReader",
-              "type": {
-                "text": "(variable: CSSVariable) => CSSVariable"
-              },
-              "fieldName": "cssValueReader"
             },
             {
               "name": "element",
@@ -10960,6 +11003,13 @@
             },
             {
               "kind": "field",
+              "name": "_showStylesDialog",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
               "name": "codeEditor",
               "type": {
                 "text": "CodeEditor"
@@ -11013,6 +11063,50 @@
               "privacy": "private"
             },
             {
+              "kind": "field",
+              "name": "customElements",
+              "type": {
+                "text": "Package"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "cssVariables",
+              "type": {
+                "text": "CSSVariable[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "modal",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "theme",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "renderCssVariable",
+              "parameters": [
+                {
+                  "name": "variable",
+                  "type": {
+                    "text": "CSSVariable"
+                  }
+                }
+              ]
+            },
+            {
               "kind": "method",
               "name": "createRenderRoot",
               "privacy": "protected",
@@ -11021,6 +11115,56 @@
                   "text": "Element | ShadowRoot"
                 }
               }
+            },
+            {
+              "kind": "method",
+              "name": "_sortCssVariables",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "a",
+                  "type": {
+                    "text": "CSSVariable"
+                  }
+                },
+                {
+                  "name": "b",
+                  "type": {
+                    "text": "CSSVariable"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_cssChanged",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "changed",
+                  "type": {
+                    "text": "CSSVariable"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_showComponentStyles",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_checkCloseModal",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -11100,6 +11244,11 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "_currentCodeTheme",
+              "privacy": "private"
             }
           ],
           "attributes": [
@@ -11548,6 +11697,46 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "Package",
+          "declaration": {
+            "name": "Package",
+            "package": "custom-elements-manifest/schema"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "ClassDeclaration",
+          "declaration": {
+            "name": "ClassDeclaration",
+            "package": "custom-elements-manifest/schema"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomElementDeclaration",
+          "declaration": {
+            "name": "CustomElementDeclaration",
+            "package": "custom-elements-manifest/schema"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Declaration",
+          "declaration": {
+            "name": "Declaration",
+            "package": "custom-elements-manifest/schema"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CustomElement",
+          "declaration": {
+            "name": "CustomElement",
+            "package": "custom-elements-manifest/schema"
+          }
+        },
         {
           "kind": "js",
           "name": "loadCustomElements",

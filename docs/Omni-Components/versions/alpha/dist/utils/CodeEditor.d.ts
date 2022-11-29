@@ -13,8 +13,10 @@ export declare class CodeEditor extends LitElement {
     slotElement: HTMLSlotElement;
     private editor;
     private readonlyOrDisabled;
+    private userExtensions;
     static get styles(): import("lit").CSSResult[];
     refresh(getCode?: () => string | Promise<string>): Promise<void>;
+    updateExtensions(): Promise<void>;
     protected render(): import("lit-html").TemplateResult<1>;
     protected updated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): Promise<void>;
     private _copyCode;
@@ -23,6 +25,7 @@ export declare class CodeEditor extends LitElement {
     private _slotChanged;
     private _readCode;
     private _clearElements;
+    private _clearOtherElements;
 }
 export declare type CodeMirrorEditorEvent = {
     editor: EditorView;

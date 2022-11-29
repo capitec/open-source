@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="assets/css/default-light-theme.css">
     <style id="theme-styles"></style>
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="module" src="./dist/utils/StoryRenderer.js"></script>
@@ -49,8 +50,10 @@
                         </span>
                         <select class="docs-select theme-select transparent-after-760" id="header-theme-select"></select>
                     </span>
-                    <a href="https://github.com/capitec/omni-components" target="_blank" class="action">
-                        <img src="./assets/images/github.svg" style="cursor: pointer;">
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="action">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
                     </a>
                 </div>
             </header>
@@ -194,32 +197,32 @@
 </div>
 
 <article class="component static-article">    
-    <h1><a id="user-content-contributing-to-omni-components" class="anchor" href="contributing/#user-content-contributing-to-omni-components" aria-hidden="true"></a>Contributing to Omni Components</h1>
+    <h1><a id="contributing-to-omni-components" class="anchor" href="contributing/#contributing-to-omni-components" aria-hidden="true"></a>Contributing to Omni Components</h1>
 <p>Welcome! We encourage contributions and here's a few important guidelines we would like you to follow:</p>
 <ul>
-<li><a href="contributing/#user-content-code-of-conduct">Code of Conduct</a></li>
-<li><a href="contributing/#user-content-issues">Issues</a></li>
-<li><a href="contributing/#user-content-development">Development</a></li>
-<li><a href="contributing/#user-content-pull-requests">Pull Requests</a></li>
+<li><a href="contributing/#code-of-conduct">Code of Conduct</a></li>
+<li><a href="contributing/#issues">Issues</a></li>
+<li><a href="contributing/#development">Development</a></li>
+<li><a href="contributing/#pull-requests">Pull Requests</a></li>
 </ul>
-<h2><a id="user-content-code-of-conduct" class="anchor" href="contributing/#user-content-code-of-conduct" aria-hidden="true"></a>Code of Conduct</h2>
+<h2><a id="code-of-conduct" class="anchor" href="contributing/#code-of-conduct" aria-hidden="true"></a>Code of Conduct</h2>
 <p>Please read and follow our <a href="https://github.com/capitec/omni-components/blob/develop/CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
-<h2><a id="user-content-issues" class="anchor" href="contributing/#user-content-issues" aria-hidden="true"></a>Issues</h2>
-<p>Engagement always starts with an Issue where conversations and debates can occur around <a href="contributing/#user-content-bugs">bugs</a> and <a href="contributing/#user-content-feature-requests">feature requests</a>:</p>
+<h2><a id="issues" class="anchor" href="contributing/#issues" aria-hidden="true"></a>Issues</h2>
+<p>Engagement always starts with an Issue where conversations and debates can occur around <a href="contributing/#bugs">bugs</a> and <a href="contributing/#feature-requests">feature requests</a>:</p>
 <ul>
 <li><strong>Do</strong> search for a similar / existing Issue prior to submitting a new one.</li>
 <li><strong>Do not</strong> use issues for any personal support. Use <a href="https://github.com/capitec/omni-components/discussions">Discussions</a> or <a href="https://stackoverflow.com/">StackOverflow</a> instead.</li>
 <li><strong>Do not</strong> side-track or derail issues threads. Stick to the topic please.</li>
 <li><strong>Do not</strong> post comments using just &quot;+1&quot;, &quot;++&quot; or &quot;👍&quot;. Use <a href="https://github.blog/2016-03-10-add-reactions-to-pull-requests-issues-and-comments/">Reactions</a> instead.</li>
 </ul>
-<h3><a id="user-content-bugs" class="anchor" href="contributing/#user-content-bugs" aria-hidden="true"></a>Bugs</h3>
+<h3><a id="bugs" class="anchor" href="contributing/#bugs" aria-hidden="true"></a>Bugs</h3>
 <p>A bug is an error, flaw or fault associated with <em>any part</em> of the project:</p>
 <ul>
 <li><strong>Do</strong> search for a similar / existing Issue prior to submitting a new one.</li>
 <li><strong>Do</strong> describe the bug concisely, <strong>avoid</strong> adding extraneous code, logs or screenshots.</li>
 <li><strong>Do</strong> attach a minimal test or repro (e.g. <a href="https://codepen.io/">CodePen</a>, <a href="https://jsfiddle.net/">jsFiddle</a>) to demonstrate the bug.</li>
 </ul>
-<h3><a id="user-content-feature-requests" class="anchor" href="contributing/#user-content-feature-requests" aria-hidden="true"></a>Feature Requests</h3>
+<h3><a id="feature-requests" class="anchor" href="contributing/#feature-requests" aria-hidden="true"></a>Feature Requests</h3>
 <p>A feature request is an improvement or new capability associated with <em>any part</em> of the project:</p>
 <ul>
 <li><strong>Do</strong> search for a similar / existing Issue prior to submitting a new one.</li>
@@ -229,27 +232,27 @@
 <blockquote>
 <p>💡 TIP: We suggest that you engage as much as possible within an Issue prior to proceeding with any contributions.</p>
 </blockquote>
-<h2><a id="user-content-development" class="anchor" href="contributing/#user-content-development" aria-hidden="true"></a>Development</h2>
-<h3><a id="user-content-branches" class="anchor" href="contributing/#user-content-branches" aria-hidden="true"></a>Branches</h3>
+<h2><a id="development" class="anchor" href="contributing/#development" aria-hidden="true"></a>Development</h2>
+<h3><a id="branches" class="anchor" href="contributing/#branches" aria-hidden="true"></a>Branches</h3>
 <ul>
 <li><code>develop</code> - Default branch for all Pull Requests.</li>
 <li><code>main</code> - Stable branch for all periodic releases.</li>
 </ul>
-<h3><a id="user-content-getting-started" class="anchor" href="contributing/#user-content-getting-started" aria-hidden="true"></a>Getting Started</h3>
-<h4><a id="user-content-dependencies" class="anchor" href="contributing/#user-content-dependencies" aria-hidden="true"></a>Dependencies</h4>
+<h3><a id="getting-started" class="anchor" href="contributing/#getting-started" aria-hidden="true"></a>Getting Started</h3>
+<h4><a id="dependencies" class="anchor" href="contributing/#dependencies" aria-hidden="true"></a>Dependencies</h4>
 <ul>
 <li>Git (v2+)</li>
 <li>Node.js (v16+)</li>
 <li>NPM (v7+)</li>
 <li>VS Code + recommended extensions (recommended, but not required).</li>
 </ul>
-<h4><a id="user-content-setup" class="anchor" href="contributing/#user-content-setup" aria-hidden="true"></a>Setup</h4>
+<h4><a id="setup" class="anchor" href="contributing/#setup" aria-hidden="true"></a>Setup</h4>
 <ol>
 <li><a href="https://github.com/capitec/omni-components/fork">Fork</a> the repository and create a branch from <code>develop</code>.</li>
 <li>Clone the forked repo, checkout your branch, and run <code>npm ci</code> inside the repository root.</li>
 <li>Start up the dev server with <code>npm run serve</code> (or by launching debugging in VS Code).</li>
 </ol>
-<h3><a id="user-content-directory-structure" class="anchor" href="contributing/#user-content-directory-structure" aria-hidden="true"></a>Directory Structure</h3>
+<h3><a id="directory-structure" class="anchor" href="contributing/#directory-structure" aria-hidden="true"></a>Directory Structure</h3>
 <p>When adding or editing components, please note the following key directories:</p>
 <pre><code>├── src
 │   ├── button
@@ -272,7 +275,7 @@
 </li>
 <li><code>themes</code> - Basic built-in themes, viewable within the hosted documentation.</li>
 </ul>
-<h3><a id="user-content-naming-conventions" class="anchor" href="contributing/#user-content-naming-conventions" aria-hidden="true"></a>Naming Conventions</h3>
+<h3><a id="naming-conventions" class="anchor" href="contributing/#naming-conventions" aria-hidden="true"></a>Naming Conventions</h3>
 <ul>
 <li><strong>Do</strong> use <em>lower case</em> <a href="https://en.wikipedia.org/wiki/Letter_case#Kebab_case">kebab-case</a> for component folder names, e.g. <code>some-component</code>. 🍢</li>
 <li><strong>Do</strong> use uppercase first letter <a href="https://en.wikipedia.org/wiki/Camel_case">CamelCase</a> for component file names, e.g. <code>SomeComponent.ts</code>.</li>
@@ -291,14 +294,14 @@
 <blockquote>
 <p>💡 TIP: Refer to existing components and stories for examples.</p>
 </blockquote>
-<h3><a id="user-content-definition-of-done" class="anchor" href="contributing/#user-content-definition-of-done" aria-hidden="true"></a>Definition of Done</h3>
+<h3><a id="definition-of-done" class="anchor" href="contributing/#definition-of-done" aria-hidden="true"></a>Definition of Done</h3>
 <p>Here's a <em>non-exhaustive</em> list of requirements that are key to contributing to this project.</p>
-<h4><a id="user-content-general" class="anchor" href="contributing/#user-content-general" aria-hidden="true"></a>General</h4>
+<h4><a id="general" class="anchor" href="contributing/#general" aria-hidden="true"></a>General</h4>
 <ul>
 <li><strong>Do</strong> use <a href="https://www.typescriptlang.org/docs/">TypeScript</a>, with common language practices.</li>
-<li><strong>Do</strong> follow our <a href="contributing/#user-content-naming-conventions">naming conventions</a>.</li>
+<li><strong>Do</strong> follow our <a href="contributing/#naming-conventions">naming conventions</a>.</li>
 </ul>
-<h4><a id="user-content-components" class="anchor" href="contributing/#user-content-components" aria-hidden="true"></a>Components</h4>
+<h4><a id="components" class="anchor" href="contributing/#components" aria-hidden="true"></a>Components</h4>
 <ul>
 <li><strong>Do</strong> base off <a href="(https://github.com/capitec/omni-components/blob/develop/src/core/OmniElement.ts)">OmniElement</a>.</li>
 <li><strong>Do</strong> implement &quot;mobile first&quot; templates, leveraging <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design">Responsive Design</a> layout and styling principles. 📱</li>
@@ -311,7 +314,7 @@
 <li><strong>Do</strong> allow components to be user customizable via <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot">slot</a> implementations.</li>
 <li><strong>Do</strong> implement only <em>one</em> component class within a component file.</li>
 </ul>
-<h4><a id="user-content-stories" class="anchor" href="contributing/#user-content-stories" aria-hidden="true"></a>Stories</h4>
+<h4><a id="stories" class="anchor" href="contributing/#stories" aria-hidden="true"></a>Stories</h4>
 <ul>
 <li><strong>Do</strong> use <a href="https://github.com/capitec/omni-components/blob/storybook-removal/src/utils/StoryUtils.ts#L927">Component Story Format (CSF) 3</a>.</li>
 <li><strong>Do</strong> implement a <a href="https://github.com/capitec/omni-components/blob/storybook-removal/src/utils/StoryUtils.ts#L919">play function</a> per story to test story-specific component state and event behaviors. 🛝
@@ -320,7 +323,7 @@
 </ul>
 </li>
 </ul>
-<h4><a id="user-content-themes" class="anchor" href="contributing/#user-content-themes" aria-hidden="true"></a>Themes</h4>
+<h4><a id="themes" class="anchor" href="contributing/#themes" aria-hidden="true"></a>Themes</h4>
 <ul>
 <li><strong>Do</strong> maintain each built-in theme, by ensuring all <code>--omni-theme-*</code> CSS custom properties are implemented.</li>
 <li><strong>Do</strong> test each theme thoroughly via the hosted documentation.</li>
@@ -328,14 +331,14 @@
 <blockquote>
 <p>💡 TIP: Refer to existing components, stories and themes for examples for any of the above.</p>
 </blockquote>
-<h2><a id="user-content-pull-requests" class="anchor" href="contributing/#user-content-pull-requests" aria-hidden="true"></a>Pull Requests</h2>
-<h3><a id="user-content-requirements" class="anchor" href="contributing/#user-content-requirements" aria-hidden="true"></a>Requirements</h3>
+<h2><a id="pull-requests" class="anchor" href="contributing/#pull-requests" aria-hidden="true"></a>Pull Requests</h2>
+<h3><a id="requirements" class="anchor" href="contributing/#requirements" aria-hidden="true"></a>Requirements</h3>
 <ul>
 <li><strong>Do</strong> ensure the branch is up to date with the <code>develop</code> branch.</li>
 <li><strong>Do</strong> ensure there's no conflicts with the <code>develop</code> branch.</li>
-<li><strong>Do</strong> ensure that all automatic <a href="contributing/#user-content-checks">checks</a> pass. ✔</li>
+<li><strong>Do</strong> ensure that all automatic <a href="contributing/#checks">checks</a> pass. ✔</li>
 </ul>
-<h3><a id="user-content-checks" class="anchor" href="contributing/#user-content-checks" aria-hidden="true"></a>Checks</h3>
+<h3><a id="checks" class="anchor" href="contributing/#checks" aria-hidden="true"></a>Checks</h3>
 <ul>
 <li>All story play function tests pass.</li>
 </ul>

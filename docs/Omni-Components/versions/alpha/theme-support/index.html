@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="assets/css/default-light-theme.css">
     <style id="theme-styles"></style>
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="module" src="./dist/utils/StoryRenderer.js"></script>
@@ -49,8 +50,10 @@
                         </span>
                         <select class="docs-select theme-select transparent-after-760" id="header-theme-select"></select>
                     </span>
-                    <a href="https://github.com/capitec/omni-components" target="_blank" class="action">
-                        <img src="./assets/images/github.svg" style="cursor: pointer;">
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="action">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
                     </a>
                 </div>
             </header>
@@ -189,33 +192,10 @@
 </nav>
             <main>
     
+<script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
 <div class="component-overlay">
     <div class="lds-ripple"><div></div><div></div></div>
 </div>
-<style>
-
-    .live-section {
-        background-color: var(--omni-theme-filled-background-color, white);
-        padding: 20px;
-    }
-
-    .flex-row {
-        display: inline-flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        margin: 6px;
-    }
-
-    .flex-row > * {
-        margin: 6px;
-    }
-
-    #custom-theme-source {
-        min-height: 50px;
-    }
-</style>
 <script type="module" defer>
     import { setupTheming, uploadTheme } from './dist/utils/StoryUtils.js';
 
@@ -236,7 +216,7 @@
 <article class="component static-article">    
     <div class="live-section">
 
-        <h2>Theme Support</h2>
+        <h1>Theme Support</h1>
 
         <h3>All Omni Components support our theme CSS variables</h3>
         <br/>
@@ -257,9 +237,9 @@
         Currently provided theme variables are listed below and can be modified for a live preview of its effects on components.
         </p>
         <br/>
-        <p>There are multiple built-in themes available to test how theme variables can affect te various components. Use the theme dropdown to select a built-in theme or select 'No Theme' to view the components in their default state. The source for the built-in themes are available <a target="_self" href="#examples" >below</a>.</p>
+        <p>There are multiple built-in themes available to test how theme variables can affect te various components. Use the theme dropdown to select a built-in theme or select 'Light Theme' to view the components in their default state. The source for the built-in themes are available <a target="_self" href="theme-support/#examples" >below</a>.</p>
         <br/>
-        <p>Alternatively, a custom theme can be authored or uploaded to have a live view of its effects on the components. <a target="_self" href="#custom-theme" >Try it now below</a> and select your current theme to be 'Custom Theme'.</p>
+        <p>Alternatively, a custom theme can be authored or uploaded to have a live view of its effects on the components. Try it now by selecting your current theme to be 'Custom Theme'.</p>
 
     </div>
 
@@ -273,19 +253,6 @@
     
 
     <h1 id="examples" >Example Themes Source</h1>
-    <br/>
-
-    <div>
-        <span class="flex-row">
-            <h3 id="custom-theme" style="margin-left: 0px;">Custom Theme</h3>
-            <input class="hidden" id="cssValue" type="file" accept=".css" onInput="uploadTheme(event)" />
-            <omni-button class="docs-omni-component" label="Upload" type="secondary" onclick="uploadThemeClick(event)" ></omni-button>
-        </span>
-        <div style="padding-top: 12px;">
-            <div id="custom-theme-source" >
-            </div>
-        </div>
-    </div>
     <div id="themes-sources"></div>
     
 </article>

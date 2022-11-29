@@ -1,4 +1,4 @@
-import{a as l}from"./chunk.QZMZ3CLH.js";import{b as d}from"./chunk.ZP7U5EIB.js";import{a as s,d as a}from"./chunk.CHYIO324.js";import{b as r,c as n}from"./chunk.CDDA2I3H.js";import{j as e,l as t,o}from"./chunk.2ZZQBHAA.js";t();o();var i=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let u=this._inputElement;this.value=u.value}_onAddClick(){this.disabled||(!this.value||this.value==="NaN"||this.value===""||this.value==="0"?this.value="1":this.value=`${parseInt(this.value)+1}`)}_onMinusClick(){this.disabled||(!this.value||this.value==="NaN"||this.value===""||this.value==="0"?this.value="0":this.value=`${parseInt(this.value)-1}`)}static get styles(){return[super.styles,r`
+import{a as l}from"./chunk.QZMZ3CLH.js";import{b as d}from"./chunk.EMNPHWST.js";import{a as s,d as a}from"./chunk.CHYIO324.js";import{b as r,c as n}from"./chunk.CDDA2I3H.js";import{j as e,l as t,o}from"./chunk.2ZZQBHAA.js";t();o();var i=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let u=this._inputElement;this.value=u.value}_onAddClick(){this.disabled||(!this.value||this.value==="NaN"||this.value===""||this.value==="0"?this.value="1":this.value=`${parseInt(this.value)+1}`)}_onMinusClick(){this.disabled||(!this.value||this.value==="NaN"||this.value===""||this.value==="0"?this.value="0":this.value=`${parseInt(this.value)-1}`)}static get styles(){return[super.styles,r`
         .quantity {
           display: flex;
           height: var(--omni-numeric-input-quantity-height, 100%);
@@ -82,4 +82,4 @@ import{a as l}from"./chunk.QZMZ3CLH.js";import{b as d}from"./chunk.ZP7U5EIB.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};e([a("#inputField")],i.prototype,"_inputElement",2),i=e([s("omni-numeric-field")],i);export{i as a};
-//# sourceMappingURL=chunk.UIT6FP5R.js.map
+//# sourceMappingURL=chunk.FVSSLPVX.js.map

@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.QZMZ3CLH.js";import{b as m}from"./chunk.ZP7U5EIB.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{b as s,c as e}from"./chunk.CDDA2I3H.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as p}from"./chunk.QZMZ3CLH.js";import{b as m}from"./chunk.EMNPHWST.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{b as s,c as e}from"./chunk.CDDA2I3H.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
         .control-box {
           display: flex;
           align-items: center;
@@ -61,4 +61,4 @@ import{a as p}from"./chunk.QZMZ3CLH.js";import{b as m}from"./chunk.ZP7U5EIB.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([a()],o.prototype,"type",2),t([l("#inputField")],o.prototype,"_inputElement",2),o=t([d("omni-password-field")],o);export{o as a};
-//# sourceMappingURL=chunk.6KMJIKYP.js.map
+//# sourceMappingURL=chunk.P5REDDQC.js.map

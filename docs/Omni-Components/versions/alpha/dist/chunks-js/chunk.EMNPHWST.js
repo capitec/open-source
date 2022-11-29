@@ -93,7 +93,7 @@ import{a as f}from"./chunk.FS4G6H4L.js";import{d as c}from"./chunk.63F4QTY7.js";
                 :host([value]) .layout > .form-container > .label::before,
                 :focus + .label::before {
                     content: '';
-                    background-color: var(--omni-label-focus-background-color, white);
+                    background-color: var(--omni-form-field-background-color, var(--omni-background-color));
                     position: absolute;
                     left: var(--omni-label-focus-left, -3px);
                     right: var(--omni-label-focus-right, -3px);
@@ -200,4 +200,4 @@ import{a as f}from"./chunk.FS4G6H4L.js";import{d as c}from"./chunk.63F4QTY7.js";
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.ZP7U5EIB.js.map
+//# sourceMappingURL=chunk.EMNPHWST.js.map

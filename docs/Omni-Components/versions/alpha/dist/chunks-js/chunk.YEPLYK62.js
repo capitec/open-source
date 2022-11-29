@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.QZMZ3CLH.js";import{b as s}from"./chunk.ZP7U5EIB.js";import{a,d as l}from"./chunk.CHYIO324.js";import{b as o,c as r}from"./chunk.CDDA2I3H.js";import{j as n,l as t,o as i}from"./chunk.2ZZQBHAA.js";t();i();var e=class extends s{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let d=this._inputElement;this.value=d.value}static get styles(){return[super.styles,o`
+import{a as m}from"./chunk.QZMZ3CLH.js";import{b as s}from"./chunk.EMNPHWST.js";import{a,d as l}from"./chunk.CHYIO324.js";import{b as o,c as r}from"./chunk.CDDA2I3H.js";import{j as n,l as t,o as i}from"./chunk.2ZZQBHAA.js";t();i();var e=class extends s{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let d=this._inputElement;this.value=d.value}static get styles(){return[super.styles,o`
         .field {
           flex: 1 1 auto;
 
@@ -39,4 +39,4 @@ import{a as m}from"./chunk.QZMZ3CLH.js";import{b as s}from"./chunk.ZP7U5EIB.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};n([l("#inputField")],e.prototype,"_inputElement",2),e=n([a("omni-number-field")],e);export{e as a};
-//# sourceMappingURL=chunk.L6TGDOE6.js.map
+//# sourceMappingURL=chunk.YEPLYK62.js.map

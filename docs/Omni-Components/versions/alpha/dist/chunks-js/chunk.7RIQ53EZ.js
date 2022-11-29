@@ -1,4 +1,4 @@
-import{a as d}from"./chunk.QZMZ3CLH.js";import{b as m}from"./chunk.ZP7U5EIB.js";import{a,d as l}from"./chunk.CHYIO324.js";import{b as o,c as r}from"./chunk.CDDA2I3H.js";import{j as e,l as i,o as n}from"./chunk.2ZZQBHAA.js";i();n();var t=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let s=this._inputElement;this.value=s.value}static get styles(){return[super.styles,o`
+import{a as d}from"./chunk.QZMZ3CLH.js";import{b as m}from"./chunk.EMNPHWST.js";import{a,d as l}from"./chunk.CHYIO324.js";import{b as o,c as r}from"./chunk.CDDA2I3H.js";import{j as e,l as i,o as n}from"./chunk.2ZZQBHAA.js";i();n();var t=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this))}_keyInput(){let s=this._inputElement;this.value=s.value}static get styles(){return[super.styles,o`
         .field {
           flex: 1 1 auto;
 
@@ -27,4 +27,4 @@ import{a as d}from"./chunk.QZMZ3CLH.js";import{b as m}from"./chunk.ZP7U5EIB.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};e([l("#inputField")],t.prototype,"_inputElement",2),t=e([a("omni-text-field")],t);export{t as a};
-//# sourceMappingURL=chunk.MQL6GXTD.js.map
+//# sourceMappingURL=chunk.7RIQ53EZ.js.map

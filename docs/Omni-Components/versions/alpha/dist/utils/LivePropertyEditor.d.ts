@@ -8,6 +8,9 @@ import '../text-field/TextField.js';
 import '../icons/Loading.icon.js';
 import '../switch/Switch.js';
 import './CodeEditor.js';
+/**
+ * @ignore
+ */
 export declare class LivePropertyEditor extends OmniElement {
     data: ComponentStoryFormat<any>;
     element: string;

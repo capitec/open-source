@@ -4707,7 +4707,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A clear icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Clear.icon.js';\n```",
+          "description": "A clear icon component.",
           "name": "ClearIcon",
           "members": [
             {
@@ -4725,6 +4725,7 @@
             "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-clear-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Clear.icon.js';\n```",
           "customElement": true
         }
       ],
@@ -5260,7 +5261,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A search icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Search.icon.js';\n```",
+          "description": "A search icon component.",
           "name": "SearchIcon",
           "members": [
             {
@@ -5278,6 +5279,7 @@
             "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-search-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Search.icon.js';\n```",
           "customElement": true
         }
       ],
@@ -10543,14 +10545,6 @@
       ],
       "exports": [
         {
-          "kind": "js",
-          "name": "CodeEditor",
-          "declaration": {
-            "name": "CodeEditor",
-            "module": "src/utils/CodeEditor.ts"
-          }
-        },
-        {
           "kind": "custom-element-definition",
           "name": "code-editor",
           "declaration": {
@@ -10862,14 +10856,6 @@
         }
       ],
       "exports": [
-        {
-          "kind": "js",
-          "name": "LivePropertyEditor",
-          "declaration": {
-            "name": "LivePropertyEditor",
-            "module": "src/utils/LivePropertyEditor.ts"
-          }
-        },
         {
           "kind": "custom-element-definition",
           "name": "live-property-editor",
@@ -11290,14 +11276,6 @@
         }
       ],
       "exports": [
-        {
-          "kind": "js",
-          "name": "StoryRenderer",
-          "declaration": {
-            "name": "StoryRenderer",
-            "module": "src/utils/StoryRenderer.ts"
-          }
-        },
         {
           "kind": "custom-element-definition",
           "name": "story-renderer",

@@ -9,6 +9,9 @@ import './CodeEditor.js';
 import '../text-field/TextField.js';
 import '../color-field/ColorField.js';
 import './LivePropertyEditor.js';
+/**
+ * @ignore
+ */
 export declare class StoryRenderer extends LitElement {
     path: string;
     tag: string;

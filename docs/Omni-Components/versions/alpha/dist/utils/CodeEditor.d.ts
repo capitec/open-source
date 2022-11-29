@@ -2,6 +2,9 @@ import { Extension } from '@codemirror/state';
 import { ViewUpdate } from '@codemirror/view';
 import { EditorView } from 'codemirror';
 import { LitElement, PropertyValueMap } from 'lit';
+/**
+ * @ignore
+ */
 export declare class CodeEditor extends LitElement {
     extensions: () => Extension | Promise<Extension>;
     transformSource: (source: string) => string | Promise<string>;

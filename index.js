@@ -108,10 +108,10 @@ async function load(pushState = true, loadUrl = undefined) {
             history.pushState({ url: url.href }, ``, url.href);
         }
 
-        var searchPath = url.searchParams.get(`path`);
-        if (searchPath) {
-            iframe.setAttribute("src", `${baseRef}${src}${searchPath}`);
-            fullscreen.href = `${baseRef}${src}${searchPath}`;
+        var fullPath = url.searchParams.get(`path`);
+        if (fullPath) {
+            iframe.setAttribute("src", `${baseRef}${src}${fullPath}`);
+            fullscreen.href = `${baseRef}${src}${fullPath}`;
         } else {
             iframe.setAttribute("src", `${baseRef}${src}`);
             fullscreen.href = `${baseRef}${src}`;
@@ -121,12 +121,12 @@ async function load(pushState = true, loadUrl = undefined) {
                 if (!iframe || !iframe.parentElement || !iframe.contentWindow || !iframe.contentWindow.location) {
                     clearInterval(intervalId);
                     return;
-                } else if (iframe.contentWindow.location.search) {
-                    const search = iframe.contentWindow.location.search;
-                    if (search) {
+                } else if (iframe.contentWindow.location.search || iframe.contentWindow.location.pathname || iframe.contentWindow.location.hash) {
+                    const framePath = `${iframe.contentWindow.location.pathname?.replace(`${baseRef}${src}`, '')}${iframe.contentWindow.location.search}${iframe.contentWindow.location.hash}`;
+                    if (framePath) {
                         url = new URL(window.location.href);
                         const hadPath = url.searchParams.has(`path`);
-                        url.searchParams.set(`path`, search);
+                        url.searchParams.set(`path`, framePath);
                         if (url.href != window.location.href && url.searchParams.has(`repo`)) {
                             if (hadPath) {
                                 history.pushState({ url: url.href }, ``, url.href);

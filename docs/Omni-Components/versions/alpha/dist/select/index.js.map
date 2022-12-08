@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/select/index.ts"],
+  "mappings": "wmBAAAA,IAAAC",
+  "names": ["init_define_process_argv", "init_global"]
+}

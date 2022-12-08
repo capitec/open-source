@@ -35,6 +35,7 @@ export declare class StoryRenderer extends LitElement {
     connectedCallback(): Promise<void>;
     disconnectedCallback(): void;
     protected render(): TemplateResult<1>;
+    handleCustomThemeCSSVariableSearch(e: Event): void;
     renderCssVariable(variable: CSSVariable): TemplateResult<1> | typeof nothing;
     protected createRenderRoot(): Element | ShadowRoot;
     private _sortCssVariables;

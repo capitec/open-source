@@ -28,6 +28,7 @@ import OmniElement from './OmniElement.js';
  * @cssprop --omni-form-label-font-size - Form label font size.
  * @cssprop --omni-form-label-font-weight - Form label font weight.
  * @cssprop --omni-form-label-left - Form label left margin.
+ * @cssprop --omni-form-label-z-index - Form label z-index.
  *
  * @cssprop --omni-form-focussed-border-width - Form focussed border width.
  * @cssprop --omni-form-focussed-border-color - Form focussed border color.
@@ -72,7 +73,7 @@ export declare class OmniFormElement extends OmniElement {
      * The value entered into the form component.
      * @attr
      */
-    value: string | number;
+    value: string | number | Record<string, unknown>;
     /**
      * Data associated with the component.
      * @attr
@@ -102,8 +103,9 @@ export declare class OmniFormElement extends OmniElement {
     protected render(): TemplateResult<1>;
     protected renderPrefix(): typeof nothing | TemplateResult;
     protected renderContent(): typeof nothing | TemplateResult;
-    protected renderControl(): typeof nothing | TemplateResult;
     protected renderLabel(): TemplateResult<1>;
+    protected renderControl(): typeof nothing | TemplateResult;
+    protected renderPicker(): typeof nothing | TemplateResult;
     protected renderHint(): TemplateResult<1>;
     protected renderError(): TemplateResult<1>;
 }

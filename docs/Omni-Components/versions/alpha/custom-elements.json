@@ -1775,7 +1775,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -1908,6 +1908,20 @@
             },
             {
               "kind": "method",
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderHint",
               "privacy": "protected",
               "inheritedFrom": {
@@ -1998,7 +2012,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -2466,6 +2480,10 @@
               "name": "--omni-form-label-left"
             },
             {
+              "description": "Form label z-index.",
+              "name": "--omni-form-label-z-index"
+            },
+            {
               "description": "Form focussed border width.",
               "name": "--omni-form-focussed-border-width"
             },
@@ -2602,7 +2620,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -2696,6 +2714,11 @@
             },
             {
               "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
               "name": "renderControl",
               "privacy": "protected",
               "return": {
@@ -2706,8 +2729,13 @@
             },
             {
               "kind": "method",
-              "name": "renderLabel",
-              "privacy": "protected"
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              }
             },
             {
               "kind": "method",
@@ -2782,7 +2810,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -2884,14 +2912,6 @@
       "path": "src/core/OmniInputStories.ts",
       "declarations": [
         {
-          "kind": "variable",
-          "name": "BaseArgTypeDefinitions",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n    suffix: {\n        control: 'text'\n    },\n    prefix: {\n        control: 'text'\n    }\n}"
-        },
-        {
           "kind": "function",
           "name": "LabelStory",
           "parameters": [
@@ -2984,14 +3004,6 @@
         }
       ],
       "exports": [
-        {
-          "kind": "js",
-          "name": "BaseArgTypeDefinitions",
-          "declaration": {
-            "name": "BaseArgTypeDefinitions",
-            "module": "src/core/OmniInputStories.ts"
-          }
-        },
         {
           "kind": "js",
           "name": "LabelStory",
@@ -3209,6 +3221,10 @@
             {
               "description": "Currency field padding.",
               "name": "--omni-currency-field-padding"
+            },
+            {
+              "description": "Currency field width.",
+              "name": "--omni-currency-field-width"
             },
             {
               "description": "Currency field symbol font size.",
@@ -3479,7 +3495,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -3589,6 +3605,15 @@
             },
             {
               "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderControl",
               "privacy": "protected",
               "return": {
@@ -3603,8 +3628,13 @@
             },
             {
               "kind": "method",
-              "name": "renderLabel",
+              "name": "renderPicker",
               "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -3714,7 +3744,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -4703,6 +4733,53 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/ChevronDown.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Chevron down icon component.",
+          "name": "ChevronDownIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-chevron-down-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/ChevronDown.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ChevronDownIcon",
+          "declaration": {
+            "name": "ChevronDownIcon",
+            "module": "src/icons/ChevronDown.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-chevron-down-icon",
+          "declaration": {
+            "name": "ChevronDownIcon",
+            "module": "src/icons/ChevronDown.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/Clear.icon.ts",
       "declarations": [
         {
@@ -5198,6 +5275,53 @@
           "declaration": {
             "name": "MinusIcon",
             "module": "src/icons/Minus.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/More.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "More icon component.",
+          "name": "MoreIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-more-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/More.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MoreIcon",
+          "declaration": {
+            "name": "MoreIcon",
+            "module": "src/icons/More.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-more-icon",
+          "declaration": {
+            "name": "MoreIcon",
+            "module": "src/icons/More.icon.ts"
           }
         }
       ]
@@ -5859,6 +5983,10 @@
             {
               "description": "Number field width.",
               "name": "--omni-number-field-padding"
+            },
+            {
+              "description": "Number field width.",
+              "name": "--omni-number-field-width"
             }
           ],
           "members": [
@@ -5906,7 +6034,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -6030,6 +6158,15 @@
             },
             {
               "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderControl",
               "privacy": "protected",
               "return": {
@@ -6044,8 +6181,13 @@
             },
             {
               "kind": "method",
-              "name": "renderLabel",
+              "name": "renderPicker",
               "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -6143,7 +6285,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -6499,6 +6641,10 @@
               "name": "--omni-numeric-field-padding"
             },
             {
+              "description": "Numeric input field width.",
+              "name": "--omni-numeric-field-width"
+            },
+            {
               "description": "Numeric input control hover color.",
               "name": "--omni-numeric-control-hover"
             }
@@ -6612,7 +6758,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -6745,6 +6891,20 @@
             },
             {
               "kind": "method",
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderHint",
               "privacy": "protected",
               "inheritedFrom": {
@@ -6835,7 +6995,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -7159,6 +7319,10 @@
             {
               "description": "Password field width.",
               "name": "--omni-password-field-padding"
+            },
+            {
+              "description": "Password field width.",
+              "name": "--omni-password-field-width"
             }
           ],
           "slots": [
@@ -7274,7 +7438,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -7407,6 +7571,20 @@
             },
             {
               "kind": "method",
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderHint",
               "privacy": "protected",
               "inheritedFrom": {
@@ -7497,7 +7675,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -8630,8 +8808,12 @@
               "name": "--omni-search-field-height"
             },
             {
-              "description": "Search field width.",
+              "description": "Search field padding.",
               "name": "--omni-search-field-padding"
+            },
+            {
+              "description": "Search field width",
+              "name": "--omni-search-field-width"
             },
             {
               "description": "Search field control right margin.",
@@ -8751,7 +8933,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -8870,6 +9052,20 @@
             },
             {
               "kind": "method",
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderHint",
               "privacy": "protected",
               "inheritedFrom": {
@@ -8936,6 +9132,14 @@
               }
             }
           ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              }
+            }
+          ],
           "superclass": {
             "name": "OmniFormElement",
             "module": "/src/core/OmniFormElement.js"
@@ -8960,7 +9164,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -9117,6 +9321,1044 @@
           "declaration": {
             "name": "*",
             "package": "./SearchField.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/select/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/select/Select.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            idField=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        items: displayItems as Record<string,unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: ''\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select.shadowRoot, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select.shadowRoot, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Async_Per_Item",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            idField=\"${args.idField}\">\n        </omni-select>\n    `,\n    name: 'Async',\n    args: {\n        label: 'Async item renderer function',\n        data: {},\n        items: () => promiseDisplayItems(displayItems),\n        displayField: 'label',\n        idField: 'id',\n        renderItem: async (item: any) => {\n            await new Promise((resolve, reject) => {\n                // Setting 2000 ms time\n                setTimeout(resolve, 2000);\n            });\n            const i = document.createElement('i');\n            i.innerText = item.label;\n            i.style.color = 'red';\n\n            return i;\n        }\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n\n        let item;\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            item = await querySelectorAsync(select.shadowRoot, '.item', undefined, 3000);\n        } else {\n            item = await querySelectorAsync(select.shadowRoot, '.item', undefined, 5000);\n        }\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Loading_Slot",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            idField=\"${args.idField}\">\n            ${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}\n        </omni-select>\n    `,\n    name: 'Loading Slot',\n    args: {\n        label: 'Loading Slot',\n        data: {},\n        items: () => promiseDisplayItems(displayItems),\n        displayField: 'label',\n        idField: 'id',\n        renderItem: async (item: any) => {\n            await new Promise((resolve, reject) => {\n                // Setting 2000 ms time\n                setTimeout(resolve, 2000);\n            });\n            const i = document.createElement('i');\n            i.innerText = item.label;\n            i.style.color = 'red';\n\n            return i;\n        },\n        loading_indicator: raw`<span>...</span>`\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n\n        let item;\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            item = await querySelectorAsync(select.shadowRoot, '.item', undefined, 3000);\n        } else {\n            item = await querySelectorAsync(select.shadowRoot, '.item', undefined, 5000);\n        }\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "String_Array",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            idField=\"${args.idField}\">\n        </omni-select>\n    `,\n    name: 'String',\n    args: {\n        label: 'String',\n        data: {},\n        items: stringItems,\n        displayField: 'label',\n        idField: 'id'\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n\n        const item = await querySelectorAsync(select.shadowRoot, '.item');\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot.getElementById('select');\n        await expect(selectField).toHaveValue(stringItems[0]);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Empty",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            idField=\"${args.idField}\">\n        </omni-select>\n    `,\n    name: 'Empty',\n    args: {\n        label: 'Empty',\n        items: [],\n        displayField: 'label',\n        idField: 'id'\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n        await userEvent.click(select);\n\n        const item = await querySelectorAsync(select.shadowRoot, '.none');\n        await expect(item).toHaveTextContent('No items provided');\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?disabled=\"${args.disabled}\">\n        </omni-select>\n    `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled',\n        disabled: true,\n        items: displayItems as Record<string,unknown>[]\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n        await expect(() => userEvent.click(select)).rejects.toThrow(/pointer-events: none/);\n        await expect(click).toBeCalledTimes(0);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Hint"
+        },
+        {
+          "kind": "variable",
+          "name": "Error_Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Prefix"
+        },
+        {
+          "kind": "variable",
+          "name": "Suffix"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Async_Per_Item",
+          "declaration": {
+            "name": "Async_Per_Item",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Loading_Slot",
+          "declaration": {
+            "name": "Loading_Slot",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "String_Array",
+          "declaration": {
+            "name": "String_Array",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Empty",
+          "declaration": {
+            "name": "Empty",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hint",
+          "declaration": {
+            "name": "Hint",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Error_Label",
+          "declaration": {
+            "name": "Error_Label",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Prefix",
+          "declaration": {
+            "name": "Prefix",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Suffix",
+          "declaration": {
+            "name": "Suffix",
+            "module": "src/select/Select.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/select/Select.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Control to get / set a value within a list of options.",
+          "name": "Select",
+          "cssProperties": [
+            {
+              "description": "Select component input field text align.",
+              "name": "--omni-select-field-text-align"
+            },
+            {
+              "description": " Select component input field font color.",
+              "name": "--omni-select-field-font-color"
+            },
+            {
+              "description": "Select component input field font family.",
+              "name": "--omni-select-field-font-family"
+            },
+            {
+              "description": "Select component input field font size.",
+              "name": "--omni-select-field-font-size"
+            },
+            {
+              "description": "Select component input field font weight.",
+              "name": "--omni-select-field-font-weight"
+            },
+            {
+              "description": "Select component input field height",
+              "name": "--omni-select-field-height"
+            },
+            {
+              "description": "Select component input field padding.",
+              "name": "--omni-select-field-padding"
+            },
+            {
+              "description": "Select control right margin.",
+              "name": "--omni-select-control-margin-right"
+            },
+            {
+              "description": "Select control left margin.",
+              "name": "--omni-select-control-margin-left"
+            },
+            {
+              "description": "Select control width.",
+              "name": "--omni-select-control-width"
+            },
+            {
+              "description": "Select control icon width.",
+              "name": "--omni-select-control-icon-width"
+            },
+            {
+              "description": "Select control icon color.",
+              "name": "--omni-select-control-icon-color"
+            },
+            {
+              "description": "Select items container box shadow.",
+              "name": "--omni-select-items-container-box-shadow"
+            },
+            {
+              "description": "Select items container background color.",
+              "name": "--omni-select-items-container-background-color"
+            },
+            {
+              "description": "Select item container for mobile left.",
+              "name": "--omni-select-mobile-items-container-left"
+            },
+            {
+              "description": "Select item container for mobile right.",
+              "name": "--omni-select-mobile-items-container-right"
+            },
+            {
+              "description": "Select item container for mobile bottom.",
+              "name": "--omni-select-mobile-items-container-bottom"
+            },
+            {
+              "description": "Select item container for mobile top left radius.",
+              "name": "--omni-select-mobile-items-container-border-top-left-radius"
+            },
+            {
+              "description": "Select item container for mobile right left radius.",
+              "name": "--omni-select-mobile-items-container-border-top-right-radius"
+            },
+            {
+              "description": "Select items container width",
+              "name": "--omni-select-items-container-width"
+            },
+            {
+              "description": "Select items container top.",
+              "name": "--omni-select-items-container-top"
+            },
+            {
+              "description": "Select items container top when rendered at the bottom.",
+              "name": "--omni-select-items-container-render-bottom-top"
+            },
+            {
+              "description": "Select item header left.",
+              "name": "--omni-select-item-header-left"
+            },
+            {
+              "description": "Select item header right.",
+              "name": "--omni-select-item-header-right"
+            },
+            {
+              "description": "Select item header font family.",
+              "name": "--omni-select-item-header-font-family"
+            },
+            {
+              "description": "Select item header font size.",
+              "name": "--omni-select-item-header-font-size"
+            },
+            {
+              "description": "Select item header font weight.",
+              "name": "--omni-select-item-header-font-weight"
+            },
+            {
+              "description": "Select item header font background color.",
+              "name": "--omni-select-item-header-font-background-color"
+            },
+            {
+              "description": "Select item header top padding.",
+              "name": "--omni-select-item-header-padding-top"
+            },
+            {
+              "description": "Select item head bottom padding.",
+              "name": "--omni-select-item-header-padding-bottom"
+            },
+            {
+              "description": "Select item head right padding.",
+              "name": "--omni-select-item-header-padding-right"
+            },
+            {
+              "description": "Select item head left padding.",
+              "name": "--omni-select-item-header-padding-left"
+            },
+            {
+              "description": "Select item header top left border radius.",
+              "name": "--omni-select-item-header-item-border-top-left-radius"
+            },
+            {
+              "description": "Select item header top right border radius.",
+              "name": "--omni-select-item-header-item-border-top-right-radius"
+            },
+            {
+              "description": "Select items height.",
+              "name": "--omni-select-items-height"
+            },
+            {
+              "description": "Select items width.",
+              "name": "--omni-select-items-width"
+            },
+            {
+              "description": "Select items scroll bar thumb width.",
+              "name": "--omni-select-scrollbar-thumb-width"
+            },
+            {
+              "description": " Select items scroll bar track left padding.",
+              "name": "--omni-select-scrollbar-track-padding-left"
+            },
+            {
+              "description": "Select items scroll bar track right padding.",
+              "name": "--omni-select-scrollbar-track-padding-right"
+            },
+            {
+              "description": "Select items scroll bar track border radius.",
+              "name": "--omni-select-scrollbar-track-border-radius"
+            },
+            {
+              "description": "Select items scroll bar track background color.",
+              "name": "--omni-select-scrollbar-track-background-color"
+            },
+            {
+              "description": "Select items scroll bar thumb border radius.",
+              "name": "--omni-select-scrollbar-thumb-border-radius"
+            },
+            {
+              "description": "Select items scroll bar thumb background color.",
+              "name": "--omni-select-scrollbar-thumb-background-color"
+            },
+            {
+              "description": "Select items scroll bar thumb top padding.",
+              "name": "--omni-select-scrollbar-track-padding-top"
+            },
+            {
+              "description": "Select items scroll bar thumb bottom padding.",
+              "name": "--omni-select-scrollbar-track-padding-bottom"
+            },
+            {
+              "description": "Select items scroll bar thumb left padding.",
+              "name": "--omni-select-scrollbar-track-padding-left"
+            },
+            {
+              "description": "Select items scroll bar thumb right padding.",
+              "name": "--omni-select-scrollbar-track-padding-right"
+            },
+            {
+              "description": "Select item font color.",
+              "name": "--omni-select-item-font-color"
+            },
+            {
+              "description": "Select item font family.",
+              "name": "--omni-select-item-font-family"
+            },
+            {
+              "description": "Select item font weight.",
+              "name": "--omni-select-item-font-weight"
+            },
+            {
+              "description": "Select item top padding.",
+              "name": "--omni-select-item-padding-top"
+            },
+            {
+              "description": "Select item bottom padding.",
+              "name": "--omni-select-item-padding-bottom"
+            },
+            {
+              "description": "Select item left padding.",
+              "name": "--omni-select-item-padding-left"
+            },
+            {
+              "description": "Select item right padding.",
+              "name": "--omni-select-item-padding-right"
+            },
+            {
+              "description": "Select item width.",
+              "name": "--omni-select-item-width"
+            },
+            {
+              "description": "Select item hover background color.",
+              "name": "--omni-select-item-hover-background-color"
+            },
+            {
+              "description": "Selected item color.",
+              "name": "--omni-select-item-selected-color"
+            },
+            {
+              "description": "Select item hover.",
+              "name": "--omni-select-item-none-hover"
+            },
+            {
+              "description": "Select loading indicator width.",
+              "name": "--omni-select-loading-indicator-width"
+            },
+            {
+              "description": "Select loading indicator height.",
+              "name": "--omni-select-loading-indicator-height"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_selectElement",
+              "type": {
+                "text": "HTMLInputElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "items",
+              "type": {
+                "text": "SelectItems | (() => SelectItems)"
+              },
+              "description": "Selectable items of the select component.",
+              "attribute": "items",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "displayField",
+              "type": {
+                "text": "string"
+              },
+              "description": "The field of the item to display as one of the selectable options.",
+              "attribute": "display-field",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "idField",
+              "type": {
+                "text": "string"
+              },
+              "default": "'id'",
+              "description": "The id field of the items provided.",
+              "attribute": "id-field",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "renderItem",
+              "type": {
+                "text": "RenderFunction"
+              },
+              "description": "The render function for each item."
+            },
+            {
+              "kind": "field",
+              "name": "_popUp",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_bottomOfScreen",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_mobileWidth",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "_inputClick"
+            },
+            {
+              "kind": "method",
+              "name": "_windowClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_controlClick"
+            },
+            {
+              "kind": "method",
+              "name": "_togglePopup"
+            },
+            {
+              "kind": "method",
+              "name": "_onItemClick",
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "Record<string, unknown> | string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_sizeCheck"
+            },
+            {
+              "kind": "method",
+              "name": "_heightCheck"
+            },
+            {
+              "kind": "method",
+              "name": "_widthCheck"
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderOptions"
+            },
+            {
+              "kind": "method",
+              "name": "_renderOption",
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "Record<string, unknown> | string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown>"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_formContainerElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_labelElement",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusGained",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_focusLost",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderPrefix",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "items",
+              "type": {
+                "text": "SelectItems | (() => SelectItems)"
+              },
+              "description": "Selectable items of the select component.",
+              "fieldName": "items",
+              "attribute": "items"
+            },
+            {
+              "name": "display-field",
+              "type": {
+                "text": "string"
+              },
+              "description": "The field of the item to display as one of the selectable options.",
+              "fieldName": "displayField",
+              "attribute": "display-field"
+            },
+            {
+              "name": "id-field",
+              "type": {
+                "text": "string"
+              },
+              "default": "'id'",
+              "description": "The id field of the items provided.",
+              "fieldName": "idField",
+              "attribute": "id-field"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown>"
+              },
+              "default": "null",
+              "description": "The value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string"
+              },
+              "description": "A hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string"
+              },
+              "description": "A error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniFormElement",
+            "module": "/src/core/OmniFormElement.js"
+          },
+          "tagName": "omni-select",
+          "import": "```js\nimport '@capitec/omni-components/select';\n```",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Select",
+          "declaration": {
+            "name": "Select",
+            "module": "src/select/Select.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-select",
+          "declaration": {
+            "name": "Select",
+            "module": "src/select/Select.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/select/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Select.js"
           }
         }
       ]
@@ -9870,7 +11112,7 @@
               "kind": "field",
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -9994,6 +11236,15 @@
             },
             {
               "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderControl",
               "privacy": "protected",
               "return": {
@@ -10008,8 +11259,13 @@
             },
             {
               "kind": "method",
-              "name": "renderLabel",
+              "name": "renderPicker",
               "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -10107,7 +11363,7 @@
             {
               "name": "value",
               "type": {
-                "text": "string | number"
+                "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
               "description": "The value entered into the form component.",
@@ -11082,6 +12338,18 @@
             },
             {
               "kind": "method",
+              "name": "handleCustomThemeCSSVariableSearch",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "renderCssVariable",
               "parameters": [
                 {
@@ -11147,7 +12415,7 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "Event"
                   }
                 }
               ]

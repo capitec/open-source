@@ -8,7 +8,7 @@ import{A as ee,B as K,C as Pt,D as Ie,E as k,F as Fe,G as Rt,H as m,I as te,J as
           pointer-events: none;
         }
 
-        .cm-editor {
+       /*.cm-editor {
           background: var(--code-editor-background-color);
           font-size: 16px;
           padding: 12px;
@@ -16,7 +16,7 @@ import{A as ee,B as K,C as Pt,D as Ie,E as k,F as Fe,G as Rt,H as m,I as te,J as
           max-width: var(--code-editor-max-width);
           min-height: var(--code-editor-min-height);
           min-width: var(--code-editor-min-width);
-        }
+        }*/
 
         .cm-content {
           white-space: pre-wrap !important;
@@ -61,7 +61,7 @@ import{A as ee,B as K,C as Pt,D as Ie,E as k,F as Fe,G as Rt,H as m,I as te,J as
           transform: translate(0, 0) scale(0.9);
         }
         
-        .cm-scroller::-webkit-scrollbar {
+        /*.cm-scroller::-webkit-scrollbar {
             width: 10px;
             height: 10px;
         }
@@ -83,7 +83,7 @@ import{A as ee,B as K,C as Pt,D as Ie,E as k,F as Fe,G as Rt,H as m,I as te,J as
             border-right: 1px solid transparent;
         
             background-clip: padding-box;
-        }
+        }*/
       `]}async refresh(n=void 0){if(n&&(this.code=await n()),!this.disabled&&this.editor&&(this.code||this.slotElement.assignedNodes().length>0)){let r=this.code?await this.transformSource(await this.code):await this.transformSource(this._readCode(this.slotElement));this.editor.dispatch({changes:{from:0,to:this.editor.state.doc.length,insert:r}})}}async updateExtensions(){!this.editor||this.editor.dispatch({effects:this.userExtensions.reconfigure([this.readOnly||this.disabled?[]:[_e(),Ve(),lt(),We(),Ke(),He(),je(),Xe(),Ue(),te.of([...Qe,...ht,...Ct,...ct,...Ye])],$e(Je,{fallback:!0}),qe(),xt(),await this.extensions()])})}render(){return Mt`
       <div style="position: relative">
         <!-- button to copy the editor -->
@@ -96,4 +96,4 @@ import{A as ee,B as K,C as Pt,D as Ie,E as k,F as Fe,G as Rt,H as m,I as te,J as
       <slot @slotchange="${()=>this._slotChanged()}"></slot>
     `}async updated(n){var r,o,i,s,l,c;if(!this.editor&&this.codeParent&&(this.code||this.slotElement.assignedNodes().length>0)){let a=this.code?await this.transformSource(await this.code):await this.transformSource(this._readCode(this.slotElement));this._clearElements(this.codeParent),this.editor=new m({doc:a,extensions:[this.userExtensions.of([this.readOnly||this.disabled?[]:[_e(),Ve(),lt(),We(),Ke(),He(),je(),Xe(),Ue(),te.of([...Qe,...ht,...Ct,...ct,...Ye])],$e(Je,{fallback:!0}),qe(),xt(),await this.extensions()]),this.readonlyOrDisabled.of([ee.readOnly.of(this.readOnly||this.disabled),m.editable.of(!this.readOnly&&!this.disabled)]),te.of(this.noTab?[]:[Mn]),m.updateListener.of(async h=>{if(h.docChanged){let f=a;a=this.editor.state.doc.toString(),this.code=a,this.requestUpdate(),await this.updateComplete,this.disabled||(this.dispatchEvent(new CustomEvent("codemirror-update",{detail:{update:h,editor:this.editor,source:this.editor.state.doc.toString()}})),this.dispatchEvent(new CustomEvent("codemirror-source-change",{detail:{update:h,editor:this.editor,oldSource:f,source:a}})))}else this.disabled||this.dispatchEvent(new CustomEvent("codemirror-update",{detail:{update:h,editor:this.editor,source:this.editor.state.doc.toString()}}))})],parent:this.codeParent}),this._clearOtherElements(this.codeParent,this.editor.dom),(o=(r=this.editor.dom)==null?void 0:r.part)==null||o.add("editor"),(s=(i=this.editor.scrollDOM)==null?void 0:i.part)==null||s.add("editor-scroller"),(c=(l=this.editor.contentDOM)==null?void 0:l.part)==null||c.add("editor-content"),this.disabled||this.dispatchEvent(new CustomEvent("codemirror-loaded",{detail:{editor:this.editor,source:this.editor.state.doc.toString()}}))}}async _copyCode(){this._copyTextToClipboard(await this.code)}_fallbackCopyTextToClipboard(n){let r=document.createElement("textarea");r.value=n,r.style.top="0",r.style.left="0",r.style.position="fixed",document.body.appendChild(r),r.focus(),r.select();try{document.execCommand("copy")}catch(o){console.error(o)}document.body.removeChild(r)}_copyTextToClipboard(n){if(!navigator.clipboard){this._fallbackCopyTextToClipboard(n);return}navigator.clipboard.writeText(n).then(void 0,r=>{console.error("Attempting fallback, could not copy text: ",r),this._fallbackCopyTextToClipboard(n)})}async _slotChanged(){if(!this.editor)return;let n=this.code?await this.transformSource(await this.code):await this.transformSource(this._readCode(this.slotElement));!this.disabled&&n!==this.editor.state.doc.toString()&&this.editor.dispatch({changes:{from:0,to:this.editor.state.doc.length,insert:n}})}_readCode(n){return n.assignedNodes().map(o=>o instanceof Element?o.outerHTML:o.textContent).join(`\r
 `)}_clearElements(n=void 0){n||(n=this.renderRoot);let r=n.lastElementChild;for(;r;){let o=r;r=r.previousElementSibling,o.hasAttribute("slot")||n.removeChild(o)}}_clearOtherElements(n=void 0,r){if(n||(n=this.renderRoot),!r||!n.contains(r)){this._clearElements(n);return}let o=n.children.length;if(o>1)for(let i=o-1;i>=0;i--){let s=n.children[i];!s.hasAttribute("slot")&&s!==r&&n.removeChild(s)}}};L([U({type:Object,reflect:!1})],A.prototype,"extensions",2),L([U({type:Object,reflect:!1})],A.prototype,"transformSource",2),L([U({type:String,reflect:!0})],A.prototype,"code",2),L([U({type:Boolean,attribute:"read-only",reflect:!0})],A.prototype,"readOnly",2),L([U({type:Boolean,reflect:!0})],A.prototype,"disabled",2),L([U({type:Boolean,attribute:"no-tab",reflect:!0})],A.prototype,"noTab",2),L([Ze(".code-parent")],A.prototype,"codeParent",2),L([Ze("slot")],A.prototype,"slotElement",2),A=L([Wt("code-editor")],A);export{A as a};
-//# sourceMappingURL=chunk.UHILKY54.js.map
+//# sourceMappingURL=chunk.LVNHDGJ7.js.map

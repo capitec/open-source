@@ -1,6 +1,6 @@
 {
   "version": 3,
   "sources": ["../../src/text-field/index.ts"],
-  "mappings": "8XAAAA,IAAAC",
+  "mappings": "uVAAAA,IAAAC",
   "names": ["init_define_process_argv", "init_global"]
 }

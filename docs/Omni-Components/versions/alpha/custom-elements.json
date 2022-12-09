@@ -9341,7 +9341,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            idField=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        items: displayItems as Record<string,unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: ''\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select.shadowRoot, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select.shadowRoot, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            idField=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        items: displayItems as Record<string, unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: ''\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select.shadowRoot, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select.shadowRoot, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -9381,7 +9381,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?disabled=\"${args.disabled}\">\n        </omni-select>\n    `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled',\n        disabled: true,\n        items: displayItems as Record<string,unknown>[]\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n        await expect(() => userEvent.click(select)).rejects.toThrow(/pointer-events: none/);\n        await expect(click).toBeCalledTimes(0);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?disabled=\"${args.disabled}\">\n        </omni-select>\n    `,\n    name: 'Disabled',\n    args: {\n        label: 'Disabled',\n        disabled: true,\n        items: displayItems as Record<string, unknown>[]\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n        await expect(() => userEvent.click(select)).rejects.toThrow(/pointer-events: none/);\n        await expect(click).toBeCalledTimes(0);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -9763,6 +9763,14 @@
             },
             {
               "kind": "field",
+              "name": "_itemsContainer",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
               "name": "items",
               "type": {
                 "text": "SelectItems | (() => SelectItems)"
@@ -9794,6 +9802,17 @@
             },
             {
               "kind": "field",
+              "name": "emptyMessage",
+              "type": {
+                "text": "string"
+              },
+              "default": "'No items provided'",
+              "description": "The message displayed in the items container when no items are bound to the component.",
+              "attribute": "empty-message",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "renderItem",
               "type": {
                 "text": "RenderFunction"
@@ -9811,7 +9830,7 @@
             },
             {
               "kind": "field",
-              "name": "_bottomOfScreen",
+              "name": "_bottomOfViewport",
               "type": {
                 "text": "boolean"
               },
@@ -9820,7 +9839,7 @@
             },
             {
               "kind": "field",
-              "name": "_mobileWidth",
+              "name": "_isMobile",
               "type": {
                 "text": "boolean"
               },
@@ -9865,15 +9884,28 @@
             },
             {
               "kind": "method",
-              "name": "_sizeCheck"
+              "name": "_dimensionsCheck"
             },
             {
               "kind": "method",
-              "name": "_heightCheck"
+              "name": "_bottomCheck"
             },
             {
               "kind": "method",
-              "name": "_widthCheck"
+              "name": "_mobileCheck"
+            },
+            {
+              "kind": "method",
+              "name": "_itemsMaxHeightChange",
+              "parameters": [
+                {
+                  "name": "el",
+                  "optional": true,
+                  "type": {
+                    "text": "Element"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -10178,6 +10210,16 @@
               "description": "The id field of the items provided.",
               "fieldName": "idField",
               "attribute": "id-field"
+            },
+            {
+              "name": "empty-message",
+              "type": {
+                "text": "string"
+              },
+              "default": "'No items provided'",
+              "description": "The message displayed in the items container when no items are bound to the component.",
+              "fieldName": "emptyMessage",
+              "attribute": "empty-message"
             },
             {
               "name": "label",

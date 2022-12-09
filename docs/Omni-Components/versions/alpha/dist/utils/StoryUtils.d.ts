@@ -1,6 +1,7 @@
 import { TagSpec } from '@codemirror/lang-html';
 import { Package } from 'custom-elements-manifest/schema';
 export { Package, ClassDeclaration, CustomElementDeclaration, Declaration, CustomElement } from 'custom-elements-manifest/schema';
+import './CodeEditor.js';
 declare function loadCssProperties(element: string, customElements: Package, cssDeclarations?: Record<string, {
     control: 'color' | 'text';
     description: string;

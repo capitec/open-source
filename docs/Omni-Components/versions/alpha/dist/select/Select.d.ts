@@ -109,6 +109,7 @@ import '../icons/More.icon.js';
  */
 export declare class Select extends OmniFormElement {
     private _selectElement;
+    private _itemsContainer;
     /**
      * Selectable items of the select component.
      * @attr
@@ -125,22 +126,29 @@ export declare class Select extends OmniFormElement {
      */
     idField: string;
     /**
+     * The message displayed in the items container when no items are bound to the component.
+     * @attr [empty-message]
+     */
+    emptyMessage: string;
+    /**
      * The render function for each item.
      * @no_attribute
      */
     renderItem: RenderFunction;
     private _popUp;
-    private _bottomOfScreen;
-    private _mobileWidth;
+    private _bottomOfViewport;
+    private _isMobile;
     connectedCallback(): void;
+    protected firstUpdated(): Promise<void>;
     _inputClick(): void;
     _windowClick(e: Event): void;
     _controlClick(): void;
     _togglePopup(): void;
     _onItemClick(item: Record<string, unknown> | string): Promise<void>;
-    _sizeCheck(): void;
-    _heightCheck(): void;
-    _widthCheck(): void;
+    _dimensionsCheck(): Promise<void>;
+    _bottomCheck(): Promise<void>;
+    _mobileCheck(): void;
+    _itemsMaxHeightChange(el?: Element): Promise<void>;
     static get styles(): import("lit").CSSResultGroup[];
     protected renderContent(): import("lit-html").TemplateResult<1>;
     protected renderPicker(): import("lit-html").TemplateResult<1> | typeof nothing;

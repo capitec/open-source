@@ -1,7 +1,8 @@
 import { Extension } from '@codemirror/state';
 import { ViewUpdate } from '@codemirror/view';
 import { EditorView } from 'codemirror';
-import { LitElement, PropertyValueMap } from 'lit';
+import { LitElement } from 'lit';
+import '../icon/Icon.js';
 /**
  * @ignore
  */
@@ -21,7 +22,7 @@ export declare class CodeEditor extends LitElement {
     refresh(getCode?: () => string | Promise<string>): Promise<void>;
     updateExtensions(): Promise<void>;
     protected render(): import("lit-html").TemplateResult<1>;
-    protected updated(_changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>): Promise<void>;
+    protected updated(): Promise<void>;
     private _copyCode;
     private _fallbackCopyTextToClipboard;
     private _copyTextToClipboard;

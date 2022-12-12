@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Omni Components</title>
+    <base href="/open-source/docs/Omni-Components/versions/beta/" >
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="assets/css/default-light-theme.css">
+    <style id="theme-styles"></style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="./dist/utils/StoryRenderer.js"></script>
+    <script type="module" src="./dist/omni-components.js"></script>
+    <script type="module" defer>
+        import { setupEleventy } from './dist/utils/StoryUtils.js';
+        setupEleventy();
+    </script>
+</head>
+<body>
+    <div dir="ltr">
+        <div class="container">
+            <header>
+                <div class="header-menu-button">
+                    <span class="material-icons">
+                        menu
+                    </span>
+                </div>
+                <div style="display: flex;">
+                    <div class="header-logo">
+                        <div class="header-container" id="header-container">
+                            <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                            <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                        </div>
+                    </div>
+                    <div class="header-version">
+                        beta
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span class="material-icons docs-omni-component action" style="display: none;" id="header-theme-edit-btn">
+                        edit
+                    </span>
+                    <span class="header-theme-section">
+                        <span class="material-icons docs-omni-component action hidden-until-760 action" style="height: 37px; width: 37px;" id="header-theme-select-btn">
+                            format_color_fill
+                        </span>
+                        <select class="docs-select theme-select transparent hidden-until-760" id="header-theme-native-select"></select>
+                        <omni-select class="docs-omni-component hidden-after-760" id="header-theme-select"></omni-select>
+                    </span>
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="docs-omni-component action">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </header>
+
+            
+
+<nav class="menu">
+    <div class="menu-container">
+        <div class="menu-item ">
+            <a class="menu-link "  href="./">Home</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./getting-started/">Getting Started</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./theme-support/">Theme Support</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./contributing/">Contributing</a>
+        </div>
+        <div class="menu-item separator"><div class="line"></div></div>
+        
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/button">
+                Button
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/check">
+                Check
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/chip">
+                Chip
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/colorfield">
+                ColorField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/currencyfield">
+                CurrencyField
+            </a>
+        </div>
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
+            href="./components/hyperlink">
+                Hyperlink
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/icon">
+                Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/label">
+                Label
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/numberfield">
+                NumberField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/numericfield">
+                NumericField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/passwordfield">
+                PasswordField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radio">
+                Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/renderelement">
+                RenderElement
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/searchfield">
+                SearchField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/select">
+                Select
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/switch">
+                Switch
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/textfield">
+                TextField
+            </a>
+        </div>
+    </div>
+</nav>
+            <main>
+    
+<div class="component-overlay">
+    <div class="lds-ripple"><div></div><div></div></div>
+</div>
+
+<article class="component">
+    <div class="component-meta">
+        <div class="component-name">Hyperlink</div>
+        <div class="component-desc">Control to indicate an action to be executed. Typically used for navigational purposes.</div> 
+        <div class="component-info">
+            <div class="component-info-item">
+                <div>Module</div>
+                <div class="component-info-item-code">
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/hyperlink&#39;;</code></pre>
+                    <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
+                        content_copy
+                    </span>
+                </div>
+            </div>
+            <div class="component-info-item">
+                <div>Source</div>
+                <div>
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/hyperlink/Hyperlink.ts" target="blank" class="component-info-item-link">
+                        <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="component-info-item">
+                <div>Package</div>
+                <div>
+                    <a href="https://www.npmjs.com/package/@capitec/omni-components" target="blank" class="component-info-item-link">
+                        <img src="./assets/images/npm.svg" class="component-info-item-img">
+                        @capitec/omni-components
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="component-tab-container">
+        <div class="component-tab-root">
+            <div class="component-tab-wrapper">
+                <div class="component-tab-list" role="tablist">
+                    <div role="tab" class="component-tab-button active" data-name="examples" onclick="openTab(event.currentTarget, 'examples')">Examples</div>
+                    <div role="tab" class="component-tab-button" data-name="docs" onclick="openTab(event.currentTarget, 'docs')">Docs</div>
+                    <div role="tab" class="component-tab-button" data-name="styles" onclick="openTab(event.currentTarget, 'styles')">Styles</div>
+                </div>
+            </div>
+            <div class="component-tab" id="examples" role="tabpanel" style="display: block;">
+                <div class="component-props-examples-wrapper">
+                    <div class="component-tab-content">
+                        <div class="component-stories">
+                            
+                            <div class="name" id="story-interactive">Interactive</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/hyperlink/Hyperlink.stories.js" 
+                                    tag="omni-hyperlink" 
+                                    key="Interactive"
+                                    interactive >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-label">Label</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/hyperlink/Hyperlink.stories.js" 
+                                    tag="omni-hyperlink" 
+                                    key="Label"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-size">Size</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/hyperlink/Hyperlink.stories.js" 
+                                    tag="omni-hyperlink" 
+                                    key="Size"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-href">Href</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/hyperlink/Hyperlink.stories.js" 
+                                    tag="omni-hyperlink" 
+                                    key="Href"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-disabled">Disabled</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/hyperlink/Hyperlink.stories.js" 
+                                    tag="omni-hyperlink" 
+                                    key="Disabled"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-inline">Inline</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/hyperlink/Hyperlink.stories.js" 
+                                    tag="omni-hyperlink" 
+                                    key="Inline"
+                                     >
+                                </story-renderer>
+                            </div>
+                        </div>
+                        <div class="component-toc-wrapper">
+                            <div class="component-toc">
+                                
+                                    <a href="components/hyperlink/#story-interactive" id="story-interactive-a" class="item">
+                                        Interactive
+                                    </a>
+                                    <a href="components/hyperlink/#story-label" id="story-label-a" class="item">
+                                        Label
+                                    </a>
+                                    <a href="components/hyperlink/#story-size" id="story-size-a" class="item">
+                                        Size
+                                    </a>
+                                    <a href="components/hyperlink/#story-href" id="story-href-a" class="item">
+                                        Href
+                                    </a>
+                                    <a href="components/hyperlink/#story-disabled" id="story-disabled-a" class="item">
+                                        Disabled
+                                    </a>
+                                    <a href="components/hyperlink/#story-inline" id="story-inline-a" class="item">
+                                        Inline
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="component-tab" id="docs" role="tabpanel">
+
+                <h2 class="component-props-table-header" style="padding-top: 24px;">Properties</h2>
+                <div class="docs-search-area">
+                    <omni-search-field id="attribute-search"></omni-search-field>
+                </div>
+                <div class="component-props-table-wrapper">
+                    <table class="component-props-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="component-attributes">
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">label</td>
+                                <td data-label="Attribute" scope="row">label&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                <td data-label="Description">Text label.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">href</td>
+                                <td data-label="Attribute" scope="row">href&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                <td data-label="Description">URL to link to.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">target</td>
+                                <td data-label="Attribute" scope="row">target&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">&#39;_self&#39; | &#39;_blank&#39; | &#39;_parent&#39; | &#39;_top&#39;</code></pre></td>
+                                <td data-label="Description">Where to load the URL specified in "href"</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">disabled</td>
+                                <td data-label="Attribute" scope="row">disabled&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                <td data-label="Description">Indicator if the component is disabled.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">inline</td>
+                                <td data-label="Attribute" scope="row">inline&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                <td data-label="Description">Indicator if the link is used as part of a sentence.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">size</td>
+                                <td data-label="Attribute" scope="row">size&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                <td data-label="Description">Size of the Hyperlink text.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">dir</td>
+                                <td data-label="Attribute" scope="row">dir&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                <td data-label="Description">Used to set the base direction of text for display</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">lang</td>
+                                <td data-label="Attribute" scope="row">lang&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                <td data-label="Description">Used to identify the language of text content on the web</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2 class="component-props-table-header">Events</h2>
+                <div class="docs-search-area">
+                    <omni-search-field id="event-search"></omni-search-field>
+                </div>
+                <div class="component-props-table-wrapper">
+                    <table class="component-props-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="component-events">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2 class="component-props-table-header">Slots</h2>
+                <div class="docs-search-area">
+                    <omni-search-field id="slot-search"></omni-search-field>
+                </div>
+                <div class="component-props-table-wrapper">
+                    <table class="component-props-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody id="component-slots">
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
+                                <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="component-tab" id="styles" role="tabpanel">
+                <div style="padding-top: 24px;"></div>
+                
+                <h2 class="component-props-table-header" >Theme Variables</h2>
+                <div class="docs-search-area">
+                    <omni-search-field class="css-category" data-category="Theme Variables"></omni-search-field>
+                </div>
+                <div class="component-props-table-wrapper">
+                    <table class="component-props-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody data-category="Theme Variables" class="component-css-props">
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-color</code></pre></td>
+                                <td data-label="Description">Theme primary color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-hover-color</code></pre></td>
+                                <td data-label="Description">Theme primary hover color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-active-color</code></pre></td>
+                                <td data-label="Description">Theme primary active color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-color</code></pre></td>
+                                <td data-label="Description">Theme accent color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-hover-color</code></pre></td>
+                                <td data-label="Description">Theme accent hover color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-active-color</code></pre></td>
+                                <td data-label="Description">Theme accent active color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-color</code></pre></td>
+                                <td data-label="Description">Theme background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-hover-color</code></pre></td>
+                                <td data-label="Description">Theme background hover color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-active-color</code></pre></td>
+                                <td data-label="Description">Theme background active color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-color</code></pre></td>
+                                <td data-label="Description">Theme font color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-border-color</code></pre></td>
+                                <td data-label="Description">Theme disabled border color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-background-color</code></pre></td>
+                                <td data-label="Description">Theme disabled background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-font-color</code></pre></td>
+                                <td data-label="Description">Theme disabled background color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-border-color</code></pre></td>
+                                <td data-label="Description">Theme error border color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-hint-font-color</code></pre></td>
+                                <td data-label="Description">Theme hint font color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-inactive-color</code></pre></td>
+                                <td data-label="Description">Theme inactive color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow-color</code></pre></td>
+                                <td data-label="Description">Theme inactive color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-family</code></pre></td>
+                                <td data-label="Description">Theme font family.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-size</code></pre></td>
+                                <td data-label="Description">Theme font size.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-weight</code></pre></td>
+                                <td data-label="Description">Theme font weight.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-radius</code></pre></td>
+                                <td data-label="Description">Theme border radius.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-width</code></pre></td>
+                                <td data-label="Description">Theme border width.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow</code></pre></td>
+                                <td data-label="Description">Theme box shadow.</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+                <h2 class="component-props-table-header" >Component Variables</h2>
+                <div class="docs-search-area">
+                    <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
+                </div>
+                <div class="component-props-table-wrapper">
+                    <table class="component-props-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Name</th>
+                                <th scope="col">Description</th>
+                            </tr>
+                        </thead>
+                        <tbody data-category="Component Variables" class="component-css-props">
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color-disabled</code></pre></td>
+                                <td data-label="Description">Hyperlink disabled color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-size</code></pre></td>
+                                <td data-label="Description">Hyperlink font size.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-family</code></pre></td>
+                                <td data-label="Description">Hyperlink font weight.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-weight</code></pre></td>
+                                <td data-label="Description">Hyperlink font weight.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color</code></pre></td>
+                                <td data-label="Description">Hyperlink color.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator</code></pre></td>
+                                <td data-label="Description">Hyperlink text decorator</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-size-small</code></pre></td>
+                                <td data-label="Description">Hyperlink small font size variation</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-font-family-small</code></pre></td>
+                                <td data-label="Description">Hyperlink small font family variation</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-weight-small</code></pre></td>
+                                <td data-label="Description">Hyperlink small font weight</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color-active</code></pre></td>
+                                <td data-label="Description">Hyperlink color when in an active state.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator-active</code></pre></td>
+                                <td data-label="Description">Hyperlink text decorator in active state.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator-hover</code></pre></td>
+                                <td data-label="Description">Hyperlink text decorator when in hover state.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color-visited</code></pre></td>
+                                <td data-label="Description">Hyperlink color when visited</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator-visited</code></pre></td>
+                                <td data-label="Description">Hyperlink text decorator when visited.</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+</main>
+
+            <footer>
+                <div class="logo">
+                    <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                    <div style="font-weight: bold">Omni Components</div>
+                </div>
+                <div class="links">
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/LICENSE" target="_blank">License</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/discussions" target="_blank">Discussions</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
+                    </div>
+                </div>
+                <div class="copyright" style="">Copyright &copy; 2022</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

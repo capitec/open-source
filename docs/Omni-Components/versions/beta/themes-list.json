@@ -1,7 +1,5 @@
 {
   "themes": [
-    "blue-theme.css",
-    "green-theme.css",
-    "red-theme.css"
+    "dark-theme.css"
   ]
 }

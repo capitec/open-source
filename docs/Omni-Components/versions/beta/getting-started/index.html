@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Omni Components - Getting Started</title>
+    <base href="/open-source/docs/Omni-Components/versions/beta/" >
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link rel="stylesheet" href="assets/css/default-light-theme.css">
+    <style id="theme-styles"></style>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="./dist/utils/StoryRenderer.js"></script>
+    <script type="module" src="./dist/omni-components.js"></script>
+    <script type="module" defer>
+        import { setupEleventy } from './dist/utils/StoryUtils.js';
+        setupEleventy();
+    </script>
+</head>
+<body>
+    <div dir="ltr">
+        <div class="container">
+            <header>
+                <div class="header-menu-button">
+                    <span class="material-icons">
+                        menu
+                    </span>
+                </div>
+                <div style="display: flex;">
+                    <div class="header-logo">
+                        <div class="header-container" id="header-container">
+                            <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                            <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                        </div>
+                    </div>
+                    <div class="header-version">
+                        beta
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span class="material-icons docs-omni-component action" style="display: none;" id="header-theme-edit-btn">
+                        edit
+                    </span>
+                    <span class="header-theme-section">
+                        <span class="material-icons docs-omni-component action hidden-until-760 action" style="height: 37px; width: 37px;" id="header-theme-select-btn">
+                            format_color_fill
+                        </span>
+                        <select class="docs-select theme-select transparent hidden-until-760" id="header-theme-native-select"></select>
+                        <omni-select class="docs-omni-component hidden-after-760" id="header-theme-select"></omni-select>
+                    </span>
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="docs-omni-component action">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </header>
+
+            
+
+<nav class="menu">
+    <div class="menu-container">
+        <div class="menu-item ">
+            <a class="menu-link "  href="./">Home</a>
+        </div>
+        <div class="menu-item selected">
+            <a class="menu-link selected" aria-current="page" href="./getting-started/">Getting Started</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./theme-support/">Theme Support</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./contributing/">Contributing</a>
+        </div>
+        <div class="menu-item separator"><div class="line"></div></div>
+        
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/button">
+                Button
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/check">
+                Check
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/chip">
+                Chip
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/colorfield">
+                ColorField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/currencyfield">
+                CurrencyField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/hyperlink">
+                Hyperlink
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/icon">
+                Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/label">
+                Label
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/numberfield">
+                NumberField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/numericfield">
+                NumericField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/passwordfield">
+                PasswordField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radio">
+                Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/renderelement">
+                RenderElement
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/searchfield">
+                SearchField
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/select">
+                Select
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/switch">
+                Switch
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/textfield">
+                TextField
+            </a>
+        </div>
+    </div>
+</nav>
+            <main>
+    
+<div class="component-overlay">
+    <div class="lds-ripple"><div></div><div></div></div>
+</div>
+
+<article class="component static-article">    
+    <h1><a id="installation" class="anchor" href="getting-started/#installation" aria-hidden="true"></a>Installation</h1>
+<p>You can use Omni Components via CDN or by installing it locally. You can also <a href="getting-started/#cherry-picking-">cherry pick</a> individual components for faster load times.</p>
+<h2><a id="cdn-installation-easiest-" class="anchor" href="getting-started/#cdn-installation-easiest-" aria-hidden="true"></a>CDN Installation (Easiest) 📡</h2>
+<p>The easiest way to install Omni Components is with the CDN. Just a script of type module using our ESM package as source.</p>
+<pre><code class="language-html">
+&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/dist/omni-components.js&quot; &gt;&lt;/script&gt;
+</code></pre>
+<br/>
+<strong> 
+<p>If you're only using a few components, it will be more efficient to <a href="getting-started/#cherry-picking-">cherry pick</a> the ones you need. </strong></p>
+<h2><a id="local-installation-" class="anchor" href="getting-started/#local-installation-" aria-hidden="true"></a>Local Installation 💾</h2>
+<p>If you don't want to use the CDN, you can install Omni Components locally with the following command.</p>
+<pre><code class="language-bash">
+npm install @capitec/omni-components
+</code></pre>
+<p>With the latest package installed from NPM, <a href="getting-started/#bundling-">you can use a bundler</a>.<br>
+The ESM package used for <a href="getting-started/#cdn-installation-easiest-">CDN Installation</a> has its dependencies bundled already which allows it to be used without the need to install dependencies.<br>
+However when using the local installation from NPM, the dependencies need to be provided externally, or you would need to <a href="getting-started/#bundling-">bundle the dependencies</a>.</p>
+<p><strong> For clarity, the docs will usually show imports from <code>@capitec/omni-components</code>. If you're not using a module resolver or bundler, you'll need to adjust these paths to point to the folder Omni Components is in. </strong></p>
+<h2><a id="cherry-picking-" class="anchor" href="getting-started/#cherry-picking-" aria-hidden="true"></a>Cherry Picking 🍒</h2>
+<p>The CDN approach is the <em>easiest</em> way to load Omni Components, but easy isn't always efficient. You'll incur the full size of the library even if you only use a handful of components. This is convenient for prototyping or if you're using most of the components, but it may result in longer load times in production. To improve this, you can cherry pick the components you need.</p>
+<p>Cherry picking can be done from your local install or <a href="https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/">directly from the CDN</a>. This will limit the number of files the browser has to download and reduce the amount of bytes being transferred. The disadvantage is that you need to load components manually.</p>
+<p>Here's an example that loads only the button component.</p>
+<pre><code class="language-html">
+&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/dist/button/Button.js&quot; &gt;&lt;/script&gt;
+
+&lt;omni-button label=&quot;Button&quot; type=&quot;secondary&quot;&gt;&lt;/omni-button&gt;
+</code></pre>
+<p>Note that some components may have dependencies that are automatically imported when you cherry pick.</p>
+<p><strong>Never cherry pick components or utilities from <code>omni-components.js</code> as this will still cause the browser to load the entire library. Instead, cherry pick from specific modules as shown above.</strong></p>
+<br/>
+<br/>
+<strong> You will see files named `chunk.[hash].js` in the `chunks-js` directory. Never import these files directly, as they are generated and change from version to version. </strong>
+<h2><a id="bundling-" class="anchor" href="getting-started/#bundling-" aria-hidden="true"></a>Bundling 💼</h2>
+<p>Omni Components is distributed as a collection of standard ES modules that <a href="https://caniuse.com/es6-module">all modern browsers can understand</a>. However, importing a lot of modules can result in a lot of HTTP requests and potentially longer load times. Using a CDN can alleviate this, but some users may wish to further optimize their imports with a bundler.</p>
+<p>To use Omni Components with a bundler, first install it from NPM along with your bundler of choice.</p>
+<pre><code class="language-bash">
+npm install @capitec/omni-components
+</code></pre>
+<p>Using a bundler will allow for optimal tree shaking, which will ensure the smallest size and most efficient usage.</p>
+<!-- TODO: Add links to template repositories here with example bundling -->
+
+</article>
+</main>
+
+            <footer>
+                <div class="logo">
+                    <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                    <div style="font-weight: bold">Omni Components</div>
+                </div>
+                <div class="links">
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/LICENSE" target="_blank">License</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/discussions" target="_blank">Discussions</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
+                    </div>
+                </div>
+                <div class="copyright" style="">Copyright &copy; 2022</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,6 +1,8 @@
 import { TagSpec } from '@codemirror/lang-html';
 import { Package } from 'custom-elements-manifest/schema';
 export { Package, ClassDeclaration, CustomElementDeclaration, Declaration, CustomElement } from 'custom-elements-manifest/schema';
+export { ComponentStoryFormat, CSFIdentifier } from './ComponentStoryFormat.js';
+export { PlayFunction, PlayFunctionContext } from './PlayFunction.js';
 import './CodeEditor.js';
 declare function loadCssProperties(element: string, customElements: Package, cssDeclarations?: Record<string, {
     control: 'color' | 'text';
@@ -84,22 +86,5 @@ declare global {
         srCompleteCount: number;
     }
 }
-export declare type PlayFunctionContext<T> = {
-    args: T;
-    story: ComponentStoryFormat<T>;
-    canvasElement: HTMLElement;
-};
-export declare type PlayFunction<T> = (context: PlayFunctionContext<T>) => Promise<void> | void;
-export declare type ComponentStoryFormat<T> = {
-    render?: (args: T) => any;
-    name?: string;
-    args?: Partial<T>;
-    play?: PlayFunction<T>;
-    source?: () => string;
-};
-export declare type CSFIdentifier = {
-    title: string;
-    component: string;
-};
 export { loadCustomElements, loadCustomElementsModuleByFileFor, loadCustomElementsModuleFor, loadCustomElementsCodeMirrorCompletions, loadCustomElementsCodeMirrorCompletionsRemote, loadSlotFor, loadSlotForModule, loadDefaultSlotFor, loadDefaultSlotForModule, loadCssProperties, loadFileRemote, markdownCode, loadThemesListRemote, asRenderString, filterJsDocLinks, formatMarkdownCodeElements, markdownCodeToHtml, assignToSlot, enhanceCodeBlocks, raw, querySelectorAsync, setupThemes, setupEleventy, setupTheming, uploadTheme };
 //# sourceMappingURL=StoryUtils.d.ts.map

@@ -38,7 +38,6 @@ declare function loadDefaultSlotForModule(elementModule: any): {
 declare function assignToSlot(slotName: string, rawHtml: string): string;
 declare function markdownCode(code: string, lang?: string): string;
 declare function loadFileRemote(src: string): Promise<string>;
-declare function loadThemesListRemote(): Promise<string[]>;
 declare function formatMarkdownCodeElements(str: string, lang?: string): string;
 declare function markdownCodeToHtml(str: string, lang?: string): string;
 declare function enhanceCodeBlocks(parent: Element): void;
@@ -86,5 +85,5 @@ declare global {
         srCompleteCount: number;
     }
 }
-export { loadCustomElements, loadCustomElementsModuleByFileFor, loadCustomElementsModuleFor, loadCustomElementsCodeMirrorCompletions, loadCustomElementsCodeMirrorCompletionsRemote, loadSlotFor, loadSlotForModule, loadDefaultSlotFor, loadDefaultSlotForModule, loadCssProperties, loadFileRemote, markdownCode, loadThemesListRemote, asRenderString, filterJsDocLinks, formatMarkdownCodeElements, markdownCodeToHtml, assignToSlot, enhanceCodeBlocks, raw, querySelectorAsync, setupThemes, setupEleventy, setupTheming, uploadTheme };
+export { loadCustomElements, loadCustomElementsModuleByFileFor, loadCustomElementsModuleFor, loadCustomElementsCodeMirrorCompletions, loadCustomElementsCodeMirrorCompletionsRemote, loadSlotFor, loadSlotForModule, loadDefaultSlotFor, loadDefaultSlotForModule, loadCssProperties, loadFileRemote, markdownCode, asRenderString, filterJsDocLinks, formatMarkdownCodeElements, markdownCodeToHtml, assignToSlot, enhanceCodeBlocks, raw, querySelectorAsync, setupThemes, setupEleventy, setupTheming, uploadTheme };
 //# sourceMappingURL=StoryUtils.d.ts.map

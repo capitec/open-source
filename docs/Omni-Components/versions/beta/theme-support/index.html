@@ -10,12 +10,61 @@
     <title>Omni Components - Theme Support</title>
     <base href="/open-source/docs/Omni-Components/versions/beta/" >
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Hind Vadodara" >
+    <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Preload Hind Vadodara fonts to lessen chance of system default from initially applying -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/hindvadodara/v12/neINzCKvrIcn5pbuuuriV9tTQInVrEsf.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            font-display: block;
+            src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'Hind Vadodara';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/hindvadodara/v12/neINzCKvrIcn5pbuuuriV9tTQInVrEsf.woff2) format('woff2');
+            unicode-range: U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+        }
+    </style>
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons"  as="style"/>
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara"  as="style">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <link rel="stylesheet" href="assets/css/default-light-theme.css">
+    <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
     <style id="theme-styles"></style>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
+    <script>        
+        const themeStorageKey = 'omni-docs-theme-selection';
+        const customThemeCssKey = 'omni-docs-custom-theme-css';
+        const customThemeKey = 'custom';
+        const lightThemeKey = 'light';
+        const darkThemeKey = 'dark';
+        const themeStyle = document.getElementById('theme-styles');
+        
+        let darkThemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = window.sessionStorage.getItem(themeStorageKey);
+
+        let key = undefined;
+        if (darkThemePreferred && !storedTheme) {
+            key = darkThemeKey;            
+        } else if (storedTheme) {
+            key = storedTheme;
+        }
+
+        if (key && key !== lightThemeKey) {
+            document.documentElement.setAttribute('theme', key);
+            if (key === customThemeKey) {
+                let customCss = window.sessionStorage.getItem(customThemeCssKey);
+                if (customCss) {
+                    themeStyle.innerHTML = customCss;
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
     <script type="module" src="./dist/utils/StoryRenderer.js"></script>
     <script type="module" src="./dist/omni-components.js"></script>
     <script type="module" defer>
@@ -203,7 +252,6 @@
 </nav>
             <main>
     
-<script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
 <div class="component-overlay">
     <div class="lds-ripple"><div></div><div></div></div>
 </div>
@@ -244,11 +292,7 @@
             <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ accessibility options</p>
         </p>
         <br/>
-        <p>
-        Currently provided theme variables are listed below and can be modified for a live preview of its effects on components.
-        </p>
-        <br/>
-        <p>There are multiple built-in themes available to test how theme variables can affect te various components. Use the theme dropdown to select a built-in theme or select 'Light Theme' to view the components in their default state. The source for the built-in themes are available <a target="_self" href="theme-support/#examples" >below</a>.</p>
+        <p>There are built-in themes available to test how theme variables can affect te various components. Use the theme dropdown to select a built-in theme or select 'Light Theme' to view the components in their default state. The source for the built-in themes are available <a target="_self" href="theme-support/#examples" >below</a>.</p>
         <br/>
         <p>Alternatively, a custom theme can be authored or uploaded to have a live view of its effects on the components. Try it now by selecting your current theme to be 'Custom Theme'.</p>
 

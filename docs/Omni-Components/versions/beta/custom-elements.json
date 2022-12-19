@@ -12801,10 +12801,6 @@
         },
         {
           "kind": "function",
-          "name": "loadThemesListRemote"
-        },
-        {
-          "kind": "function",
           "name": "formatMarkdownCodeElements",
           "parameters": [
             {
@@ -13162,14 +13158,6 @@
           "name": "markdownCode",
           "declaration": {
             "name": "markdownCode",
-            "module": "src/utils/StoryUtils.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "loadThemesListRemote",
-          "declaration": {
-            "name": "loadThemesListRemote",
             "module": "src/utils/StoryUtils.ts"
           }
         },

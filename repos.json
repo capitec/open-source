@@ -6,7 +6,7 @@
       "links": [
         {
           "name": "NPM",
-          "icon": "https://avatars.githubusercontent.com/u/6078720",
+          "icon": "https://raw.githubusercontent.com/capitec/omni-components/develop/eleventy/assets/images/logo.png",
           "url": "https://www.npmjs.com/package/@capitec/omni-components"
         }
       ],
@@ -15,6 +15,7 @@
         "0.1.1",
         "0.1.16",
         "0.1.17",
+        "0.3.0",
         "alpha",
         "beta",
         "next"

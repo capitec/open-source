@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/password-field/index.ts"],
+  "mappings": "4cAAAA,IAAAC",
+  "names": ["init_define_process_argv", "init_global"]
+}

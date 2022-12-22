@@ -19,8 +19,18 @@
       ]
     },
     {
+      "display": "Omni Router",
+      "repo": "https://github.com/capitec/omni-router",
+      "links": [
+        {
+          "name": "NPM",
+          "icon": "https://avatars.githubusercontent.com/u/6078720",
+          "url": "https://www.npmjs.com/package/@capitec/omni-router"
+        }
+      ],
       "name": "Omni-Router",
       "versions": [
+        "0.0.2",
         "beta"
       ]
     }

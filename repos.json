@@ -17,6 +17,12 @@
         "beta",
         "next"
       ]
+    },
+    {
+      "name": "Omni-Router",
+      "versions": [
+        "beta"
+      ]
     }
   ]
 }

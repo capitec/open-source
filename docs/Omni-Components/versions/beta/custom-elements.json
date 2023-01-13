@@ -9113,50 +9113,6 @@
               "name": "--omni-select-items-width"
             },
             {
-              "description": "Select items scroll bar thumb width.",
-              "name": "--omni-select-scrollbar-thumb-width"
-            },
-            {
-              "description": " Select items scroll bar track left padding.",
-              "name": "--omni-select-scrollbar-track-padding-left"
-            },
-            {
-              "description": "Select items scroll bar track right padding.",
-              "name": "--omni-select-scrollbar-track-padding-right"
-            },
-            {
-              "description": "Select items scroll bar track border radius.",
-              "name": "--omni-select-scrollbar-track-border-radius"
-            },
-            {
-              "description": "Select items scroll bar track background color.",
-              "name": "--omni-select-scrollbar-track-background-color"
-            },
-            {
-              "description": "Select items scroll bar thumb border radius.",
-              "name": "--omni-select-scrollbar-thumb-border-radius"
-            },
-            {
-              "description": "Select items scroll bar thumb background color.",
-              "name": "--omni-select-scrollbar-thumb-background-color"
-            },
-            {
-              "description": "Select items scroll bar thumb top padding.",
-              "name": "--omni-select-scrollbar-track-padding-top"
-            },
-            {
-              "description": "Select items scroll bar thumb bottom padding.",
-              "name": "--omni-select-scrollbar-track-padding-bottom"
-            },
-            {
-              "description": "Select items scroll bar thumb left padding.",
-              "name": "--omni-select-scrollbar-track-padding-left"
-            },
-            {
-              "description": "Select items scroll bar thumb right padding.",
-              "name": "--omni-select-scrollbar-track-padding-right"
-            },
-            {
               "description": "Select item font color.",
               "name": "--omni-select-item-font-color"
             },

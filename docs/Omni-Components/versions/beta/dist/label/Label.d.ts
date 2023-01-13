@@ -46,7 +46,7 @@ export declare class Label extends OmniElement {
      */
     label: string;
     /**
-     * The type of label to display.
+     * Type of label to display.
      * @attr [type="default"]
      */
     type: 'default' | 'title' | 'subtitle' | 'strong';

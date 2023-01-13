@@ -20,7 +20,7 @@ import '../icons/Loading.icon.js';
  */
 export declare class RenderElement extends OmniElement {
     /**
-     * The renderer function
+     * Renderer function
      * @no_attribute
      */
     renderer: RenderFunction;

@@ -41,12 +41,12 @@ import { OmniElement } from '../core/OmniElement.js';
  */
 export declare class Icon extends OmniElement {
     /**
-     * The size to display the icon at
+     * Size to display the icon at
      * @attr [size="default"]
      */
     size: 'default' | 'extra-small' | 'small' | 'medium' | 'large';
     /**
-     * The name of the icon to display. Takes preference over the slotted icon.
+     * Name of the icon to display. Takes preference over the slotted icon.
      * @attr
      */
     icon: string;

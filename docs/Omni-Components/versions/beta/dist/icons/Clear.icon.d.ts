@@ -1,7 +1,7 @@
 import { TemplateResult } from 'lit';
 import DOMTreeElement from '../core/DOMTreeElement.js';
 /**
- * A clear icon component.
+ * Clear icon component.
  *
  * @import
  * ```js

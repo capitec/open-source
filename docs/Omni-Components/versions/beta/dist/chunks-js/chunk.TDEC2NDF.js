@@ -1,4 +1,4 @@
-import{a as f}from"./chunk.XMM72FEY.js";import{i as c}from"./chunk.ZO5UBYOG.js";import{b as i,d}from"./chunk.CHYIO324.js";import{a as m,b as t,d as r}from"./chunk.3GEUDTAZ.js";import{j as e,l,o as n}from"./chunk.2ZZQBHAA.js";l();n();l();n();l();n();var L=s=>s!=null?s:r;var o=class extends c{constructor(){super(...arguments);this.value=null;this.disabled=!1}connectedCallback(){super.connectedCallback(),this.addEventListener("focus",this._focusGained.bind(this)),this.addEventListener("focusout",this._focusLost.bind(this))}_focusGained(){if(this.disabled)return;let a=this._formContainerElement.offsetLeft;!this.value&&this._labelElement&&(this._labelElement.style.transform=`translateX(${a*-1}px)  translateY(-37.5%) scale(95%)`)}_focusLost(){this.disabled||!this.value&&this._labelElement&&(this._labelElement.style.transform="")}static get styles(){return[m`
+import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";import{b as a,d}from"./chunk.CHYIO324.js";import{a as c,b as l,d as t}from"./chunk.3GEUDTAZ.js";import{j as o,l as n,o as s}from"./chunk.2ZZQBHAA.js";n();s();n();s();n();s();var C=f=>f!=null?f:t;var e=class extends b{constructor(){super(...arguments);this.value=null;this.disabled=!1}connectedCallback(){super.connectedCallback(),this.addEventListener("focus",this._focusGained.bind(this)),this.addEventListener("focusout",this._focusLost.bind(this))}async firstUpdated(){if(this._prefixSlot){let r=this._prefixSlot.assignedElements({flatten:!0}).filter(i=>i.updateComplete);await Promise.all(r.map(i=>i.updateComplete))}this._setLabelPosition()}async attributeChangedCallback(r,i,L){super.attributeChangedCallback(r,i,L),r==="value"&&this._setLabelPosition()}_setLabelPosition(){if(this.value&&this.label&&this._formContainerElement){if(this.disabled)return;let r=this._formContainerElement.offsetLeft,i=this._formContainerElement.clientHeight;this._labelElement&&(this._labelElement.style.transform=`translateX(${r*-1}px)  translateY(${i*-3.3}%) scale(95%)`)}else!this.value&&this.label&&this._labelElement&&!this.hasFocus&&(this._labelElement.style.transform="")}_focusGained(){if(this.disabled)return;this.hasFocus=!0;let r=this._formContainerElement.offsetLeft,i=this._formContainerElement.clientHeight;!this.value&&this._labelElement&&(this._labelElement.style.transform=`translateX(${r*-1}px) translateY(${i*-3.3}%) scale(95%)`)}_focusLost(){this.hasFocus=!1,!this.disabled&&!this.value&&this._labelElement&&(this._labelElement.style.transform="")}static get styles(){return[c`
                 ${super.styles}
 
                 :host {
@@ -93,8 +93,6 @@ import{a as f}from"./chunk.XMM72FEY.js";import{i as c}from"./chunk.ZO5UBYOG.js";
 
                 :host([value]:not([value=''])) .layout > .form-container > .label,
                 :focus + .label {
-                    top: 0px;
-                    transform: translateY(-37.5%) scale(95%);
                     color: var(--omni-form-focussed-label-color, var(--omni-primary-color));
                 }
 
@@ -191,9 +189,9 @@ import{a as f}from"./chunk.XMM72FEY.js";import{i as c}from"./chunk.ZO5UBYOG.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){let a={layout:!0,error:this.error,disabled:this.disabled};return t`
+            `]}render(){let r={layout:!0,error:this.error,disabled:this.disabled};return l`
             <div class="container">
-                <div class=${f(a)}>
+                <div class=${m(r)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
                     <div class="form-container"> ${this.renderContent()} ${this.renderLabel()} </div>
@@ -202,10 +200,10 @@ import{a as f}from"./chunk.XMM72FEY.js";import{i as c}from"./chunk.ZO5UBYOG.js";
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){let a={label:!0,error:this.error,disabled:this.disabled};return t`${this.label?t`<div class=${f(a)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return t`${this.hint&&!this.error?t`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return t`${this.error?t`<div class="error-label">${this.error}</div>`:r} `}};e([i({type:String,reflect:!0})],o.prototype,"label",2),e([i({reflect:!0})],o.prototype,"value",2),e([i({type:Object,reflect:!0})],o.prototype,"data",2),e([i({type:String,reflect:!0})],o.prototype,"hint",2),e([i({type:String,reflect:!0})],o.prototype,"error",2),e([i({type:Boolean,reflect:!0})],o.prototype,"disabled",2),e([d(".form-container")],o.prototype,"_formContainerElement",2),e([d(".label")],o.prototype,"_labelElement",2);export{L as a,o as b};
+        `}renderPrefix(){return t}renderContent(){return t}renderLabel(){let r={label:!0,error:this.error,disabled:this.disabled};return l`${this.label?l`<div class=${m(r)}><span>${this.label}</span></div>`:t}`}renderControl(){return t}renderPicker(){return t}renderHint(){return l`${this.hint&&!this.error?l`<div class="hint-label">${this.hint}</div>`:t}`}renderError(){return l`${this.error?l`<div class="error-label">${this.error}</div>`:t} `}};o([a({type:String,reflect:!0})],e.prototype,"label",2),o([a({reflect:!0})],e.prototype,"value",2),o([a({type:Object,reflect:!0})],e.prototype,"data",2),o([a({type:String,reflect:!0})],e.prototype,"hint",2),o([a({type:String,reflect:!0})],e.prototype,"error",2),o([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),o([d(".form-container")],e.prototype,"_formContainerElement",2),o([d(".label")],e.prototype,"_labelElement",2),o([d("slot[name=prefix]")],e.prototype,"_prefixSlot",2);export{C as a,e as b};
 /**
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.GTCHYS4Z.js.map
+//# sourceMappingURL=chunk.TDEC2NDF.js.map

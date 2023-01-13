@@ -195,13 +195,6 @@
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/numericfield">
-                NumericField
-            </a>
-        </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
             href="./components/passwordfield">
                 PasswordField
             </a>
@@ -466,20 +459,6 @@
                         <tbody id="component-attributes">
                             
                             <tr>
-                                <td data-label="Name" scope="row">_selectElement</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLInputElement</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_itemsContainer</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLDivElement</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
                                 <td data-label="Name" scope="row">items</td>
                                 <td data-label="Attribute" scope="row">items&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">SelectItems | (() =&gt; SelectItems)</code></pre></td>
@@ -490,49 +469,28 @@
                                 <td data-label="Name" scope="row">displayField</td>
                                 <td data-label="Attribute" scope="row">display-field&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">The field of the item to display as one of the selectable options.</td>
+                                <td data-label="Description">Field of the item to display as one of the selectable options.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">idField</td>
                                 <td data-label="Attribute" scope="row">id-field&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">The id field of the items provided.</td>
+                                <td data-label="Description">Id field of the items provided.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">emptyMessage</td>
                                 <td data-label="Attribute" scope="row">empty-message&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">The message displayed in the items container when no items are bound to the component.</td>
+                                <td data-label="Description">Message displayed in the items container when no items are bound to the component.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">renderItem</td>
                                 <td data-label="Attribute" scope="row">&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">RenderFunction</code></pre></td>
-                                <td data-label="Description">The render function for each item.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_popUp</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_bottomOfViewport</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_isMobile</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                <td data-label="Description"></td>
+                                <td data-label="Description">Render function for each item.</td>
                             </tr>
                             
                             <tr>
@@ -546,7 +504,7 @@
                                 <td data-label="Name" scope="row">value</td>
                                 <td data-label="Attribute" scope="row">value&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt;</code></pre></td>
-                                <td data-label="Description">The value entered into the form component.</td>
+                                <td data-label="Description">Value entered into the form component.</td>
                             </tr>
                             
                             <tr>
@@ -560,14 +518,14 @@
                                 <td data-label="Name" scope="row">hint</td>
                                 <td data-label="Attribute" scope="row">hint&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">A hint message to assist the user.</td>
+                                <td data-label="Description">Hint message to assist the user.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">error</td>
                                 <td data-label="Attribute" scope="row">error&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">A error message guiding a user to correct a mistake.</td>
+                                <td data-label="Description">Error message guiding a user to correct a mistake.</td>
                             </tr>
                             
                             <tr>
@@ -578,16 +536,9 @@
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">_formContainerElement</td>
+                                <td data-label="Name" scope="row">hasFocus</td>
                                 <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLElement</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_labelElement</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLElement</code></pre></td>
+                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
                                 <td data-label="Description"></td>
                             </tr>
                             
@@ -641,11 +592,6 @@
                             </tr>
                         </thead>
                         <tbody id="component-slots">
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
-                                <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
-                            </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>

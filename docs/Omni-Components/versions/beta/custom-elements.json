@@ -816,7 +816,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true
             },
@@ -998,7 +998,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint"
             },
@@ -1778,7 +1778,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -1806,7 +1806,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -1820,7 +1820,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -1862,6 +1862,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -2015,7 +2047,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -2041,7 +2073,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -2054,7 +2086,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -2623,7 +2655,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true
             },
@@ -2643,7 +2675,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true
             },
@@ -2653,7 +2685,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true
             },
@@ -2683,6 +2715,26 @@
                 "text": "HTMLElement"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected"
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition"
             },
             {
               "kind": "method",
@@ -2813,7 +2865,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value"
             },
@@ -2831,7 +2883,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint"
             },
@@ -2840,7 +2892,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error"
             },
@@ -3072,7 +3124,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            currency=\"${ifNotEmpty(args.currency)}\"\n            locale=\"${ifNotEmpty(args.locale)}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}\n        </omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        currency: '',\n        locale: ''\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 10,\n            initialSelectionEnd: 10\n        });\n\n        await currencyField.updateComplete;\n\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000'), {\n            timeout: 3000\n        });\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n        await waitFor(() => expect(inputField).toHaveValue('120,000'), {\n            timeout: 3000\n        });\n\n        // Set currency property to be invalid value.\n        currencyField.currency = 'cents';\n    }\n}"
+          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}\n        </omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '100.00',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?<!\\\\.\\\\d*)(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            // Check the following value as input value is formatted to currency value;\n            await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n                timeout: 3000\n            });\n            await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n                timeout: 3000\n            });\n        }\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 10,\n            initialSelectionEnd: 10\n        });\n\n        await currencyField.updateComplete;\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue('1,200,000'), {\n                timeout: 3000\n            });\n        }\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue('120,000'), {\n                timeout: 3000\n            });\n        }\n    }\n}"
         },
         {
           "kind": "variable",
@@ -3084,7 +3136,7 @@
         },
         {
           "kind": "variable",
-          "name": "ErrorLabel"
+          "name": "Error_Label"
         },
         {
           "kind": "variable",
@@ -3137,9 +3189,9 @@
         },
         {
           "kind": "js",
-          "name": "ErrorLabel",
+          "name": "Error_Label",
           "declaration": {
-            "name": "ErrorLabel",
+            "name": "Error_Label",
             "module": "src/currency-field/CurrencyField.stories.ts"
           }
         },
@@ -3182,16 +3234,8 @@
       "path": "src/currency-field/CurrencyField.ts",
       "declarations": [
         {
-          "kind": "variable",
-          "name": "CURRENCY_SEPARATOR",
-          "type": {
-            "text": "object"
-          },
-          "default": "{\n    AMOUNT: 1,\n    INVERSE_AMOUNT: 2,\n    CENTS: 3,\n    INVERSE_CENTS: 4\n}"
-        },
-        {
           "kind": "class",
-          "description": "A currency input control that formats input based on currency and locale.",
+          "description": "Control to enter a formatted currency value.",
           "name": "CurrencyField",
           "cssProperties": [
             {
@@ -3254,56 +3298,58 @@
             },
             {
               "kind": "field",
-              "name": "currency",
+              "name": "currencySymbol",
               "type": {
                 "text": "string"
               },
-              "default": "'USD'",
-              "description": "The currency for the input.",
-              "attribute": "currency",
+              "default": "'$'",
+              "description": "Currency symbol.",
+              "attribute": "currency-symbol",
               "reflects": true
             },
             {
               "kind": "field",
-              "name": "locale",
+              "name": "thousandsSeparator",
               "type": {
                 "text": "string"
               },
-              "description": "The locale for the input.",
-              "attribute": "locale",
+              "default": "''",
+              "description": "Thousands separator.",
+              "attribute": "thousands-separator",
               "reflects": true
             },
             {
               "kind": "field",
-              "name": "_currencyFormat",
-              "type": {
-                "text": "Intl.NumberFormat"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_currencySymbol",
+              "name": "fractionalSeparator",
               "type": {
                 "text": "string"
               },
-              "privacy": "private"
+              "default": "'.'",
+              "description": "Fractional separator.",
+              "attribute": "fractional-separator",
+              "reflects": true
             },
             {
               "kind": "field",
-              "name": "_currencyFormatSeparator",
+              "name": "fractionalPrecision",
               "type": {
-                "text": "string"
+                "text": "number"
               },
-              "privacy": "private"
+              "default": "2",
+              "description": "Fractional precision.",
+              "attribute": "fractional-precision",
+              "reflects": true
             },
             {
               "kind": "field",
-              "name": "_currencyCentsSeparator",
+              "name": "formatter",
               "type": {
                 "text": "string"
               },
-              "privacy": "private"
+              "default": "'\\\\B(?<!\\\\.\\\\d*)(?=(\\\\d{3})+(?!\\\\d))'",
+              "description": "Formatter provided to format the value.",
+              "attribute": "formatter",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -3313,38 +3359,6 @@
               },
               "privacy": "private",
               "default": "''"
-            },
-            {
-              "kind": "field",
-              "name": "_symbolAndFormateUpdate",
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_updateSymbolAndFormat",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setCurrencyFormat",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setSymbolAndSeparators",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
             },
             {
               "kind": "method",
@@ -3365,7 +3379,7 @@
             },
             {
               "kind": "method",
-              "name": "_parseCents",
+              "name": "_parseFraction",
               "return": {
                 "type": {
                   "text": "string"
@@ -3392,7 +3406,7 @@
                 {
                   "name": "preFormattedValue",
                   "type": {
-                    "text": "number"
+                    "text": "number | string"
                   }
                 }
               ]
@@ -3498,7 +3512,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -3526,7 +3540,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -3540,7 +3554,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -3582,6 +3596,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -3710,23 +3756,54 @@
           ],
           "attributes": [
             {
-              "name": "currency",
+              "name": "currency-symbol",
               "type": {
                 "text": "string"
               },
-              "default": "'USD'",
-              "description": "The currency for the input.",
-              "fieldName": "currency",
-              "attribute": "currency"
+              "default": "'$'",
+              "description": "Currency symbol.",
+              "fieldName": "currencySymbol",
+              "attribute": "currency-symbol"
             },
             {
-              "name": "locale",
+              "name": "thousands-separator",
               "type": {
                 "text": "string"
               },
-              "description": "The locale for the input.",
-              "fieldName": "locale",
-              "attribute": "locale"
+              "default": "''",
+              "description": "Thousands separator.",
+              "fieldName": "thousandsSeparator",
+              "attribute": "thousands-separator"
+            },
+            {
+              "name": "fractional-separator",
+              "type": {
+                "text": "string"
+              },
+              "default": "'.'",
+              "description": "Fractional separator.",
+              "fieldName": "fractionalSeparator",
+              "attribute": "fractional-separator"
+            },
+            {
+              "name": "fractional-precision",
+              "type": {
+                "text": "number"
+              },
+              "default": "2",
+              "description": "Fractional precision.",
+              "fieldName": "fractionalPrecision",
+              "attribute": "fractional-precision"
+            },
+            {
+              "name": "formatter",
+              "type": {
+                "text": "string"
+              },
+              "default": "'\\\\B(?<!\\\\.\\\\d*)(?=(\\\\d{3})+(?!\\\\d))'",
+              "description": "Formatter provided to format the value.",
+              "fieldName": "formatter",
+              "attribute": "formatter"
             },
             {
               "name": "label",
@@ -3747,7 +3824,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -3773,7 +3850,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -3786,7 +3863,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -3847,14 +3924,6 @@
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
               "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
@@ -3879,14 +3948,6 @@
         }
       ],
       "exports": [
-        {
-          "kind": "js",
-          "name": "CURRENCY_SEPARATOR",
-          "declaration": {
-            "name": "CURRENCY_SEPARATOR",
-            "module": "src/currency-field/CurrencyField.ts"
-          }
-        },
         {
           "kind": "js",
           "name": "CurrencyField",
@@ -4524,7 +4585,7 @@
                 "text": "'default' | 'extra-small' | 'small' | 'medium' | 'large'"
               },
               "default": "'default'",
-              "description": "The size to display the icon at",
+              "description": "Size to display the icon at",
               "attribute": "size",
               "reflects": true
             },
@@ -4534,7 +4595,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "The name of the icon to display. Takes preference over the slotted icon.",
+              "description": "Name of the icon to display. Takes preference over the slotted icon.",
               "attribute": "icon",
               "reflects": true
             },
@@ -4595,7 +4656,7 @@
                 "text": "'default' | 'extra-small' | 'small' | 'medium' | 'large'"
               },
               "default": "'default'",
-              "description": "The size to display the icon at",
+              "description": "Size to display the icon at",
               "fieldName": "size",
               "attribute": "size"
             },
@@ -4604,7 +4665,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "The name of the icon to display. Takes preference over the slotted icon.",
+              "description": "Name of the icon to display. Takes preference over the slotted icon.",
               "fieldName": "icon",
               "attribute": "icon"
             },
@@ -4784,7 +4845,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A clear icon component.",
+          "description": "Clear icon component.",
           "name": "ClearIcon",
           "members": [
             {
@@ -5385,7 +5446,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A search icon component.",
+          "description": "Search icon component.",
           "name": "SearchIcon",
           "members": [
             {
@@ -5672,7 +5733,7 @@
                 "text": "'default' | 'title' | 'subtitle' | 'strong'"
               },
               "default": "'default'",
-              "description": "The type of label to display.",
+              "description": "Type of label to display.",
               "attribute": "type",
               "reflects": true
             },
@@ -5742,7 +5803,7 @@
                 "text": "'default' | 'title' | 'subtitle' | 'strong'"
               },
               "default": "'default'",
-              "description": "The type of label to display.",
+              "description": "Type of label to display.",
               "fieldName": "type",
               "attribute": "type"
             },
@@ -6037,7 +6098,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -6065,7 +6126,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -6079,7 +6140,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -6121,6 +6182,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -6288,7 +6381,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -6314,7 +6407,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -6327,7 +6420,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -6377,14 +6470,6 @@
             }
           ],
           "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
@@ -6448,682 +6533,6 @@
           "declaration": {
             "name": "*",
             "package": "./NumberField.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/numeric-field/NumericField.stories.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "Interactive",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-numeric-field\n      data-testid=\"test-numeric-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      .value=\"${args.value}\"\n      .data=\"${args.data}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.increase ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('increase', args.increase))}` : nothing}${\n        args.decrease ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('decrease', args.decrease))}` : nothing\n    }${args.prefix || args.suffix || args.increase || args.decrease ? '\\r\\n' : nothing}</omni-numeric-field\n    >\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        increase: '',\n        decrease: ''\n    },\n    play: async (context) => {\n        const numericField = within(context.canvasElement).getByTestId<NumericField>('test-numeric-field');\n        const interaction = jest.fn();\n        numericField.addEventListener('input', interaction);\n        numericField.addEventListener('click', interaction);\n\n        const increaseSlotElement = numericField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=increase]');\n        const decreaseSlotElement = numericField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=decrease]');\n\n        await expect(increaseSlotElement).toBeTruthy();\n        await expect(decreaseSlotElement).toBeTruthy();\n\n        await userEvent.click(decreaseSlotElement, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(increaseSlotElement, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(decreaseSlotElement, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(increaseSlotElement, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(increaseSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        const inputField = numericField.shadowRoot.getElementById('inputField');\n        const value = '12345';\n        await userEvent.type(inputField, value, {\n            pointerEventsCheck: 0\n        });\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(212345), {\n                timeout: 10000\n            });\n\n            await waitFor(() => expect(interaction).toBeCalledTimes(11), {\n                timeout: 10000\n            });\n        }\n    }\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Label"
-        },
-        {
-          "kind": "variable",
-          "name": "Hint"
-        },
-        {
-          "kind": "variable",
-          "name": "Error_Label"
-        },
-        {
-          "kind": "variable",
-          "name": "Value"
-        },
-        {
-          "kind": "variable",
-          "name": "Prefix"
-        },
-        {
-          "kind": "variable",
-          "name": "Suffix"
-        },
-        {
-          "kind": "variable",
-          "name": "Disabled"
-        },
-        {
-          "kind": "variable",
-          "name": "Custom_Icon_Slot",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-numeric-field data-testid=\"test-password-field\" label=\"${ifNotEmpty(args.label)}\" ?disabled=\"${args.disabled}\">\n      <omni-lock-open-icon slot=\"increase\"></omni-lock-open-icon>\n      <omni-lock-closed-icon slot=\"decrease\"></omni-lock-closed-icon>\n    </omni-numeric-field>\n  `,\n    name: 'Custom Icon Slot',\n    args: {\n        label: 'Custom Icon Slot'\n    },\n    play: async (context) => {\n        const passwordField = within(context.canvasElement).getByTestId<NumericField>('test-password-field');\n        const increaseElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=increase]');\n        const decreaseElement = passwordField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=decrease]');\n        await expect(increaseElement).toBeTruthy();\n        await expect(decreaseElement).toBeTruthy();\n\n        const foundSlottedIncreaseElement = increaseElement.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-open-icon');\n        const foundSlottedDecreaseElement = decreaseElement.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-closed-icon');\n        await expect(foundSlottedIncreaseElement).toBeTruthy();\n        await expect(foundSlottedDecreaseElement).toBeTruthy();\n    }\n}"
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "default",
-          "declaration": {
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Interactive",
-          "declaration": {
-            "name": "Interactive",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Label",
-          "declaration": {
-            "name": "Label",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Hint",
-          "declaration": {
-            "name": "Hint",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Error_Label",
-          "declaration": {
-            "name": "Error_Label",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Value",
-          "declaration": {
-            "name": "Value",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Prefix",
-          "declaration": {
-            "name": "Prefix",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Suffix",
-          "declaration": {
-            "name": "Suffix",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Disabled",
-          "declaration": {
-            "name": "Disabled",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Custom_Icon_Slot",
-          "declaration": {
-            "name": "Custom_Icon_Slot",
-            "module": "src/numeric-field/NumericField.stories.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/numeric-field/NumericField.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Input control to enter a single line of numbers with a stepper control.",
-          "name": "NumericField",
-          "cssProperties": [
-            {
-              "description": "Numeric input quantity container height.",
-              "name": "--omni-numeric-input-quantity-height"
-            },
-            {
-              "description": "Numeric input slot width.",
-              "name": "--omni-numeric-input-slot-width"
-            },
-            {
-              "description": " Numeric input slot height.",
-              "name": "--omni-numeric-input-slot-height"
-            },
-            {
-              "description": "Numeric input control divider color.",
-              "name": "--omni-numeric-input-divider-color"
-            },
-            {
-              "description": "Numeric input control divider width.",
-              "name": "--omni-numeric-input-divider-width"
-            },
-            {
-              "description": "Numeric input field text align.",
-              "name": "--omni-numeric-field-text-align"
-            },
-            {
-              "description": "Numeric input field font color.",
-              "name": "--omni-numeric-field-font-color"
-            },
-            {
-              "description": "Numeric input field font family.",
-              "name": "--omni-numeric-field-font-family"
-            },
-            {
-              "description": "Numeric input field font size.",
-              "name": "--omni-numeric-field-font-size"
-            },
-            {
-              "description": "Numeric input field font weight.",
-              "name": "--omni-numeric-field-font-weight"
-            },
-            {
-              "description": "Numeric input field height.",
-              "name": "--omni-numeric-field-height"
-            },
-            {
-              "description": "Numeric input field padding.",
-              "name": "--omni-numeric-field-padding"
-            },
-            {
-              "description": "Numeric input field width.",
-              "name": "--omni-numeric-field-width"
-            },
-            {
-              "description": "Numeric input control hover color.",
-              "name": "--omni-numeric-control-hover"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "description": "Replaces the icon for the prefix slot.",
-              "name": "prefix",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "description": "Replaces the icon for the suffix slot.",
-              "name": "suffix",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "description": "Slot for the increase icon.",
-              "name": "increase"
-            },
-            {
-              "description": "Slot for the decrease icon.",
-              "name": "decrease"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "_inputElement",
-              "type": {
-                "text": "HTMLInputElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_keyInput"
-            },
-            {
-              "kind": "method",
-              "name": "_onAddClick"
-            },
-            {
-              "kind": "method",
-              "name": "_onMinusClick"
-            },
-            {
-              "kind": "method",
-              "name": "renderControl",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "typeof nothing | TemplateResult"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderContent",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "typeof nothing | TemplateResult"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "description": "Text label.",
-              "attribute": "label",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string | number | Record<string, unknown>"
-              },
-              "default": "null",
-              "description": "The value entered into the form component.",
-              "attribute": "value",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "data",
-              "type": {
-                "text": "object"
-              },
-              "description": "Data associated with the component.",
-              "attribute": "data",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hint",
-              "type": {
-                "text": "string"
-              },
-              "description": "A hint message to assist the user.",
-              "attribute": "hint",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "error",
-              "type": {
-                "text": "string"
-              },
-              "description": "A error message guiding a user to correct a mistake.",
-              "attribute": "error",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indicator if the component should be disabled.",
-              "attribute": "disabled",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderPrefix",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "typeof nothing | TemplateResult"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderLabel",
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderPicker",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "typeof nothing | TemplateResult"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderHint",
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderError",
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "dir",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to set the base direction of text for display",
-              "attribute": "dir",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "lang",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to identify the language of text content on the web",
-              "attribute": "lang",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderLoading",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "TemplateResult | typeof nothing"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderAsync",
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "OmniFormElement",
-            "module": "/src/core/OmniFormElement.js"
-          },
-          "tagName": "omni-numeric-field",
-          "import": "```js\nimport '@capitec/omni-components/numeric-field';\n```",
-          "customElement": true,
-          "attributes": [
-            {
-              "name": "label",
-              "type": {
-                "text": "string"
-              },
-              "description": "Text label.",
-              "fieldName": "label",
-              "attribute": "label",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string | number | Record<string, unknown>"
-              },
-              "default": "null",
-              "description": "The value entered into the form component.",
-              "fieldName": "value",
-              "attribute": "value",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "data",
-              "type": {
-                "text": "object"
-              },
-              "description": "Data associated with the component.",
-              "fieldName": "data",
-              "attribute": "data",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "hint",
-              "type": {
-                "text": "string"
-              },
-              "description": "A hint message to assist the user.",
-              "fieldName": "hint",
-              "attribute": "hint",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "error",
-              "type": {
-                "text": "string"
-              },
-              "description": "A error message guiding a user to correct a mistake.",
-              "fieldName": "error",
-              "attribute": "error",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean"
-              },
-              "default": "false",
-              "description": "Indicator if the component should be disabled.",
-              "fieldName": "disabled",
-              "attribute": "disabled",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "dir",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to set the base direction of text for display",
-              "fieldName": "dir",
-              "attribute": "dir",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "name": "lang",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to identify the language of text content on the web",
-              "fieldName": "lang",
-              "attribute": "lang",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "NumericField",
-          "declaration": {
-            "name": "NumericField",
-            "module": "src/numeric-field/NumericField.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "omni-numeric-field",
-          "declaration": {
-            "name": "NumericField",
-            "module": "src/numeric-field/NumericField.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/numeric-field/README.md",
-      "declarations": [],
-      "exports": []
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/numeric-field/index.ts",
-      "declarations": [],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "./NumericField.js"
           }
         }
       ]
@@ -7330,14 +6739,6 @@
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
               "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
               }
@@ -7441,7 +6842,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -7469,7 +6870,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -7483,7 +6884,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -7525,6 +6926,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -7678,7 +7111,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -7704,7 +7137,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -7717,7 +7150,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -8451,7 +7884,7 @@
               "type": {
                 "text": "RenderFunction"
               },
-              "description": "The renderer function"
+              "description": "Renderer function"
             },
             {
               "kind": "field",
@@ -8780,7 +8213,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A search input control.",
+          "description": "Search input control.",
           "name": "SearchField",
           "cssProperties": [
             {
@@ -8936,7 +8369,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -8964,7 +8397,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -8978,7 +8411,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -9020,6 +8453,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -9167,7 +8632,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -9193,7 +8658,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -9206,7 +8671,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -9256,14 +8721,6 @@
             }
           ],
           "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
@@ -9785,7 +9242,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "The field of the item to display as one of the selectable options.",
+              "description": "Field of the item to display as one of the selectable options.",
               "attribute": "display-field",
               "reflects": true
             },
@@ -9796,7 +9253,7 @@
                 "text": "string"
               },
               "default": "'id'",
-              "description": "The id field of the items provided.",
+              "description": "Id field of the items provided.",
               "attribute": "id-field",
               "reflects": true
             },
@@ -9807,7 +9264,7 @@
                 "text": "string"
               },
               "default": "'No items provided'",
-              "description": "The message displayed in the items container when no items are bound to the component.",
+              "description": "Message displayed in the items container when no items are bound to the component.",
               "attribute": "empty-message",
               "reflects": true
             },
@@ -9817,7 +9274,7 @@
               "type": {
                 "text": "RenderFunction"
               },
-              "description": "The render function for each item."
+              "description": "Render function for each item."
             },
             {
               "kind": "field",
@@ -10000,7 +9457,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -10028,7 +9485,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -10042,7 +9499,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -10084,6 +9541,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -10197,7 +9686,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "The field of the item to display as one of the selectable options.",
+              "description": "Field of the item to display as one of the selectable options.",
               "fieldName": "displayField",
               "attribute": "display-field"
             },
@@ -10207,7 +9696,7 @@
                 "text": "string"
               },
               "default": "'id'",
-              "description": "The id field of the items provided.",
+              "description": "Id field of the items provided.",
               "fieldName": "idField",
               "attribute": "id-field"
             },
@@ -10217,7 +9706,7 @@
                 "text": "string"
               },
               "default": "'No items provided'",
-              "description": "The message displayed in the items container when no items are bound to the component.",
+              "description": "Message displayed in the items container when no items are bound to the component.",
               "fieldName": "emptyMessage",
               "attribute": "empty-message"
             },
@@ -10240,7 +9729,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -10266,7 +9755,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -10279,7 +9768,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -10336,14 +9825,6 @@
           "import": "```js\nimport '@capitec/omni-components/select';\n```",
           "customElement": true,
           "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
@@ -10675,7 +10156,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true
             },
@@ -10839,7 +10320,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint"
             },
@@ -11157,7 +10638,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
@@ -11185,7 +10666,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "attribute": "hint",
               "reflects": true,
               "inheritedFrom": {
@@ -11199,7 +10680,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
               "reflects": true,
               "inheritedFrom": {
@@ -11241,6 +10722,38 @@
                 "text": "HTMLElement"
               },
               "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "_prefixSlot",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hasFocus",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_setLabelPosition",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -11408,7 +10921,7 @@
                 "text": "string | number | Record<string, unknown>"
               },
               "default": "null",
-              "description": "The value entered into the form component.",
+              "description": "Value entered into the form component.",
               "fieldName": "value",
               "attribute": "value",
               "inheritedFrom": {
@@ -11434,7 +10947,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A hint message to assist the user.",
+              "description": "Hint message to assist the user.",
               "fieldName": "hint",
               "attribute": "hint",
               "inheritedFrom": {
@@ -11447,7 +10960,7 @@
               "type": {
                 "text": "string"
               },
-              "description": "A error message guiding a user to correct a mistake.",
+              "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
               "attribute": "error",
               "inheritedFrom": {
@@ -11497,14 +11010,6 @@
             }
           ],
           "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            },
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",

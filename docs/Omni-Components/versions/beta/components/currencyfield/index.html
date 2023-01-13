@@ -195,13 +195,6 @@
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/numericfield">
-                NumericField
-            </a>
-        </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
             href="./components/passwordfield">
                 PasswordField
             </a>
@@ -259,7 +252,7 @@
 <article class="component">
     <div class="component-meta">
         <div class="component-name">CurrencyField</div>
-        <div class="component-desc">A currency input control that formats input based on currency and locale.</div> 
+        <div class="component-desc">Control to enter a formatted currency value.</div> 
         <div class="component-info">
             <div class="component-info-item">
                 <div>Module</div>
@@ -333,12 +326,12 @@
                                      >
                                 </story-renderer>
                             </div>
-                            <div class="name" id="story-errorlabel">ErrorLabel</div>
+                            <div class="name" id="story-error-label">Error Label</div>
                             <div class="story">
                                 <story-renderer 
                                     path="./dist/currency-field/CurrencyField.stories.js" 
                                     tag="omni-currency-field" 
-                                    key="ErrorLabel"
+                                    key="Error_Label"
                                      >
                                 </story-renderer>
                             </div>
@@ -391,8 +384,8 @@
                                     <a href="components/currencyfield/#story-hint" id="story-hint-a" class="item">
                                         Hint
                                     </a>
-                                    <a href="components/currencyfield/#story-errorlabel" id="story-errorlabel-a" class="item">
-                                        ErrorLabel
+                                    <a href="components/currencyfield/#story-error-label" id="story-error-label-a" class="item">
+                                        Error Label
                                     </a>
                                     <a href="components/currencyfield/#story-value" id="story-value-a" class="item">
                                         Value
@@ -430,66 +423,38 @@
                         <tbody id="component-attributes">
                             
                             <tr>
-                                <td data-label="Name" scope="row">_inputElement</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLInputElement</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">currency</td>
-                                <td data-label="Attribute" scope="row">currency&nbsp;</td>
+                                <td data-label="Name" scope="row">currencySymbol</td>
+                                <td data-label="Attribute" scope="row">currency-symbol&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">The currency for the input.</td>
+                                <td data-label="Description">Currency symbol.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">locale</td>
-                                <td data-label="Attribute" scope="row">locale&nbsp;</td>
+                                <td data-label="Name" scope="row">thousandsSeparator</td>
+                                <td data-label="Attribute" scope="row">thousands-separator&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">The locale for the input.</td>
+                                <td data-label="Description">Thousands separator.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">_currencyFormat</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">Intl.NumberFormat</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_currencySymbol</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
+                                <td data-label="Name" scope="row">fractionalSeparator</td>
+                                <td data-label="Attribute" scope="row">fractional-separator&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description"></td>
+                                <td data-label="Description">Fractional separator.</td>
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">_currencyFormatSeparator</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
+                                <td data-label="Name" scope="row">fractionalPrecision</td>
+                                <td data-label="Attribute" scope="row">fractional-precision&nbsp;</td>
+                                <td data-label="Type"><pre><code class="language-js">number</code></pre></td>
+                                <td data-label="Description">Fractional precision.</td>
+                            </tr>
+                            
+                            <tr>
+                                <td data-label="Name" scope="row">formatter</td>
+                                <td data-label="Attribute" scope="row">formatter&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_currencyCentsSeparator</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_stringValue</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_symbolAndFormateUpdate</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js"></code></pre></td>
-                                <td data-label="Description"></td>
+                                <td data-label="Description">Formatter provided to format the value.</td>
                             </tr>
                             
                             <tr>
@@ -503,7 +468,7 @@
                                 <td data-label="Name" scope="row">value</td>
                                 <td data-label="Attribute" scope="row">value&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt;</code></pre></td>
-                                <td data-label="Description">The value entered into the form component.</td>
+                                <td data-label="Description">Value entered into the form component.</td>
                             </tr>
                             
                             <tr>
@@ -517,14 +482,14 @@
                                 <td data-label="Name" scope="row">hint</td>
                                 <td data-label="Attribute" scope="row">hint&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">A hint message to assist the user.</td>
+                                <td data-label="Description">Hint message to assist the user.</td>
                             </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row">error</td>
                                 <td data-label="Attribute" scope="row">error&nbsp;</td>
                                 <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">A error message guiding a user to correct a mistake.</td>
+                                <td data-label="Description">Error message guiding a user to correct a mistake.</td>
                             </tr>
                             
                             <tr>
@@ -535,16 +500,9 @@
                             </tr>
                             
                             <tr>
-                                <td data-label="Name" scope="row">_formContainerElement</td>
+                                <td data-label="Name" scope="row">hasFocus</td>
                                 <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLElement</code></pre></td>
-                                <td data-label="Description"></td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">_labelElement</td>
-                                <td data-label="Attribute" scope="row">&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">HTMLElement</code></pre></td>
+                                <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
                                 <td data-label="Description"></td>
                             </tr>
                             
@@ -598,11 +556,6 @@
                             </tr>
                         </thead>
                         <tbody id="component-slots">
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
-                                <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
-                            </tr>
                             
                             <tr>
                                 <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>

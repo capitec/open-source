@@ -70,7 +70,7 @@ export declare class OmniFormElement extends OmniElement {
      */
     label: string;
     /**
-     * The value entered into the form component.
+     * Value entered into the form component.
      * @attr
      */
     value: string | number | Record<string, unknown>;
@@ -80,12 +80,12 @@ export declare class OmniFormElement extends OmniElement {
      */
     data: object;
     /**
-     * A hint message to assist the user.
+     * Hint message to assist the user.
      * @attr
      */
     hint: string;
     /**
-     * A error message guiding a user to correct a mistake.
+     * Error message guiding a user to correct a mistake.
      * @attr
      */
     error: string;
@@ -96,7 +96,12 @@ export declare class OmniFormElement extends OmniElement {
     disabled: boolean;
     private _formContainerElement;
     private _labelElement;
+    private _prefixSlot;
+    protected hasFocus: boolean;
     connectedCallback(): void;
+    protected firstUpdated(): Promise<void>;
+    attributeChangedCallback(name: string, _old: string | null, value: string | null): Promise<void>;
+    _setLabelPosition(): void;
     _focusGained(): void;
     _focusLost(): void;
     static get styles(): CSSResultGroup;

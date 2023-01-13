@@ -72,7 +72,7 @@ export declare class Switch extends OmniElement {
      */
     data: object;
     /**
-     * A hint message to assist the user.
+     * Hint message to assist the user.
      * @attr
      */
     hint: string;

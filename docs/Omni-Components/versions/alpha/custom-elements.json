@@ -8106,16 +8106,12 @@
               "privacy": "private"
             },
             {
-              "kind": "method",
-              "name": "_keyDown",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
+              "kind": "field",
+              "name": "showPin",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private"
             },
             {
               "kind": "method",

@@ -1,7 +1,7 @@
 import { TemplateResult } from 'lit';
 import DOMTreeElement from '../core/DOMTreeElement.js';
 /**
- * A search icon component.
+ * Search icon component.
  *
  * @import
  * ```js

@@ -9,7 +9,6 @@ export * from './icon/index.js';
 export * from './icons/index.js';
 export * from './label/index.js';
 export * from './number-field/index.js';
-export * from './numeric-field/index.js';
 export * from './password-field/index.js';
 export * from './radio/index.js';
 export * from './render-element/index.js';

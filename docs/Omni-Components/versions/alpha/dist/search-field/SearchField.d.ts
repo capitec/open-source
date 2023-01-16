@@ -2,7 +2,7 @@ import { OmniFormElement } from '../core/OmniFormElement.js';
 import '../icons/Clear.icon';
 import '../icons/Search.icon';
 /**
- * A search input control.
+ * Search input control.
  *
  * @import
  * ```js

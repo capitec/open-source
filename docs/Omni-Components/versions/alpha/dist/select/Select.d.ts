@@ -76,20 +76,6 @@ import '../icons/More.icon.js';
  * @cssprop --omni-select-items-height - Select items height.
  * @cssprop --omni-select-items-width - Select items width.
  *
- * @cssprop --omni-select-scrollbar-thumb-width - Select items scroll bar thumb width.
- * @cssprop --omni-select-scrollbar-track-padding-left -  Select items scroll bar track left padding.
- * @cssprop --omni-select-scrollbar-track-padding-right - Select items scroll bar track right padding.
- *
- * @cssprop --omni-select-scrollbar-track-border-radius - Select items scroll bar track border radius.
- * @cssprop --omni-select-scrollbar-track-background-color - Select items scroll bar track background color.
- *
- * @cssprop --omni-select-scrollbar-thumb-border-radius - Select items scroll bar thumb border radius.
- * @cssprop --omni-select-scrollbar-thumb-background-color - Select items scroll bar thumb background color.
- * @cssprop --omni-select-scrollbar-track-padding-top - Select items scroll bar thumb top padding.
- * @cssprop --omni-select-scrollbar-track-padding-bottom - Select items scroll bar thumb bottom padding.
- * @cssprop --omni-select-scrollbar-track-padding-left - Select items scroll bar thumb left padding.
- * @cssprop --omni-select-scrollbar-track-padding-right - Select items scroll bar thumb right padding.
- *
  * @cssprop --omni-select-item-font-color - Select item font color.
  * @cssprop --omni-select-item-font-family - Select item font family.
  * @cssprop --omni-select-item-font-weight - Select item font weight.
@@ -116,22 +102,22 @@ export declare class Select extends OmniFormElement {
      */
     items: SelectItems | (() => SelectItems);
     /**
-     * The field of the item to display as one of the selectable options.
+     * Field of the item to display as one of the selectable options.
      * @attr [display-field]
      */
     displayField: string;
     /**
-     * The id field of the items provided.
+     * Id field of the items provided.
      * @attr [id-field]
      */
     idField: string;
     /**
-     * The message displayed in the items container when no items are bound to the component.
+     * Message displayed in the items container when no items are bound to the component.
      * @attr [empty-message]
      */
     emptyMessage: string;
     /**
-     * The render function for each item.
+     * Render function for each item.
      * @no_attribute
      */
     renderItem: RenderFunction;

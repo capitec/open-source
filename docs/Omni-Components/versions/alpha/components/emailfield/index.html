@@ -164,9 +164,9 @@
                 Currency Field
             </a>
         </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
             href="./components/emailfield">
                 Email Field
             </a>
@@ -178,9 +178,9 @@
                 Hyperlink
             </a>
         </div>
-        <div class="menu-item selected">
-            <a class="menu-link selected"
-            aria-current="page" 
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/icon">
                 Icon
             </a>
@@ -265,13 +265,13 @@
 
 <article class="component">
     <div class="component-meta">
-        <div class="component-name">Icon</div>
-        <div class="component-desc">Component that displays an icon.</div> 
+        <div class="component-name">EmailField</div>
+        <div class="component-desc">Control to input an email address.</div> 
         <div class="component-info">
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code">
-                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/icon&#39;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/email-field&#39;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
                         content_copy
                     </span>
@@ -280,7 +280,7 @@
             <div class="component-info-item">
                 <div>Source</div>
                 <div>
-                    <a href="https://github.com/capitec/omni-components/tree/develop/src/icon/Icon.ts" target="blank" class="component-info-item-link">
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/email-field/EmailField.ts" target="blank" class="component-info-item-link">
                         <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
                             <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
                         </svg>
@@ -316,45 +316,72 @@
                             <div class="name" id="story-interactive">Interactive</div>
                             <div class="story">
                                 <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
                                     key="Interactive"
                                     interactive >
                                 </story-renderer>
                             </div>
-                            <div class="name" id="story-svg">SVG</div>
+                            <div class="name" id="story-label">Label</div>
                             <div class="story">
                                 <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="SVG"
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Label"
                                      >
                                 </story-renderer>
                             </div>
-                            <div class="name" id="story-icon-path">Icon Path</div>
+                            <div class="name" id="story-hint">Hint</div>
                             <div class="story">
                                 <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="Icon_Path"
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Hint"
                                      >
                                 </story-renderer>
                             </div>
-                            <div class="name" id="story-url">URL</div>
+                            <div class="name" id="story-error-label">Error Label</div>
                             <div class="story">
                                 <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="URL"
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Error_Label"
                                      >
                                 </story-renderer>
                             </div>
-                            <div class="name" id="story-material">Material</div>
+                            <div class="name" id="story-value">Value</div>
                             <div class="story">
                                 <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="Material"
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Value"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-prefix">Prefix</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Prefix"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-suffix">Suffix</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Suffix"
+                                     >
+                                </story-renderer>
+                            </div>
+                            <div class="name" id="story-disabled">Disabled</div>
+                            <div class="story">
+                                <story-renderer 
+                                    path="./dist/email-field/EmailField.stories.js" 
+                                    tag="omni-email-field" 
+                                    key="Disabled"
                                      >
                                 </story-renderer>
                             </div>
@@ -362,20 +389,29 @@
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
-                                    <a href="components/icon/#story-interactive" id="story-interactive-a" class="item">
+                                    <a href="components/emailfield/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
                                     </a>
-                                    <a href="components/icon/#story-svg" id="story-svg-a" class="item">
-                                        SVG
+                                    <a href="components/emailfield/#story-label" id="story-label-a" class="item">
+                                        Label
                                     </a>
-                                    <a href="components/icon/#story-icon-path" id="story-icon-path-a" class="item">
-                                        Icon Path
+                                    <a href="components/emailfield/#story-hint" id="story-hint-a" class="item">
+                                        Hint
                                     </a>
-                                    <a href="components/icon/#story-url" id="story-url-a" class="item">
-                                        URL
+                                    <a href="components/emailfield/#story-error-label" id="story-error-label-a" class="item">
+                                        Error Label
                                     </a>
-                                    <a href="components/icon/#story-material" id="story-material-a" class="item">
-                                        Material
+                                    <a href="components/emailfield/#story-value" id="story-value-a" class="item">
+                                        Value
+                                    </a>
+                                    <a href="components/emailfield/#story-prefix" id="story-prefix-a" class="item">
+                                        Prefix
+                                    </a>
+                                    <a href="components/emailfield/#story-suffix" id="story-suffix-a" class="item">
+                                        Suffix
+                                    </a>
+                                    <a href="components/emailfield/#story-disabled" id="story-disabled-a" class="item">
+                                        Disabled
                                     </a>
                             </div>
                         </div>
@@ -403,17 +439,52 @@
                             <tbody id="component-attributes">
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">size</td>
-                                    <td data-label="Attribute" scope="row">size&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">&#39;default&#39; | &#39;extra-small&#39; | &#39;small&#39; | &#39;medium&#39; | &#39;large&#39;</code></pre></td>
-                                    <td data-label="Description">Size to display the icon at</td>
+                                    <td data-label="Name" scope="row">label</td>
+                                    <td data-label="Attribute" scope="row">label&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Text label.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">icon</td>
-                                    <td data-label="Attribute" scope="row">icon&nbsp;</td>
+                                    <td data-label="Name" scope="row">value</td>
+                                    <td data-label="Attribute" scope="row">value&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt;</code></pre></td>
+                                    <td data-label="Description">Value entered into the form component.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">data</td>
+                                    <td data-label="Attribute" scope="row">data&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">object</code></pre></td>
+                                    <td data-label="Description">Data associated with the component.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">hint</td>
+                                    <td data-label="Attribute" scope="row">hint&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                    <td data-label="Description">Name of the icon to display. Takes preference over the slotted icon.</td>
+                                    <td data-label="Description">Hint message to assist the user.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">error</td>
+                                    <td data-label="Attribute" scope="row">error&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Error message guiding a user to correct a mistake.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">disabled</td>
+                                    <td data-label="Attribute" scope="row">disabled&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description">Indicator if the component should be disabled.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">hasFocus</td>
+                                    <td data-label="Attribute" scope="row">&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description"></td>
                                 </tr>
                                 
                                 <tr>
@@ -460,8 +531,13 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
-                                    <td data-label="Description">The icon to be displayed</td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">prefix</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the prefix slot.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">suffix</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the suffix slot.</td>
                                 </tr>
                                 
                             </tbody>
@@ -610,6 +686,247 @@
                 
                     
                     
+                        <h2 class="component-props-table-header" >Base Form Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Base Form Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Base Form Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-container-width</code></pre></td>
+                                        <td data-label="Description">Form container width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-container-font-family</code></pre></td>
+                                        <td data-label="Description">Form container font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-field-background-color</code></pre></td>
+                                        <td data-label="Description">Form layout background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-top</code></pre></td>
+                                        <td data-label="Description">Form border top.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-bottom</code></pre></td>
+                                        <td data-label="Description">Form border bottom.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-left</code></pre></td>
+                                        <td data-label="Description">Form border left.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-right</code></pre></td>
+                                        <td data-label="Description">Form border right.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-width</code></pre></td>
+                                        <td data-label="Description">Form border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-radius</code></pre></td>
+                                        <td data-label="Description">Form border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-style</code></pre></td>
+                                        <td data-label="Description">Form border style.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-color</code></pre></td>
+                                        <td data-label="Description">Form border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-transform-origin</code></pre></td>
+                                        <td data-label="Description">Form label text align</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-text-align</code></pre></td>
+                                        <td data-label="Description">Form label text align.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-color</code></pre></td>
+                                        <td data-label="Description">Form label color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-font-size</code></pre></td>
+                                        <td data-label="Description">Form label font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-font-weight</code></pre></td>
+                                        <td data-label="Description">Form label font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-left</code></pre></td>
+                                        <td data-label="Description">Form label left margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-z-index</code></pre></td>
+                                        <td data-label="Description">Form label z-index.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-border-width</code></pre></td>
+                                        <td data-label="Description">Form focussed border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-border-color</code></pre></td>
+                                        <td data-label="Description">Form focussed border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-color</code></pre></td>
+                                        <td data-label="Description">Form focussed label color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-color</code></pre></td>
+                                        <td data-label="Description">Form error label color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-border-color</code></pre></td>
+                                        <td data-label="Description">Form error border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-disabled-color</code></pre></td>
+                                        <td data-label="Description">Form label disabled color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-border-color</code></pre></td>
+                                        <td data-label="Description">Form disabled border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Form disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-focussed-label-background-color</code></pre></td>
+                                        <td data-label="Description">Form disabled label focussed background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-color</code></pre></td>
+                                        <td data-label="Description">Form hint label font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-family</code></pre></td>
+                                        <td data-label="Description">Form hint label font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-size</code></pre></td>
+                                        <td data-label="Description">Form hint label font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-weight</code></pre></td>
+                                        <td data-label="Description">Form hint label font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-padding-top</code></pre></td>
+                                        <td data-label="Description">Form hint label top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-padding-left</code></pre></td>
+                                        <td data-label="Description">Form hint label left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-border-width</code></pre></td>
+                                        <td data-label="Description">Form hint label border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-color</code></pre></td>
+                                        <td data-label="Description">Form error label font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-family</code></pre></td>
+                                        <td data-label="Description">Form error label font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-size</code></pre></td>
+                                        <td data-label="Description">Form error label font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-weight</code></pre></td>
+                                        <td data-label="Description">Form error label font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-padding-top</code></pre></td>
+                                        <td data-label="Description">Form error label top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-padding-left</code></pre></td>
+                                        <td data-label="Description">Form error label left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-border-width</code></pre></td>
+                                        <td data-label="Description"></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hover-color</code></pre></td>
+                                        <td data-label="Description">Form hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-hover-color</code></pre></td>
+                                        <td data-label="Description">Form disabled hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-hover-color</code></pre></td>
+                                        <td data-label="Description">Form error hover color.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
+                    
+                    
                         <h2 class="component-props-table-header" >Component Variables</h2>
                         <div class="docs-search-area">
                             <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
@@ -625,38 +942,38 @@
                                 <tbody data-category="Component Variables" class="component-css-props">
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-fill</code></pre></td>
-                                        <td data-label="Description">Icon fill color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-email-align</code></pre></td>
+                                        <td data-label="Description">email field email align.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-background-color</code></pre></td>
-                                        <td data-label="Description">Icon background color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-font-color</code></pre></td>
+                                        <td data-label="Description">email field font color.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-large</code></pre></td>
-                                        <td data-label="Description">Icon large size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-font-family</code></pre></td>
+                                        <td data-label="Description">email field font family.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-medium</code></pre></td>
-                                        <td data-label="Description">Icon medium size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-font-size</code></pre></td>
+                                        <td data-label="Description">email field font size.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-small</code></pre></td>
-                                        <td data-label="Description">Icon small size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-font-weight</code></pre></td>
+                                        <td data-label="Description">email field font weight.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-extra-small</code></pre></td>
-                                        <td data-label="Description">Icon extra small size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-height</code></pre></td>
+                                        <td data-label="Description">email field height.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-default</code></pre></td>
-                                        <td data-label="Description">Icon default size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-email-field-padding</code></pre></td>
+                                        <td data-label="Description">email field width.</td>
                                     </tr>
                                     
                                 </tbody>

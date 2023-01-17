@@ -7,14 +7,10 @@ import"../chunks-js/chunk.M37XMWFA.js";import"../chunks-js/chunk.TCQWJ43J.js";im
       error="${a(e.error)}"
       ?disabled="${e.disabled}">
       ${e.prefix?o`${`\r
-`}${n(l("prefix",e.prefix))}`:r}
-      ${e.suffix?o`${`\r
-`}${n(l("suffix",e.suffix))}`:r}
-      ${e.hide?o`${`\r
-`}${n(l("hide",e.hide))}`:r}
-      ${e.show?o`${`\r
-`}${n(l("show",e.show))}`:r}</omni-password-field
-    >
+`}${n(l("prefix",e.prefix))}`:r}${e.suffix?o`${`\r
+`}${n(l("suffix",e.suffix))}`:r}${e.hide?o`${`\r
+`}${n(l("hide",e.hide))}`:r}${e.show?o`${`\r
+`}${n(l("show",e.show))}`:r}</omni-password-field>
   `,name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,prefix:"",suffix:"",hide:"",show:""},play:async e=>{let s=f(e.canvasElement).getByTestId("test-password-field"),i=v.fn();s.addEventListener("input",i),s.addEventListener("click",i);let d=s.shadowRoot.getElementById("inputField"),m=s.shadowRoot.querySelector("slot[name=show]");await t(m).toBeTruthy(),await p.click(m,{pointerEventsCheck:0});let w=s.shadowRoot.querySelector("slot[name=hide]");await t(w).toBeTruthy(),await p.click(w,{pointerEventsCheck:0}),await p.type(d,"Value Update",{pointerEventsCheck:0});let u="Value Update";navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):(await c(()=>t(d).toHaveValue(u),{timeout:3e3}),await c(()=>t(i).toBeCalledTimes(u.length+1),{timeout:3e3}))}},ee=y("omni-password-field"),oe=x("omni-password-field"),te=F("omni-password-field"),se=E("omni-password-field"),ie=$("omni-password-field"),re=b("omni-password-field"),ne=g("omni-password-field"),ae={render:e=>o`
     <omni-password-field data-testid="test-password-field" label="${a(e.label)}" ?disabled="${e.disabled}">
       <omni-lock-open-icon slot="show"></omni-lock-open-icon>

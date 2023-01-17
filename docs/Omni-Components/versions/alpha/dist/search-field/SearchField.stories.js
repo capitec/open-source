@@ -9,7 +9,6 @@ import"../chunks-js/chunk.Q7YKNVHR.js";import"../chunks-js/chunk.IS7EBBCF.js";im
             ${e.prefix?i`${`\r
 `}${f(m("prefix",e.prefix))}`:a}${e.suffix?i`${`\r
 `}${f(m("suffix",e.suffix))}`:a}${e.prefix||e.suffix?`\r
-`:a}
-        </omni-search-field>
+`:a}</omni-search-field>
     `,name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,prefix:"",suffix:""},play:async e=>{let t=x(e.canvasElement).getByTestId("test-search-field"),p=d.fn(),I=d.fn();t.addEventListener("input",p),t.addEventListener("click",I);let o=t.shadowRoot.getElementById("inputField");S(o);let l="Batman";await c.type(o,l),navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):(await r(()=>s(o).toHaveValue(l),{timeout:3e3}),await r(()=>s(p).toBeCalledTimes(l.length),{timeout:3e3}));let $=t.shadowRoot.getElementById("control");await c.click($),navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):await r(()=>s(o).toHaveValue(""),{timeout:3e3})}},_=F("omni-search-field"),ee=y("omni-search-field"),te=B("omni-search-field"),oe=v("omni-search-field"),re=g("omni-search-field"),ie=b("omni-search-field"),ae=A("omni-search-field");export{ae as Disabled,te as ErrorLabel,ee as Hint,Z as Interactive,_ as Label,re as Prefix,ie as Suffix,oe as Value,Y as default};
 //# sourceMappingURL=SearchField.stories.js.map

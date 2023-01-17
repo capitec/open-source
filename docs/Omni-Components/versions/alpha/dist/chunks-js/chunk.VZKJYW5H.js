@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.2UZOXCV4.js";import{a,d as l}from"./chunk.CHYIO324.js";import{a as o,b as r}from"./chunk.3GEUDTAZ.js";import{j as n,l as t,o as i}from"./chunk.2ZZQBHAA.js";t();i();var e=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let s=this._inputElement;this.value=s.value}static get styles(){return[super.styles,o`
+import{a as u}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.2UZOXCV4.js";import{a as s,d}from"./chunk.CHYIO324.js";import{a,b as l}from"./chunk.3GEUDTAZ.js";import{j as n,l as r,o}from"./chunk.2ZZQBHAA.js";r();o();var t=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,p,i){super.attributeChangedCallback(e,p,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e.value}static get styles(){return[super.styles,a`
         .field {
           flex: 1 1 auto;
 
@@ -31,13 +31,13 @@ import{a as m}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.2UZOXCV4.js";
         input[type='number'] {
           -moz-appearance: textfield; /* Firefox */
         }
-      `]}renderContent(){return r`
+      `]}renderContent(){return l`
       <input
         class="field"
         id="inputField"
         type="number"
-        .value=${m(this.value)}
+        .value=${u(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
-    `}};n([l("#inputField")],e.prototype,"_inputElement",2),e=n([a("omni-number-field")],e);export{e as a};
-//# sourceMappingURL=chunk.7BD5N36F.js.map
+    `}};n([d("#inputField")],t.prototype,"_inputElement",2),t=n([s("omni-number-field")],t);export{t as a};
+//# sourceMappingURL=chunk.VZKJYW5H.js.map

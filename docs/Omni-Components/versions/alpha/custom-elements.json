@@ -7342,6 +7342,10 @@
               "name": "--omni-password-field-icon-width"
             },
             {
+              "description": "Password field slot height.",
+              "name": "--omni-password-field-icon-height"
+            },
+            {
               "description": "Password field text align.",
               "name": "--omni-password-field-text-align"
             },
@@ -8112,6 +8116,26 @@
                 "text": "boolean"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "isWebkit",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_keyDown",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",

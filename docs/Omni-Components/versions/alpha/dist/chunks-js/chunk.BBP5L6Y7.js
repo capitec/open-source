@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.TDEC2NDF.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as e}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.2UZOXCV4.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as e}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
         .control-box {
           display: flex;
           align-items: center;
@@ -21,6 +21,7 @@ import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.TDEC2NDF.js";
         ::slotted([slot='show']),
         ::slotted([slot='hide']) {
           width: var(--omni-password-field-icon-width, 24px);
+          height: var(--omni-password-field-icon-height, 24px);
         }
 
         /* Prevent default icon from displaying in password field on Edge browser */
@@ -62,4 +63,4 @@ import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.TDEC2NDF.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([a()],o.prototype,"type",2),t([l("#inputField")],o.prototype,"_inputElement",2),o=t([d("omni-password-field")],o);export{o as a};
-//# sourceMappingURL=chunk.T5W5B4DV.js.map
+//# sourceMappingURL=chunk.BBP5L6Y7.js.map

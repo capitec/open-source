@@ -1,4 +1,4 @@
-import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.TDEC2NDF.js";import{a as c,d as l}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var r=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",super._focusLost(),this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
+import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.2UZOXCV4.js";import{a as c,d as l}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var r=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",super._focusLost(),this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -65,4 +65,4 @@ import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.TDEC2NDF.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};t([l("#inputField")],r.prototype,"_inputElement",2),r=t([c("omni-search-field")],r);export{r as a};
-//# sourceMappingURL=chunk.4FVNB72J.js.map
+//# sourceMappingURL=chunk.ML6AHNWN.js.map

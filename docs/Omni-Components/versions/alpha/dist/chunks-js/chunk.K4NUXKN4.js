@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.MCIDFWAY.js";import{b as h}from"./chunk.TDEC2NDF.js";import{a,c as l,d as p}from"./chunk.CHYIO324.js";import{a as d,b as t}from"./chunk.3GEUDTAZ.js";import{j as n,l as r,o as s}from"./chunk.2ZZQBHAA.js";r();s();var e=class extends h{constructor(){super(...arguments);this.type="number"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}async attributeChangedCallback(i,c,o){super.attributeChangedCallback(i,c,o),i==="value"&&new RegExp("^[0-9]+$").test(o)}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.showPin?(this.showPin=!1,this._inputElement.classList.add("field-hide-pin")):(this.showPin=!0,this._inputElement.classList.remove("field-hide-pin")),this.requestUpdate(),i.stopPropagation()}static get styles(){return[super.styles,d`
+import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.2UZOXCV4.js";import{a,c as l,d as p}from"./chunk.CHYIO324.js";import{a as d,b as t}from"./chunk.3GEUDTAZ.js";import{j as n,l as r,o as s}from"./chunk.2ZZQBHAA.js";r();s();var e=class extends m{constructor(){super(...arguments);this.type="number"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async firstUpdated(){let i=window.getComputedStyle(this._inputElement);this.isWebkit=i.webkitTextSecurity,this.isWebkit||(this.type="password")}async attributeChangedCallback(i,c,o){super.attributeChangedCallback(i,c,o),i==="value"&&new RegExp("^[0-9]+$").test(o)}_keyDown(i){if(i.key>="a"&&i.key<="z"){i.preventDefault();return}}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.showPin?(this.showPin=!1,this._inputElement.classList.add("field-hide-pin"),this.isWebkit||(this.type="password")):(this.showPin=!0,this._inputElement.classList.remove("field-hide-pin"),this.isWebkit||(this.type="number")),this.requestUpdate(),i.stopPropagation()}static get styles(){return[super.styles,d`
         .control-box {
           display: flex;
           align-items: center;
@@ -21,6 +21,7 @@ import{a as m}from"./chunk.MCIDFWAY.js";import{b as h}from"./chunk.TDEC2NDF.js";
         ::slotted([slot='show']),
         ::slotted([slot='hide']) {
           width: var(--omni-pin-field-icon-width, 24px);
+          height: var(--omni-pin-field-icon-height, 24px);
         }
 
         .field {
@@ -47,7 +48,6 @@ import{a as m}from"./chunk.MCIDFWAY.js";import{b as h}from"./chunk.TDEC2NDF.js";
 
         .field-hide-pin {
             -webkit-text-security:disc;
-            -moz-appearance: password;
         }
 
         /* Used to not display default stepper */
@@ -56,12 +56,11 @@ import{a as m}from"./chunk.MCIDFWAY.js";import{b as h}from"./chunk.TDEC2NDF.js";
           /* display: none; <- Crashes Chrome on hover */
           -webkit-appearance: none;
           margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-        }
+        }   
         
         input[type='number'] {
-          -moz-appearance: textfield; /* Firefox */
-        }
-
+            -moz-appearance: textfield; /* Firefox */
+          }
       `]}renderControl(){return t`
       <div class="control-box" @click="${i=>this._iconClicked(i)}">
         ${this.showPin?t` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `:t` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `}
@@ -72,8 +71,8 @@ import{a as m}from"./chunk.MCIDFWAY.js";import{b as h}from"./chunk.TDEC2NDF.js";
         id="inputField"
         inputmode="numeric"
         .type="${this.type}"
-        .value=${m(this.value)}
+        .value=${h(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};n([l()],e.prototype,"type",2),n([p("#inputField")],e.prototype,"_inputElement",2),e=n([a("omni-pin-field")],e);export{e as a};
-//# sourceMappingURL=chunk.IR6MGXH7.js.map
+//# sourceMappingURL=chunk.K4NUXKN4.js.map

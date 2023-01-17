@@ -35,4 +35,4 @@ import{a as v}from"./chunk.MCIDFWAY.js";import{b as _}from"./chunk.2UZOXCV4.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};n([d("#inputField")],a.prototype,"_inputElement",2),n([o({type:String,reflect:!0,attribute:"currency-symbol"})],a.prototype,"currencySymbol",2),n([o({type:String,reflect:!0,attribute:"thousands-separator"})],a.prototype,"thousandsSeparator",2),n([o({type:String,reflect:!0,attribute:"fractional-separator"})],a.prototype,"fractionalSeparator",2),n([o({type:Number,reflect:!0,attribute:"fractional-precision"})],a.prototype,"fractionalPrecision",2),n([o({type:String,reflect:!0})],a.prototype,"formatter",2),n([m()],a.prototype,"_stringValue",2),a=n([g("omni-currency-field")],a);export{a};
-//# sourceMappingURL=chunk.ZD3TR5OC.js.map
+//# sourceMappingURL=chunk.VBL3O6VD.js.map

@@ -10,7 +10,6 @@ import"../chunks-js/chunk.VZKJYW5H.js";import"../chunks-js/chunk.MCIDFWAY.js";im
       >${e.prefix?t`${`\r
 `}${a(f("prefix",e.prefix))}`:r}${e.suffix?t`${`\r
 `}${a(f("suffix",e.suffix))}`:r}${e.prefix||e.suffix?`\r
-`:r}
-    </omni-number-field>
+`:r}</omni-number-field>
   `,name:"Interactive",args:{label:"Label",value:"",data:{},hint:"",error:"",disabled:!1,prefix:"",suffix:""},play:async e=>{let o=b(e.canvasElement).getByTestId("test-number-field");o.value="";let u=A.fn();o.addEventListener("input",u);let n=o.shadowRoot.getElementById("inputField");x(n);let m="12345";await c.type(n,m,{pointerEventsCheck:0}),navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):(await l(()=>s(n).toHaveValue(parseInt(m)),{timeout:3e3}),await l(()=>s(u).toBeCalledTimes(m.length),{timeout:3e3}))}},X=F("omni-number-field"),Y=y("omni-number-field"),Z=S("omni-number-field"),ee=v("omni-number-field",123),te=B("omni-number-field"),re=$("omni-number-field"),ie=N("omni-number-field");export{ie as Disabled,Z as Error_Label,Y as Hint,W as Interactive,X as Label,te as Prefix,re as Suffix,ee as Value,Q as default};
 //# sourceMappingURL=NumberField.stories.js.map

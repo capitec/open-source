@@ -2528,6 +2528,10 @@
               "name": "--omni-form-focussed-label-color"
             },
             {
+              "description": "Form focussed error label color.",
+              "name": "--omni-form-focussed-label-error-color"
+            },
+            {
               "description": "Form error label color.",
               "name": "--omni-form-error-label-color"
             },

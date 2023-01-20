@@ -25,8 +25,9 @@ import { OmniFormElement } from '../core/OmniFormElement.js';
  * @cssprop --omni-text-field-font-family - Text field font family.
  * @cssprop --omni-text-field-font-size - Text field font size.
  * @cssprop --omni-text-field-font-weight - Text field font weight.
+ * @cssprop --omni-text-field-padding - Text field padding.
  * @cssprop --omni-text-field-height - Text field height.
- * @cssprop --omni-text-field-padding - Text field width.
+ * @cssprop --omni-text-field-width - Text field width.
  *
  */
 export declare class TextField extends OmniFormElement {

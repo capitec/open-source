@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.CPY2FXUF.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as e}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.EQAFL2KM.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as e}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
         .control-box {
           display: flex;
           align-items: center;
@@ -46,9 +46,10 @@ import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.CPY2FXUF.js";
           font-family: var(--omni-password-field-font-family, var(--omni-font-family));
           font-size: var(--omni-password-field-font-size, var(--omni-font-size));
           font-weight: var(--omni-password-field-font-weight, var(--omni-font-weight));
-          height: var(--omni-password-field-height, 100%);
           padding: var(--omni-password-field-padding, 10px);
-          width: var(--omni-password-field-width);
+
+          height: var(--omni-password-field-height, 100%);
+          width: var(--omni-password-field-width, 100%);
         }
       `]}renderControl(){return e`
       <div class="control-box" @click="${i=>this._iconClicked(i)}">
@@ -63,4 +64,4 @@ import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.CPY2FXUF.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([a()],o.prototype,"type",2),t([l("#inputField")],o.prototype,"_inputElement",2),o=t([d("omni-password-field")],o);export{o as a};
-//# sourceMappingURL=chunk.G53S5UCD.js.map
+//# sourceMappingURL=chunk.3X3OC4Q7.js.map

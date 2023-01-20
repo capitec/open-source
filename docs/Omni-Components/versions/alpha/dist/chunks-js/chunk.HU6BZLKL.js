@@ -1,4 +1,4 @@
-import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.CPY2FXUF.js";import{a as c,d as l}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var r=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",super._focusLost(),this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
+import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.EQAFL2KM.js";import{a as c,d as l}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var r=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",super._focusLost(),this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -15,9 +15,9 @@ import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.CPY2FXUF.js";
                     font-family: var(--omni-search-field-font-family, var(--omni-font-family));
                     font-size: var(--omni-search-field-font-size, var(--omni-font-size));
                     font-weight: var(--omni-search-field-font-weight, var(--omni-font-weight));
-                    height: var(--omni-search-field-height, 100%);
                     padding: var(--omni-search-field-padding, 10px);
-                    width: var(--omni-search-field-width);
+                    height: var(--omni-search-field-height, 100%);
+                    width: var(--omni-search-field-width, 100%);
                 }
 
                 .control {
@@ -65,4 +65,4 @@ import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.CPY2FXUF.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};t([l("#inputField")],r.prototype,"_inputElement",2),r=t([c("omni-search-field")],r);export{r as a};
-//# sourceMappingURL=chunk.EZFN7ORY.js.map
+//# sourceMappingURL=chunk.HU6BZLKL.js.map

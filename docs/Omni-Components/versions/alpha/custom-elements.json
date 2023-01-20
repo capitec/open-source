@@ -2444,6 +2444,30 @@
           "name": "OmniFormElement",
           "cssProperties": [
             {
+              "description": "Container width.",
+              "name": "--omni-container-width"
+            },
+            {
+              "description": "Container height.",
+              "name": "--omni-container-height"
+            },
+            {
+              "description": "Layout border radius.",
+              "name": "--omni-form-layout-border-radius"
+            },
+            {
+              "description": "Layout background color.",
+              "name": "--omni-form-layout-background-color"
+            },
+            {
+              "description": "Layout height.",
+              "name": "--omni-form-layout-height"
+            },
+            {
+              "description": "Layout width.",
+              "name": "--omni-form-layout-width"
+            },
+            {
               "description": "Form container width.",
               "name": "--omni-form-container-width"
             },
@@ -3263,12 +3287,12 @@
               "name": "--omni-currency-field-font-weight"
             },
             {
-              "description": "Currency field height.",
-              "name": "--omni-currency-field-height"
-            },
-            {
               "description": "Currency field padding.",
               "name": "--omni-currency-field-padding"
+            },
+            {
+              "description": "Currency field height.",
+              "name": "--omni-currency-field-height"
             },
             {
               "description": "Currency field width.",
@@ -4136,12 +4160,16 @@
               "name": "--omni-email-field-font-weight"
             },
             {
+              "description": "Email field padding.",
+              "name": "--omni-email-field-padding"
+            },
+            {
               "description": "Email field height.",
               "name": "--omni-email-field-height"
             },
             {
               "description": "Email field width.",
-              "name": "--omni-email-field-padding"
+              "name": "--omni-email-field-width"
             }
           ],
           "members": [
@@ -6682,12 +6710,12 @@
               "name": "--omni-number-field-font-weight"
             },
             {
-              "description": "Number field height.",
-              "name": "--omni-number-field-height"
+              "description": "Number field padding.",
+              "name": "--omni-number-field-padding"
             },
             {
-              "description": "Number field width.",
-              "name": "--omni-number-field-padding"
+              "description": "Number field height.",
+              "name": "--omni-number-field-height"
             },
             {
               "description": "Number field width.",
@@ -7382,12 +7410,12 @@
               "name": "--omni-password-field-font-weight"
             },
             {
-              "description": "Password field height.",
-              "name": "--omni-password-field-height"
+              "description": "Password field padding.",
+              "name": "--omni-password-field-padding"
             },
             {
-              "description": "Password field width.",
-              "name": "--omni-password-field-padding"
+              "description": "Password field height.",
+              "name": "--omni-password-field-height"
             },
             {
               "description": "Password field width.",
@@ -8074,12 +8102,12 @@
               "name": "--omni-pin-field-font-weight"
             },
             {
-              "description": "Pin field height.",
-              "name": "--omni-pin-field-height"
+              "description": "Pin field padding.",
+              "name": "--omni-pin-field-padding"
             },
             {
-              "description": "Pin field width.",
-              "name": "--omni-pin-field-padding"
+              "description": "Pin field height.",
+              "name": "--omni-pin-field-height"
             },
             {
               "description": "Pin field width.",
@@ -9617,15 +9645,15 @@
               "name": "--omni-search-field-font-weight"
             },
             {
-              "description": "Search field height.",
-              "name": "--omni-search-field-height"
-            },
-            {
               "description": "Search field padding.",
               "name": "--omni-search-field-padding"
             },
             {
-              "description": "Search field width",
+              "description": "Search field height.",
+              "name": "--omni-search-field-height"
+            },
+            {
+              "description": "Search field width.",
               "name": "--omni-search-field-width"
             },
             {
@@ -10369,12 +10397,16 @@
               "name": "--omni-select-field-font-weight"
             },
             {
-              "description": "Select component input field height",
+              "description": "Select component input field padding.",
+              "name": "--omni-select-field-padding"
+            },
+            {
+              "description": "Select component input field height.",
               "name": "--omni-select-field-height"
             },
             {
-              "description": "Select component input field padding.",
-              "name": "--omni-select-field-padding"
+              "description": "Select component input field width.",
+              "name": "--omni-select-field-width"
             },
             {
               "description": "Select control right margin.",
@@ -11918,12 +11950,16 @@
               "name": "--omni-text-field-font-weight"
             },
             {
+              "description": "Text field padding.",
+              "name": "--omni-text-field-padding"
+            },
+            {
               "description": "Text field height.",
               "name": "--omni-text-field-height"
             },
             {
               "description": "Text field width.",
-              "name": "--omni-text-field-padding"
+              "name": "--omni-text-field-width"
             }
           ],
           "members": [

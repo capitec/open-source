@@ -8,6 +8,15 @@ import OmniElement from './OmniElement.js';
  * @slot suffix - Replaces the icon for the suffix slot.
  *
  * @csscat Base Form Variables
+ *
+ * @cssprop --omni-container-width - Container width.
+ * @cssprop --omni-container-height - Container height.
+ *
+ * @cssprop --omni-form-layout-border-radius - Layout border radius.
+ * @cssprop --omni-form-layout-background-color - Layout background color.
+ * @cssprop --omni-form-layout-height - Layout height.
+ * @cssprop --omni-form-layout-width - Layout width.
+ *
  * @cssprop --omni-form-container-width - Form container width.
  * @cssprop --omni-form-container-font-family - Form container font family.
  *

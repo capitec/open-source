@@ -1,4 +1,4 @@
-import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.CPY2FXUF.js";import{a,c as l,d as p}from"./chunk.CHYIO324.js";import{a as d,b as t}from"./chunk.3GEUDTAZ.js";import{j as n,l as r,o as s}from"./chunk.2ZZQBHAA.js";r();s();var e=class extends m{constructor(){super(...arguments);this.type="number"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async updated(){let i=window.getComputedStyle(this._inputElement);this.isWebkit=i.webkitTextSecurity,this.isWebkit||(this.type="password")}async attributeChangedCallback(i,c,o){super.attributeChangedCallback(i,c,o),i==="value"&&new RegExp("^[0-9]+$").test(o)}_keyDown(i){if(i.key>="a"&&i.key<="z"){i.preventDefault();return}}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.showPin?(this.showPin=!1,this._inputElement.classList.add("field-hide-pin"),this.isWebkit||(this.type="password")):(this.showPin=!0,this._inputElement.classList.remove("field-hide-pin"),this.isWebkit||(this.type="number")),this.requestUpdate(),i.stopPropagation()}static get styles(){return[super.styles,d`
+import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.EQAFL2KM.js";import{a,c as l,d as p}from"./chunk.CHYIO324.js";import{a as d,b as t}from"./chunk.3GEUDTAZ.js";import{j as n,l as r,o as s}from"./chunk.2ZZQBHAA.js";r();s();var e=class extends m{constructor(){super(...arguments);this.type="number"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async firstUpdated(){super.firstUpdated();let i=window.getComputedStyle(this._inputElement);this.isWebkit=i.webkitTextSecurity,this.isWebkit||(this.type="password")}async attributeChangedCallback(i,c,o){super.attributeChangedCallback(i,c,o),i==="value"&&new RegExp("^[0-9]+$").test(o)}_keyDown(i){if(i.key>="a"&&i.key<="z"){i.preventDefault();return}}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.showPin?(this.showPin=!1,this._inputElement.classList.add("field-hide-pin"),this.isWebkit||(this.type="password")):(this.showPin=!0,this._inputElement.classList.remove("field-hide-pin"),this.isWebkit||(this.type="number")),this.requestUpdate(),i.stopPropagation()}static get styles(){return[super.styles,d`
         .control-box {
           display: flex;
           align-items: center;
@@ -40,9 +40,10 @@ import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.CPY2FXUF.js";
           font-family: var(--omni-pin-field-font-family, var(--omni-font-family));
           font-size: var(--omni-pin-field-font-size, var(--omni-font-size));
           font-weight: var(--omni-pin-field-font-weight, var(--omni-font-weight));
-          height: var(--omni-pin-field-height, 100%);
           padding: var(--omni-pin-field-padding, 10px);
-          width: var(--omni-pin-field-width);
+
+          height: var(--omni-pin-field-height, 100%);
+          width: var(--omni-pin-field-width, 100%);
       
         }
 
@@ -75,4 +76,4 @@ import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.CPY2FXUF.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};n([l()],e.prototype,"type",2),n([p("#inputField")],e.prototype,"_inputElement",2),e=n([a("omni-pin-field")],e);export{e as a};
-//# sourceMappingURL=chunk.IA5NJ5OG.js.map
+//# sourceMappingURL=chunk.B4IYGPG3.js.map

@@ -31,8 +31,9 @@ import{a as v}from"./chunk.MCIDFWAY.js";import{b as _}from"./chunk.EQAFL2KM.js";
                 id="inputField"
                 type="text"
                 maxlength="21"
+                inputmode="decimal"
                 .value=${v(this._stringValue)}
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};s([m("#inputField")],n.prototype,"_inputElement",2),s([l({type:String,reflect:!0,attribute:"currency-symbol"})],n.prototype,"currencySymbol",2),s([l({type:String,reflect:!0,attribute:"thousands-separator"})],n.prototype,"thousandsSeparator",2),s([l({type:String,reflect:!0,attribute:"fractional-separator"})],n.prototype,"fractionalSeparator",2),s([l({type:Number,reflect:!0,attribute:"fractional-precision"})],n.prototype,"fractionalPrecision",2),s([l({type:String,reflect:!0})],n.prototype,"formatter",2),s([d()],n.prototype,"_stringValue",2),n=s([g("omni-currency-field")],n);export{n as a};
-//# sourceMappingURL=chunk.KXNKTUKS.js.map
+//# sourceMappingURL=chunk.WUDJXTBM.js.map

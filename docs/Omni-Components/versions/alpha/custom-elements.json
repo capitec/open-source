@@ -3390,6 +3390,10 @@
             },
             {
               "kind": "method",
+              "name": "_isIOS"
+            },
+            {
+              "kind": "method",
               "name": "_parseAmount",
               "return": {
                 "type": {

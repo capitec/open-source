@@ -326,7 +326,7 @@
 ├── ...
 </code></pre>
 <ul>
-<li><code>src</code> - Contains all components in a flat structure, each named afer a component, e.g. <code>button</code>. Contents:
+<li><code>src</code> - Contains all components in a flat structure, each named after a component, e.g. <code>button</code>. Contents:
 <ul>
 <li><code>Button.stories.ts</code> - The stories for the component.</li>
 <li><code>Button.ts</code> - The component. <em>(NOTE: There might be multiple, depending on complexity and composition)</em></li>
@@ -368,6 +368,7 @@
 <li><strong>Do</strong> implement &quot;mobile first&quot; templates, leveraging <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design">Responsive Design</a> layout and styling principles. 📱</li>
 <li><strong>Do</strong> utilize <a href="https://lit.dev/">LitElement's</a> <a href="https://lit.dev/docs/components/decorators/">decorators</a>, required for element and property names.</li>
 <li><strong>Do</strong> ensure sufficient <a href="https://jsdoc.app/">JSDoc</a> as well as general code comments are added.</li>
+<li><strong>Do</strong> add an <code>HTMLElementTagNameMap</code> entry as documented <a href="https://lit.dev/docs/tools/publishing/#publish-typescript-typings">here</a>.</li>
 <li><strong>Do</strong> use and extend existing shared CSS component and theme custom properties. (See <a href="https://github.com/capitec/omni-components/blob/develop/src/core/OmniElement.ts"><code>src/core/OmniElement.ts</code></a>)</li>
 <li><strong>Do</strong> set suitable CSS custom property defaults, <strong>avoid</strong> hard-coding CSS property values directly within components, unless deemed required.</li>
 <li><strong>Do</strong> adhere to and leverage existing DOM standards when making use of <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"><code>&lt;input&gt;</code></a> element.</li>

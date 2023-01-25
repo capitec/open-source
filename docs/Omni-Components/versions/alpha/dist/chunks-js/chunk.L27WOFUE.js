@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.EQAFL2KM.js";import{a as l,d as r}from"./chunk.CHYIO324.js";import{a as o,b as a}from"./chunk.3GEUDTAZ.js";import{j as i,l as t,o as n}from"./chunk.2ZZQBHAA.js";t();n();var e=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let f=this._inputElement;this.value=f.value}static get styles(){return[super.styles,o`
+import{a as m}from"./chunk.MCIDFWAY.js";import{b as s}from"./chunk.EQAFL2KM.js";import{a as l,d}from"./chunk.CHYIO324.js";import{a as o,b as a}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var i=class extends s{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keyup",this._blurOnEnter.bind(this),{capture:!0})}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}_keyInput(){let e=this._inputElement;this.value=e.value}static get styles(){return[super.styles,o`
         .field {
           flex: 1 1 auto;
 
@@ -29,5 +29,5 @@ import{a as m}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.EQAFL2KM.js";
         .value=${m(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
-    `}};i([r("#inputField")],e.prototype,"_inputElement",2),e=i([l("omni-email-field")],e);export{e as a};
-//# sourceMappingURL=chunk.2PZJFJET.js.map
+    `}};t([d("#inputField")],i.prototype,"_inputElement",2),i=t([l("omni-email-field")],i);export{i as a};
+//# sourceMappingURL=chunk.L27WOFUE.js.map

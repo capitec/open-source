@@ -1,4 +1,4 @@
-import{a as ce}from"../chunks-js/chunk.DIFKYQ4Q.js";import"../chunks-js/chunk.24LQKZWG.js";import"../chunks-js/chunk.ENIROUCF.js";import"../chunks-js/chunk.F2NEI6M6.js";import"../chunks-js/chunk.XGV4CYMC.js";import"../chunks-js/chunk.6LN2OCOU.js";import"../chunks-js/chunk.WMJL67GP.js";import{a as wt}from"../chunks-js/chunk.MCIDFWAY.js";import"../chunks-js/chunk.TDEC2NDF.js";import"../chunks-js/chunk.VL6GOK5O.js";import{a as re,b as oe,c as ue,d as he,r as pe,s as fe}from"../chunks-js/chunk.SVPLBY3L.js";import"../chunks-js/chunk.MPJVWYSG.js";import"../chunks-js/chunk.AWLGTUIY.js";import"../chunks-js/chunk.US2AYN3N.js";import{a as _e}from"../chunks-js/chunk.3FTDPY75.js";import"../chunks-js/chunk.R4IMIBZU.js";import"../chunks-js/chunk.VOM777LA.js";import"../chunks-js/chunk.XMM72FEY.js";import"../chunks-js/chunk.ZO5UBYOG.js";import{a as le,b as at,c as _t,d as Bt}from"../chunks-js/chunk.CHYIO324.js";import{b as Q,d as vt,f as Dt,g as ae}from"../chunks-js/chunk.3GEUDTAZ.js";import{a as Pt,f as g,h as ji,j as I,l as o,o as u}from"../chunks-js/chunk.2ZZQBHAA.js";var xt=g((en,de)=>{"use strict";o();u();function C(t){this.__parent=t,this.__character_count=0,this.__indent_count=-1,this.__alignment_count=0,this.__wrap_point_index=0,this.__wrap_point_character_count=0,this.__wrap_point_indent_count=-1,this.__wrap_point_alignment_count=0,this.__items=[]}C.prototype.clone_empty=function(){var t=new C(this.__parent);return t.set_indent(this.__indent_count,this.__alignment_count),t};C.prototype.item=function(t){return t<0?this.__items[this.__items.length+t]:this.__items[t]};C.prototype.has_match=function(t){for(var e=this.__items.length-1;e>=0;e--)if(this.__items[e].match(t))return!0;return!1};C.prototype.set_indent=function(t,e){this.is_empty()&&(this.__indent_count=t||0,this.__alignment_count=e||0,this.__character_count=this.__parent.get_indent_size(this.__indent_count,this.__alignment_count))};C.prototype._set_wrap_point=function(){this.__parent.wrap_line_length&&(this.__wrap_point_index=this.__items.length,this.__wrap_point_character_count=this.__character_count,this.__wrap_point_indent_count=this.__parent.next_line.__indent_count,this.__wrap_point_alignment_count=this.__parent.next_line.__alignment_count)};C.prototype._should_wrap=function(){return this.__wrap_point_index&&this.__character_count>this.__parent.wrap_line_length&&this.__wrap_point_character_count>this.__parent.next_line.__character_count};C.prototype._allow_wrap=function(){if(this._should_wrap()){this.__parent.add_new_line();var t=this.__parent.current_line;return t.set_indent(this.__wrap_point_indent_count,this.__wrap_point_alignment_count),t.__items=this.__items.slice(this.__wrap_point_index),this.__items=this.__items.slice(0,this.__wrap_point_index),t.__character_count+=this.__character_count-this.__wrap_point_character_count,this.__character_count=this.__wrap_point_character_count,t.__items[0]===" "&&(t.__items.splice(0,1),t.__character_count-=1),!0}return!1};C.prototype.is_empty=function(){return this.__items.length===0};C.prototype.last=function(){return this.is_empty()?null:this.__items[this.__items.length-1]};C.prototype.push=function(t){this.__items.push(t);var e=t.lastIndexOf(`
+import{a as ce}from"../chunks-js/chunk.DIFKYQ4Q.js";import"../chunks-js/chunk.TIV23OPC.js";import"../chunks-js/chunk.ENIROUCF.js";import"../chunks-js/chunk.F2NEI6M6.js";import"../chunks-js/chunk.XGV4CYMC.js";import"../chunks-js/chunk.6LN2OCOU.js";import"../chunks-js/chunk.WMJL67GP.js";import{a as wt}from"../chunks-js/chunk.MCIDFWAY.js";import"../chunks-js/chunk.TDEC2NDF.js";import"../chunks-js/chunk.VL6GOK5O.js";import{a as re,b as oe,c as ue,d as he,r as pe,s as fe}from"../chunks-js/chunk.TDB7NULF.js";import"../chunks-js/chunk.MPJVWYSG.js";import"../chunks-js/chunk.D6UL6COZ.js";import"../chunks-js/chunk.BMVIQMEU.js";import{a as _e}from"../chunks-js/chunk.3FTDPY75.js";import"../chunks-js/chunk.R4IMIBZU.js";import"../chunks-js/chunk.VOM777LA.js";import"../chunks-js/chunk.XMM72FEY.js";import"../chunks-js/chunk.ZO5UBYOG.js";import{a as le,b as at,c as _t,d as Bt}from"../chunks-js/chunk.CHYIO324.js";import{b as Q,d as vt,f as Dt,g as ae}from"../chunks-js/chunk.3GEUDTAZ.js";import{a as Pt,f as g,h as ji,j as I,l as o,o as u}from"../chunks-js/chunk.2ZZQBHAA.js";var xt=g((en,de)=>{"use strict";o();u();function C(t){this.__parent=t,this.__character_count=0,this.__indent_count=-1,this.__alignment_count=0,this.__wrap_point_index=0,this.__wrap_point_character_count=0,this.__wrap_point_indent_count=-1,this.__wrap_point_alignment_count=0,this.__items=[]}C.prototype.clone_empty=function(){var t=new C(this.__parent);return t.set_indent(this.__indent_count,this.__alignment_count),t};C.prototype.item=function(t){return t<0?this.__items[this.__items.length+t]:this.__items[t]};C.prototype.has_match=function(t){for(var e=this.__items.length-1;e>=0;e--)if(this.__items[e].match(t))return!0;return!1};C.prototype.set_indent=function(t,e){this.is_empty()&&(this.__indent_count=t||0,this.__alignment_count=e||0,this.__character_count=this.__parent.get_indent_size(this.__indent_count,this.__alignment_count))};C.prototype._set_wrap_point=function(){this.__parent.wrap_line_length&&(this.__wrap_point_index=this.__items.length,this.__wrap_point_character_count=this.__character_count,this.__wrap_point_indent_count=this.__parent.next_line.__indent_count,this.__wrap_point_alignment_count=this.__parent.next_line.__alignment_count)};C.prototype._should_wrap=function(){return this.__wrap_point_index&&this.__character_count>this.__parent.wrap_line_length&&this.__wrap_point_character_count>this.__parent.next_line.__character_count};C.prototype._allow_wrap=function(){if(this._should_wrap()){this.__parent.add_new_line();var t=this.__parent.current_line;return t.set_indent(this.__wrap_point_indent_count,this.__wrap_point_alignment_count),t.__items=this.__items.slice(this.__wrap_point_index),this.__items=this.__items.slice(0,this.__wrap_point_index),t.__character_count+=this.__character_count-this.__wrap_point_character_count,this.__character_count=this.__wrap_point_character_count,t.__items[0]===" "&&(t.__items.splice(0,1),t.__character_count-=1),!0}return!1};C.prototype.is_empty=function(){return this.__items.length===0};C.prototype.last=function(){return this.is_empty()?null:this.__items[this.__items.length-1]};C.prototype.push=function(t){this.__items.push(t);var e=t.lastIndexOf(`
 `);e!==-1?this.__character_count=t.length-e:this.__character_count+=t.length};C.prototype.pop=function(){var t=null;return this.is_empty()||(t=this.__items.pop(),this.__character_count-=t.length),t};C.prototype._remove_indent=function(){this.__indent_count>0&&(this.__indent_count-=1,this.__character_count-=this.__parent.indent_size)};C.prototype._remove_wrap_indent=function(){this.__wrap_point_indent_count>0&&(this.__wrap_point_indent_count-=1)};C.prototype.trim=function(){for(;this.last()===" ";)this.__items.pop(),this.__character_count-=1};C.prototype.toString=function(){var t="";return this.is_empty()?this.__parent.indent_empty_lines&&(t=this.__parent.get_indent_string(this.__indent_count)):(t=this.__parent.get_indent_string(this.__indent_count,this.__alignment_count),t+=this.__items.join("")),t};function rt(t,e){this.__cache=[""],this.__indent_size=t.indent_size,this.__indent_string=t.indent_char,t.indent_with_tabs||(this.__indent_string=new Array(t.indent_size+1).join(t.indent_char)),e=e||"",t.indent_level>0&&(e=new Array(t.indent_level+1).join(this.__indent_string)),this.__base_string=e,this.__base_string_length=e.length}rt.prototype.get_indent_size=function(t,e){var i=this.__base_string_length;return e=e||0,t<0&&(i=0),i+=t*this.__indent_size,i+=e,i};rt.prototype.get_indent_string=function(t,e){var i=this.__base_string;return e=e||0,t<0&&(t=0,i=""),e+=t*this.__indent_size,this.__ensure_cache(e),i+=this.__cache[e],i};rt.prototype.__ensure_cache=function(t){for(;t>=this.__cache.length;)this.__add_column()};rt.prototype.__add_column=function(){var t=this.__cache.length,e=0,i="";this.__indent_size&&t>=this.__indent_size&&(e=Math.floor(t/this.__indent_size),t-=e*this.__indent_size,i=new Array(e+1).join(this.__indent_string)),t&&(i+=new Array(t+1).join(" ")),this.__cache.push(i)};function N(t,e){this.__indent_cache=new rt(t,e),this.raw=!1,this._end_with_newline=t.end_with_newline,this.indent_size=t.indent_size,this.wrap_line_length=t.wrap_line_length,this.indent_empty_lines=t.indent_empty_lines,this.__lines=[],this.previous_line=null,this.current_line=null,this.next_line=new C(this),this.space_before_token=!1,this.non_breaking_space=!1,this.previous_token_wrapped=!1,this.__add_outputline()}N.prototype.__add_outputline=function(){this.previous_line=this.current_line,this.current_line=this.next_line.clone_empty(),this.__lines.push(this.current_line)};N.prototype.get_line_number=function(){return this.__lines.length};N.prototype.get_indent_string=function(t,e){return this.__indent_cache.get_indent_string(t,e)};N.prototype.get_indent_size=function(t,e){return this.__indent_cache.get_indent_size(t,e)};N.prototype.is_empty=function(){return!this.previous_line&&this.current_line.is_empty()};N.prototype.add_new_line=function(t){return this.is_empty()||!t&&this.just_added_newline()?!1:(this.raw||this.__add_outputline(),!0)};N.prototype.get_code=function(t){this.trim(!0);var e=this.current_line.pop();e&&(e[e.length-1]===`
 `&&(e=e.replace(/\n+$/g,"")),this.current_line.push(e)),this._end_with_newline&&this.__add_outputline();var i=this.__lines.join(`
 `);return t!==`
@@ -77,65 +77,70 @@ $1`).replace(/>(\s*)(?=<!--\s*\/)/g,"> ")}});o();u();var Li=ji(Ni(),1);var j=cla
             </div>
         </div>`:vt}
         `,this.modal),this.story=this.controller.story[this.key],this.story.originalArgs=(n=this.story.originalArgs)!=null?n:JSON.parse(JSON.stringify(this.story.args));let i=this.story.render(this.story.args),s=this.story.source?this.story.source():this._getSourceFromLit(i);return Q`
-      <div class="preview">
-        <div class="item">
-          <div class="${this.key}${this.interactive?" interactive-story":""}" .data=${this.story}>
-            ${this.overrideInteractive?_e(this._interactiveSrc):i}
-          </div>
+        <div class="story-description">
+            ${this.story.description&&typeof this.story.description=="function"?this.story.description():this.story.description}
         </div>
+        <div class="story">
+            <div class="preview">
+                <div class="item">
+                <div class="${this.key}${this.interactive?" interactive-story":""}" .data=${this.story}>
+                    ${this.overrideInteractive?_e(this._interactiveSrc):i}
+                </div>
+                </div>
 
-        ${this.interactive?Q`
-              <div class="interactive">
-                <span class="docs-omni-component interactive-reset" @click="${this._resetLivePropertyEditor}">
-                  <omni-icon class="docs-omni-component" style="cursor: pointer;" icon="@material/settings_backup_restore"></omni-icon>
-                </span>
-                <span class="docs-omni-component component-styles-btn" @click="${this._showComponentStyles}">
-                  <omni-icon class="docs-omni-component" style="cursor: pointer;" icon="@material/format_color_fill"></omni-icon>
-                </span>
-                <live-property-editor
-                  class="live-props docs-omni-component"
-                  ?disabled=${this.overrideInteractive}
-                  .data="${Pt({},this.story)}"
-                  element="${this.tag}"
-                  ignore-attributes="dir,lang"
-                  @property-change="${async _=>{let r=_.detail,h=!1;(!r.oldValue||!r.newValue||typeof r.newValue!="string"&&JSON.stringify(r.oldValue).trim()!==JSON.stringify(r.newValue).trim()||r.oldValue.toString().trim()!==r.newValue.toString().trim())&&(h=!0),h&&(this.story.args[r.property]=r.newValue,this.requestUpdate(),await this.updateComplete,this.codeEditor&&!this.story.source&&await this.codeEditor.refresh(()=>this._getSourceFromLit(this.story.render(this.story.args))))}}"></live-property-editor>
-              </div>
-            `:vt}
-      </div>
-      <!-- <div style="border-top: 1px solid #e1e1e1;max-width: 600px;"> -->
-      <div class="code-block">
-        <code-editor
-          class="source-code"
-          .transformSource="${_=>this._transformSource(_)}"
-          .extensions="${async()=>[this._currentCodeTheme(),re(await pe())]}"
-          .code="${wt(s!=null?s:"")}"
-          @codemirror-loaded="${_=>{let r=_.detail.source;this.originalInteractiveSrc=r,this._interactiveSrc=r}}"
-          @codemirror-source-change="${_=>{let r=_.detail.source;this._interactiveSrc=r,this.overrideInteractive=this._interactiveSrc!==this.originalInteractiveSrc&&this._interactiveSrc!==s,this.requestUpdate()}}"
-          ?read-only="${!0}">
-        </code-editor>
-      </div>
-      <div class="play-tests">
-        <div style="display: flex; flex-direction: row;">
-          <omni-button
-            class="docs-omni-component"
-            label="Run Tests"
-            slot-position="left"
-            ?disabled=${this.overrideInteractive||this._isBusyPlaying||JSON.stringify(this.story.originalArgs).replaceAll(`
+                ${this.interactive?Q`
+                    <div class="interactive">
+                        <span class="docs-omni-component interactive-reset" @click="${this._resetLivePropertyEditor}">
+                        <omni-icon class="docs-omni-component" style="cursor: pointer;" icon="@material/settings_backup_restore"></omni-icon>
+                        </span>
+                        <span class="docs-omni-component component-styles-btn" @click="${this._showComponentStyles}">
+                        <omni-icon class="docs-omni-component" style="cursor: pointer;" icon="@material/format_color_fill"></omni-icon>
+                        </span>
+                        <live-property-editor
+                        class="live-props docs-omni-component"
+                        ?disabled=${this.overrideInteractive}
+                        .data="${Pt({},this.story)}"
+                        element="${this.tag}"
+                        ignore-attributes="dir,lang"
+                        @property-change="${async _=>{let r=_.detail,h=!1;(!r.oldValue||!r.newValue||typeof r.newValue!="string"&&JSON.stringify(r.oldValue).trim()!==JSON.stringify(r.newValue).trim()||r.oldValue.toString().trim()!==r.newValue.toString().trim())&&(h=!0),h&&(this.story.args[r.property]=r.newValue,this.requestUpdate(),await this.updateComplete,this.codeEditor&&!this.story.source&&await this.codeEditor.refresh(()=>this._getSourceFromLit(this.story.render(this.story.args))))}}"></live-property-editor>
+                    </div>
+                    `:vt}
+            </div>
+            <!-- <div style="border-top: 1px solid #e1e1e1;max-width: 600px;"> -->
+            <div class="code-block">
+                <code-editor
+                class="source-code"
+                .transformSource="${_=>this._transformSource(_)}"
+                .extensions="${async()=>[this._currentCodeTheme(),re(await pe())]}"
+                .code="${wt(s!=null?s:"")}"
+                @codemirror-loaded="${_=>{let r=_.detail.source;this.originalInteractiveSrc=r,this._interactiveSrc=r}}"
+                @codemirror-source-change="${_=>{let r=_.detail.source;this._interactiveSrc=r,this.overrideInteractive=this._interactiveSrc!==this.originalInteractiveSrc&&this._interactiveSrc!==s,this.requestUpdate()}}"
+                ?read-only="${!0}">
+                </code-editor>
+            </div>
+            <div class="play-tests">
+                <div style="display: flex; flex-direction: row;">
+                <omni-button
+                    class="docs-omni-component"
+                    label="Run Tests"
+                    slot-position="left"
+                    ?disabled=${this.overrideInteractive||this._isBusyPlaying||JSON.stringify(this.story.originalArgs).replaceAll(`
 `,"").replaceAll("\\n","").replaceAll("	","").replaceAll(" ","")!==JSON.stringify(this.story.args).replaceAll(`
 `,"").replaceAll("\\n","").replaceAll("	","").replaceAll(" ","")}
-            @click="${()=>this._play(this.story,`.${this.key}`)}">
-            <omni-icon class="docs-omni-component" icon="@material/play_arrow" style="margin-right: 8px;"></omni-icon>
-          </omni-button>
-          <div class="${this.key+"-result"} success">
-            <span class="material-icons" style="color: #155724;">check</span>
-            <span style="margin-left: 8px;">Passed</span>
-          </div>
+                    @click="${()=>this._play(this.story,`.${this.key}`)}">
+                    <omni-icon class="docs-omni-component" icon="@material/play_arrow" style="margin-right: 8px;"></omni-icon>
+                </omni-button>
+                <div class="${this.key+"-result"} success">
+                    <span class="material-icons" style="color: #155724;">check</span>
+                    <span style="margin-left: 8px;">Passed</span>
+                </div>
+                </div>
+                <div class="${this.key+"-result"} failure">
+                <span class="material-icons" style="color: #721c24;">close</span>
+                <span style="margin-left: 8px;"><pre>${this._playError}</pre></span>
+                </div>
+            </div>
         </div>
-        <div class="${this.key+"-result"} failure">
-          <span class="material-icons" style="color: #721c24;">close</span>
-          <span style="margin-left: 8px;"><pre>${this._playError}</pre></span>
-        </div>
-      </div>
     `}handleCustomThemeCSSVariableSearch(i){var r;let s=(r=i.target.value)!=null?r:"",_=document.querySelector(`[data-target=custom-css-table-${this.tag}]`).children;for(let h=0;h<_.length;h++){let f=_[h];f.innerText&&f.innerText.toLowerCase().includes(s.toLowerCase())?f.classList.remove("hidden"):f.classList.add("hidden")}}renderCssVariable(i){let s=this.customCss.sheet;if(i.name){let n;if(s.cssRules.length===0){let _=s.insertRule(":root {}");n=s.cssRules.item(_)}else for(let _=0;_<s.cssRules.length;_++){let r=s.cssRules[_];if(r.selectorText===":root"){n=r;break}}return n&&(i.value=n.style.getPropertyValue(`--${i.name}`)),i.control==="color"?Q`
                     <omni-color-field
                         class="css-prop docs-omni-component"

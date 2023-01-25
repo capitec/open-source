@@ -17,18 +17,22 @@ import{a as rl,b as qt,d as Ts}from"./chunk.CHYIO324.js";import{a as il,b as nl,
           pointer-events: none;
         }
 
-       /*.cm-editor {
+       .cm-editor {
           background: var(--code-editor-background-color);
-          font-size: 16px;
+          /*font-size: 16px;
           padding: 12px;
           max-height: var(--code-editor-max-height);
           max-width: var(--code-editor-max-width);
           min-height: var(--code-editor-min-height);
-          min-width: var(--code-editor-min-width);
-        }*/
+          min-width: var(--code-editor-min-width);*/
+        }
 
         .cm-content {
           white-space: pre-wrap !important;
+        }
+
+        .cm-activeLine {
+            
         }
 
         .copy-code-wrap {
@@ -105,4 +109,4 @@ import{a as rl,b as qt,d as Ts}from"./chunk.CHYIO324.js";import{a as il,b as nl,
       <slot @slotchange="${()=>this._slotChanged()}"></slot>
     `}async updated(){var t,i,s,r,o,l;if(!this.editor&&this.codeParent&&(this.code||this.slotElement.assignedNodes().length>0)){let a=this.code?await this.transformSource(await this.code):await this.transformSource(this._readCode(this.slotElement));this._clearElements(this.codeParent),this.editor=new S({doc:a,extensions:[this.userExtensions.of([this.readOnly||this.disabled?[]:[jr(),Hr(),Fo(),Wr(),uo(),go(),Do(),To(),zr(),Bt.of([...Oo,...Ho,...Zo,...Vo,...hs])],po(mo,{fallback:!0}),qr(),_o(),await this.extensions()]),this.readonlyOrDisabled.of([P.readOnly.of(this.readOnly||this.disabled),S.editable.of(!this.readOnly&&!this.disabled)]),Bt.of(this.noTab?[]:[Lc]),S.updateListener.of(async h=>{if(h.docChanged){let c=a;a=this.editor.state.doc.toString(),this.code=a,this.requestUpdate(),await this.updateComplete,this.disabled||(this.dispatchEvent(new CustomEvent("codemirror-update",{detail:{update:h,editor:this.editor,source:this.editor.state.doc.toString()}})),this.dispatchEvent(new CustomEvent("codemirror-source-change",{detail:{update:h,editor:this.editor,oldSource:c,source:a}})))}else this.disabled||this.dispatchEvent(new CustomEvent("codemirror-update",{detail:{update:h,editor:this.editor,source:this.editor.state.doc.toString()}}))})],parent:this.codeParent}),this._clearOtherElements(this.codeParent,this.editor.dom),(i=(t=this.editor.dom)==null?void 0:t.part)==null||i.add("editor"),(r=(s=this.editor.scrollDOM)==null?void 0:s.part)==null||r.add("editor-scroller"),(l=(o=this.editor.contentDOM)==null?void 0:o.part)==null||l.add("editor-content"),this.disabled||this.dispatchEvent(new CustomEvent("codemirror-loaded",{detail:{editor:this.editor,source:this.editor.state.doc.toString()}}))}}async _copyCode(){this._copyTextToClipboard(await this.code)}_fallbackCopyTextToClipboard(t){let i=document.createElement("textarea");i.value=t,i.style.top="0",i.style.left="0",i.style.position="fixed",document.body.appendChild(i),i.focus(),i.select();try{document.execCommand("copy")}catch(s){console.error(s)}document.body.removeChild(i)}_copyTextToClipboard(t){if(!navigator.clipboard){this._fallbackCopyTextToClipboard(t);return}navigator.clipboard.writeText(t).then(void 0,i=>{console.error("Attempting fallback, could not copy text: ",i),this._fallbackCopyTextToClipboard(t)})}async _slotChanged(){if(!this.editor)return;let t=this.code?await this.transformSource(await this.code):await this.transformSource(this._readCode(this.slotElement));!this.disabled&&t!==this.editor.state.doc.toString()&&this.editor.dispatch({changes:{from:0,to:this.editor.state.doc.length,insert:t}})}_readCode(t){return t.assignedNodes().map(s=>s instanceof Element?s.outerHTML:s.textContent).join(`\r
 `)}_clearElements(t=void 0){t||(t=this.renderRoot);let i=t.lastElementChild;for(;i;){let s=i;i=i.previousElementSibling,s.hasAttribute("slot")||t.removeChild(s)}}_clearOtherElements(t=void 0,i){if(t||(t=this.renderRoot),!i||!t.contains(i)){this._clearElements(t);return}let s=t.children.length;if(s>1)for(let r=s-1;r>=0;r--){let o=t.children[r];!o.hasAttribute("slot")&&o!==i&&t.removeChild(o)}}};st([qt({type:Object,reflect:!1})],_e.prototype,"extensions",2),st([qt({type:Object,reflect:!1})],_e.prototype,"transformSource",2),st([qt({type:String,reflect:!0})],_e.prototype,"code",2),st([qt({type:Boolean,attribute:"read-only",reflect:!0})],_e.prototype,"readOnly",2),st([qt({type:Boolean,reflect:!0})],_e.prototype,"disabled",2),st([qt({type:Boolean,attribute:"no-tab",reflect:!0})],_e.prototype,"noTab",2),st([Ts(".code-parent")],_e.prototype,"codeParent",2),st([Ts("slot")],_e.prototype,"slotElement",2),_e=st([rl("code-editor")],_e);export{B as a,ce as b,Ji as c,G as d,X as e,rh as f,Yn as g,_m as h,dh as i,x as j,y as k,S as l,en as m,pe as n,bh as o,Gu as p,cg as q,fg as r,ug as s,dg as t,pg as u,Ci as v,po as w,pd as x,kg as y,Sg as z,_e as A};
-//# sourceMappingURL=chunk.AWLGTUIY.js.map
+//# sourceMappingURL=chunk.D6UL6COZ.js.map

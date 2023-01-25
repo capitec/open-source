@@ -175,12 +175,12 @@ import{a as w}from"./chunk.MCIDFWAY.js";import{b as y}from"./chunk.TDEC2NDF.js";
                 ?disabled=${this.disabled}
                 .value=${w((t=typeof this.value!="string"&&this.displayField?((e=this.value)!=null?e:{})[this.displayField]:this.value)!=null?t:"")}
                 tabindex="${this.disabled?-1:0}" />
-        `}renderPicker(){return!this._popUp||!this.items?d:n`
+        `}renderPicker(){return this._popUp?n`
             <div id="items-container" class="items-container ${this._bottomOfViewport?"bottom":""}">
                 ${this._isMobile&&this.label?n`<div class="header">${this.label}</div>`:d}
                 <div ${F(this._itemsMaxHeightChange)} id="items" class="items"> ${b(this._renderOptions(),n`<div>${this.renderLoading()}</div>`)} </div>
             </div>
-        `}renderControl(){return n` <div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
+        `:d}renderControl(){return n` <div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
             ${this._isMobile?n`<omni-more-icon class="control-icon"></omni-more-icon>`:n`<omni-chevron-down-icon class="control-icon"></omni-chevron-down-icon>`}
         </div>`}async _renderOptions(){let e=[],t=0;return typeof this.items=="function"?e=await this.items():e=await this.items,Array.isArray(e)&&(t=e.length),t===0?n`<div class="none">${this.emptyMessage}</div>`:e.map(O=>this._renderOption(O))}_renderOption(e){return n` <div
             class="item ${this.value===(typeof e=="string"?e:e[this.displayField])||this.value===e?"selected":""}"
@@ -192,4 +192,4 @@ import{a as w}from"./chunk.MCIDFWAY.js";import{b as y}from"./chunk.TDEC2NDF.js";
  * Copyright 2020 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.4UYMCHOG.js.map
+//# sourceMappingURL=chunk.3K4UBYX5.js.map

@@ -336,7 +336,6 @@
 │   │   ├── index.ts
 │   │   ├── README.md
 │   ├── ...
-├── themes
 ├── ...
 </code></pre>
 <ul>
@@ -348,7 +347,6 @@
 <li><code>README.md</code> - The README for the component <em>(NOTE: Generated when Pull Request is merged)</em>.</li>
 </ul>
 </li>
-<li><code>themes</code> - Basic built-in themes, viewable within the hosted documentation.</li>
 </ul>
 <h3><a id="naming-conventions" class="anchor" href="contributing/#naming-conventions" aria-hidden="true"></a>Naming Conventions</h3>
 <ul>
@@ -393,11 +391,9 @@
 <h4><a id="stories" class="anchor" href="contributing/#stories" aria-hidden="true"></a>Stories</h4>
 <ul>
 <li><strong>Do</strong> use <a href="https://github.com/capitec/omni-components/blob/develop/src/utils/ComponentStoryFormat.ts">Component Story Format (CSF) 3</a>.</li>
-<li><strong>Do</strong> implement a <a href="https://github.com/capitec/omni-components/blob/develop/src/utils/PlayFunction.ts">play function</a> per story to test story-specific component state and event behaviors. 🛝
-<ul>
+<li><strong>Do</strong> implement a <a href="https://github.com/capitec/omni-components/blob/develop/src/utils/PlayFunction.ts">play function</a> per story to test story-specific component state and event behaviors.</li>
 <li><strong>Do</strong> set the <code>data-testid</code> within every story template.</li>
-</ul>
-</li>
+<li><strong>Do</strong> ensure that stories are authored to be both dark and light theme friendly (test via the hosted documentation).</li>
 </ul>
 <h4><a id="themes" class="anchor" href="contributing/#themes" aria-hidden="true"></a>Themes</h4>
 <ul>
@@ -416,6 +412,9 @@
 </ul>
 <h3><a id="checks" class="anchor" href="contributing/#checks" aria-hidden="true"></a>Checks</h3>
 <ul>
+<li>Code scanning passes.</li>
+<li>Lint validation passes.</li>
+<li>Format validation passes.</li>
 <li>All story play function tests pass.</li>
 </ul>
 <!--- * All story play function tests has at least 80% code coverage of components. --->

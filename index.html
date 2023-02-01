@@ -1,76 +1,137 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>
-			Capitec: Open Source Documentation
-		</title>
-		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-		<meta http-equiv="Pragma" content="no-cache">
-		<meta http-equiv="Expires" content="0">
-		<meta name="robots" content="noindex" />
-		<meta name="AdsBot-Google" content="noindex" />
-		<meta name="googlebot" content="noindex" />
-		
-		<meta name="generator" content="Application">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Application">
 
-		<!-- See https://goo.gl/qRE0vM -->
-		<meta name="theme-color" content="#3f51b5">
+<head>
+	<meta charset="utf-8">
+	<title>
+		Capitec: Open Source Documentation
+	</title>
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="0">
+	<meta name="robots" content="noindex" />
+	<meta name="AdsBot-Google" content="noindex" />
+	<meta name="googlebot" content="noindex" />
 
-		<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
-		<meta name="mobile-web-app-capable" content="yes">
-		<meta name="application-name" content="Application">
+	<meta name="generator" content="Application">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Application">
 
-		<!-- Add to homescreen for Safari on iOS -->
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="default">
-		<meta name="apple-mobile-web-app-title" content="Application">
+	<!-- See https://goo.gl/qRE0vM -->
+	<meta name="theme-color" content="#3f51b5">
 
-		<!-- Tile icon for Windows 8 (144x144 + tile color) -->
-		<meta name="msapplication-TileColor" content="#3f51b5">
-		<meta name="msapplication-tap-highlight" content="no">
+	<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="Application">
 
-		<noscript>
-			<div
-				style="width: 100vw; height: 100vh; display: flex; align-content: center; justify-content: center; flex-direction: column; text-align: center;">
-				<div style="margin-top: 24px;">
-					Sorry, your browser doesn't support JavaScript or it is currently disabled.
-				</div>
+	<!-- Add to homescreen for Safari on iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="Application">
+
+	<!-- Tile icon for Windows 8 (144x144 + tile color) -->
+	<meta name="msapplication-TileColor" content="#3f51b5">
+	<meta name="msapplication-tap-highlight" content="no">
+
+	<!-- Preload Hind Vadodara fonts to lessen chance of system default from initially applying -->
+	<link rel="preload" href="https://fonts.gstatic.com/s/hindvadodara/v12/neINzCKvrIcn5pbuuuriV9tTQInVrEsf.woff2"
+		as="font" type="font/woff2" crossorigin>
+	<style>
+		@font-face {
+			font-family: 'Hind Vadodara';
+			font-style: normal;
+			font-weight: 400;
+			src: url(https://fonts.gstatic.com/s/hindvadodara/v12/neINzCKvrIcn5pbuuuriV9tTQInVrEsf.woff2) format('woff2');
+			unicode-range: U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+		}
+	</style>
+	<link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara" as="style">
+
+	<noscript>
+		<div
+			style="width: 100vw; height: 100vh; display: flex; align-content: center; justify-content: center; flex-direction: column; text-align: center;">
+			<div style="margin-top: 24px;">
+				Sorry, your browser doesn't support JavaScript or it is currently disabled.
 			</div>
-		</noscript>
-
-	</head>
-
-	<body>
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-		rel="stylesheet">
-		<link href="index.css" rel="stylesheet">	
-		  
-		<div class="container">
-			<div id="header" class="header">
-				<a id="btn-home" class="material-icons icon" >home</a>
-				<label id="header-label">Capitec: Open Source Documentation</label>
-				<div class="wrapper">
-					<select id="version-select" class="hidden"></select>
-					<a id="btn-fullscreen" class="material-icons icon" >fullscreen</a>
-				</div>
-			</div>
-
-			<div id="welcome" class="welcome">
-
-				<h1>Welcome to Capitec Open Source Documentation</h1>
-				
-				Browse the catalog of open source repositories provided and maintained by Capitec.				
-				
-			</div>
-
-			<div id="main" class="content"></div>
 		</div>
-        
-        <script src="index.js" type="module" defer></script>
-	</body>
+	</noscript>
+
+</head>
+
+<body>
+	<link href="index.css" rel="stylesheet">
+	<div id="header" class="header">
+		<svg xmlns="http://www.w3.org/2000/svg" overflow="hidden" viewBox="0 0 3109.2 557.41" width="100%" height="100%" class="logo">
+			<defs>
+				<clipPath id="a">
+					<path d="M2585 1109h3199v861H2585z" />
+				</clipPath>
+				<clipPath id="b">
+					<path d="M3730 1112h2053v515H3730z" />
+				</clipPath>
+				<clipPath id="c">
+					<path d="M3730 1112h1993v515H3730z" />
+				</clipPath>
+				<clipPath id="d">
+					<path d="M2615 1112h3108v515H2615z" />
+				</clipPath>
+				<clipPath id="e">
+					<path d="M2587 1261h1054v516H2587z" />
+				</clipPath>
+				<clipPath id="f">
+					<path d="M2613 1261h1028v516H2613z" />
+				</clipPath>
+				<clipPath id="g">
+					<path d="M2613 1261h3041v516H2613z" />
+				</clipPath>
+			</defs>
+			<g transform="translate(-2613.3 -1256.8)" clip-path="url(#a)">
+				<g clip-path="url(#b)">
+					<g clip-path="url(#c)">
+						<g clip-path="url(#d)">
+							<path
+								d="M5722.342 1452.25c-34.623 47.689-93.277 62.095-148.539 62.095-94.958 0-173.46-47.231-173.46-120.87 0-70.51 78.502-120.54 176.181-120.54 45.118 0 89.326 8.054 123.7 37.362l2.9 2.485a190.706 190.706 0 0 1 4.653 4.463 312.142 312.142 0 0 1 3.571 3.642c-4.052 4.175-8.033 6.487-11.735 7.556-4.141 1.205-7.983.858-11.234-.087-6.623-1.939-10.965-6.537-10.965-6.537-24.07-22.372-54.021-30.464-87.094-30.464-70.258 0-115.517 38.48-115.517 103.5 0 57.371 35.375 91.167 94.898 96.672 5.713.871 11.845 1.355 18.578 1.355 10.374 0 20.718-1.131 30.812-3.181 13.416-2.4 26.09-6.576 37.825-12.69 17.517-8.527 32.533-20.048 42.877-33.696zm-1790.816 62.09c-94.928 0-173.429-47.231-173.429-120.87 0-70.51 78.501-120.54 176.18-120.54 45.089 0 89.286 8.054 123.69 37.362l2.881 2.485a138.197 138.197 0 0 1 4.672 4.463 162.77 162.77 0 0 1 3.571 3.642c-4.051 4.175-8.003 6.487-11.734 7.556-4.132 1.205-7.973.858-11.235-.087-6.612-1.939-10.954-6.537-10.954-6.537-24.08-22.372-54.062-30.464-87.125-30.464-70.268 0-115.506 38.48-115.506 103.5 0 57.371 35.354 91.167 94.928 96.672 5.672.871 11.814 1.355 18.527 1.355 10.384 0 20.748-1.131 30.853-3.181 13.355-2.4 26.07-6.576 37.815-12.69 17.517-8.527 32.553-20.048 42.887-33.696l22.549 8.937c-34.624 47.689-93.287 62.095-148.57 62.095zm760.404-169.97c0 39.27-37.445 73.102-89.725 73.102h-76.09v-10.591c0-5.874 4.571-10.644 10.143-10.644h34.634c30.012 0 54.552-23.074 54.552-51.097 0-28.048-24.54-51.07-54.552-51.07h-54.562v220.27h-65.896v-241.39h63.395l.04-.013h88.336c52.28 0 89.725 32.149 89.725 71.433zm466.887-71.39 209.304-.039v21.156h-140.266v80.969h130.932v20.988h-130.932v97.19h140.266v21.104h-209.304zm-831.432 225.27-45.408-73.52h-94.038l9.314-15.929c1.9-2.741 5.142-4.518 8.843-4.518l63.115-.05-40.046-65.023-97.078 159.04h-35.845l149.9-241.41 156.013 241.41zm739.395-225.31 27.691.052v21.104h-88.185v220.25h-65.156v-220.25l-88.165.103.03-21.207zm-326.53 241.4h64.406v-241.41h-64.406z" />
+						</g>
+					</g>
+				</g>
+				<text transform="translate(3774 1770)"
+					font-family="'Hind Vadodara Light', 'Hind Vadodara Light_MSFontService', sans-serif" font-size="220"
+					font-weight="300" style="text-decoration-line:none">
+					Open Source
+				</text>
+				<g clip-path="url(#e)">
+					<g clip-path="url(#f)">
+						<g clip-path="url(#g)">
+							<path
+								d="M3164.66 1528.06h-180.74c-64.93 0-118.04-54.043-118.04-121.101V1262c-140.38 8.254-252.58 120.806-252.58 257.223 0 141.782 121.12 257.755 269.14 257.755h376.66v-151.345c0-53.666-42.491-97.572-94.442-97.572z" />
+							<path
+								d="M3305.7 1262h-345.87v150.272c0 53.636 42.393 97.203 94.199 97.203h180.84c64.763 0 117.73 58.424 117.73 125.506v141.996c125.46-21.479 221.53-130.85 221.53-257.264 0-141.74-120.82-257.714-268.44-257.714z" />
+						</g>
+					</g>
+				</g>
+			</g>
+		</svg>
+	</div>
+
+	<div class="outer">
+		<div class="wrapper" id="main">
+
+		</div>
+	</div>
+
+	<script src="index.js" type="module" defer></script>
+
+	<template>
+		<!-- <div class="box"> -->
+			<a target="_blank" class="box">
+				<div>
+					<img data-logo width="128" height="128" />
+				</div>
+				<div data-name></div>
+			</a>
+		<!-- </div> -->
+	</template>
+</body>
 
 </html>

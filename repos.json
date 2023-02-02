@@ -10,7 +10,7 @@
           "url": "https://www.npmjs.com/package/@capitec/omni-components"
         }
       ],
-      "name": "Omni-Components",
+      "name": "omni-components",
       "versions": [
         "0.3.0",
         "alpha",
@@ -28,7 +28,7 @@
           "url": "https://www.npmjs.com/package/@capitec/omni-router"
         }
       ],
-      "name": "Omni-Router",
+      "name": "omni-router",
       "versions": [
         "0.0.2",
         "beta"

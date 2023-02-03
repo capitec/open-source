@@ -50,6 +50,11 @@ jobs:
           node-version: 16.x
           registry-url: 'https://registry.npmjs.org'
           always-auth: true
+
+      - name: Install Package Dependencies 🔗
+        run: |
+          npm ci
+
       - name: Update repos.json 📂
         run: |
           npm run repos

@@ -66,6 +66,7 @@ async function getGitHubPackageJson(name) {
         return JSON.parse(response.data);
 
     } catch (error) {
+        console.log(error);
         return {};
     }
 

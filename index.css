@@ -50,7 +50,7 @@ html {
     font-size: 150%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     border: 1px solid #e1e1e1;
     text-decoration: none;
     cursor: pointer;
@@ -58,6 +58,35 @@ html {
 
 .wrapper .box:hover {
     background: #f9f9f9;
+}
+
+.wrapper .box .logo {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    padding: 24px 0;
+}
+
+.wrapper .box .content {
+    flex: 1;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;  
+    justify-content: center;
+}
+
+.wrapper .box .version {
+    font-size: 16px;
+    background: #e1e1e1;
+    padding: 2px 6px;
+    border: transparent;
+    border-radius: 4px;
+}
+
+.wrapper .box .description {
+    font-size: 18px;
+    text-align: center;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,6 +111,10 @@ html {
 
     .wrapper .box:hover {
         background: #5F6469;
+    }
+
+    .wrapper .box .version {
+        background: #13181D;
     }
 }
 

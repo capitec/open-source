@@ -1,38 +1,31 @@
 {
   "repos": [
     {
-      "display": "Omni Components",
-      "repo": "https://github.com/capitec/omni-components",
-      "links": [
-        {
-          "name": "NPM",
-          "icon": "https://raw.githubusercontent.com/capitec/omni-components/develop/.tooling/eleventy/assets/images/logo.png",
-          "url": "https://www.npmjs.com/package/@capitec/omni-components"
-        }
+      "display": "Omni Router",
+      "logo": "https://raw.githubusercontent.com/capitec/omni-router/develop/docs/logos/omni.png",
+      "name": "omni-router",
+      "versions": [
+        "0.0.2",
+        "beta"
       ],
+      "description": "Framework agnostic, zero dependency, client-side web component router",
+      "version": "0.0.6"
+    },
+    {
+      "display": "Omni Components",
+      "logo": "https://raw.githubusercontent.com/capitec/omni-components/develop/.tooling/eleventy/assets/images/logo.png",
       "name": "omni-components",
       "versions": [
         "0.3.0",
         "alpha",
         "beta",
         "next"
-      ]
+      ],
+      "description": "Modern UI component library for mobile and web",
+      "version": "0.3.33"
     },
     {
-      "display": "Omni Router",
-      "repo": "https://github.com/capitec/omni-router",
-      "links": [
-        {
-          "name": "NPM",
-          "icon": "https://avatars.githubusercontent.com/u/6078720",
-          "url": "https://www.npmjs.com/package/@capitec/omni-router"
-        }
-      ],
-      "name": "omni-router",
-      "versions": [
-        "0.0.2",
-        "beta"
-      ]
+      "name": "bla"
     }
   ]
 }

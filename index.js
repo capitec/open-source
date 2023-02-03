@@ -36,14 +36,24 @@ function renderRepos() {
     if ('content' in document.querySelector('template')) {
         for (const repo of structure.repos) {
             // console.log(repo);
+
+            // Repo docs path inferred from repo name.
             const repoPath = `${baseRef}/docs/${repo.name}`;
             const clonedNode = template.content.cloneNode(true);
             const gitHubMarkPath = `github-mark${window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? `-white` : ''}.png`;
-            const hasIcon = repo.links && Array.isArray(repo.links) && repo.links[0].icon;
 
             clonedNode.querySelector('a').href = repoPath;
+            clonedNode.querySelector('[data-logo]').src = repo.logo ?? gitHubMarkPath;
+
+            if (repo.version) {
+                clonedNode.querySelector('[data-version]').innerHTML = repo.version
+            } else {
+                clonedNode.querySelector('[data-version]').classList.remove('version');
+            }
+
+            // clonedNode.querySelector('[data-version]').innerHTML = repo.version ?? '';
             clonedNode.querySelector('[data-name]').innerHTML = repo.display ?? repo.name;
-            clonedNode.querySelector('[data-logo]').src = hasIcon ? repo.links[0].icon : gitHubMarkPath;
+            clonedNode.querySelector('[data-desc]').innerHTML = repo.description ?? '';
 
             mainDiv.appendChild(clonedNode);
         }

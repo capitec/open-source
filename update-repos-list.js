@@ -28,14 +28,17 @@ const { Octokit } = require('@octokit/core');
         }
 
         // Get content from repo's package.json (assuming there is one).
-        const { description, version } = await getGitHubPackageJson(repo.name);
+        const { description, name: packageName } = await getGitHubPackageJson(repo.name);
 
         // Manual description takes preference over package.json value.
         if (!repo.description) {
             repo.description = description;
         }
 
-        repo.version = version;
+        if (packageName) {
+            const { version } = await getNPMLatestPackageJson(packageName);
+            repo.version = version;
+        }
 
         reposList.repos.push(repo);
     }));
@@ -62,7 +65,22 @@ async function getGitHubPackageJson(name) {
         return JSON.parse(response.data);
 
     } catch (error) {
-        console.log(error);
+        console.error(error);
+        return {};
+    }
+
+
+}
+
+async function getNPMLatestPackageJson(packageName) {
+
+    try {
+        const response = await fetch(`https://registry.npmjs.org/${packageName}/latest`);
+
+        return response.json();
+
+    } catch (error) {
+        console.error(error);
         return {};
     }
 

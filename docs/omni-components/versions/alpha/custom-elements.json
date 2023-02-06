@@ -1844,78 +1844,6 @@
               }
             },
             {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -2512,8 +2440,12 @@
               "name": "--omni-form-border-color"
             },
             {
-              "description": "Form label text align",
+              "description": "Form label text align.",
               "name": "--omni-form-label-transform-origin"
+            },
+            {
+              "description": "Form label margin left.",
+              "name": "--omni-form-label-margin-left"
             },
             {
               "description": "Form label text align.",
@@ -2550,6 +2482,10 @@
             {
               "description": "Form focussed label color.",
               "name": "--omni-form-focussed-label-color"
+            },
+            {
+              "description": "Form focussed label left margin.",
+              "name": "--omni-form-focussed-label-margin-left"
             },
             {
               "description": "Form focussed error label color.",
@@ -2727,50 +2663,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected"
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition"
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained"
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost"
             },
             {
               "kind": "method",
@@ -3299,6 +3191,10 @@
               "name": "--omni-currency-field-width"
             },
             {
+              "description": "Currency field label left margin.",
+              "name": "--omni-currency-field-label-left-margin"
+            },
+            {
               "description": "Currency field symbol font size.",
               "name": "--omni-currency-field-symbol-font-size"
             },
@@ -3595,78 +3491,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -4287,78 +4111,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -6855,78 +6607,6 @@
               }
             },
             {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -7603,78 +7283,6 @@
               }
             },
             {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -8057,7 +7665,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Pin input control.",
+          "description": "Pin input control to enter masked numeric values.",
           "name": "PinField",
           "cssProperties": [
             {
@@ -8329,78 +7937,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -9706,6 +9242,10 @@
             {
               "description": "Search field search icon left margin.",
               "name": "--omni-search-field-search-icon-margin-left"
+            },
+            {
+              "description": "Search field label left margin.",
+              "name": "--omni-search-field-label-left-margin"
             }
           ],
           "members": [
@@ -9856,78 +9396,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -10904,78 +10372,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -12089,78 +11485,6 @@
               "description": "Indicator if the component should be disabled.",
               "attribute": "disabled",
               "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_formContainerElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_labelElement",
-              "type": {
-                "text": "HTMLElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_prefixSlot",
-              "type": {
-                "text": "HTMLSlotElement"
-              },
-              "privacy": "private",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "hasFocus",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_setLabelPosition",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusGained",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_focusLost",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"

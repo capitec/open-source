@@ -1,8 +1,10 @@
-import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";import{b as a,d}from"./chunk.CHYIO324.js";import{a as c,b as l,d as t}from"./chunk.3GEUDTAZ.js";import{j as e,l as n,o as s}from"./chunk.2ZZQBHAA.js";n();s();n();s();n();s();var w=f=>f!=null?f:t;var o=class extends b{constructor(){super(...arguments);this.value=null;this.disabled=!1}connectedCallback(){super.connectedCallback(),this.addEventListener("focus",this._focusGained.bind(this)),this.addEventListener("focusout",this._focusLost.bind(this))}async firstUpdated(){if(this._prefixSlot){let r=this._prefixSlot.assignedElements({flatten:!0}).filter(i=>i.updateComplete);await Promise.all(r.map(i=>i.updateComplete))}this._setLabelPosition()}async attributeChangedCallback(r,i,L){super.attributeChangedCallback(r,i,L),r==="value"&&this._setLabelPosition()}_setLabelPosition(){if(this.value&&this.label&&this._formContainerElement){if(this.disabled)return;let r=this._formContainerElement.offsetLeft,i=this._formContainerElement.clientHeight;this._labelElement&&(this._labelElement.style.transform=`translateX(${r*-1}px)  translateY(${i*-3.55}%) scale(0.95)`)}else!this.value&&this.label&&this._labelElement&&!this.hasFocus&&(this._labelElement.style.transform="")}_focusGained(){if(this.disabled)return;this.hasFocus=!0;let r=this._formContainerElement.offsetLeft,i=this._formContainerElement.clientHeight;!this.value&&this._labelElement&&(this._labelElement.style.transform=`translateX(${r*-1}px) translateY(${i*-3.55}%) scale(0.95)`)}_focusLost(){this.hasFocus=!1,!this.disabled&&!this.value&&this._labelElement&&(this._labelElement.style.transform="")}static get styles(){return[c`
+import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";import{b as i}from"./chunk.CHYIO324.js";import{a as f,b as o,d as r}from"./chunk.3GEUDTAZ.js";import{j as t,l,o as a}from"./chunk.2ZZQBHAA.js";l();a();l();a();l();a();var w=n=>n!=null?n:r;var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[f`
                 ${super.styles}
 
                 :host {
-                    display: flex;
+                    display: flex;       
+                    --input-height: 100%;
+                    --input-width: 100%;
                 }
 
                 :host([disabled]),
@@ -32,7 +34,7 @@ import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";
                     display: flex;
                     flex-direction: row;
                     align-items: stretch;
-                    justify-content: center;
+                    /*justify-content: center; Remove this as it has a direct effect on the label positioning */ 
                     border-radius: var(--omni-form-layout-border-radius, 4px);
                     background-color: var(--omni-form-layout-background-color, var(--omni-background-color));
                     height: var(--omni-form-layout-height, 100%);
@@ -67,13 +69,16 @@ import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";
 
                 .label {
                     position: absolute;
-                    flex: 1 1 auto;
                     transform-origin: top var(--omni-form-label-transform-origin, left);
-
                     transition: all 150ms ease 0s;
 
+                    /* Used to position the label in the middle of the y-axis*/
+                    top:50%;
+                    transform: translateY(-50%);
+                    margin-left: var(--omni-form-label-margin-left, 10px);
+                    /*padding-left: var(--omni-form-label-margin-left,10px);*/
+                    
                     line-height: 100%;
-
                     text-align: var(--omni-form-label-text-align, left);
 
                     pointer-events: none;
@@ -83,8 +88,6 @@ import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";
                     font-size: var(--omni-form-label-font-size, var(--omni-font-size));
                     font-weight: var(--omni-form-label-font-weight, var(--omni-font-weight));
 
-                    left: var(--omni-form-label-left, 10px);
-
                     z-index: var(--omni-form-label-z-index, 410);
                 }
 
@@ -93,26 +96,34 @@ import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";
                 }
 
                 /* FOCUS STYLES */
-                :host([value]:not([value=''])) .layout > .form-container > .label.error,
-                :focus + .label.error {
-                    color: var(--omni-form-focussed-label-error-color, var(--omni-error-font-color));
-                }
 
-                :host([value]:not([value=''])) .layout > .form-container > .label,
-                :focus + .label {
+                :host([value]:not([value=''])) .layout  > .label,
+                .layout:focus-within > .label
+                {
+                    transform: scale(0.90);
                     color: var(--omni-form-focussed-label-color, var(--omni-primary-color));
+                    transition: all 150ms ease 0s;
+                    top: -5px;
+                    margin-left: var(--omni-form-focussed-label-margin-left, 10px);
                 }
 
-                :host([value]) .layout > .form-container > .label::before,
-                :focus + .label::before {
-                    content: '';
-                    background-color: var(--omni-form-field-background-color, var(--omni-background-color));
-                    position: absolute;
-                    left: var(--omni-label-focus-left, -3px);
-                    right: var(--omni-label-focus-right, -3px);
-                    top: 39%;
-                    height: 50%;
-                    z-index: -1;
+                :host([value]:not([value=''])) .layout  > .label.error,
+                .layout:focus-within > .label.error {
+                    color: var(--omni-form-focussed-error-label-color, var(--omni-error-font-color));
+                }
+            
+                :host([value]:not([value=''])) .layout  > .label::before,
+                .layout:focus-within > .label::before 
+                {
+                    content: "";
+					display: block;
+					height: 100%;
+					background-color: var(--omni-form-field-background-color, var(--omni-background-color));
+					position: absolute;
+					left: -2px;
+					right: -3px;
+    				height: 60%;
+					z-index: -1;
                 }
 
                 .layout:focus-within > .border {
@@ -177,6 +188,12 @@ import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";
 
                 /* HOVER STYLES */
 
+                .layout:focus-within:hover > .border,
+                .layout.error:focus-within:hover > .border,
+                .layout.disabled:focus-within:hover > .border {
+                    box-shadow: none;
+                }
+
                 .layout:hover > .border {
                     box-shadow: inset 0px 0px 0px 1px var(--omni-form-hover-color, var(--omni-primary-color));
                 }
@@ -196,21 +213,24 @@ import{a as m}from"./chunk.XMM72FEY.js";import{i as b}from"./chunk.ZO5UBYOG.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){let r={layout:!0,error:this.error,disabled:this.disabled};return l`
+            `]}render(){let s={layout:!0,error:this.error,disabled:this.disabled};return o`
             <div class="container">
-                <div class=${m(r)}>
+                <div class=${d(s)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
-                    <div class="form-container"> ${this.renderContent()} ${this.renderLabel()} </div>
+                    <!-- <div class="form-container">  -->
+                        ${this.renderLabel()} 
+                        ${this.renderContent()} 
+                    <!-- </div> -->
                     <slot name="suffix"></slot>
                     ${this.renderControl()} ${this.renderPicker()}
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return t}renderContent(){return t}renderLabel(){let r={label:!0,error:this.error,disabled:this.disabled};return l`${this.label?l`<div class=${m(r)}><span>${this.label}</span></div>`:t}`}renderControl(){return t}renderPicker(){return t}renderHint(){return l`${this.hint&&!this.error?l`<div class="hint-label">${this.hint}</div>`:t}`}renderError(){return l`${this.error?l`<div class="error-label">${this.error}</div>`:t} `}};e([a({type:String,reflect:!0})],o.prototype,"label",2),e([a({reflect:!0})],o.prototype,"value",2),e([a({type:Object,reflect:!0})],o.prototype,"data",2),e([a({type:String,reflect:!0})],o.prototype,"hint",2),e([a({type:String,reflect:!0})],o.prototype,"error",2),e([a({type:Boolean,reflect:!0})],o.prototype,"disabled",2),e([d(".form-container")],o.prototype,"_formContainerElement",2),e([d(".label")],o.prototype,"_labelElement",2),e([d("slot[name=prefix]")],o.prototype,"_prefixSlot",2);export{w as a,o as b};
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){let s={label:!0,error:this.error,disabled:this.disabled};return o`${this.label?o`<div class=${d(s)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};t([i({type:String,reflect:!0})],e.prototype,"label",2),t([i({reflect:!0})],e.prototype,"value",2),t([i({type:Object,reflect:!0})],e.prototype,"data",2),t([i({type:String,reflect:!0})],e.prototype,"hint",2),t([i({type:String,reflect:!0})],e.prototype,"error",2),t([i({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{w as a,e as b};
 /**
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.EQAFL2KM.js.map
+//# sourceMappingURL=chunk.7QECXFLM.js.map

@@ -1,4 +1,4 @@
-import{a as u}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.EQAFL2KM.js";import{a as d,d as s}from"./chunk.CHYIO324.js";import{a,b as l}from"./chunk.3GEUDTAZ.js";import{j as t,l as r,o}from"./chunk.2ZZQBHAA.js";r();o();var n=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,p,i){super.attributeChangedCallback(e,p,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e.value}static get styles(){return[super.styles,a`
+import{a as u}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.7QECXFLM.js";import{a as d,d as s}from"./chunk.CHYIO324.js";import{a,b as l}from"./chunk.3GEUDTAZ.js";import{j as t,l as r,o}from"./chunk.2ZZQBHAA.js";r();o();var n=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,p,i){super.attributeChangedCallback(e,p,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e.value}static get styles(){return[super.styles,a`
         .field {
           flex: 1 1 auto;
 
@@ -41,4 +41,4 @@ import{a as u}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.EQAFL2KM.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([s("#inputField")],n.prototype,"_inputElement",2),n=t([d("omni-number-field")],n);export{n as a};
-//# sourceMappingURL=chunk.RZEGXZQI.js.map
+//# sourceMappingURL=chunk.VVEKNUQZ.js.map

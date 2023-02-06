@@ -16,11 +16,7 @@ const { Octokit } = require('@octokit/core');
         let repo = {
             name: dir
         }
-        const versionsPath = `docs/${dir}/versions`;
-        if (fs.existsSync(versionsPath)) {
-            let versions = fs.readdirSync(versionsPath);
-            repo.versions = versions;
-        }
+
         const ossDocsDefinition = `docs/${dir}/.oss-docs.json`;
         if (fs.existsSync(ossDocsDefinition)) {
             const docsFile = fs.readFileSync(ossDocsDefinition);

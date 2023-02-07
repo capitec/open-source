@@ -64,7 +64,7 @@ import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.ICQCZ2QQ.js";
           }
       `]}renderControl(){return t`
       <div class="control-box" @click="${i=>this._iconClicked(i)}">
-        ${this.showPin?t` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `:t` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `}
+        ${this.showPin?t` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `:t` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `}
       </div>
     `}renderContent(){return t`
       <input
@@ -76,4 +76,4 @@ import{a as h}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.ICQCZ2QQ.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};n([l()],e.prototype,"type",2),n([p("#inputField")],e.prototype,"_inputElement",2),e=n([a("omni-pin-field")],e);export{e as a};
-//# sourceMappingURL=chunk.TFTRCJSQ.js.map
+//# sourceMappingURL=chunk.LAKEY22N.js.map

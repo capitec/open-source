@@ -91,7 +91,7 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                 :host([value]:not([value=''])) .layout  > .label,
                 .layout:focus-within > .label
                 {
-                    transform: scale(0.90);
+                    transform: scale(var(--omni-form-focussed-label-transform-scale), 0.90);
                     top: var(--omni-form-focussed-label-top, -5px);
                     margin-left: var(--omni-form-focussed-label-margin-left, 10px);
                 }
@@ -218,4 +218,4 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.EJVUYDDR.js.map
+//# sourceMappingURL=chunk.ICQCZ2QQ.js.map

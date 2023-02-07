@@ -2468,6 +2468,10 @@
               "name": "--omni-form-focussed-border-color"
             },
             {
+              "description": "Form focussed label transform scale.",
+              "name": "--omni-form-focussed-label-transform-scale"
+            },
+            {
               "description": "Form focussed label top.",
               "name": "--omni-form-focussed-label-top"
             },

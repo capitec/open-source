@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.EJVUYDDR.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as o}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var e=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.ICQCZ2QQ.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as o}from"./chunk.3GEUDTAZ.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var e=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let i=this._inputElement;this.value=i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
         .control-box {
           display: flex;
           align-items: center;
@@ -64,4 +64,4 @@ import{a as p}from"./chunk.MCIDFWAY.js";import{b as m}from"./chunk.EJVUYDDR.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([a()],e.prototype,"type",2),t([l("#inputField")],e.prototype,"_inputElement",2),e=t([d("omni-password-field")],e);export{e as a};
-//# sourceMappingURL=chunk.6CPX7ENJ.js.map
+//# sourceMappingURL=chunk.GXFVGIVS.js.map

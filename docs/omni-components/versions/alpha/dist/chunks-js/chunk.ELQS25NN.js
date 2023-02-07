@@ -136,7 +136,7 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                 }
 
                 .label.disabled {
-                    color: var(--omni-form-label-disabled-color, var(--omni-disabled-border-color));
+                    color: var(--omni-form-label-disabled-color, var(--omni-font-color));
                     pointer-events: none;
                 }
 
@@ -218,4 +218,4 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.ICQCZ2QQ.js.map
+//# sourceMappingURL=chunk.ELQS25NN.js.map

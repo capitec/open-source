@@ -2372,6 +2372,10 @@
           "name": "OmniFormElement",
           "cssProperties": [
             {
+              "description": " Container font family.",
+              "name": "--omni-container-font-family"
+            },
+            {
               "description": "Container width.",
               "name": "--omni-container-width"
             },
@@ -2394,18 +2398,6 @@
             {
               "description": "Layout width.",
               "name": "--omni-form-layout-width"
-            },
-            {
-              "description": "Form container width.",
-              "name": "--omni-form-container-width"
-            },
-            {
-              "description": "Form container font family.",
-              "name": "--omni-form-container-font-family"
-            },
-            {
-              "description": "Form layout background color.",
-              "name": "--omni-form-field-background-color"
             },
             {
               "description": "Form border top.",
@@ -2464,10 +2456,6 @@
               "name": "--omni-form-label-font-weight"
             },
             {
-              "description": "Form label left margin.",
-              "name": "--omni-form-label-left"
-            },
-            {
               "description": "Form label z-index.",
               "name": "--omni-form-label-z-index"
             },
@@ -2480,16 +2468,24 @@
               "name": "--omni-form-focussed-border-color"
             },
             {
-              "description": "Form focussed label color.",
-              "name": "--omni-form-focussed-label-color"
+              "description": "Form focussed label top.",
+              "name": "--omni-form-focussed-label-top"
             },
             {
               "description": "Form focussed label left margin.",
               "name": "--omni-form-focussed-label-margin-left"
             },
             {
+              "description": "Form focussed label color.",
+              "name": "--omni-form-focussed-label-color"
+            },
+            {
               "description": "Form focussed error label color.",
-              "name": "--omni-form-focussed-label-error-color"
+              "name": "--omni-form-focussed-error-label-color"
+            },
+            {
+              "description": "Form focussed label background color.",
+              "name": "--omni-form-focussed-label-background-color"
             },
             {
               "description": "Form error label color.",
@@ -2568,6 +2564,7 @@
               "name": "--omni-form-error-label-padding-left"
             },
             {
+              "description": "Form error label border width.",
               "name": "--omni-form-error-label-border-width"
             },
             {

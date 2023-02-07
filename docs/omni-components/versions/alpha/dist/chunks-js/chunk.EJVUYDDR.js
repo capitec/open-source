@@ -1,10 +1,8 @@
-import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";import{b as i}from"./chunk.CHYIO324.js";import{a as f,b as o,d as r}from"./chunk.3GEUDTAZ.js";import{j as t,l,o as a}from"./chunk.2ZZQBHAA.js";l();a();l();a();l();a();var w=n=>n!=null?n:r;var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[f`
+import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";import{b as l}from"./chunk.CHYIO324.js";import{a as f,b as o,d as r}from"./chunk.3GEUDTAZ.js";import{j as t,l as i,o as a}from"./chunk.2ZZQBHAA.js";i();a();i();a();i();a();var w=n=>n!=null?n:r;var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[f`
                 ${super.styles}
 
                 :host {
                     display: flex;       
-                    --input-height: 100%;
-                    --input-width: 100%;
                 }
 
                 :host([disabled]),
@@ -30,11 +28,10 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
 
                 .layout {
                     position: relative;
-
                     display: flex;
                     flex-direction: row;
                     align-items: stretch;
-                    /*justify-content: center; Remove this as it has a direct effect on the label positioning */ 
+
                     border-radius: var(--omni-form-layout-border-radius, 4px);
                     background-color: var(--omni-form-layout-background-color, var(--omni-background-color));
                     height: var(--omni-form-layout-height, 100%);
@@ -55,34 +52,22 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                     pointer-events: none;
                 }
 
-                /* INPUT CONTAINER STYLES */
-
-                .form-container {
-                    position: relative;
-                    display: flex;
-                    align-items: center;
-                    width: var(--omni-form-container-width, 100%);
-                    height: var(--omni-form-container-height, 100%);
-                }
-
                 /* LABEL STYLES */
 
                 .label {
                     position: absolute;
                     transform-origin: top var(--omni-form-label-transform-origin, left);
                     transition: all 150ms ease 0s;
+                    pointer-events: none;
+                    user-select: none;
+                    line-height: 100%;
 
                     /* Used to position the label in the middle of the y-axis*/
                     top:50%;
                     transform: translateY(-50%);
-                    margin-left: var(--omni-form-label-margin-left, 10px);
-                    /*padding-left: var(--omni-form-label-margin-left,10px);*/
-                    
-                    line-height: 100%;
-                    text-align: var(--omni-form-label-text-align, left);
 
-                    pointer-events: none;
-                    user-select: none;
+                    margin-left: var(--omni-form-label-margin-left, 10px);          
+                    text-align: var(--omni-form-label-text-align, left);
 
                     color: var(--omni-form-label-color, var(--omni-font-color));
                     font-size: var(--omni-form-label-font-size, var(--omni-font-size));
@@ -97,14 +82,22 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
 
                 /* FOCUS STYLES */
 
+                .layout:focus-within > .border {
+                    border-style: solid;
+                    border-width: var(--omni-form-focussed-border-width, 2px);
+                    border-color: var(--omni-form-focussed-border-color, var(--omni-primary-color));
+                }
+
                 :host([value]:not([value=''])) .layout  > .label,
                 .layout:focus-within > .label
                 {
                     transform: scale(0.90);
-                    color: var(--omni-form-focussed-label-color, var(--omni-primary-color));
-                    transition: all 150ms ease 0s;
-                    top: -5px;
+                    top: var(--omni-form-focussed-label-top, -5px);
                     margin-left: var(--omni-form-focussed-label-margin-left, 10px);
+                }
+
+                .layout:focus-within > .label {
+                    color: var(--omni-form-focussed-label-color, var(--omni-primary-color));
                 }
 
                 :host([value]:not([value=''])) .layout  > .label.error,
@@ -118,18 +111,12 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                     content: "";
 					display: block;
 					height: 100%;
-					background-color: var(--omni-form-field-background-color, var(--omni-background-color));
+					background-color: var(--omni-form-focussed-label-background-color, var(--omni-background-color));
 					position: absolute;
-					left: -2px;
+					left: -3px;
 					right: -3px;
     				height: 60%;
 					z-index: -1;
-                }
-
-                .layout:focus-within > .border {
-                    border-style: solid;
-                    border-width: var(--omni-form-focussed-border-width, 2px);
-                    border-color: var(--omni-form-focussed-border-color, var(--omni-primary-color));
                 }
 
                 /* ERROR STYLES */
@@ -149,7 +136,7 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                 }
 
                 .label.disabled {
-                    /*color: var(--omni-form-label-disabled-color, var(--omni-disabled-border-color));*/
+                    color: var(--omni-form-label-disabled-color, var(--omni-disabled-border-color));
                     pointer-events: none;
                 }
 
@@ -195,15 +182,15 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                 }
 
                 .layout:hover > .border {
-                    box-shadow: inset 0px 0px 0px 1px var(--omni-form-hover-color, var(--omni-primary-color));
+                    border-color: var(--omni-form-hover-color, var(--omni-primary-color));
                 }
 
                 .layout.disabled:hover > .border {
-                    box-shadow: inset 0px 0px 0px 1px var(--omni-form-disabled-hover-color, var(--omni-disabled-border-color));
+                    border-color: var(--omni-form-disabled-hover-color, var(--omni-disabled-border-color));
                 }
 
                 .layout.error:hover > .border {
-                    box-shadow: inset 0px 0px 0px 1px var(--omni-form-error-hover-color, var(--omni-error-border-color));
+                    border-color: var(--omni-form-error-hover-color, var(--omni-error-border-color));
                 }
 
                 slot[name='prefix'],
@@ -213,24 +200,22 @@ import{a as d}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){let s={layout:!0,error:this.error,disabled:this.disabled};return o`
+            `]}render(){let d={layout:!0,error:this.error,disabled:this.disabled};return o`
             <div class="container">
-                <div class=${d(s)}>
+                <div class=${s(d)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
-                    <!-- <div class="form-container">  -->
-                        ${this.renderLabel()} 
-                        ${this.renderContent()} 
-                    <!-- </div> -->
+                    ${this.renderLabel()} 
+                    ${this.renderContent()} 
                     <slot name="suffix"></slot>
                     ${this.renderControl()} ${this.renderPicker()}
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){let s={label:!0,error:this.error,disabled:this.disabled};return o`${this.label?o`<div class=${d(s)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};t([i({type:String,reflect:!0})],e.prototype,"label",2),t([i({reflect:!0})],e.prototype,"value",2),t([i({type:Object,reflect:!0})],e.prototype,"data",2),t([i({type:String,reflect:!0})],e.prototype,"hint",2),t([i({type:String,reflect:!0})],e.prototype,"error",2),t([i({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{w as a,e as b};
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){let d={label:!0,error:this.error,disabled:this.disabled};return o`${this.label?o`<div class=${s(d)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};t([l({type:String,reflect:!0})],e.prototype,"label",2),t([l({reflect:!0})],e.prototype,"value",2),t([l({type:Object,reflect:!0})],e.prototype,"data",2),t([l({type:String,reflect:!0})],e.prototype,"hint",2),t([l({type:String,reflect:!0})],e.prototype,"error",2),t([l({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{w as a,e as b};
 /**
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.7QECXFLM.js.map
+//# sourceMappingURL=chunk.EJVUYDDR.js.map

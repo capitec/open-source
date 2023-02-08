@@ -2972,6 +2972,13 @@
               "type": {
                 "text": "string"
               }
+            },
+            {
+              "name": "inputValue",
+              "default": "'The input value'",
+              "type": {
+                "text": "string | number | string[]"
+              }
             }
           ]
         }

@@ -133,6 +133,7 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
 
                 .layout.disabled {
                     pointer-events: none;
+                    background-color: var(--omni-form-disabled-background-color, var(--omni-disabled-background-color));
                 }
 
                 .label.disabled {
@@ -142,10 +143,9 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
 
                 .layout.disabled > .border {
                     border-color: var(--omni-form-disabled-border-color, var(--omni-disabled-border-color));
-                    background-color: var(--omni-form-disabled-background-color, var(--omni-disabled-background-color));
                 }
 
-                :host([value]) .layout.disabled > .form-container > .label::before {
+                :host([value]) .layout.disabled  > .label::before {
                     background-color: var(--omni-form-disabled-focussed-label-background-color, var(--omni-disabled-background-color));
                 }
 
@@ -218,4 +218,4 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.ELQS25NN.js.map
+//# sourceMappingURL=chunk.SHYZA2TL.js.map

@@ -69,4 +69,4 @@ import{a as s}from"./chunk.MCIDFWAY.js";import{b as d}from"./chunk.SHYZA2TL.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};t([c("#inputField")],r.prototype,"_inputElement",2),r=t([l("omni-search-field")],r);export{r as a};
-//# sourceMappingURL=chunk.Y5ZDLRAI.js.map
+//# sourceMappingURL=chunk.NVXUWV3M.js.map

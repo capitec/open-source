@@ -147,6 +147,7 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
 
                 :host([value]) .layout.disabled  > .label::before {
                     background-color: var(--omni-form-disabled-focussed-label-background-color, var(--omni-disabled-background-color));
+                    height: 0%;
                 }
 
                 /* HINT LABEL STYLES */
@@ -218,4 +219,4 @@ import{a as s}from"./chunk.XMM72FEY.js";import{i as m}from"./chunk.ZO5UBYOG.js";
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.SHYZA2TL.js.map
+//# sourceMappingURL=chunk.ILWNZZ2I.js.map

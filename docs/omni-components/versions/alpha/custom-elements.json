@@ -1761,7 +1761,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -1790,7 +1790,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -1804,7 +1804,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -1818,7 +1818,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -1959,7 +1959,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -1986,7 +1986,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -1999,7 +1999,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -2012,7 +2012,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -2607,7 +2607,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -2628,7 +2628,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -2638,7 +2638,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -2648,7 +2648,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -2774,7 +2774,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -2793,7 +2793,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -2802,7 +2802,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -2811,7 +2811,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -2971,13 +2971,6 @@
               "name": "tagName",
               "type": {
                 "text": "string"
-              }
-            },
-            {
-              "name": "inputValue",
-              "default": "'The input value'",
-              "type": {
-                "text": "string | number | string[]"
               }
             }
           ]
@@ -3422,7 +3415,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -3451,7 +3444,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -3465,7 +3458,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -3479,7 +3472,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -3663,7 +3656,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -3690,7 +3683,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -3703,7 +3696,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -3716,7 +3709,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -3852,7 +3845,7 @@
           "type": {
             "text": "ComponentStoryFormat<BaseArgs>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const textField = within(context.canvasElement).getByTestId<EmailField>('test-email-field');\n        const input = jest.fn();\n        textField.addEventListener('input', input);\n\n        const inputField = textField.shadowRoot.getElementById('inputField');\n\n        await userEvent.type(inputField, 'JohnDoe@gmail.com', {\n            pointerEventsCheck: 0\n        });\n        const value = 'JohnDoe@gmail.com';\n        await expect(inputField).toHaveValue(value);\n\n        await expect(input).toBeCalledTimes(value.length);\n    }\n}"
+          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const emailField = within(context.canvasElement).getByTestId<EmailField>('test-email-field');\n        const input = jest.fn();\n        emailField.addEventListener('input', input);\n\n        const inputField = emailField.shadowRoot.getElementById('inputField');\n\n        await userEvent.type(inputField, 'JohnDoe@gmail.com', {\n            pointerEventsCheck: 0\n        });\n        const value = 'JohnDoe@gmail.com';\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(value), {\n                timeout: 3000\n            });\n            await expect(input).toBeCalledTimes(value.length);\n        }\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4042,7 +4035,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -4071,7 +4064,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -4085,7 +4078,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -4099,7 +4092,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -4254,7 +4247,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -4281,7 +4274,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -4294,7 +4287,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -4307,7 +4300,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -6532,7 +6525,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -6561,7 +6554,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -6575,7 +6568,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -6589,7 +6582,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -6744,7 +6737,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -6771,7 +6764,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -6784,7 +6777,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -6797,7 +6790,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -7208,7 +7201,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -7237,7 +7230,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -7251,7 +7244,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -7265,7 +7258,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -7406,7 +7399,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -7433,7 +7426,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -7446,7 +7439,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -7459,7 +7452,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -7562,7 +7555,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: ''\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot.getElementById('inputField') as HTMLInputElement;\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(value), {\n                timeout: 3000\n            });\n\n            await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n                timeout: 3000\n            });\n        }\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: ''\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot.getElementById('inputField') as HTMLInputElement;\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(value), {\n                timeout: 3000\n            });\n\n            await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n                timeout: 3000\n            });\n        }\n    }\n}"
         },
         {
           "kind": "variable",
@@ -7868,7 +7861,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -7897,7 +7890,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -7911,7 +7904,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -7925,7 +7918,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -8066,7 +8059,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -8093,7 +8086,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -8106,7 +8099,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -8119,7 +8112,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -9327,7 +9320,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -9356,7 +9349,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -9370,7 +9363,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -9384,7 +9377,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -9519,7 +9512,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -9546,7 +9539,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -9559,7 +9552,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -9572,7 +9565,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -10303,7 +10296,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -10332,7 +10325,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -10346,7 +10339,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -10360,7 +10353,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -10504,7 +10497,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -10531,7 +10524,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -10544,7 +10537,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -10557,7 +10550,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",
@@ -11416,7 +11409,7 @@
               "kind": "field",
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "attribute": "label",
@@ -11445,7 +11438,7 @@
               "kind": "field",
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "attribute": "data",
@@ -11459,7 +11452,7 @@
               "kind": "field",
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "attribute": "hint",
@@ -11473,7 +11466,7 @@
               "kind": "field",
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "attribute": "error",
@@ -11628,7 +11621,7 @@
             {
               "name": "label",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Text label.",
               "fieldName": "label",
@@ -11655,7 +11648,7 @@
             {
               "name": "data",
               "type": {
-                "text": "object"
+                "text": "object | undefined"
               },
               "description": "Data associated with the component.",
               "fieldName": "data",
@@ -11668,7 +11661,7 @@
             {
               "name": "hint",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Hint message to assist the user.",
               "fieldName": "hint",
@@ -11681,7 +11674,7 @@
             {
               "name": "error",
               "type": {
-                "text": "string"
+                "text": "string | undefined"
               },
               "description": "Error message guiding a user to correct a mistake.",
               "fieldName": "error",

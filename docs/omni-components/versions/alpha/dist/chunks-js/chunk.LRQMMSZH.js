@@ -39,4 +39,4 @@ import{b as E}from"./chunk.OLTCQXBT.js";import{a as y,b as c,d as S}from"./chunk
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};u([S("#inputField")],o.prototype,"_inputElement",2),u([c({type:String,reflect:!0,attribute:"currency-symbol"})],o.prototype,"currencySymbol",2),u([c({type:String,reflect:!0,attribute:"thousands-separator"})],o.prototype,"thousandsSeparator",2),u([c({type:String,reflect:!0,attribute:"fractional-separator"})],o.prototype,"fractionalSeparator",2),u([c({type:Number,reflect:!0,attribute:"fractional-precision"})],o.prototype,"fractionalPrecision",2),u([c({type:String,reflect:!0})],o.prototype,"formatter",2),o=u([y("omni-currency-field")],o);export{o as a};
-//# sourceMappingURL=chunk.3RLZNYVY.js.map
+//# sourceMappingURL=chunk.LRQMMSZH.js.map

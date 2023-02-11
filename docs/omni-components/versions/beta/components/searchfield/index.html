@@ -170,6 +170,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/emailfield">
+                Email Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/hyperlink">
                 Hyperlink
             </a>
@@ -200,6 +207,13 @@
              
             href="./components/passwordfield">
                 Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pinfield">
+                Pin Field
             </a>
         </div>
         <div class="menu-item ">
@@ -414,35 +428,35 @@
                                 <tr>
                                     <td data-label="Name" scope="row">label</td>
                                     <td data-label="Attribute" scope="row">label&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
                                     <td data-label="Description">Text label.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">value</td>
                                     <td data-label="Attribute" scope="row">value&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt;</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt; | undefined</code></pre></td>
                                     <td data-label="Description">Value entered into the form component.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">data</td>
                                     <td data-label="Attribute" scope="row">data&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">object</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">object | undefined</code></pre></td>
                                     <td data-label="Description">Data associated with the component.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">hint</td>
                                     <td data-label="Attribute" scope="row">hint&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
                                     <td data-label="Description">Hint message to assist the user.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">error</td>
                                     <td data-label="Attribute" scope="row">error&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
                                     <td data-label="Description">Error message guiding a user to correct a mistake.</td>
                                 </tr>
                                 
@@ -451,13 +465,6 @@
                                     <td data-label="Attribute" scope="row">disabled&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
                                     <td data-label="Description">Indicator if the component should be disabled.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">hasFocus</td>
-                                    <td data-label="Attribute" scope="row">&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                    <td data-label="Description"></td>
                                 </tr>
                                 
                                 <tr>
@@ -699,18 +706,38 @@
                                 <tbody data-category="Base Form Variables" class="component-css-props">
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-container-width</code></pre></td>
-                                        <td data-label="Description">Form container width.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-container-font-family</code></pre></td>
+                                        <td data-label="Description"> Container font family.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-container-font-family</code></pre></td>
-                                        <td data-label="Description">Form container font family.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-container-width</code></pre></td>
+                                        <td data-label="Description">Container width.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-field-background-color</code></pre></td>
-                                        <td data-label="Description">Form layout background color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-container-height</code></pre></td>
+                                        <td data-label="Description">Container height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-border-radius</code></pre></td>
+                                        <td data-label="Description">Layout border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-background-color</code></pre></td>
+                                        <td data-label="Description">Layout background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-height</code></pre></td>
+                                        <td data-label="Description">Layout height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-width</code></pre></td>
+                                        <td data-label="Description">Layout width.</td>
                                     </tr>
                                     
                                     <tr>
@@ -755,7 +782,12 @@
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-transform-origin</code></pre></td>
-                                        <td data-label="Description">Form label text align</td>
+                                        <td data-label="Description">Form label text align.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-margin-left</code></pre></td>
+                                        <td data-label="Description">Form label margin left.</td>
                                     </tr>
                                     
                                     <tr>
@@ -779,11 +811,6 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-left</code></pre></td>
-                                        <td data-label="Description">Form label left margin.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-z-index</code></pre></td>
                                         <td data-label="Description">Form label z-index.</td>
                                     </tr>
@@ -799,8 +826,33 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-transform-scale</code></pre></td>
+                                        <td data-label="Description">Form focussed label transform scale.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-top</code></pre></td>
+                                        <td data-label="Description">Form focussed label top.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-margin-left</code></pre></td>
+                                        <td data-label="Description">Form focussed label left margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-color</code></pre></td>
                                         <td data-label="Description">Form focussed label color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-error-label-color</code></pre></td>
+                                        <td data-label="Description">Form focussed error label color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-background-color</code></pre></td>
+                                        <td data-label="Description">Form focussed label background color.</td>
                                     </tr>
                                     
                                     <tr>
@@ -900,7 +952,7 @@
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-border-width</code></pre></td>
-                                        <td data-label="Description"></td>
+                                        <td data-label="Description">Form error label border width.</td>
                                     </tr>
                                     
                                     <tr>
@@ -965,18 +1017,18 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-search-field-height</code></pre></td>
-                                        <td data-label="Description">Search field height.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-search-field-padding</code></pre></td>
                                         <td data-label="Description">Search field padding.</td>
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-search-field-height</code></pre></td>
+                                        <td data-label="Description">Search field height.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-search-field-width</code></pre></td>
-                                        <td data-label="Description">Search field width</td>
+                                        <td data-label="Description">Search field width.</td>
                                     </tr>
                                     
                                     <tr>
@@ -1017,6 +1069,11 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-search-field-search-icon-margin-left</code></pre></td>
                                         <td data-label="Description">Search field search icon left margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-search-field-label-left-margin</code></pre></td>
+                                        <td data-label="Description">Search field label left margin.</td>
                                     </tr>
                                     
                                 </tbody>

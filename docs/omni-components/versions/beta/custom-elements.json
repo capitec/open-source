@@ -14,7 +14,7 @@
         {
           "kind": "variable",
           "name": "Type",
-          "default": "{\n    render: (args: Args) => html` <omni-button type=\"${args.type}\" label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Type',\n    description: 'Set the type of button to render using different combinations of primary and alternate colours.',\n    args: {\n        type: 'primary',\n        label: 'Click'\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const buttonElement = button.shadowRoot!.getElementById('button') as HTMLElement;\n        const foundPrimaryClass = buttonElement?.classList.contains('primary');\n        await expect(foundPrimaryClass).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-button type=\"${args.type}\" label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Type',\n    description: 'Set the type of button to render using different combinations of primary and alternate colours.',\n    args: {\n        type: 'primary',\n        label: 'Click'\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const buttonElement = button.shadowRoot?.getElementById('button') as HTMLElement;\n        const foundPrimaryClass = buttonElement?.classList.contains('primary');\n        await expect(foundPrimaryClass).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4429,7 +4429,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-hyperlink\n      data-testid=\"test-hyperlink\"\n      label=\"${ifNotEmpty(args.label)}\"\n      href=\"${ifNotEmpty(args.href)}\"\n      target=\"${ifNotEmpty(args.target)}\"\n      ?disabled=\"${args.disabled}\"\n      ?inline=\"${args.inline}\"\n      size=\"${args.size}\"></omni-hyperlink>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Click',\n        href: '',\n        disabled: false,\n        inline: false,\n        size: ''\n    },\n    play: async (context) => {\n        const canvas = within(context.canvasElement);\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n        const click = jest.fn();\n        Hyperlink.addEventListener('click', () => click());\n        await userEvent.click(Hyperlink, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(Hyperlink, {\n            pointerEventsCheck: 0\n        });\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-hyperlink\n      data-testid=\"test-hyperlink\"\n      label=\"${ifNotEmpty(args.label)}\"\n      href=\"${ifNotEmpty(args.href)}\"\n      target=\"${ifNotEmpty(args.target)}\"\n      ?disabled=\"${args.disabled}\"\n      ?inline=\"${args.inline}\"\n      size=\"${args.size}\">\n      ${unsafeHTML(args['[Default Slot]'])}\n    </omni-hyperlink>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Click',\n        href: '',\n        disabled: false,\n        inline: false,\n        size: '',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const canvas = within(context.canvasElement);\n        const Hyperlink = canvas.getByTestId('test-hyperlink');\n        const click = jest.fn();\n        Hyperlink.addEventListener('click', () => click());\n        await userEvent.click(Hyperlink, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(Hyperlink, {\n            pointerEventsCheck: 0\n        });\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4594,6 +4594,20 @@
             {
               "description": "Hyperlink text decorator when visited.",
               "name": "--omni-hyperlink-text-decorator-visited"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component. Registry of all properties defined by the component.",
+              "name": "[Default Slot]"
             }
           ],
           "members": [
@@ -4809,17 +4823,7 @@
           },
           "tagName": "omni-hyperlink",
           "import": "```js\nimport '@capitec/omni-components/hyperlink';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [
@@ -6016,7 +6020,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-label data-testid=\"test-label\" label=\"${ifNotEmpty(args.label)}\" type=\"${args.type}\"> </omni-label> `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        type: 'default'\n    },\n    play: async (context) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Interactive.args?.label as string);\n    }\n}"
+          "default": "{\n    render: (args: Args) =>\n        html`<omni-label data-testid=\"test-label\" label=\"${ifNotEmpty(args.label)}\" type=\"${args.type}\">${unsafeHTML(\n            args['[Default Slot]']\n        )}</omni-label> `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        type: 'default',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Interactive.args?.label as string);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -6147,6 +6151,20 @@
               "name": "--omni-label-default-font-weight"
             }
           ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component. Registry of all properties defined by the component.",
+              "name": "[Default Slot]"
+            }
+          ],
           "members": [
             {
               "kind": "field",
@@ -6272,17 +6290,7 @@
           },
           "tagName": "omni-label",
           "import": "```js\nimport '@capitec/omni-components/label';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [

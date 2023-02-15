@@ -1,4 +1,4 @@
-import{a as s}from"./chunk.ZTJGZLZP.js";import{b as d}from"./chunk.TWX6WA6U.js";import{a as l,d as c}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.CIM3NS6G.js";import{j as t,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var r=class extends d{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
+import{a as d}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.TWX6WA6U.js";import{a as c}from"./chunk.F27L6OQP.js";import{a as l,d as s}from"./chunk.CHYIO324.js";import{a,b as r}from"./chunk.CIM3NS6G.js";import{j as t,l as o,o as n}from"./chunk.2ZZQBHAA.js";o();n();var i=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -18,6 +18,14 @@ import{a as s}from"./chunk.ZTJGZLZP.js";import{b as d}from"./chunk.TWX6WA6U.js";
                     padding: var(--omni-search-field-padding, 10px);
                     height: var(--omni-search-field-height, 100%);
                     width: var(--omni-search-field-width, 100%);
+                }
+
+                .field.disabled {
+                    color: var(--omni-search-field-disabled-font-color, #7C7C7C);
+                }
+
+                .field.error {
+                    color: var(--omni-search-field-error-font-color);
                 }
 
                 .control {
@@ -56,17 +64,17 @@ import{a as s}from"./chunk.ZTJGZLZP.js";import{b as d}from"./chunk.TWX6WA6U.js";
                   -webkit-appearance:none;
                 }
                 .
-            `]}renderPrefix(){return i`<omni-search-icon class="search-icon"></omni-search-icon>`}renderControl(){return i`
+            `]}renderPrefix(){return r`<omni-search-icon class="search-icon"></omni-search-icon>`}renderControl(){return r`
             <div id="control" class="control" @click="${e=>this._clearField(e)}">
-                ${this.value?i`<slot name="clear"><omni-clear-icon class="clear-icon"></omni-clear-icon></slot>`:""}
+                ${this.value?r`<slot name="clear"><omni-clear-icon class="clear-icon"></omni-clear-icon></slot>`:""}
             </div>
-        `}renderContent(){return i`
+        `}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return r`
             <input
-                class="field"
+                class=${c(e)}
                 id="inputField"
                 type="search"
-                .value=${s(this.value)}
+                .value=${d(this.value)}
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
-        `}};t([c("#inputField")],r.prototype,"_inputElement",2),r=t([l("omni-search-field")],r);export{r as a};
-//# sourceMappingURL=chunk.FXELVCZI.js.map
+        `}};t([s("#inputField")],i.prototype,"_inputElement",2),i=t([l("omni-search-field")],i);export{i as a};
+//# sourceMappingURL=chunk.YDUEMUDT.js.map

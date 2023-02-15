@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.ZTJGZLZP.js";import{b as s}from"./chunk.TWX6WA6U.js";import{a as c,d}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.CIM3NS6G.js";import{j as t,l,o as r}from"./chunk.2ZZQBHAA.js";l();r();var o=class extends s{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as f}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.TWX6WA6U.js";import{a as s}from"./chunk.F27L6OQP.js";import{a as d,d as c}from"./chunk.CHYIO324.js";import{a,b as i}from"./chunk.CIM3NS6G.js";import{j as t,l as n,o as l}from"./chunk.2ZZQBHAA.js";n();l();var o=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
         .field {
           display: flex;
           justify-content: center;
@@ -32,7 +32,7 @@ import{a as m}from"./chunk.ZTJGZLZP.js";import{b as s}from"./chunk.TWX6WA6U.js";
           user-select: var(--omni-color-field-text-select, text);
         }
 
-        .color-input {
+        .input {
           flex: 1 1 auto;
 
           border: none;
@@ -53,18 +53,26 @@ import{a as m}from"./chunk.ZTJGZLZP.js";import{b as s}from"./chunk.TWX6WA6U.js";
           padding: var(--omni-color-field-padding, 10px);
         }
 
+        .input.disabled {
+            color: var(--omni-color-field-disabled-font-color, #7C7C7C);
+        }
+
+        .input.error {
+            color: var(--omni-color-field-error-font-color);
+        }
+
         :host(:not([value])) input[type='color']::-webkit-color-swatch,
         :host([value='']) input[type='color']::-webkit-color-swatch {
           background-color: transparent !important;
         }
-      `]}renderContent(){var e,n;return i` <label for="inputField" class="field"> ${(n=(e=this.value)==null?void 0:e.toString())==null?void 0:n.toUpperCase()} </label> `}renderControl(){return i`
+      `]}renderContent(){var e,r;return i` <label for="inputField" class="field"> ${(r=(e=this.value)==null?void 0:e.toString())==null?void 0:r.toUpperCase()} </label> `}renderControl(){let e={input:!0,disabled:this.disabled,error:this.error};return i`
       <input
-        class="color-input"
+        class=${s(e)}
         id="inputField"
         type="color"
-        .value=${m(this.value)}
+        .value=${f(this.value)}
         ?disabled=${this.disabled}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
-    `}};t([d("#inputField")],o.prototype,"_inputElement",2),o=t([c("omni-color-field")],o);export{o as a};
-//# sourceMappingURL=chunk.VNE7SSLH.js.map
+    `}};t([c("#inputField")],o.prototype,"_inputElement",2),o=t([d("omni-color-field")],o);export{o as a};
+//# sourceMappingURL=chunk.R6AY44XQ.js.map

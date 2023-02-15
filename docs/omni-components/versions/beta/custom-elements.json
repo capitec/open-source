@@ -19,7 +19,7 @@
         {
           "kind": "variable",
           "name": "Label",
-          "default": "{\n    render: (args: Args) => html` <omni-button label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Label',\n    description: 'Set a text value to display within.',\n    args: {\n        label: 'Click'\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const labelElement = button.shadowRoot!.getElementById('label') as HTMLElement;\n        const labelMatches = labelElement?.innerText === Label.args?.label;\n        await expect(labelMatches).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-button label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    name: 'Label',\n    description: 'Set a text value to display within.',\n    args: {\n        label: 'Click'\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const labelElement = button.shadowRoot?.getElementById('label') as HTMLElement;\n        const labelMatches = labelElement?.innerText === Label.args?.label;\n        await expect(labelMatches).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1714,6 +1714,14 @@
             {
               "description": "Color field text selection.",
               "name": "--omni-color-field-text-select"
+            },
+            {
+              "description": "Color field disabled font color.",
+              "name": "--omni-color-field-disabled-font-color"
+            },
+            {
+              "description": "Color field error font color.",
+              "name": "--omni-color-field-error-font-color"
             }
           ],
           "members": [
@@ -2972,6 +2980,13 @@
               "type": {
                 "text": "string"
               }
+            },
+            {
+              "name": "inputValue",
+              "default": "'The input value'",
+              "type": {
+                "text": "string | number | string[]"
+              }
             }
           ]
         }
@@ -3190,6 +3205,10 @@
             {
               "description": "Currency field width.",
               "name": "--omni-currency-field-width"
+            },
+            {
+              "description": "-",
+              "name": "--omni-currency-field-disabled-font-color"
             },
             {
               "description": "Currency field label left margin.",
@@ -3845,7 +3864,7 @@
           "type": {
             "text": "ComponentStoryFormat<BaseArgs>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const emailField = within(context.canvasElement).getByTestId<EmailField>('test-email-field');\n        const input = jest.fn();\n        emailField.addEventListener('input', input);\n\n        const inputField = emailField.shadowRoot?.getElementById('inputField');\n\n        await userEvent.type(inputField as Element, 'JohnDoe@gmail.com', {\n            pointerEventsCheck: 0\n        });\n        const value = 'JohnDoe@gmail.com';\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(value), {\n                timeout: 3000\n            });\n            await expect(input).toBeCalledTimes(value.length);\n        }\n    }\n}"
+          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const emailField = within(context.canvasElement).getByTestId<EmailField>('test-email-field');\n        const input = jest.fn();\n        emailField.addEventListener('input', input);\n\n        const inputField = emailField.shadowRoot?.getElementById('inputField');\n\n        await userEvent.type(inputField as Element, 'johndoe@gmail.com', {\n            pointerEventsCheck: 0\n        });\n        const value = 'johndoe@gmail.com';\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(value), {\n                timeout: 3000\n            });\n            await expect(input).toBeCalledTimes(value.length);\n        }\n    }\n}"
         },
         {
           "kind": "variable",
@@ -3990,6 +4009,14 @@
             {
               "description": "Email field width.",
               "name": "--omni-email-field-width"
+            },
+            {
+              "description": "Email field disabled font color.",
+              "name": "--omni-email-field-disabled-font-color"
+            },
+            {
+              "description": "Email field error font color.",
+              "name": "--omni-email-field-error-font-color"
             }
           ],
           "members": [
@@ -4900,7 +4927,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Remote Source',\n    description: 'Set the icon to display as a remote file.',\n    args: {\n        size: 'default',\n        icon: 'https://img.shields.io/badge/Source-remote-lightgrey.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot!.querySelector('img') as HTMLImageElement;\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement?.src).toEqual(context.args.icon);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Remote Source',\n    description: 'Set the icon to display as a remote file.',\n    args: {\n        size: 'default',\n        icon: 'https://img.shields.io/badge/Source-remote-lightgrey.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot?.querySelector('img') as HTMLImageElement;\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement?.src).toEqual(context.args.icon);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -6488,6 +6515,14 @@
             {
               "description": "Number field width.",
               "name": "--omni-number-field-width"
+            },
+            {
+              "description": "Number field disabled font color.",
+              "name": "--omni-number-field-disabled-font-color"
+            },
+            {
+              "description": "Number field error font color.",
+              "name": "--omni-number-field-error-font-color"
             }
           ],
           "members": [
@@ -7116,6 +7151,14 @@
             {
               "description": "Password field width.",
               "name": "--omni-password-field-width"
+            },
+            {
+              "description": "Password field disabled font color.",
+              "name": "--omni-password-field-disabled-color"
+            },
+            {
+              "description": "Password field error font color.",
+              "name": "--omni-password-field-error-font-color"
             }
           ],
           "slots": [
@@ -7736,6 +7779,14 @@
             {
               "description": "Pin field width.",
               "name": "--omni-pin-field-width"
+            },
+            {
+              "description": "Pin field disabled font color.",
+              "name": "--omni-pin-field-disabled-font-color"
+            },
+            {
+              "description": "Pin field error font color.",
+              "name": "--omni-pin-field-error-font-color"
             }
           ],
           "slots": [
@@ -7787,7 +7838,8 @@
               "type": {
                 "text": "boolean | undefined"
               },
-              "privacy": "private"
+              "privacy": "private",
+              "default": "false"
             },
             {
               "kind": "field",
@@ -9221,6 +9273,14 @@
               "name": "--omni-search-field-width"
             },
             {
+              "description": "Search field disabled font color.",
+              "name": "--omni-search-field-disabled-font-color"
+            },
+            {
+              "description": "Search field error font color.",
+              "name": "--omni-search-field-error-font-color"
+            },
+            {
               "description": "Search field control right margin.",
               "name": "--omni-search-field-control-margin-right"
             },
@@ -9903,6 +9963,14 @@
             {
               "description": "Select component input field width.",
               "name": "--omni-select-field-width"
+            },
+            {
+              "description": "Select component input field disabled font color.",
+              "name": "--omni-select-field-disabled-font-color"
+            },
+            {
+              "description": "Select component input field error font color.",
+              "name": "--omni-select-field-error-font-color"
             },
             {
               "description": "Select control right margin.",
@@ -11384,6 +11452,14 @@
             {
               "description": "Text field width.",
               "name": "--omni-text-field-width"
+            },
+            {
+              "description": "Text field disabled font color.",
+              "name": "--omni-text-field-disabled-font-color"
+            },
+            {
+              "description": "Text field error font color.",
+              "name": "--omni-text-field-font-color"
             }
           ],
           "members": [

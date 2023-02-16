@@ -5,7 +5,7 @@
       "logo": "https://raw.githubusercontent.com/capitec/omni-router/develop/docs/logos/omni.png",
       "name": "omni-router",
       "description": "Framework agnostic, zero dependency, client-side web component router",
-      "version": "0.0.2"
+      "version": "0.0.3"
     },
     {
       "display": "Omni Components",

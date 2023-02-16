@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/Check.icon.ts"],
+  "mappings": "8KAAAA,IAAAC,IAqBO,IAAMC,EAAN,cAAwBC,CAAe,CACjC,QAAyB,CAC9B,OAAOC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAOX,CACJ,EAVaF,EAANG,EAAA,CADNC,EAAc,iBAAiB,GACnBJ",
+  "names": ["init_define_process_argv", "init_global", "CheckIcon", "DOMTreeElement_default", "y", "__decorateClass", "e"]
+}

@@ -7,8 +7,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Omni Components - Theme Support</title>
-    <base href="/open-source/docs/omni-components/" >
+    <title>Theme Support - Omni Components</title>
+    <base href="/open-source/docs/omni-components/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
     <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
@@ -81,15 +81,18 @@
                         menu
                     </span>
                 </div>
-                <div style="display: flex;">
+                <div style="display: flex; position: relative;">
                     <div class="header-logo">
                         <div class="header-container" id="header-container">
                             <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
                             <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
                         </div>
                     </div>
-                    <div class="header-version">
-                        0.3.0
+                    <div class="header-version-section">
+                        <div class="header-version" id="header-version-indicator">
+                            0.4.0
+                        </div>
+                        <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
                 </div>
                 <div class="header-actions">
@@ -154,14 +157,21 @@
             <a class="menu-link "
              
             href="./components/colorfield">
-                ColorField
+                Color Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/currencyfield">
-                CurrencyField
+                Currency Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/emailfield">
+                Email Field
             </a>
         </div>
         <div class="menu-item ">
@@ -189,21 +199,21 @@
             <a class="menu-link "
              
             href="./components/numberfield">
-                NumberField
-            </a>
-        </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
-            href="./components/numericfield">
-                NumericField
+                Number Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/passwordfield">
-                PasswordField
+                Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pinfield">
+                Pin Field
             </a>
         </div>
         <div class="menu-item ">
@@ -217,14 +227,14 @@
             <a class="menu-link "
              
             href="./components/renderelement">
-                RenderElement
+                Render Element
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/searchfield">
-                SearchField
+                Search Field
             </a>
         </div>
         <div class="menu-item ">
@@ -245,7 +255,7 @@
             <a class="menu-link "
              
             href="./components/textfield">
-                TextField
+                Text Field
             </a>
         </div>
     </div>
@@ -278,23 +288,23 @@
         <h1>Theme Support</h1>
 
         <h3>All Omni Components support our theme CSS variables</h3>
-        <br/>
         <p>
         Theme variables are used to style the overall theme of all Omni Components. 
-        Each component also can still be styled individually using their own component specific css variables, which would override the theme if specified.
+        Each component also can still be styled individually using their own component specific CSS variables, which would override the theme if specified.
         </p>
-        <br/>
+       
         <p>
-        Theme variables typically affect
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ shared colors</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ fonts</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ borders</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ accessibility options</p>
+        Theme variables typically affect:
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ Shared colors</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ Fonts</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ Borders</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;◉ Accessibility options</p>
         </p>
-        <br/>
-        <p>There are built-in themes available to test how theme variables can affect te various components. Use the theme dropdown to select a built-in theme or select 'Light Theme' to view the components in their default state. The source for the built-in themes are available <a target="_self" href="theme-support/#examples" >below</a>.</p>
-        <br/>
-        <p>Alternatively, a custom theme can be authored or uploaded to have a live view of its effects on the components. Try it now by selecting your current theme to be 'Custom Theme'.</p>
+       
+        <p>There are built-in themes available to test how theme variables can affect te various components. Use the theme dropdown to select a built-in theme or select "Light Theme" to view the components in their default state. The source for the built-in themes are available <a target="_self" href="theme-support/#examples" >below</a>.</p>
+       
+        <p>Alternatively, a custom theme can be authored or uploaded to have a live view of its effects on the components.</p>
+        <p>Try it now by selecting your current theme to be "Custom Theme"!</p>
 
     </div>
 
@@ -335,7 +345,7 @@
                         <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
                     </div>
                 </div>
-                <div class="copyright" style="">Copyright &copy; 2022</div>
+                <div class="copyright" style="">Copyright &copy; 2023</div>
             </footer>
         </div>
     </div>

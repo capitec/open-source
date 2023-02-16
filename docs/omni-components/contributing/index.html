@@ -7,8 +7,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Omni Components - Contributing</title>
-    <base href="/open-source/docs/omni-components/" >
+    <title>Contributing - Omni Components</title>
+    <base href="/open-source/docs/omni-components/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
     <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
@@ -81,15 +81,18 @@
                         menu
                     </span>
                 </div>
-                <div style="display: flex;">
+                <div style="display: flex; position: relative;">
                     <div class="header-logo">
                         <div class="header-container" id="header-container">
                             <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
                             <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
                         </div>
                     </div>
-                    <div class="header-version">
-                        0.3.0
+                    <div class="header-version-section">
+                        <div class="header-version" id="header-version-indicator">
+                            0.4.0
+                        </div>
+                        <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
                 </div>
                 <div class="header-actions">
@@ -154,14 +157,21 @@
             <a class="menu-link "
              
             href="./components/colorfield">
-                ColorField
+                Color Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/currencyfield">
-                CurrencyField
+                Currency Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/emailfield">
+                Email Field
             </a>
         </div>
         <div class="menu-item ">
@@ -189,21 +199,21 @@
             <a class="menu-link "
              
             href="./components/numberfield">
-                NumberField
-            </a>
-        </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
-            href="./components/numericfield">
-                NumericField
+                Number Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/passwordfield">
-                PasswordField
+                Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pinfield">
+                Pin Field
             </a>
         </div>
         <div class="menu-item ">
@@ -217,14 +227,14 @@
             <a class="menu-link "
              
             href="./components/renderelement">
-                RenderElement
+                Render Element
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/searchfield">
-                SearchField
+                Search Field
             </a>
         </div>
         <div class="menu-item ">
@@ -245,7 +255,7 @@
             <a class="menu-link "
              
             href="./components/textfield">
-                TextField
+                Text Field
             </a>
         </div>
     </div>
@@ -262,6 +272,7 @@
 <ul>
 <li><a href="contributing/#code-of-conduct">Code of Conduct</a></li>
 <li><a href="contributing/#issues">Issues</a></li>
+<li><a href="contributing/#vulnerabilities">Vulnerabilities</a></li>
 <li><a href="contributing/#development">Development</a></li>
 <li><a href="contributing/#pull-requests">Pull Requests</a></li>
 </ul>
@@ -292,6 +303,13 @@
 <blockquote>
 <p>💡 TIP: We suggest that you engage as much as possible within an Issue prior to proceeding with any contributions.</p>
 </blockquote>
+<h2><a id="vulnerabilities" class="anchor" href="contributing/#vulnerabilities" aria-hidden="true"></a>Vulnerabilities</h2>
+<p>A vulnerability is typically a security-related risk associated with <em>any part</em> of the project (or any dependencies):</p>
+<ul>
+<li><strong>Do</strong> refer to our <a href="https://github.com/capitec/omni-components/security/policy">Security Policy</a> for more info.</li>
+<li><strong>Do</strong> report vulnerabilities via this <a href="https://github.com/capitec/omni-components/security/advisories/new">link</a>.</li>
+<li><strong>Do not</strong> report any Issues or mention in public Discussions for discretionary purposes.</li>
+</ul>
 <h2><a id="development" class="anchor" href="contributing/#development" aria-hidden="true"></a>Development</h2>
 <h3><a id="branches" class="anchor" href="contributing/#branches" aria-hidden="true"></a>Branches</h3>
 <ul>
@@ -321,11 +339,10 @@
 │   │   ├── index.ts
 │   │   ├── README.md
 │   ├── ...
-├── themes
 ├── ...
 </code></pre>
 <ul>
-<li><code>src</code> - Contains all components in a flat structure, each named afer a component, e.g. <code>button</code>. Contents:
+<li><code>src</code> - Contains all components in a flat structure, each named after a component, e.g. <code>button</code>. Contents:
 <ul>
 <li><code>Button.stories.ts</code> - The stories for the component.</li>
 <li><code>Button.ts</code> - The component. <em>(NOTE: There might be multiple, depending on complexity and composition)</em></li>
@@ -333,7 +350,6 @@
 <li><code>README.md</code> - The README for the component <em>(NOTE: Generated when Pull Request is merged)</em>.</li>
 </ul>
 </li>
-<li><code>themes</code> - Basic built-in themes, viewable within the hosted documentation.</li>
 </ul>
 <h3><a id="naming-conventions" class="anchor" href="contributing/#naming-conventions" aria-hidden="true"></a>Naming Conventions</h3>
 <ul>
@@ -363,10 +379,11 @@
 </ul>
 <h4><a id="components" class="anchor" href="contributing/#components" aria-hidden="true"></a>Components</h4>
 <ul>
-<li><strong>Do</strong> base off <a href="(https://github.com/capitec/omni-components/blob/develop/src/core/OmniElement.ts)">OmniElement</a>.</li>
+<li><strong>Do</strong> base off <a href="https://github.com/capitec/omni-components/blob/develop/src/core/OmniElement.ts">OmniElement</a>.</li>
 <li><strong>Do</strong> implement &quot;mobile first&quot; templates, leveraging <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design">Responsive Design</a> layout and styling principles. 📱</li>
 <li><strong>Do</strong> utilize <a href="https://lit.dev/">LitElement's</a> <a href="https://lit.dev/docs/components/decorators/">decorators</a>, required for element and property names.</li>
 <li><strong>Do</strong> ensure sufficient <a href="https://jsdoc.app/">JSDoc</a> as well as general code comments are added.</li>
+<li><strong>Do</strong> add an <code>HTMLElementTagNameMap</code> entry as documented <a href="https://lit.dev/docs/tools/publishing/#publish-typescript-typings">here</a>.</li>
 <li><strong>Do</strong> use and extend existing shared CSS component and theme custom properties. (See <a href="https://github.com/capitec/omni-components/blob/develop/src/core/OmniElement.ts"><code>src/core/OmniElement.ts</code></a>)</li>
 <li><strong>Do</strong> set suitable CSS custom property defaults, <strong>avoid</strong> hard-coding CSS property values directly within components, unless deemed required.</li>
 <li><strong>Do</strong> adhere to and leverage existing DOM standards when making use of <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement"><code>&lt;input&gt;</code></a> element.</li>
@@ -377,11 +394,9 @@
 <h4><a id="stories" class="anchor" href="contributing/#stories" aria-hidden="true"></a>Stories</h4>
 <ul>
 <li><strong>Do</strong> use <a href="https://github.com/capitec/omni-components/blob/develop/src/utils/ComponentStoryFormat.ts">Component Story Format (CSF) 3</a>.</li>
-<li><strong>Do</strong> implement a <a href="https://github.com/capitec/omni-components/blob/develop/src/utils/PlayFunction.ts">play function</a> per story to test story-specific component state and event behaviors. 🛝
-<ul>
+<li><strong>Do</strong> implement a <a href="https://github.com/capitec/omni-components/blob/develop/src/utils/PlayFunction.ts">play function</a> per story to test story-specific component state and event behaviors.</li>
 <li><strong>Do</strong> set the <code>data-testid</code> within every story template.</li>
-</ul>
-</li>
+<li><strong>Do</strong> ensure that stories are authored to be both dark and light theme friendly (test via the hosted documentation).</li>
 </ul>
 <h4><a id="themes" class="anchor" href="contributing/#themes" aria-hidden="true"></a>Themes</h4>
 <ul>
@@ -400,6 +415,9 @@
 </ul>
 <h3><a id="checks" class="anchor" href="contributing/#checks" aria-hidden="true"></a>Checks</h3>
 <ul>
+<li>Code scanning passes.</li>
+<li>Lint validation passes.</li>
+<li>Format validation passes.</li>
 <li>All story play function tests pass.</li>
 </ul>
 <!--- * All story play function tests has at least 80% code coverage of components. --->
@@ -429,7 +447,7 @@
                         <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
                     </div>
                 </div>
-                <div class="copyright" style="">Copyright &copy; 2022</div>
+                <div class="copyright" style="">Copyright &copy; 2023</div>
             </footer>
         </div>
     </div>

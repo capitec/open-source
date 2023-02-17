@@ -1,4 +1,4 @@
-import{u as d}from"../chunks-js/chunk.QDDPH2I4.js";import"../chunks-js/chunk.UV5ZCCWM.js";import"../chunks-js/chunk.BMVIQMEU.js";import"../chunks-js/chunk.MPJVWYSG.js";import{a as l}from"../chunks-js/chunk.3FTDPY75.js";import"../chunks-js/chunk.VOM777LA.js";import{a as m}from"../chunks-js/chunk.R4IMIBZU.js";import{c as a}from"../chunks-js/chunk.QC5ZUB6O.js";import{d as n}from"../chunks-js/chunk.YQLTAQFI.js";import"../chunks-js/chunk.ZO5UBYOG.js";import"../chunks-js/chunk.CHYIO324.js";import{b as r}from"../chunks-js/chunk.3GEUDTAZ.js";import{l as g,o as p}from"../chunks-js/chunk.2ZZQBHAA.js";g();p();var F={title:"UI Components/Icon",component:"omni-icon"},q={render:t=>r`
+import{u as d}from"../chunks-js/chunk.EZFZPYM4.js";import"../chunks-js/chunk.HEGWAMTE.js";import"../chunks-js/chunk.BMVIQMEU.js";import"../chunks-js/chunk.MPJVWYSG.js";import"../chunks-js/chunk.FJG2EZL6.js";import{a as l}from"../chunks-js/chunk.7QF4VYJR.js";import{a as m}from"../chunks-js/chunk.CFP25WDL.js";import{c as a}from"../chunks-js/chunk.555UF2OF.js";import{d as n}from"../chunks-js/chunk.ZDXRLLLZ.js";import"../chunks-js/chunk.7YN44Q4N.js";import"../chunks-js/chunk.CHYIO324.js";import{b as r}from"../chunks-js/chunk.CIM3NS6G.js";import{l as g,o as p}from"../chunks-js/chunk.2ZZQBHAA.js";g();p();var F={title:"UI Components/Icon",component:"omni-icon"},q={render:t=>r`
     <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->
 
     <omni-icon data-testid="test-icon" size="${m(t.size)}" icon="${m(t.icon)}">
@@ -34,7 +34,7 @@ import{u as d}from"../chunks-js/chunk.QDDPH2I4.js";import"../chunks-js/chunk.UV5
     <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->
 
     <omni-icon data-testid="test-icon" size="${t.size}" icon="${t.icon}"></omni-icon>
-  `,name:"Remote Source",description:"Set the icon to display as a remote file.",args:{size:"default",icon:"https://img.shields.io/badge/Source-remote-lightgrey.svg"},play:async t=>{let e=a(t.canvasElement).getByTestId("test-icon").shadowRoot.querySelector("img");await n(e).toBeTruthy(),await n(e==null?void 0:e.src).toEqual(t.args.icon)}},y={render:t=>r`
+  `,name:"Remote Source",description:"Set the icon to display as a remote file.",args:{size:"default",icon:"https://img.shields.io/badge/Source-remote-lightgrey.svg"},play:async t=>{var o;let e=(o=a(t.canvasElement).getByTestId("test-icon").shadowRoot)==null?void 0:o.querySelector("img");await n(e).toBeTruthy(),await n(e==null?void 0:e.src).toEqual(t.args.icon)}},y={render:t=>r`
     <!-- Add Material to your project, e.g. Adding below link in <head>-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <!-- ------------------------------------------------------------- -->

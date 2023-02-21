@@ -112,8 +112,8 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                     transform: scale(var(--omni-form-focussed-label-transform-scale), 0.90);
 					background-color: var(--omni-form-focussed-label-background-color, var(--omni-background-color));
 					position: absolute;
-					left: -3px;
-					right: -3px;
+					left: var(--omni-form-focussed-label-left,-3px);
+					right: var(--omni-form-focussed-label-right,-3px);
     				height: 50%;
 					z-index: -1;
                     top:50%;
@@ -219,4 +219,4 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.KHZKGRRT.js.map
+//# sourceMappingURL=chunk.5TKUKOJF.js.map

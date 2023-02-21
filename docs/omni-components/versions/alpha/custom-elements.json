@@ -2500,6 +2500,14 @@
               "name": "--omni-form-focussed-label-background-color"
             },
             {
+              "description": "Form focussed label left.",
+              "name": "--omni-form-focussed-label-left"
+            },
+            {
+              "description": "Form focussed label right.",
+              "name": "--omni-form-focussed-label-right"
+            },
+            {
               "description": "Form error label color.",
               "name": "--omni-form-error-label-color"
             },

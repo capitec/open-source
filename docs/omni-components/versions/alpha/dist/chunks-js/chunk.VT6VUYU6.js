@@ -1,4 +1,4 @@
-import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";import{b as l}from"./chunk.CHYIO324.js";import{a as m,b as o,d as r}from"./chunk.CIM3NS6G.js";import{j as t,l as i,o as a}from"./chunk.2ZZQBHAA.js";i();a();i();a();i();a();var S=s=>s!=null?s:r;var e=class extends b{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
+import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";import{b as l}from"./chunk.CHYIO324.js";import{a as m,b as o,d as r}from"./chunk.CIM3NS6G.js";import{j as t,l as i,o as a}from"./chunk.2ZZQBHAA.js";i();a();i();a();i();a();var S=d=>d!=null?d:r;var e=class extends b{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
                 ${super.styles}
 
                 :host {
@@ -91,7 +91,7 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                 :host([value]:not([value=''])) .layout  > .label,
                 .layout:focus-within > .label
                 {
-                    top: var(--omni-form-focussed-label-top, 0px);
+                    top: 0px;
                     margin-left: var(--omni-form-focussed-label-margin-left, 10px);
                 }
 
@@ -112,11 +112,12 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                     transform: scale(var(--omni-form-focussed-label-transform-scale), 0.90);
 					background-color: var(--omni-form-focussed-label-background-color, var(--omni-background-color));
 					position: absolute;
-					left: var(--omni-form-focussed-label-left,-3px);
-					right: var(--omni-form-focussed-label-right,-3px);
+					left: calc(var(--omni-form-focussed-label-padding-left, 3px) * -1);
+					right: calc(var(--omni-form-focussed-label-padding-right, 3px) * -1);
     				height: 50%;
 					z-index: -1;
                     top:50%;
+                    width: calc(100% + var(--omni-form-focussed-label-padding-left, 3px) + var(--omni-form-focussed-label-padding-right, 3px));
                 }
 
                 /* ERROR STYLES */
@@ -201,9 +202,9 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){var n;let d={layout:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return o`
+            `]}render(){var n;let s={layout:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return o`
             <div class="container">
-                <div class=${f(d)}>
+                <div class=${f(s)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
                     ${this.renderLabel()} 
@@ -213,10 +214,10 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){var n;let d={label:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return o`${this.label?o`<div class=${f(d)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};t([l({type:String,reflect:!0})],e.prototype,"label",2),t([l({reflect:!0})],e.prototype,"value",2),t([l({type:Object,reflect:!0})],e.prototype,"data",2),t([l({type:String,reflect:!0})],e.prototype,"hint",2),t([l({type:String,reflect:!0})],e.prototype,"error",2),t([l({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{S as a,e as b};
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){var n;let s={label:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return o`${this.label?o`<div class=${f(s)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};t([l({type:String,reflect:!0})],e.prototype,"label",2),t([l({reflect:!0})],e.prototype,"value",2),t([l({type:Object,reflect:!0})],e.prototype,"data",2),t([l({type:String,reflect:!0})],e.prototype,"hint",2),t([l({type:String,reflect:!0})],e.prototype,"error",2),t([l({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{S as a,e as b};
 /**
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.5TKUKOJF.js.map
+//# sourceMappingURL=chunk.VT6VUYU6.js.map

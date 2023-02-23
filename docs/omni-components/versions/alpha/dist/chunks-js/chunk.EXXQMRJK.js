@@ -1,4 +1,4 @@
-import{a as d}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.5TKUKOJF.js";import{a as c}from"./chunk.F27L6OQP.js";import{a as l,d as s}from"./chunk.CHYIO324.js";import{a,b as r}from"./chunk.CIM3NS6G.js";import{j as t,l as o,o as n}from"./chunk.2ZZQBHAA.js";o();n();var i=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
+import{a as d}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.VT6VUYU6.js";import{a as c}from"./chunk.F27L6OQP.js";import{a as l,d as s}from"./chunk.CHYIO324.js";import{a,b as r}from"./chunk.CIM3NS6G.js";import{j as t,l as o,o as n}from"./chunk.2ZZQBHAA.js";o();n();var i=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -77,4 +77,4 @@ import{a as d}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.5TKUKOJF.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};t([s("#inputField")],i.prototype,"_inputElement",2),i=t([l("omni-search-field")],i);export{i as a};
-//# sourceMappingURL=chunk.BGAH355E.js.map
+//# sourceMappingURL=chunk.EXXQMRJK.js.map

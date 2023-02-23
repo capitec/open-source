@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.ZTJGZLZP.js";import{b as c}from"./chunk.KDIAEN7K.js";import{a as p}from"./chunk.F27L6OQP.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as e}from"./chunk.CIM3NS6G.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var i=class extends c{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let o=this._inputElement;this.value=o==null?void 0:o.value}_iconClicked(o){if(this.disabled)return o.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",o.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as m}from"./chunk.ZTJGZLZP.js";import{b as c}from"./chunk.GLNNZVPM.js";import{a as p}from"./chunk.F27L6OQP.js";import{a as d,c as a,d as l}from"./chunk.CHYIO324.js";import{a as s,b as e}from"./chunk.CIM3NS6G.js";import{j as t,l as n,o as r}from"./chunk.2ZZQBHAA.js";n();r();var i=class extends c{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let o=this._inputElement;this.value=o==null?void 0:o.value}_iconClicked(o){if(this.disabled)return o.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",o.stopPropagation()}static get styles(){return[super.styles,s`
         .control-box {
           display: flex;
           align-items: center;
@@ -72,4 +72,4 @@ import{a as m}from"./chunk.ZTJGZLZP.js";import{b as c}from"./chunk.KDIAEN7K.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([a()],i.prototype,"type",2),t([l("#inputField")],i.prototype,"_inputElement",2),i=t([d("omni-password-field")],i);export{i as a};
-//# sourceMappingURL=chunk.TE6YJQEE.js.map
+//# sourceMappingURL=chunk.E3NI4ZK3.js.map

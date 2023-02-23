@@ -1,4 +1,4 @@
-import{a as f}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.GLNNZVPM.js";import{a as s}from"./chunk.F27L6OQP.js";import{a,d}from"./chunk.CHYIO324.js";import{a as r,b as l}from"./chunk.CIM3NS6G.js";import{j as i,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var t=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,r`
+import{a as f}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.G4OP6JHJ.js";import{a as s}from"./chunk.F27L6OQP.js";import{a,d}from"./chunk.CHYIO324.js";import{a as r,b as l}from"./chunk.CIM3NS6G.js";import{j as i,l as n,o}from"./chunk.2ZZQBHAA.js";n();o();var t=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,r`
         .field {
           flex: 1 1 auto;
 
@@ -36,4 +36,4 @@ import{a as f}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.GLNNZVPM.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};i([d("#inputField")],t.prototype,"_inputElement",2),t=i([a("omni-text-field")],t);export{t as a};
-//# sourceMappingURL=chunk.JLY7D5RC.js.map
+//# sourceMappingURL=chunk.6426ET3P.js.map

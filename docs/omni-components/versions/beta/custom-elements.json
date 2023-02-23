@@ -2440,10 +2440,6 @@
               "name": "--omni-form-border-color"
             },
             {
-              "description": "Form label text align.",
-              "name": "--omni-form-label-transform-origin"
-            },
-            {
               "description": "Form label margin left.",
               "name": "--omni-form-label-margin-left"
             },
@@ -2480,10 +2476,6 @@
               "name": "--omni-form-focussed-label-transform-scale"
             },
             {
-              "description": "Form focussed label top.",
-              "name": "--omni-form-focussed-label-top"
-            },
-            {
               "description": "Form focussed label left margin.",
               "name": "--omni-form-focussed-label-margin-left"
             },
@@ -2498,6 +2490,14 @@
             {
               "description": "Form focussed label background color.",
               "name": "--omni-form-focussed-label-background-color"
+            },
+            {
+              "description": "Form focussed label left.",
+              "name": "--omni-form-focussed-label-padding-left"
+            },
+            {
+              "description": "Form focussed label right.",
+              "name": "--omni-form-focussed-label-padding-right"
             },
             {
               "description": "Form error label color.",

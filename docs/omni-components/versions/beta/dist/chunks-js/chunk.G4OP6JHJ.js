@@ -1,4 +1,4 @@
-import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";import{b as l}from"./chunk.CHYIO324.js";import{a as m,b as o,d as r}from"./chunk.CIM3NS6G.js";import{j as t,l as i,o as a}from"./chunk.2ZZQBHAA.js";i();a();i();a();i();a();var S=s=>s!=null?s:r;var e=class extends b{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
+import{a as f}from"./chunk.F27L6OQP.js";import{i as c}from"./chunk.7YN44Q4N.js";import{b as l}from"./chunk.CHYIO324.js";import{a as m,b as r,d as o}from"./chunk.CIM3NS6G.js";import{j as t,l as i,o as a}from"./chunk.2ZZQBHAA.js";i();a();i();a();i();a();var S=d=>d!=null?d:o;var e=class extends c{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
                 ${super.styles}
 
                 :host {
@@ -56,7 +56,6 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
 
                 .label {
                     position: absolute;
-                    transform-origin: top var(--omni-form-label-transform-origin, left);
                     transition: all 150ms ease 0s;
                     pointer-events: none;
                     user-select: none;
@@ -91,8 +90,7 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                 :host([value]:not([value=''])) .layout  > .label,
                 .layout:focus-within > .label
                 {
-                    transform: scale(var(--omni-form-focussed-label-transform-scale), 0.90);
-                    top: var(--omni-form-focussed-label-top, -5px);
+                    top: 0px;
                     margin-left: var(--omni-form-focussed-label-margin-left, 10px);
                 }
 
@@ -105,18 +103,25 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                     color: var(--omni-form-focussed-error-label-color, var(--omni-error-font-color));
                 }
             
-                :host([value]:not([value=''])) .layout  > .label::before,
-                .layout:focus-within > .label::before 
+                :host([value]:not([value=''])) .layout  > .label > div::before,
+                .layout:focus-within > .label > div::before 
                 {
                     content: "";
-					display: block;
-					height: 100%;
+					display: block;           
 					background-color: var(--omni-form-focussed-label-background-color, var(--omni-background-color));
 					position: absolute;
-					left: -3px;
-					right: -3px;
-    				height: 60%;
+					left: calc(var(--omni-form-focussed-label-padding-left, 3px) * -1);
+					right: calc(var(--omni-form-focussed-label-padding-right, 3px) * -1);
+    				height: 50%;
 					z-index: -1;
+                    top:50%;
+                    width: calc(100% + var(--omni-form-focussed-label-padding-left, 3px) + var(--omni-form-focussed-label-padding-right, 3px));
+                }
+
+                :host([value]:not([value=''])) .layout  > .label > div,
+                .layout:focus-within > .label > div {
+                    transform: scale(var(--omni-form-focussed-label-transform-scale), 0.9);
+                    transform-origin: center left;
                 }
 
                 /* ERROR STYLES */
@@ -201,9 +206,9 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){var n;let d={layout:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return o`
+            `]}render(){var n;let s={layout:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return r`
             <div class="container">
-                <div class=${f(d)}>
+                <div class=${f(s)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
                     ${this.renderLabel()} 
@@ -213,10 +218,10 @@ import{a as f}from"./chunk.F27L6OQP.js";import{i as b}from"./chunk.7YN44Q4N.js";
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(){var n;let d={label:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return o`${this.label?o`<div class=${f(d)}><span>${this.label}</span></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};t([l({type:String,reflect:!0})],e.prototype,"label",2),t([l({reflect:!0})],e.prototype,"value",2),t([l({type:Object,reflect:!0})],e.prototype,"data",2),t([l({type:String,reflect:!0})],e.prototype,"hint",2),t([l({type:String,reflect:!0})],e.prototype,"error",2),t([l({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{S as a,e as b};
+        `}renderPrefix(){return o}renderContent(){return o}renderLabel(){var n;let s={label:!0,error:(n=this.error)!=null?n:!1,disabled:this.disabled};return r`${this.label?r`<div class=${f(s)}><div>${this.label}</div></div>`:o}`}renderControl(){return o}renderPicker(){return o}renderHint(){return r`${this.hint&&!this.error?r`<div class="hint-label">${this.hint}</div>`:o}`}renderError(){return r`${this.error?r`<div class="error-label">${this.error}</div>`:o} `}};t([l({type:String,reflect:!0})],e.prototype,"label",2),t([l({reflect:!0})],e.prototype,"value",2),t([l({type:Object,reflect:!0})],e.prototype,"data",2),t([l({type:String,reflect:!0})],e.prototype,"hint",2),t([l({type:String,reflect:!0})],e.prototype,"error",2),t([l({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{S as a,e as b};
 /**
  * @license
  * Copyright 2018 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.TWX6WA6U.js.map
+//# sourceMappingURL=chunk.G4OP6JHJ.js.map

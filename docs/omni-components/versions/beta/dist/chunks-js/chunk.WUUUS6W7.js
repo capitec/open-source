@@ -1,4 +1,4 @@
-import{a as u}from"./chunk.ZTJGZLZP.js";import{b as f}from"./chunk.TWX6WA6U.js";import{a as m}from"./chunk.F27L6OQP.js";import{a as s,d}from"./chunk.CHYIO324.js";import{a,b as l}from"./chunk.CIM3NS6G.js";import{j as t,l as r,o}from"./chunk.2ZZQBHAA.js";r();o();var n=class extends f{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,p,i){super.attributeChangedCallback(e,p,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as u}from"./chunk.ZTJGZLZP.js";import{b as f}from"./chunk.G4OP6JHJ.js";import{a as m}from"./chunk.F27L6OQP.js";import{a as s,d}from"./chunk.CHYIO324.js";import{a,b as l}from"./chunk.CIM3NS6G.js";import{j as t,l as r,o}from"./chunk.2ZZQBHAA.js";r();o();var n=class extends f{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,p,i){super.attributeChangedCallback(e,p,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
         .field {
           flex: 1 1 auto;
 
@@ -49,4 +49,4 @@ import{a as u}from"./chunk.ZTJGZLZP.js";import{b as f}from"./chunk.TWX6WA6U.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([d("#inputField")],n.prototype,"_inputElement",2),n=t([s("omni-number-field")],n);export{n as a};
-//# sourceMappingURL=chunk.CPO77R47.js.map
+//# sourceMappingURL=chunk.WUUUS6W7.js.map

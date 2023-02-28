@@ -1243,6 +1243,10 @@
               "name": "--omni-chip-max-height"
             },
             {
+              "description": "Component border.",
+              "name": "--omni-chip-border"
+            },
+            {
               "description": "Component border radius.",
               "name": "--omni-chip-border-radius"
             },
@@ -1291,18 +1295,6 @@
               "name": "--omni-chip-label-line-height"
             },
             {
-              "description": "Component disabled border color.",
-              "name": "--omni-chip-disabled-border-color"
-            },
-            {
-              "description": "Component disabled background color.",
-              "name": "--omni-chip-disabled-background-color"
-            },
-            {
-              "description": "Component icon left padding.",
-              "name": "--omni-chip-disabled-hover-background-color"
-            },
-            {
               "description": "Component slotted icon width.",
               "name": "--omni-chip-icon-width"
             },
@@ -1313,6 +1305,18 @@
             {
               "description": "Component close icon color.",
               "name": "--omni-chip-close-icon-color"
+            },
+            {
+              "description": "Component disabled border color.",
+              "name": "--omni-chip-disabled-border-color"
+            },
+            {
+              "description": "Component disabled background color.",
+              "name": "--omni-chip-disabled-background-color"
+            },
+            {
+              "description": "Component icon left padding.",
+              "name": "--omni-chip-disabled-hover-background-color"
             }
           ],
           "slots": [
@@ -1688,20 +1692,8 @@
               "name": "--omni-color-field-font-weight"
             },
             {
-              "description": "Color field picker height.",
-              "name": "--omni-color-field-picker-height"
-            },
-            {
-              "description": "Color field picker width.",
-              "name": "--omni-color-field-picker-width"
-            },
-            {
               "description": "Color field height.",
               "name": "--omni-color-field-height"
-            },
-            {
-              "description": "Color field width.",
-              "name": "--omni-color-field-padding"
             },
             {
               "description": "Color field min height.",
@@ -1712,8 +1704,20 @@
               "name": "--omni-color-field-min-width"
             },
             {
+              "description": "Color field width.",
+              "name": "--omni-color-field-padding"
+            },
+            {
               "description": "Color field text selection.",
               "name": "--omni-color-field-text-select"
+            },
+            {
+              "description": "Color field picker height.",
+              "name": "--omni-color-field-picker-height"
+            },
+            {
+              "description": "Color field picker width.",
+              "name": "--omni-color-field-picker-width"
             },
             {
               "description": "Color field disabled font color.",
@@ -4596,7 +4600,7 @@
             },
             {
               "description": "Hyperlink small font family variation",
-              "name": "--omni-font-family-small"
+              "name": "--omni-hyperlink-font-family-small"
             },
             {
               "description": "Hyperlink small font weight",
@@ -8405,15 +8409,15 @@
             },
             {
               "description": "Label Font Color.",
-              "name": "--omni-label-font-color"
+              "name": "--omni-radio-label-font-color"
             },
             {
               "description": "Label Font Family.",
-              "name": "--omni-label-font-family"
+              "name": "--omni-radio-label-font-family"
             },
             {
               "description": "Label Font Size.",
-              "name": "--omni-label-font-size"
+              "name": "--omni-radio-label-font-size"
             },
             {
               "description": "Label Font Weight.",
@@ -10937,14 +10941,6 @@
               "name": "--omni-switch-track-background-color"
             },
             {
-              "description": "Track checked background color.",
-              "name": "--omni-switch-checked-track-background-color"
-            },
-            {
-              "description": "Track disabled background color.",
-              "name": "--omni-switch-disabled-track-background-color"
-            },
-            {
               "description": "Track border radius.",
               "name": "--omni-switch-track-border-radius"
             },
@@ -10965,14 +10961,6 @@
               "name": "--omni-switch-knob-background-color"
             },
             {
-              "description": "Knob checked background color.",
-              "name": "--omni-switch-checked-knob-background-color"
-            },
-            {
-              "description": "Knob disabled background color.",
-              "name": "--omni-switch-disabled-knob-background-color"
-            },
-            {
               "description": "Knob box shadow.",
               "name": "--omni-switch-knob-box-shadow"
             },
@@ -10981,8 +10969,24 @@
               "name": "--omni-switch-knob-hover-box-shadow"
             },
             {
+              "description": "Track checked background color.",
+              "name": "--omni-switch-checked-track-background-color"
+            },
+            {
               "description": "Knob checked hover box shadow.",
               "name": "--omni-switch-checked-hover-knob-box-shadow"
+            },
+            {
+              "description": "Track disabled background color.",
+              "name": "--omni-switch-disabled-track-background-color"
+            },
+            {
+              "description": "Knob checked background color.",
+              "name": "--omni-switch-checked-knob-background-color"
+            },
+            {
+              "description": "Knob disabled background color..",
+              "name": "--omni-switch-disabled-knob-background-color"
             },
             {
               "description": "Knob disabled hover box shadow.",

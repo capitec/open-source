@@ -221,4 +221,4 @@ import{a as s}from"./chunk.F27L6OQP.js";import{h as c}from"./chunk.7YN44Q4N.js";
         ${this.label?e`<label id="label" class="label">${this.label}</label>`:l}
       </button>
     `}};r([t({type:String,reflect:!0})],o.prototype,"type",2),r([t({type:String,reflect:!0})],o.prototype,"label",2),r([t({type:String,reflect:!0,attribute:"slot-position"})],o.prototype,"slotPosition",2),r([t({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=r([d("omni-button")],o);export{o as a};
-//# sourceMappingURL=chunk.J3F635EC.js.map
+//# sourceMappingURL=chunk.ZEE3CFTJ.js.map

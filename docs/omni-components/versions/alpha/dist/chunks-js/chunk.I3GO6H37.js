@@ -14,17 +14,20 @@ import{a as p}from"./chunk.F27L6OQP.js";import{h as s}from"./chunk.7YN44Q4N.js";
         }
 
         .chip {
-          height: var(--omni-chip-height, 32px);
-          max-height: var(--omni-chip-max-height, 32px);
-          box-sizing: border-box;
-          border: var(--omni-chip-border, 1px solid #e1e1e1);
-          border-radius: var(--omni-chip-border-radius, 16px);
-          background-color: var(--omni-chip-background-color, var(--omni-background-color));
-          padding: var(--omni-chip-padding, 4px);
           cursor: pointer;
           display: flex;
           flex-direction: row;
           align-items: center;
+          box-sizing: border-box;
+
+          height: var(--omni-chip-height, 32px);
+          max-height: var(--omni-chip-max-height, 32px);
+
+          border: var(--omni-chip-border, 1px solid #e1e1e1);
+          border-radius: var(--omni-chip-border-radius, 16px);
+          background-color: var(--omni-chip-background-color, var(--omni-background-color));
+          padding: var(--omni-chip-padding, 4px);
+
         }
 
         .chip:hover {
@@ -85,4 +88,4 @@ import{a as p}from"./chunk.F27L6OQP.js";import{h as s}from"./chunk.7YN44Q4N.js";
         </div>
       </button>
     `}};e([r({type:String,reflect:!0})],o.prototype,"label",2),e([r({type:Boolean,reflect:!0})],o.prototype,"closable",2),e([r({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=e([d("omni-chip")],o);export{o as a};
-//# sourceMappingURL=chunk.OK6JPZ4Q.js.map
+//# sourceMappingURL=chunk.I3GO6H37.js.map

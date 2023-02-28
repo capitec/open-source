@@ -75,4 +75,4 @@ import{a as f}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.G4OP6JHJ.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([c("#inputField")],o.prototype,"_inputElement",2),o=t([d("omni-color-field")],o);export{o as a};
-//# sourceMappingURL=chunk.EWRBW3BQ.js.map
+//# sourceMappingURL=chunk.ON55PFTL.js.map

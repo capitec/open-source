@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Hyperlink - Omni Components</title>
+    <title>Radio Group - Omni Components</title>
     <base href="/open-source/docs/omni-components/versions/beta/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/beta/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
@@ -174,9 +174,9 @@
                 Email Field
             </a>
         </div>
-        <div class="menu-item selected">
-            <a class="menu-link selected"
-            aria-current="page" 
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/hyperlink">
                 Hyperlink
             </a>
@@ -218,14 +218,14 @@
         </div>
         <div class="menu-item ">
             <a class="menu-link "
-             
+            aria-current="page" 
             href="./components/radio">
                 Radio
             </a>
         </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
             href="./components/radiogroup">
                 Radio Group
             </a>
@@ -275,13 +275,13 @@
 
 <article class="component">
     <div class="component-meta">
-        <div class="component-name">Hyperlink</div>
-        <div class="component-desc">Control to indicate an action to be executed. Typically used for navigational purposes.</div> 
+        <div class="component-name">RadioGroup</div>
+        <div class="component-desc">Control to group radio components for single selection</div> 
         <div class="component-info">
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code">
-                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/hyperlink&#39;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/radio&#39;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
                         content_copy
                     </span>
@@ -290,7 +290,7 @@
             <div class="component-info-item">
                 <div>Source</div>
                 <div>
-                    <a href="https://github.com/capitec/omni-components/tree/develop/src/hyperlink/Hyperlink.ts" target="blank" class="component-info-item-link">
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/radio/RadioGroup.ts" target="blank" class="component-info-item-link">
                         <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
                             <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
                         </svg>
@@ -325,67 +325,57 @@
                             
                             <div class="name" id="story-interactive">Interactive</div>
                             <story-renderer 
-                                path="./dist/hyperlink/Hyperlink.stories.js" 
-                                tag="omni-hyperlink" 
+                                path="./dist/radio/RadioGroup.stories.js" 
+                                tag="omni-radio-group" 
                                 key="Interactive"
                                 interactive >
                             </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
-                                path="./dist/hyperlink/Hyperlink.stories.js" 
-                                tag="omni-hyperlink" 
+                                path="./dist/radio/RadioGroup.stories.js" 
+                                tag="omni-radio-group" 
                                 key="Label"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-size">Size</div>
+                            <div class="name" id="story-horizontal">Horizontal</div>
                             <story-renderer 
-                                path="./dist/hyperlink/Hyperlink.stories.js" 
-                                tag="omni-hyperlink" 
-                                key="Size"
+                                path="./dist/radio/RadioGroup.stories.js" 
+                                tag="omni-radio-group" 
+                                key="Horizontal"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-href">Href</div>
+                            <div class="name" id="story-allow-deselect">Allow Deselect</div>
                             <story-renderer 
-                                path="./dist/hyperlink/Hyperlink.stories.js" 
-                                tag="omni-hyperlink" 
-                                key="Href"
+                                path="./dist/radio/RadioGroup.stories.js" 
+                                tag="omni-radio-group" 
+                                key="Allow_Deselect"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-disabled">Disabled</div>
+                            <div class="name" id="story-native-radio-input">Native Radio Input</div>
                             <story-renderer 
-                                path="./dist/hyperlink/Hyperlink.stories.js" 
-                                tag="omni-hyperlink" 
-                                key="Disabled"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-inline">Inline</div>
-                            <story-renderer 
-                                path="./dist/hyperlink/Hyperlink.stories.js" 
-                                tag="omni-hyperlink" 
-                                key="Inline"
+                                path="./dist/radio/RadioGroup.stories.js" 
+                                tag="omni-radio-group" 
+                                key="Native_Radio_Input"
                                  >
                             </story-renderer>
                         </div>
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
-                                    <a href="components/hyperlink/#story-interactive" id="story-interactive-a" class="item">
+                                    <a href="components/radiogroup/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
                                     </a>
-                                    <a href="components/hyperlink/#story-label" id="story-label-a" class="item">
+                                    <a href="components/radiogroup/#story-label" id="story-label-a" class="item">
                                         Label
                                     </a>
-                                    <a href="components/hyperlink/#story-size" id="story-size-a" class="item">
-                                        Size
+                                    <a href="components/radiogroup/#story-horizontal" id="story-horizontal-a" class="item">
+                                        Horizontal
                                     </a>
-                                    <a href="components/hyperlink/#story-href" id="story-href-a" class="item">
-                                        Href
+                                    <a href="components/radiogroup/#story-allow-deselect" id="story-allow-deselect-a" class="item">
+                                        Allow Deselect
                                     </a>
-                                    <a href="components/hyperlink/#story-disabled" id="story-disabled-a" class="item">
-                                        Disabled
-                                    </a>
-                                    <a href="components/hyperlink/#story-inline" id="story-inline-a" class="item">
-                                        Inline
+                                    <a href="components/radiogroup/#story-native-radio-input" id="story-native-radio-input-a" class="item">
+                                        Native Radio Input
                                     </a>
                             </div>
                         </div>
@@ -420,38 +410,24 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">href</td>
-                                    <td data-label="Attribute" scope="row">href&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">URL to link to.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">target</td>
-                                    <td data-label="Attribute" scope="row">target&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">&#39;_self&#39; | &#39;_blank&#39; | &#39;_parent&#39; | &#39;_top&#39;</code></pre></td>
-                                    <td data-label="Description">Where to load the URL specified in "href"</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">disabled</td>
-                                    <td data-label="Attribute" scope="row">disabled&nbsp;</td>
+                                    <td data-label="Name" scope="row">allowDeselect</td>
+                                    <td data-label="Attribute" scope="row">allow-deselect&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
-                                    <td data-label="Description">Indicator if the component is disabled.</td>
+                                    <td data-label="Description">Allow deselection of radio elements.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">inline</td>
-                                    <td data-label="Attribute" scope="row">inline&nbsp;</td>
+                                    <td data-label="Name" scope="row">horizontal</td>
+                                    <td data-label="Attribute" scope="row">horizontal&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
-                                    <td data-label="Description">Indicator if the link is used as part of a sentence.</td>
+                                    <td data-label="Description">Arrange radio elements horizontally.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">size</td>
-                                    <td data-label="Attribute" scope="row">size&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">Size of the Hyperlink text.</td>
+                                    <td data-label="Name" scope="row">data</td>
+                                    <td data-label="Attribute" scope="row">data&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">object | undefined</code></pre></td>
+                                    <td data-label="Description">Data associated with the component.</td>
                                 </tr>
                                 
                                 <tr>
@@ -475,8 +451,61 @@
                 
                 
                 
+                    <h2 class="component-props-table-header">Events</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="event-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-events">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">radio-change</td>
+                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;RadioChangeEventDetail&gt;</code></pre></td>
+                                    <td data-label="Description">Dispatched when a radio selection is changed.</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 
                 
+                
+                
+                    <h2 class="component-props-table-header">Types</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="type-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-types">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">CheckableElement</td>
+                                    <td data-label="Type"><pre><code class="language-js">HTMLElement &amp; { checked: boolean | undefined }</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">RadioChangeEventDetail</td>
+                                    <td data-label="Type"><pre><code class="language-js">{ current?: CheckableElement; previous?: CheckableElement }</code></pre></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 
                                 
                 
@@ -502,7 +531,7 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
-                                    <td data-label="Description">Content to render inside the component. Registry of all properties defined by the component.</td>
+                                    <td data-label="Description">Content to manage in the radio group, typically &lt;input type="radio" /&gt; and/or &lt;omni-radio&gt;&lt;/omni-radio&gt;.</td>
                                 </tr>
                                 
                             </tbody>
@@ -666,73 +695,28 @@
                                 <tbody data-category="Component Variables" class="component-css-props">
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color-disabled</code></pre></td>
-                                        <td data-label="Description">Hyperlink disabled color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-radio-group-label-font-size</code></pre></td>
+                                        <td data-label="Description">Label font size.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-size</code></pre></td>
-                                        <td data-label="Description">Hyperlink font size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-radio-group-label-font-weight</code></pre></td>
+                                        <td data-label="Description">Label font weight.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-family</code></pre></td>
-                                        <td data-label="Description">Hyperlink font weight.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-radio-group-label-margin-bottom</code></pre></td>
+                                        <td data-label="Description">Label bottom margin.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-weight</code></pre></td>
-                                        <td data-label="Description">Hyperlink font weight.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-radio-group-vertical-margin</code></pre></td>
+                                        <td data-label="Description">Margin in between radio elements when arranged vertically.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color</code></pre></td>
-                                        <td data-label="Description">Hyperlink color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator</code></pre></td>
-                                        <td data-label="Description">Hyperlink text decorator</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-size-small</code></pre></td>
-                                        <td data-label="Description">Hyperlink small font size variation</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-family-small</code></pre></td>
-                                        <td data-label="Description">Hyperlink small font family variation</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-font-weight-small</code></pre></td>
-                                        <td data-label="Description">Hyperlink small font weight</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color-active</code></pre></td>
-                                        <td data-label="Description">Hyperlink color when in an active state.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator-active</code></pre></td>
-                                        <td data-label="Description">Hyperlink text decorator in active state.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator-hover</code></pre></td>
-                                        <td data-label="Description">Hyperlink text decorator when in hover state.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-color-visited</code></pre></td>
-                                        <td data-label="Description">Hyperlink color when visited</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-hyperlink-text-decorator-visited</code></pre></td>
-                                        <td data-label="Description">Hyperlink text decorator when visited.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-radio-group-horizontal-margin</code></pre></td>
+                                        <td data-label="Description">Margin in between radio elements when arranged horizontally.</td>
                                     </tr>
                                     
                                 </tbody>

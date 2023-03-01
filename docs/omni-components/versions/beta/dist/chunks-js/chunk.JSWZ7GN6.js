@@ -44,6 +44,8 @@ import{a as c}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.G4OP6JHJ.js";
 
           height: var(--omni-pin-field-height, 100%);
           width: var(--omni-pin-field-width, 100%);
+
+          -webkit-text-security:disc;
       
         }
 
@@ -56,7 +58,7 @@ import{a as c}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.G4OP6JHJ.js";
         }
 
         .show {
-            -webkit-text-security:disc;
+            -webkit-text-security:none;
         }
 
         /* Used to not display default stepper */
@@ -84,4 +86,4 @@ import{a as c}from"./chunk.ZTJGZLZP.js";import{b as m}from"./chunk.G4OP6JHJ.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};n([l()],i.prototype,"type",2),n([p("#inputField")],i.prototype,"_inputElement",2),i=n([d("omni-pin-field")],i);export{i as a};
-//# sourceMappingURL=chunk.WB23QXE5.js.map
+//# sourceMappingURL=chunk.JSWZ7GN6.js.map

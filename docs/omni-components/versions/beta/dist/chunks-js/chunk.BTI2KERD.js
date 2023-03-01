@@ -55,7 +55,7 @@ import{a as x}from"./chunk.ZTJGZLZP.js";import{b as _}from"./chunk.G4OP6JHJ.js";
                 /* Default item container styles*/
                 .items-container {
                     box-shadow: var(--omni-select-items-container-box-shadow, 0 0 6px 0 rgba(0, 0, 0, 0.11));
-                    background-color: var(--omni-select-items-container-background-color, var(--omni-theme-background-color));
+                    background-color: var(--omni-select-items-container-background-color, var(--omni-background-color));
                     z-index: var(--omni-select-items-container-z-index, 420);
                 }
 
@@ -200,4 +200,4 @@ import{a as x}from"./chunk.ZTJGZLZP.js";import{b as _}from"./chunk.G4OP6JHJ.js";
  * Copyright 2020 Google LLC
  * SPDX-License-Identifier: BSD-3-Clause
  */
-//# sourceMappingURL=chunk.5C4B536E.js.map
+//# sourceMappingURL=chunk.BTI2KERD.js.map

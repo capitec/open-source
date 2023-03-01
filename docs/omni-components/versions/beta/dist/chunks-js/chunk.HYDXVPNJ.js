@@ -14,9 +14,9 @@ import{a as h}from"./chunk.F27L6OQP.js";import{h as m}from"./chunk.7YN44Q4N.js";
         }
 
         .container > .label {
-          color: var(--omni-label-font-color, var(--omni-font-color));
-          font-family: var(--omni-label-font-family, var(--omni-font-family));
-          font-size: var(--omni-label-font-size, var(--omni-font-size));
+          color: var(--omni-radio-label-font-color, var(--omni-font-color));
+          font-family: var(--omni-radio-label-font-family, var(--omni-font-family));
+          font-size: var(--omni-radio-label-font-size, var(--omni-font-size));
           font-weight: var(--omni-radio-label-font-weight, var(--omni-font-weight));
           line-height: var(--omni-radio-label-line-height, 20px);
 
@@ -130,4 +130,4 @@ import{a as h}from"./chunk.F27L6OQP.js";import{h as m}from"./chunk.7YN44Q4N.js";
         </label>
       </div>
     `}};e([n({type:String,reflect:!0})],r.prototype,"label",2),e([n({type:Object,reflect:!0})],r.prototype,"data",2),e([n({type:String,reflect:!0})],r.prototype,"hint",2),e([n({type:String,reflect:!0})],r.prototype,"error",2),e([n({type:Boolean,reflect:!0})],r.prototype,"checked",2),e([n({type:Boolean,reflect:!0})],r.prototype,"disabled",2),r=e([s("omni-radio")],r);export{r as a};
-//# sourceMappingURL=chunk.XEXWKYM7.js.map
+//# sourceMappingURL=chunk.HYDXVPNJ.js.map

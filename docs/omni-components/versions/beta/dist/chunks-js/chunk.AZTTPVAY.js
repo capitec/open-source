@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.7YN44Q4N.js";import{a as l,b as o}from"./chunk.CHYIO324.js";import{a as n,b as a}from"./chunk.CIM3NS6G.js";import{j as t,l as r,o as i}from"./chunk.2ZZQBHAA.js";r();i();var e=class extends s{constructor(){super(...arguments);this.target="_self"}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._click.bind(this))}_click(m){if(this.disabled)return m.stopImmediatePropagation()}static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.7YN44Q4N.js";import{a as l,b as r}from"./chunk.CHYIO324.js";import{a as n,b as a}from"./chunk.CIM3NS6G.js";import{j as t,l as o,o as i}from"./chunk.2ZZQBHAA.js";o();i();var e=class extends s{constructor(){super(...arguments);this.target="_self"}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._click.bind(this))}_click(m){if(this.disabled)return m.stopImmediatePropagation()}static get styles(){return[super.styles,n`
                 :host {
                 display: inline-block;
                 }
@@ -23,7 +23,7 @@ import{h as s}from"./chunk.7YN44Q4N.js";import{a as l,b as o}from"./chunk.CHYIO3
 
                 :host([size='small']) .hyperlink {
                 font-size: var(--omni-hyperlink-font-size-small, 0.87em);
-                font-family: var(--omni-font-family-small, var(--omni-font-family));
+                font-family: var(--omni-hyperlink-font-family-small, var(--omni-font-family));
                 font-weight: var(--omni-hyperlink-font-weight-small, var(--omni-font-weight));
                 }
 
@@ -44,5 +44,5 @@ import{h as s}from"./chunk.7YN44Q4N.js";import{a as l,b as o}from"./chunk.CHYIO3
             <a class="hyperlink" href="${this.href?this.href:"javascript:void(0)"}" .target="${this.target}" tabindex="0">
                 ${this.label}<slot></slot>
             </a>
-        `}};t([o({type:String,reflect:!0})],e.prototype,"label",2),t([o({type:String,reflect:!0})],e.prototype,"href",2),t([o({type:String,reflect:!0})],e.prototype,"target",2),t([o({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([o({type:Boolean,reflect:!0})],e.prototype,"inline",2),t([o({type:String,reflect:!0})],e.prototype,"size",2),e=t([l("omni-hyperlink")],e);export{e as a};
-//# sourceMappingURL=chunk.QIDET22Q.js.map
+        `}};t([r({type:String,reflect:!0})],e.prototype,"label",2),t([r({type:String,reflect:!0})],e.prototype,"href",2),t([r({type:String,reflect:!0})],e.prototype,"target",2),t([r({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([r({type:Boolean,reflect:!0})],e.prototype,"inline",2),t([r({type:String,reflect:!0})],e.prototype,"size",2),e=t([l("omni-hyperlink")],e);export{e as a};
+//# sourceMappingURL=chunk.AZTTPVAY.js.map

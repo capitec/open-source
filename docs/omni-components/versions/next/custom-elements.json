@@ -1243,6 +1243,10 @@
               "name": "--omni-chip-max-height"
             },
             {
+              "description": "Component border.",
+              "name": "--omni-chip-border"
+            },
+            {
               "description": "Component border radius.",
               "name": "--omni-chip-border-radius"
             },
@@ -1291,18 +1295,6 @@
               "name": "--omni-chip-label-line-height"
             },
             {
-              "description": "Component disabled border color.",
-              "name": "--omni-chip-disabled-border-color"
-            },
-            {
-              "description": "Component disabled background color.",
-              "name": "--omni-chip-disabled-background-color"
-            },
-            {
-              "description": "Component icon left padding.",
-              "name": "--omni-chip-disabled-hover-background-color"
-            },
-            {
               "description": "Component slotted icon width.",
               "name": "--omni-chip-icon-width"
             },
@@ -1313,6 +1305,18 @@
             {
               "description": "Component close icon color.",
               "name": "--omni-chip-close-icon-color"
+            },
+            {
+              "description": "Component disabled border color.",
+              "name": "--omni-chip-disabled-border-color"
+            },
+            {
+              "description": "Component disabled background color.",
+              "name": "--omni-chip-disabled-background-color"
+            },
+            {
+              "description": "Component icon left padding.",
+              "name": "--omni-chip-disabled-hover-background-color"
             }
           ],
           "slots": [
@@ -1688,20 +1692,8 @@
               "name": "--omni-color-field-font-weight"
             },
             {
-              "description": "Color field picker height.",
-              "name": "--omni-color-field-picker-height"
-            },
-            {
-              "description": "Color field picker width.",
-              "name": "--omni-color-field-picker-width"
-            },
-            {
               "description": "Color field height.",
               "name": "--omni-color-field-height"
-            },
-            {
-              "description": "Color field width.",
-              "name": "--omni-color-field-padding"
             },
             {
               "description": "Color field min height.",
@@ -1712,8 +1704,20 @@
               "name": "--omni-color-field-min-width"
             },
             {
+              "description": "Color field width.",
+              "name": "--omni-color-field-padding"
+            },
+            {
               "description": "Color field text selection.",
               "name": "--omni-color-field-text-select"
+            },
+            {
+              "description": "Color field picker height.",
+              "name": "--omni-color-field-picker-height"
+            },
+            {
+              "description": "Color field picker width.",
+              "name": "--omni-color-field-picker-width"
             },
             {
               "description": "Color field disabled font color.",
@@ -2440,10 +2444,6 @@
               "name": "--omni-form-border-color"
             },
             {
-              "description": "Form label text align.",
-              "name": "--omni-form-label-transform-origin"
-            },
-            {
               "description": "Form label margin left.",
               "name": "--omni-form-label-margin-left"
             },
@@ -2480,10 +2480,6 @@
               "name": "--omni-form-focussed-label-transform-scale"
             },
             {
-              "description": "Form focussed label top.",
-              "name": "--omni-form-focussed-label-top"
-            },
-            {
               "description": "Form focussed label left margin.",
               "name": "--omni-form-focussed-label-margin-left"
             },
@@ -2498,6 +2494,14 @@
             {
               "description": "Form focussed label background color.",
               "name": "--omni-form-focussed-label-background-color"
+            },
+            {
+              "description": "Form focussed label left.",
+              "name": "--omni-form-focussed-label-padding-left"
+            },
+            {
+              "description": "Form focussed label right.",
+              "name": "--omni-form-focussed-label-padding-right"
             },
             {
               "description": "Form error label color.",
@@ -4596,7 +4600,7 @@
             },
             {
               "description": "Hyperlink small font family variation",
-              "name": "--omni-font-family-small"
+              "name": "--omni-hyperlink-font-family-small"
             },
             {
               "description": "Hyperlink small font weight",
@@ -8405,15 +8409,15 @@
             },
             {
               "description": "Label Font Color.",
-              "name": "--omni-label-font-color"
+              "name": "--omni-radio-label-font-color"
             },
             {
               "description": "Label Font Family.",
-              "name": "--omni-label-font-family"
+              "name": "--omni-radio-label-font-family"
             },
             {
               "description": "Label Font Size.",
-              "name": "--omni-label-font-size"
+              "name": "--omni-radio-label-font-size"
             },
             {
               "description": "Label Font Weight.",
@@ -8805,6 +8809,413 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/radio/RadioGroup.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-radio-group data-testid=\"test-radio-group\" label=\"${ifNotEmpty(args.label)}\" ?allow-deselect=\"${args['allow-deselect']}\" ?horizontal=\"${\n        args.horizontal\n    }\">\n      ${unsafeHTML(args['[Default Slot]'])}\n    </omni-radio-group>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Radio Group',\n        'allow-deselect': false,\n        horizontal: false,\n        '[Default Slot]': raw`<omni-radio label=\"One\" data-testid=\"test-radio\"></omni-radio> \n<omni-radio label=\"Two\" disabled></omni-radio> \n<omni-radio label=\"Three\"></omni-radio>`\n    },\n    play: async (context) => {\n        const radioGroup = within(context.canvasElement).getByTestId<RadioGroup>('test-radio-group');\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        radioGroup.focus();\n\n        const content = radio.shadowRoot?.getElementById('content') as HTMLElement;\n        if (radio.checked) {\n            await userEvent.click(content, {\n                pointerEventsCheck: 0\n            });\n        }\n\n        const radioChangeCounter = jest.fn();\n        let selected: CheckableElement | undefined = undefined;\n        const radioChange = (e: CustomEvent<RadioChangeEventDetail>) => {\n            selected = e.detail.current;\n            radioChangeCounter();\n        };\n        radioGroup.addEventListener('radio-change', (e: Event) => radioChange(e as CustomEvent<RadioChangeEventDetail>));\n\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(radioChangeCounter).toBeCalledTimes(1);\n        await expect(selected).toBe(radio);\n\n        radioGroup.allowDeselect = true;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        radioGroup.allowDeselect = false;\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-radio-group data-testid=\"test-radio-group\" label=\"${args.label}\" >\n        <omni-radio label=\"One\" ></omni-radio> \n        <omni-radio label=\"Two\" ></omni-radio> \n        <omni-radio label=\"Three\"></omni-radio> \n    </omni-radio-group>`,\n    description: 'Set a text value to display for the component.',\n    args: {\n        label: 'Label'\n    },\n    play: async (context) => {\n        const radioGroup = within(context.canvasElement).getByTestId<RadioGroup>('test-radio-group');\n        const labelElement = radioGroup.shadowRoot?.querySelector('.label') as OmniLabel;\n        await expect(labelElement.label).toBe(context.args?.label as string);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Horizontal",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-radio-group data-testid=\"test-radio-group\" label=\"${args.label}\" ?horizontal=\"${args.horizontal}\">\n        <omni-radio label=\"One\" ></omni-radio> \n        <omni-radio label=\"Two\" ></omni-radio> \n        <omni-radio label=\"Three\"></omni-radio> \n    </omni-radio-group>`,\n    description: 'Arrange radio elements horizontally.',\n    args: {\n        label: 'Horizontal',\n        horizontal: true\n    },\n    play: async (context) => {\n        const radioGroup = within(context.canvasElement).getByTestId<RadioGroup>('test-radio-group');\n        const radiosElement = radioGroup.shadowRoot?.querySelector('.radios') as HTMLDivElement;\n        await expect(radiosElement).toHaveAttribute('data-horizontal');\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Allow_Deselect",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-radio-group data-testid=\"test-radio-group\" label=\"${args.label}\" ?allow-deselect=\"${args['allow-deselect']}\">\n        <omni-radio label=\"One\" ></omni-radio> \n        <omni-radio label=\"Two\" checked  data-testid=\"test-radio\"></omni-radio>  \n        <input type=\"radio\" id=\"native_radio_2\" />\n        <label for=\"native_radio_2\">Three</label><br>\n    </omni-radio-group>`,\n    description: 'Allow radios in the group to be deselected.',\n    args: {\n        label: 'Allow Deselect',\n        'allow-deselect': true\n    },\n    play: async (context) => {\n        const radioGroup = within(context.canvasElement).getByTestId<RadioGroup>('test-radio-group');\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        radioGroup.focus();\n\n        const content = radio.shadowRoot?.getElementById('content') as HTMLElement;\n        if (!radio.checked) {\n            await userEvent.click(content, {\n                pointerEventsCheck: 0\n            });\n        }\n\n        const radioChangeCounter = jest.fn();\n        let selected: CheckableElement | undefined = undefined;\n        let previous: CheckableElement | undefined = undefined;\n        const radioChange = (e: CustomEvent<RadioChangeEventDetail>) => {\n            selected = e.detail.current;\n            previous = e.detail.previous;\n            radioChangeCounter();\n        };\n        radioGroup.addEventListener('radio-change', (e: Event) => radioChange(e as CustomEvent<RadioChangeEventDetail>));\n\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(radioChangeCounter).toBeCalledTimes(1);\n        await expect(selected).toBeFalsy();\n        await expect(previous).toBe(radio);\n\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Native_Radio_Input",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) =>\n        html` \n            <omni-radio-group label=\"${args.label}\">\n                <omni-radio label=\"One\"></omni-radio> \n                <input type=\"radio\" id=\"native_radio\" />\n                <label for=\"native_radio\">Two</label><br>\n                <omni-switch label=\"Three\"></omni-switch> \n                <omni-radio label=\"Four\"></omni-radio> \n            </omni-radio-group>\n        `,\n    description:\n        'Grouping supports native input with type=\"radio\" as well as omni-radio (and any other element that is driven by a checked attribute).',\n    args: {\n        label: 'Group with alternate elements'\n    },\n    play: async (context) => {\n        /* Nothing to test */\n    }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/radio/RadioGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/radio/RadioGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/radio/RadioGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Horizontal",
+          "declaration": {
+            "name": "Horizontal",
+            "module": "src/radio/RadioGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Allow_Deselect",
+          "declaration": {
+            "name": "Allow_Deselect",
+            "module": "src/radio/RadioGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Native_Radio_Input",
+          "declaration": {
+            "name": "Native_Radio_Input",
+            "module": "src/radio/RadioGroup.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/radio/RadioGroup.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Control to group radio components for single selection",
+          "name": "RadioGroup",
+          "cssProperties": [
+            {
+              "description": "Label font size.",
+              "name": "--omni-radio-group-label-font-size"
+            },
+            {
+              "description": "Label font weight.",
+              "name": "--omni-radio-group-label-font-weight"
+            },
+            {
+              "description": "Label bottom margin.",
+              "name": "--omni-radio-group-label-margin-bottom"
+            },
+            {
+              "description": "Margin in between radio elements when arranged vertically.",
+              "name": "--omni-radio-group-vertical-margin"
+            },
+            {
+              "description": "Margin in between radio elements when arranged horizontally.",
+              "name": "--omni-radio-group-horizontal-margin"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Container element for slotted radio elements",
+              "name": "radios"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to manage in the radio group, typically &lt;input type=\"radio\" /&gt; and/or &lt;omni-radio&gt;&lt;/omni-radio&gt;.",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "allowDeselect",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Allow deselection of radio elements.",
+              "attribute": "allow-deselect",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "horizontal",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Arrange radio elements horizontally.",
+              "attribute": "horizontal",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object | undefined"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "_selected",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private",
+              "default": "NaN"
+            },
+            {
+              "kind": "field",
+              "name": "radios",
+              "type": {
+                "text": "CheckableElement[]"
+              },
+              "privacy": "private",
+              "default": "[]"
+            },
+            {
+              "kind": "method",
+              "name": "_uncheckElement",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "previousSelected",
+                  "type": {
+                    "text": "CheckableElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_checkElement",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "newSelected",
+                  "type": {
+                    "text": "CheckableElement"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_loadRadios"
+            },
+            {
+              "kind": "method",
+              "name": "_handleClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "radio-change",
+              "type": {
+                "text": "CustomEvent<RadioChangeEventDetail>"
+              },
+              "description": "Dispatched when a radio selection is changed."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label"
+            },
+            {
+              "name": "allow-deselect",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Allow deselection of radio elements.",
+              "fieldName": "allowDeselect",
+              "attribute": "allow-deselect"
+            },
+            {
+              "name": "horizontal",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Arrange radio elements horizontally.",
+              "fieldName": "horizontal",
+              "attribute": "horizontal"
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object | undefined"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-radio-group",
+          "import": "```js\nimport '@capitec/omni-components/radio';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RadioGroup",
+          "declaration": {
+            "name": "RadioGroup",
+            "module": "src/radio/RadioGroup.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-radio-group",
+          "declaration": {
+            "name": "RadioGroup",
+            "module": "src/radio/RadioGroup.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "CheckableElement",
+          "type": "HTMLElement & { checked: boolean | undefined }"
+        },
+        {
+          "alias": "RadioChangeEventDetail",
+          "type": "{ current?: CheckableElement; previous?: CheckableElement }"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/radio/index.ts",
       "declarations": [],
       "exports": [
@@ -8814,6 +9225,14 @@
           "declaration": {
             "name": "*",
             "package": "./Radio.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./RadioGroup.js"
           }
         }
       ]
@@ -9092,6 +9511,16 @@
             "name": "RenderElement",
             "module": "src/render-element/RenderElement.ts"
           }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "RenderResult",
+          "type": "TemplateResult | typeof nothing | HTMLElement | string"
+        },
+        {
+          "alias": "RenderFunction",
+          "type": "(...data: unknown[]) => RenderResult | Promise<RenderResult>"
         }
       ]
     },
@@ -10729,6 +11158,16 @@
             "module": "src/select/Select.ts"
           }
         }
+      ],
+      "typeAliases": [
+        {
+          "alias": "SelectTypes",
+          "type": "string[] | Record<string, unknown>[]"
+        },
+        {
+          "alias": "SelectItems",
+          "type": "SelectTypes | Promise<SelectTypes>"
+        }
       ]
     },
     {
@@ -10937,14 +11376,6 @@
               "name": "--omni-switch-track-background-color"
             },
             {
-              "description": "Track checked background color.",
-              "name": "--omni-switch-checked-track-background-color"
-            },
-            {
-              "description": "Track disabled background color.",
-              "name": "--omni-switch-disabled-track-background-color"
-            },
-            {
               "description": "Track border radius.",
               "name": "--omni-switch-track-border-radius"
             },
@@ -10965,14 +11396,6 @@
               "name": "--omni-switch-knob-background-color"
             },
             {
-              "description": "Knob checked background color.",
-              "name": "--omni-switch-checked-knob-background-color"
-            },
-            {
-              "description": "Knob disabled background color.",
-              "name": "--omni-switch-disabled-knob-background-color"
-            },
-            {
               "description": "Knob box shadow.",
               "name": "--omni-switch-knob-box-shadow"
             },
@@ -10981,8 +11404,24 @@
               "name": "--omni-switch-knob-hover-box-shadow"
             },
             {
+              "description": "Track checked background color.",
+              "name": "--omni-switch-checked-track-background-color"
+            },
+            {
               "description": "Knob checked hover box shadow.",
               "name": "--omni-switch-checked-hover-knob-box-shadow"
+            },
+            {
+              "description": "Track disabled background color.",
+              "name": "--omni-switch-disabled-track-background-color"
+            },
+            {
+              "description": "Knob checked background color.",
+              "name": "--omni-switch-checked-knob-background-color"
+            },
+            {
+              "description": "Knob disabled background color..",
+              "name": "--omni-switch-disabled-knob-background-color"
             },
             {
               "description": "Knob disabled hover box shadow.",
@@ -12155,13 +12594,37 @@
             "module": "src/utils/CodeEditor.ts"
           }
         }
+      ],
+      "typeAliases": [
+        {
+          "alias": "CodeMirrorEditorEvent",
+          "type": "{\n    editor: EditorView;\n    source: string;\n}"
+        },
+        {
+          "alias": "CodeMirrorUpdateEvent",
+          "type": "CodeMirrorEditorEvent & {\n    update: ViewUpdate;\n}"
+        },
+        {
+          "alias": "CodeMirrorSourceUpdateEvent",
+          "type": "CodeMirrorUpdateEvent & {\n    oldSource: string;\n}"
+        }
       ]
     },
     {
       "kind": "javascript-module",
       "path": "src/utils/ComponentStoryFormat.ts",
       "declarations": [],
-      "exports": []
+      "exports": [],
+      "typeAliases": [
+        {
+          "alias": "ComponentStoryFormat",
+          "type": "{\n    /**\n     * Custom render function for the story. (standard)\n     */\n    render?: (args: T) => any;\n\n    /**\n     * Suitable name for the story. (standard)\n     */\n    name?: string;\n\n    /**\n     * Suitable description for the story. (non-standard)\n     */\n    description?: string | (() => any);\n\n    /**\n     * Dynamic set of arguments for the story to execute. (standard)\n     */\n    args?: Partial<T>;\n\n    /**\n     * Test function for the story (standard)\n     */\n    play?: PlayFunction<T>;\n\n    /**\n     * Obtain original DOM source (non-standard)\n     */\n    source?: () => string;\n}"
+        },
+        {
+          "alias": "CSFIdentifier",
+          "type": "{\n    title: string;\n    component: string;\n}"
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -12473,13 +12936,29 @@
             "module": "src/utils/LivePropertyEditor.ts"
           }
         }
+      ],
+      "typeAliases": [
+        {
+          "alias": "PropertyChangeEvent",
+          "type": "{ property: string; newValue: string | number | boolean; oldValue: string | number | boolean }"
+        }
       ]
     },
     {
       "kind": "javascript-module",
       "path": "src/utils/PlayFunction.ts",
       "declarations": [],
-      "exports": []
+      "exports": [],
+      "typeAliases": [
+        {
+          "alias": "PlayFunction",
+          "type": "(context: PlayFunctionContext<T>) => Promise<void> | void"
+        },
+        {
+          "alias": "PlayFunctionContext",
+          "type": "{\n    args: T;\n    story: ComponentStoryFormat<T>;\n    canvasElement: HTMLElement;\n}"
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -12910,6 +13389,12 @@
             "name": "StoryRenderer",
             "module": "src/utils/StoryRenderer.ts"
           }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "CSSVariable",
+          "type": "{\n    control: 'text' | 'color';\n    description: string;\n    category: string;\n    subcategory: string;\n    value: string;\n    name: string;\n}"
         }
       ]
     },

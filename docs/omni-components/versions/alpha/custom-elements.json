@@ -484,6 +484,846 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/calendar/Calendar.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        locale=\"${args.locale}\"\n        .value=\"${args.value}\"\n    >       \n    </omni-calendar>\n    `,\n    name: 'Interactive',\n    args: {\n        locale: '',\n        value: ''\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        const click = jest.fn();\n        calendar.addEventListener('click', click);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Value",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        .value=\"${args.value}\"\n        >\n    </omni-calendar>\n    `,\n    name: 'Value',\n    description: 'Set the value of the Calendar component, this has to be a valid date in ISOformat',\n    args: {\n        value: isoDate\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        const click = jest.fn();\n        calendar.addEventListener('click', click);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Locale",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        locale=\"${args.locale}\"\n        >\n    </omni-calendar>\n    `,\n    name: 'Locale',\n    description: 'Set the locale of the Calendar.',\n    args: {\n        locale: 'ja-JP'\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        const click = jest.fn();\n        calendar.addEventListener('click', click);\n    }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/calendar/Calendar.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/calendar/Calendar.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Value",
+          "declaration": {
+            "name": "Value",
+            "module": "src/calendar/Calendar.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Locale",
+          "declaration": {
+            "name": "Locale",
+            "module": "src/calendar/Calendar.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/calendar/Calendar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Calendar component to set specific date.",
+          "name": "Calendar",
+          "cssProperties": [
+            {
+              "description": "Calendar container box shadow.",
+              "name": "--omni-calendar-box-shadow"
+            },
+            {
+              "description": "Calendar container border radius.",
+              "name": "--omni-calendar-border-radius"
+            },
+            {
+              "description": "Calendar container z-index.",
+              "name": "--omni-calendar-z-index"
+            },
+            {
+              "description": "Calendar control bar padding.",
+              "name": "--omni-calendar-controls-padding"
+            },
+            {
+              "description": "Calendar control bar border bottom.",
+              "name": "--omni-calendar-controls-border-bottom"
+            },
+            {
+              "description": "Calendar control bar background color.",
+              "name": "--omni-calendar-controls-background-color"
+            },
+            {
+              "description": "Calendar control bar minimum height.",
+              "name": "--omni-calendar-controls-min-height"
+            },
+            {
+              "description": "Calendar control bar control color.",
+              "name": "--omni-calendar-control-color"
+            },
+            {
+              "description": "Calendar control bar control width.",
+              "name": "--omni-calendar-control-width"
+            },
+            {
+              "description": "Calender month/year display width.",
+              "name": "--omni-calendar-control-label-width"
+            },
+            {
+              "description": "Calendar month/year display color.",
+              "name": "--omni-calendar-control-label-color"
+            },
+            {
+              "description": "Calendar month/year display font size.",
+              "name": "--omni-calendar-control-label-font-size"
+            },
+            {
+              "description": "Calendar month/year display font weight.",
+              "name": "--omni-calendar-control-label-font-weight"
+            },
+            {
+              "description": "Calendar month/year display background color.",
+              "name": "--omni-calendar-control-label-hover-background-color"
+            },
+            {
+              "description": "Calendar day grid template columns.",
+              "name": "--omni-calendar-day-grid-template-columns"
+            },
+            {
+              "description": "Calendar day grid auto rows.",
+              "name": "--omni-calendar-day-grid-auto-rows"
+            },
+            {
+              "description": "Calendar day grid padding.",
+              "name": "--omni-calendar-day-grid-padding"
+            },
+            {
+              "description": "Calendar day grid line height.",
+              "name": "--omni-calendar-day-grid-line-height"
+            },
+            {
+              "description": "Calendar day grid background color.",
+              "name": "--omni-calendar-day-grid-background-color"
+            },
+            {
+              "description": "Calendar month grid template columns.",
+              "name": "--omni-calendar-month-grid-template-columns"
+            },
+            {
+              "description": "Calendar month grid auto rows.",
+              "name": "--omni-calendar-month-grid-auto-rows"
+            },
+            {
+              "description": "Calendar month grid padding.",
+              "name": "--omni-calendar-months-grid-padding"
+            },
+            {
+              "description": "Calendar month grid background color.",
+              "name": "--omni-calendar-months-grid-background-color"
+            },
+            {
+              "description": "Calendar year grid template columns.",
+              "name": "--omni-calendar-year-grid-template-columns"
+            },
+            {
+              "description": "Calendar year grid auto rows.",
+              "name": "--omni-calendar-year-grid-auto-rows"
+            },
+            {
+              "description": "Calendar year grid padding.",
+              "name": "--omni-calendar-year-grid-padding"
+            },
+            {
+              "description": "Calendar year grid background color.",
+              "name": "--omni-calendar-year-grid-background-color"
+            },
+            {
+              "description": "Calendar month button padding.",
+              "name": "--omni-calendar-month-button-padding"
+            },
+            {
+              "description": "Calendar month button background color.",
+              "name": "--omni-calendar-month-button-background-color"
+            },
+            {
+              "description": "Calendar month button border color.",
+              "name": "--omni-calendar-month-button-border-color"
+            },
+            {
+              "description": "Calendar month button border width.",
+              "name": "--omni-calendar-month-button-border-width"
+            },
+            {
+              "description": "Calendar month button border radius.",
+              "name": "--omni-calendar-month-button-border-radius"
+            },
+            {
+              "description": "Calendar month button margin left.",
+              "name": "--omni-calendar-month-button-margin-left"
+            },
+            {
+              "description": "Calendar month button margin right.",
+              "name": "--omni-calendar-month-button-margin-right"
+            },
+            {
+              "description": "Calendar month button color",
+              "name": "--omni-calendar-month-button-color"
+            },
+            {
+              "description": "Calendar month button font family.",
+              "name": "--omni-calendar-month-button-font-family"
+            },
+            {
+              "description": "Calendar month button font size.",
+              "name": "--omni-calendar-month-button-font-size"
+            },
+            {
+              "description": "Calendar month button font weight.",
+              "name": "--omni-calendar-month-button-font-weight"
+            },
+            {
+              "description": "Calendar month button line height.",
+              "name": "--omni-calendar-month-button-line-height"
+            },
+            {
+              "description": "Calendar month selected border radius.",
+              "name": "--omni-calendar-month-button-selected-border-radius"
+            },
+            {
+              "description": "Calendar month button selected background color.",
+              "name": "--omni-calendar-month-button-selected-background-color"
+            },
+            {
+              "description": "Calendar month button selected border color.",
+              "name": "--omni-calendar-month-button-selected-border-color"
+            },
+            {
+              "description": "Calendar month selected border width.",
+              "name": "--omni-calendar-month-button-selected-border-width"
+            },
+            {
+              "description": "Calendar month selected color.",
+              "name": "--omni-calendar-month-button-selected-color"
+            },
+            {
+              "description": "Calendar month button hover background color.",
+              "name": "--omni-calendar-month-button-hover-background-color"
+            },
+            {
+              "description": "Calendar year button padding.",
+              "name": "--omni-calendar-year-button-padding"
+            },
+            {
+              "description": "Calendar year button background color.",
+              "name": "--omni-calendar-year-button-background-color"
+            },
+            {
+              "description": "Calendar year button border color.",
+              "name": "--omni-calendar-year-button-border-color"
+            },
+            {
+              "description": "Calendar year button border width.",
+              "name": "--omni-calendar-year-button-border-width"
+            },
+            {
+              "description": " Calendar year button border radius.",
+              "name": "--omni-calendar-year-button-border-radius"
+            },
+            {
+              "description": "Calendar year button margin left.",
+              "name": "--omni-calendar-year-button-margin-left"
+            },
+            {
+              "description": "Calendar year button margin right.",
+              "name": "--omni-calendar-year-button-margin-right"
+            },
+            {
+              "description": "Calendar year button color.",
+              "name": "--omni-calendar-year-button-color"
+            },
+            {
+              "description": "Calendar year button font family.",
+              "name": "--omni-calendar-year-button-font-family"
+            },
+            {
+              "description": "Calendar year button font size.",
+              "name": "--omni-calendar-year-button-font-size"
+            },
+            {
+              "description": "Calendar year button font weight.",
+              "name": "--omni-calendar-year-button-font-weight"
+            },
+            {
+              "description": "Calendar year button line height.",
+              "name": "--omni-calendar-year-button-line-height"
+            },
+            {
+              "description": "Calendar selected year button border radius.",
+              "name": "--omni-calendar-year-button-selected-border-radius"
+            },
+            {
+              "description": "Calendar selected year button background color.",
+              "name": "--omni-calendar-year-button-selected-background-color"
+            },
+            {
+              "description": "Calendar selected year button border color.",
+              "name": "--omni-calendar-year-button-selected-border-color"
+            },
+            {
+              "description": "Calendar selected year button border width.",
+              "name": "--omni-calendar-year-button-selected-border-width"
+            },
+            {
+              "description": "Calendar year button selected color.",
+              "name": "--omni-calendar-year-button-selected-color"
+            },
+            {
+              "description": "Calendar year button hover background color.",
+              "name": "--omni-calendar-year-button-hover-background-color"
+            },
+            {
+              "description": "Calendar day name font color.",
+              "name": "--omni-calendar-day-name-font-color"
+            },
+            {
+              "description": "Calendar day name font weight.",
+              "name": "--omni-calendar-day-name-font-weight"
+            },
+            {
+              "description": "Calendar day name font size.",
+              "name": "--omni-calendar-day-name-font-size"
+            },
+            {
+              "description": "Calendar day name width.",
+              "name": "--omni-calendar-day-name-width"
+            },
+            {
+              "description": "Calendar day name height.",
+              "name": "--omni-calendar-day-name-height"
+            },
+            {
+              "description": "Calendar day button width.",
+              "name": "--omni-calendar-day-button-width"
+            },
+            {
+              "description": "Calendar day button height.",
+              "name": "--omni-calendar-day-button-height"
+            },
+            {
+              "description": "Calendar day button hover background color.",
+              "name": "--omni-calendar-day-button-hover-background-color"
+            },
+            {
+              "description": "Calendar day button excluded color.",
+              "name": "--omni-calendar-day-button-excluded-font-color"
+            },
+            {
+              "description": "Calendar day button current border.",
+              "name": "--omni-calendar-day-current-button-border"
+            },
+            {
+              "description": "Calendar day button current border radius.",
+              "name": "--omni-calendar-day-current-button-border-radius"
+            },
+            {
+              "description": "Calendar day button current width.",
+              "name": "--omni-calendar-day-current-button-width"
+            },
+            {
+              "description": "Calendar day button current height.",
+              "name": "--omni-calendar-day-current-button-height"
+            },
+            {
+              "description": "Calendar day button selected color.",
+              "name": "--omni-calendar-day-selected-button-color"
+            },
+            {
+              "description": "Calendar day button selected border radius.",
+              "name": "--omni-calendar-day-selected-button-border-radius"
+            },
+            {
+              "description": "Calendar day button selected background color.",
+              "name": "--omni-calendar-day-selected-button-background-color"
+            },
+            {
+              "description": "Calendar day button selected width.",
+              "name": "--omni-calendar-day-selected-button-width"
+            },
+            {
+              "description": "Calendar day button selected height.",
+              "name": "--omni-calendar-day-selected-button-height"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultLocale",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "'en-US'"
+            },
+            {
+              "kind": "field",
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "description": "The locale used for formatting the output of the Calendar.",
+              "attribute": "locale",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The value of the Calendar component",
+              "attribute": "value",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "DateTime"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_selectedMonth",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_selectedYear",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_selectedDecade",
+              "type": {
+                "text": "number[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_showState",
+              "type": {
+                "text": "'days' | 'months' | 'years'"
+              },
+              "privacy": "private",
+              "default": "'days'"
+            },
+            {
+              "kind": "field",
+              "name": "_months",
+              "type": {
+                "text": "string[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_days",
+              "type": {
+                "text": "string[]"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_updateDateVariablesUpdate",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "_updateDateVariables"
+            },
+            {
+              "kind": "method",
+              "name": "_dateSelect",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                },
+                {
+                  "name": "date",
+                  "type": {
+                    "text": "DateTime"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_controlBarClick"
+            },
+            {
+              "kind": "method",
+              "name": "_nextClick"
+            },
+            {
+              "kind": "method",
+              "name": "_previousClick"
+            },
+            {
+              "kind": "method",
+              "name": "_yearSelect",
+              "parameters": [
+                {
+                  "name": "year",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_monthSelect",
+              "parameters": [
+                {
+                  "name": "month",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getRange",
+              "parameters": [
+                {
+                  "name": "start",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "end",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "step",
+                  "default": "1"
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_getDecadeInterval",
+              "parameters": [
+                {
+                  "name": "year",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderSelector"
+            },
+            {
+              "kind": "method",
+              "name": "_renderControlBar"
+            },
+            {
+              "kind": "method",
+              "name": "_renderDaysGrid"
+            },
+            {
+              "kind": "method",
+              "name": "_renderDayNameBar"
+            },
+            {
+              "kind": "method",
+              "name": "_renderCalendar"
+            },
+            {
+              "kind": "method",
+              "name": "_renderDays",
+              "parameters": [
+                {
+                  "name": "startDate",
+                  "type": {
+                    "text": "DateTime"
+                  }
+                },
+                {
+                  "name": "numberOfDays",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderDay",
+              "parameters": [
+                {
+                  "name": "date",
+                  "type": {
+                    "text": "DateTime"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderMonthsGrid"
+            },
+            {
+              "kind": "method",
+              "name": "_renderMonthButtons"
+            },
+            {
+              "kind": "method",
+              "name": "_renderMonthButton",
+              "parameters": [
+                {
+                  "name": "month",
+                  "type": {
+                    "text": "string"
+                  }
+                },
+                {
+                  "name": "index",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderYearsGrid"
+            },
+            {
+              "kind": "method",
+              "name": "_renderYearButtons"
+            },
+            {
+              "kind": "method",
+              "name": "_renderYearButton",
+              "parameters": [
+                {
+                  "name": "year",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "description": "The locale used for formatting the output of the Calendar.",
+              "fieldName": "locale",
+              "attribute": "locale"
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The value of the Calendar component",
+              "fieldName": "value",
+              "attribute": "value"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-calendar",
+          "import": "```js\nimport '@capitec/omni-components/calendar';\n```",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Calendar",
+          "declaration": {
+            "name": "Calendar",
+            "module": "src/calendar/Calendar.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-calendar",
+          "declaration": {
+            "name": "Calendar",
+            "module": "src/calendar/Calendar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/calendar/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/calendar/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Calendar.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/check/Check.stories.ts",
       "declarations": [
         {
@@ -2476,6 +3316,10 @@
               "name": "--omni-form-focussed-border-color"
             },
             {
+              "description": "Form focussed label disabled background color.",
+              "name": "--omni-form-focussed-label-disabled-background-color"
+            },
+            {
               "description": "Form focussed label transform scale.",
               "name": "--omni-form-focussed-label-transform-scale"
             },
@@ -3860,6 +4704,773 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/date-picker/DatePicker.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        locale: 'en-us'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot!.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        /*\n        const yearButton = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '[label=\"2020\"]');\n        await expect(yearButton).toBeTruthy();\n        await userEvent.click(yearButton as HTMLElement);*/\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        /*const monthButton = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '[label=\"Dec\"]');\n        await expect(monthButton).toBeTruthy();\n        await userEvent.click(monthButton as HTMLElement);*/\n\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot!.querySelectorAll('div.day > div.day-label')[15];\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Value",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n    >\n\n    </omni-date-picker>\n    `,\n    name: 'Value',\n    description: 'Set the current value of the Date picker component.',\n    args: {\n        label: 'Value',\n        value: isoDate\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const date = DateTime.fromISO(isoDate);\n        await expect(datePicker).toHaveValue(date.toISODate());\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Locale",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n        locale=\"${args.locale}\"\n    >\n    </omni-date-picker>\n    `,\n    name: 'Locale',\n    description: 'Set the current locale of the Date picker component.',\n    args: {\n        label: 'Locale',\n        locale: testLocale\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        //const calendar = await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '.calendar');\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n\n        await expect(controlLabel).toHaveTextContent(localDate.monthLong + ' ' + localDate.year);\n        await userEvent.click(datePicker);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Hint"
+        },
+        {
+          "kind": "variable",
+          "name": "Error_Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Prefix"
+        },
+        {
+          "kind": "variable",
+          "name": "Suffix"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Value",
+          "declaration": {
+            "name": "Value",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Locale",
+          "declaration": {
+            "name": "Locale",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Label",
+          "declaration": {
+            "name": "Label",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hint",
+          "declaration": {
+            "name": "Hint",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Error_Label",
+          "declaration": {
+            "name": "Error_Label",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Prefix",
+          "declaration": {
+            "name": "Prefix",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Suffix",
+          "declaration": {
+            "name": "Suffix",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/date-picker/DatePicker.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Control that allows you to select a specific date",
+          "name": "DatePicker",
+          "cssProperties": [
+            {
+              "description": "Date picker input text align.",
+              "name": "--omni-date-picker-text-align"
+            },
+            {
+              "description": "Date picker input font color.",
+              "name": "--omni-date-picker-font-color"
+            },
+            {
+              "description": "Date picker input font family.",
+              "name": "--omni-date-picker-font-family"
+            },
+            {
+              "description": "Date picker input font size.",
+              "name": "--omni-date-picker-font-size"
+            },
+            {
+              "description": "Date picker input font weight.",
+              "name": "--omni-date-picker-font-weight"
+            },
+            {
+              "description": "Date picker input height.",
+              "name": "--omni-date-picker-height"
+            },
+            {
+              "description": "Date picker input padding.",
+              "name": "--omni-date-picker-padding"
+            },
+            {
+              "description": "Date picker width.",
+              "name": "--omni-date-picker-width"
+            },
+            {
+              "description": "Date picker min width.",
+              "name": "--omni-date-picker-min-width"
+            },
+            {
+              "description": "Date picker disabled font color.",
+              "name": "--omni-date-picker-disabled-font-color"
+            },
+            {
+              "description": "Date picker error font color.",
+              "name": "--omni-date-picker-error-font-color"
+            },
+            {
+              "description": "Date picker control width.",
+              "name": "--omni-date-picker-control-width"
+            },
+            {
+              "description": "Date picker control hover.",
+              "name": "--omni-date-picker-control-hover-color"
+            },
+            {
+              "description": "Date picker control icon width.",
+              "name": "--omni-date-picker-control-icon-width"
+            },
+            {
+              "description": "Date picker control icon color.",
+              "name": "--omni-date-picker-control-icon-color"
+            },
+            {
+              "description": "Date picker container z-index.",
+              "name": "--omni-date-picker-container-z-index"
+            },
+            {
+              "description": "Date picker container mobile left.",
+              "name": "--omni-date-picker-mobile-picker-container-left"
+            },
+            {
+              "description": "Date picker container mobile right.",
+              "name": "--omni-date-picker-mobile-picker-container-right"
+            },
+            {
+              "description": "Date picker container mobile bottom.",
+              "name": "--omni-date-picker-mobile-picker-container-bottom"
+            },
+            {
+              "description": "Date picker container mobile box shadow.",
+              "name": "--omni-date-picker-mobile-picker-container-box-shadow"
+            },
+            {
+              "description": "Date picker container width.",
+              "name": "--omni-date-picker-container-width"
+            },
+            {
+              "description": "Date picker container top.",
+              "name": "--omni-date-picker-container-top"
+            },
+            {
+              "description": "Date picker container border bottom.",
+              "name": "--omni-date-picker-period-container-border-bottom"
+            },
+            {
+              "description": "Date picker container render bottom top.",
+              "name": "--omni-date-picker-container-render-bottom-top"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "defaultLocale",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "'en-US'"
+            },
+            {
+              "kind": "field",
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "description": "The locale used for formatting the output of the Date time picker.",
+              "attribute": "locale",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "date",
+              "type": {
+                "text": "DateTime"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_showCalendar",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_bottomOfViewport",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_isMobile",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "_dimensionsCheck"
+            },
+            {
+              "kind": "method",
+              "name": "_bottomCheck"
+            },
+            {
+              "kind": "method",
+              "name": "_mobileCheck"
+            },
+            {
+              "kind": "method",
+              "name": "_inputClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_windowClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_toggleCalendar"
+            },
+            {
+              "kind": "method",
+              "name": "_dateSelected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderContent",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderPicker",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown> | undefined"
+              },
+              "default": "null as unknown",
+              "description": "Value entered into the form component.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "data",
+              "type": {
+                "text": "object | undefined"
+              },
+              "description": "Data associated with the component.",
+              "attribute": "data",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "hint",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Hint message to assist the user.",
+              "attribute": "hint",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "error",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Error message guiding a user to correct a mistake.",
+              "attribute": "error",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "attribute": "disabled",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderPrefix",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderHint",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderError",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "CustomEvent"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "locale",
+              "type": {
+                "text": "string"
+              },
+              "description": "The locale used for formatting the output of the Date time picker.",
+              "fieldName": "locale",
+              "attribute": "locale"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown> | undefined"
+              },
+              "default": "null as unknown",
+              "description": "Value entered into the form component.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "data",
+              "type": {
+                "text": "object | undefined"
+              },
+              "description": "Data associated with the component.",
+              "fieldName": "data",
+              "attribute": "data",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "hint",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Hint message to assist the user.",
+              "fieldName": "hint",
+              "attribute": "hint",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "error",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Error message guiding a user to correct a mistake.",
+              "fieldName": "error",
+              "attribute": "error",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Indicator if the component should be disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniFormElement",
+            "module": "/src/core/OmniFormElement.js"
+          },
+          "tagName": "omni-date-picker",
+          "import": "```js\nimport '@capitec/omni-components/date-picker';\n```",
+          "customElement": true,
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DatePicker",
+          "declaration": {
+            "name": "DatePicker",
+            "module": "src/date-picker/DatePicker.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-date-picker",
+          "declaration": {
+            "name": "DatePicker",
+            "module": "src/date-picker/DatePicker.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/date-picker/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/date-picker/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./DatePicker.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/email-field/EmailField.stories.ts",
       "declarations": [
         {
@@ -5214,6 +6825,52 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/Calendar.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A calendar icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Calendar.icon.js';\n```",
+          "name": "CalenderIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-calendar-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CalenderIcon",
+          "declaration": {
+            "name": "CalenderIcon",
+            "module": "src/icons/Calendar.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-calendar-icon",
+          "declaration": {
+            "name": "CalenderIcon",
+            "module": "src/icons/Calendar.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/Check.icon.ts",
       "declarations": [
         {
@@ -5302,6 +6959,98 @@
           "declaration": {
             "name": "ChevronDownIcon",
             "module": "src/icons/ChevronDown.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/ChevronLeft.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Chevron left icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/ChevronLeft.icon.js';\n```",
+          "name": "ChevronLeftIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-chevron-left-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ChevronLeftIcon",
+          "declaration": {
+            "name": "ChevronLeftIcon",
+            "module": "src/icons/ChevronLeft.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-chevron-left-icon",
+          "declaration": {
+            "name": "ChevronLeftIcon",
+            "module": "src/icons/ChevronLeft.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/ChevronRight.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Chevron right icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/ChevronRight.icon.js';\n```",
+          "name": "ChevronRightIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-chevron-right-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ChevronRightIcon",
+          "declaration": {
+            "name": "ChevronRightIcon",
+            "module": "src/icons/ChevronRight.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-chevron-right-icon",
+          "declaration": {
+            "name": "ChevronRightIcon",
+            "module": "src/icons/ChevronRight.icon.ts"
           }
         }
       ]
@@ -10420,6 +12169,10 @@
             {
               "description": "Select control icon color.",
               "name": "--omni-select-control-icon-color"
+            },
+            {
+              "description": "Select control error icon color.",
+              "name": "--omni-select-control-icon-error-color"
             },
             {
               "description": "Select items container box shadow.",

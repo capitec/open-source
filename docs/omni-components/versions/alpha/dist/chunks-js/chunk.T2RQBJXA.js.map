@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/ChevronLeft.icon.ts"],
+  "mappings": "8KAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAA8BC,CAAe,CACvC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,SAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,wBAAwB,GAC1BJ",
+  "names": ["init_define_process_argv", "init_global", "ChevronLeftIcon", "DOMTreeElement_default", "y", "__decorateClass", "e"]
+}

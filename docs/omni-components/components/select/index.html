@@ -90,7 +90,7 @@
                     </div>
                     <div class="header-version-section">
                         <div class="header-version" id="header-version-indicator">
-                            0.4.0
+                            0.5.0
                         </div>
                         <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
@@ -221,6 +221,13 @@
              
             href="./components/radio">
                 Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radiogroup">
+                Radio Group
             </a>
         </div>
         <div class="menu-item ">
@@ -553,6 +560,37 @@
                 
                 
                 
+                
+                
+                
+                    <h2 class="component-props-table-header">Types</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="type-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-types">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">SelectTypes</td>
+                                    <td data-label="Type"><pre><code class="language-js">string[] | Record&lt;string, unknown&gt;[]</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">SelectItems</td>
+                                    <td data-label="Type"><pre><code class="language-js">SelectTypes | Promise&lt;SelectTypes&gt;</code></pre></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
                                 
                 
                 
@@ -821,11 +859,6 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-transform-origin</code></pre></td>
-                                        <td data-label="Description">Form label text align.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-margin-left</code></pre></td>
                                         <td data-label="Description">Form label margin left.</td>
                                     </tr>
@@ -871,11 +904,6 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-top</code></pre></td>
-                                        <td data-label="Description">Form focussed label top.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-margin-left</code></pre></td>
                                         <td data-label="Description">Form focussed label left margin.</td>
                                     </tr>
@@ -893,6 +921,16 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-background-color</code></pre></td>
                                         <td data-label="Description">Form focussed label background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-padding-left</code></pre></td>
+                                        <td data-label="Description">Form focussed label left.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-padding-right</code></pre></td>
+                                        <td data-label="Description">Form focussed label right.</td>
                                     </tr>
                                     
                                     <tr>

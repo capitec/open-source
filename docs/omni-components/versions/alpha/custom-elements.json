@@ -1213,8 +1213,9 @@
             {
               "name": "change",
               "type": {
-                "text": "CustomEvent"
-              }
+                "text": "CustomEvent<{}>"
+              },
+              "description": "Dispatched when a date is selected."
             }
           ],
           "attributes": [
@@ -5277,8 +5278,9 @@
             {
               "name": "change",
               "type": {
-                "text": "CustomEvent"
-              }
+                "text": "CustomEvent<{}>"
+              },
+              "description": "Dispatched when a date is selected."
             }
           ],
           "attributes": [

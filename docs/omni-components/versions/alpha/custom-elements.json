@@ -4895,6 +4895,10 @@
               "name": "--omni-date-picker-control-width"
             },
             {
+              "description": "Date picker control left border.",
+              "name": "--omni-date-picker-control-left-border"
+            },
+            {
               "description": "Date picker control hover.",
               "name": "--omni-date-picker-control-hover-color"
             },

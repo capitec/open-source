@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.ZTJGZLZP.js";import{b as v}from"./chunk.3IXMT3AC.js";import{a as o}from"./chunk.QH3OLD6N.js";import{a as p,b as h,c as n}from"./chunk.CHYIO324.js";import{a as l,b as r,d as c}from"./chunk.CIM3NS6G.js";import{j as i,l as d,o as s}from"./chunk.2ZZQBHAA.js";d();s();var t=class extends v{constructor(){super(...arguments);this.defaultLocale="en-US";this.locale=this.defaultLocale;this.date=this.value&&typeof this.value=="string"?o.fromISO(this.value).setLocale(this.locale):o.local();this._showCalendar=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._mobileCheck(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._dimensionsCheck(),window.addEventListener("resize",this._dimensionsCheck.bind(this)),window.addEventListener("scroll",this._dimensionsCheck.bind(this))}shouldUpdate(e){return e.has("value")&&(this.date=o.fromISO(this.value).setLocale(this.locale)),!0}async _dimensionsCheck(){await this._bottomCheck(),this._mobileCheck()}async _bottomCheck(){visualViewport.height-this.getBoundingClientRect().bottom<270?this._bottomOfViewport=!0:this._bottomOfViewport=!1}_mobileCheck(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}_inputClick(e){let a=this.renderRoot.querySelector("#picker-container");(!e.composedPath()||!a||!e.composedPath().includes(a))&&this._toggleCalendar()}_windowClick(e){e.composedPath()&&!e.composedPath().includes(this)&&this._showCalendar&&(this._showCalendar=!1)}_toggleCalendar(){this._showCalendar?this._showCalendar=!1:this._showCalendar=!0}_dateSelected(e){this.date=o.fromJSDate(e.detail.date),this.value=this.date.toISODate(),this.dispatchEvent(new CustomEvent("change",{detail:{date:e.detail.date,ISO:e.detail.ISO}})),this._toggleCalendar()}static get styles(){return[super.styles,l`
+import{a as v}from"./chunk.ZTJGZLZP.js";import{b as f}from"./chunk.3IXMT3AC.js";import{a as i}from"./chunk.QH3OLD6N.js";import{a}from"./chunk.F27L6OQP.js";import{a as m,b as h,c as r}from"./chunk.CHYIO324.js";import{a as c,b as n,d as p}from"./chunk.CIM3NS6G.js";import{j as o,l,o as s}from"./chunk.2ZZQBHAA.js";l();s();var t=class extends f{constructor(){super(...arguments);this.defaultLocale="en-US";this.locale=this.defaultLocale;this.date=this.value&&typeof this.value=="string"?i.fromISO(this.value).setLocale(this.locale):i.local();this._showCalendar=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._mobileCheck(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._dimensionsCheck(),window.addEventListener("resize",this._dimensionsCheck.bind(this)),window.addEventListener("scroll",this._dimensionsCheck.bind(this))}shouldUpdate(e){return e.has("value")&&(this.date=i.fromISO(this.value).setLocale(this.locale)),!0}async _dimensionsCheck(){await this._bottomCheck(),this._mobileCheck()}async _bottomCheck(){visualViewport.height-this.getBoundingClientRect().bottom<270?this._bottomOfViewport=!0:this._bottomOfViewport=!1}_mobileCheck(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}_inputClick(e){let d=this.renderRoot.querySelector("#picker-container");(!e.composedPath()||!d||!e.composedPath().includes(d))&&this._toggleCalendar()}_windowClick(e){e.composedPath()&&!e.composedPath().includes(this)&&this._showCalendar&&(this._showCalendar=!1)}_toggleCalendar(){this._showCalendar?this._showCalendar=!1:this._showCalendar=!0}_dateSelected(e){this.date=i.fromJSDate(e.detail.date),this.value=this.date.toISODate(),this.dispatchEvent(new CustomEvent("change",{detail:{date:e.detail.date,ISO:e.detail.ISO}})),this._toggleCalendar()}static get styles(){return[super.styles,c`
             /* Added to ensure that component has pointer cursor applied */
             :host {
                 cursor: pointer;
@@ -44,11 +44,21 @@ import{a as m}from"./chunk.ZTJGZLZP.js";import{b as v}from"./chunk.3IXMT3AC.js";
                 justify-content: center;
 
                 width: var(--omni-date-picker-control-width, 40px);
+                border-left: var(--omni-date-picker-control-left-border, solid 1px var(--omni-primary-color));
+            }
+
+            .control.error {
+                border-left: var(--omni-date-picker-control-left-border, solid 1px var(--omni-error-font-color));
+            }
+
+            .control.error > .control-icon {
+                fill: var(--omni-date-picker-control-icon-color, var(--omni-error-font-color));
             }
 
             .control:hover  {
                 background-color: var(--omni-date-picker-control-hover-color, var(--omni-accent-hover-color));
             }
+            
 
             .control-icon {
                 width: var(--omni-date-picker-control-icon-width, 20px);
@@ -88,22 +98,21 @@ import{a as m}from"./chunk.ZTJGZLZP.js";import{b as v}from"./chunk.3IXMT3AC.js";
                    transform: translateY(-100%);
                }
             }
-        `]}renderContent(){return r`
+        `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return n`
             <input
-                class="field"
+                class=${a(e)}
                 id="inputField"
                 type="text"
                 readonly
                 ?disabled=${this.disabled}
-                .value=${m(this.date&&this.date.isValid?this.date.toLocaleString(o.DATE_FULL):"")}
+                .value=${v(this.date&&this.date.isValid?this.date.toLocaleString(i.DATE_FULL):"")}
                 tabindex="${this.disabled?-1:0}" />
-        `}renderControl(){return r` 
-        <div class="divider"></div>
-        <div id="control" class="control">
+        `}renderControl(){let e={control:!0,disabled:this.disabled,error:this.error};return n` 
+        <div id="control" class=${a(e)}>
             <omni-calendar-icon class="control-icon"></omni-calendar-icon>
-        </div>`}renderPicker(){return this._showCalendar?r`
+        </div>`}renderPicker(){return this._showCalendar?n`
             <div id="picker-container" class="picker-container ${this._bottomOfViewport?"bottom":""}">
                 <omni-calendar id="calendar" locale=${this.locale} .value=${this.value} @change=${e=>this._dateSelected(e)}></omni-calendar>
             </div>
-        `:c}};i([h({type:String,reflect:!0})],t.prototype,"locale",2),i([n()],t.prototype,"date",2),i([n()],t.prototype,"_showCalendar",2),i([n()],t.prototype,"_bottomOfViewport",2),i([n()],t.prototype,"_isMobile",2),t=i([p("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.EPQVXRJI.js.map
+        `:p}};o([h({type:String,reflect:!0})],t.prototype,"locale",2),o([r()],t.prototype,"date",2),o([r()],t.prototype,"_showCalendar",2),o([r()],t.prototype,"_bottomOfViewport",2),o([r()],t.prototype,"_isMobile",2),t=o([m("omni-date-picker")],t);export{t as a};
+//# sourceMappingURL=chunk.EP5XDE6X.js.map

@@ -835,6 +835,22 @@
               "name": "--omni-calendar-day-button-height"
             },
             {
+              "description": "Calendar day button font size.",
+              "name": "--omni-calendar-day-button-font-size"
+            },
+            {
+              "description": "Calendar day button font weight.",
+              "name": "--omni-calendar-day-button-font-weight"
+            },
+            {
+              "description": "Calendar day button line height.",
+              "name": "--omni-calendar-day-button-line-height"
+            },
+            {
+              "description": "Calendar day button color.",
+              "name": "--omni-calendar-day-button-color"
+            },
+            {
               "description": "Calendar day button hover background color.",
               "name": "--omni-calendar-day-button-hover-background-color"
             },

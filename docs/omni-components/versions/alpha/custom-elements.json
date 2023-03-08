@@ -4072,7 +4072,7 @@
               "name": "--omni-currency-field-width"
             },
             {
-              "description": "-",
+              "description": "Currency field disabled font color.",
               "name": "--omni-currency-field-disabled-font-color"
             },
             {

@@ -14677,6 +14677,24 @@
               }
             },
             {
+              "kind": "method",
+              "name": "renderLabel",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "focusedStatic",
+                  "default": "false",
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "field",
               "name": "label",
               "type": {
@@ -14771,24 +14789,6 @@
                   "text": "typeof nothing | TemplateResult"
                 }
               },
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderLabel",
-              "privacy": "protected",
-              "parameters": [
-                {
-                  "name": "focusedStatic",
-                  "default": "false",
-                  "type": {
-                    "text": "boolean"
-                  }
-                }
-              ],
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"

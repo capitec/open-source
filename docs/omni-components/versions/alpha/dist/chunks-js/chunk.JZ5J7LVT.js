@@ -22,8 +22,6 @@ import{b}from"./chunk.Y2FJIW7X.js";import{a as v}from"./chunk.K2UMXYHA.js";impor
                     font-weight: var(--omni-select-field-font-weight, var(--omni-font-weight));
                     padding: var(--omni-select-field-padding, 10px);
 
-                    /* Added to stop the transforming of the label when the input is clicked */
-                    pointer-events: none;
                     height: var(--omni-select-field-height, 100%);
                     width: var(--omni-select-field-width, 100%);
                 }
@@ -198,5 +196,5 @@ import{b}from"./chunk.Y2FJIW7X.js";import{a as v}from"./chunk.K2UMXYHA.js";impor
             class="item ${this.value===(typeof e=="string"?e:e[this.displayField])||this.value===e?"selected":""}"
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?o` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
-        </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}};n([f("#select")],t.prototype,"_selectElement",2),n([r({type:Array,reflect:!0})],t.prototype,"items",2),n([r({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),n([r({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),n([r({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),n([r({type:Object,reflect:!1})],t.prototype,"renderItem",2),n([a()],t.prototype,"_popUp",2),n([a()],t.prototype,"_bottomOfViewport",2),n([a()],t.prototype,"_isMobile",2),t=n([p("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.YWVVTQMX.js.map
+        </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};n([f("#select")],t.prototype,"_selectElement",2),n([r({type:Array,reflect:!0})],t.prototype,"items",2),n([r({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),n([r({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),n([r({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),n([r({type:Object,reflect:!1})],t.prototype,"renderItem",2),n([a()],t.prototype,"_popUp",2),n([a()],t.prototype,"_bottomOfViewport",2),n([a()],t.prototype,"_isMobile",2),t=n([p("omni-select")],t);export{t as a};
+//# sourceMappingURL=chunk.JZ5J7LVT.js.map

@@ -1,4 +1,4 @@
-import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";import{a as i}from"./chunk.E72VBRBM.js";import{a}from"./chunk.2HYOR3YM.js";import{a as m,b as h,c as r,d as f}from"./chunk.S2K25ADN.js";import{a as s,b as n,d as p}from"./chunk.F6MIXR4E.js";import{j as o,m as l,p as c}from"./chunk.BF43NN75.js";l();c();var t=class extends u{constructor(){super(...arguments);this.defaultLocale="en-US";this.locale=this.defaultLocale;this.date=this.value&&typeof this.value=="string"?i.fromISO(this.value).setLocale(this.locale):i.local();this._showCalendar=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._mobileCheck(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._dimensionsCheck(),window.addEventListener("resize",this._dimensionsCheck.bind(this)),window.addEventListener("scroll",this._dimensionsCheck.bind(this))}shouldUpdate(e){return e.has("value")&&(this.date=i.fromISO(this.value).setLocale(this.locale)),!0}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}async _dimensionsCheck(){await this._bottomCheck(),this._mobileCheck()}async _bottomCheck(){visualViewport.height-this.getBoundingClientRect().bottom<270?this._bottomOfViewport=!0:this._bottomOfViewport=!1}_mobileCheck(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}_inputClick(e){let d=this.renderRoot.querySelector("#picker-container");(!e.composedPath()||!d||!e.composedPath().includes(d))&&this._toggleCalendar()}_windowClick(e){e.composedPath()&&!e.composedPath().includes(this)&&this._showCalendar&&(this._showCalendar=!1)}_toggleCalendar(){this._showCalendar?this._showCalendar=!1:this._showCalendar=!0}_dateSelected(e){this.date=i.fromJSDate(e.detail.date),this.value=this.date.toISODate(),this.dispatchEvent(new CustomEvent("change",{detail:{date:this.date.toJSDate()}})),this._toggleCalendar()}static get styles(){return[super.styles,s`
+import{a as f}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";import{a as i}from"./chunk.E72VBRBM.js";import{a}from"./chunk.2HYOR3YM.js";import{a as m,b as h,c as r,d as v}from"./chunk.S2K25ADN.js";import{a as s,b as n,d as p}from"./chunk.F6MIXR4E.js";import{j as o,m as d,p as c}from"./chunk.BF43NN75.js";d();c();var t=class extends u{constructor(){super(...arguments);this.defaultLocale="en-US";this.locale=this.defaultLocale;this.date=this.value&&typeof this.value=="string"?i.fromISO(this.value).setLocale(this.locale):i.local();this._showCalendar=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._mobileCheck(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._dimensionsCheck(),window.addEventListener("resize",this._dimensionsCheck.bind(this)),window.addEventListener("scroll",this._dimensionsCheck.bind(this))}shouldUpdate(e){return e.has("value")&&(this.date=i.fromISO(this.value).setLocale(this.locale)),!0}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}async _dimensionsCheck(){await this._bottomCheck(),this._mobileCheck()}async _bottomCheck(){visualViewport.height-this.getBoundingClientRect().bottom<270?this._bottomOfViewport=!0:this._bottomOfViewport=!1}_mobileCheck(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}_inputClick(e){let l=this.renderRoot.querySelector("#picker-container");(!e.composedPath()||!l||!e.composedPath().includes(l))&&this._toggleCalendar()}_windowClick(e){e.composedPath()&&!e.composedPath().includes(this)&&this._showCalendar&&(this._showCalendar=!1)}_toggleCalendar(){this._showCalendar?this._showCalendar=!1:this._showCalendar=!0}_dateSelected(e){this.date=i.fromJSDate(e.detail.date),this.value=this.date.toISODate(),this.dispatchEvent(new CustomEvent("change",{detail:{date:this.date.toJSDate()}})),this._toggleCalendar()}static get styles(){return[super.styles,s`
             /* Added to ensure that component has pointer cursor applied */
             :host {
                 cursor: pointer;
@@ -24,8 +24,7 @@ import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";
                 padding: var(--omni-date-picker-padding, 10px);
                 width: var(--omni-date-picker-width);
                 min-width: var(--omni-date-picker-min-width, 242px);
-                /* Added to stop the transforming of the label when the input is clicked
-                pointer-events: none;*/
+
                 cursor: pointer;
             }
 
@@ -111,7 +110,7 @@ import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";
                 type="text"
                 readonly
                 ?disabled=${this.disabled}
-                .value=${v(this.date&&this.date.isValid?this.date.toLocaleString(i.DATE_FULL):"")}
+                .value=${f(this.date&&this.date.isValid?this.date.toLocaleString(i.DATE_FULL):"")}
                 tabindex="${this.disabled?-1:0}" />
         `}renderControl(){let e={control:!0,disabled:this.disabled,error:this.error};return n` 
         <div id="control" class=${a(e)}>
@@ -120,5 +119,5 @@ import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";
             <div id="picker-container" class="picker-container ${this._bottomOfViewport?"bottom":""}">
                 <omni-calendar id="calendar" locale=${this.locale} .value=${this.value} @change=${e=>this._dateSelected(e)}></omni-calendar>
             </div>
-        `:p}renderLabel(){return super.renderLabel(!0)}};o([f("#inputField")],t.prototype,"_inputElement",2),o([h({type:String,reflect:!0})],t.prototype,"locale",2),o([r()],t.prototype,"date",2),o([r()],t.prototype,"_showCalendar",2),o([r()],t.prototype,"_bottomOfViewport",2),o([r()],t.prototype,"_isMobile",2),t=o([m("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.XLYQCYBD.js.map
+        `:p}renderLabel(){return super.renderLabel(!0)}};o([v("#inputField")],t.prototype,"_inputElement",2),o([h({type:String,reflect:!0})],t.prototype,"locale",2),o([r()],t.prototype,"date",2),o([r()],t.prototype,"_showCalendar",2),o([r()],t.prototype,"_bottomOfViewport",2),o([r()],t.prototype,"_isMobile",2),t=o([m("omni-date-picker")],t);export{t as a};
+//# sourceMappingURL=chunk.UVRS67NO.js.map

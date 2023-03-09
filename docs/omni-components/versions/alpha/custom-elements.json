@@ -2600,6 +2600,24 @@
             },
             {
               "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "renderContent",
               "privacy": "protected",
               "return": {
@@ -4162,6 +4180,24 @@
             },
             {
               "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_isIOS"
             },
             {
@@ -5667,6 +5703,24 @@
             },
             {
               "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_blurOnEnter",
               "parameters": [
                 {
@@ -6847,6 +6901,100 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/ArrowRight.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Arrow right icon component.",
+          "name": "ArrowRightIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-arrow-right-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/ArrowRight.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ArrowRightIcon",
+          "declaration": {
+            "name": "ArrowRightIcon",
+            "module": "src/icons/ArrowRight.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-arrow-right-icon",
+          "declaration": {
+            "name": "ArrowRightIcon",
+            "module": "src/icons/ArrowRight.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/Backspace.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Backspace icon component.",
+          "name": "BackspaceIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-backspace-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Backspace.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "BackspaceIcon",
+          "declaration": {
+            "name": "BackspaceIcon",
+            "module": "src/icons/Backspace.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-backspace-icon",
+          "declaration": {
+            "name": "BackspaceIcon",
+            "module": "src/icons/Backspace.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/Calendar.icon.ts",
       "declarations": [
         {
@@ -6887,6 +7035,147 @@
           "declaration": {
             "name": "CalenderIcon",
             "module": "src/icons/Calendar.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/CapsOff.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Caps off icon component.",
+          "name": "CapsOffIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-caps-off-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/CapsOff.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CapsOffIcon",
+          "declaration": {
+            "name": "CapsOffIcon",
+            "module": "src/icons/CapsOff.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-caps-off-icon",
+          "declaration": {
+            "name": "CapsOffIcon",
+            "module": "src/icons/CapsOff.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/CapsOn.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Caps on icon component.",
+          "name": "CapsOnIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-caps-on-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/CapsOn.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CapsOnIcon",
+          "declaration": {
+            "name": "CapsOnIcon",
+            "module": "src/icons/CapsOn.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-caps-on-icon",
+          "declaration": {
+            "name": "CapsOnIcon",
+            "module": "src/icons/CapsOn.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/CapsOnPermanent.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Permanent caps on icon component.",
+          "name": "CapsOnPermanentIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-caps-on-permanent-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/CapsOnPermanent.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CapsOnPermanentIcon",
+          "declaration": {
+            "name": "CapsOnPermanentIcon",
+            "module": "src/icons/CapsOnPermanent.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-caps-on-permanent-icon",
+          "declaration": {
+            "name": "CapsOnPermanentIcon",
+            "module": "src/icons/CapsOnPermanent.icon.ts"
           }
         }
       ]
@@ -7627,6 +7916,53 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/Next.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Next icon component.",
+          "name": "NextIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-next-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Next.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "NextIcon",
+          "declaration": {
+            "name": "NextIcon",
+            "module": "src/icons/Next.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-next-icon",
+          "declaration": {
+            "name": "NextIcon",
+            "module": "src/icons/Next.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/Plus.icon.ts",
       "declarations": [
         {
@@ -7668,6 +8004,53 @@
           "declaration": {
             "name": "PlusIcon",
             "module": "src/icons/Plus.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/icons/Previous.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Previous icon component.",
+          "name": "PreviousIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-previous-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Previous.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "PreviousIcon",
+          "declaration": {
+            "name": "PreviousIcon",
+            "module": "src/icons/Previous.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-previous-icon",
+          "declaration": {
+            "name": "PreviousIcon",
+            "module": "src/icons/Previous.icon.ts"
           }
         }
       ]
@@ -7727,6 +8110,53 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/Send.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Send icon component.",
+          "name": "SendIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-send-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Send.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SendIcon",
+          "declaration": {
+            "name": "SendIcon",
+            "module": "src/icons/Send.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-send-icon",
+          "declaration": {
+            "name": "SendIcon",
+            "module": "src/icons/Send.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/index.ts",
       "declarations": [],
       "exports": [
@@ -7735,7 +8165,63 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./ArrowRight.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Backspace.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./CapsOff.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./CapsOn.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./CapsOnPermanent.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./Check.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./ChevronDown.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Clear.icon.js"
           }
         },
         {
@@ -7807,7 +8293,1446 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./More.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Next.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./Plus.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Previous.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Search.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Send.icon.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/keyboard/Keyboard.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n\n    <!-- Add the Keyboard once to the DOM -->    \n    <omni-keyboard id=\"keyboard-interactive\" \n        attach-mode=\"${args.attachMode}\" \n        clear-label=\"${args.clearLabel}\" \n        space-label=\"${args.spaceLabel}\" \n        cta-label=\"${args.ctaLabel}\" \n        close-label=\"${args.closeLabel}\" >${args['caps-off'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-off', args['caps-off']))}` : nothing}${\n        args['caps-on'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on', args['caps-on']))}` : nothing\n    }${args['caps-on-permanent'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on-permanent', args['caps-on-permanent']))}` : nothing}${\n        args['close'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close', args['close']))}` : nothing\n    }${args['clear'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args['clear']))}` : nothing}${\n        args['backspace'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('backspace', args['backspace']))}` : nothing\n    }${args['cta-done'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-done', args['cta-done']))}` : nothing}${\n        args['cta-go'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-go', args['cta-go']))}` : nothing\n    }${args['cta-next'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-next', args['cta-next']))}` : nothing}${\n        args['cta-previous'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-previous', args['cta-previous']))}` : nothing\n    }${args['cta-search'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-search', args['cta-search']))}` : nothing}${\n        args['cta-send'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-send', args['cta-send']))}` : nothing\n    }${args['cta-enter'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-enter', args['cta-enter']))}` : nothing}\n    </omni-keyboard>\n    \n    <!-- Examples -->\n    ${\n        args.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n    \n            <omni-label type=\"subtitle\" label=\"Vanilla Element Types\"></omni-label>\n            <!-- Vanilla Element Types -->\n            <span>text</span>\n            <input type=\"text\" tabindex=\"1\" />\n            <span>tel</span>\n            <input type=\"tel\" tabindex=\"2\" />\n            <span>number</span>\n            <input type=\"number\" tabindex=\"3\" />\n            <span>email</span>\n            <input type=\"email\" tabindex=\"4\" />\n            <span>password</span>\n            <input type=\"password\" tabindex=\"5\" />\n            <span>search</span>\n            <input type=\"search\" tabindex=\"6\" />\n            <span>url</span>\n            <input type=\"url\" tabindex=\"7\" />\n            <span>textarea</span>\n            <textarea tabindex=\"8\"></textarea>\n    \n        </div>\n        `\n            : html`<span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>`\n    }\n     \n  `,\n    name: 'Interactive',\n    description: () => html`\n            <style>\n                .desc-line-item {                    \n                    display: inline-flex;\n                    flex-direction: row;\n                    align-items: center;\n                }\n\n                .desc-line-item > strong {\n                    white-space: nowrap;\n                }\n                \n                .keyboard-showcase {            \n                    display: flex;\n                    flex-direction: column;\n                    justify-content: center;\n                    align-items: stretch;\n                }\n\n                .keyboard-showcase > * {\n                    margin: 10px;\n                }\n\n                .center-inline {\n                    height: 100%;\n                    display: inline-flex;\n                    align-items: center;\n                }\n\n                .example-icon-preview {\n                    flex-direction: row !important;\n                    width: 20px;\n                    height: 20px;\n                    display: inline-flex !important;\n                    color: var(--omni-theme-primary-color);\n                    fill: currentColor;\n                }\n            </style>\n            <span>The Keyboard supports <strong>input</strong> and <strong>textarea</strong> elements as well as custom web components that internally utilise those elements.</span>\n        `,\n    args: {\n        clearLabel: 'Clear',\n        ctaLabel: 'Enter',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        attachMode: 'all',\n        'caps-off': raw`<omni-caps-off-icon style=\"display: inherit;\"></omni-caps-off-icon>`,\n        'caps-on': raw`<omni-caps-on-icon style=\"display: inherit;\"></omni-caps-on-icon>`,\n        'caps-on-permanent': raw`<omni-caps-on-permanent-icon style=\"display: inherit;\"></omni-caps-on-permanent-icon>`,\n        'cta-done': raw`<omni-check-icon style=\"display: inherit;\"></omni-check-icon>`,\n        'cta-enter': '',\n        'cta-go': raw`<omni-arrow-right-icon style=\"display: inherit;\"></omni-arrow-right-icon>`,\n        'cta-next': raw`<omni-next-icon style=\"display: inherit;\"></omni-next-icon>`,\n        'cta-previous': raw`<omni-previous-icon style=\"display: inherit;\"></omni-previous-icon>`,\n        'cta-search': raw`<omni-search-icon style=\"display: inherit;\"></omni-search-icon>`,\n        'cta-send': raw`<omni-send-icon style=\"display: inherit;\"></omni-send-icon>`,\n        backspace: raw`<omni-backspace-icon style=\"display: inherit;\"></omni-backspace-icon>`,\n        clear: '',\n        close: raw`<omni-chevron-down-icon style=\"display: inherit;\"></omni-chevron-down-icon>`\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Input_Modes",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard will react accordingly to the '<strong>inputmode</strong>' attribute on supported inputs.</span>\n        \n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Input Modes\"></omni-label>\n            <!-- Vanilla Input Modes -->\n            <span>input with type=\"text\" and inputmode=\"numeric\"</span>\n            <input type=\"text\" inputmode=\"numeric\" tabindex=\"9\" />\n            <span>input with type=\"text\" and inputmode=\"decimal\"</span>\n            <input type=\"text\" inputmode=\"decimal\" tabindex=\"10\" />\n            <span>input with type=\"text\" and inputmode=\"tel\"</span>\n            <input type=\"text\" inputmode=\"tel\" tabindex=\"11\" />\n            <span>input with type=\"password\" and inputmode=\"numeric\" </span>\n            <input type=\"password\" inputmode=\"numeric\" tabindex=\"12\" />\n            <span>input with type=\"search\" and inputmode=\"numeric\"</span>\n            <input type=\"search\" inputmode=\"numeric\" tabindex=\"13\" />\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Input Modes'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Masked_Values",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard supports masking of the input value on the display preview.</span>\n    <span>Masking will apply to the following:\n        <ul>\n            <li><strong>input</strong> elements with the '<strong>type</strong>' attribute set to '<strong>password</strong>'.</li>\n            <li>Any elements with the '<strong>data-omni-keyboard-mask</strong>' attribute .</li>\n            <li>Any supported web component with the '<strong>type</strong>' attribute set to '<strong>password</strong>' on their internal <strong>input</strong> elements.</li>\n            <li>Any supported web component utilising '<strong>data-omni-keyboard-mask</strong>' on their internal <strong>input</strong> elements.</li>\n        </ul>\n    </span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Masked Values\"></omni-label>\n            <!-- Masked Values -->\n            <span>input with type=\"password\"</span>\n            <input type=\"password\" tabindex=\"14\" value=\"Mask This\" />\n            <span>input with type=\"text\" and data-omni-keyboard-mask attribute</span>\n            <input type=\"text\" data-omni-keyboard-mask tabindex=\"15\" value=\"Mask This\" />\n            <span>omni-password-field (Utilises type=\"password\" internally)</span>\n            <omni-password-field tabindex=\"16\" value=\"Mask This\"></omni-password-field>\n            <span>omni-pin-field (Utilises data-omni-keyboard-mask internally)</span>\n            <omni-pin-field tabindex=\"17\" value=\"1234\"></omni-pin-field>\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Masked Values'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Web_Components",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard supports custom web components that internally utilises <strong>input</strong> or <strong>textarea</strong> elements.</span>\n    <br/>\n    <span>All Omni Components input fields are fully supported.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n\n            <omni-label type=\"subtitle\" label=\"Omni Component Input Fields\"></omni-label>\n            <!-- Omni Component Input Fields -->\n            <omni-currency-field thousands-separator=\",\" label=\"Currency Field\"  tabindex=\"18\"></omni-currency-field>\n            <omni-email-field label=\"Email Field\"  tabindex=\"19\"></omni-email-field>\n            <omni-number-field label=\"Number Field\"  tabindex=\"20\"></omni-number-field>\n            <omni-password-field label=\"Password Field\" tabindex=\"21\"></omni-password-field>\n            <omni-pin-field label=\"Pin Field\" tabindex=\"22\"></omni-pin-field>\n            <omni-search-field label=\"Search Field\" tabindex=\"23\"></omni-search-field>\n            <omni-text-field label=\"Text Field\" tabindex=\"24\"></omni-text-field>\n\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Web Components'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Enter_Key_Hint_Variations",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>enterkeyhint</strong>' attribute is set on a supported input, the Keyboard's call to action button will react to it accordingly.</span>\n    <br/>\n    <span>The '<strong>enterkeyhint</strong>' attribute is supported as follows:\n        <ul>\n            <li><strong>enter</strong> (Default) - The '<strong>cta-enter</strong>' slot will apply to the call to action button. If not provided, the value defined with the '<strong>cta-label</strong>' attribute on the keyboard will be displayed on the call to action button.</li>\n            <li><strong>go</strong> - The '<strong>cta-go</strong>' slot will apply to the call to action button. If not provided, a right arrow icon <omni-arrow-right-icon class=\"example-icon-preview\"></omni-arrow-right-icon> will be displayed by default.</li>\n            <li><strong>done</strong> - The '<strong>cta-done</strong>' slot will apply to the call to action button. If not provided, a checkmark icon <omni-check-icon class=\"example-icon-preview\"></omni-check-icon> will be displayed by default.</li>\n            <li><strong>next</strong> - The '<strong>cta-next</strong>' slot will apply to the call to action button. If not provided, an icon of a right arrow within a circle <omni-next-icon class=\"example-icon-preview\"></omni-next-icon> will be displayed by default.</li>\n            <li><strong>previous</strong> - The '<strong>cta-previous</strong>' slot will apply to the call to action button. If not provided, an icon of a left arrow within a circle <omni-previous-icon class=\"example-icon-preview\"></omni-previous-icon> will be displayed by default. The Keyboard's default behaviour of focusing the next '<strong>tabIndex</strong>' will also reverse to focus the previous instead.</li>\n            <li><strong>search</strong> - The '<strong>cta-search</strong>' slot will apply to the call to action button. If not provided, a magnifying glass icon <omni-search-icon class=\"example-icon-preview\"></omni-search-icon> will be displayed by default.</li>\n            <li><strong>send</strong> - The '<strong>cta-send</strong>' slot will apply to the call to action button. If not provided, a paper plane icon <omni-send-icon class=\"example-icon-preview\"></omni-send-icon> will be displayed by default.</li>\n        </ul>\n    </span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Enter Key Variations\"></omni-label>\n            <!-- Enter Key Variations -->\n            <span>input with type=\"text\" and enterkeyhint=\"enter\"</span>\n            <input type=\"text\" enterkeyhint=\"enter\" tabindex=\"25\" />\n            <span>input with type=\"text\" and enterkeyhint=\"go\"</span>\n            <input type=\"text\" enterkeyhint=\"go\" tabindex=\"26\" />\n            <span>input with type=\"number\" and enterkeyhint=\"go\"</span>\n            <input type=\"number\" enterkeyhint=\"go\" tabindex=\"27\" />\n            <span>input with type=\"text\" and enterkeyhint=\"done\"</span>\n            <input type=\"text\" enterkeyhint=\"done\" tabindex=\"28\" />\n            <span>input with type=\"number\" and enterkeyhint=\"done\"</span>\n            <input type=\"number\" enterkeyhint=\"done\" tabindex=\"29\" />\n            <span>input with type=\"text\" and enterkeyhint=\"next\"</span>\n            <input type=\"text\" enterkeyhint=\"next\" tabindex=\"30\" />\n            <span>input with type=\"number\" and enterkeyhint=\"next\"</span>\n            <input type=\"number\" enterkeyhint=\"next\" tabindex=\"31\" />\n            <span>input with type=\"text\" and enterkeyhint=\"previous\"</span>\n            <input type=\"text\" enterkeyhint=\"previous\" tabindex=\"32\" />\n            <span>input with type=\"number\" and enterkeyhint=\"previous\"</span>\n            <input type=\"number\" enterkeyhint=\"previous\" tabindex=\"33\" />\n            <span>input with type=\"text\" and enterkeyhint=\"search\"</span>\n            <input type=\"text\" enterkeyhint=\"search\" tabindex=\"34\" />\n            <span>input with type=\"number\" and enterkeyhint=\"search\"</span>\n            <input type=\"number\" enterkeyhint=\"search\" tabindex=\"35\" />\n            <span>input with type=\"text\" and enterkeyhint=\"send\"</span>\n            <input type=\"text\" enterkeyhint=\"send\" tabindex=\"36\" />\n            <span>input with type=\"number\" and enterkeyhint=\"send\"</span>\n            <input type=\"number\" enterkeyhint=\"send\" tabindex=\"37\" />\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Enter Key Hint Variations'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Hide_Keyboard",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>data-omni-keyboard-hidden</strong>' attribute is set on a supported input, the Keyboard will not apply to that input.</span>\n    \n    `,\n    render: (args: Args) => html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Hide Keyboard\"></omni-label>\n            <!-- Hide Keyboard -->\n            <span>input with type=\"text\" and data-omni-keyboard-hidden</span>\n            <input data-omni-keyboard-hidden type=\"text\" tabindex=\"38\" />\n            <span>input with type=\"text\" and inputmode=\"none\"</span>\n            <input type=\"text\" inputmode=\"none\" tabindex=\"39\" />\n            <span>input with type=\"text\", data-omni-keyboard-hidden and inputmode=\"none\"</span>\n            <input data-omni-keyboard-hidden type=\"text\" inputmode=\"none\" tabindex=\"40\" />\n        </div>  \n  `,\n    name: 'Hide Keyboard'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Hide_Display_Value",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>data-omni-keyboard-no-display</strong>' attribute is set on a supported input, the display preview on the Keyboard header will not be visible.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n    <div class=\"keyboard-showcase\">\n        <omni-label type=\"subtitle\" label=\"Hide Display Value\"></omni-label>\n        <!-- Hide Display Value -->\n        <span>input with type=\"text\" with a value and no data-omni-keyboard-no-display attribute</span>\n        <input  value=\"Some Value\" type=\"text\" tabindex=\"41\" />\n        <span>input with type=\"text\" with a value and data-omni-keyboard-no-display attribute</span>\n        <input data-omni-keyboard-no-display  value=\"Some Value\" type=\"text\" tabindex=\"42\" />\n    </div>  \n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Hide Display Value'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Attach_By_Attribute",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>attach-mode</strong>' attribute is set to '<strong>attribute</strong>' on the Keyboard, then the Keyboard will only react to supported inputs with the '<strong>data-omni-keyboard-attach</strong>' attribute without a value.</span>\n    `,\n    source: () => getSourceFromLit(attachByAttribute),\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'attribute'\n            ? attachByAttribute\n            : html`\n        <div class=\"keyboard-showcase\">\n            <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>attribute</strong>'.</span>\n            <omni-button @click=\"${() => {\n                Interactive.args!.attachMode = 'attribute';\n                document.dispatchEvent(\n                    new CustomEvent('story-renderer-interactive-update', {\n                        bubbles: true,\n                        composed: true\n                    })\n                );\n            }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>attribute</strong></span></omni-button>\n        </div>\n        `,\n    name: 'Attach By Attribute'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Attach_By_Id",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>attach-mode</strong>' attribute is set to '<strong>id</strong>' on the Keyboard, then the Keyboard will only react to supported inputs with the '<strong>data-omni-keyboard-attach</strong>' attribute set equal to the Keyboard id.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'id'\n            ? attachById\n            : html`\n    <div class=\"keyboard-showcase\">\n    <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>id</strong>'.</span>\n        <omni-button @click=\"${() => {\n            Interactive.args!.attachMode = 'id';\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>id</strong></span></omni-button>\n    </div>\n    `,\n    source: () => getSourceFromLit(attachById),\n    name: 'Attach By Id'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Slotted_Content",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n\n    <!-- Add the Keyboard with slots to the DOM -->    \n    <omni-keyboard id=\"keyboard-slots\" \n        attach-mode=\"${args.attachMode}\" \n        clear-label=\"${args.clearLabel}\" \n        space-label=\"${args.spaceLabel}\" \n        cta-label=\"${args.ctaLabel}\" \n        close-label=\"${args.closeLabel}\" >${args['caps-off'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-off', args['caps-off']))}` : nothing}${\n        args['caps-on'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on', args['caps-on']))}` : nothing\n    }${args['caps-on-permanent'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on-permanent', args['caps-on-permanent']))}` : nothing}${\n        args['close'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close', args['close']))}` : nothing\n    }${args['clear'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args['clear']))}` : nothing}${\n        args['backspace'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('backspace', args['backspace']))}` : nothing\n    }${args['cta-done'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-done', args['cta-done']))}` : nothing}${\n        args['cta-go'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-go', args['cta-go']))}` : nothing\n    }${args['cta-next'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-next', args['cta-next']))}` : nothing}${\n        args['cta-previous'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-previous', args['cta-previous']))}` : nothing\n    }${args['cta-search'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-search', args['cta-search']))}` : nothing}${\n        args['cta-send'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-send', args['cta-send']))}` : nothing\n    }${args['cta-enter'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('cta-enter', args['cta-enter']))}` : nothing}\n    </omni-keyboard>\n\n\n    <div class=\"keyboard-showcase\">\n\n        <omni-label type=\"subtitle\" label=\"Slotted Enter Key Variations\"></omni-label>\n        <!-- Enter Key Variations -->\n        <span>input with type=\"text\" and enterkeyhint=\"enter\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"enter\" tabindex=\"48\" />\n        <span>input with type=\"text\" and enterkeyhint=\"go\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"go\" tabindex=\"49\" />\n        <span>input with type=\"number\" and enterkeyhint=\"go\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"go\" tabindex=\"50\" />\n        <span>input with type=\"text\" and enterkeyhint=\"done\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"done\" tabindex=\"51\" />\n        <span>input with type=\"number\" and enterkeyhint=\"done\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"done\" tabindex=\"52\" />\n        <span>input with type=\"text\" and enterkeyhint=\"next\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"next\" tabindex=\"53\" />\n        <span>input with type=\"number\" and enterkeyhint=\"next\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"next\" tabindex=\"54\" />\n        <span>input with type=\"text\" and enterkeyhint=\"previous\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"previous\" tabindex=\"55\" />\n        <span>input with type=\"number\" and enterkeyhint=\"previous\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"previous\" tabindex=\"56\" />\n        <span>input with type=\"text\" and enterkeyhint=\"search\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"search\" tabindex=\"57\" />\n        <span>input with type=\"number\" and enterkeyhint=\"search\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"search\" tabindex=\"58\" />\n        <span>input with type=\"text\" and enterkeyhint=\"send\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"send\" tabindex=\"59\" />\n        <span>input with type=\"number\" and enterkeyhint=\"send\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"send\" tabindex=\"60\" />\n\n    </div>\n\n  `,\n    name: 'Slotted Content',\n    args: {\n        clearLabel: 'Clear',\n        ctaLabel: 'Enter',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        attachMode: 'id',\n        'caps-off': raw`<span class=\"center-inline\">lower</span>`,\n        'caps-on': raw`<span class=\"center-inline\">upper</span>`,\n        'caps-on-permanent': raw`<span class=\"center-inline\">UPPER</span>`,\n        'cta-done': raw`<span class=\"center-inline\">Done</span>`,\n        'cta-enter': raw`<span class=\"center-inline\">↵</span>`,\n        'cta-go': raw`<span class=\"center-inline\">Go</span>`,\n        'cta-next': raw`<span class=\"center-inline\">→</span>`,\n        'cta-previous': raw`<span class=\"center-inline\">←</span>`,\n        'cta-search': raw`<span class=\"center-inline\">Search</span>`,\n        'cta-send': raw`<span class=\"center-inline\">Send</span>`,\n        backspace: raw`<span class=\"center-inline\">⌫</span>`,\n        clear: raw`<span class=\"center-inline\">(X)</span>`,\n        close: raw`<span class=\"center-inline\">^</span>`\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Via_Script",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => {\n        const id = 'keyboard-script-generated';\n        if (!document.getElementById(id)) {\n            Keyboard.create({\n                id: id,\n                attachMode: args.attachMode,\n                clearLabel: args.clearLabel,\n                ctaLabel: args.ctaLabel,\n                closeLabel: args.closeLabel,\n                spaceLabel: args.spaceLabel,\n                backspace: () => {\n                    const elm = document.createElement('span');\n                    elm.textContent = '⌫';\n                    elm.style.height = '100%';\n                    elm.style.display = 'inline-flex';\n                    elm.style.alignItems = 'center';\n                    let color = elm.style.color;\n                    elm.addEventListener('mouseenter', () => {\n                        color = elm.style.color;\n                        elm.style.color = 'lightgreen';\n                    });\n                    elm.addEventListener('mouseleave', () => {\n                        elm.style.color = color;\n                    });\n\n                    return elm;\n                }\n            });\n        }\n        return html`\n            <input data-omni-keyboard-attach=\"keyboard-script-generated\"  type=\"text\" tabindex=\"61\" />\n        `;\n    },\n    name: 'Via Script',\n    args: {\n        attachMode: 'id',\n        clearLabel: 'Clear',\n        ctaLabel: '↵',\n        closeLabel: 'Close',\n        spaceLabel: 'Space'\n    },\n    source: () => raw`\n<!-- Add an input that targets the keyboard id created from script -->\n<input data-omni-keyboard-attach=\"keyboard-script-generated\"  type=\"text\" tabindex=\"61\" />\n\n<!-- A script that creates a keyboard to its default parent container (document.body) with some custom button labels including a custom backspace via render function -->\n<script defer>\n    Keyboard.create({\n        id: 'keyboard-script-generated',\n        attachMode: 'id',\n        clearLabel: 'Clear',\n        ctaLabel: '↵',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        backspace: () => {\n            const elm = document.createElement('span');\n            elm.textContent = '⌫';\n            elm.style.height = '100%';\n            elm.style.display = 'inline-flex';\n            elm.style.alignItems = 'center';\n            let color = elm.style.color;\n            elm.addEventListener('mouseenter', () => {\n                color = elm.style.color;\n                elm.style.color = 'lightgreen';\n            })\n            elm.addEventListener('mouseleave', () => {\n                elm.style.color = color;\n            })\n\n            return elm;\n        }\n    });\n</script>\n    `\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Input_Modes",
+          "declaration": {
+            "name": "Input_Modes",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Masked_Values",
+          "declaration": {
+            "name": "Masked_Values",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Web_Components",
+          "declaration": {
+            "name": "Web_Components",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Enter_Key_Hint_Variations",
+          "declaration": {
+            "name": "Enter_Key_Hint_Variations",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hide_Keyboard",
+          "declaration": {
+            "name": "Hide_Keyboard",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hide_Display_Value",
+          "declaration": {
+            "name": "Hide_Display_Value",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Attach_By_Attribute",
+          "declaration": {
+            "name": "Attach_By_Attribute",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Attach_By_Id",
+          "declaration": {
+            "name": "Attach_By_Id",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Slotted_Content",
+          "declaration": {
+            "name": "Slotted_Content",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Via_Script",
+          "declaration": {
+            "name": "Via_Script",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/keyboard/Keyboard.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An on-screen keyboard control component.",
+          "name": "Keyboard",
+          "cssProperties": [
+            {
+              "description": "Max height for slotted content in keyboard buttons.",
+              "name": "--omni-keyboard-button-icon-max-height"
+            },
+            {
+              "description": "Max width for slotted content in keyboard buttons.",
+              "name": "--omni-keyboard-button-icon-max-width"
+            },
+            {
+              "description": "Font family for text in keyboard buttons.",
+              "name": "--omni-keyboard-button-font-family"
+            },
+            {
+              "description": "Font color for text in keyboard buttons.",
+              "name": "--omni-keyboard-button-font-color"
+            },
+            {
+              "description": "Font size for text in keyboard buttons.",
+              "name": "--omni-keyboard-button-font-size"
+            },
+            {
+              "description": "Background color for keyboard buttons.",
+              "name": "--omni-keyboard-button-background-color"
+            },
+            {
+              "description": "Border for keyboard buttons.",
+              "name": "--omni-keyboard-button-border"
+            },
+            {
+              "description": "Margin for keyboard buttons.",
+              "name": "--omni-keyboard-button-margin"
+            },
+            {
+              "description": "Font weight for text in keyboard buttons.",
+              "name": "--omni-keyboard-button-font-weight"
+            },
+            {
+              "description": "Height for keyboard buttons.",
+              "name": "--omni-keyboard-button-height"
+            },
+            {
+              "description": "Width for keyboard buttons.",
+              "name": "--omni-keyboard-button-width"
+            },
+            {
+              "description": "Line height for keyboard buttons.",
+              "name": "--omni-keyboard-button-line-height"
+            },
+            {
+              "description": "Border radius for keyboard buttons.",
+              "name": "--omni-keyboard-button-border-radius"
+            },
+            {
+              "description": "Margin for keyboard buttons in mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-margin"
+            },
+            {
+              "description": "Height for keyboard buttons in mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-height"
+            },
+            {
+              "description": "Width for keyboard buttons in mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-width"
+            },
+            {
+              "description": "Width for return keyboard buttons in mobile viewports.",
+              "name": "--omni-return-keyboard-button-mobile-width"
+            },
+            {
+              "description": "Width for numeric keyboard buttons in mobile viewports.",
+              "name": "--omni-numeric-keyboard-button-mobile-width"
+            },
+            {
+              "description": "Height for keyboard buttons in small mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-small-height"
+            },
+            {
+              "description": "Width for keyboard buttons in small mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-small-width"
+            },
+            {
+              "description": "Font size for text in keyboard buttons in small mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-small-font-size"
+            },
+            {
+              "description": "Border radius for keyboard buttons in small mobile viewports.",
+              "name": "--omni-keyboard-button-mobile-small-border-radius"
+            },
+            {
+              "description": "Width for return keyboard buttons in small mobile viewports.",
+              "name": "--omni-return-keyboard-button-mobile-small-width"
+            },
+            {
+              "description": "Width for numeric keyboard buttons in small mobile viewports.",
+              "name": "--omni-numeric-keyboard-button-mobile-small-width"
+            },
+            {
+              "description": "Border radius for keyboard shadow.",
+              "name": "--omni-keyboard-shadow-border-radius"
+            },
+            {
+              "description": "Bottom padding for keyboard shadow.",
+              "name": "--omni-keyboard-shadow-padding-bottom"
+            },
+            {
+              "description": "Background color for keyboard shadow.",
+              "name": "--omni-keyboard-shadow-background-color"
+            },
+            {
+              "description": "Width for keyboard top bar.",
+              "name": "--omni-keyboard-top-bar-width"
+            },
+            {
+              "description": "Left padding for keyboard top bar.",
+              "name": "--omni-keyboard-top-bar-padding-left"
+            },
+            {
+              "description": "Right padding for keyboard top bar.",
+              "name": "--omni-keyboard-top-bar-padding-right"
+            },
+            {
+              "description": "Background color for keyboard top bar.",
+              "name": "--omni-keyboard-top-bar-background-color"
+            },
+            {
+              "description": "Border radius for keyboard top bar.",
+              "name": "--omni-keyboard-top-bar-border-radius"
+            },
+            {
+              "description": "Border bottom color for keyboard top bar.",
+              "name": "--omni-keyboard-top-bar-border-bottom-color"
+            },
+            {
+              "description": "Width for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-width"
+            },
+            {
+              "description": "Max width for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-max-width"
+            },
+            {
+              "description": "Font or icon colour for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-color"
+            },
+            {
+              "description": "Background colour for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-background-color"
+            },
+            {
+              "description": "Font size for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-font-size"
+            },
+            {
+              "description": "Font weight for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-font-weight"
+            },
+            {
+              "description": "Border radius for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-border-radius"
+            },
+            {
+              "description": "Margin for keyboard call to action button.",
+              "name": "--omni-keyboard-cta-button-margin"
+            },
+            {
+              "description": "Width for keyboard close button icon.",
+              "name": "--omni-keyboard-close-icon-width"
+            },
+            {
+              "description": "Font weight for keyboard close button.",
+              "name": "--omni-keyboard-close-button-font-weight"
+            },
+            {
+              "description": "Font colour for keyboard close button.",
+              "name": "--omni-keyboard-close-button-color"
+            },
+            {
+              "description": "Font size for keyboard close button.",
+              "name": "--omni-keyboard-close-button-font-size"
+            },
+            {
+              "description": "Width for keyboard close button area.",
+              "name": "--omni-keyboard-closer-width"
+            },
+            {
+              "description": "Right padding for keyboard close button area.",
+              "name": "--omni-keyboard-closer-padding-right"
+            },
+            {
+              "description": "Background color for keyboard.",
+              "name": "--omni-keyboard-background-color"
+            },
+            {
+              "description": "Margin for keyboard rows.",
+              "name": "--omni-keyboard-key-row-margin"
+            },
+            {
+              "description": "Width for keyboard rows.",
+              "name": "--omni-keyboard-key-row-width"
+            },
+            {
+              "description": "Top padding for first keyboard row.",
+              "name": "--omni-keyboard-row-padding-top"
+            },
+            {
+              "description": "Bottom padding for last keyboard row.",
+              "name": "--omni-keyboard-row-padding-bottom"
+            },
+            {
+              "description": "Colour for keyboard icons.",
+              "name": "--omni-keyboard-icons-color"
+            },
+            {
+              "description": "Height for keyboard top bar in mobile viewports.",
+              "name": "--omni-keyboard-top-bar-mobile-height"
+            },
+            {
+              "description": "Border radius for keyboard top bar in mobile viewports.",
+              "name": "--omni-keyboard-top-bar-mobile-border-radius"
+            },
+            {
+              "description": "Margin for keyboard rows in mobile viewports.",
+              "name": "--omni-keyboard-mobile-key-row-margin"
+            },
+            {
+              "description": "Margin for special keyboard rows in mobile viewports.",
+              "name": "--omni-keyboard-mobile-special-key-row-margin"
+            },
+            {
+              "description": "Width for keyboard rows in mobile viewports.",
+              "name": "--omni-keyboard-mobile-key-row-width"
+            },
+            {
+              "description": "Height for keyboard call to action button in mobile viewports.",
+              "name": "--omni-keyboard-mobile-cta-button-height"
+            },
+            {
+              "description": "Max width for keyboard call to action button in mobile viewports.",
+              "name": "--omni-keyboard-mobile-cta-button-max-width"
+            },
+            {
+              "description": "Margin for keyboard call to action button in mobile viewports.",
+              "name": "--omni-keyboard-mobile-cta-button-margin"
+            },
+            {
+              "description": "Width for keyboard close button icon in mobile viewports.",
+              "name": "--omni-keyboard-mobile-close-icon-width"
+            },
+            {
+              "description": "Width for keyboard close button icon in mobile viewports.",
+              "name": "--omni-keyboard-mobile-close-icon-width"
+            },
+            {
+              "description": "Margin for keyboard rows in small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-key-row-margin"
+            },
+            {
+              "description": "Margin for special keyboard rows in small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-key-row-margin"
+            },
+            {
+              "description": "Height for keyboard call to action button in small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-cta-button-height"
+            },
+            {
+              "description": "Max width for keyboard call to action button in small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-cta-button-max-width"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to display on case change button when in a lowercase state.",
+              "name": "caps-off"
+            },
+            {
+              "description": "Content to display on case change button when in a single uppercase state.",
+              "name": "caps-on"
+            },
+            {
+              "description": "Content to display on case change button when in a permanent uppercase state.",
+              "name": "caps-on-permanent"
+            },
+            {
+              "description": "Content to display next to close label.",
+              "name": "close"
+            },
+            {
+              "description": "Content to display on backspace button.",
+              "name": "backspace"
+            },
+            {
+              "description": "Content to display on clear button.",
+              "name": "clear"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"done\".",
+              "name": "cta-done"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"go\".",
+              "name": "cta-go"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"next\".",
+              "name": "cta-next"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"previous\".",
+              "name": "cta-previous"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"search\".",
+              "name": "cta-search"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"send\".",
+              "name": "cta-send"
+            },
+            {
+              "description": "Content to display on call to action button ('Enter') when target component has enterkeyhint=\"enter\" or enterkeyhint is not set.",
+              "name": "cta-enter"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "attachMode",
+              "type": {
+                "text": "'all' | 'attribute' | 'id'"
+              },
+              "default": "'all'",
+              "description": "The rule for the Keyboard to attach to inputs for showing on component focus.\n* `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n* `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute",
+              "attribute": "attach-mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "closeLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Close'",
+              "description": "The text label to display by the close button.",
+              "attribute": "close-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "spaceLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Space'",
+              "description": "The text label to display on the spacebar button.",
+              "attribute": "space-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "clearLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Clear'",
+              "description": "The text label to display on the clear button. The `clear` slot takes precedence over this label.",
+              "attribute": "clear-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "ctaLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Enter'",
+              "description": "The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=\"enter\"`. The `cta-enter` slot takes precedence over this label.",
+              "attribute": "cta-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "type": {
+                "text": "KeyboardMode"
+              },
+              "privacy": "private",
+              "default": "'none'"
+            },
+            {
+              "kind": "field",
+              "name": "currentCase",
+              "type": {
+                "text": "'lower' | 'upper' | 'upper-single'"
+              },
+              "privacy": "private",
+              "default": "'lower'"
+            },
+            {
+              "kind": "field",
+              "name": "state",
+              "type": {
+                "text": "KeyboardMode | 'special'"
+              },
+              "privacy": "private",
+              "default": "'none'"
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "type": {
+                "text": "HTMLInputElement | HTMLTextAreaElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "targetObserver",
+              "type": {
+                "text": "MutationObserver | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "targetComponent",
+              "type": {
+                "text": "HTMLElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "targetComponentObserver",
+              "type": {
+                "text": "MutationObserver | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "returnMode",
+              "type": {
+                "text": "'change-value' | 'multi-line'"
+              },
+              "privacy": "private",
+              "default": "'change-value'"
+            },
+            {
+              "kind": "field",
+              "name": "displayValue",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "displayCase",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "currentEnterKeyHint",
+              "type": {
+                "text": "EnterKeyHint"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "globalClick",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "globalFocus",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "create",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "KeyboardInit"
+                  },
+                  "description": "Initialisation context for Keyboard element that will be created."
+                }
+              ],
+              "description": "Creates a new Keyboard element with the provided context and appends it to the DOM (either to document body or to provided target parent element).",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_findNextTabIndex",
+              "return": {
+                "type": {
+                  "text": "{ element: HTMLElement; tabIndex: number } | null"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "elem",
+                  "type": {
+                    "text": "Element"
+                  }
+                },
+                {
+                  "name": "searchingElem",
+                  "type": {
+                    "text": "Element"
+                  }
+                },
+                {
+                  "name": "tidx",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "reverse",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "foundNext",
+                  "type": {
+                    "text": "{ element: HTMLElement; tabIndex: number } | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_findNextTabIndexInChildren",
+              "return": {
+                "type": {
+                  "text": "{ element: HTMLElement; tabIndex: number } | null"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "elem",
+                  "type": {
+                    "text": "Element"
+                  }
+                },
+                {
+                  "name": "searchingElem",
+                  "type": {
+                    "text": "Element"
+                  }
+                },
+                {
+                  "name": "tidx",
+                  "type": {
+                    "text": "number"
+                  }
+                },
+                {
+                  "name": "reverse",
+                  "type": {
+                    "text": "boolean"
+                  }
+                },
+                {
+                  "name": "foundNext",
+                  "type": {
+                    "text": "{ element: HTMLElement; tabIndex: number } | null"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_globalClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_globalFocus"
+            },
+            {
+              "kind": "method",
+              "name": "_toggleCase"
+            },
+            {
+              "kind": "method",
+              "name": "_toggleState"
+            },
+            {
+              "kind": "method",
+              "name": "renderCaps"
+            },
+            {
+              "kind": "method",
+              "name": "renderClose"
+            },
+            {
+              "kind": "method",
+              "name": "renderBackspace"
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "parameters": [
+                {
+                  "name": "mode",
+                  "default": "'return'",
+                  "type": {
+                    "text": "'return' | 'numeric'"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "renderCallToAction",
+              "parameters": [
+                {
+                  "name": "extraClasses",
+                  "default": "undefined",
+                  "type": {
+                    "text": "ClassInfo | undefined"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "attach-mode",
+              "type": {
+                "text": "'all' | 'attribute' | 'id'"
+              },
+              "default": "'all'",
+              "description": "The rule for the Keyboard to attach to inputs for showing on component focus.\n* `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n* `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute",
+              "fieldName": "attachMode",
+              "attribute": "attach-mode"
+            },
+            {
+              "name": "close-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Close'",
+              "description": "The text label to display by the close button.",
+              "fieldName": "closeLabel",
+              "attribute": "close-label"
+            },
+            {
+              "name": "space-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Space'",
+              "description": "The text label to display on the spacebar button.",
+              "fieldName": "spaceLabel",
+              "attribute": "space-label"
+            },
+            {
+              "name": "clear-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Clear'",
+              "description": "The text label to display on the clear button. The `clear` slot takes precedence over this label.",
+              "fieldName": "clearLabel",
+              "attribute": "clear-label"
+            },
+            {
+              "name": "cta-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Enter'",
+              "description": "The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=\"enter\"`. The `cta-enter` slot takes precedence over this label.",
+              "fieldName": "ctaLabel",
+              "attribute": "cta-label"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-keyboard",
+          "import": "```js\nimport '@capitec/omni-components/keyboard';\n```",
+          "customElement": true
+        },
+        {
+          "kind": "variable",
+          "name": "maskAttribute",
+          "type": {
+            "text": "string"
+          },
+          "default": "'data-omni-keyboard-mask'",
+          "description": "Indicates that the Keyboard display value must be masked."
+        },
+        {
+          "kind": "variable",
+          "name": "multiLineAttribute",
+          "type": {
+            "text": "string"
+          },
+          "default": "'data-omni-keyboard-multi-line'",
+          "description": "Indicates that the call to action button inserts a new line instead of default behaviour."
+        },
+        {
+          "kind": "variable",
+          "name": "hiddenAttribute",
+          "type": {
+            "text": "string"
+          },
+          "default": "'data-omni-keyboard-hidden'",
+          "description": "Disables the Keyboard for that component."
+        },
+        {
+          "kind": "variable",
+          "name": "noDisplayValueAttribute",
+          "type": {
+            "text": "string"
+          },
+          "default": "'data-omni-keyboard-no-display'",
+          "description": "Disables the Keyboard display value. Takes precedence over `data-omni-keyboard-mask`."
+        },
+        {
+          "kind": "variable",
+          "name": "attachAttribute",
+          "type": {
+            "text": "string"
+          },
+          "default": "'data-omni-keyboard-attach'",
+          "description": "Indicates that the Keyboard is enabled for that component when the Keyboard has `attach-mode=\"attribute\"`."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RenderFunction",
+          "declaration": {
+            "name": "RenderFunction",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RenderResult",
+          "declaration": {
+            "name": "RenderResult",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Keyboard",
+          "declaration": {
+            "name": "Keyboard",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-keyboard",
+          "declaration": {
+            "name": "Keyboard",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "maskAttribute",
+          "declaration": {
+            "name": "maskAttribute",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "multiLineAttribute",
+          "declaration": {
+            "name": "multiLineAttribute",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "hiddenAttribute",
+          "declaration": {
+            "name": "hiddenAttribute",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "noDisplayValueAttribute",
+          "declaration": {
+            "name": "noDisplayValueAttribute",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "attachAttribute",
+          "declaration": {
+            "name": "attachAttribute",
+            "module": "src/keyboard/Keyboard.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "InputEventTypes",
+          "type": "| 'insertText'\n    | 'insertReplacementText'\n    | 'insertLineBreak'\n    | 'insertParagraph'\n    | 'insertOrderedList'\n    | 'insertUnorderedList'\n    | 'insertHorizontalRule'\n    | 'insertFromYank'\n    | 'insertFromDrop'\n    | 'insertFromPaste'\n    | 'insertFromPasteAsQuotation'\n    | 'insertTranspose'\n    | 'insertCompositionText'\n    | 'insertLink'\n    | 'deleteWordBackward'\n    | 'deleteWordForward'\n    | 'deleteSoftLineBackward'\n    | 'deleteSoftLineForward'\n    | 'deleteEntireSoftLine'\n    | 'deleteHardLineBackward'\n    | 'deleteHardLineForward'\n    | 'deleteByDrag'\n    | 'deleteByCut'\n    | 'deleteContent'\n    | 'deleteContentBackward'\n    | 'deleteContentForward'\n    | 'historyUndo'\n    | 'historyRedo'\n    | 'formatBold'\n    | 'formatItalic'\n    | 'formatUnderline'\n    | 'formatStrikeThrough'\n    | 'formatSuperscript'\n    | 'formatSubscript'\n    | 'formatJustifyFull'\n    | 'formatJustifyCenter'\n    | 'formatJustifyRight'\n    | 'formatJustifyLeft'\n    | 'formatIndent'\n    | 'formatOutdent'\n    | 'formatRemove'\n    | 'formatSetBlockTextDirection'\n    | 'formatSetInlineTextDirection'\n    | 'formatBackColor'\n    | 'formatFontColor'\n    | 'formatFontName'"
+        },
+        {
+          "alias": "EnterKeyHint",
+          "type": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send' | undefined"
+        },
+        {
+          "alias": "KeyboardMode",
+          "type": "'numeric' | 'alpha-numeric' | 'none'"
+        },
+        {
+          "alias": "InputEventInitWithType",
+          "type": "| InputEventInit\n    | {\n          inputType: InputEventTypes;\n      }"
+        },
+        {
+          "alias": "KeyboardInit",
+          "type": "{\n    /**\n     * The id to apply to the Keyboard elements.\n     */\n    id?: string;\n\n    /**\n     * The container to append the Keyboard as child. If not provided will append to a new div element on the document body.\n     */\n    parent?: string | HTMLElement | DocumentFragment | null;\n\n    /**\n     * The rule for the Keyboard to attach to inputs for showing on component focus.\n     * * `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n     * * `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute.\n     */\n    attachMode?: 'all' | 'attribute' | 'id';\n\n    /**\n     * The text label to display by the close button.\n     */\n    closeLabel?: string;\n\n    /**\n     * The text label to display on the spacebar button.\n     */\n    spaceLabel?: string;\n\n    /**\n     * The text label to display on the clear button. The `clear` slot takes precedence over this label.\n     */\n    clearLabel?: string;\n\n    /**\n     * The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=\"enter\"`. The `cta-enter` slot takes precedence over this label.\n     */\n    ctaLabel?: string;\n\n    /**\n     * A function that returns content to render within the 'clear' slot\n     */\n    clear?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-off' slot\n     */\n    capsOff?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-on' slot\n     */\n    capsOn?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-on-permanent' slot\n     */\n    capsOnPermanent?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'backspace' slot\n     */\n    backspace?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'close' slot\n     */\n    close?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-enter' slot\n     */\n    ctaEnter?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-done' slot\n     */\n    ctaDone?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-go' slot\n     */\n    ctaGo?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-next' slot\n     */\n    ctaNext?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-previous' slot\n     */\n    ctaPrevious?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-search' slot\n     */\n    ctaSearch?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'cta-send' slot\n     */\n    ctaSend?: RenderFunction;\n}"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/keyboard/KeyboardButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "An internal keyboard button control used in the keyboard component.",
+          "name": "KeyboardButton",
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside button",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "character",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The character for the button.",
+              "attribute": "character",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "mode",
+              "type": {
+                "text": "KeyboardButtonMode"
+              },
+              "default": "'none'",
+              "description": "The mode for the button:\n- `alpha` Alphabetical mode.\n- `return` Return (Enter) mode.\n- `numeric` Numerical mode.\n- `action` Arbitrary actions mode.\n- `space` Spacebar mode.",
+              "attribute": "mode",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "case",
+              "type": {
+                "text": "'lower' | 'upper' | 'custom'"
+              },
+              "default": "'lower'",
+              "description": "The case of the button:\n- `upper` Uppercase input only.\n- `lower` Lowercase input only.",
+              "attribute": "case",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the button is disabled.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_click",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "description": "Handles component key down events."
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "keyboard-click",
+              "type": {
+                "text": "CustomEvent<{ value: string; }>"
+              },
+              "description": "Dispatched when the keyboard button is clicked."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label"
+            },
+            {
+              "name": "character",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "The character for the button.",
+              "fieldName": "character",
+              "attribute": "character"
+            },
+            {
+              "name": "mode",
+              "type": {
+                "text": "KeyboardButtonMode"
+              },
+              "default": "'none'",
+              "description": "The mode for the button:\n- `alpha` Alphabetical mode.\n- `return` Return (Enter) mode.\n- `numeric` Numerical mode.\n- `action` Arbitrary actions mode.\n- `space` Spacebar mode.",
+              "fieldName": "mode",
+              "attribute": "mode"
+            },
+            {
+              "name": "case",
+              "type": {
+                "text": "'lower' | 'upper' | 'custom'"
+              },
+              "default": "'lower'",
+              "description": "The case of the button:\n- `upper` Uppercase input only.\n- `lower` Lowercase input only.",
+              "fieldName": "case",
+              "attribute": "case"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the button is disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "import": "```js\nimport '@capitec/omni-components/keyboard';\n```",
+          "tagName": "omni-keyboard-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-keyboard-button",
+          "declaration": {
+            "name": "KeyboardButton",
+            "module": "src/keyboard/KeyboardButton.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "KeyboardButtonMode",
+          "type": "'alpha' | 'return' | 'numeric' | 'action' | 'space' | 'none'"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/keyboard/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/keyboard/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Keyboard.js"
           }
         }
       ]
@@ -8308,6 +10233,24 @@
                 "text": "HTMLInputElement | undefined"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -8981,6 +10924,24 @@
             },
             {
               "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_keyInput"
             },
             {
@@ -9623,6 +11584,24 @@
                 "text": "boolean | undefined"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -11525,6 +13504,24 @@
                 "text": "HTMLInputElement | undefined"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -13687,6 +15684,24 @@
             },
             {
               "kind": "method",
+              "name": "focus",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "FocusOptions | undefined"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_keyInput"
             },
             {
@@ -15040,24 +17055,6 @@
             },
             {
               "kind": "method",
-              "name": "_getSourceFromLit",
-              "privacy": "private",
-              "return": {
-                "type": {
-                  "text": "string"
-                }
-              },
-              "parameters": [
-                {
-                  "name": "res",
-                  "type": {
-                    "text": "TemplateResult"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "_play",
               "privacy": "private",
               "parameters": [
@@ -15101,21 +17098,16 @@
             },
             {
               "kind": "method",
-              "name": "_transformSource",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "input",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "_currentCodeTheme",
               "privacy": "private"
+            }
+          ],
+          "events": [
+            {
+              "name": "interactiveUpdate",
+              "type": {
+                "text": "CustomEvent"
+              }
             }
           ],
           "attributes": [
@@ -15460,6 +17452,18 @@
         },
         {
           "kind": "function",
+          "name": "transformFromJsdoc",
+          "parameters": [
+            {
+              "name": "jsdoc",
+              "type": {
+                "text": "string"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "raw",
           "parameters": [
             {
@@ -15552,6 +17556,35 @@
               "name": "e",
               "type": {
                 "text": "Event"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "getSourceFromLit",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          },
+          "parameters": [
+            {
+              "name": "res",
+              "type": {
+                "text": "TemplateResult"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
+          "name": "transformSource",
+          "parameters": [
+            {
+              "name": "input",
+              "type": {
+                "text": "string"
               }
             }
           ]
@@ -15744,6 +17777,14 @@
         },
         {
           "kind": "js",
+          "name": "transformFromJsdoc",
+          "declaration": {
+            "name": "transformFromJsdoc",
+            "module": "src/utils/StoryUtils.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "formatMarkdownCodeElements",
           "declaration": {
             "name": "formatMarkdownCodeElements",
@@ -15819,6 +17860,22 @@
           "name": "uploadTheme",
           "declaration": {
             "name": "uploadTheme",
+            "module": "src/utils/StoryUtils.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "transformSource",
+          "declaration": {
+            "name": "transformSource",
+            "module": "src/utils/StoryUtils.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getSourceFromLit",
+          "declaration": {
+            "name": "getSourceFromLit",
             "module": "src/utils/StoryUtils.ts"
           }
         }

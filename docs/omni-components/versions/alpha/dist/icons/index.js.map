@@ -1,6 +1,6 @@
 {
   "version": 3,
   "sources": ["../../src/icons/index.ts"],
-  "mappings": "+sBAAAA,IAAAC",
+  "mappings": "mzCAAAA,IAAAC",
   "names": ["init_define_process_argv", "init_global"]
 }

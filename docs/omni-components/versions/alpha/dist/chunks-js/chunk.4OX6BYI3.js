@@ -1,4 +1,4 @@
-import{a as c}from"./chunk.K2UMXYHA.js";import{a as m}from"./chunk.SR577AVI.js";import{a as p}from"./chunk.2HYOR3YM.js";import{a as d,c as a,d as l}from"./chunk.S2K25ADN.js";import{a as s,b as e}from"./chunk.F6MIXR4E.js";import{j as t,m as n,p as r}from"./chunk.BF43NN75.js";n();r();var o=class extends m{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(i){this._inputElement?this._inputElement.focus(i):super.focus(i)}_keyInput(){let i=this._inputElement;this.value=i==null?void 0:i.value}_iconClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",i.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as f}from"./chunk.K2UMXYHA.js";import{a as h}from"./chunk.SR577AVI.js";import{a as m}from"./chunk.E3RY574V.js";import{a as c}from"./chunk.2HYOR3YM.js";import{a as d,b as a,c as l,d as p}from"./chunk.S2K25ADN.js";import{a as s,b as t}from"./chunk.F6MIXR4E.js";import{j as i,m as n,p as r}from"./chunk.BF43NN75.js";n();r();var o=class extends h{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}_iconClicked(e){if(this.disabled)return e.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",e.stopPropagation()}static get styles(){return[super.styles,s`
         .control-box {
           display: flex;
           align-items: center;
@@ -59,17 +59,18 @@ import{a as c}from"./chunk.K2UMXYHA.js";import{a as m}from"./chunk.SR577AVI.js";
         .field.error {
             color: var(--omni-password-field-error-font-color);
         }
-      `]}renderControl(){return e`
-      <div class="control-box" @click="${i=>this._iconClicked(i)}">
-        ${this.type==="password"?e` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `:e` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `}
+      `]}renderControl(){return t`
+      <div class="control-box" @click="${e=>this._iconClicked(e)}">
+        ${this.type==="password"?t` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `:t` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `}
       </div>
-    `}renderContent(){let i={field:!0,disabled:this.disabled,error:this.error};return e`
+    `}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return t`
       <input
-        class=${p(i)}
+        class=${c(e)}
         id="inputField"
         .type="${this.type}"
-        .value=${c(this.value)}
+        inputmode="${m(this.noNativeKeyboard?"none":void 0)}"
+        .value=${f(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
-    `}};t([a()],o.prototype,"type",2),t([l("#inputField")],o.prototype,"_inputElement",2),o=t([d("omni-password-field")],o);export{o as a};
-//# sourceMappingURL=chunk.PWJ2OD7J.js.map
+    `}};i([l()],o.prototype,"type",2),i([a({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],o.prototype,"noNativeKeyboard",2),i([p("#inputField")],o.prototype,"_inputElement",2),o=i([d("omni-password-field")],o);export{o as a};
+//# sourceMappingURL=chunk.4OX6BYI3.js.map

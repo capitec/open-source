@@ -414,6 +414,13 @@
                                 key="Slotted_Content"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-alternate-modes">Alternate Modes</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Alternate_Modes"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-via-script">Via Script</div>
                             <story-renderer 
                                 path="./dist/keyboard/Keyboard.stories.js" 
@@ -454,6 +461,9 @@
                                     </a>
                                     <a href="components/keyboard/#story-slotted-content" id="story-slotted-content-a" class="item">
                                         Slotted Content
+                                    </a>
+                                    <a href="components/keyboard/#story-alternate-modes" id="story-alternate-modes-a" class="item">
+                                        Alternate Modes
                                     </a>
                                     <a href="components/keyboard/#story-via-script" id="story-via-script-a" class="item">
                                         Via Script
@@ -515,9 +525,9 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">ctaLabel</td>
-                                    <td data-label="Attribute" scope="row">cta-label&nbsp;</td>
+                                    <td data-label="Attribute" scope="row">action-label&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                    <td data-label="Description">The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint="enter"`. The `cta-enter` slot takes precedence over this label.</td>
+                                    <td data-label="Description">The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint="enter"`. The `action-enter` slot takes precedence over this label.</td>
                                 </tr>
                                 
                                 <tr>
@@ -662,7 +672,7 @@
     clearLabel?: string;
 
     /**
-     * The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=&quot;enter&quot;`. The `cta-enter` slot takes precedence over this label.
+     * The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=&quot;enter&quot;`. The `action-enter` slot takes precedence over this label.
      */
     ctaLabel?: string;
 
@@ -697,37 +707,37 @@
     close?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-enter&#39; slot
+     * A function that returns content to render within the &#39;action-enter&#39; slot
      */
     ctaEnter?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-done&#39; slot
+     * A function that returns content to render within the &#39;action-done&#39; slot
      */
     ctaDone?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-go&#39; slot
+     * A function that returns content to render within the &#39;action-go&#39; slot
      */
     ctaGo?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-next&#39; slot
+     * A function that returns content to render within the &#39;action-next&#39; slot
      */
     ctaNext?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-previous&#39; slot
+     * A function that returns content to render within the &#39;action-previous&#39; slot
      */
     ctaPrevious?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-search&#39; slot
+     * A function that returns content to render within the &#39;action-search&#39; slot
      */
     ctaSearch?: RenderFunction;
 
     /**
-     * A function that returns content to render within the &#39;cta-send&#39; slot
+     * A function that returns content to render within the &#39;action-send&#39; slot
      */
     ctaSend?: RenderFunction;
 }</code></pre></td>
@@ -790,37 +800,37 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-done</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-done</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="done".</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-go</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-go</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="go".</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-next</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-next</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="next".</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-previous</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-previous</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="previous".</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-search</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-search</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="search".</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-send</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-send</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="send".</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">cta-enter</code></pre></td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-enter</code></pre></td>
                                     <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="enter" or enterkeyhint is not set.</td>
                                 </tr>
                                 
@@ -1150,42 +1160,42 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-width</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-width</code></pre></td>
                                         <td data-label="Description">Width for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-max-width</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-max-width</code></pre></td>
                                         <td data-label="Description">Max width for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-color</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-color</code></pre></td>
                                         <td data-label="Description">Font or icon colour for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-background-color</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-background-color</code></pre></td>
                                         <td data-label="Description">Background colour for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-font-size</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-font-size</code></pre></td>
                                         <td data-label="Description">Font size for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-font-weight</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-font-weight</code></pre></td>
                                         <td data-label="Description">Font weight for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-border-radius</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-border-radius</code></pre></td>
                                         <td data-label="Description">Border radius for keyboard call to action button.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-cta-button-margin</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-margin</code></pre></td>
                                         <td data-label="Description">Margin for keyboard call to action button.</td>
                                     </tr>
                                     
@@ -1275,17 +1285,17 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-cta-button-height</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-action-button-height</code></pre></td>
                                         <td data-label="Description">Height for keyboard call to action button in mobile viewports.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-cta-button-max-width</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-action-button-max-width</code></pre></td>
                                         <td data-label="Description">Max width for keyboard call to action button in mobile viewports.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-cta-button-margin</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-action-button-margin</code></pre></td>
                                         <td data-label="Description">Margin for keyboard call to action button in mobile viewports.</td>
                                     </tr>
                                     
@@ -1300,12 +1310,12 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-cta-button-height</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-action-button-height</code></pre></td>
                                         <td data-label="Description">Height for keyboard call to action button in small mobile viewports.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-cta-button-max-width</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-action-button-max-width</code></pre></td>
                                         <td data-label="Description">Max width for keyboard call to action button in small mobile viewports.</td>
                                     </tr>
                                     

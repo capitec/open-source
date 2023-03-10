@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/icons/Previous.icon.ts"],
-  "mappings": "oKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAA2BC,CAAe,CACpC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,aAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,oBAAoB,GACtBJ",
-  "names": ["init_define_process_argv", "init_global", "PreviousIcon", "DOMTreeElement_default", "y", "__decorateClass", "e"]
-}

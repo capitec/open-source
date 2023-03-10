@@ -11104,6 +11104,10 @@
             },
             {
               "kind": "method",
+              "name": "_focusInput"
+            },
+            {
+              "kind": "method",
               "name": "focus",
               "return": {
                 "type": {

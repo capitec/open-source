@@ -14428,16 +14428,12 @@
               "name": "--omni-select-field-error-font-color"
             },
             {
-              "description": "Select control right margin.",
-              "name": "--omni-select-control-margin-right"
-            },
-            {
-              "description": "Select control left margin.",
-              "name": "--omni-select-control-margin-left"
-            },
-            {
               "description": "Select control width.",
               "name": "--omni-select-control-width"
+            },
+            {
+              "description": "Select control height.",
+              "name": "--omni-select-control-height"
             },
             {
               "description": "Select control icon width.",

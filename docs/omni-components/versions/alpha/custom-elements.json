@@ -4990,12 +4990,8 @@
               "name": "--omni-date-picker-error-font-color"
             },
             {
-              "description": "Date picker control width.",
-              "name": "--omni-date-picker-control-width"
-            },
-            {
-              "description": "Date picker control left border.",
-              "name": "--omni-date-picker-control-left-border"
+              "description": "Date picker control padding.",
+              "name": "--omni-date-picker-control-padding"
             },
             {
               "description": "Date picker control hover.",
@@ -5006,8 +5002,36 @@
               "name": "--omni-date-picker-control-icon-width"
             },
             {
+              "description": "Date picker control icon height.",
+              "name": "--omni-date-picker-control-icon-height"
+            },
+            {
               "description": "Date picker control icon color.",
               "name": "--omni-date-picker-control-icon-color"
+            },
+            {
+              "description": "Date picker control icon error color.",
+              "name": "--omni-date-picker-control-icon-error-color"
+            },
+            {
+              "description": "Date picker control left border width.",
+              "name": "--omni-date-picker-control-left-border-width"
+            },
+            {
+              "description": "Date picker control left border color.",
+              "name": "--omni-date-picker-control-left-border-color"
+            },
+            {
+              "description": "Date picker control left border focused width.",
+              "name": "--omni-date-picker-control-left-focused-border-width"
+            },
+            {
+              "description": "Date picker control left border focused color.",
+              "name": "--omni-date-picker-control-left-focused-color"
+            },
+            {
+              "description": "Date picker control left border error color.",
+              "name": "--omni-date-picker-control-left-border-error-color"
             },
             {
               "description": "Date picker container z-index.",

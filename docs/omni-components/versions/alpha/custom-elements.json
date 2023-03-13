@@ -14452,16 +14452,16 @@
               "name": "--omni-select-field-error-font-color"
             },
             {
-              "description": "Select control width.",
-              "name": "--omni-select-control-width"
-            },
-            {
-              "description": "Select control height.",
-              "name": "--omni-select-control-height"
+              "description": "Select component control padding.",
+              "name": "--omni-select-control-padding"
             },
             {
               "description": "Select control icon width.",
               "name": "--omni-select-control-icon-width"
+            },
+            {
+              "description": "Select control icon height.",
+              "name": "--omni-select-control-icon-height"
             },
             {
               "description": "Select control icon color.",

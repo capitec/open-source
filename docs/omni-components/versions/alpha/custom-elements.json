@@ -8820,6 +8820,18 @@
               "name": "--omni-keyboard-top-bar-border-bottom-color"
             },
             {
+              "description": "Width for keyboard button rows wrapper.",
+              "name": "--omni-keyboard-wrapper-width"
+            },
+            {
+              "description": "Width for keyboard button rows wrapper for special keys.",
+              "name": "--omni-keyboard-special-wrapper-width"
+            },
+            {
+              "description": "Width for keyboard button rows wrapper for numeric keyboard mode.",
+              "name": "--omni-keyboard-numeric-wrapper-width"
+            },
+            {
               "description": "Width for keyboard call to action button.",
               "name": "--omni-keyboard-action-button-width"
             },

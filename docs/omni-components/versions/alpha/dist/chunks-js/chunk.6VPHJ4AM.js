@@ -148,7 +148,7 @@ import{a as z,b as F}from"./chunk.Y2FJIW7X.js";import{a as y}from"./chunk.E3RY57
 				}
 
 				.wrapper {
-                    width: 672px;
+                    width: var(--omni-keyboard-wrapper-width,672px);
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -158,11 +158,11 @@ import{a as z,b as F}from"./chunk.Y2FJIW7X.js";import{a as y}from"./chunk.E3RY57
 				}
 
                 .special-wrapper {
-                    width: 355px;
+                    width: var(--omni-keyboard-special-wrapper-width,355px);
                 }
 
                 .numeric-wrapper {
-                    width: 224px;
+                    width: var(--omni-keyboard-numeric-wrapper-width,224px);
                 }
 
 				.wrapper:first-child {
@@ -671,4 +671,4 @@ import{a as z,b as F}from"./chunk.Y2FJIW7X.js";import{a as y}from"./chunk.E3RY57
                         </omni-icon>`}
             </button>
         `}};p([k({type:String,attribute:"attach-mode",reflect:!0})],m.prototype,"attachMode",2),p([k({type:String,attribute:"close-label",reflect:!0})],m.prototype,"closeLabel",2),p([k({type:String,attribute:"space-label",reflect:!0})],m.prototype,"spaceLabel",2),p([k({type:String,attribute:"clear-label",reflect:!0})],m.prototype,"clearLabel",2),p([k({type:String,attribute:"action-label",reflect:!0})],m.prototype,"ctaLabel",2),p([g()],m.prototype,"mode",2),p([g()],m.prototype,"currentCase",2),p([g()],m.prototype,"state",2),p([g()],m.prototype,"target",2),m=p([A("omni-keyboard")],m);var $="data-omni-keyboard-mask",K="data-omni-keyboard-multi-line",S="data-omni-keyboard-hidden",H="data-omni-keyboard-no-display",u="data-omni-keyboard-attach",C="data-omni-keyboard-mode",D=["number","email","tel","password","search","text","url","textarea"],O=["tel","password","search","text","url","textarea"];export{m as a,$ as b,K as c,S as d,H as e,u as f,C as g};
-//# sourceMappingURL=chunk.63ICTDRQ.js.map
+//# sourceMappingURL=chunk.6VPHJ4AM.js.map

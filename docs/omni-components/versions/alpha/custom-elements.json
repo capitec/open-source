@@ -500,7 +500,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        .value=\"${args.value}\"\n        >\n    </omni-calendar>\n    `,\n    name: 'Value',\n    description: 'Set the value of the Calendar component, this has to be a valid date in ISOformat',\n    args: {\n        value: isoDate\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        const date = DateTime.fromISO(isoDate);\n        await expect(calendar).toHaveValue(date.toISODate());\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        .value=\"${args.value}\"\n        >\n    </omni-calendar>\n    `,\n    name: 'Value',\n    description: 'Set the value of the Calendar component, this has to be a valid date in ISO format',\n    args: {\n        value: isoDate\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        const date = DateTime.fromISO(isoDate);\n        await expect(calendar).toHaveValue(date.toISODate());\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4819,7 +4819,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n    >\n\n    </omni-date-picker>\n    `,\n    name: 'Value',\n    description: 'Set the current value of the Date picker component.',\n    args: {\n        label: 'Value',\n        value: isoDate\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const date = DateTime.fromISO(isoDate);\n        await expect(datePicker).toHaveValue(date.toISODate());\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n    >\n\n    </omni-date-picker>\n    `,\n    name: 'Value',\n    description: 'Set the current value of the Date Picker component.',\n    args: {\n        label: 'Value',\n        value: isoDate\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const date = DateTime.fromISO(isoDate);\n        await expect(datePicker).toHaveValue(date.toISODate());\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4827,7 +4827,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n        locale=\"${args.locale}\"\n    >\n    </omni-date-picker>\n    `,\n    name: 'Locale',\n    description: 'Set the current locale of the Date picker component.',\n    args: {\n        label: 'Locale',\n        locale: testLocale\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        //const calendar = await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '.calendar');\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n\n        await expect(controlLabel).toHaveTextContent(localDate.monthLong + ' ' + localDate.year);\n        await userEvent.click(datePicker);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n        locale=\"${args.locale}\"\n    >\n    </omni-date-picker>\n    `,\n    name: 'Locale',\n    description: 'Set the current locale of the Date Picker component.',\n    args: {\n        label: 'Locale',\n        locale: testLocale\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        //const calendar = await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '.calendar');\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n\n        await expect(controlLabel).toHaveTextContent(localDate.monthLong + ' ' + localDate.year);\n        await userEvent.click(datePicker);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4942,7 +4942,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Control that allows you to select a specific date",
+          "description": "Control to get / set a specific date using a calendar.",
           "name": "DatePicker",
           "cssProperties": [
             {
@@ -5125,15 +5125,6 @@
               "default": "false"
             },
             {
-              "kind": "field",
-              "name": "_isMobile",
-              "type": {
-                "text": "boolean"
-              },
-              "privacy": "private",
-              "default": "false"
-            },
-            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -5158,10 +5149,6 @@
             {
               "kind": "method",
               "name": "_bottomCheck"
-            },
-            {
-              "kind": "method",
-              "name": "_mobileCheck"
             },
             {
               "kind": "method",

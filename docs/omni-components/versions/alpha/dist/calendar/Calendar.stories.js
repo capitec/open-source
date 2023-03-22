@@ -11,7 +11,7 @@ import{a as i}from"../chunks-js/chunk.MAHZ5XVK.js";import"../chunks-js/chunk.R2N
         .value="${t.value}"
         >
     </omni-calendar>
-    `,name:"Value",description:"Set the value of the Calendar component, this has to be a valid date in ISOformat",args:{value:v},play:async t=>{let e=l(t.canvasElement).getByTestId("test-calendar"),r=i.fromISO(v);await a(e).toHaveValue(r.toISODate())}},z={render:t=>s`
+    `,name:"Value",description:"Set the value of the Calendar component, this has to be a valid date in ISO format",args:{value:v},play:async t=>{let e=l(t.canvasElement).getByTestId("test-calendar"),r=i.fromISO(v);await a(e).toHaveValue(r.toISODate())}},z={render:t=>s`
     <omni-calendar
         data-testid="test-calendar"
         locale="${t.locale}"

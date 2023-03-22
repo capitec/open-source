@@ -121,7 +121,7 @@ import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";
                 tabindex="${this.disabled?-1:0}" />
         `}renderControl(){let e={"left-border":!0,disabled:this.disabled,error:this.error},a={control:!0,disabled:this.disabled,error:this.error},b={"control-icon":!0,disabled:this.disabled,error:this.error};return d` 
         <div class=${n(e)}></div>
-        <div class=${n(a)} @click=${this.focus}>
+        <div id="control" class=${n(a)} @click=${this.focus}>
                 <slot name="calendar">
                     <omni-calendar-icon class=${n(b)}></omni-calendar-icon>
                 </slot>            
@@ -131,4 +131,4 @@ import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";
                 <omni-calendar id="calendar" locale=${this.locale} .value=${this.value} @change=${e=>this._dateSelected(e)}></omni-calendar>
             </div>
         `:p}renderLabel(){return super.renderLabel(!0)}};o([f("#inputField")],t.prototype,"_inputElement",2),o([h({type:String,reflect:!0})],t.prototype,"locale",2),o([r()],t.prototype,"date",2),o([r()],t.prototype,"_showCalendar",2),o([r()],t.prototype,"_bottomOfViewport",2),o([r()],t.prototype,"_isMobile",2),t=o([m("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.EBFDZTX7.js.map
+//# sourceMappingURL=chunk.3LPTLGDQ.js.map

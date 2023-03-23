@@ -5144,10 +5144,6 @@
             },
             {
               "kind": "method",
-              "name": "_dimensionsCheck"
-            },
-            {
-              "kind": "method",
               "name": "_checkForBottomOfScreen"
             },
             {

@@ -7,8 +7,8 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Omni Components</title>
-    <base href="/open-source/docs/omni-components/versions/next/" >
+    <title>Icon - Omni Components</title>
+    <base href="/open-source/docs/omni-components/versions/next/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/next/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
     <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
@@ -81,15 +81,18 @@
                         menu
                     </span>
                 </div>
-                <div style="display: flex;">
+                <div style="display: flex; position: relative;">
                     <div class="header-logo">
                         <div class="header-container" id="header-container">
                             <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
                             <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
                         </div>
                     </div>
-                    <div class="header-version">
-                        next
+                    <div class="header-version-section">
+                        <div class="header-version" id="header-version-indicator">
+                            next
+                        </div>
+                        <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
                 </div>
                 <div class="header-actions">
@@ -154,14 +157,21 @@
             <a class="menu-link "
              
             href="./components/colorfield">
-                ColorField
+                Color Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/currencyfield">
-                CurrencyField
+                Currency Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/emailfield">
+                Email Field
             </a>
         </div>
         <div class="menu-item ">
@@ -189,21 +199,21 @@
             <a class="menu-link "
              
             href="./components/numberfield">
-                NumberField
-            </a>
-        </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
-            href="./components/numericfield">
-                NumericField
+                Number Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/passwordfield">
-                PasswordField
+                Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pinfield">
+                Pin Field
             </a>
         </div>
         <div class="menu-item ">
@@ -216,15 +226,22 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/radiogroup">
+                Radio Group
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/renderelement">
-                RenderElement
+                Render Element
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/searchfield">
-                SearchField
+                Search Field
             </a>
         </div>
         <div class="menu-item ">
@@ -245,7 +262,7 @@
             <a class="menu-link "
              
             href="./components/textfield">
-                TextField
+                Text Field
             </a>
         </div>
     </div>
@@ -307,50 +324,40 @@
                         <div class="component-stories">
                             
                             <div class="name" id="story-interactive">Interactive</div>
-                            <div class="story">
-                                <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="Interactive"
-                                    interactive >
-                                </story-renderer>
-                            </div>
+                            <story-renderer 
+                                path="./dist/icon/Icon.stories.js" 
+                                tag="omni-icon" 
+                                key="Interactive"
+                                interactive >
+                            </story-renderer>
                             <div class="name" id="story-svg">SVG</div>
-                            <div class="story">
-                                <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="SVG"
-                                     >
-                                </story-renderer>
-                            </div>
-                            <div class="name" id="story-icon-path">Icon Path</div>
-                            <div class="story">
-                                <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="Icon_Path"
-                                     >
-                                </story-renderer>
-                            </div>
-                            <div class="name" id="story-url">URL</div>
-                            <div class="story">
-                                <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="URL"
-                                     >
-                                </story-renderer>
-                            </div>
+                            <story-renderer 
+                                path="./dist/icon/Icon.stories.js" 
+                                tag="omni-icon" 
+                                key="SVG"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-local-source">Local Source</div>
+                            <story-renderer 
+                                path="./dist/icon/Icon.stories.js" 
+                                tag="omni-icon" 
+                                key="Local_Source"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-remote-source">Remote Source</div>
+                            <story-renderer 
+                                path="./dist/icon/Icon.stories.js" 
+                                tag="omni-icon" 
+                                key="Remote_Source"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-material">Material</div>
-                            <div class="story">
-                                <story-renderer 
-                                    path="./dist/icon/Icon.stories.js" 
-                                    tag="omni-icon" 
-                                    key="Material"
-                                     >
-                                </story-renderer>
-                            </div>
+                            <story-renderer 
+                                path="./dist/icon/Icon.stories.js" 
+                                tag="omni-icon" 
+                                key="Material"
+                                 >
+                            </story-renderer>
                         </div>
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
@@ -361,11 +368,11 @@
                                     <a href="components/icon/#story-svg" id="story-svg-a" class="item">
                                         SVG
                                     </a>
-                                    <a href="components/icon/#story-icon-path" id="story-icon-path-a" class="item">
-                                        Icon Path
+                                    <a href="components/icon/#story-local-source" id="story-local-source-a" class="item">
+                                        Local Source
                                     </a>
-                                    <a href="components/icon/#story-url" id="story-url-a" class="item">
-                                        URL
+                                    <a href="components/icon/#story-remote-source" id="story-remote-source-a" class="item">
+                                        Remote Source
                                     </a>
                                     <a href="components/icon/#story-material" id="story-material-a" class="item">
                                         Material
@@ -377,289 +384,288 @@
             </div>
             <div class="component-tab" id="docs" role="tabpanel">
 
-                <h2 class="component-props-table-header" style="padding-top: 24px;">Properties</h2>
-                <div class="docs-search-area">
-                    <omni-search-field id="attribute-search"></omni-search-field>
-                </div>
-                <div class="component-props-table-wrapper">
-                    <table class="component-props-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Attribute</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody id="component-attributes">
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">size</td>
-                                <td data-label="Attribute" scope="row">size&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">&#39;default&#39; | &#39;extra-small&#39; | &#39;small&#39; | &#39;medium&#39; | &#39;large&#39;</code></pre></td>
-                                <td data-label="Description">The size to display the icon at</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">icon</td>
-                                <td data-label="Attribute" scope="row">icon&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">The name of the icon to display. Takes preference over the slotted icon.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">dir</td>
-                                <td data-label="Attribute" scope="row">dir&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">Used to set the base direction of text for display</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row">lang</td>
-                                <td data-label="Attribute" scope="row">lang&nbsp;</td>
-                                <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                <td data-label="Description">Used to identify the language of text content on the web</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
                 
-                <h2 class="component-props-table-header">Events</h2>
-                <div class="docs-search-area">
-                    <omni-search-field id="event-search"></omni-search-field>
-                </div>
-                <div class="component-props-table-wrapper">
-                    <table class="component-props-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Type</th>
-                                <th scope="col">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody id="component-events">
-                            
-                        </tbody>
-                    </table>
-                </div>
                 
-                <h2 class="component-props-table-header">Slots</h2>
-                <div class="docs-search-area">
-                    <omni-search-field id="slot-search"></omni-search-field>
-                </div>
-                <div class="component-props-table-wrapper">
-                    <table class="component-props-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody id="component-slots">
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
-                                <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
-                                <td data-label="Description">The icon to be displayed</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
+                    <h2 class="component-props-table-header" style="padding-top: 24px;">Properties</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="attribute-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">size</td>
+                                    <td data-label="Attribute" scope="row">size&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;default&#39; | &#39;extra-small&#39; | &#39;small&#39; | &#39;medium&#39; | &#39;large&#39;</code></pre></td>
+                                    <td data-label="Description">Size to display the icon at</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">icon</td>
+                                    <td data-label="Attribute" scope="row">icon&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">Name of the icon to display. Takes preference over the slotted icon.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">dir</td>
+                                    <td data-label="Attribute" scope="row">dir&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Used to set the base direction of text for display</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">lang</td>
+                                    <td data-label="Attribute" scope="row">lang&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+                
+                
+                
+                
+                
+                
+                                
+                
+                
+                    <h2 class="component-props-table-header">Slots</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="slot-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-slots">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
+                                    <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
+                                    <td data-label="Description">The icon to be displayed</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
             </div>
             <div class="component-tab" id="styles" role="tabpanel">
                 <div style="padding-top: 24px;"></div>
                 
-                <h2 class="component-props-table-header" >Theme Variables</h2>
-                <div class="docs-search-area">
-                    <omni-search-field class="css-category" data-category="Theme Variables"></omni-search-field>
-                </div>
-                <div class="component-props-table-wrapper">
-                    <table class="component-props-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody data-category="Theme Variables" class="component-css-props">
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-color</code></pre></td>
-                                <td data-label="Description">Theme primary color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-hover-color</code></pre></td>
-                                <td data-label="Description">Theme primary hover color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-active-color</code></pre></td>
-                                <td data-label="Description">Theme primary active color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-color</code></pre></td>
-                                <td data-label="Description">Theme accent color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-hover-color</code></pre></td>
-                                <td data-label="Description">Theme accent hover color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-active-color</code></pre></td>
-                                <td data-label="Description">Theme accent active color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-color</code></pre></td>
-                                <td data-label="Description">Theme background color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-hover-color</code></pre></td>
-                                <td data-label="Description">Theme background hover color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-active-color</code></pre></td>
-                                <td data-label="Description">Theme background active color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-color</code></pre></td>
-                                <td data-label="Description">Theme font color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-border-color</code></pre></td>
-                                <td data-label="Description">Theme disabled border color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-background-color</code></pre></td>
-                                <td data-label="Description">Theme disabled background color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-font-color</code></pre></td>
-                                <td data-label="Description">Theme disabled background color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-border-color</code></pre></td>
-                                <td data-label="Description">Theme error border color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-hint-font-color</code></pre></td>
-                                <td data-label="Description">Theme hint font color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-inactive-color</code></pre></td>
-                                <td data-label="Description">Theme inactive color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow-color</code></pre></td>
-                                <td data-label="Description">Theme inactive color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-family</code></pre></td>
-                                <td data-label="Description">Theme font family.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-size</code></pre></td>
-                                <td data-label="Description">Theme font size.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-weight</code></pre></td>
-                                <td data-label="Description">Theme font weight.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-radius</code></pre></td>
-                                <td data-label="Description">Theme border radius.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-width</code></pre></td>
-                                <td data-label="Description">Theme border width.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow</code></pre></td>
-                                <td data-label="Description">Theme box shadow.</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
+                    
+                    
+                        <h2 class="component-props-table-header" >Theme Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Theme Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Theme Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-color</code></pre></td>
+                                        <td data-label="Description">Theme primary color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme primary hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-active-color</code></pre></td>
+                                        <td data-label="Description">Theme primary active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-color</code></pre></td>
+                                        <td data-label="Description">Theme accent color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme accent hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-active-color</code></pre></td>
+                                        <td data-label="Description">Theme accent active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-color</code></pre></td>
+                                        <td data-label="Description">Theme background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme background hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-active-color</code></pre></td>
+                                        <td data-label="Description">Theme background active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-color</code></pre></td>
+                                        <td data-label="Description">Theme font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-border-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-font-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-border-color</code></pre></td>
+                                        <td data-label="Description">Theme error border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-hint-font-color</code></pre></td>
+                                        <td data-label="Description">Theme hint font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-inactive-color</code></pre></td>
+                                        <td data-label="Description">Theme inactive color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow-color</code></pre></td>
+                                        <td data-label="Description">Theme inactive color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-family</code></pre></td>
+                                        <td data-label="Description">Theme font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-size</code></pre></td>
+                                        <td data-label="Description">Theme font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-weight</code></pre></td>
+                                        <td data-label="Description">Theme font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-radius</code></pre></td>
+                                        <td data-label="Description">Theme border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-width</code></pre></td>
+                                        <td data-label="Description">Theme border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow</code></pre></td>
+                                        <td data-label="Description">Theme box shadow.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
                 
-                <h2 class="component-props-table-header" >Component Variables</h2>
-                <div class="docs-search-area">
-                    <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
-                </div>
-                <div class="component-props-table-wrapper">
-                    <table class="component-props-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Name</th>
-                                <th scope="col">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody data-category="Component Variables" class="component-css-props">
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-fill</code></pre></td>
-                                <td data-label="Description">Icon fill color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-background-color</code></pre></td>
-                                <td data-label="Description">Icon background color.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-large</code></pre></td>
-                                <td data-label="Description">Icon large size.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-medium</code></pre></td>
-                                <td data-label="Description">Icon medium size.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-small</code></pre></td>
-                                <td data-label="Description">Icon small size.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-extra-small</code></pre></td>
-                                <td data-label="Description">Icon extra small size.</td>
-                            </tr>
-                            
-                            <tr>
-                                <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-default</code></pre></td>
-                                <td data-label="Description">Icon default size.</td>
-                            </tr>
-                            
-                        </tbody>
-                    </table>
-                </div>
+                    
+                    
+                        <h2 class="component-props-table-header" >Component Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Component Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-fill</code></pre></td>
+                                        <td data-label="Description">Icon fill color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-background-color</code></pre></td>
+                                        <td data-label="Description">Icon background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-large</code></pre></td>
+                                        <td data-label="Description">Icon large size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-medium</code></pre></td>
+                                        <td data-label="Description">Icon medium size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-small</code></pre></td>
+                                        <td data-label="Description">Icon small size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-extra-small</code></pre></td>
+                                        <td data-label="Description">Icon extra small size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-icon-size-default</code></pre></td>
+                                        <td data-label="Description">Icon default size.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
                 
             </div>
         </div>
@@ -691,7 +697,7 @@
                         <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
                     </div>
                 </div>
-                <div class="copyright" style="">Copyright &copy; 2022</div>
+                <div class="copyright" style="">Copyright &copy; 2023</div>
             </footer>
         </div>
     </div>

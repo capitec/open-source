@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Omni Components</title>
+    <title>Switch - Omni Components</title>
     <base href="/open-source/docs/omni-components/versions/alpha/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/alpha/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
@@ -142,6 +142,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/check">
                 Check
             </a>
@@ -170,6 +177,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/datepicker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/emailfield">
                 Email Field
             </a>
@@ -186,6 +200,13 @@
              
             href="./components/icon">
                 Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/keyboard">
+                Keyboard
             </a>
         </div>
         <div class="menu-item ">
@@ -221,6 +242,13 @@
              
             href="./components/radio">
                 Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radiogroup">
+                Radio Group
             </a>
         </div>
         <div class="menu-item ">
@@ -408,42 +436,42 @@
                                 <tr>
                                     <td data-label="Name" scope="row">label</td>
                                     <td data-label="Attribute" scope="row">label&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
                                     <td data-label="Description">Text label.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">data</td>
                                     <td data-label="Attribute" scope="row">data&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">object</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">object | undefined</code></pre></td>
                                     <td data-label="Description">Data associated with the component.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">hint</td>
                                     <td data-label="Attribute" scope="row">hint&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
                                     <td data-label="Description">Hint message to assist the user.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">error</td>
                                     <td data-label="Attribute" scope="row">error&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
                                     <td data-label="Description">An error message to guide users to correct a mistake.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">checked</td>
                                     <td data-label="Attribute" scope="row">checked&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
                                     <td data-label="Description">Indicator if the component is checked or not.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">disabled</td>
                                     <td data-label="Attribute" scope="row">disabled&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
                                     <td data-label="Description">Indicator if the component is disabled.</td>
                                 </tr>
                                 
@@ -492,6 +520,9 @@
                             </tbody>
                         </table>
                     </div>
+                
+                
+                
                 
                                 
                 
@@ -756,16 +787,6 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-track-background-color</code></pre></td>
-                                        <td data-label="Description">Track checked background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-track-background-color</code></pre></td>
-                                        <td data-label="Description">Track disabled background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-track-border-radius</code></pre></td>
                                         <td data-label="Description">Track border radius.</td>
                                     </tr>
@@ -791,16 +812,6 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-knob-background-color</code></pre></td>
-                                        <td data-label="Description">Knob checked background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-knob-background-color</code></pre></td>
-                                        <td data-label="Description">Knob disabled background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-knob-box-shadow</code></pre></td>
                                         <td data-label="Description">Knob box shadow.</td>
                                     </tr>
@@ -811,8 +822,28 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-track-background-color</code></pre></td>
+                                        <td data-label="Description">Track checked background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-hover-knob-box-shadow</code></pre></td>
                                         <td data-label="Description">Knob checked hover box shadow.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-track-background-color</code></pre></td>
+                                        <td data-label="Description">Track disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-knob-background-color</code></pre></td>
+                                        <td data-label="Description">Knob checked background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-knob-background-color</code></pre></td>
+                                        <td data-label="Description">Knob disabled background color..</td>
                                     </tr>
                                     
                                     <tr>

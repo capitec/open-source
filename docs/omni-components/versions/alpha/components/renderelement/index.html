@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Omni Components</title>
+    <title>Render Element - Omni Components</title>
     <base href="/open-source/docs/omni-components/versions/alpha/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/alpha/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
@@ -142,6 +142,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/check">
                 Check
             </a>
@@ -170,6 +177,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/datepicker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/emailfield">
                 Email Field
             </a>
@@ -186,6 +200,13 @@
              
             href="./components/icon">
                 Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/keyboard">
+                Keyboard
             </a>
         </div>
         <div class="menu-item ">
@@ -221,6 +242,13 @@
              
             href="./components/radio">
                 Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radiogroup">
+                Radio Group
             </a>
         </div>
         <div class="menu-item selected">
@@ -378,14 +406,14 @@
                                 <tr>
                                     <td data-label="Name" scope="row">renderer</td>
                                     <td data-label="Attribute" scope="row">&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">RenderFunction</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">RenderFunction | undefined</code></pre></td>
                                     <td data-label="Description">Renderer function</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">data</td>
                                     <td data-label="Attribute" scope="row">data&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">object | Promise&lt;object&gt;</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">object | Promise&lt;object&gt; | undefined</code></pre></td>
                                     <td data-label="Description">Data associated with the component.</td>
                                 </tr>
                                 
@@ -409,6 +437,37 @@
                 
                 
                 
+                
+                
+                
+                
+                    <h2 class="component-props-table-header">Types</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="type-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-types">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">RenderResult</td>
+                                    <td data-label="Type"><pre><code class="language-js">TemplateResult | typeof nothing | HTMLElement | string</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">RenderFunction</td>
+                                    <td data-label="Type"><pre><code class="language-js">(...data: unknown[]) =&gt; RenderResult | Promise&lt;RenderResult&gt;</code></pre></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 
                                 
                 

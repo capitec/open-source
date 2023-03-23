@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Keyboard - Omni Components</title>
+    <base href="/open-source/docs/omni-components/versions/alpha/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/alpha/'</script>
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+    <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Preload Hind Vadodara fonts to lessen chance of system default from initially applying -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/hindvadodara/v12/neINzCKvrIcn5pbuuuriV9tTQInVrEsf.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+        @font-face {
+            font-family: 'Material Icons';
+            font-style: normal;
+            font-weight: 400;
+            font-display: block;
+            src: url(https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'Hind Vadodara';
+            font-style: normal;
+            font-weight: 400;
+            src: url(https://fonts.gstatic.com/s/hindvadodara/v12/neINzCKvrIcn5pbuuuriV9tTQInVrEsf.woff2) format('woff2');
+            unicode-range: U+0964-0965, U+0A80-0AFF, U+200C-200D, U+20B9, U+25CC, U+A830-A839;
+        }
+    </style>
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons"  as="style"/>
+    <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara"  as="style">
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
+    <style id="theme-styles"></style>
+    <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
+    <script>        
+        const themeStorageKey = 'omni-docs-theme-selection';
+        const customThemeCssKey = 'omni-docs-custom-theme-css';
+        const customThemeKey = 'custom';
+        const lightThemeKey = 'light';
+        const darkThemeKey = 'dark';
+        const themeStyle = document.getElementById('theme-styles');
+        
+        let darkThemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = window.sessionStorage.getItem(themeStorageKey);
+
+        let key = undefined;
+        if (darkThemePreferred && !storedTheme) {
+            key = darkThemeKey;            
+        } else if (storedTheme) {
+            key = storedTheme;
+        }
+
+        if (key && key !== lightThemeKey) {
+            document.documentElement.setAttribute('theme', key);
+            if (key === customThemeKey) {
+                let customCss = window.sessionStorage.getItem(customThemeCssKey);
+                if (customCss) {
+                    themeStyle.innerHTML = customCss;
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <script type="module" src="./dist/utils/StoryRenderer.js"></script>
+    <script type="module" src="./dist/omni-components.js"></script>
+    <script type="module" defer>
+        import { setupEleventy } from './dist/utils/StoryUtils.js';
+        setupEleventy();
+    </script>
+</head>
+<body>
+    <div dir="ltr">
+        <div class="container">
+            <header>
+                <div class="header-menu-button">
+                    <span class="material-icons">
+                        menu
+                    </span>
+                </div>
+                <div style="display: flex; position: relative;">
+                    <div class="header-logo">
+                        <div class="header-container" id="header-container">
+                            <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                            <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                        </div>
+                    </div>
+                    <div class="header-version-section">
+                        <div class="header-version" id="header-version-indicator">
+                            alpha
+                        </div>
+                        <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span class="material-icons docs-omni-component action" style="display: none;" id="header-theme-edit-btn">
+                        edit
+                    </span>
+                    <span class="header-theme-section">
+                        <span class="material-icons docs-omni-component action hidden-until-760 action" style="height: 37px; width: 37px;" id="header-theme-select-btn">
+                            format_color_fill
+                        </span>
+                        <select class="docs-select theme-select transparent hidden-until-760" id="header-theme-native-select"></select>
+                        <omni-select class="docs-omni-component hidden-after-760" id="header-theme-select"></omni-select>
+                    </span>
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="docs-omni-component action">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </header>
+
+            
+
+<nav class="menu">
+    <div class="menu-container">
+        <div class="menu-item ">
+            <a class="menu-link "  href="./">Home</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./getting-started/">Getting Started</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./theme-support/">Theme Support</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./contributing/">Contributing</a>
+        </div>
+        <div class="menu-item separator"><div class="line"></div></div>
+        
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/button">
+                Button
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/check">
+                Check
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/chip">
+                Chip
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/colorfield">
+                Color Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/currencyfield">
+                Currency Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/datepicker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/emailfield">
+                Email Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/hyperlink">
+                Hyperlink
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/icon">
+                Icon
+            </a>
+        </div>
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
+            href="./components/keyboard">
+                Keyboard
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/label">
+                Label
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/numberfield">
+                Number Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/passwordfield">
+                Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pinfield">
+                Pin Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radio">
+                Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radiogroup">
+                Radio Group
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/renderelement">
+                Render Element
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/searchfield">
+                Search Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/select">
+                Select
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/switch">
+                Switch
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/textfield">
+                Text Field
+            </a>
+        </div>
+    </div>
+</nav>
+            <main>
+    
+<div class="component-overlay">
+    <div class="lds-ripple"><div></div><div></div></div>
+</div>
+
+<article class="component">
+    <div class="component-meta">
+        <div class="component-name">Keyboard</div>
+        <div class="component-desc">An on-screen keyboard control component.</div> 
+        <div class="component-info">
+            <div class="component-info-item">
+                <div>Module</div>
+                <div class="component-info-item-code">
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/keyboard&#39;;</code></pre>
+                    <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
+                        content_copy
+                    </span>
+                </div>
+            </div>
+            <div class="component-info-item">
+                <div>Source</div>
+                <div>
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/keyboard/Keyboard.ts" target="blank" class="component-info-item-link">
+                        <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="component-info-item">
+                <div>Package</div>
+                <div>
+                    <a href="https://www.npmjs.com/package/@capitec/omni-components" target="blank" class="component-info-item-link">
+                        <img src="./assets/images/npm.svg" class="component-info-item-img">
+                        @capitec/omni-components
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="component-tab-container">
+        <div class="component-tab-root">
+            <div class="component-tab-wrapper">
+                <div class="component-tab-list" role="tablist">
+                    <div role="tab" class="component-tab-button active" data-name="examples" onclick="openTab(event.currentTarget, 'examples')">Examples</div>
+                    <div role="tab" class="component-tab-button" data-name="docs" onclick="openTab(event.currentTarget, 'docs')">Docs</div>
+                    <div role="tab" class="component-tab-button" data-name="styles" onclick="openTab(event.currentTarget, 'styles')">Styles</div>
+                </div>
+            </div>
+            <div class="component-tab" id="examples" role="tabpanel" style="display: block;">
+                <div class="component-props-examples-wrapper">
+                    <div class="component-tab-content">
+                        <div class="component-stories">
+                            
+                            <div class="name" id="story-interactive">Interactive</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Interactive"
+                                interactive >
+                            </story-renderer>
+                            <div class="name" id="story-input-modes">Input Modes</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Input_Modes"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-masked-values">Masked Values</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Masked_Values"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-web-components">Web Components</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Web_Components"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-enter-key-hint-variations">Enter Key Hint Variations</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Enter_Key_Hint_Variations"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-hide-keyboard">Hide Keyboard</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Hide_Keyboard"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-hide-display-value">Hide Display Value</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Hide_Display_Value"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-attach-by-attribute">Attach By Attribute</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Attach_By_Attribute"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-attach-by-id">Attach By Id</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Attach_By_Id"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-slotted-content">Slotted Content</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Slotted_Content"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-alternate-modes">Alternate Modes</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Alternate_Modes"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-via-script">Via Script</div>
+                            <story-renderer 
+                                path="./dist/keyboard/Keyboard.stories.js" 
+                                tag="omni-keyboard" 
+                                key="Via_Script"
+                                 >
+                            </story-renderer>
+                        </div>
+                        <div class="component-toc-wrapper">
+                            <div class="component-toc">
+                                
+                                    <a href="components/keyboard/#story-interactive" id="story-interactive-a" class="item">
+                                        Interactive
+                                    </a>
+                                    <a href="components/keyboard/#story-input-modes" id="story-input-modes-a" class="item">
+                                        Input Modes
+                                    </a>
+                                    <a href="components/keyboard/#story-masked-values" id="story-masked-values-a" class="item">
+                                        Masked Values
+                                    </a>
+                                    <a href="components/keyboard/#story-web-components" id="story-web-components-a" class="item">
+                                        Web Components
+                                    </a>
+                                    <a href="components/keyboard/#story-enter-key-hint-variations" id="story-enter-key-hint-variations-a" class="item">
+                                        Enter Key Hint Variations
+                                    </a>
+                                    <a href="components/keyboard/#story-hide-keyboard" id="story-hide-keyboard-a" class="item">
+                                        Hide Keyboard
+                                    </a>
+                                    <a href="components/keyboard/#story-hide-display-value" id="story-hide-display-value-a" class="item">
+                                        Hide Display Value
+                                    </a>
+                                    <a href="components/keyboard/#story-attach-by-attribute" id="story-attach-by-attribute-a" class="item">
+                                        Attach By Attribute
+                                    </a>
+                                    <a href="components/keyboard/#story-attach-by-id" id="story-attach-by-id-a" class="item">
+                                        Attach By Id
+                                    </a>
+                                    <a href="components/keyboard/#story-slotted-content" id="story-slotted-content-a" class="item">
+                                        Slotted Content
+                                    </a>
+                                    <a href="components/keyboard/#story-alternate-modes" id="story-alternate-modes-a" class="item">
+                                        Alternate Modes
+                                    </a>
+                                    <a href="components/keyboard/#story-via-script" id="story-via-script-a" class="item">
+                                        Via Script
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="component-tab" id="docs" role="tabpanel">
+
+                
+                
+                    <h2 class="component-props-table-header" style="padding-top: 24px;">Properties</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="attribute-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">attachMode</td>
+                                    <td data-label="Attribute" scope="row">attach-mode&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;all&#39; | &#39;attribute&#39; | &#39;id&#39;</code></pre></td>
+                                    <td data-label="Description">The rule for the Keyboard to attach to inputs for showing on component focus.
+• `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.
+• `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">closeLabel</td>
+                                    <td data-label="Attribute" scope="row">close-label&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">The text label to display by the close button.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">spaceLabel</td>
+                                    <td data-label="Attribute" scope="row">space-label&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">The text label to display on the spacebar button.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">clearLabel</td>
+                                    <td data-label="Attribute" scope="row">clear-label&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">The text label to display on the clear button. The `clear` slot takes precedence over this label.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">ctaLabel</td>
+                                    <td data-label="Attribute" scope="row">action-label&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint="enter"`. The `action-enter` slot takes precedence over this label.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">dir</td>
+                                    <td data-label="Attribute" scope="row">dir&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Used to set the base direction of text for display</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">lang</td>
+                                    <td data-label="Attribute" scope="row">lang&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+                
+                
+                
+                
+                
+                
+                    <h2 class="component-props-table-header">Types</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="type-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-types">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">InputEventTypes</td>
+                                    <td data-label="Type"><pre><code class="language-js">| &#39;insertText&#39;
+    | &#39;insertReplacementText&#39;
+    | &#39;insertLineBreak&#39;
+    | &#39;insertParagraph&#39;
+    | &#39;insertOrderedList&#39;
+    | &#39;insertUnorderedList&#39;
+    | &#39;insertHorizontalRule&#39;
+    | &#39;insertFromYank&#39;
+    | &#39;insertFromDrop&#39;
+    | &#39;insertFromPaste&#39;
+    | &#39;insertFromPasteAsQuotation&#39;
+    | &#39;insertTranspose&#39;
+    | &#39;insertCompositionText&#39;
+    | &#39;insertLink&#39;
+    | &#39;deleteWordBackward&#39;
+    | &#39;deleteWordForward&#39;
+    | &#39;deleteSoftLineBackward&#39;
+    | &#39;deleteSoftLineForward&#39;
+    | &#39;deleteEntireSoftLine&#39;
+    | &#39;deleteHardLineBackward&#39;
+    | &#39;deleteHardLineForward&#39;
+    | &#39;deleteByDrag&#39;
+    | &#39;deleteByCut&#39;
+    | &#39;deleteContent&#39;
+    | &#39;deleteContentBackward&#39;
+    | &#39;deleteContentForward&#39;
+    | &#39;historyUndo&#39;
+    | &#39;historyRedo&#39;
+    | &#39;formatBold&#39;
+    | &#39;formatItalic&#39;
+    | &#39;formatUnderline&#39;
+    | &#39;formatStrikeThrough&#39;
+    | &#39;formatSuperscript&#39;
+    | &#39;formatSubscript&#39;
+    | &#39;formatJustifyFull&#39;
+    | &#39;formatJustifyCenter&#39;
+    | &#39;formatJustifyRight&#39;
+    | &#39;formatJustifyLeft&#39;
+    | &#39;formatIndent&#39;
+    | &#39;formatOutdent&#39;
+    | &#39;formatRemove&#39;
+    | &#39;formatSetBlockTextDirection&#39;
+    | &#39;formatSetInlineTextDirection&#39;
+    | &#39;formatBackColor&#39;
+    | &#39;formatFontColor&#39;
+    | &#39;formatFontName&#39;</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">EnterKeyHint</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;enter&#39; | &#39;done&#39; | &#39;go&#39; | &#39;next&#39; | &#39;previous&#39; | &#39;search&#39; | &#39;send&#39; | undefined</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">KeyboardMode</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;numeric&#39; | &#39;alpha-numeric&#39; | &#39;none&#39;</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">InputEventInitWithType</td>
+                                    <td data-label="Type"><pre><code class="language-js">| InputEventInit
+    | {
+          inputType: InputEventTypes;
+      }</code></pre></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">KeyboardInit</td>
+                                    <td data-label="Type"><pre><code class="language-js">{
+    /**
+     * The id to apply to the Keyboard elements.
+     */
+    id?: string;
+
+    /**
+     * The container to append the Keyboard as child. If not provided will append to a new div element on the document body.
+     */
+    parent?: string | HTMLElement | DocumentFragment | null;
+
+    /**
+     * The rule for the Keyboard to attach to inputs for showing on component focus.
+     * * `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.
+     * * `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute.
+     */
+    attachMode?: &#39;all&#39; | &#39;attribute&#39; | &#39;id&#39;;
+
+    /**
+     * The text label to display by the close button.
+     */
+    closeLabel?: string;
+
+    /**
+     * The text label to display on the spacebar button.
+     */
+    spaceLabel?: string;
+
+    /**
+     * The text label to display on the clear button. The `clear` slot takes precedence over this label.
+     */
+    clearLabel?: string;
+
+    /**
+     * The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=&quot;enter&quot;`. The `action-enter` slot takes precedence over this label.
+     */
+    ctaLabel?: string;
+
+    /**
+     * A function that returns content to render within the &#39;clear&#39; slot
+     */
+    clear?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;caps-off&#39; slot
+     */
+    capsOff?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;caps-on&#39; slot
+     */
+    capsOn?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;caps-on-permanent&#39; slot
+     */
+    capsOnPermanent?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;backspace&#39; slot
+     */
+    backspace?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;close&#39; slot
+     */
+    close?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-enter&#39; slot
+     */
+    ctaEnter?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-done&#39; slot
+     */
+    ctaDone?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-go&#39; slot
+     */
+    ctaGo?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-next&#39; slot
+     */
+    ctaNext?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-previous&#39; slot
+     */
+    ctaPrevious?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-search&#39; slot
+     */
+    ctaSearch?: RenderFunction;
+
+    /**
+     * A function that returns content to render within the &#39;action-send&#39; slot
+     */
+    ctaSend?: RenderFunction;
+}</code></pre></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+                                
+                
+                
+                    <h2 class="component-props-table-header">Slots</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="slot-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-slots">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
+                                    <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">caps-off</code></pre></td>
+                                    <td data-label="Description">Content to display on case change button when in a lowercase state.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">caps-on</code></pre></td>
+                                    <td data-label="Description">Content to display on case change button when in a single uppercase state.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">caps-on-permanent</code></pre></td>
+                                    <td data-label="Description">Content to display on case change button when in a permanent uppercase state.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">close</code></pre></td>
+                                    <td data-label="Description">Content to display next to close label.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">backspace</code></pre></td>
+                                    <td data-label="Description">Content to display on backspace button.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">clear</code></pre></td>
+                                    <td data-label="Description">Content to display on clear button.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-done</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="done".</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-go</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="go".</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-next</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="next".</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-previous</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="previous".</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-search</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="search".</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-send</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="send".</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">action-enter</code></pre></td>
+                                    <td data-label="Description">Content to display on call to action button ('Enter') when target component has enterkeyhint="enter" or enterkeyhint is not set.</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+            <div class="component-tab" id="styles" role="tabpanel">
+                <div style="padding-top: 24px;"></div>
+                
+                    
+                    
+                        <h2 class="component-props-table-header" >Theme Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Theme Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Theme Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-color</code></pre></td>
+                                        <td data-label="Description">Theme primary color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme primary hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-active-color</code></pre></td>
+                                        <td data-label="Description">Theme primary active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-color</code></pre></td>
+                                        <td data-label="Description">Theme accent color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme accent hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-active-color</code></pre></td>
+                                        <td data-label="Description">Theme accent active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-color</code></pre></td>
+                                        <td data-label="Description">Theme background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme background hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-active-color</code></pre></td>
+                                        <td data-label="Description">Theme background active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-color</code></pre></td>
+                                        <td data-label="Description">Theme font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-border-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-font-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-border-color</code></pre></td>
+                                        <td data-label="Description">Theme error border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-hint-font-color</code></pre></td>
+                                        <td data-label="Description">Theme hint font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-inactive-color</code></pre></td>
+                                        <td data-label="Description">Theme inactive color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow-color</code></pre></td>
+                                        <td data-label="Description">Theme inactive color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-family</code></pre></td>
+                                        <td data-label="Description">Theme font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-size</code></pre></td>
+                                        <td data-label="Description">Theme font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-weight</code></pre></td>
+                                        <td data-label="Description">Theme font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-radius</code></pre></td>
+                                        <td data-label="Description">Theme border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-width</code></pre></td>
+                                        <td data-label="Description">Theme border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow</code></pre></td>
+                                        <td data-label="Description">Theme box shadow.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
+                    
+                    
+                        <h2 class="component-props-table-header" >Component Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Component Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-icon-max-height</code></pre></td>
+                                        <td data-label="Description">Max height for slotted content in keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-icon-max-width</code></pre></td>
+                                        <td data-label="Description">Max width for slotted content in keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-font-family</code></pre></td>
+                                        <td data-label="Description">Font family for text in keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-font-color</code></pre></td>
+                                        <td data-label="Description">Font color for text in keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for text in keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-background-color</code></pre></td>
+                                        <td data-label="Description">Background color for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-border</code></pre></td>
+                                        <td data-label="Description">Border for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-font-weight</code></pre></td>
+                                        <td data-label="Description">Font weight for text in keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-height</code></pre></td>
+                                        <td data-label="Description">Height for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-line-height</code></pre></td>
+                                        <td data-label="Description">Line height for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for keyboard buttons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard buttons in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-height</code></pre></td>
+                                        <td data-label="Description">Height for keyboard buttons in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard buttons in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-return-keyboard-button-mobile-width</code></pre></td>
+                                        <td data-label="Description">Width for return keyboard buttons in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-numeric-keyboard-button-mobile-width</code></pre></td>
+                                        <td data-label="Description">Width for numeric keyboard buttons in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-small-height</code></pre></td>
+                                        <td data-label="Description">Height for keyboard buttons in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-small-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard buttons in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-small-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for text in keyboard buttons in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-button-mobile-small-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for keyboard buttons in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-return-keyboard-button-mobile-small-width</code></pre></td>
+                                        <td data-label="Description">Width for return keyboard buttons in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-numeric-keyboard-button-mobile-small-width</code></pre></td>
+                                        <td data-label="Description">Width for numeric keyboard buttons in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-shadow-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for keyboard shadow.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-shadow-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Bottom padding for keyboard shadow.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-shadow-background-color</code></pre></td>
+                                        <td data-label="Description">Background color for keyboard shadow.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard top bar.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-padding-left</code></pre></td>
+                                        <td data-label="Description">Left padding for keyboard top bar.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-padding-right</code></pre></td>
+                                        <td data-label="Description">Right padding for keyboard top bar.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-background-color</code></pre></td>
+                                        <td data-label="Description">Background color for keyboard top bar.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for keyboard top bar.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-border-bottom-color</code></pre></td>
+                                        <td data-label="Description">Border bottom color for keyboard top bar.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-wrapper-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard button rows wrapper.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-special-wrapper-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard button rows wrapper for special keys.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-numeric-wrapper-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard button rows wrapper for numeric keyboard mode.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-max-width</code></pre></td>
+                                        <td data-label="Description">Max width for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-color</code></pre></td>
+                                        <td data-label="Description">Font or icon colour for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-background-color</code></pre></td>
+                                        <td data-label="Description">Background colour for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-font-weight</code></pre></td>
+                                        <td data-label="Description">Font weight for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-action-button-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard call to action button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-close-icon-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard close button icon.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-close-button-font-weight</code></pre></td>
+                                        <td data-label="Description">Font weight for keyboard close button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-close-button-color</code></pre></td>
+                                        <td data-label="Description">Font colour for keyboard close button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-close-button-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for keyboard close button.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-closer-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard close button area.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-closer-padding-right</code></pre></td>
+                                        <td data-label="Description">Right padding for keyboard close button area.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-background-color</code></pre></td>
+                                        <td data-label="Description">Background color for keyboard.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-key-row-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard rows.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-key-row-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard rows.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-row-padding-top</code></pre></td>
+                                        <td data-label="Description">Top padding for first keyboard row.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-row-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Bottom padding for last keyboard row.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-icons-color</code></pre></td>
+                                        <td data-label="Description">Colour for keyboard icons.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-mobile-height</code></pre></td>
+                                        <td data-label="Description">Height for keyboard top bar in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-top-bar-mobile-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for keyboard top bar in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-key-row-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard rows in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-special-key-row-margin</code></pre></td>
+                                        <td data-label="Description">Margin for special keyboard rows in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-key-row-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard rows in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-action-button-height</code></pre></td>
+                                        <td data-label="Description">Height for keyboard call to action button in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-action-button-max-width</code></pre></td>
+                                        <td data-label="Description">Max width for keyboard call to action button in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-action-button-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard call to action button in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-close-icon-width</code></pre></td>
+                                        <td data-label="Description">Width for keyboard close button icon in mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-key-row-margin</code></pre></td>
+                                        <td data-label="Description">Margin for keyboard rows in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-action-button-height</code></pre></td>
+                                        <td data-label="Description">Height for keyboard call to action button in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-keyboard-mobile-small-action-button-max-width</code></pre></td>
+                                        <td data-label="Description">Max width for keyboard call to action button in small mobile viewports.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+</main>
+
+            <footer>
+                <div class="logo">
+                    <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                    <div style="font-weight: bold">Omni Components</div>
+                </div>
+                <div class="links">
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/LICENSE" target="_blank">License</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/discussions" target="_blank">Discussions</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
+                    </div>
+                </div>
+                <div class="copyright" style="">Copyright &copy; 2023</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

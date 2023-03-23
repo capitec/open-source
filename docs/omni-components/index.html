@@ -8,7 +8,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>Omni Components</title>
-    <base href="/open-source/docs/omni-components/" >
+    <base href="/open-source/docs/omni-components/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
     <link rel="preload" href="https://fonts.gstatic.com/s/materialicons/v139/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2" as="font" type="font/woff2" crossorigin>
@@ -81,15 +81,18 @@
                         menu
                     </span>
                 </div>
-                <div style="display: flex;">
+                <div style="display: flex; position: relative;">
                     <div class="header-logo">
                         <div class="header-container" id="header-container">
                             <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
                             <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
                         </div>
                     </div>
-                    <div class="header-version">
-                        0.3.0
+                    <div class="header-version-section">
+                        <div class="header-version" id="header-version-indicator">
+                            0.5.0
+                        </div>
+                        <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
                 </div>
                 <div class="header-actions">
@@ -154,14 +157,21 @@
             <a class="menu-link "
              
             href="./components/colorfield">
-                ColorField
+                Color Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/currencyfield">
-                CurrencyField
+                Currency Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/emailfield">
+                Email Field
             </a>
         </div>
         <div class="menu-item ">
@@ -189,21 +199,21 @@
             <a class="menu-link "
              
             href="./components/numberfield">
-                NumberField
-            </a>
-        </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
-            href="./components/numericfield">
-                NumericField
+                Number Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/passwordfield">
-                PasswordField
+                Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pinfield">
+                Pin Field
             </a>
         </div>
         <div class="menu-item ">
@@ -216,15 +226,22 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/radiogroup">
+                Radio Group
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/renderelement">
-                RenderElement
+                Render Element
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
             href="./components/searchfield">
-                SearchField
+                Search Field
             </a>
         </div>
         <div class="menu-item ">
@@ -245,7 +262,7 @@
             <a class="menu-link "
              
             href="./components/textfield">
-                TextField
+                Text Field
             </a>
         </div>
     </div>
@@ -255,7 +272,7 @@
 <article>
     <div class="home-header">
         <div class="title">Omni Components</div>
-        <div class="sub-title">Customizable web components for any application</div>
+        <div class="sub-title">Modern UI component library for mobile and web</div>
     </div>
     <div class="home-content">
         <div class="wrapper">
@@ -365,7 +382,7 @@
                         <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
                     </div>
                 </div>
-                <div class="copyright" style="">Copyright &copy; 2022</div>
+                <div class="copyright" style="">Copyright &copy; 2023</div>
             </footer>
         </div>
     </div>

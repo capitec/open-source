@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/icons/CapsOnPermanent.icon.ts"],
-  "mappings": "yKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAAkCC,CAAe,CAC3C,QAAyB,CAC9B,OAAOC;AAAA;AAAA,aAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,6BAA6B,GAC/BJ",
-  "names": ["init_define_process_argv", "init_global", "CapsOnPermanentIcon", "DOMTreeElement_default", "y", "__decorateClass", "e"]
-}

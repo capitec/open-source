@@ -1,2 +1,2 @@
-import{a as e}from"../chunks-js/chunk.NMWKNT2T.js";import"../chunks-js/chunk.7YN44Q4N.js";import"../chunks-js/chunk.CHYIO324.js";import"../chunks-js/chunk.CIM3NS6G.js";import{l as o,o as r}from"../chunks-js/chunk.2ZZQBHAA.js";o();r();export{e as Label};
+import"../chunks-js/chunk.TUSCPOW2.js";import{a}from"../chunks-js/chunk.UG7N6GYS.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import"../chunks-js/chunk.F6MIXR4E.js";import"../chunks-js/chunk.BF43NN75.js";export{a as Label};
 //# sourceMappingURL=index.js.map

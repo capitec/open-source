@@ -142,6 +142,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/check">
                 Check
             </a>
@@ -170,6 +177,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/datepicker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/emailfield">
                 Email Field
             </a>
@@ -186,6 +200,13 @@
              
             href="./components/icon">
                 Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/keyboard">
+                Keyboard
             </a>
         </div>
         <div class="menu-item ">
@@ -365,6 +386,13 @@
                                 key="Disabled"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-custom-control-slot">Custom Control Slot</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Control_Slot"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
                                 path="./dist/select/Select.stories.js" 
@@ -421,6 +449,9 @@
                                     </a>
                                     <a href="components/select/#story-disabled" id="story-disabled-a" class="item">
                                         Disabled
+                                    </a>
+                                    <a href="components/select/#story-custom-control-slot" id="story-custom-control-slot-a" class="item">
+                                        Custom Control Slot
                                     </a>
                                     <a href="components/select/#story-label" id="story-label-a" class="item">
                                         Label
@@ -621,6 +652,16 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">suffix</code></pre></td>
                                     <td data-label="Description">Replaces the icon for the suffix slot.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">more</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the more slot (Displays on mobile devices).</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">arrow</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the arrow slot (Displays on desktop and tablet devices).</td>
                                 </tr>
                                 
                             </tbody>
@@ -899,6 +940,11 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Form focussed label disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-transform-scale</code></pre></td>
                                         <td data-label="Description">Form focussed label transform scale.</td>
                                     </tr>
@@ -1120,18 +1166,8 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-margin-right</code></pre></td>
-                                        <td data-label="Description">Select control right margin.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-margin-left</code></pre></td>
-                                        <td data-label="Description">Select control left margin.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-width</code></pre></td>
-                                        <td data-label="Description">Select control width.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-padding</code></pre></td>
+                                        <td data-label="Description">Select component control padding.</td>
                                     </tr>
                                     
                                     <tr>
@@ -1140,8 +1176,18 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-icon-height</code></pre></td>
+                                        <td data-label="Description">Select control icon height.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-icon-color</code></pre></td>
                                         <td data-label="Description">Select control icon color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-control-icon-error-color</code></pre></td>
+                                        <td data-label="Description">Select control error icon color.</td>
                                     </tr>
                                     
                                     <tr>

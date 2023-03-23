@@ -1011,19 +1011,19 @@
             },
             {
               "kind": "method",
-              "name": "_controlBarClick"
+              "name": "_changeStateSelection"
             },
             {
               "kind": "method",
-              "name": "_nextClick"
+              "name": "_goToNext"
             },
             {
               "kind": "method",
-              "name": "_previousClick"
+              "name": "_goToPrevious"
             },
             {
               "kind": "method",
-              "name": "_yearSelect",
+              "name": "_selectYear",
               "parameters": [
                 {
                   "name": "year",
@@ -1035,7 +1035,7 @@
             },
             {
               "kind": "method",
-              "name": "_monthSelect",
+              "name": "_selectMonth",
               "parameters": [
                 {
                   "name": "month",
@@ -5148,7 +5148,7 @@
             },
             {
               "kind": "method",
-              "name": "_bottomCheck"
+              "name": "_checkForBottomOfScreen"
             },
             {
               "kind": "method",
@@ -14751,15 +14751,15 @@
             },
             {
               "kind": "method",
-              "name": "_dimensionsCheck"
+              "name": "_checkScreenDimensions"
             },
             {
               "kind": "method",
-              "name": "_bottomCheck"
+              "name": "_checkForBottomOfScreen"
             },
             {
               "kind": "method",
-              "name": "_mobileCheck"
+              "name": "_checkforMobile"
             },
             {
               "kind": "method",

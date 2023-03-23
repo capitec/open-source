@@ -14280,6 +14280,14 @@
         },
         {
           "kind": "variable",
+          "name": "Custom_Control_Slot",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\">\n            <svg slot=\"arrow\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n            <svg slot=\"more\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n        </omni-select>\n    `,\n    name: 'Custom Control Slot',\n    description: 'Set html content to display within the available control slots.',\n    args: {\n        label: 'Custom slots',\n        items: stringItems\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n\n        if (!window.matchMedia ? window.innerWidth >= 767 : window.matchMedia('screen and (min-width: 767px)').matches) {\n            const slotElement = select.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=arrow]');\n            await expect(slotElement).toBeTruthy();\n\n            const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n            await expect(foundSlottedSvgElement).toBeTruthy();\n        } else {\n            const slotElement = select.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=more]');\n            await expect(slotElement).toBeTruthy();\n\n            const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n            await expect(foundSlottedSvgElement).toBeTruthy();\n        }\n    }\n}"
+        },
+        {
+          "kind": "variable",
           "name": "Label"
         },
         {
@@ -14352,6 +14360,14 @@
           "name": "Disabled",
           "declaration": {
             "name": "Disabled",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Control_Slot",
+          "declaration": {
+            "name": "Custom_Control_Slot",
             "module": "src/select/Select.stories.ts"
           }
         },
@@ -14613,6 +14629,40 @@
             {
               "description": "Select loading indicator height.",
               "name": "--omni-select-loading-indicator-height"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the prefix slot.",
+              "name": "prefix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the suffix slot.",
+              "name": "suffix",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the more slot (Displays on mobile devices).",
+              "name": "more"
+            },
+            {
+              "description": "Replaces the icon for the arrow slot (Displays on desktop and tablet devices).",
+              "name": "arrow"
             }
           ],
           "members": [
@@ -15166,33 +15216,7 @@
           },
           "tagName": "omni-select",
           "import": "```js\nimport '@capitec/omni-components/select';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "description": "Replaces the icon for the prefix slot.",
-              "name": "prefix",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "description": "Replaces the icon for the suffix slot.",
-              "name": "suffix",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [

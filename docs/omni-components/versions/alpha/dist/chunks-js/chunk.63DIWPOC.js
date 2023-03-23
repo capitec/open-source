@@ -131,4 +131,4 @@ import{a as v}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.SR577AVI.js";
                 <omni-calendar id="calendar" locale=${this.locale} .value=${this.value} @change=${e=>this._dateSelected(e)}></omni-calendar>
             </div>
         `:p}renderLabel(){return super.renderLabel(!0)}};o([f("#inputField")],t.prototype,"_inputElement",2),o([h({type:String,reflect:!0})],t.prototype,"locale",2),o([d()],t.prototype,"date",2),o([d()],t.prototype,"_showCalendar",2),o([d()],t.prototype,"_bottomOfViewport",2),t=o([m("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.2G5OLTMZ.js.map
+//# sourceMappingURL=chunk.63DIWPOC.js.map

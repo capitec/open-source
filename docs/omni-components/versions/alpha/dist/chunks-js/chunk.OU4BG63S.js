@@ -161,4 +161,4 @@ import{a as b}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";impor
         </label>
       </div>
     `}};n([i({type:String,reflect:!0})],r.prototype,"label",2),n([i({type:Object,reflect:!0})],r.prototype,"data",2),n([i({type:String,reflect:!0})],r.prototype,"hint",2),n([i({type:String,reflect:!0})],r.prototype,"error",2),n([i({type:Boolean,reflect:!0})],r.prototype,"checked",2),n([i({type:Boolean,reflect:!0})],r.prototype,"disabled",2),n([i({type:Boolean,reflect:!0})],r.prototype,"indeterminate",2),r=n([m("omni-check")],r);export{r as a};
-//# sourceMappingURL=chunk.XJILPXPU.js.map
+//# sourceMappingURL=chunk.OU4BG63S.js.map

@@ -115,4 +115,4 @@ import{a as b}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";impor
         </label>
       </div>
     `}};r([e({type:String,reflect:!0})],i.prototype,"label",2),r([e({type:Object,reflect:!0})],i.prototype,"data",2),r([e({type:String,reflect:!0})],i.prototype,"hint",2),r([e({type:String,reflect:!0})],i.prototype,"error",2),r([e({type:Boolean,reflect:!0})],i.prototype,"checked",2),r([e({type:Boolean,reflect:!0})],i.prototype,"disabled",2),i=r([d("omni-switch")],i);export{i as a};
-//# sourceMappingURL=chunk.J7C27AGN.js.map
+//# sourceMappingURL=chunk.FYHSNAQ7.js.map

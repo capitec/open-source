@@ -130,4 +130,4 @@ import{a as h}from"./chunk.2HYOR3YM.js";import{h as m}from"./chunk.CWNKFZ3E.js";
         </label>
       </div>
     `}};e([n({type:String,reflect:!0})],r.prototype,"label",2),e([n({type:Object,reflect:!0})],r.prototype,"data",2),e([n({type:String,reflect:!0})],r.prototype,"hint",2),e([n({type:String,reflect:!0})],r.prototype,"error",2),e([n({type:Boolean,reflect:!0})],r.prototype,"checked",2),e([n({type:Boolean,reflect:!0})],r.prototype,"disabled",2),r=e([s("omni-radio")],r);export{r as a};
-//# sourceMappingURL=chunk.77RDJ4O5.js.map
+//# sourceMappingURL=chunk.IUYBSTGQ.js.map

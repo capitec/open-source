@@ -386,6 +386,13 @@
                                 key="Disabled"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-custom-control-slot">Custom Control Slot</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Control_Slot"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
                                 path="./dist/select/Select.stories.js" 
@@ -442,6 +449,9 @@
                                     </a>
                                     <a href="components/select/#story-disabled" id="story-disabled-a" class="item">
                                         Disabled
+                                    </a>
+                                    <a href="components/select/#story-custom-control-slot" id="story-custom-control-slot-a" class="item">
+                                        Custom Control Slot
                                     </a>
                                     <a href="components/select/#story-label" id="story-label-a" class="item">
                                         Label
@@ -642,6 +652,16 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">suffix</code></pre></td>
                                     <td data-label="Description">Replaces the icon for the suffix slot.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">more</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the more slot (Displays on mobile devices).</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">arrow</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the arrow slot (Displays on desktop and tablet devices).</td>
                                 </tr>
                                 
                             </tbody>

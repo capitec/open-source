@@ -7157,6 +7157,53 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/icons/CapsLock.icon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Caps lock icon component.",
+          "name": "CapsLockIcon",
+          "members": [
+            {
+              "kind": "method",
+              "name": "createRenderRoot",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "DOMTreeElement",
+                "module": "src/core/DOMTreeElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "DOMTreeElement",
+            "module": "/src/core/DOMTreeElement.js"
+          },
+          "tagName": "omni-caps-lock-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/CapsLock.icon.js';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CapsLockIcon",
+          "declaration": {
+            "name": "CapsLockIcon",
+            "module": "src/icons/CapsLock.icon.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-caps-lock-icon",
+          "declaration": {
+            "name": "CapsLockIcon",
+            "module": "src/icons/CapsLock.icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/icons/CapsOff.icon.ts",
       "declarations": [
         {
@@ -7245,53 +7292,6 @@
           "declaration": {
             "name": "CapsOnIcon",
             "module": "src/icons/CapsOn.icon.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "src/icons/CapsOnPermanent.icon.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Permanent caps on icon component.",
-          "name": "CapsOnPermanentIcon",
-          "members": [
-            {
-              "kind": "method",
-              "name": "createRenderRoot",
-              "privacy": "protected",
-              "inheritedFrom": {
-                "name": "DOMTreeElement",
-                "module": "src/core/DOMTreeElement.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "DOMTreeElement",
-            "module": "/src/core/DOMTreeElement.js"
-          },
-          "tagName": "omni-caps-on-permanent-icon",
-          "import": "```js\nimport '@capitec/omni-components/icons/CapsOnPermanent.icon.js';\n```",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "CapsOnPermanentIcon",
-          "declaration": {
-            "name": "CapsOnPermanentIcon",
-            "module": "src/icons/CapsOnPermanent.icon.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "omni-caps-on-permanent-icon",
-          "declaration": {
-            "name": "CapsOnPermanentIcon",
-            "module": "src/icons/CapsOnPermanent.icon.ts"
           }
         }
       ]
@@ -8313,7 +8313,7 @@
           "name": "*",
           "declaration": {
             "name": "*",
-            "package": "./CapsOnPermanent.icon.js"
+            "package": "./CapsLock.icon.js"
           }
         },
         {
@@ -8464,55 +8464,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n\n    <!-- Add the Keyboard once to the DOM -->    \n    <omni-keyboard id=\"keyboard-interactive\" \n        attach-mode=\"${args.attachMode}\" \n        clear-label=\"${args.clearLabel}\" \n        space-label=\"${args.spaceLabel}\" \n        action-label=\"${args.ctaLabel}\" \n        close-label=\"${args.closeLabel}\" >${args['caps-off'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-off', args['caps-off']))}` : nothing}${\n        args['caps-on'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on', args['caps-on']))}` : nothing\n    }${args['caps-on-permanent'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on-permanent', args['caps-on-permanent']))}` : nothing}${\n        args['close'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close', args['close']))}` : nothing\n    }${args['clear'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args['clear']))}` : nothing}${\n        args['backspace'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('backspace', args['backspace']))}` : nothing\n    }${args['action-done'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-done', args['action-done']))}` : nothing}${\n        args['action-go'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-go', args['action-go']))}` : nothing\n    }${args['action-next'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-next', args['action-next']))}` : nothing}${\n        args['action-previous'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-previous', args['action-previous']))}` : nothing\n    }${args['action-search'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-search', args['action-search']))}` : nothing}${\n        args['action-send'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-send', args['action-send']))}` : nothing\n    }${args['action-enter'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-enter', args['action-enter']))}` : nothing}\n    </omni-keyboard>\n    \n    <!-- Examples -->\n    ${\n        args.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n    \n            <omni-label type=\"subtitle\" label=\"Vanilla Element Types\"></omni-label>\n            <!-- Vanilla Element Types -->\n            <span>text</span>\n            <input type=\"text\" tabindex=\"1\" />\n            <span>tel</span>\n            <input type=\"tel\" tabindex=\"2\" />\n            <span>number</span>\n            <input type=\"number\" tabindex=\"3\" />\n            <span>email</span>\n            <input type=\"email\" tabindex=\"4\" />\n            <span>password</span>\n            <input type=\"password\" tabindex=\"5\" />\n            <span>search</span>\n            <input type=\"search\" tabindex=\"6\" />\n            <span>url</span>\n            <input type=\"url\" tabindex=\"7\" />\n            <span>textarea</span>\n            <textarea tabindex=\"8\"></textarea>\n    \n        </div>\n        `\n            : html`<span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>`\n    }\n     \n  `,\n    name: 'Interactive',\n    description: () => html`\n            <style>\n                .desc-line-item {                    \n                    display: inline-flex;\n                    flex-direction: row;\n                    align-items: center;\n                }\n\n                .desc-line-item > strong {\n                    white-space: nowrap;\n                }\n                \n                .keyboard-showcase {            \n                    display: flex;\n                    flex-direction: column;\n                    justify-content: center;\n                    align-items: stretch;\n                }\n\n                .keyboard-showcase > * {\n                    margin: 10px;\n                }\n\n                .center-inline {\n                    height: 100%;\n                    display: inline-flex;\n                    align-items: center;\n                }\n\n                .example-icon-preview {\n                    flex-direction: row !important;\n                    width: 20px;\n                    height: 20px;\n                    display: inline-flex !important;\n                    color: var(--omni-theme-primary-color);\n                    fill: currentColor;\n                }\n            </style>\n            <span>The Keyboard supports <strong>input</strong> and <strong>textarea</strong> elements as well as custom web components that internally utilise those elements.</span>\n        `,\n    args: {\n        clearLabel: 'Clear',\n        ctaLabel: 'Enter',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        attachMode: 'all',\n        'caps-off': raw`<omni-caps-off-icon style=\"display: inherit;\"></omni-caps-off-icon>`,\n        'caps-on': raw`<omni-caps-on-icon style=\"display: inherit;\"></omni-caps-on-icon>`,\n        'caps-on-permanent': raw`<omni-caps-on-permanent-icon style=\"display: inherit;\"></omni-caps-on-permanent-icon>`,\n        'action-done': raw`<omni-check-icon style=\"display: inherit;\"></omni-check-icon>`,\n        'action-enter': '',\n        'action-go': raw`<omni-arrow-right-icon style=\"display: inherit;\"></omni-arrow-right-icon>`,\n        'action-next': raw`<omni-next-icon style=\"display: inherit;\"></omni-next-icon>`,\n        'action-previous': raw`<omni-previous-icon style=\"display: inherit;\"></omni-previous-icon>`,\n        'action-search': raw`<omni-search-icon style=\"display: inherit;\"></omni-search-icon>`,\n        'action-send': raw`<omni-send-icon style=\"display: inherit;\"></omni-send-icon>`,\n        backspace: raw`<omni-backspace-icon style=\"display: inherit;\"></omni-backspace-icon>`,\n        clear: '',\n        close: raw`<omni-chevron-down-icon style=\"display: inherit;\"></omni-chevron-down-icon>`\n    }\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Input_Modes",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard will react accordingly to the '<strong>inputmode</strong>' attribute on supported inputs.</span>\n        \n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Input Modes\"></omni-label>\n            <!-- Vanilla Input Modes -->\n            <span>input with type=\"text\" and inputmode=\"numeric\"</span>\n            <input type=\"text\" inputmode=\"numeric\" tabindex=\"9\" />\n            <span>input with type=\"text\" and inputmode=\"decimal\"</span>\n            <input type=\"text\" inputmode=\"decimal\" tabindex=\"10\" />\n            <span>input with type=\"text\" and inputmode=\"tel\"</span>\n            <input type=\"text\" inputmode=\"tel\" tabindex=\"11\" />\n            <span>input with type=\"password\" and inputmode=\"numeric\" </span>\n            <input type=\"password\" inputmode=\"numeric\" tabindex=\"12\" />\n            <span>input with type=\"search\" and inputmode=\"numeric\"</span>\n            <input type=\"search\" inputmode=\"numeric\" tabindex=\"13\" />\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Input Modes'\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Masked_Values",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard supports masking of the input value on the display preview.</span>\n    <span>Masking will apply to the following:\n        <ul>\n            <li><strong>input</strong> elements with the '<strong>type</strong>' attribute set to '<strong>password</strong>'.</li>\n            <li>Any elements with the '<strong>data-omni-keyboard-mask</strong>' attribute .</li>\n            <li>Any supported web component with the '<strong>type</strong>' attribute set to '<strong>password</strong>' on their internal <strong>input</strong> elements.</li>\n            <li>Any supported web component utilising '<strong>data-omni-keyboard-mask</strong>' on their internal <strong>input</strong> elements.</li>\n        </ul>\n    </span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Masked Values\"></omni-label>\n            <!-- Masked Values -->\n            <span>input with type=\"password\"</span>\n            <input type=\"password\" tabindex=\"14\" value=\"Mask This\" />\n            <span>input with type=\"text\" and data-omni-keyboard-mask attribute</span>\n            <input type=\"text\" data-omni-keyboard-mask tabindex=\"15\" value=\"Mask This\" />\n            <span>omni-password-field (Utilises type=\"password\" internally)</span>\n            <omni-password-field tabindex=\"16\" value=\"Mask This\"></omni-password-field>\n            <span>omni-pin-field (Utilises data-omni-keyboard-mask internally)</span>\n            <omni-pin-field tabindex=\"17\" value=\"1234\"></omni-pin-field>\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Masked Values'\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Web_Components",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard supports custom web components that internally utilises <strong>input</strong> or <strong>textarea</strong> elements.</span>\n    <br/>\n    <span>All Omni Components input fields are fully supported.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n\n            <omni-label type=\"subtitle\" label=\"Omni Component Input Fields\"></omni-label>\n            <!-- Omni Component Input Fields -->\n            <omni-currency-field thousands-separator=\",\" label=\"Currency Field\"  tabindex=\"18\"></omni-currency-field>\n            <omni-email-field label=\"Email Field\"  tabindex=\"19\"></omni-email-field>\n            <omni-number-field label=\"Number Field\"  tabindex=\"20\"></omni-number-field>\n            <omni-password-field label=\"Password Field\" tabindex=\"21\"></omni-password-field>\n            <omni-pin-field label=\"Pin Field\" tabindex=\"22\"></omni-pin-field>\n            <omni-search-field label=\"Search Field\" tabindex=\"23\"></omni-search-field>\n            <omni-text-field label=\"Text Field\" tabindex=\"24\"></omni-text-field>\n\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Web Components'\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Enter_Key_Hint_Variations",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>enterkeyhint</strong>' attribute is set on a supported input, the Keyboard's call to action button will react to it accordingly.</span>\n    <br/>\n    <span>The '<strong>enterkeyhint</strong>' attribute is supported as follows:\n        <ul>\n            <li><strong>enter</strong> (Default) - The '<strong>action-enter</strong>' slot will apply to the call to action button. If not provided, the value defined with the '<strong>action-label</strong>' attribute on the keyboard will be displayed on the call to action button.</li>\n            <li><strong>go</strong> - The '<strong>action-go</strong>' slot will apply to the call to action button. If not provided, a right arrow icon <omni-arrow-right-icon class=\"example-icon-preview\"></omni-arrow-right-icon> will be displayed by default.</li>\n            <li><strong>done</strong> - The '<strong>action-done</strong>' slot will apply to the call to action button. If not provided, a checkmark icon <omni-check-icon class=\"example-icon-preview\"></omni-check-icon> will be displayed by default.</li>\n            <li><strong>next</strong> - The '<strong>action-next</strong>' slot will apply to the call to action button. If not provided, an icon of a right arrow within a circle <omni-next-icon class=\"example-icon-preview\"></omni-next-icon> will be displayed by default.</li>\n            <li><strong>previous</strong> - The '<strong>action-previous</strong>' slot will apply to the call to action button. If not provided, an icon of a left arrow within a circle <omni-previous-icon class=\"example-icon-preview\"></omni-previous-icon> will be displayed by default. The Keyboard's default behaviour of focusing the next '<strong>tabIndex</strong>' will also reverse to focus the previous instead.</li>\n            <li><strong>search</strong> - The '<strong>action-search</strong>' slot will apply to the call to action button. If not provided, a magnifying glass icon <omni-search-icon class=\"example-icon-preview\"></omni-search-icon> will be displayed by default.</li>\n            <li><strong>send</strong> - The '<strong>action-send</strong>' slot will apply to the call to action button. If not provided, a paper plane icon <omni-send-icon class=\"example-icon-preview\"></omni-send-icon> will be displayed by default.</li>\n        </ul>\n    </span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Enter Key Variations\"></omni-label>\n            <!-- Enter Key Variations -->\n            <span>input with type=\"text\" and enterkeyhint=\"enter\"</span>\n            <input type=\"text\" enterkeyhint=\"enter\" tabindex=\"25\" />\n            <span>input with type=\"text\" and enterkeyhint=\"go\"</span>\n            <input type=\"text\" enterkeyhint=\"go\" tabindex=\"26\" />\n            <span>input with type=\"number\" and enterkeyhint=\"go\"</span>\n            <input type=\"number\" enterkeyhint=\"go\" tabindex=\"27\" />\n            <span>input with type=\"text\" and enterkeyhint=\"done\"</span>\n            <input type=\"text\" enterkeyhint=\"done\" tabindex=\"28\" />\n            <span>input with type=\"number\" and enterkeyhint=\"done\"</span>\n            <input type=\"number\" enterkeyhint=\"done\" tabindex=\"29\" />\n            <span>input with type=\"text\" and enterkeyhint=\"next\"</span>\n            <input type=\"text\" enterkeyhint=\"next\" tabindex=\"30\" />\n            <span>input with type=\"number\" and enterkeyhint=\"next\"</span>\n            <input type=\"number\" enterkeyhint=\"next\" tabindex=\"31\" />\n            <span>input with type=\"text\" and enterkeyhint=\"previous\"</span>\n            <input type=\"text\" enterkeyhint=\"previous\" tabindex=\"32\" />\n            <span>input with type=\"number\" and enterkeyhint=\"previous\"</span>\n            <input type=\"number\" enterkeyhint=\"previous\" tabindex=\"33\" />\n            <span>input with type=\"text\" and enterkeyhint=\"search\"</span>\n            <input type=\"text\" enterkeyhint=\"search\" tabindex=\"34\" />\n            <span>input with type=\"number\" and enterkeyhint=\"search\"</span>\n            <input type=\"number\" enterkeyhint=\"search\" tabindex=\"35\" />\n            <span>input with type=\"text\" and enterkeyhint=\"send\"</span>\n            <input type=\"text\" enterkeyhint=\"send\" tabindex=\"36\" />\n            <span>input with type=\"number\" and enterkeyhint=\"send\"</span>\n            <input type=\"number\" enterkeyhint=\"send\" tabindex=\"37\" />\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Enter Key Hint Variations'\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Hide_Keyboard",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>data-omni-keyboard-hidden</strong>' attribute is set on a supported input, the Keyboard will not apply to that input.</span>\n    \n    `,\n    render: (args: Args) => html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Hide Keyboard\"></omni-label>\n            <!-- Hide Keyboard -->\n            <span>input with type=\"text\" and data-omni-keyboard-hidden</span>\n            <input data-omni-keyboard-hidden type=\"text\" tabindex=\"38\" />\n            <span>input with type=\"text\" and inputmode=\"none\"</span>\n            <input type=\"text\" inputmode=\"none\" tabindex=\"39\" />\n            <span>input with type=\"text\", data-omni-keyboard-hidden and inputmode=\"none\"</span>\n            <input data-omni-keyboard-hidden type=\"text\" inputmode=\"none\" tabindex=\"40\" />\n        </div>  \n  `,\n    name: 'Hide Keyboard'\n}"
-        },
-        {
-          "kind": "variable",
-          "name": "Hide_Display_Value",
-          "type": {
-            "text": "ComponentStoryFormat<Args>"
-          },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>data-omni-keyboard-no-display</strong>' attribute is set on a supported input, the display preview on the Keyboard header will not be visible.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n    <div class=\"keyboard-showcase\">\n        <omni-label type=\"subtitle\" label=\"Hide Display Value\"></omni-label>\n        <!-- Hide Display Value -->\n        <span>input with type=\"text\" with a value and no data-omni-keyboard-no-display attribute</span>\n        <input  value=\"Some Value\" type=\"text\" tabindex=\"41\" />\n        <span>input with type=\"text\" with a value and data-omni-keyboard-no-display attribute</span>\n        <input data-omni-keyboard-no-display  value=\"Some Value\" type=\"text\" tabindex=\"42\" />\n    </div>  \n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Hide Display Value'\n}"
+          "default": "{\n    render: (args: Args) => html`\n\n    <!-- Add the Keyboard once to the DOM -->    \n    <omni-keyboard id=\"keyboard-interactive\" \n        attach-mode=\"${args.attachMode}\" \n        clear-label=\"${args.clearLabel}\" \n        space-label=\"${args.spaceLabel}\" \n        action-label=\"${args.actionLabel}\" \n        close-label=\"${args.closeLabel}\" >${args['caps-off'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-off', args['caps-off']))}` : nothing}${\n        args['caps-on'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on', args['caps-on']))}` : nothing\n    }${args['caps-lock'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-lock', args['caps-lock']))}` : nothing}${\n        args['close'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close', args['close']))}` : nothing\n    }${args['clear'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args['clear']))}` : nothing}${\n        args['backspace'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('backspace', args['backspace']))}` : nothing\n    }${args['action-done'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-done', args['action-done']))}` : nothing}${\n        args['action-go'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-go', args['action-go']))}` : nothing\n    }${args['action-next'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-next', args['action-next']))}` : nothing}${\n        args['action-previous'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-previous', args['action-previous']))}` : nothing\n    }${args['action-search'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-search', args['action-search']))}` : nothing}${\n        args['action-send'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-send', args['action-send']))}` : nothing\n    }${args['action-enter'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-enter', args['action-enter']))}` : nothing}\n    </omni-keyboard>\n    \n    <!-- Examples -->\n    ${\n        args.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-text-field label=\"Text Field\" tabindex=\"1\"></omni-text-field>  \n            <omni-currency-field thousands-separator=\",\" label=\"Currency Field\"  tabindex=\"2\"></omni-currency-field>\n            <omni-number-field label=\"Number Field\"  tabindex=\"3\"></omni-number-field>\n            <omni-password-field label=\"Password Field\" tabindex=\"4\"></omni-password-field>\n            <omni-pin-field label=\"Pin Field\" tabindex=\"5\"></omni-pin-field>\n            <omni-search-field label=\"Search Field\" tabindex=\"6\"></omni-search-field>\n            <omni-email-field label=\"Email Field\"  tabindex=\"7\"></omni-email-field>\n        </div>\n        `\n            : html`<span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>`\n    }\n     \n  `,\n    name: 'Interactive',\n    description: () => html`\n            <style>\n                .desc-line-item {                    \n                    display: inline-flex;\n                    flex-direction: row;\n                    align-items: center;\n                }\n\n                .desc-line-item > strong {\n                    white-space: nowrap;\n                }\n                \n                .keyboard-showcase {            \n                    display: flex;\n                    flex-direction: column;\n                    justify-content: center;\n                    align-items: stretch;\n                }\n\n                .keyboard-showcase > * {\n                    margin: 10px;\n                }\n\n                .center-inline {\n                    height: 100%;\n                    display: inline-flex;\n                    align-items: center;\n                }\n\n                .example-icon-preview {\n                    flex-direction: row !important;\n                    width: 20px;\n                    height: 20px;\n                    display: inline-flex !important;\n                    color: var(--omni-theme-primary-color);\n                    fill: currentColor;\n                }\n\n                .experimental-warning {\n                    font-size: 1.4em;\n                    font-weight: 600;\n                    color: white;\n                    background: orangered;\n                    border: 2px solid orangered;\n                    border-radius: 14px;\n                    padding: 6px;\n                }\n            </style>\n            <h1 class=\"experimental-warning\">The Keyboard is an experimental component and subject to breaking changes!</h1>\n            <br/>\n            <br/>\n            <span>The Keyboard supports <strong>input</strong> and <strong>textarea</strong> elements as well as custom web components that internally utilise <strong>input</strong> or <strong>textarea</strong> elements.</span>\n            <br/>\n            <span>All Omni Components input fields are fully supported.</span>\n        `,\n    args: {\n        clearLabel: 'Clear',\n        actionLabel: 'Enter',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        attachMode: 'all',\n        'caps-off': raw`<omni-caps-off-icon style=\"display: inherit;\"></omni-caps-off-icon>`,\n        'caps-on': raw`<omni-caps-on-icon style=\"display: inherit;\"></omni-caps-on-icon>`,\n        'caps-lock': raw`<omni-caps-lock-icon style=\"display: inherit;\"></omni-caps-lock-icon>`,\n        'action-done': raw`<omni-check-icon style=\"display: inherit;\"></omni-check-icon>`,\n        'action-enter': '',\n        'action-go': raw`<omni-arrow-right-icon style=\"display: inherit;\"></omni-arrow-right-icon>`,\n        'action-next': raw`<omni-next-icon style=\"display: inherit;\"></omni-next-icon>`,\n        'action-previous': raw`<omni-previous-icon style=\"display: inherit;\"></omni-previous-icon>`,\n        'action-search': raw`<omni-search-icon style=\"display: inherit;\"></omni-search-icon>`,\n        'action-send': raw`<omni-send-icon style=\"display: inherit;\"></omni-send-icon>`,\n        backspace: raw`<omni-backspace-icon style=\"display: inherit;\"></omni-backspace-icon>`,\n        clear: '',\n        close: raw`<omni-chevron-down-icon style=\"display: inherit;\"></omni-chevron-down-icon>`\n    }\n}"
         },
         {
           "kind": "variable",
@@ -8532,11 +8484,35 @@
         },
         {
           "kind": "variable",
-          "name": "Slotted_Content",
+          "name": "Enter_Key_Hint_Variations",
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n\n    <!-- Add the Keyboard with slots to the DOM -->    \n    <omni-keyboard id=\"keyboard-slots\" \n        attach-mode=\"${args.attachMode}\" \n        clear-label=\"${args.clearLabel}\" \n        space-label=\"${args.spaceLabel}\" \n        action-label=\"${args.ctaLabel}\" \n        close-label=\"${args.closeLabel}\" >${args['caps-off'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-off', args['caps-off']))}` : nothing}${\n        args['caps-on'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on', args['caps-on']))}` : nothing\n    }${args['caps-on-permanent'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on-permanent', args['caps-on-permanent']))}` : nothing}${\n        args['close'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close', args['close']))}` : nothing\n    }${args['clear'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args['clear']))}` : nothing}${\n        args['backspace'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('backspace', args['backspace']))}` : nothing\n    }${args['action-done'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-done', args['action-done']))}` : nothing}${\n        args['action-go'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-go', args['action-go']))}` : nothing\n    }${args['action-next'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-next', args['action-next']))}` : nothing}${\n        args['action-previous'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-previous', args['action-previous']))}` : nothing\n    }${args['action-search'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-search', args['action-search']))}` : nothing}${\n        args['action-send'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-send', args['action-send']))}` : nothing\n    }${args['action-enter'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-enter', args['action-enter']))}` : nothing}\n    </omni-keyboard>\n\n\n    <div class=\"keyboard-showcase\">\n\n        <omni-label type=\"subtitle\" label=\"Slotted Enter Key Variations\"></omni-label>\n        <!-- Enter Key Variations -->\n        <span>input with type=\"text\" and enterkeyhint=\"enter\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"enter\" tabindex=\"48\" />\n        <span>input with type=\"text\" and enterkeyhint=\"go\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"go\" tabindex=\"49\" />\n        <span>input with type=\"number\" and enterkeyhint=\"go\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"go\" tabindex=\"50\" />\n        <span>input with type=\"text\" and enterkeyhint=\"done\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"done\" tabindex=\"51\" />\n        <span>input with type=\"number\" and enterkeyhint=\"done\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"done\" tabindex=\"52\" />\n        <span>input with type=\"text\" and enterkeyhint=\"next\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"next\" tabindex=\"53\" />\n        <span>input with type=\"number\" and enterkeyhint=\"next\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"next\" tabindex=\"54\" />\n        <span>input with type=\"text\" and enterkeyhint=\"previous\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"previous\" tabindex=\"55\" />\n        <span>input with type=\"number\" and enterkeyhint=\"previous\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"previous\" tabindex=\"56\" />\n        <span>input with type=\"text\" and enterkeyhint=\"search\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"search\" tabindex=\"57\" />\n        <span>input with type=\"number\" and enterkeyhint=\"search\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"search\" tabindex=\"58\" />\n        <span>input with type=\"text\" and enterkeyhint=\"send\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"text\" enterkeyhint=\"send\" tabindex=\"59\" />\n        <span>input with type=\"number\" and enterkeyhint=\"send\"</span>\n        <input data-omni-keyboard-attach=\"keyboard-slots\" type=\"number\" enterkeyhint=\"send\" tabindex=\"60\" />\n\n    </div>\n\n  `,\n    name: 'Slotted Content',\n    args: {\n        clearLabel: 'Clear',\n        ctaLabel: 'Enter',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        attachMode: 'id',\n        'caps-off': raw`<span class=\"center-inline\">lower</span>`,\n        'caps-on': raw`<span class=\"center-inline\">upper</span>`,\n        'caps-on-permanent': raw`<span class=\"center-inline\">UPPER</span>`,\n        'action-done': raw`<span class=\"center-inline\">Done</span>`,\n        'action-enter': raw`<span class=\"center-inline\">↵</span>`,\n        'action-go': raw`<span class=\"center-inline\">Go</span>`,\n        'action-next': raw`<span class=\"center-inline\">→</span>`,\n        'action-previous': raw`<span class=\"center-inline\">←</span>`,\n        'action-search': raw`<span class=\"center-inline\">Search</span>`,\n        'action-send': raw`<span class=\"center-inline\">Send</span>`,\n        backspace: raw`<span class=\"center-inline\">⌫</span>`,\n        clear: raw`<span class=\"center-inline\">(X)</span>`,\n        close: raw`<span class=\"center-inline\">^</span>`\n    }\n}"
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>enterkeyhint</strong>' attribute is set on a supported input, the Keyboard's call to action button will react to it accordingly.</span>\n    <br/>\n    <span>The '<strong>enterkeyhint</strong>' attribute is supported as follows:\n        <ul>\n            <li><strong>enter</strong> (Default) - The '<strong>action-enter</strong>' slot will apply to the call to action button. If not provided, the value defined with the '<strong>action-label</strong>' attribute on the keyboard will be displayed on the call to action button.</li>\n            <li><strong>go</strong> - The '<strong>action-go</strong>' slot will apply to the call to action button. If not provided, a right arrow icon <omni-arrow-right-icon class=\"example-icon-preview\"></omni-arrow-right-icon> will be displayed by default.</li>\n            <li><strong>done</strong> - The '<strong>action-done</strong>' slot will apply to the call to action button. If not provided, a checkmark icon <omni-check-icon class=\"example-icon-preview\"></omni-check-icon> will be displayed by default.</li>\n            <li><strong>next</strong> - The '<strong>action-next</strong>' slot will apply to the call to action button. If not provided, an icon of a right arrow within a circle <omni-next-icon class=\"example-icon-preview\"></omni-next-icon> will be displayed by default.</li>\n            <li><strong>previous</strong> - The '<strong>action-previous</strong>' slot will apply to the call to action button. If not provided, an icon of a left arrow within a circle <omni-previous-icon class=\"example-icon-preview\"></omni-previous-icon> will be displayed by default. The Keyboard's default behaviour of focusing the next '<strong>tabIndex</strong>' will also reverse to focus the previous instead.</li>\n            <li><strong>search</strong> - The '<strong>action-search</strong>' slot will apply to the call to action button. If not provided, a magnifying glass icon <omni-search-icon class=\"example-icon-preview\"></omni-search-icon> will be displayed by default.</li>\n            <li><strong>send</strong> - The '<strong>action-send</strong>' slot will apply to the call to action button. If not provided, a paper plane icon <omni-send-icon class=\"example-icon-preview\"></omni-send-icon> will be displayed by default.</li>\n        </ul>\n    </span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Enter Key Variations\"></omni-label>\n            <!-- Enter Key Variations -->\n            <span>Text input with enterkeyhint=\"enter\"</span>\n            <omni-text-field enterkeyhint=\"enter\" label=\"Enter\" tabindex=\"12\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"enter\"</span>\n            <omni-number-field enterkeyhint=\"enter\" label=\"Enter\" tabindex=\"13\"></omni-number-field> \n            <span>Text input with enterkeyhint=\"go\"</span>\n            <omni-text-field enterkeyhint=\"go\" label=\"Go\" tabindex=\"14\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"go\"</span>\n            <omni-number-field enterkeyhint=\"go\" label=\"Go\" tabindex=\"15\"></omni-number-field> \n            <span>Text input with enterkeyhint=\"done\"</span>\n            <omni-text-field enterkeyhint=\"done\" label=\"Done\" tabindex=\"16\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"done\"</span>\n            <omni-number-field enterkeyhint=\"done\" label=\"Done\" tabindex=\"17\"></omni-number-field> \n            <span>Text input with enterkeyhint=\"next\"</span>\n            <omni-text-field enterkeyhint=\"next\" label=\"Next\" tabindex=\"18\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"next\"</span>\n            <omni-number-field enterkeyhint=\"next\" label=\"Next\" tabindex=\"19\"></omni-number-field>\n            <span>Text input with enterkeyhint=\"previous\"</span>\n            <omni-text-field enterkeyhint=\"previous\" label=\"Previous\" tabindex=\"20\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"previous\"</span>\n            <omni-number-field enterkeyhint=\"previous\" label=\"Previous\" tabindex=\"21\"></omni-number-field>\n            <span>Text input with enterkeyhint=\"search\"</span>\n            <omni-text-field enterkeyhint=\"search\" label=\"Search\" tabindex=\"22\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"search\"</span>\n            <omni-number-field enterkeyhint=\"search\" label=\"Search\" tabindex=\"23\"></omni-number-field> \n            <span>Text input with enterkeyhint=\"send\"</span>\n            <omni-text-field enterkeyhint=\"send\" label=\"Send\" tabindex=\"24\"></omni-text-field> \n            <span>Number input with enterkeyhint=\"send\"</span>\n            <omni-number-field enterkeyhint=\"send\" label=\"Send\" tabindex=\"25\"></omni-number-field> \n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Enter Key Hint Variations'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Masked_Values",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard supports masking of the input value on the display preview.</span>\n    <span>Masking will apply to the following:\n        <ul>\n            <li>Any elements with the '<strong>data-omni-keyboard-mask</strong>' attribute .</li>\n            <li>Any supported web component with the '<strong>type</strong>' attribute set to '<strong>password</strong>' on their internal <strong>input</strong> elements.</li>\n            <li>Any supported web component utilising '<strong>data-omni-keyboard-mask</strong>' on their internal <strong>input</strong> elements.</li>\n        </ul>\n    </span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Masked Values\"></omni-label>\n            <!-- Masked Values -->\n            <span>Text input with data-omni-keyboard-mask attribute</span>\n            <omni-text-field data-omni-keyboard-mask label=\"Masked on Keyboard\" value=\"Only visible in field\" tabindex=\"26\"></omni-text-field> \n            <span>Password input (Utilises type=\"password\" internally)</span>\n            <omni-password-field tabindex=\"27\" value=\"Mask This\"></omni-password-field>\n            <span>Pin input (Utilises data-omni-keyboard-mask internally)</span>\n            <omni-pin-field tabindex=\"28\" value=\"1234\"></omni-pin-field>\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Masked Values'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Hide_Display_Value",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>data-omni-keyboard-no-display</strong>' attribute is set on a supported input, the display preview on the Keyboard header will not be visible.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n    <div class=\"keyboard-showcase\">\n        <omni-label type=\"subtitle\" label=\"Hide Display Value\"></omni-label>\n        <!-- Hide Display Value -->\n        <span>Input field with a value and no data-omni-keyboard-no-display attribute</span>\n        <omni-text-field label=\"Display not hidden\" value=\"Visible on Keyboard\" tabindex=\"29\"></omni-text-field> \n        <span>Input field with a value and data-omni-keyboard-no-display attribute</span>\n        <omni-text-field data-omni-keyboard-no-display value=\"Not visible on Keyboard\" label=\"Display hidden\" tabindex=\"30\"></omni-text-field> \n    </div>  \n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Hide Display Value'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Hide_Keyboard",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>When the '<strong>data-omni-keyboard-hidden</strong>' attribute is set on a supported input, the Keyboard will not apply to that input.</span>\n    \n    `,\n    render: (args: Args) => html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Hide Keyboard\"></omni-label>\n            <!-- Hide Keyboard -->\n            <span>Input field without data-omni-keyboard-hidden</span>\n            <omni-text-field label=\"With Keyboard\" tabindex=\"31\"></omni-text-field>\n            <span>Input field with data-omni-keyboard-hidden</span>\n            <omni-text-field data-omni-keyboard-hidden label=\"No Keyboard\" tabindex=\"32\"></omni-text-field>\n        </div>  \n  `,\n    name: 'Hide Keyboard'\n}"
         },
         {
           "kind": "variable",
@@ -8544,7 +8520,15 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard will react accordingly to the '<strong>data-omni-keyboard-mode</strong>' attribute on supported target elements.</span>\n        \n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Alternate Keyboard Modes\"></omni-label>\n            <!-- Alternate Keyboard Modes on Omni Component -->\n            <omni-search-field label=\"Search Field\" data-omni-keyboard-mode=\"numeric\" no-native-keyboard tabindex=\"61\"></omni-search-field>\n            <omni-text-field label=\"Text Field\" data-omni-keyboard-mode=\"tel\" no-native-keyboard tabindex=\"62\"></omni-text-field>\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Alternate Modes'\n}"
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard will react accordingly to the '<strong>data-omni-keyboard-mode</strong>' attribute on supported target elements.</span>\n        \n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Alternate Keyboard Modes\"></omni-label>\n            <!-- Alternate Keyboard Modes on Omni Components input fields -->\n            <span>Search field with data-omni-keyboard-mode=\"numeric\"</span>\n            <omni-search-field label=\"Search Field\" data-omni-keyboard-mode=\"numeric\" no-native-keyboard tabindex=\"33\"></omni-search-field>\n            <span>Text field with data-omni-keyboard-mode=\"tel\"</span>\n            <omni-text-field label=\"Text Field\" data-omni-keyboard-mode=\"tel\" no-native-keyboard tabindex=\"34\"></omni-text-field>\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Alternate Modes'\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Slotted_Content",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n\n    <!-- Add the Keyboard with slots to the DOM -->    \n    <omni-keyboard id=\"keyboard-slots\" \n        attach-mode=\"${args.attachMode}\" \n        clear-label=\"${args.clearLabel}\" \n        space-label=\"${args.spaceLabel}\" \n        action-label=\"${args.actionLabel}\" \n        close-label=\"${args.closeLabel}\" >${args['caps-off'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-off', args['caps-off']))}` : nothing}${\n        args['caps-on'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-on', args['caps-on']))}` : nothing\n    }${args['caps-lock'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('caps-lock', args['caps-lock']))}` : nothing}${\n        args['close'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('close', args['close']))}` : nothing\n    }${args['clear'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args['clear']))}` : nothing}${\n        args['backspace'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('backspace', args['backspace']))}` : nothing\n    }${args['action-done'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-done', args['action-done']))}` : nothing}${\n        args['action-go'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-go', args['action-go']))}` : nothing\n    }${args['action-next'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-next', args['action-next']))}` : nothing}${\n        args['action-previous'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-previous', args['action-previous']))}` : nothing\n    }${args['action-search'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-search', args['action-search']))}` : nothing}${\n        args['action-send'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-send', args['action-send']))}` : nothing\n    }${args['action-enter'] ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('action-enter', args['action-enter']))}` : nothing}\n    </omni-keyboard>\n\n\n    <div class=\"keyboard-showcase\">\n\n        <omni-label type=\"subtitle\" label=\"Slotted Enter Key Variations\"></omni-label>\n        <!-- Enter Key Variations -->\n        <span>Text input with enterkeyhint=\"enter\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"enter\" label=\"Enter\" tabindex=\"35\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"enter\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"enter\" label=\"Enter\" tabindex=\"36\"></omni-number-field> \n        <span>Text input with enterkeyhint=\"go\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"go\" label=\"Go\" tabindex=\"37\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"go\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"go\" label=\"Go\" tabindex=\"38\"></omni-number-field> \n        <span>Text input with enterkeyhint=\"done\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"done\" label=\"Done\" tabindex=\"39\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"done\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"done\" label=\"Done\" tabindex=\"40\"></omni-number-field> \n        <span>Text input with enterkeyhint=\"next\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"next\" label=\"Next\" tabindex=\"41\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"next\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"next\" label=\"Next\" tabindex=\"42\"></omni-number-field>\n        <span>Text input with enterkeyhint=\"previous\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"previous\" label=\"Previous\" tabindex=\"43\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"previous\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"previous\" label=\"Previous\" tabindex=\"44\"></omni-number-field>\n        <span>Text input with enterkeyhint=\"search\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"search\" label=\"Search\" tabindex=\"45\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"search\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"search\" label=\"Search\" tabindex=\"46\"></omni-number-field> \n        <span>Text input with enterkeyhint=\"send\"</span>\n        <omni-text-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"send\" label=\"Send\" tabindex=\"47\"></omni-text-field> \n        <span>Number input with enterkeyhint=\"send\"</span>\n        <omni-number-field data-omni-keyboard-attach=\"keyboard-slots\" enterkeyhint=\"send\" label=\"Send\" tabindex=\"48\"></omni-number-field> \n\n    </div>\n\n  `,\n    name: 'Slotted Content',\n    args: {\n        clearLabel: 'Clear',\n        actionLabel: 'Enter',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        attachMode: 'id',\n        'caps-off': raw`<span class=\"center-inline\">lower</span>`,\n        'caps-on': raw`<span class=\"center-inline\">upper</span>`,\n        'caps-lock': raw`<span class=\"center-inline\">UPPER</span>`,\n        'action-done': raw`<span class=\"center-inline\">Done</span>`,\n        'action-enter': raw`<span class=\"center-inline\">↵</span>`,\n        'action-go': raw`<span class=\"center-inline\">Go</span>`,\n        'action-next': raw`<span class=\"center-inline\">→</span>`,\n        'action-previous': raw`<span class=\"center-inline\">←</span>`,\n        'action-search': raw`<span class=\"center-inline\">Search</span>`,\n        'action-send': raw`<span class=\"center-inline\">Send</span>`,\n        backspace: raw`<span class=\"center-inline\">⌫</span>`,\n        clear: raw`<span class=\"center-inline\">(X)</span>`,\n        close: raw`<span class=\"center-inline\">^</span>`\n    }\n}"
         },
         {
           "kind": "variable",
@@ -8552,7 +8536,15 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => {\n        const id = 'keyboard-script-generated';\n        if (!document.getElementById(id)) {\n            Keyboard.create({\n                id: id,\n                attachMode: args.attachMode,\n                clearLabel: args.clearLabel,\n                ctaLabel: args.ctaLabel,\n                closeLabel: args.closeLabel,\n                spaceLabel: args.spaceLabel,\n                backspace: () => {\n                    const elm = document.createElement('span');\n                    elm.textContent = '⌫';\n                    elm.style.height = '100%';\n                    elm.style.display = 'inline-flex';\n                    elm.style.alignItems = 'center';\n                    let color = elm.style.color;\n                    elm.addEventListener('mouseenter', () => {\n                        color = elm.style.color;\n                        elm.style.color = 'lightgreen';\n                    });\n                    elm.addEventListener('mouseleave', () => {\n                        elm.style.color = color;\n                    });\n\n                    return elm;\n                }\n            });\n        }\n        return html`\n            <input data-omni-keyboard-attach=\"keyboard-script-generated\"  type=\"text\" tabindex=\"63\" />\n        `;\n    },\n    name: 'Via Script',\n    args: {\n        attachMode: 'id',\n        clearLabel: 'Clear',\n        ctaLabel: '↵',\n        closeLabel: 'Close',\n        spaceLabel: 'Space'\n    },\n    source: () => raw`\n<!-- Add an input that targets the keyboard id created from script -->\n<input data-omni-keyboard-attach=\"keyboard-script-generated\"  type=\"text\" tabindex=\"63\" />\n\n<!-- A script that creates a keyboard to its default parent container (document.body) with some custom button labels including a custom backspace via render function -->\n<script defer>\n    Keyboard.create({\n        id: 'keyboard-script-generated',\n        attachMode: 'id',\n        clearLabel: 'Clear',\n        ctaLabel: '↵',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        backspace: () => {\n            const elm = document.createElement('span');\n            elm.textContent = '⌫';\n            elm.style.height = '100%';\n            elm.style.display = 'inline-flex';\n            elm.style.alignItems = 'center';\n            let color = elm.style.color;\n            elm.addEventListener('mouseenter', () => {\n                color = elm.style.color;\n                elm.style.color = 'lightgreen';\n            })\n            elm.addEventListener('mouseleave', () => {\n                elm.style.color = color;\n            })\n\n            return elm;\n        }\n    });\n</script>\n    `\n}"
+          "default": "{\n    render: (args: Args) => {\n        const id = 'keyboard-script-generated';\n        if (!document.getElementById(id)) {\n            Keyboard.create({\n                id: id,\n                attachMode: args.attachMode,\n                clearLabel: args.clearLabel,\n                actionLabel: args.actionLabel,\n                closeLabel: args.closeLabel,\n                spaceLabel: args.spaceLabel,\n                backspace: () => {\n                    const elm = document.createElement('span');\n                    elm.textContent = '⌫';\n                    elm.style.height = '100%';\n                    elm.style.display = 'inline-flex';\n                    elm.style.alignItems = 'center';\n                    let color = elm.style.color;\n                    elm.addEventListener('mouseenter', () => {\n                        color = elm.style.color;\n                        elm.style.color = 'lightgreen';\n                    });\n                    elm.addEventListener('mouseleave', () => {\n                        elm.style.color = color;\n                    });\n\n                    return elm;\n                }\n            });\n        }\n        return html`\n            <div class=\"keyboard-showcase\">\n                <span>Input field utilising Keyboard generated from script</span>\n                <omni-text-field data-omni-keyboard-attach=\"keyboard-script-generated\" label=\"Keyboard from script\" tabindex=\"49\"></omni-text-field> \n            </div> \n        `;\n    },\n    name: 'Via Script',\n    args: {\n        attachMode: 'id',\n        clearLabel: 'Clear',\n        actionLabel: '↵',\n        closeLabel: 'Close',\n        spaceLabel: 'Space'\n    },\n    source: () => raw`\n<!-- Add an input that targets the keyboard id created from script -->\n<omni-text-field data-omni-keyboard-attach=\"keyboard-script-generated\" label=\"Keyboard from script\" tabindex=\"49\"></omni-text-field> \n\n<!-- A script that creates a keyboard to its default parent container (document.body) with some custom button labels including a custom backspace via render function -->\n<script defer>\n    Keyboard.create({\n        id: 'keyboard-script-generated',\n        attachMode: 'id',\n        clearLabel: 'Clear',\n        actionLabel: '↵',\n        closeLabel: 'Close',\n        spaceLabel: 'Space',\n        backspace: () => {\n            const elm = document.createElement('span');\n            elm.textContent = '⌫';\n            elm.style.height = '100%';\n            elm.style.display = 'inline-flex';\n            elm.style.alignItems = 'center';\n            let color = elm.style.color;\n            elm.addEventListener('mouseenter', () => {\n                color = elm.style.color;\n                elm.style.color = 'lightgreen';\n            })\n            elm.addEventListener('mouseleave', () => {\n                elm.style.color = color;\n            })\n\n            return elm;\n        }\n    });\n</script>\n    `\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Vanilla_Inputs",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    ...Interactive,\n    description: () => html`\n    <span>The Keyboard supports vanilla native HTML <strong>input</strong> and <strong>textarea</strong> elements.</span>\n    `,\n    render: (args: Args) =>\n        Interactive.args!.attachMode === 'all'\n            ? html`\n        <div class=\"keyboard-showcase\">\n            <omni-label type=\"subtitle\" label=\"Vanilla Element Types\"></omni-label>\n            <!-- Vanilla Element Types -->\n            <span>text</span>\n            <input type=\"text\" tabindex=\"50\" />\n            <span>tel</span>\n            <input type=\"tel\" tabindex=\"51\" />\n            <span>number</span>\n            <input type=\"number\" tabindex=\"52\" />\n            <span>email</span>\n            <input type=\"email\" tabindex=\"53\" />\n            <span>password</span>\n            <input type=\"password\" tabindex=\"54\" />\n            <span>search</span>\n            <input type=\"search\" tabindex=\"55\" />\n            <span>url</span>\n            <input type=\"url\" tabindex=\"56\" />\n            <span>textarea</span>\n            <textarea tabindex=\"57\"></textarea>\n        </div>\n  `\n            : html`\n            <div class=\"keyboard-showcase\">\n                <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have '<strong>attach-mode</strong>' attribute set to '<strong>all</strong>'.</span>\n                <omni-button @click=\"${() => {\n                    Interactive.args!.attachMode = 'all';\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                }}\" class=\"docs-omni-component\"><span>Update <strong>attach-mode</strong> to <strong>all</strong></span></omni-button>\n            </div>`,\n    name: 'Vanilla Inputs'\n}"
         }
       ],
       "exports": [
@@ -8568,54 +8560,6 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
-            "module": "src/keyboard/Keyboard.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Input_Modes",
-          "declaration": {
-            "name": "Input_Modes",
-            "module": "src/keyboard/Keyboard.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Masked_Values",
-          "declaration": {
-            "name": "Masked_Values",
-            "module": "src/keyboard/Keyboard.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Web_Components",
-          "declaration": {
-            "name": "Web_Components",
-            "module": "src/keyboard/Keyboard.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Enter_Key_Hint_Variations",
-          "declaration": {
-            "name": "Enter_Key_Hint_Variations",
-            "module": "src/keyboard/Keyboard.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Hide_Keyboard",
-          "declaration": {
-            "name": "Hide_Keyboard",
-            "module": "src/keyboard/Keyboard.stories.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Hide_Display_Value",
-          "declaration": {
-            "name": "Hide_Display_Value",
             "module": "src/keyboard/Keyboard.stories.ts"
           }
         },
@@ -8637,9 +8581,33 @@
         },
         {
           "kind": "js",
-          "name": "Slotted_Content",
+          "name": "Enter_Key_Hint_Variations",
           "declaration": {
-            "name": "Slotted_Content",
+            "name": "Enter_Key_Hint_Variations",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Masked_Values",
+          "declaration": {
+            "name": "Masked_Values",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hide_Display_Value",
+          "declaration": {
+            "name": "Hide_Display_Value",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Hide_Keyboard",
+          "declaration": {
+            "name": "Hide_Keyboard",
             "module": "src/keyboard/Keyboard.stories.ts"
           }
         },
@@ -8653,9 +8621,25 @@
         },
         {
           "kind": "js",
+          "name": "Slotted_Content",
+          "declaration": {
+            "name": "Slotted_Content",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "Via_Script",
           "declaration": {
             "name": "Via_Script",
+            "module": "src/keyboard/Keyboard.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Vanilla_Inputs",
+          "declaration": {
+            "name": "Vanilla_Inputs",
             "module": "src/keyboard/Keyboard.stories.ts"
           }
         }
@@ -8667,7 +8651,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "An on-screen keyboard control component.",
+          "description": "A responsive on-screen keyboard control component.",
           "name": "Keyboard",
           "cssProperties": [
             {
@@ -8803,6 +8787,18 @@
               "name": "--omni-keyboard-top-bar-border-bottom-color"
             },
             {
+              "description": "Width for display label in keyboard numeric mode.",
+              "name": "--omni-keyboard-numeric-display-label-max-width"
+            },
+            {
+              "description": "Width for display label in keyboard special mode.",
+              "name": "--omni-keyboard-special-display-label-max-width"
+            },
+            {
+              "description": "Width for display label in keyboard alpha-numeric mode.",
+              "name": "--omni-keyboard-alpha-display-label-max-width"
+            },
+            {
               "description": "Width for keyboard button rows wrapper.",
               "name": "--omni-keyboard-wrapper-width"
             },
@@ -8903,6 +8899,18 @@
               "name": "--omni-keyboard-top-bar-mobile-border-radius"
             },
             {
+              "description": "Width for display label in keyboard numeric mode for mobile viewports.",
+              "name": "--omni-keyboard-mobile-numeric-display-label-max-width"
+            },
+            {
+              "description": "Width for display label in keyboard special mode for mobile viewports.",
+              "name": "--omni-keyboard-mobile-special-display-label-max-width"
+            },
+            {
+              "description": "Width for display label in keyboard alpha-numeric mode for mobile viewports.",
+              "name": "--omni-keyboard-mobile-alpha-display-label-max-width"
+            },
+            {
               "description": "Margin for keyboard rows in mobile viewports.",
               "name": "--omni-keyboard-mobile-key-row-margin"
             },
@@ -8933,6 +8941,18 @@
             {
               "description": "Width for keyboard close button icon in mobile viewports.",
               "name": "--omni-keyboard-mobile-close-icon-width"
+            },
+            {
+              "description": "Width for display label in keyboard numeric mode for small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-numeric-display-label-max-width"
+            },
+            {
+              "description": "Width for display label in keyboard special mode for small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-special-display-label-max-width"
+            },
+            {
+              "description": "Width for display label in keyboard alpha-numeric mode for small mobile viewports.",
+              "name": "--omni-keyboard-mobile-small-alpha-display-label-max-width"
             },
             {
               "description": "Margin for keyboard rows in small mobile viewports.",
@@ -8969,8 +8989,8 @@
               "name": "caps-on"
             },
             {
-              "description": "Content to display on case change button when in a permanent uppercase state.",
-              "name": "caps-on-permanent"
+              "description": "Content to display on case change button when in a permanent uppercase state (caps lock).",
+              "name": "caps-lock"
             },
             {
               "description": "Content to display next to close label.",
@@ -9021,7 +9041,7 @@
                 "text": "'all' | 'attribute' | 'id'"
               },
               "default": "'all'",
-              "description": "The rule for the Keyboard to attach to inputs for showing on component focus.\n* `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n* `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute",
+              "description": "The rule for the Keyboard to attach to inputs for showing on component focus.\n* `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n* `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute\n* `id` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute set equal to the Keyboard's id",
               "attribute": "attach-mode",
               "reflects": true
             },
@@ -9060,7 +9080,7 @@
             },
             {
               "kind": "field",
-              "name": "ctaLabel",
+              "name": "actionLabel",
               "type": {
                 "text": "string"
               },
@@ -9136,6 +9156,15 @@
               },
               "privacy": "private",
               "default": "'change-value'"
+            },
+            {
+              "kind": "field",
+              "name": "focusNodes",
+              "type": {
+                "text": "Node[]"
+              },
+              "privacy": "private",
+              "default": "[]"
             },
             {
               "kind": "field",
@@ -9386,7 +9415,7 @@
                 "text": "'all' | 'attribute' | 'id'"
               },
               "default": "'all'",
-              "description": "The rule for the Keyboard to attach to inputs for showing on component focus.\n* `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n* `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute",
+              "description": "The rule for the Keyboard to attach to inputs for showing on component focus.\n* `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n* `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute\n* `id` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute set equal to the Keyboard's id",
               "fieldName": "attachMode",
               "attribute": "attach-mode"
             },
@@ -9427,7 +9456,7 @@
               },
               "default": "'Enter'",
               "description": "The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=\"enter\"`. The `action-enter` slot takes precedence over this label.",
-              "fieldName": "ctaLabel",
+              "fieldName": "actionLabel",
               "attribute": "action-label"
             },
             {
@@ -9462,6 +9491,43 @@
             "module": "/src/core/OmniElement.js"
           },
           "tagName": "omni-keyboard",
+          "globalAttributes": [
+            {
+              "attribute": " data-omni-keyboard-attach",
+              "description": "Indicates that the Keyboard is enabled for that component when the Keyboard has `attach-mode=\"attribute\"` or when the value is equal to the Keyboard's id and `attach-mode=\"id\"`.",
+              "type": "boolean | string"
+            },
+            {
+              "attribute": " data-omni-keyboard-hidden",
+              "description": "Disables the Keyboard for that component.",
+              "type": "boolean"
+            },
+            {
+              "attribute": " data-omni-keyboard-mode",
+              "description": "Indicates that the Keyboard is to render in specified type of inputmode. Takes precedence over `inputmode` attribute.",
+              "type": "InputMode"
+            },
+            {
+              "attribute": " enterkeyhint",
+              "description": "Indicates that the Keyboard's call to action button must render (and in some cases behave) accordingly.",
+              "type": "EnterKeyHint"
+            },
+            {
+              "attribute": " data-omni-keyboard-multi-line",
+              "description": "Indicates that the call to action button inserts a new line instead of default behaviour.",
+              "type": "boolean"
+            },
+            {
+              "attribute": " data-omni-keyboard-mask",
+              "description": "Indicates that the Keyboard display value must be masked.",
+              "type": "boolean"
+            },
+            {
+              "attribute": " data-omni-keyboard-no-display",
+              "description": "Disables the Keyboard display value. Takes precedence over `data-omni-keyboard-mask`.",
+              "type": "boolean"
+            }
+          ],
           "import": "```js\nimport '@capitec/omni-components/keyboard';\n```",
           "customElement": true
         },
@@ -9508,7 +9574,7 @@
             "text": "string"
           },
           "default": "'data-omni-keyboard-attach'",
-          "description": "Indicates that the Keyboard is enabled for that component when the Keyboard has `attach-mode=\"attribute\"`."
+          "description": "Indicates that the Keyboard is enabled for that component when the Keyboard has `attach-mode=\"attribute\"` or when the value is equal to the Keyboard's id and `attach-mode=\"id\"`."
         },
         {
           "kind": "variable",
@@ -9604,6 +9670,10 @@
       ],
       "typeAliases": [
         {
+          "alias": "InputMode",
+          "type": "'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'"
+        },
+        {
           "alias": "InputEventTypes",
           "type": "| 'insertText'\n    | 'insertReplacementText'\n    | 'insertLineBreak'\n    | 'insertParagraph'\n    | 'insertOrderedList'\n    | 'insertUnorderedList'\n    | 'insertHorizontalRule'\n    | 'insertFromYank'\n    | 'insertFromDrop'\n    | 'insertFromPaste'\n    | 'insertFromPasteAsQuotation'\n    | 'insertTranspose'\n    | 'insertCompositionText'\n    | 'insertLink'\n    | 'deleteWordBackward'\n    | 'deleteWordForward'\n    | 'deleteSoftLineBackward'\n    | 'deleteSoftLineForward'\n    | 'deleteEntireSoftLine'\n    | 'deleteHardLineBackward'\n    | 'deleteHardLineForward'\n    | 'deleteByDrag'\n    | 'deleteByCut'\n    | 'deleteContent'\n    | 'deleteContentBackward'\n    | 'deleteContentForward'\n    | 'historyUndo'\n    | 'historyRedo'\n    | 'formatBold'\n    | 'formatItalic'\n    | 'formatUnderline'\n    | 'formatStrikeThrough'\n    | 'formatSuperscript'\n    | 'formatSubscript'\n    | 'formatJustifyFull'\n    | 'formatJustifyCenter'\n    | 'formatJustifyRight'\n    | 'formatJustifyLeft'\n    | 'formatIndent'\n    | 'formatOutdent'\n    | 'formatRemove'\n    | 'formatSetBlockTextDirection'\n    | 'formatSetInlineTextDirection'\n    | 'formatBackColor'\n    | 'formatFontColor'\n    | 'formatFontName'"
         },
@@ -9621,7 +9691,7 @@
         },
         {
           "alias": "KeyboardInit",
-          "type": "{\n    /**\n     * The id to apply to the Keyboard elements.\n     */\n    id?: string;\n\n    /**\n     * The container to append the Keyboard as child. If not provided will append to a new div element on the document body.\n     */\n    parent?: string | HTMLElement | DocumentFragment | null;\n\n    /**\n     * The rule for the Keyboard to attach to inputs for showing on component focus.\n     * * `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n     * * `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute.\n     */\n    attachMode?: 'all' | 'attribute' | 'id';\n\n    /**\n     * The text label to display by the close button.\n     */\n    closeLabel?: string;\n\n    /**\n     * The text label to display on the spacebar button.\n     */\n    spaceLabel?: string;\n\n    /**\n     * The text label to display on the clear button. The `clear` slot takes precedence over this label.\n     */\n    clearLabel?: string;\n\n    /**\n     * The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=\"enter\"`. The `action-enter` slot takes precedence over this label.\n     */\n    ctaLabel?: string;\n\n    /**\n     * A function that returns content to render within the 'clear' slot\n     */\n    clear?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-off' slot\n     */\n    capsOff?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-on' slot\n     */\n    capsOn?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-on-permanent' slot\n     */\n    capsOnPermanent?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'backspace' slot\n     */\n    backspace?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'close' slot\n     */\n    close?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-enter' slot\n     */\n    ctaEnter?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-done' slot\n     */\n    ctaDone?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-go' slot\n     */\n    ctaGo?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-next' slot\n     */\n    ctaNext?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-previous' slot\n     */\n    ctaPrevious?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-search' slot\n     */\n    ctaSearch?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-send' slot\n     */\n    ctaSend?: RenderFunction;\n}"
+          "type": "{\n    /**\n     * The id to apply to the Keyboard elements.\n     */\n    id?: string;\n\n    /**\n     * The container to append the Keyboard as child. If not provided will append to a new div element on the document body.\n     */\n    parent?: string | HTMLElement | DocumentFragment | null;\n\n    /**\n     * The rule for the Keyboard to attach to inputs for showing on component focus.\n     * * `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.\n     * * `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute.\n     * * `id` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute set equal to the Keyboard's id\n     */\n    attachMode?: 'all' | 'attribute' | 'id';\n\n    /**\n     * The text label to display by the close button.\n     */\n    closeLabel?: string;\n\n    /**\n     * The text label to display on the spacebar button.\n     */\n    spaceLabel?: string;\n\n    /**\n     * The text label to display on the clear button. The `clear` slot takes precedence over this label.\n     */\n    clearLabel?: string;\n\n    /**\n     * The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint=\"enter\"`. The `action-enter` slot takes precedence over this label.\n     */\n    actionLabel?: string;\n\n    /**\n     * A function that returns content to render within the 'clear' slot\n     */\n    clear?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-off' slot\n     */\n    capsOff?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-on' slot\n     */\n    capsOn?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'caps-lock' slot\n     */\n    capsLock?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'backspace' slot\n     */\n    backspace?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'close' slot\n     */\n    close?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-enter' slot\n     */\n    actionEnter?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-done' slot\n     */\n    actionDone?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-go' slot\n     */\n    actionGo?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-next' slot\n     */\n    actionNext?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-previous' slot\n     */\n    actionPrevious?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-search' slot\n     */\n    actionSearch?: RenderFunction;\n\n    /**\n     * A function that returns content to render within the 'action-send' slot\n     */\n    actionSend?: RenderFunction;\n}"
         }
       ]
     },

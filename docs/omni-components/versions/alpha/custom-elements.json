@@ -3961,7 +3961,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '123456789',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            // Check the following value as input value is formatted to currency value;\n            await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n                timeout: 3000\n            });\n            await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n                timeout: 3000\n            });\n        }\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace>2/}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 12,\n            initialSelectionEnd: 12\n        });\n\n        await currencyField.updateComplete;\n\n        console.log('After backspacing', inputField.value);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue('1,200,000'), {\n                timeout: 3000\n            });\n        }\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue('120,000'), {\n                timeout: 3000\n            });\n        }\n    }\n}"
+          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            // Check the following value as input value is formatted to currency value;\n            await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n                timeout: 3000\n            });\n            await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n                timeout: 3000\n            });\n        }\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace>2/}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 12,\n            initialSelectionEnd: 12\n        });\n\n        await currencyField.updateComplete;\n\n        console.log('After backspacing', inputField.value);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue('1,200,000'), {\n                timeout: 3000\n            });\n        }\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue('120,000'), {\n                timeout: 3000\n            });\n        }\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4226,7 +4226,27 @@
             },
             {
               "kind": "method",
-              "name": "_isIOS"
+              "name": "_isNumber",
+              "parameters": [
+                {
+                  "name": "number",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_isAllZeros",
+              "parameters": [
+                {
+                  "name": "centValue",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -4298,6 +4318,14 @@
             },
             {
               "kind": "method",
+              "name": "_focusInput"
+            },
+            {
+              "kind": "method",
+              "name": "_clickInput"
+            },
+            {
+              "kind": "method",
               "name": "_blur",
               "return": {
                 "type": {
@@ -4307,29 +4335,27 @@
             },
             {
               "kind": "method",
-              "name": "_keyDown",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              },
+              "name": "_onPaste",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "KeyboardEvent"
+                    "text": "ClipboardEvent"
                   }
                 }
               ]
             },
             {
               "kind": "method",
-              "name": "_keyInput",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
+              "name": "_beforeInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
                 }
-              }
+              ]
             },
             {
               "kind": "method",

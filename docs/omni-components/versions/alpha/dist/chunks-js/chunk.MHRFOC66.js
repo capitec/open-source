@@ -57,7 +57,8 @@ function print() { __p += __j.call(arguments, '') }
             .control-bar > .control-label {
                 cursor: pointer;
                 text-align: center;
-
+                text-decoration: underline;
+                
                 width: var(--omni-calendar-control-label-width , 115px);
 
                 color: var(--omni-calendar-control-label-color, var(--omni-font-color));
@@ -291,4 +292,4 @@ function print() { __p += __j.call(arguments, '') }
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
-//# sourceMappingURL=chunk.KRYGNPAI.js.map
+//# sourceMappingURL=chunk.MHRFOC66.js.map

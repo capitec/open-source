@@ -45,13 +45,38 @@ function print() { __p += __j.call(arguments, '') }
             }
 
             /*omni calendar control icon color and width*/
+            /*
             .control-bar > .left-control,
             .control-bar > .right-control{
                 cursor: pointer;
 
                 fill: var(--omni-calendar-control-color, var(--omni-primary-color));
                 width: var(--omni-calendar-control-width, 23px);
+            }*/
+
+            /*omni calendar control icon color and width*/
+            .control-bar > .left-control,
+            .control-bar > .right-control{
+                cursor: pointer;
+
+                display: inline-flex;
+                flex: 0 0 auto;
+                align-items: center;
+                cursor: pointer;
+                padding: var(--omni-calendar-control-padding, 2px 2px);
             }
+
+            .left-chevron,
+            .right-chevron,
+            ::slotted([slot='left-control']),
+            ::slotted([slot='right-control'])
+            {
+                width: var(--omni-calendar-control-icon-width, 23px);
+                height: var(--omni-calendar-control-icon-height, 23px);
+                fill: var(--omni-calendar-control-icon-color,  var(--omni-primary-color));
+                cursor: pointer;
+            }
+
 
             /* omni calendar controls label*/
             .control-bar > .control-label {
@@ -259,9 +284,9 @@ function print() { __p += __j.call(arguments, '') }
                 ${this._renderYearsGrid()}`;default:return $e`      
                 ${this._renderControlBar()}
                 ${this._renderDaysGrid()}`}}_renderControlBar(){let s=A.local(this._selectedYear,this._selectedMonth,1).setLocale(this.locale);return $e`<span class="control-bar">
-            <div class="left-control" @click="${()=>this._goToPrevious()}"><omni-chevron-left-icon></omni-chevron-left-icon></div>
+            <div class="left-control" @click="${()=>this._goToPrevious()}"><slot name="left-control"><omni-chevron-left-icon class="left-chevron"></omni-chevron-left-icon></slot></div>
             <div class="control-label" @click="${()=>this._changeStateSelection()}">${this._showState==="years"?`${this._selectedDecade[0]} - ${this._selectedDecade[this._selectedDecade.length-1]}`:this._showState==="months"?this._selectedYear:`${s.monthLong} ${this._selectedYear}`}</div>
-            <div class="right-control" @click="${()=>this._goToNext()}"><omni-chevron-right-icon></omni-chevron-right-icon></div>
+            <div class="right-control" @click="${()=>this._goToNext()}"><slot name="right-control"><omni-chevron-right-icon class="right-chevron"></omni-chevron-right-icon></slot></div>
         </span>`}_renderDaysGrid(){return $e`
         <div class="day-grid">
             ${this._renderDayNameBar()}
@@ -292,4 +317,4 @@ function print() { __p += __j.call(arguments, '') }
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
-//# sourceMappingURL=chunk.MHRFOC66.js.map
+//# sourceMappingURL=chunk.IRPIFDU6.js.map

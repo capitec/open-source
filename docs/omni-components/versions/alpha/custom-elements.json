@@ -4226,6 +4226,18 @@
             },
             {
               "kind": "method",
+              "name": "_dispatchCustomEvent",
+              "parameters": [
+                {
+                  "name": "amount",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_isNumber",
               "parameters": [
                 {
@@ -4582,6 +4594,14 @@
               "inheritedFrom": {
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "CustomEvent"
               }
             }
           ],

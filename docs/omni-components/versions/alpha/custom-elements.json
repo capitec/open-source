@@ -4262,6 +4262,23 @@
             },
             {
               "kind": "method",
+              "name": "_setDefaultValue",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_parseAmount",
               "return": {
                 "type": {

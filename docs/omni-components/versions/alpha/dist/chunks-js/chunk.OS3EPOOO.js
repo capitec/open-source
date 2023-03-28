@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.K2UMXYHA.js";import{a as b}from"./chunk.SR577AVI.js";import{a as p}from"./chunk.E3RY574V.js";import{a as f}from"./chunk.2HYOR3YM.js";import{a as s,b as d,d as u}from"./chunk.S2K25ADN.js";import{a,b as l}from"./chunk.F6MIXR4E.js";import{j as t,m as r,p as o}from"./chunk.BF43NN75.js";r();o();var n=class extends b{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,c,i){super.attributeChangedCallback(e,c,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as m}from"./chunk.K2UMXYHA.js";import{a as b}from"./chunk.SVECC7PQ.js";import{a as p}from"./chunk.E3RY574V.js";import{a as f}from"./chunk.2HYOR3YM.js";import{a as s,b as d,d as u}from"./chunk.S2K25ADN.js";import{a,b as l}from"./chunk.F6MIXR4E.js";import{j as t,m as r,p as o}from"./chunk.BF43NN75.js";r();o();var n=class extends b{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,c,i){super.attributeChangedCallback(e,c,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
         .field {
           flex: 1 1 auto;
 
@@ -50,4 +50,4 @@ import{a as m}from"./chunk.K2UMXYHA.js";import{a as b}from"./chunk.SR577AVI.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([u("#inputField")],n.prototype,"_inputElement",2),t([d({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],n.prototype,"noNativeKeyboard",2),n=t([s("omni-number-field")],n);export{n as a};
-//# sourceMappingURL=chunk.F2W556Y5.js.map
+//# sourceMappingURL=chunk.OS3EPOOO.js.map

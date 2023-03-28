@@ -1,4 +1,4 @@
-import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";import{b as t}from"./chunk.S2K25ADN.js";import{a as m,b as o,d as r}from"./chunk.F6MIXR4E.js";import{j as l,m as s,p as f}from"./chunk.BF43NN75.js";s();f();var e=class extends c{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
+import{a as n}from"./chunk.2HYOR3YM.js";import{i as b}from"./chunk.CWNKFZ3E.js";import{b as t}from"./chunk.S2K25ADN.js";import{a as m,b as o,d as r}from"./chunk.F6MIXR4E.js";import{j as l,m as s,p as f}from"./chunk.BF43NN75.js";s();f();var e=class extends b{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
                 ${super.styles}
 
                 :host {
@@ -48,7 +48,7 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                     border-width: var(--omni-form-border-width, 1px);
                     border-radius: var(--omni-form-border-radius, 4px);
                     border-style: var(--omni-form-border-style, solid);
-                    border-color: var(--omni-form-border-color, var(--omni-primary-color));
+                    border-color: var(--omni-form-border-color, #808080);
                     pointer-events: none;
                 }
 
@@ -228,4 +228,4 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                 ${this.renderHint()} ${this.renderError()}
             </div>
         `}renderPrefix(){return r}renderContent(){return r}renderLabel(i=!1){var d;let a={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":i};return o`${this.label?o`<div class=${n(a)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};l([t({type:String,reflect:!0})],e.prototype,"label",2),l([t({reflect:!0})],e.prototype,"value",2),l([t({type:Object,reflect:!0})],e.prototype,"data",2),l([t({type:String,reflect:!0})],e.prototype,"hint",2),l([t({type:String,reflect:!0})],e.prototype,"error",2),l([t({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{e as a};
-//# sourceMappingURL=chunk.SR577AVI.js.map
+//# sourceMappingURL=chunk.SVECC7PQ.js.map

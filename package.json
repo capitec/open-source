@@ -3,7 +3,7 @@
   "description": "Open Source Documentation",
   "main": "index.js",
   "scripts": {
-    "serve": "http-server .. -o /open-source -c -1 ",
+    "serve": "npx http-server .. -o /open-source -c -1 ",
     "repos": "node update-repos-list.js",
     "docs": "npm run repos && npm run serve"
   },

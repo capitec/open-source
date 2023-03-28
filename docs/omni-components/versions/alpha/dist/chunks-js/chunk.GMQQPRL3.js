@@ -45,16 +45,6 @@ function print() { __p += __j.call(arguments, '') }
             }
 
             /*omni calendar control icon color and width*/
-            /*
-            .control-bar > .left-control,
-            .control-bar > .right-control{
-                cursor: pointer;
-
-                fill: var(--omni-calendar-control-color, var(--omni-primary-color));
-                width: var(--omni-calendar-control-width, 23px);
-            }*/
-
-            /*omni calendar control icon color and width*/
             .control-bar > .left-control,
             .control-bar > .right-control{
                 cursor: pointer;
@@ -317,4 +307,4 @@ function print() { __p += __j.call(arguments, '') }
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
-//# sourceMappingURL=chunk.IRPIFDU6.js.map
+//# sourceMappingURL=chunk.GMQQPRL3.js.map

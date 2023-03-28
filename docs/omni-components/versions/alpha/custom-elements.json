@@ -4333,6 +4333,18 @@
             },
             {
               "kind": "method",
+              "name": "_blurOnEnter",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "any"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_formatToCurrency",
               "return": {
                 "type": {

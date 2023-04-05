@@ -11633,7 +11633,15 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: ''\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${args.maxLength}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n            timeout: 3000\n        });\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Length",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}>\n    </omni-pin-field>\n  `,\n    name: 'Max Length',\n    description: 'Limit the character input length based on the value provided.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n\n        await userEvent.type(inputField, '12345678910', {\n            pointerEventsCheck: 0\n        });\n        const value = 12345;\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(inputField.value).toBe(String(value)), {\n            timeout: 3000\n        });\n    }\n}"
         },
         {
           "kind": "variable",
@@ -11677,6 +11685,14 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/pin-field/PinField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Length",
+          "declaration": {
+            "name": "Max_Length",
             "module": "src/pin-field/PinField.stories.ts"
           }
         },
@@ -11744,7 +11760,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Pin input control to enter masked numeric values.",
+          "description": "Input control to enter a masked numeric value.",
           "name": "PinField",
           "cssProperties": [
             {
@@ -11859,6 +11875,16 @@
               },
               "description": "Disables native on screen keyboards for the component.",
               "attribute": "no-native-keyboard",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "attribute": "max-length",
               "reflects": true
             },
             {
@@ -12181,6 +12207,15 @@
               "description": "Disables native on screen keyboards for the component.",
               "fieldName": "noNativeKeyboard",
               "attribute": "no-native-keyboard"
+            },
+            {
+              "name": "max-length",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "fieldName": "maxLength",
+              "attribute": "max-length"
             },
             {
               "name": "label",

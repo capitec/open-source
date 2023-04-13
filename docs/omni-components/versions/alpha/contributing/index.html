@@ -357,6 +357,7 @@
 <li><a href="https://github.com/capitec/omni-components/fork">Fork</a> the repository and create a branch from <code>develop</code>.</li>
 <li>Clone the forked repo, checkout your branch, and run <code>npm ci</code> inside the repository root.</li>
 <li>Start up the dev server with <code>npm run serve</code> (or by launching debugging in VS Code).</li>
+<li>Install the testing dependencies with <code>npx playwright install --with-deps</code>.</li>
 </ol>
 <h3><a id="directory-structure" class="anchor" href="contributing/#directory-structure" aria-hidden="true"></a>Directory Structure</h3>
 <p>When adding or editing components, please note the following key directories:</p>
@@ -445,9 +446,22 @@
 <ul>
 <li>Code scanning passes.</li>
 <li>Lint validation passes.</li>
+</ul>
+<blockquote>
+<p>💡 TIP: Analyze changes locally with <code>npm run lint</code>.</p>
+</blockquote>
+<ul>
 <li>Format validation passes.</li>
+</ul>
+<blockquote>
+<p>💡 TIP: Apply changes locally with <code>npm run format</code>.</p>
+</blockquote>
+<ul>
 <li>All story play function tests pass.</li>
 </ul>
+<blockquote>
+<p>💡 TIP: Run tests locally with <code>npm run test</code>.</p>
+</blockquote>
 <!--- * All story play function tests has at least 80% code coverage of components. --->
 
 </article>

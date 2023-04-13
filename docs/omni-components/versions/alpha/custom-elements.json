@@ -7211,7 +7211,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "A calendar icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/Calendar.icon.js';\n```",
+          "description": "A calendar icon component.",
           "name": "CalenderIcon",
           "members": [
             {
@@ -7229,6 +7229,7 @@
             "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-calendar-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/Calendar.icon.js';\n```",
           "customElement": true
         }
       ],
@@ -7492,7 +7493,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Chevron left icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/ChevronLeft.icon.js';\n```",
+          "description": "Chevron left icon component.",
           "name": "ChevronLeftIcon",
           "members": [
             {
@@ -7510,6 +7511,7 @@
             "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-chevron-left-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/ChevronLeft.icon.js';\n```",
           "customElement": true
         }
       ],
@@ -7538,7 +7540,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Chevron right icon component.\n\n```js\n\nimport '@capitec/omni-components/icons/ChevronRight.icon.js';\n```",
+          "description": "Chevron right icon component.",
           "name": "ChevronRightIcon",
           "members": [
             {
@@ -7556,6 +7558,7 @@
             "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-chevron-right-icon",
+          "import": "```js\nimport '@capitec/omni-components/icons/ChevronRight.icon.js';\n```",
           "customElement": true
         }
       ],

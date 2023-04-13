@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.K2UMXYHA.js";import{a as f}from"./chunk.SR577AVI.js";import{a as h}from"./chunk.E3RY574V.js";import{a as d}from"./chunk.2HYOR3YM.js";import{a as l,b as s,d as c}from"./chunk.S2K25ADN.js";import{a,b as r}from"./chunk.F6MIXR4E.js";import{j as t,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var i=class extends f{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
+import{a as m}from"./chunk.K2UMXYHA.js";import{a as f}from"./chunk.WASXY5YJ.js";import{a as h}from"./chunk.E3RY574V.js";import{a as d}from"./chunk.2HYOR3YM.js";import{a as l,b as s,d as c}from"./chunk.S2K25ADN.js";import{a,b as r}from"./chunk.F6MIXR4E.js";import{j as t,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var i=class extends f{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}async _clearField(e){if(this.disabled)return e.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -78,4 +78,4 @@ import{a as m}from"./chunk.K2UMXYHA.js";import{a as f}from"./chunk.SR577AVI.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};t([c("#inputField")],i.prototype,"_inputElement",2),t([s({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],i.prototype,"noNativeKeyboard",2),i=t([l("omni-search-field")],i);export{i as a};
-//# sourceMappingURL=chunk.FHBJRI7D.js.map
+//# sourceMappingURL=chunk.KB2GK3YT.js.map

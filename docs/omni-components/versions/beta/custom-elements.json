@@ -895,6 +895,24 @@
               "name": "--omni-calendar-day-selected-button-height"
             }
           ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the left control button.",
+              "name": "left-control"
+            },
+            {
+              "description": "Replaces the icon for the right control button.",
+              "name": "right-control"
+            }
+          ],
           "members": [
             {
               "kind": "field",
@@ -1286,17 +1304,7 @@
           },
           "tagName": "omni-calendar",
           "import": "```js\nimport '@capitec/omni-components/calendar';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [
@@ -3961,7 +3969,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '123456789',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        const input = jest.fn();\n        currencyField.addEventListener('input', input);\n\n        const value = '1200000.15';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace>2/}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 12,\n            initialSelectionEnd: 12\n        });\n\n        await currencyField.updateComplete;\n\n        console.log('After backspacing', inputField.value);\n\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000'), {\n            timeout: 3000\n        });\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        await waitFor(() => expect(inputField).toHaveValue('120,000'), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '123456789',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        // Simulate click, focus and blur events\n        await userEvent.click(inputField);\n        await inputField.focus();\n        await inputField.blur();\n\n        const beforeinput = jest.fn();\n        currencyField.addEventListener('beforeinput', beforeinput);\n\n        const value = '120000015';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(beforeinput).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace>2/}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 12,\n            initialSelectionEnd: 12\n        });\n\n        await currencyField.updateComplete;\n\n        console.log('After backspacing', inputField.value);\n\n        await waitFor(() => expect(inputField).toHaveValue('12,000.00'), {\n            timeout: 3000\n        });\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        await waitFor(() => expect(inputField).toHaveValue('1,200.00'), {\n            timeout: 3000\n        });\n\n        /* Paste Tests */\n        //Set the selection range of the input component to ensure the entire value is selected.\n        inputField.setSelectionRange(0, 10);\n\n        const number = '88.88';\n        await userEvent.paste(number);\n\n        await waitFor(() => expect(inputField).toHaveValue('88.88'), {\n            timeout: 3000\n        });\n\n        setUIValueClean(inputField);\n        inputField.value = '';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n\n        // Paste invalid numeric value the alpha characters should be stripped and the value should be updated accordingly.\n        inputField.setSelectionRange(3, 10);\n        const invalidNumber = '4abc';\n        await userEvent.paste(invalidNumber);\n\n        await waitFor(() => expect(inputField).toHaveValue('124.15'), {\n            timeout: 3000\n        });\n\n        //TODO add tests for before input scenarios\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4226,7 +4234,68 @@
             },
             {
               "kind": "method",
-              "name": "_isIOS"
+              "name": "_dispatchChange",
+              "parameters": [
+                {
+                  "name": "amount",
+                  "type": {
+                    "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_isNumber",
+              "parameters": [
+                {
+                  "name": "number",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_isAllZeros",
+              "parameters": [
+                {
+                  "name": "centValue",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_convertToCents",
+              "parameters": [
+                {
+                  "name": "currencyValue",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_formatToCurrencyValue",
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -4258,6 +4327,18 @@
                   "name": "value",
                   "type": {
                     "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_blurOnEnter",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
                   }
                 }
               ]
@@ -4298,7 +4379,15 @@
             },
             {
               "kind": "method",
-              "name": "_blur",
+              "name": "_onFocusInput"
+            },
+            {
+              "kind": "method",
+              "name": "_onClickInput"
+            },
+            {
+              "kind": "method",
+              "name": "_onBlur",
               "return": {
                 "type": {
                   "text": "Promise<void>"
@@ -4307,29 +4396,27 @@
             },
             {
               "kind": "method",
-              "name": "_keyDown",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
-                }
-              },
+              "name": "_onPaste",
               "parameters": [
                 {
                   "name": "e",
                   "type": {
-                    "text": "KeyboardEvent"
+                    "text": "ClipboardEvent"
                   }
                 }
               ]
             },
             {
               "kind": "method",
-              "name": "_keyInput",
-              "return": {
-                "type": {
-                  "text": "Promise<void>"
+              "name": "_beforeInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
                 }
-              }
+              ]
             },
             {
               "kind": "method",
@@ -4557,6 +4644,15 @@
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
               }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "CustomEvent<{}>"
+              },
+              "description": "Dispatched when the component value changes."
             }
           ],
           "attributes": [
@@ -4811,7 +4907,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        locale: 'en-us'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot!.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot!.querySelectorAll('div.day > div.day-label')[15];\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .value=\"${args.value}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        data: {},\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        locale: 'en-us'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -5824,7 +5920,7 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "KeyboardEvent"
                   }
                 }
               ]
@@ -11937,7 +12033,7 @@
                 {
                   "name": "e",
                   "type": {
-                    "text": "any"
+                    "text": "KeyboardEvent"
                   }
                 }
               ]

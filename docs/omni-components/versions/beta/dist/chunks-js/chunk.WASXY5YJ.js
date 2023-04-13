@@ -84,7 +84,7 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                 .layout:focus-within > .border {
                     border-style: solid;
                     border-width: var(--omni-form-focussed-border-width, 2px);
-                    border-color: var(--omni-form-focussed-border-color, var(--omni-primary-color));
+                    border-color: var(--omni-form-focussed-border-color, var(--omni-primary-active-color));
                 }
 
                 :host([value]:not([value=''])) .layout  > .label,
@@ -194,16 +194,19 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                 }
 
                 /* Make this border wider half of focussed*/
-                .layout:hover > .border {
-                    border-color: var(--omni-form-hover-color, var(--omni-primary-hover-color));
-                }
+                /* Added to resolve sticky hover state on mobile devices */
+                @media (hover: hover) {
+                    .layout:hover > .border {
+                        border-color: var(--omni-form-hover-color, var(--omni-primary-hover-color));
+                    }
 
-                .layout.disabled:hover > .border {
-                    border-color: var(--omni-form-disabled-hover-color, var(--omni-disabled-border-color));
-                }
+                    .layout.disabled:hover > .border {
+                        border-color: var(--omni-form-disabled-hover-color, var(--omni-disabled-border-color));
+                    }
 
-                .layout.error:hover > .border {
-                    border-color: var(--omni-form-error-hover-color, var(--omni-error-border-color));
+                    .layout.error:hover > .border {
+                        border-color: var(--omni-form-error-hover-color, var(--omni-error-border-color));
+                    }
                 }
 
                 
@@ -215,9 +218,9 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){var a;let i={layout:!0,error:(a=this.error)!=null?a:!1,disabled:this.disabled};return o`
+            `]}render(){var i;let a={layout:!0,error:(i=this.error)!=null?i:!1,disabled:this.disabled};return o`
             <div class="container">
-                <div class=${n(i)}>
+                <div class=${n(a)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
                     ${this.renderLabel()} 
@@ -227,5 +230,5 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(i=!1){var d;let a={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":i};return o`${this.label?o`<div class=${n(a)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};l([t({type:String,reflect:!0})],e.prototype,"label",2),l([t({reflect:!0})],e.prototype,"value",2),l([t({type:Object,reflect:!0})],e.prototype,"data",2),l([t({type:String,reflect:!0})],e.prototype,"hint",2),l([t({type:String,reflect:!0})],e.prototype,"error",2),l([t({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{e as a};
-//# sourceMappingURL=chunk.SR577AVI.js.map
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(a=!1){var d;let i={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":a};return o`${this.label?o`<div class=${n(i)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};l([t({type:String,reflect:!0})],e.prototype,"label",2),l([t({reflect:!0})],e.prototype,"value",2),l([t({type:Object,reflect:!0})],e.prototype,"data",2),l([t({type:String,reflect:!0})],e.prototype,"hint",2),l([t({type:String,reflect:!0})],e.prototype,"error",2),l([t({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{e as a};
+//# sourceMappingURL=chunk.WASXY5YJ.js.map

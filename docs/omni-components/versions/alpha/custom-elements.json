@@ -8396,6 +8396,14 @@
           "name": "*",
           "declaration": {
             "name": "*",
+            "package": "./Calendar.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
             "package": "./CapsOff.icon.js"
           }
         },
@@ -8429,6 +8437,22 @@
           "declaration": {
             "name": "*",
             "package": "./ChevronDown.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./ChevronLeft.icon.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./ChevronRight.icon.js"
           }
         },
         {
@@ -10024,6 +10048,7 @@
             "name": "OmniElement",
             "module": "/src/core/OmniElement.js"
           },
+          "ignore": true,
           "import": "```js\nimport '@capitec/omni-components/keyboard';\n```",
           "tagName": "omni-keyboard-button",
           "customElement": true
@@ -16909,6 +16934,7 @@
             "name": "LitElement",
             "package": "lit"
           },
+          "ignore": true,
           "tagName": "code-editor",
           "customElement": true
         }
@@ -17241,6 +17267,7 @@
             "name": "OmniElement",
             "module": "/src/core/OmniElement.js"
           },
+          "ignore": true,
           "tagName": "live-property-editor",
           "customElement": true,
           "slots": [
@@ -17682,6 +17709,7 @@
             "name": "LitElement",
             "package": "lit"
           },
+          "ignore": true,
           "tagName": "story-renderer",
           "customElement": true
         }

@@ -10098,7 +10098,15 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"> </omni-label> `,\n    description: 'Set the text to display with a bold font style.',\n    args: {\n        label: 'Strong',\n        type: 'strong'\n    },\n    play: async (context) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Strong.args?.label as string);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html` <omni-label data-testid=\"test-label\" label=\"${args.label}\" type=\"${args.type}\"></omni-label>`,\n    description: 'Set the text to display with a bold font style.',\n    args: {\n        label: 'Strong',\n        type: 'strong'\n    },\n    play: async (context) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        await expect(label.shadowRoot).toHaveTextContent(Strong.args?.label as string);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Slot",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-label data-testid=\"test-label\" type=\"${args.type}\">\n            <span>This is <span style=\"text-decoration: underline;\">underlined</span> text inside a paragraph.</span>\n        </omni-label>\n    `,\n    description: 'Set html content to display within.',\n    args: {\n        label: 'Slot',\n        type: 'strong'\n    },\n    play: async (context) => {\n        const label = within(context.canvasElement).getByTestId<Label>('test-label');\n        const slotElement = label.shadowRoot?.querySelector('slot');\n        const foundSlottedSpan = slotElement?.assignedElements().find((e) => e.innerHTML.includes('text inside a paragraph.'));\n        await expect(foundSlottedSpan).toBeTruthy();\n    }\n}"
         }
       ],
       "exports": [
@@ -10138,6 +10146,14 @@
           "name": "Strong",
           "declaration": {
             "name": "Strong",
+            "module": "src/label/Label.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Slot",
+          "declaration": {
+            "name": "Slot",
             "module": "src/label/Label.stories.ts"
           }
         }

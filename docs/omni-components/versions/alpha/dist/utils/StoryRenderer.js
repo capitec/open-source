@@ -165,14 +165,21 @@ import"../chunks-js/chunk.BY2PL4N3.js";import{a as te}from"../chunks-js/chunk.EQ
     </body>
 </html>`,b=`import 'https://cdn.jsdelivr.net/npm/@capitec/omni-components@${h}/dist/omni-components.js';`;break;case"React":u=`
 <html theme="${y!=null?y:"light"}">
-    <body>
+    <body style="
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+    ">
         <div id="root"></div>
     </body>
 </html>`,b=`
-${t.replace("@capitec/omni-components-react",`https://cdn.jsdelivr.net/npm/@capitec/omni-components-react@${h}`).replace(`/${l}`,`/${l}/index.js`)}
+${t.replaceAll("@capitec/omni-components-react",`https://cdn.jsdelivr.net/npm/@capitec/omni-components-react@${h}`).replace(new RegExp(`https://cdn.jsdelivr.net/npm/@capitec/omni-components-react@${h}/([^/"'\`]+)`,"g"),"$&/index.js")} 
 
 const el = document.querySelector("#root");
-ReactDOM.render(<App/>, el);`,x="babel",_="https://cdnjs.cloudflare.com/ajax/libs/react/16.7.0/umd/react.production.min.js;https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.7.0/umd/react-dom.production.min.js";break}let R={title:`${(C=(n=this.key)!=null?n:(a=this.story)==null?void 0:a.name)!=null?C:"Generated CodePen"} - ${e}`,description:((g=this.story)==null?void 0:g.description)&&typeof((f=this.story)==null?void 0:f.description)=="function"?this.story.description():(p=this.story)==null?void 0:p.description,private:!1,tags:[e,"Omni Components","web components","custom elements"],editors:"101",layout:"top",html:u,html_pre_processor:"none",css:$,css_pre_processor:"none",css_starter:"neither",css_prefix:"neither",js:b,js_pre_processor:x,head:`<link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara" as="style">
+ReactDOM.render(<App/>, el);`,x="babel",_="https://cdnjs.cloudflare.com/ajax/libs/react/16.7.0/umd/react.production.min.js;https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.7.0/umd/react-dom.production.min.js";break}let R={title:`${(C=(n=this.key)!=null?n:(a=this.story)==null?void 0:a.name)!=null?C:"Generated CodePen"} - ${e}`,description:((g=this.story)==null?void 0:g.description)&&typeof((f=this.story)==null?void 0:f.description)=="function"?this.story.description():(p=this.story)==null?void 0:p.description,private:!1,tags:[e,"Omni Components","web components","custom elements"],editors:"1011",layout:"top",html:u,html_pre_processor:"none",css:$,css_pre_processor:"none",css_starter:"neither",css_prefix:"neither",js:b,js_pre_processor:x,head:`<link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara" as="style">
             <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">`,js_external:_},H=`<form style="display: none;" action="https://codepen.io/pen/define" method="POST" target="_blank"> 
             <input type="hidden" name="data" value='${JSON.stringify(R).replace(/"/g,"&quot;").replace(/'/g,"&apos;")}'>
             <input type="submit" class="code-submit">

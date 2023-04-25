@@ -4,7 +4,6 @@ import{a as c}from"./chunk.2HYOR3YM.js";import{h as p}from"./chunk.CWNKFZ3E.js";
                     justify-content: center;
                     color: var(--omni-icon-fill, currentColor);
                     fill: var(--omni-icon-fill, currentColor);
-                    stroke: var(--omni-icon-fill, currentColor);
                     background-color: var(--omni-icon-background-color);
                 }
 
@@ -111,4 +110,4 @@ import{a as c}from"./chunk.2HYOR3YM.js";import{h as p}from"./chunk.CWNKFZ3E.js";
                 <slot></slot>
             </div>
         `}};e([o({type:String,reflect:!0})],i.prototype,"size",2),e([o({type:String,reflect:!0})],i.prototype,"icon",2),e([o({type:Boolean,reflect:!0})],i.prototype,"symmetrical",2),i=e([m("omni-icon")],i);export{i as a};
-//# sourceMappingURL=chunk.HA6SUF3B.js.map
+//# sourceMappingURL=chunk.ZPV4YWBP.js.map

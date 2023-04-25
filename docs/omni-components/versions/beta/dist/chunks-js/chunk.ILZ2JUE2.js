@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.2HYOR3YM.js";import{h as s}from"./chunk.CWNKFZ3E.js";import{a as d,b as r}from"./chunk.S2K25ADN.js";import{a as t,b as l,d as c}from"./chunk.F6MIXR4E.js";import{j as e,m as a,p as n}from"./chunk.BF43NN75.js";a();n();var o=class extends s{_removeClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.dispatchEvent(new CustomEvent("remove",{detail:{}})),i.stopPropagation()}static get styles(){return[super.styles,t`
+import{a as s}from"./chunk.2HYOR3YM.js";import{h as p}from"./chunk.CWNKFZ3E.js";import{a as d,b as r}from"./chunk.S2K25ADN.js";import{a as t,b as l,d as c}from"./chunk.F6MIXR4E.js";import{j as e,m as a,p as n}from"./chunk.BF43NN75.js";a();n();var o=class extends p{_removeClicked(i){if(this.disabled)return i.stopImmediatePropagation();this.dispatchEvent(new CustomEvent("remove",{detail:{}})),i.stopPropagation()}static get styles(){return[super.styles,t`
         :host {
           box-sizing: border-box;
           display: inline-flex;
@@ -78,7 +78,7 @@ import{a as p}from"./chunk.2HYOR3YM.js";import{h as s}from"./chunk.CWNKFZ3E.js";
       `]}render(){var i;return l`
       <button
         id="chip"
-        class=${p({chip:!0,disabled:(i=this.disabled)!=null?i:!1})}
+        class=${s({chip:!0,disabled:(i=this.disabled)!=null?i:!1})}
         ?disabled=${this.disabled}
         aria-disabled=${this.disabled?"true":"false"}>
         <slot name="chip_icon"></slot>
@@ -88,4 +88,4 @@ import{a as p}from"./chunk.2HYOR3YM.js";import{h as s}from"./chunk.CWNKFZ3E.js";
         </div>
       </button>
     `}};e([r({type:String,reflect:!0})],o.prototype,"label",2),e([r({type:Boolean,reflect:!0})],o.prototype,"closable",2),e([r({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=e([d("omni-chip")],o);export{o as a};
-//# sourceMappingURL=chunk.TCPIBCQ2.js.map
+//# sourceMappingURL=chunk.ILZ2JUE2.js.map

@@ -6806,7 +6806,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${ifNotEmpty(args.size)}\" icon=\"${ifNotEmpty(args.icon)}\">\n      ${unsafeHTML(args['[Default Slot]'])}\n    </omni-icon>\n  `,\n    name: 'Interactive',\n    args: {\n        size: 'default',\n        '[Default Slot]': raw`<svg\n    version=\"1.1\"\n    viewBox=\"0 0 16 16\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"100%\"\n    height=\"100%\"\n  >\n    <g transform=\"translate(-2,-2)\">\n      <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n    </g>\n  </svg>`,\n        icon: undefined as unknown as string\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot?.querySelector('slot') as HTMLSlotElement;\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n        <omni-icon \n            data-testid=\"test-icon\" \n            size=\"${ifNotEmpty(args.size)}\" \n            icon=\"${ifNotEmpty(args.icon)}\"\n            ?symmetrical=${args.symmetrical}>\n            ${unsafeHTML(args['[Default Slot]'])}\n        </omni-icon>\n    `,\n    name: 'Interactive',\n    args: {\n        size: 'default',\n        '[Default Slot]': raw`<svg\n    version=\"1.1\"\n    viewBox=\"0 0 16 16\"\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"100%\"\n    height=\"100%\">\n    <g transform=\"translate(-2,-2)\">\n        <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n    </g>\n</svg>`,\n        icon: undefined as unknown as string\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot?.querySelector('slot') as HTMLSlotElement;\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -6814,7 +6814,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-icon data-testid=\"test-icon\" size=\"${args.size}\"> ${unsafeHTML(args['[Default Slot]'])} </omni-icon> `,\n    name: 'SVG',\n    description: 'Set html/svg content to display as an icon.',\n    args: {\n        size: 'large',\n        '[Default Slot]': raw`\n            <svg\n                version=\"1.1\"\n                viewBox=\"0 0 16 16\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                width=\"100%\"\n                height=\"100%\"\n              >\n                <g transform=\"translate(-2,-2)\">\n                  <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n                </g>\n              </svg>\n              `\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot?.querySelector('slot') as HTMLSlotElement;\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-icon data-testid=\"test-icon\" size=\"${args.size}\">${unsafeHTML(args['[Default Slot]'])}</omni-icon>`,\n    name: 'SVG',\n    description: 'Set html/svg content to display as an icon.',\n    args: {\n        size: 'large',\n        '[Default Slot]': raw`\n            <svg\n                version=\"1.1\"\n                viewBox=\"0 0 16 16\"\n                xmlns=\"http://www.w3.org/2000/svg\"\n                width=\"100%\"\n                height=\"100%\">\n                <g transform=\"translate(-2,-2)\">\n                  <path d=\"m8.229 14.062-3.521-3.541L5.75 9.479l2.479 2.459 6.021-6L15.292 7Z\" />\n                </g>\n              </svg>\n        `\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const slotElement = icon.shadowRoot?.querySelector('slot') as HTMLSlotElement;\n        const foundSlottedSvgElement = slotElement.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -6822,7 +6822,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Local Source',\n    description: 'Set the icon to display as a local source file.',\n    args: {\n        size: 'default',\n        icon: './assets/images/colors.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot?.querySelector('img') as HTMLImageElement;\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(context.args.icon.replace('./', '/'))).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n    `,\n    name: 'Local Source',\n    description: 'Set the icon to display as a local source file.',\n    args: {\n        size: 'default',\n        icon: './assets/images/colors.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot?.querySelector('img') as HTMLImageElement;\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement.src.endsWith(context.args.icon.replace('./', '/'))).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -6830,7 +6830,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n  `,\n    name: 'Remote Source',\n    description: 'Set the icon to display as a remote file.',\n    args: {\n        size: 'default',\n        icon: 'https://img.shields.io/badge/Source-remote-lightgrey.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot?.querySelector('img') as HTMLImageElement;\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement?.src).toEqual(context.args.icon);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <!-- Icons loaded by content path instead of font-based or slotted content will not be able to be styled directly -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n    `,\n    name: 'Remote Source',\n    description: 'Set the icon to display as a remote file.',\n    args: {\n        size: 'default',\n        icon: 'https://img.shields.io/badge/Source-remote-lightgrey.svg'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const imgElement = icon.shadowRoot?.querySelector('img') as HTMLImageElement;\n        await expect(imgElement).toBeTruthy();\n        await expect(imgElement?.src).toEqual(context.args.icon);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -6838,7 +6838,23 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <!-- Add Material to your project, e.g. Adding below link in <head>-->\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\" />\n    <!-- ------------------------------------------------------------- -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"> </omni-icon>\n  `,\n    description: 'Set the icon to display as a font icon from the Material Icons library.',\n    args: {\n        size: 'default',\n        icon: '@material/receipt_long'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const materialElement = icon.shadowRoot?.querySelector<HTMLElement>('.material-icon');\n        await expect(materialElement).toBeTruthy();\n        await expect(materialElement?.innerText).toEqual(Material.args?.icon?.replace('@material/', ''));\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <!-- Add Material to your project, e.g. Adding below link in <head>-->\n    <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\" />\n    <!-- ------------------------------------------------------------- -->\n\n    <omni-icon data-testid=\"test-icon\" size=\"${args.size}\" icon=\"${args.icon}\"></omni-icon>\n    `,\n    description: 'Set the icon to display as a font icon from the Material Icons library.',\n    args: {\n        size: 'default',\n        icon: '@material/receipt_long'\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const materialElement = icon.shadowRoot?.querySelector<HTMLElement>('.material-icon');\n        await expect(materialElement).toBeTruthy();\n        await expect(materialElement?.innerText).toEqual(Material.args?.icon?.replace('@material/', ''));\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Asymmetrical",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-icon \n            data-testid=\"test-icon\" \n            size=\"${args.size}\" \n            ?symmetrical=${args.symmetrical}>\n            <svg \n                viewBox=\"0 0 138 26\" \n                fill=\"none\" \n                stroke-width=\"2.3\" \n                stroke-linecap=\"round\" \n                stroke-linejoin=\"round\"\n                width=\"100%\"\n                height=\"100%\"\n                title=\"CodePen\">\n                    <path d=\"M15 8a7 7 0 1 0 0 10m7-8.7L33 2l11 7.3v7.4L33 24l-11-7.3zm0 0 11 7.4 11-7.4m0 7.4L33 9.3l-11 7.4M33 2v7.3m0 7.4V24M52 6h5a7 7 0 0 1 0 14h-5zm28 0h-9v14h9m-9-7h6m11 1h6a4 4 0 0 0 0-8h-6v14m26-14h-9v14h9m-9-7h6m11 7V6l11 14V6\"></path>\n                </svg>\n        </omni-icon>\n    `,\n    description: () => html`Renders the icon by aligning only the inner height to the <strong>size</strong> attribute, this is the default behavior.`,\n    args: {\n        size: 'large',\n        symmetrical: false\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const svg = icon.querySelector('svg') as SVGElement;\n        await expect(svg.clientWidth).not.toEqual(svg.clientHeight);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Symmetrical",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-icon \n            data-testid=\"test-icon\" \n            size=\"${args.size}\" \n            ?symmetrical=${args.symmetrical}>\n            <svg \n                viewBox=\"0 0 138 26\" \n                fill=\"none\" \n                stroke-width=\"2.3\" \n                stroke-linecap=\"round\" \n                stroke-linejoin=\"round\"\n                width=\"100%\"\n                height=\"100%\"\n                title=\"CodePen\">\n                    <path d=\"M15 8a7 7 0 1 0 0 10m7-8.7L33 2l11 7.3v7.4L33 24l-11-7.3zm0 0 11 7.4 11-7.4m0 7.4L33 9.3l-11 7.4M33 2v7.3m0 7.4V24M52 6h5a7 7 0 0 1 0 14h-5zm28 0h-9v14h9m-9-7h6m11 1h6a4 4 0 0 0 0-8h-6v14m26-14h-9v14h9m-9-7h6m11 7V6l11 14V6\"></path>\n                </svg>\n        </omni-icon>\n    `,\n    description: () =>\n        html`Renders the icon by aligning both the inner height and width to the <strong>size</strong> attribute, creating a 1:1 aspect ratio.`,\n    args: {\n        size: 'large',\n        symmetrical: true\n    },\n    play: async (context) => {\n        const icon = within(context.canvasElement).getByTestId<Icon>('test-icon');\n        const svg = icon.querySelector('svg') as SVGElement;\n        await expect(svg.clientWidth).toEqual(svg.clientHeight);\n    }\n}"
         }
       ],
       "exports": [
@@ -6886,6 +6902,22 @@
           "name": "Material",
           "declaration": {
             "name": "Material",
+            "module": "src/icon/Icon.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Asymmetrical",
+          "declaration": {
+            "name": "Asymmetrical",
+            "module": "src/icon/Icon.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Symmetrical",
+          "declaration": {
+            "name": "Symmetrical",
             "module": "src/icon/Icon.stories.ts"
           }
         }
@@ -6967,6 +6999,16 @@
             },
             {
               "kind": "field",
+              "name": "symmetrical",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "When true, enforces 1:1 width and height of the icon.",
+              "attribute": "symmetrical",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "dir",
               "type": {
                 "text": "string"
@@ -7034,6 +7076,15 @@
               "description": "Name of the icon to display. Takes preference over the slotted icon.",
               "fieldName": "icon",
               "attribute": "icon"
+            },
+            {
+              "name": "symmetrical",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "When true, enforces 1:1 width and height of the icon.",
+              "fieldName": "symmetrical",
+              "attribute": "symmetrical"
             },
             {
               "name": "dir",

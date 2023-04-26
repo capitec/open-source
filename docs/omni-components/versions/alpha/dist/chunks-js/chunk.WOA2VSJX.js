@@ -140,25 +140,26 @@ import{a as h}from"./chunk.2HYOR3YM.js";import{h as b}from"./chunk.CWNKFZ3E.js";
           border-color: transparent;
         }
       `]}render(){var o,e,a;return t`
-      <div
-        class=${h({container:!0,indeterminate:(o=this.indeterminate)!=null?o:!1,checked:(e=this.checked)!=null?e:!1,disabled:(a=this.disabled)!=null?a:!1})}>
-        <div id="content" @keydown="${this._keyDown}">
-          <div class="indicator">
-            ${this.indeterminate?t`
-                  <slot name="indeterminate_icon">
-                    <omni-indeterminate-icon></omni-indeterminate-icon>
-                  </slot>
-                `:this.checked?t`
-                  <slot name="check_icon">
-                    <omni-check-icon></omni-check-icon>
-                  </slot>
-                `:c}
-          </div>
-        </div>
-        <label class="label">
-          ${this.label} ${this.hint&&!this.error?t`<div class="hint">${this.hint}</div>`:c}
-          ${this.error?t`<div class="error">${this.error}</div>`:c}
-        </label>
-      </div>
-    `}};n([i({type:String,reflect:!0})],r.prototype,"label",2),n([i({type:Object,reflect:!0})],r.prototype,"data",2),n([i({type:String,reflect:!0})],r.prototype,"hint",2),n([i({type:String,reflect:!0})],r.prototype,"error",2),n([i({type:Boolean,reflect:!0})],r.prototype,"checked",2),n([i({type:Boolean,reflect:!0})],r.prototype,"disabled",2),n([i({type:Boolean,reflect:!0})],r.prototype,"indeterminate",2),r=n([m("omni-check")],r);export{r as a};
-//# sourceMappingURL=chunk.HGGE2J65.js.map
+            <div
+                class=${h({container:!0,indeterminate:(o=this.indeterminate)!=null?o:!1,checked:(e=this.checked)!=null?e:!1,disabled:(a=this.disabled)!=null?a:!1})}>
+                <div id="content" @keydown="${this._keyDown}">
+                    <div class="indicator">
+                        ${this.indeterminate?t`
+                            <slot name="indeterminate_icon">
+                                <omni-indeterminate-icon></omni-indeterminate-icon>
+                            </slot>
+                            `:this.checked?t`
+                            <slot name="check_icon">
+                                <omni-check-icon></omni-check-icon>
+                            </slot>
+                            `:c}
+                    </div>
+                </div>
+                <label class="label">
+                    <slot></slot>
+                    ${this.label} ${this.hint&&!this.error?t`<div class="hint">${this.hint}</div>`:c}
+                    ${this.error?t`<div class="error">${this.error}</div>`:c}
+                </label>
+            </div>
+        `}};n([i({type:String,reflect:!0})],r.prototype,"label",2),n([i({type:Object,reflect:!0})],r.prototype,"data",2),n([i({type:String,reflect:!0})],r.prototype,"hint",2),n([i({type:String,reflect:!0})],r.prototype,"error",2),n([i({type:Boolean,reflect:!0})],r.prototype,"checked",2),n([i({type:Boolean,reflect:!0})],r.prototype,"disabled",2),n([i({type:Boolean,reflect:!0})],r.prototype,"indeterminate",2),r=n([m("omni-check")],r);export{r as a};
+//# sourceMappingURL=chunk.WOA2VSJX.js.map

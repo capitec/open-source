@@ -119,15 +119,16 @@ import{a as m}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";impor
           cursor: pointer;
         }
       `]}render(){var o,i;return a`
-      <div
-        class=${m({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(i=this.disabled)!=null?i:!1})}>
-        <div id="content" tabindex="${this.disabled?"":0}" @click="${this._click}" @keydown="${this._keyDown}">
-          ${this.checked?a`<div class="indicator"></div>`:t}
-        </div>
-        <label id="label" class="label" @click="${this._click}">
-          ${this.label} ${this.hint&&!this.error?a`<div class="hint">${this.hint}</div>`:t}
-          ${this.error?a`<div class="error">${this.error}</div>`:t}
-        </label>
-      </div>
-    `}};e([n({type:String,reflect:!0})],r.prototype,"label",2),e([n({type:Object,reflect:!0})],r.prototype,"data",2),e([n({type:String,reflect:!0})],r.prototype,"hint",2),e([n({type:String,reflect:!0})],r.prototype,"error",2),e([n({type:Boolean,reflect:!0})],r.prototype,"checked",2),e([n({type:Boolean,reflect:!0})],r.prototype,"disabled",2),r=e([s("omni-radio")],r);export{r as a};
-//# sourceMappingURL=chunk.XGMN45FM.js.map
+        <div
+            class=${m({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(i=this.disabled)!=null?i:!1})}>
+            <div id="content" tabindex="${this.disabled?"":0}" @click="${this._click}" @keydown="${this._keyDown}">
+                ${this.checked?a`<div class="indicator"></div>`:t}
+            </div>
+            <label id="label" class="label" @click="${this._click}">
+                <slot></slot>
+                ${this.label} ${this.hint&&!this.error?a`<div class="hint">${this.hint}</div>`:t}
+                ${this.error?a`<div class="error">${this.error}</div>`:t}
+                </label>
+            </div>
+        `}};e([n({type:String,reflect:!0})],r.prototype,"label",2),e([n({type:Object,reflect:!0})],r.prototype,"data",2),e([n({type:String,reflect:!0})],r.prototype,"hint",2),e([n({type:String,reflect:!0})],r.prototype,"error",2),e([n({type:Boolean,reflect:!0})],r.prototype,"checked",2),e([n({type:Boolean,reflect:!0})],r.prototype,"disabled",2),r=e([s("omni-radio")],r);export{r as a};
+//# sourceMappingURL=chunk.MVFK6HI4.js.map

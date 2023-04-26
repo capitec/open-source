@@ -413,6 +413,13 @@
                                 key="Disabled"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-slot">Slot</div>
+                            <story-renderer 
+                                path="./dist/radio/Radio.stories.js" 
+                                tag="omni-radio" 
+                                key="Slot"
+                                 >
+                            </story-renderer>
                         </div>
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
@@ -434,6 +441,9 @@
                                     </a>
                                     <a href="components/radio/#story-disabled" id="story-disabled-a" class="item">
                                         Disabled
+                                    </a>
+                                    <a href="components/radio/#story-slot" id="story-slot-a" class="item">
+                                        Slot
                                     </a>
                             </div>
                         </div>
@@ -574,6 +584,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
                                     <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component.</td>
                                 </tr>
                                 
                             </tbody>

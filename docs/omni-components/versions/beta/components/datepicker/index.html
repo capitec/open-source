@@ -386,6 +386,13 @@
                                 key="Error_Label"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-clear">Clear</div>
+                            <story-renderer 
+                                path="./dist/date-picker/DatePicker.stories.js" 
+                                tag="omni-date-picker" 
+                                key="Clear"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-prefix">Prefix</div>
                             <story-renderer 
                                 path="./dist/date-picker/DatePicker.stories.js" 
@@ -428,6 +435,9 @@
                                     </a>
                                     <a href="components/datepicker/#story-error-label" id="story-error-label-a" class="item">
                                         Error Label
+                                    </a>
+                                    <a href="components/datepicker/#story-clear" id="story-clear-a" class="item">
+                                        Clear
                                     </a>
                                     <a href="components/datepicker/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
@@ -513,6 +523,13 @@
                                 </tr>
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">clearable</td>
+                                    <td data-label="Attribute" scope="row">clearable&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description">Toggles the ability to clear the value of the component.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">dir</td>
                                     <td data-label="Attribute" scope="row">dir&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
@@ -553,7 +570,7 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">change</td>
-                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;{}&gt;</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">Event</code></pre></td>
                                     <td data-label="Description">Dispatched when a date is selected.</td>
                                 </tr>
                                 
@@ -584,6 +601,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
                                     <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">clear</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the clear slot.</td>
                                 </tr>
                                 
                                 <tr>
@@ -1025,6 +1047,26 @@
                                         <td data-label="Description">Form error hover color.</td>
                                     </tr>
                                     
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-right</code></pre></td>
+                                        <td data-label="Description">Form clear control right margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-left</code></pre></td>
+                                        <td data-label="Description"> Form clear control left margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-width</code></pre></td>
+                                        <td data-label="Description">Form clear control width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-icon-color</code></pre></td>
+                                        <td data-label="Description">Form clear icon color.</td>
+                                    </tr>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -1162,23 +1204,23 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-container-left</code></pre></td>
-                                        <td data-label="Description">Date picker container mobile left.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-dialog-left</code></pre></td>
+                                        <td data-label="Description">Date picker dialog left.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-container-right</code></pre></td>
-                                        <td data-label="Description">Date picker container mobile right.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-dialog-right</code></pre></td>
+                                        <td data-label="Description">Date picker dialog right</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-container-bottom</code></pre></td>
-                                        <td data-label="Description">Date picker container mobile bottom.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-dialog-bottom</code></pre></td>
+                                        <td data-label="Description">Date picker dialog bottom</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-container-box-shadow</code></pre></td>
-                                        <td data-label="Description">Date picker container mobile box shadow.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-date-picker-mobile-picker-dialog-background-color</code></pre></td>
+                                        <td data-label="Description">Date picker dialog background color.</td>
                                     </tr>
                                     
                                     <tr>

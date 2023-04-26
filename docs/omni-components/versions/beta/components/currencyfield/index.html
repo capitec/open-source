@@ -379,6 +379,13 @@
                                 key="Value"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-clear">Clear</div>
+                            <story-renderer 
+                                path="./dist/currency-field/CurrencyField.stories.js" 
+                                tag="omni-currency-field" 
+                                key="Clear"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-prefix">Prefix</div>
                             <story-renderer 
                                 path="./dist/currency-field/CurrencyField.stories.js" 
@@ -418,6 +425,9 @@
                                     </a>
                                     <a href="components/currencyfield/#story-value" id="story-value-a" class="item">
                                         Value
+                                    </a>
+                                    <a href="components/currencyfield/#story-clear" id="story-clear-a" class="item">
+                                        Clear
                                     </a>
                                     <a href="components/currencyfield/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
@@ -538,6 +548,13 @@
                                 </tr>
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">clearable</td>
+                                    <td data-label="Attribute" scope="row">clearable&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description">Toggles the ability to clear the value of the component.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">dir</td>
                                     <td data-label="Attribute" scope="row">dir&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
@@ -578,7 +595,7 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">change</td>
-                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;{}&gt;</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">Event</code></pre></td>
                                     <td data-label="Description">Dispatched when the component value changes.</td>
                                 </tr>
                                 
@@ -609,6 +626,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
                                     <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">clear</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the clear slot.</td>
                                 </tr>
                                 
                                 <tr>
@@ -1048,6 +1070,26 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-hover-color</code></pre></td>
                                         <td data-label="Description">Form error hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-right</code></pre></td>
+                                        <td data-label="Description">Form clear control right margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-left</code></pre></td>
+                                        <td data-label="Description"> Form clear control left margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-width</code></pre></td>
+                                        <td data-label="Description">Form clear control width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-icon-color</code></pre></td>
+                                        <td data-label="Description">Form clear icon color.</td>
                                     </tr>
                                     
                                 </tbody>

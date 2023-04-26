@@ -1,4 +1,4 @@
-import{a as b}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";import{a as d,b as e}from"./chunk.S2K25ADN.js";import{a as s,b as n,d as a}from"./chunk.F6MIXR4E.js";import{j as r,m as c,p as l}from"./chunk.BF43NN75.js";c();l();var i=class extends h{focus(){var o,t;(t=(o=this.shadowRoot)==null?void 0:o.getElementById("track"))==null||t.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._switchChecked()}_switchChecked(){let o=this.checked;this.checked=!o,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:o,new:this.checked},bubbles:!0}))}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let t=(o.code||"").toUpperCase();if(t==="SPACE"||t==="ENTER"||t==="NUMPADENTER")return this._switchChecked(),o.preventDefault()}static get styles(){return[super.styles,s`
+import{a as h}from"./chunk.2HYOR3YM.js";import{h as b}from"./chunk.CWNKFZ3E.js";import{a as d,b as e}from"./chunk.S2K25ADN.js";import{a as s,b as n,d as a}from"./chunk.F6MIXR4E.js";import{j as r,m as c,p as l}from"./chunk.BF43NN75.js";c();l();var i=class extends b{focus(){var o,t;(t=(o=this.shadowRoot)==null?void 0:o.getElementById("track"))==null||t.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._switchChecked()}_switchChecked(){let o=this.checked;this.checked=!o,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:o,new:this.checked},bubbles:!0}))}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let t=(o.code||"").toUpperCase();if(t==="SPACE"||t==="ENTER"||t==="NUMPADENTER")return this._switchChecked(),o.preventDefault()}static get styles(){return[super.styles,s`
         /* CONTAINER STYLES */
         .container {
           display: flex;
@@ -102,7 +102,7 @@ import{a as b}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";impor
         }
       `]}render(){var o,t;return n`
       <div
-        class=${b({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(t=this.disabled)!=null?t:!1})}>
+        class=${h({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(t=this.disabled)!=null?t:!1})}>
         <div id="content" @click="${this._click}" @keydown="${this._keyDown}">
           <div id="track" class="track" tabindex="${this.disabled?"":0}"></div>
           <div class="knob">
@@ -115,4 +115,4 @@ import{a as b}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";impor
         </label>
       </div>
     `}};r([e({type:String,reflect:!0})],i.prototype,"label",2),r([e({type:Object,reflect:!0})],i.prototype,"data",2),r([e({type:String,reflect:!0})],i.prototype,"hint",2),r([e({type:String,reflect:!0})],i.prototype,"error",2),r([e({type:Boolean,reflect:!0})],i.prototype,"checked",2),r([e({type:Boolean,reflect:!0})],i.prototype,"disabled",2),i=r([d("omni-switch")],i);export{i as a};
-//# sourceMappingURL=chunk.FYHSNAQ7.js.map
+//# sourceMappingURL=chunk.TBKWSV63.js.map

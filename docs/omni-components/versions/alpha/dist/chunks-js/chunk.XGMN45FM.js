@@ -1,4 +1,4 @@
-import{a as h}from"./chunk.2HYOR3YM.js";import{h as m}from"./chunk.CWNKFZ3E.js";import{a as s,b as n}from"./chunk.S2K25ADN.js";import{a as c,b as a,d as t}from"./chunk.F6MIXR4E.js";import{j as e,m as d,p as l}from"./chunk.BF43NN75.js";d();l();var r=class extends m{focus(){var o,i;(i=(o=this.shadowRoot)==null?void 0:o.getElementById("content"))==null||i.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._toggleChecked()}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let i=(o.code||"").toUpperCase();if(i==="SPACE"||i==="ENTER")return this._toggleChecked(),o.preventDefault()}_toggleChecked(){let o=this.checked;this.checked=!o,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:o,new:this.checked}}))}static get styles(){return[super.styles,c`
+import{a as m}from"./chunk.2HYOR3YM.js";import{h}from"./chunk.CWNKFZ3E.js";import{a as s,b as n}from"./chunk.S2K25ADN.js";import{a as c,b as a,d as t}from"./chunk.F6MIXR4E.js";import{j as e,m as d,p as l}from"./chunk.BF43NN75.js";d();l();var r=class extends h{focus(){var o,i;(i=(o=this.shadowRoot)==null?void 0:o.getElementById("content"))==null||i.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._toggleChecked()}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let i=(o.code||"").toUpperCase();if(i==="SPACE"||i==="ENTER")return this._toggleChecked(),o.preventDefault()}_toggleChecked(){let o=this.checked;this.checked=!o,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:o,new:this.checked}}))}static get styles(){return[super.styles,c`
         :host {
           --omni-radio-width: 24px;
           --omni-radio-height: 24px;
@@ -120,7 +120,7 @@ import{a as h}from"./chunk.2HYOR3YM.js";import{h as m}from"./chunk.CWNKFZ3E.js";
         }
       `]}render(){var o,i;return a`
       <div
-        class=${h({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(i=this.disabled)!=null?i:!1})}>
+        class=${m({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(i=this.disabled)!=null?i:!1})}>
         <div id="content" tabindex="${this.disabled?"":0}" @click="${this._click}" @keydown="${this._keyDown}">
           ${this.checked?a`<div class="indicator"></div>`:t}
         </div>
@@ -130,4 +130,4 @@ import{a as h}from"./chunk.2HYOR3YM.js";import{h as m}from"./chunk.CWNKFZ3E.js";
         </label>
       </div>
     `}};e([n({type:String,reflect:!0})],r.prototype,"label",2),e([n({type:Object,reflect:!0})],r.prototype,"data",2),e([n({type:String,reflect:!0})],r.prototype,"hint",2),e([n({type:String,reflect:!0})],r.prototype,"error",2),e([n({type:Boolean,reflect:!0})],r.prototype,"checked",2),e([n({type:Boolean,reflect:!0})],r.prototype,"disabled",2),r=e([s("omni-radio")],r);export{r as a};
-//# sourceMappingURL=chunk.IUYBSTGQ.js.map
+//# sourceMappingURL=chunk.XGMN45FM.js.map

@@ -1,4 +1,4 @@
-import{a as s}from"./chunk.2HYOR3YM.js";import{h as c}from"./chunk.CWNKFZ3E.js";import{a as d,b as t}from"./chunk.S2K25ADN.js";import{a as b,b as e,d as l}from"./chunk.F6MIXR4E.js";import{j as r,m as a,p as i}from"./chunk.BF43NN75.js";a();i();var o=class extends c{constructor(){super(...arguments);this.type="secondary";this.slotPosition="left"}static get styles(){return[super.styles,b`
+import{a as c}from"./chunk.2HYOR3YM.js";import{h as s}from"./chunk.CWNKFZ3E.js";import{a as d,b as t}from"./chunk.S2K25ADN.js";import{a as b,b as e,d as l}from"./chunk.F6MIXR4E.js";import{j as r,m as a,p as i}from"./chunk.BF43NN75.js";a();i();var o=class extends s{constructor(){super(...arguments);this.type="secondary";this.slotPosition="left"}static get styles(){return[super.styles,b`
         :host {
           box-sizing: border-box;
           display: inline-flex;
@@ -213,7 +213,7 @@ import{a as s}from"./chunk.2HYOR3YM.js";import{h as c}from"./chunk.CWNKFZ3E.js";
       `]}render(){var n;return e`
       <button
         id="button"
-        class=${s({button:!0,[`slot-${this.slotPosition}`]:this.slotPosition,[`${this.type}`]:this.type,disabled:(n=this.disabled)!=null?n:!1})}
+        class=${c({button:!0,[`slot-${this.slotPosition}`]:this.slotPosition,[`${this.type}`]:this.type,disabled:(n=this.disabled)!=null?n:!1})}
         ?disabled=${this.disabled}
         aria-disabled=${this.disabled?"true":"false"}
         tabindex=${this.disabled?"-1":"0"}>
@@ -221,4 +221,4 @@ import{a as s}from"./chunk.2HYOR3YM.js";import{h as c}from"./chunk.CWNKFZ3E.js";
         ${this.label?e`<label id="label" class="label">${this.label}</label>`:l}
       </button>
     `}};r([t({type:String,reflect:!0})],o.prototype,"type",2),r([t({type:String,reflect:!0})],o.prototype,"label",2),r([t({type:String,reflect:!0,attribute:"slot-position"})],o.prototype,"slotPosition",2),r([t({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=r([d("omni-button")],o);export{o as a};
-//# sourceMappingURL=chunk.WV2GEXQ2.js.map
+//# sourceMappingURL=chunk.V3AH72NQ.js.map

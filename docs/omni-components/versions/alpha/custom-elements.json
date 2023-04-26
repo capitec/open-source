@@ -2455,6 +2455,10 @@
         },
         {
           "kind": "variable",
+          "name": "Clear"
+        },
+        {
+          "kind": "variable",
           "name": "Prefix"
         },
         {
@@ -2515,6 +2519,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/color-field/ColorField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/color-field/ColorField.stories.ts"
           }
         },
@@ -2756,6 +2768,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -2814,6 +2858,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -2958,6 +3016,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -2984,6 +3056,18 @@
               }
             }
           ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
@@ -2991,6 +3075,14 @@
               "inheritedFrom": {
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
               }
             },
             {
@@ -3507,6 +3599,22 @@
             {
               "description": "Form error hover color.",
               "name": "--omni-form-error-hover-color"
+            },
+            {
+              "description": "Form clear control right margin.",
+              "name": "--omni-form-clear-control-margin-right"
+            },
+            {
+              "description": " Form clear control left margin.",
+              "name": "--omni-form-clear-control-margin-left"
+            },
+            {
+              "description": "Form clear control width.",
+              "name": "--omni-form-clear-control-width"
+            },
+            {
+              "description": "Form clear icon color.",
+              "name": "--omni-form-clear-icon-color"
             }
           ],
           "slots": [
@@ -3517,6 +3625,10 @@
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
               }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear"
             },
             {
               "description": "Replaces the icon for the prefix slot.",
@@ -3591,6 +3703,30 @@
               "reflects": true
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ]
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -3655,6 +3791,16 @@
               "privacy": "protected"
             },
             {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              }
+            },
+            {
               "kind": "field",
               "name": "dir",
               "type": {
@@ -3701,6 +3847,14 @@
               "inheritedFrom": {
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
               }
             }
           ],
@@ -3760,6 +3914,16 @@
               "description": "Indicator if the component should be disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
+            },
+            {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable"
             },
             {
               "name": "dir",
@@ -3899,6 +4063,25 @@
         },
         {
           "kind": "function",
+          "name": "ClearableStory",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "inputValue",
+              "default": "'The input value'",
+              "type": {
+                "text": "string | number | string[]"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "DisabledStory",
           "parameters": [
             {
@@ -3968,6 +4151,14 @@
         },
         {
           "kind": "js",
+          "name": "ClearableStory",
+          "declaration": {
+            "name": "ClearableStory",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "DisabledStory",
           "declaration": {
             "name": "DisabledStory",
@@ -3986,7 +4177,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '123456789',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        // Simulate click, focus and blur events\n        await userEvent.click(inputField);\n        await inputField.focus();\n        await inputField.blur();\n\n        const beforeinput = jest.fn();\n        currencyField.addEventListener('beforeinput', beforeinput);\n\n        const value = '120000015';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(beforeinput).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace>2/}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 12,\n            initialSelectionEnd: 12\n        });\n\n        await currencyField.updateComplete;\n\n        console.log('After backspacing', inputField.value);\n\n        await waitFor(() => expect(inputField).toHaveValue('12,000.00'), {\n            timeout: 3000\n        });\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        await waitFor(() => expect(inputField).toHaveValue('1,200.00'), {\n            timeout: 3000\n        });\n\n        /* Paste Tests */\n        //Set the selection range of the input component to ensure the entire value is selected.\n        inputField.setSelectionRange(0, 10);\n\n        const number = '88.88';\n        await userEvent.paste(number);\n\n        await waitFor(() => expect(inputField).toHaveValue('88.88'), {\n            timeout: 3000\n        });\n\n        setUIValueClean(inputField);\n        inputField.value = '';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n\n        // Paste invalid numeric value the alpha characters should be stripped and the value should be updated accordingly.\n        inputField.setSelectionRange(3, 10);\n        const invalidNumber = '4abc';\n        await userEvent.paste(invalidNumber);\n\n        await waitFor(() => expect(inputField).toHaveValue('124.15'), {\n            timeout: 3000\n        });\n\n        //TODO add tests for before input scenarios\n    }\n}"
+          "default": "{\n    render: (args) => html`\n        <omni-currency-field\n            data-testId=\"test-currency-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            fractional-precision=\"${args.fractionalPrecision}\"\n            fractional-separator=\"${ifNotEmpty(args.fractionalSeparator)}\"\n            thousands-separator=\"${ifNotEmpty(args.thousandsSeparator)}\"\n            currency-symbol=\"${ifNotEmpty(args.currencySymbol)}\"\n            formatter=\"${ifNotEmpty(args.formatter)}\"           \n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-currency-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '123456789',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        fractionalPrecision: 2,\n        fractionalSeparator: '.',\n        thousandsSeparator: ',',\n        currencySymbol: '$',\n        formatter: '\\\\B(?=(\\\\d{3})+(?!\\\\d))'\n    },\n    play: async (context) => {\n        const currencyField = within(context.canvasElement).getByTestId<CurrencyField>('test-currency-field');\n\n        const inputField = currencyField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        inputField.value = '';\n\n        // Simulate click, focus and blur events\n        await userEvent.click(inputField);\n        await inputField.focus();\n        await inputField.blur();\n\n        const beforeinput = jest.fn();\n        currencyField.addEventListener('beforeinput', beforeinput);\n\n        const value = '120000015';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(beforeinput).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n\n        // Backspacing to cover the removal of cents and cents separator\n        const backspace = '{Backspace>2/}';\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n        await userEvent.type(inputField, backspace, {\n            initialSelectionStart: 12,\n            initialSelectionEnd: 12\n        });\n\n        await currencyField.updateComplete;\n\n        await waitFor(() => expect(inputField).toHaveValue('12,000.00'), {\n            timeout: 3000\n        });\n\n        // Use left arrow key to position the caret after the currency separator.\n        const leftArrow = '{ArrowLeft>3/}{Backspace}';\n        await userEvent.type(inputField, leftArrow);\n\n        await waitFor(() => expect(inputField).toHaveValue('1,200.00'), {\n            timeout: 3000\n        });\n\n        /* Paste Tests */\n        //Set the selection range of the input component to ensure the entire value is selected.\n        inputField.setSelectionRange(0, 10);\n\n        const number = '88.88';\n        await userEvent.paste(number);\n\n        await waitFor(() => expect(inputField).toHaveValue('88.88'), {\n            timeout: 3000\n        });\n\n        setUIValueClean(inputField);\n        inputField.value = '';\n        await userEvent.type(inputField, value);\n\n        // Check the following value as input value is formatted to currency value;\n        await waitFor(() => expect(inputField).toHaveValue('1,200,000.15'), {\n            timeout: 3000\n        });\n\n        // Paste invalid numeric value the alpha characters should be stripped and the value should be updated accordingly.\n        inputField.setSelectionRange(3, 10);\n        const invalidNumber = '4abc';\n        await userEvent.paste(invalidNumber);\n\n        await waitFor(() => expect(inputField).toHaveValue('124.15'), {\n            timeout: 3000\n        });\n\n        //TODO add tests for before input scenarios\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4003,6 +4194,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -4062,6 +4257,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/currency-field/CurrencyField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/currency-field/CurrencyField.stories.ts"
           }
         },
@@ -4550,6 +4753,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderLabel",
               "privacy": "protected",
@@ -4614,6 +4849,20 @@
               }
             },
             {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "field",
               "name": "dir",
               "type": {
@@ -4667,9 +4916,13 @@
             {
               "name": "change",
               "type": {
-                "text": "CustomEvent<{}>"
+                "text": "Event"
               },
-              "description": "Dispatched when the component value changes."
+              "description": "Dispatched when the component value changes.",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -4813,6 +5066,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -4850,6 +5117,14 @@
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -4924,7 +5199,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        locale: 'en-us'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        locale: 'en-us'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -4953,6 +5228,10 @@
         {
           "kind": "variable",
           "name": "Error_Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -5020,6 +5299,14 @@
           "name": "Error_Label",
           "declaration": {
             "name": "Error_Label",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/date-picker/DatePicker.stories.ts"
           }
         },
@@ -5151,20 +5438,20 @@
               "name": "--omni-date-picker-container-z-index"
             },
             {
-              "description": "Date picker container mobile left.",
-              "name": "--omni-date-picker-mobile-picker-container-left"
+              "description": "Date picker dialog left.",
+              "name": "--omni-date-picker-mobile-picker-dialog-left"
             },
             {
-              "description": "Date picker container mobile right.",
-              "name": "--omni-date-picker-mobile-picker-container-right"
+              "description": "Date picker dialog right",
+              "name": "--omni-date-picker-mobile-picker-dialog-right"
             },
             {
-              "description": "Date picker container mobile bottom.",
-              "name": "--omni-date-picker-mobile-picker-container-bottom"
+              "description": "Date picker dialog bottom",
+              "name": "--omni-date-picker-mobile-picker-dialog-bottom"
             },
             {
-              "description": "Date picker container mobile box shadow.",
-              "name": "--omni-date-picker-mobile-picker-container-box-shadow"
+              "description": "Date picker dialog background color.",
+              "name": "--omni-date-picker-mobile-picker-dialog-background-color"
             },
             {
               "description": "Date picker container width.",
@@ -5238,6 +5525,15 @@
               "default": "false"
             },
             {
+              "kind": "field",
+              "name": "_isMobile",
+              "type": {
+                "text": "boolean"
+              },
+              "privacy": "private",
+              "default": "false"
+            },
+            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -5258,6 +5554,10 @@
             {
               "kind": "method",
               "name": "_checkForBottomOfScreen"
+            },
+            {
+              "kind": "method",
+              "name": "_checkforMobile"
             },
             {
               "kind": "method",
@@ -5446,6 +5746,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -5472,6 +5804,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -5531,9 +5877,13 @@
             {
               "name": "change",
               "type": {
-                "text": "CustomEvent<{}>"
+                "text": "Event"
               },
-              "description": "Dispatched when a date is selected."
+              "description": "Dispatched when a date is selected.",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
             }
           ],
           "attributes": [
@@ -5627,6 +5977,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -5664,6 +6028,14 @@
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -5738,7 +6110,7 @@
           "type": {
             "text": "ComponentStoryFormat<BaseArgs>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const emailField = within(context.canvasElement).getByTestId<EmailField>('test-email-field');\n        emailField.value = '';\n\n        const input = jest.fn();\n        emailField.addEventListener('input', input);\n\n        const inputField = emailField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await userEvent.type(inputField as Element, 'johndoe@gmail.com', {\n            pointerEventsCheck: 0\n        });\n        const value = 'johndoe@gmail.com';\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n        await expect(input).toBeCalledTimes(value.length);\n    }\n}"
+          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const emailField = within(context.canvasElement).getByTestId<EmailField>('test-email-field');\n        emailField.value = '';\n\n        const input = jest.fn();\n        emailField.addEventListener('input', input);\n\n        const inputField = emailField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await userEvent.type(inputField as Element, 'johndoe@gmail.com', {\n            pointerEventsCheck: 0\n        });\n        const value = 'johndoe@gmail.com';\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n        await expect(input).toBeCalledTimes(value.length);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -5755,6 +6127,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -5814,6 +6190,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/email-field/EmailField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/email-field/EmailField.stories.ts"
           }
         },
@@ -6047,6 +6431,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -6119,6 +6535,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -6265,6 +6695,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -6298,10 +6742,30 @@
           "tagName": "omni-email-field",
           "import": "```js\nimport '@capitec/omni-components/email-field';\n```",
           "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -10509,7 +10973,7 @@
           "type": {
             "text": "ComponentStoryFormat<BaseArgs>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-number-field\n      data-testid=\"test-number-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-number-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const numberField = within(context.canvasElement).getByTestId<NumberField>('test-number-field');\n        numberField.value = '';\n\n        const input = jest.fn();\n        numberField.addEventListener('input', input);\n\n        const inputField = numberField.shadowRoot!.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const value = '12345';\n        await userEvent.type(inputField, value, {\n            pointerEventsCheck: 0\n        });\n\n        await waitFor(() => expect(inputField).toHaveValue(parseInt(value)), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-number-field\n      data-testid=\"test-number-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-number-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const numberField = within(context.canvasElement).getByTestId<NumberField>('test-number-field');\n        numberField.value = '';\n\n        const input = jest.fn();\n        numberField.addEventListener('input', input);\n\n        const inputField = numberField.shadowRoot!.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const value = '12345';\n        await userEvent.type(inputField, value, {\n            pointerEventsCheck: 0\n        });\n\n        await waitFor(() => expect(inputField).toHaveValue(parseInt(value)), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(input).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n    }\n}"
         },
         {
           "kind": "variable",
@@ -10526,6 +10990,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -10585,6 +11053,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/number-field/NumberField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/number-field/NumberField.stories.ts"
           }
         },
@@ -10818,6 +11294,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -10890,6 +11398,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -11036,6 +11558,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -11069,10 +11605,30 @@
           "tagName": "omni-number-field",
           "import": "```js\nimport '@capitec/omni-components/number-field';\n```",
           "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -11147,7 +11703,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-password-field\n      data-testid=\"test-password-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-password-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: ''\n    },\n    play: async (context) => {\n        const passwordField = within(context.canvasElement).getByTestId<PasswordField>('test-password-field');\n        passwordField.value = '';\n\n        const interactions = jest.fn();\n        passwordField.addEventListener('input', interactions);\n        passwordField.addEventListener('click', interactions);\n\n        const inputField = passwordField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = passwordField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = passwordField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, 'Value Update', {\n            pointerEventsCheck: 0\n        });\n        const value = 'Value Update';\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.length + 1), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-password-field\n      data-testid=\"test-password-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-password-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: ''\n    },\n    play: async (context) => {\n        const passwordField = within(context.canvasElement).getByTestId<PasswordField>('test-password-field');\n        passwordField.value = '';\n\n        const interactions = jest.fn();\n        passwordField.addEventListener('input', interactions);\n        passwordField.addEventListener('click', interactions);\n\n        const inputField = passwordField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = passwordField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = passwordField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, 'Value Update', {\n            pointerEventsCheck: 0\n        });\n        const value = 'Value Update';\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.length + 1), {\n            timeout: 3000\n        });\n    }\n}"
         },
         {
           "kind": "variable",
@@ -11164,6 +11720,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -11231,6 +11791,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/password-field/PasswordField.stories.ts"
           }
         },
@@ -11350,6 +11918,14 @@
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -11552,6 +12128,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -11610,6 +12218,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -11756,6 +12378,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -11788,7 +12424,19 @@
           },
           "tagName": "omni-password-field",
           "import": "```js\nimport '@capitec/omni-components/password-field';\n```",
-          "customElement": true
+          "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -11841,7 +12489,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${args.maxLength}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${args.maxLength}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n            timeout: 3000\n        });\n    }\n}"
         },
         {
           "kind": "variable",
@@ -11866,6 +12514,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -11933,6 +12585,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/pin-field/PinField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/pin-field/PinField.stories.ts"
           }
         },
@@ -12044,6 +12704,14 @@
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -12293,6 +12961,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -12351,6 +13051,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -12506,6 +13220,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -12538,7 +13266,19 @@
           },
           "tagName": "omni-pin-field",
           "import": "```js\nimport '@capitec/omni-components/pin-field';\n```",
-          "customElement": true
+          "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -13884,7 +14624,7 @@
           "type": {
             "text": "ComponentStoryFormat<BaseArgs>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n        <omni-search-field\n            data-testid=\"test-search-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-search-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const searchField = within(context.canvasElement).getByTestId<SearchField>('test-search-field');\n        const interaction = jest.fn();\n        const click = jest.fn();\n        searchField.addEventListener('input', interaction);\n        searchField.addEventListener('click', click);\n\n        const inputField = searchField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const value = 'Batman';\n        await userEvent.type(inputField, value);\n\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            console.log('CICD Test - Not Visual');\n        } else {\n            await waitFor(() => expect(inputField).toHaveValue(value), {\n                timeout: 3000\n            });\n            await waitFor(() => expect(interaction).toBeCalledTimes(value.length), {\n                timeout: 3000\n            });\n        }\n\n        const clearButton = searchField.shadowRoot?.getElementById(`control`) as HTMLElement;\n        await userEvent.click(clearButton);\n\n        await waitFor(() => expect(inputField).toHaveValue(''), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args: BaseArgs) => html`\n        <omni-search-field\n            data-testid=\"test-search-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-search-field>\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const searchField = within(context.canvasElement).getByTestId<SearchField>('test-search-field');\n        const interaction = jest.fn();\n        const click = jest.fn();\n        searchField.addEventListener('input', interaction);\n        searchField.addEventListener('click', click);\n\n        const inputField = searchField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const value = 'Batman';\n        await userEvent.type(inputField, value);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n        await waitFor(() => expect(interaction).toBeCalledTimes(value.length), {\n            timeout: 3000\n        });\n    }\n}"
         },
         {
           "kind": "variable",
@@ -13901,6 +14641,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -13960,6 +14704,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/search-field/SearchField.stories.ts"
           }
         },
@@ -14118,33 +14870,7 @@
             },
             {
               "kind": "method",
-              "name": "_clearField",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "MouseEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "renderPrefix",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "typeof nothing | TemplateResult"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderControl",
               "privacy": "protected",
               "return": {
                 "type": {
@@ -14257,6 +14983,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderLabel",
               "privacy": "protected",
@@ -14269,6 +15027,20 @@
                   }
                 }
               ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderControl",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -14301,6 +15073,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -14353,14 +15139,6 @@
               "inheritedFrom": {
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
-              }
-            }
-          ],
-          "events": [
-            {
-              "name": "change",
-              "type": {
-                "text": "Event"
               }
             }
           ],
@@ -14455,6 +15233,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -14488,10 +15280,30 @@
           "tagName": "omni-search-field",
           "import": "```js\nimport '@capitec/omni-components/search-field';\n```",
           "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -14566,7 +15378,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            id-field=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            empty-message=\"${args.emptyMessage}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        items: displayItems as Record<string, unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: '',\n        emptyMessage: 'No items provided'\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            id-field=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            empty-message=\"${args.emptyMessage}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        items: displayItems as Record<string, unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: '',\n        emptyMessage: 'No items provided'\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -14627,6 +15439,10 @@
         {
           "kind": "variable",
           "name": "Error_Label"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -14727,6 +15543,14 @@
         },
         {
           "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "Prefix",
           "declaration": {
             "name": "Prefix",
@@ -14821,24 +15645,28 @@
               "name": "--omni-select-items-container-background-color"
             },
             {
-              "description": "Select item container for mobile left.",
-              "name": "--omni-select-mobile-items-container-left"
+              "description": "Select dialog height",
+              "name": "--omni-select-dialog-height"
             },
             {
-              "description": "Select item container for mobile right.",
-              "name": "--omni-select-mobile-items-container-right"
+              "description": "Select dialog left",
+              "name": "--omni-select-dialog-left"
             },
             {
-              "description": "Select item container for mobile bottom.",
-              "name": "--omni-select-mobile-items-container-bottom"
+              "description": "Select dialog right",
+              "name": "--omni-select-dialog-right"
             },
             {
-              "description": "Select item container for mobile top left radius.",
-              "name": "--omni-select-mobile-items-container-border-top-left-radius"
+              "description": "Select dialog bottom",
+              "name": "--omni-select-dialog-bottom"
             },
             {
-              "description": "Select item container for mobile right left radius.",
-              "name": "--omni-select-mobile-items-container-border-top-right-radius"
+              "description": "Select dialog modal max width.",
+              "name": "--omni-select-dialog-modal-max-width"
+            },
+            {
+              "description": "Select dialog background color().",
+              "name": "--omni-select-dialog-background-color"
             },
             {
               "description": "Select items container width",
@@ -14971,6 +15799,14 @@
               }
             },
             {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "description": "Replaces the icon for the prefix slot.",
               "name": "prefix",
               "inheritedFrom": {
@@ -15091,7 +15927,15 @@
             },
             {
               "kind": "method",
-              "name": "_inputClick"
+              "name": "_inputClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -15327,6 +16171,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -15353,6 +16229,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -15514,6 +16404,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -15546,7 +16450,19 @@
           },
           "tagName": "omni-select",
           "import": "```js\nimport '@capitec/omni-components/select';\n```",
-          "customElement": true
+          "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -16171,7 +17087,7 @@
           "type": {
             "text": "ComponentStoryFormat<BaseArgs>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-text-field\n      data-testid=\"test-text-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-text-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const textField = within(context.canvasElement).getByTestId<TextField>('test-text-field');\n        textField.value = '';\n\n        const input = jest.fn();\n        textField.addEventListener('input', input);\n\n        const inputField = textField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await userEvent.type(inputField, 'Value Update', {\n            pointerEventsCheck: 0\n        });\n        const value = 'Value Update';\n        await expect(inputField).toHaveValue(value);\n\n        await expect(input).toBeCalledTimes(value.length);\n    }\n}"
+          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-text-field\n      data-testid=\"test-text-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix ? '\\r\\n' : nothing}</omni-text-field>\n  `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: ''\n    },\n    play: async (context) => {\n        const textField = within(context.canvasElement).getByTestId<TextField>('test-text-field');\n        textField.value = '';\n\n        const input = jest.fn();\n        textField.addEventListener('input', input);\n\n        const inputField = textField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await userEvent.type(inputField, 'Value Update', {\n            pointerEventsCheck: 0\n        });\n        const value = 'Value Update';\n        await expect(inputField).toHaveValue(value);\n\n        await expect(input).toBeCalledTimes(value.length);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -16188,6 +17104,10 @@
         {
           "kind": "variable",
           "name": "Value"
+        },
+        {
+          "kind": "variable",
+          "name": "Clear"
         },
         {
           "kind": "variable",
@@ -16247,6 +17167,14 @@
           "name": "Value",
           "declaration": {
             "name": "Value",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Clear",
+          "declaration": {
+            "name": "Clear",
             "module": "src/text-field/TextField.stories.ts"
           }
         },
@@ -16468,6 +17396,38 @@
               }
             },
             {
+              "kind": "field",
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "attribute": "clearable",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_clearValue",
+              "privacy": "protected",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "kind": "method",
               "name": "renderPrefix",
               "privacy": "protected",
@@ -16540,6 +17500,20 @@
               "kind": "method",
               "name": "renderError",
               "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderClear",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "typeof nothing | TemplateResult"
+                }
+              },
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"
@@ -16686,6 +17660,20 @@
               }
             },
             {
+              "name": "clearable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to clear the value of the component.",
+              "fieldName": "clearable",
+              "attribute": "clearable",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "dir",
               "type": {
                 "text": "string"
@@ -16719,10 +17707,30 @@
           "tagName": "omni-text-field",
           "import": "```js\nimport '@capitec/omni-components/text-field';\n```",
           "customElement": true,
+          "events": [
+            {
+              "name": "change",
+              "type": {
+                "text": "Event"
+              },
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
               "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "description": "Replaces the icon for the clear slot.",
+              "name": "clear",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "src/core/OmniFormElement.ts"

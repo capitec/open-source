@@ -1,4 +1,4 @@
-import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";import{b as t}from"./chunk.S2K25ADN.js";import{a as m,b as o,d as r}from"./chunk.F6MIXR4E.js";import{j as l,m as s,p as f}from"./chunk.BF43NN75.js";s();f();var e=class extends c{constructor(){super(...arguments);this.value=null;this.disabled=!1}static get styles(){return[m`
+import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";import{b as a}from"./chunk.S2K25ADN.js";import{a as f,b as o,d as r}from"./chunk.F6MIXR4E.js";import{j as t,m as s,p as c}from"./chunk.BF43NN75.js";s();c();var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1;this.clearable=!1}_clearValue(l){if(this.disabled)return l.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0})),l.stopPropagation()}static get styles(){return[f`
                 ${super.styles}
 
                 :host {
@@ -209,7 +209,27 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                     }
                 }
 
-                
+                .clear-control {
+                    display: flex;
+                  
+                    margin-right: var(--omni-form-clear-control-margin-right, 10px);
+                    margin-left: var(--omni-form-clear-control-margin-left, 10px);
+                    width: var(--omni-form-clear-control-width, 20px);
+                }
+
+                .clear-click {
+                    display: flex;
+                }
+
+                .clear-icon {
+                    fill: var(--omni-form-clear-icon-color, var(--omni-primary-color));
+                }
+
+                .clear-icon,
+                ::slotted([slot='clear']){
+                    width: var(--omni-form-clear-icon-width, 20px);
+                    cursor: pointer;
+                }
 
                 slot[name='prefix'],
                 slot[name='suffix'],
@@ -218,17 +238,26 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as c}from"./chunk.CWNKFZ3E.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){var i;let a={layout:!0,error:(i=this.error)!=null?i:!1,disabled:this.disabled};return o`
+            `]}render(){var i;let l={layout:!0,error:(i=this.error)!=null?i:!1,disabled:this.disabled};return o`
             <div class="container">
-                <div class=${n(a)}>
+                <div class=${n(l)}>
                     <div class="border"></div>
                     <slot name="prefix">${this.renderPrefix()}</slot>
                     ${this.renderLabel()} 
                     ${this.renderContent()} 
+                    ${this.renderClear()}
                     <slot name="suffix"></slot>
                     ${this.renderControl()} ${this.renderPicker()}
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(a=!1){var d;let i={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":a};return o`${this.label?o`<div class=${n(i)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}};l([t({type:String,reflect:!0})],e.prototype,"label",2),l([t({reflect:!0})],e.prototype,"value",2),l([t({type:Object,reflect:!0})],e.prototype,"data",2),l([t({type:String,reflect:!0})],e.prototype,"hint",2),l([t({type:String,reflect:!0})],e.prototype,"error",2),l([t({type:Boolean,reflect:!0})],e.prototype,"disabled",2);export{e as a};
-//# sourceMappingURL=chunk.WASXY5YJ.js.map
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(l=!1){var d;let i={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":l};return o`${this.label?o`<div class=${n(i)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}renderClear(){return o`
+        <div class="clear-control">
+            ${this.clearable&&this.value&&!this.disabled?o`
+            <div id="clear-click" class="clear-click" @click="${l=>this._clearValue(l)}">
+                    <slot name="clear">
+                        <omni-clear-icon class="clear-icon"></omni-clear-icon>
+                    </slot>
+            </div>`:r}
+        </div>`}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({reflect:!0})],e.prototype,"value",2),t([a({type:Object,reflect:!0})],e.prototype,"data",2),t([a({type:String,reflect:!0})],e.prototype,"hint",2),t([a({type:String,reflect:!0})],e.prototype,"error",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
+//# sourceMappingURL=chunk.P5BVWJU5.js.map

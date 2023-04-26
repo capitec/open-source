@@ -1,4 +1,4 @@
-import{b}from"./chunk.Y2FJIW7X.js";import{a as g}from"./chunk.K2UMXYHA.js";import{a as u}from"./chunk.WASXY5YJ.js";import{a as l}from"./chunk.2HYOR3YM.js";import{g as v}from"./chunk.CWNKFZ3E.js";import{a as p,b as r,c as a,d as f}from"./chunk.S2K25ADN.js";import{a as h,b as o,d}from"./chunk.F6MIXR4E.js";import{j as n,m as c,p as m}from"./chunk.BF43NN75.js";c();m();var t=class extends u{constructor(){super(...arguments);this.idField="id";this.emptyMessage="No items provided";this._popUp=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._checkforMobile(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._checkScreenDimensions(),window.addEventListener("resize",this._checkScreenDimensions.bind(this)),window.addEventListener("scroll",this._checkScreenDimensions.bind(this))}_inputClick(){this._togglePopup()}_windowClick(e){e.composedPath()&&!e.composedPath().includes(this)&&this._popUp&&this._togglePopup()}_controlClick(){this._togglePopup()}_togglePopup(){this._popUp?this._popUp=!1:this._popUp=!0}async _onItemClick(e){var i;this.value=e,await this.updateComplete,(i=this._selectElement)==null||i.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}async _checkScreenDimensions(){await this._checkForBottomOfScreen(),this._checkforMobile(),await this._itemsMaxHeightChange()}async _checkForBottomOfScreen(){visualViewport&&(visualViewport.height-this.getBoundingClientRect().bottom<150?this._bottomOfViewport=!0:this._bottomOfViewport=!1)}_checkforMobile(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}async _itemsMaxHeightChange(e){if(e&&(this._itemsContainer=e),this._itemsContainer&&!this._isMobile&&(await this.updateComplete,visualViewport))if(this._bottomOfViewport){let i=visualViewport.height-this.getBoundingClientRect().height-(visualViewport.height-this.getBoundingClientRect().top)-10+"px";this._itemsContainer.style.maxHeight=`var(--omni-select-items-max-height, ${i})`}else{let i=visualViewport.height-this.getBoundingClientRect().bottom-10+"px";this._itemsContainer.style.maxHeight=`var(--omni-select-items-max-height, ${i})`}}static get styles(){return[super.styles,h`
+import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";import{a as b}from"./chunk.P5BVWJU5.js";import{a as d}from"./chunk.2HYOR3YM.js";import{g as c}from"./chunk.CWNKFZ3E.js";import{a as f,b as s,c as l,d as v}from"./chunk.S2K25ADN.js";import{a as g,b as t,d as a}from"./chunk.F6MIXR4E.js";import{j as n,m as h,p}from"./chunk.BF43NN75.js";h();p();var o=class extends b{constructor(){super(...arguments);this.idField="id";this.emptyMessage="No items provided";this._popUp=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._checkforMobile(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._checkScreenDimensions(),window.addEventListener("resize",this._checkScreenDimensions.bind(this)),window.addEventListener("scroll",this._checkScreenDimensions.bind(this))}_inputClick(e){this._togglePopup()}_windowClick(e){let i=this.renderRoot.querySelector("#items-dialog"),r=e.composedPath();r&&(!r.includes(this)||this._isMobile&&i&&r.findIndex(w=>w===i)===0)&&this._popUp&&this._togglePopup()}_controlClick(){this._togglePopup()}_togglePopup(){if(this._popUp){if(this._popUp=!1,this._isMobile){let e=this.renderRoot.querySelector("#items-dialog");e&&e.close()}}else if(this._popUp=!0,this._isMobile){let e=this.renderRoot.querySelector("#items-dialog");e&&e.showModal()}}async _onItemClick(e){var i;this.value=e,await this.updateComplete,(i=this._selectElement)==null||i.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}async _checkScreenDimensions(){await this._checkForBottomOfScreen(),this._checkforMobile(),await this._itemsMaxHeightChange()}async _checkForBottomOfScreen(){visualViewport&&(visualViewport.height-this.getBoundingClientRect().bottom<150?this._bottomOfViewport=!0:this._bottomOfViewport=!1)}_checkforMobile(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}async _itemsMaxHeightChange(e){if(e&&(this._itemsContainer=e),this._itemsContainer&&!this._isMobile&&(await this.updateComplete,visualViewport))if(this._bottomOfViewport){let i=visualViewport.height-this.getBoundingClientRect().height-(visualViewport.height-this.getBoundingClientRect().top)-10+"px";this._itemsContainer.style.maxHeight=`var(--omni-select-items-max-height, ${i})`}else{let i=visualViewport.height-this.getBoundingClientRect().bottom-10+"px";this._itemsContainer.style.maxHeight=`var(--omni-select-items-max-height, ${i})`}}static get styles(){return[super.styles,g`
                 /* Added to ensure that component has pointer cursor applied */
                 :host {
                     cursor: pointer;
@@ -98,19 +98,25 @@ import{b}from"./chunk.Y2FJIW7X.js";import{a as g}from"./chunk.K2UMXYHA.js";impor
                 
                 /* Mobile device styling */
                 @media screen and (max-width: 766px) {
-                    .items {
-                       max-height: var(--omni-select-mobile-items-max-height, 240px);
+                    .items-dialog {
+                        position: fixed;
+                        top: inherit;
+                        margin: unset;
+                        border-style: none;
+                        padding: unset;
+                        width: 100%;
+                        height: var(--omni-select-dialog-height, 240px);
+                        left: var(--omni-select-dialog-left, 0px);
+                        right: var(--omni-select-dialog-right, 0px);
+                        bottom: var(--omni-select-dialog-bottom, 0px);
+                    }
+                    
+                    .items-dialog:modal{
+                        max-width: var(--omni-select-dialog-modal-max-width, 100%);
                     }
 
-                    .items-container {
-                        position: fixed;
-
-                        left: var(--omni-select-mobile-items-container-left, 0px);
-                        right: var(--omni-select-mobile-items-container-right, 0px);
-                        bottom: var(--omni-select-mobile-items-container-bottom, 0px);
-
-                        border-top-left-radius: var(--omni-select-mobile-items-container-border-top-left-radius, 10px);
-                        border-top-right-radius: var(--omni-select-mobile-items-container-border-top-right-radius, 10px);
+                    .items-dialog::backdrop {
+                        background: var(--omni-select-dialog-background-color, rgba(0, 0, 0, 0.1));
                     }
                 }
 
@@ -178,26 +184,33 @@ import{b}from"./chunk.Y2FJIW7X.js";import{a as g}from"./chunk.K2UMXYHA.js";impor
                     width: var(--omni-select-loading-indicator-width, 50px);
                     height: var(--omni-select-loading-indicator-height, 50px);
                 }
-            `]}renderContent(){var i,s;let e={field:!0,disabled:this.disabled,error:this.error};return o`
+            `]}renderContent(){var i,r;let e={field:!0,disabled:this.disabled,error:this.error};return t`
             <input
-                class=${l(e)}
+                class=${d(e)}
                 data-omni-keyboard-hidden
                 id="select"
                 type="text"
                 readonly
                 ?disabled=${this.disabled}
-                .value=${g((s=typeof this.value!="string"&&this.displayField?((i=this.value)!=null?i:{})[this.displayField]:this.value)!=null?s:"")}
+                .value=${u((r=typeof this.value!="string"&&this.displayField?((i=this.value)!=null?i:{})[this.displayField]:this.value)!=null?r:"")}
                 tabindex="${this.disabled?-1:0}" />
-        `}renderPicker(){return this._popUp?o`
+        `}renderPicker(){return this._isMobile?t`
+            <dialog id="items-dialog" class="items-dialog">
+                ${this._isMobile&&this.label?t`<div class="header">${this.label}</div>`:a}
+                <div ${m(this._itemsMaxHeightChange)} id="items" class="items"> ${c(this._renderOptions(),t`<div>${this.renderLoading()}</div>`)} 
+                </div>
+            </dialog>
+            `:this._popUp?t`
             <div id="items-container" class="items-container ${this._bottomOfViewport?"bottom":""}">
-                ${this._isMobile&&this.label?o`<div class="header">${this.label}</div>`:d}
-                <div ${b(this._itemsMaxHeightChange)} id="items" class="items"> ${v(this._renderOptions(),o`<div>${this.renderLoading()}</div>`)} </div>
+                ${this._isMobile&&this.label?t`<div class="header">${this.label}</div>`:a}
+                <div ${m(this._itemsMaxHeightChange)} id="items" class="items"> ${c(this._renderOptions(),t`<div>${this.renderLoading()}</div>`)} 
+                </div>
             </div>
-        `:d}renderControl(){let e={icon:!0,disabled:this.disabled,error:this.error};return o`<div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
-            ${this._isMobile?o`<slot name="more"><omni-more-icon class=${l(e)}></omni-more-icon></slot>`:o`<slot name="arrow"><omni-chevron-down-icon class=${l(e)}></omni-chevron-down-icon></slot>`}
-        </div>`}async _renderOptions(){let e=[],i=0;return typeof this.items=="function"?e=await this.items():e=await this.items,Array.isArray(e)&&(i=e.length),i===0?o`<div class="none">${this.emptyMessage}</div>`:e.map(s=>this._renderOption(s))}_renderOption(e){return o` <div
+        `:a}renderControl(){let e={icon:!0,disabled:this.disabled,error:this.error};return t`<div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
+            ${this._isMobile?t`<slot name="more"><omni-more-icon class=${d(e)}></omni-more-icon></slot>`:t`<slot name="arrow"><omni-chevron-down-icon class=${d(e)}></omni-chevron-down-icon></slot>`}
+        </div>`}async _renderOptions(){let e=[],i=0;return typeof this.items=="function"?e=await this.items():e=await this.items,Array.isArray(e)&&(i=e.length),i===0?t`<div class="none">${this.emptyMessage}</div>`:e.map(r=>this._renderOption(r))}_renderOption(e){return t` <div
             class="item ${this.value===(typeof e=="string"?e:e[this.displayField])||this.value===e?"selected":""}"
             @click="${()=>this._onItemClick(e)}">
-            ${this.renderItem?o` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
-        </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};n([f("#select")],t.prototype,"_selectElement",2),n([r({type:Array,reflect:!0})],t.prototype,"items",2),n([r({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),n([r({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),n([r({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),n([r({type:Object,reflect:!1})],t.prototype,"renderItem",2),n([a()],t.prototype,"_popUp",2),n([a()],t.prototype,"_bottomOfViewport",2),n([a()],t.prototype,"_isMobile",2),t=n([p("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.MPAJMFJ3.js.map
+            ${this.renderItem?t` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
+        </div>`}renderLoading(){return t`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};n([v("#select")],o.prototype,"_selectElement",2),n([s({type:Array,reflect:!0})],o.prototype,"items",2),n([s({type:String,reflect:!0,attribute:"display-field"})],o.prototype,"displayField",2),n([s({type:String,reflect:!0,attribute:"id-field"})],o.prototype,"idField",2),n([s({type:String,reflect:!0,attribute:"empty-message"})],o.prototype,"emptyMessage",2),n([s({type:Object,reflect:!1})],o.prototype,"renderItem",2),n([l()],o.prototype,"_popUp",2),n([l()],o.prototype,"_bottomOfViewport",2),n([l()],o.prototype,"_isMobile",2),o=n([f("omni-select")],o);export{o as a};
+//# sourceMappingURL=chunk.JQGT5LNQ.js.map

@@ -393,6 +393,13 @@
                                 key="Disabled"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-slot">Slot</div>
+                            <story-renderer 
+                                path="./dist/check/Check.stories.js" 
+                                tag="omni-check" 
+                                key="Slot"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-custom-check-icon">Custom Check Icon</div>
                             <story-renderer 
                                 path="./dist/check/Check.stories.js" 
@@ -431,6 +438,9 @@
                                     </a>
                                     <a href="components/check/#story-disabled" id="story-disabled-a" class="item">
                                         Disabled
+                                    </a>
+                                    <a href="components/check/#story-slot" id="story-slot-a" class="item">
+                                        Slot
                                     </a>
                                     <a href="components/check/#story-custom-check-icon" id="story-custom-check-icon-a" class="item">
                                         Custom Check Icon
@@ -584,6 +594,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
                                     <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component.</td>
                                 </tr>
                                 
                                 <tr>

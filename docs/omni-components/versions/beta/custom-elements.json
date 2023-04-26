@@ -1357,7 +1357,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n    <omni-check\n      data-testid=\"test-check\"\n      label=\"${ifNotEmpty(args.label)}\"\n      .data=\"${args.data}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?checked=\"${args.checked}\"\n      ?disabled=\"${args.disabled}\"\n      ?indeterminate=\"${args.indeterminate}\"\n      >${args.indeterminate_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('indeterminate_icon', args.indeterminate_icon))}` : nothing}${\n        args.check_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('check_icon', args.check_icon))}` : nothing\n    }${args.check_icon || args.indeterminate_icon ? '\\r\\n' : nothing}</omni-check\n    >\n  `,\n    name: 'Interactive',\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false,\n        indeterminate: false,\n        check_icon: '',\n        indeterminate_icon: ''\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const valueChange = jest.fn();\n        check.addEventListener('value-change', valueChange);\n        await userEvent.click(check, {\n            pointerEventsCheck: 0\n        });\n\n        const content = check.shadowRoot?.getElementById('content') as HTMLElement;\n\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
+          "default": "{\n    render: (args) => html`\n        <omni-check\n            data-testid=\"test-check\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?checked=\"${args.checked}\"\n            ?disabled=\"${args.disabled}\"\n            ?indeterminate=\"${args.indeterminate}\">${\n        args.indeterminate_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('indeterminate_icon', args.indeterminate_icon))}` : nothing\n    }${args.check_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('check_icon', args.check_icon))}` : nothing}${\n        args.check_icon || args.indeterminate_icon ? '\\r\\n' : nothing\n    }${unsafeHTML(args['[Default Slot]'])}</omni-check>\n    `,\n    name: 'Interactive',\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false,\n        indeterminate: false,\n        check_icon: '',\n        indeterminate_icon: '',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const valueChange = jest.fn();\n        check.addEventListener('value-change', valueChange);\n        await userEvent.click(check, {\n            pointerEventsCheck: 0\n        });\n\n        const content = check.shadowRoot?.getElementById('content') as HTMLElement;\n\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1373,7 +1373,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-check> `,\n    description: 'Set text value to display as hint.',\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const hintElement = check.shadowRoot?.querySelector<HTMLElement>('.hint');\n        await expect(hintElement).toBeTruthy();\n        await expect(hintElement).toHaveTextContent(Hint.args?.hint as string);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-check data-testid=\"test-check\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-check>`,\n    description: 'Set text value to display as hint.',\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const hintElement = check.shadowRoot?.querySelector<HTMLElement>('.hint');\n        await expect(hintElement).toBeTruthy();\n        await expect(hintElement).toHaveTextContent(Hint.args?.hint as string);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1381,7 +1381,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: Args) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" error=\"${args.error}\"></omni-check> `,\n    description: 'Set text value to display as error.',\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const errorElement = check.shadowRoot?.querySelector<HTMLElement>('.error');\n        await expect(errorElement).toBeTruthy();\n        await expect(errorElement).toHaveTextContent(Error_Label.args?.error as string);\n    }\n}"
+          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: Args) => html`<omni-check data-testid=\"test-check\" label=\"${args.label}\" error=\"${args.error}\"></omni-check>`,\n    description: 'Set text value to display as error.',\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const errorElement = check.shadowRoot?.querySelector<HTMLElement>('.error');\n        await expect(errorElement).toBeTruthy();\n        await expect(errorElement).toHaveTextContent(Error_Label.args?.error as string);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1389,7 +1389,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-check> `,\n    description: 'Set the component to a checked state.',\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const checkedElement = check.shadowRoot?.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-check>`,\n    description: 'Set the component to a checked state.',\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const checkedElement = check.shadowRoot?.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1397,7 +1397,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\"></omni-check> `,\n    description: 'Set the component to an indeterminate/partial state.',\n    args: {\n        label: 'Indeterminate',\n        indeterminate: true\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const indeterminateElement = check.shadowRoot?.querySelector<HTMLElement>('.indeterminate');\n        await expect(indeterminateElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\"></omni-check>`,\n    description: 'Set the component to an indeterminate/partial state.',\n    args: {\n        label: 'Indeterminate',\n        indeterminate: true\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const indeterminateElement = check.shadowRoot?.querySelector<HTMLElement>('.indeterminate');\n        await expect(indeterminateElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1405,7 +1405,12 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-check> `,\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const valueChange = jest.fn();\n        check.addEventListener('value-change', valueChange);\n\n        const disabledElement = check.shadowRoot?.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = check.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-check data-testid=\"test-check\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-check>`,\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const valueChange = jest.fn();\n        check.addEventListener('value-change', valueChange);\n\n        const disabledElement = check.shadowRoot?.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = check.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Slot",
+          "default": "{\n    render: () => html`\n        <omni-check data-testid=\"test-check\">Slotted</omni-check>\n    `,\n    name: 'Slot',\n    description: 'Set content to display within.',\n    args: {},\n    play: async (context) => {\n        const checkElement = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slottedText = checkElement.innerHTML;\n        await expect(slottedText).toEqual('Slotted');\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1413,7 +1418,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\"> ${unsafeHTML(args.check_icon)} </omni-check>\n  `,\n    description: 'Set html content to render when the component is in a checked state.',\n    args: {\n        label: 'Custom Check Icon',\n        checked: true,\n        check_icon: raw`<svg slot=\"check_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 442.79 410.38\" version=\"1.0\" width=\"100%\"\n                      height=\"100%\">\n                      <path style=\"stroke:#000;stroke-width:19.892;fill:lightgreen\"\n                        d=\"m-1747.2-549.3 287.72 333.9c146.6-298.83 326.06-573.74 614.52-834.75-215.89 121.82-453.86 353.14-657.14 639.38l-245.1-138.53z\"\n                        transform=\"translate(843.77 509.04) scale(.48018)\" />\n                    </svg>`\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slotElement = check.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=check_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?checked=\"${args.checked}\">\n            ${unsafeHTML(args.check_icon)}\n        </omni-check>\n    `,\n    description: 'Set html content to render when the component is in a checked state.',\n    args: {\n        label: 'Custom Check Icon',\n        checked: true,\n        check_icon: raw`\n            <svg slot=\"check_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 442.79 410.38\" version=\"1.0\" width=\"100%\"\n                height=\"100%\">\n                <path style=\"stroke:#000;stroke-width:19.892;fill:lightgreen\"\n                d=\"m-1747.2-549.3 287.72 333.9c146.6-298.83 326.06-573.74 614.52-834.75-215.89 121.82-453.86 353.14-657.14 639.38l-245.1-138.53z\"\n                transform=\"translate(843.77 509.04) scale(.48018)\" />\n            </svg>\n        `\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slotElement = check.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=check_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -1421,7 +1426,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\">\n      ${unsafeHTML(args.indeterminate_icon)}\n    </omni-check>\n  `,\n    description: 'Set html content to render when the component is in an indeterminate state.',\n    args: {\n        label: 'Custom Indeterminate Icon',\n        indeterminate: true,\n        indeterminate_icon: raw`\n\t\t\t<svg slot=\"indeterminate_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" width=\"100%\" height=\"100%\">\n\t\t\t\t<defs>\n\t\t\t\t<linearGradient id=\"b\" y2=\"28.275\" gradientUnits=\"userSpaceOnUse\" x2=\"20.07\" y1=\"3.976\" x1=\"12.113\">\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"0\" />\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"1\" />\n\t\t\t\t</linearGradient>\n\t\t\t\t<linearGradient id=\"a\" y2=\"30\" gradientUnits=\"userSpaceOnUse\" x2=\"20.214\" y1=\"2\" x1=\"12.031\">\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"0\" />\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"1\" />\n\t\t\t\t</linearGradient>\n\t\t\t\t</defs>\n\t\t\t\t<path d=\"M2.875 13C1.281 13 0 14.338 0 16s1.28 3 2.875 3h26.25C30.719 19 32 17.662 32 16s-1.281-3-2.875-3H2.875z\" />\n\t\t\t\t<path style=\"fill:url(#b)\" transform=\"translate(-.063 .063)\"\n\t\t\t\td=\"M2.875 13.938c-1.067 0-1.938.884-1.938 2.062s.87 2.062 1.938 2.062h26.25c1.067 0 1.937-.884 1.937-2.062s-.87-2.062-1.937-2.062H2.875z\" />\n\t\t\t</svg>\n\t\t`\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slotElement = check.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=indeterminate_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-check data-testid=\"test-check\" label=\"${args.label}\" ?indeterminate=\"${args.indeterminate}\">\n            ${unsafeHTML(args.indeterminate_icon)}\n        </omni-check>\n    `,\n    description: 'Set html content to render when the component is in an indeterminate state.',\n    args: {\n        label: 'Custom Indeterminate Icon',\n        indeterminate: true,\n        indeterminate_icon: raw`\n\t\t\t<svg slot=\"indeterminate_icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\" width=\"100%\" height=\"100%\">\n\t\t\t\t<defs>\n\t\t\t\t<linearGradient id=\"b\" y2=\"28.275\" gradientUnits=\"userSpaceOnUse\" x2=\"20.07\" y1=\"3.976\" x1=\"12.113\">\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"0\" />\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"1\" />\n\t\t\t\t</linearGradient>\n\t\t\t\t<linearGradient id=\"a\" y2=\"30\" gradientUnits=\"userSpaceOnUse\" x2=\"20.214\" y1=\"2\" x1=\"12.031\">\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"0\" />\n\t\t\t\t\t<stop style=\"stop-color:#ffffff\" offset=\"1\" />\n\t\t\t\t</linearGradient>\n\t\t\t\t</defs>\n\t\t\t\t<path d=\"M2.875 13C1.281 13 0 14.338 0 16s1.28 3 2.875 3h26.25C30.719 19 32 17.662 32 16s-1.281-3-2.875-3H2.875z\" />\n\t\t\t\t<path style=\"fill:url(#b)\" transform=\"translate(-.063 .063)\"\n\t\t\t\td=\"M2.875 13.938c-1.067 0-1.938.884-1.938 2.062s.87 2.062 1.938 2.062h26.25c1.067 0 1.937-.884 1.937-2.062s-.87-2.062-1.937-2.062H2.875z\" />\n\t\t\t</svg>\n\t\t`\n    },\n    play: async (context) => {\n        const check = within(context.canvasElement).getByTestId<Check>('test-check');\n        const slotElement = check.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=indeterminate_icon]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n    }\n}"
         }
       ],
       "exports": [
@@ -1485,6 +1490,14 @@
           "name": "Disabled",
           "declaration": {
             "name": "Disabled",
+            "module": "src/check/Check.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Slot",
+          "declaration": {
+            "name": "Slot",
             "module": "src/check/Check.stories.ts"
           }
         },
@@ -1644,6 +1657,10 @@
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
               }
+            },
+            {
+              "description": "Content to render inside the component.",
+              "name": "[Default Slot]"
             },
             {
               "description": "Replaces the icon for the indeterminate state",
@@ -12552,7 +12569,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-radio\n      data-testid=\"test-radio\"\n      label=\"${ifNotEmpty(args.label)}\"\n      .data=\"${args.data}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?checked=\"${args.checked}\"\n      ?disabled=\"${args.disabled}\"></omni-radio>\n  `,\n    name: 'Interactive',\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        radio.focus();\n\n        const content = radio.shadowRoot?.getElementById('content') as HTMLElement;\n        const valueChange = jest.fn();\n        radio.addEventListener('value-change', valueChange);\n\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-radio\n            data-testid=\"test-radio\"\n            label=\"${ifNotEmpty(args.label)}\"\n            .data=\"${args.data}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?checked=\"${args.checked}\"\n            ?disabled=\"${args.disabled}\">${unsafeHTML(args['[Default Slot]'])}</omni-radio>\n    `,\n    name: 'Interactive',\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false,\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        radio.focus();\n\n        const content = radio.shadowRoot?.getElementById('content') as HTMLElement;\n        const valueChange = jest.fn();\n        radio.addEventListener('value-change', valueChange);\n\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -12560,7 +12577,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\"></omni-radio> `,\n    description: 'Set a text value to display next to the component.',\n    args: {\n        label: 'Label'\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const labelElement = radio.shadowRoot?.getElementById('label') as HTMLElement;\n        await expect(labelElement).toHaveTextContent(Label.args?.label as string);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-radio data-testid=\"test-radio\" label=\"${args.label}\"></omni-radio>`,\n    description: 'Set a text value to display next to the component.',\n    args: {\n        label: 'Label'\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const labelElement = radio.shadowRoot?.getElementById('label') as HTMLElement;\n        await expect(labelElement).toHaveTextContent(Label.args?.label as string);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -12568,7 +12585,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-radio> `,\n    description: 'Set a text value to as a hint.',\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const element = radio.shadowRoot?.querySelector<HTMLElement>('.hint');\n        await expect(element).toHaveTextContent(Hint.args?.hint as string);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-radio data-testid=\"test-radio\" label=\"${args.label}\" hint=\"${args.hint}\"></omni-radio>`,\n    description: 'Set a text value to as a hint.',\n    args: {\n        label: 'Hint',\n        hint: 'This is a hint'\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const element = radio.shadowRoot?.querySelector<HTMLElement>('.hint');\n        await expect(element).toHaveTextContent(Hint.args?.hint as string);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -12576,7 +12593,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: Args) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" error=\"${args.error}\"></omni-radio> `,\n    description: 'Set a text value to display as an error.',\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const element = radio.shadowRoot?.querySelector<HTMLElement>('.error');\n        await expect(element).toHaveTextContent(Error_Label.args?.error as string);\n    }\n}"
+          "default": "{\n    name: 'Error', // Explicitly named as error, the exported name cannot be 'Error' as that is reserved\n    render: (args: Args) => html`<omni-radio data-testid=\"test-radio\" label=\"${args.label}\" error=\"${args.error}\"></omni-radio>`,\n    description: 'Set a text value to display as an error.',\n    args: {\n        label: 'Error',\n        error: 'This is an error state'\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const element = radio.shadowRoot?.querySelector<HTMLElement>('.error');\n        await expect(element).toHaveTextContent(Error_Label.args?.error as string);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -12584,7 +12601,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-radio> `,\n    description: 'Set the component to a checked state.',\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const checkedElement = radio.shadowRoot?.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?checked=\"${args.checked}\"></omni-radio>`,\n    description: 'Set the component to a checked state.',\n    args: {\n        label: 'Checked',\n        checked: true\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const checkedElement = radio.shadowRoot?.querySelector<HTMLElement>('.checked');\n        await expect(checkedElement).toBeTruthy();\n    }\n}"
         },
         {
           "kind": "variable",
@@ -12592,7 +12609,12 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html` <omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-radio> `,\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const valueChange = jest.fn();\n        radio.addEventListener('value-change', valueChange);\n\n        const disabledElement = radio.shadowRoot?.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = radio.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`<omni-radio data-testid=\"test-radio\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-radio>`,\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const radio = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const valueChange = jest.fn();\n        radio.addEventListener('value-change', valueChange);\n\n        const disabledElement = radio.shadowRoot?.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = radio.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Slot",
+          "default": "{\n    render: () => html`\n        <omni-radio data-testid=\"test-radio\">Slotted</omni-radio>\n    `,\n    name: 'Slot',\n    description: 'Set content to display within.',\n    args: {},\n    play: async (context) => {\n        const radioElement = within(context.canvasElement).getByTestId<Radio>('test-radio');\n        const slottedText = radioElement.innerHTML;\n        await expect(slottedText).toEqual('Slotted');\n    }\n}"
         }
       ],
       "exports": [
@@ -12648,6 +12670,14 @@
           "name": "Disabled",
           "declaration": {
             "name": "Disabled",
+            "module": "src/radio/Radio.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Slot",
+          "declaration": {
+            "name": "Slot",
             "module": "src/radio/Radio.stories.ts"
           }
         }
@@ -12785,6 +12815,20 @@
             {
               "description": "Disabled Background Color.",
               "name": "--omni-radio-disabled-background-color"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component.",
+              "name": "[Default Slot]"
             }
           ],
           "members": [
@@ -13042,17 +13086,7 @@
           },
           "tagName": "omni-radio",
           "import": "```js\nimport '@capitec/omni-components/radio';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [
@@ -15547,7 +15581,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-switch\n      data-testid=\"test-switch\"\n      label=\"${ifNotEmpty(args.label)}\"\n      .data=\"${args.data}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?checked=\"${args.checked}\"\n      ?disabled=\"${args.disabled}\"></omni-switch>\n  `,\n    name: 'Interactive',\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false\n    },\n    play: async (context) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const valueChange = jest.fn();\n        switchElement.addEventListener('value-change', valueChange);\n\n        const content = switchElement.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-switch\n      data-testid=\"test-switch\"\n      label=\"${ifNotEmpty(args.label)}\"\n      .data=\"${args.data}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?checked=\"${args.checked}\"\n      ?disabled=\"${args.disabled}\">${unsafeHTML(args['[Default Slot]'])}</omni-switch>\n  `,\n    name: 'Interactive',\n    args: {\n        label: '',\n        data: {},\n        hint: '',\n        error: '',\n        checked: false,\n        disabled: false,\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const valueChange = jest.fn();\n        switchElement.addEventListener('value-change', valueChange);\n\n        const content = switchElement.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n\n        await expect(valueChange).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -15588,6 +15622,11 @@
             "text": "ComponentStoryFormat<Args>"
           },
           "default": "{\n    render: (args: Args) => html` <omni-switch data-testid=\"test-switch\" label=\"${args.label}\" ?disabled=\"${args.disabled}\"></omni-switch> `,\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const valueChange = jest.fn();\n        switchElement.addEventListener('value-change', valueChange);\n\n        const disabledElement = switchElement.shadowRoot?.querySelector<HTMLElement>('.disabled');\n        await expect(disabledElement).toBeTruthy();\n\n        const content = switchElement.shadowRoot?.getElementById('content') as HTMLElement;\n        await userEvent.click(content, {\n            pointerEventsCheck: 0\n        });\n        await fireEvent.keyDown(content, {\n            key: ' ',\n            code: 'Space'\n        });\n        await expect(valueChange).toBeCalledTimes(0);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Slot",
+          "default": "{\n    render: () => html`\n        <omni-switch data-testid=\"test-switch\">Slotted</omni-switch>\n    `,\n    name: 'Slot',\n    description: 'Set content to display within.',\n    args: {},\n    play: async (context) => {\n        const switchElement = within(context.canvasElement).getByTestId<Switch>('test-switch');\n        const slottedText = switchElement.innerHTML;\n        await expect(slottedText).toEqual('Slotted');\n    }\n}"
         }
       ],
       "exports": [
@@ -15643,6 +15682,14 @@
           "name": "Disabled",
           "declaration": {
             "name": "Disabled",
+            "module": "src/switch/Switch.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Slot",
+          "declaration": {
+            "name": "Slot",
             "module": "src/switch/Switch.stories.ts"
           }
         }
@@ -15772,6 +15819,20 @@
             {
               "description": "Knob disabled hover box shadow.",
               "name": "--omni-switch-disabled-knob-box-shadow"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component.",
+              "name": "[Default Slot]"
             }
           ],
           "members": [
@@ -16029,17 +16090,7 @@
           },
           "tagName": "omni-switch",
           "import": "```js\nimport '@capitec/omni-components/switch';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "src/core/OmniElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [

@@ -187,6 +187,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
             `]}renderContent(){var i,r;let e={field:!0,disabled:this.disabled,error:this.error};return t`
             <input
                 class=${d(e)}
+                data-omni-keyboard-hidden
                 id="select"
                 type="text"
                 readonly
@@ -212,4 +213,4 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?t` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return t`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};n([v("#select")],o.prototype,"_selectElement",2),n([s({type:Array,reflect:!0})],o.prototype,"items",2),n([s({type:String,reflect:!0,attribute:"display-field"})],o.prototype,"displayField",2),n([s({type:String,reflect:!0,attribute:"id-field"})],o.prototype,"idField",2),n([s({type:String,reflect:!0,attribute:"empty-message"})],o.prototype,"emptyMessage",2),n([s({type:Object,reflect:!1})],o.prototype,"renderItem",2),n([l()],o.prototype,"_popUp",2),n([l()],o.prototype,"_bottomOfViewport",2),n([l()],o.prototype,"_isMobile",2),o=n([f("omni-select")],o);export{o as a};
-//# sourceMappingURL=chunk.UZFBKBUL.js.map
+//# sourceMappingURL=chunk.JQGT5LNQ.js.map

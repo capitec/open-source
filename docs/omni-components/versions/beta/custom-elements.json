@@ -8494,7 +8494,7 @@
           ],
           "superclass": {
             "name": "DOMTreeElement",
-            "module": "/src/core/DOMTreeElement"
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-lock-closed-icon",
           "import": "```js\nimport '@capitec/omni-components/icons/LockClosed.icon.js';\n```",
@@ -8541,7 +8541,7 @@
           ],
           "superclass": {
             "name": "DOMTreeElement",
-            "module": "/src/core/DOMTreeElement"
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-lock-open-icon",
           "import": "```js\nimport '@capitec/omni-components/icons/LockOpen.icon.js';\n```",
@@ -8588,7 +8588,7 @@
           ],
           "superclass": {
             "name": "DOMTreeElement",
-            "module": "/src/core/DOMTreeElement"
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-minus-icon",
           "import": "```js\nimport '@capitec/omni-components/icons/Minus.icon.js';\n```",
@@ -8729,7 +8729,7 @@
           ],
           "superclass": {
             "name": "DOMTreeElement",
-            "module": "/src/core/DOMTreeElement"
+            "module": "/src/core/DOMTreeElement.js"
           },
           "tagName": "omni-plus-icon",
           "import": "```js\nimport '@capitec/omni-components/icons/Plus.icon.js';\n```",

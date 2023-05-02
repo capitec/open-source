@@ -33,6 +33,7 @@
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons"  as="style"/>
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara"  as="style">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
     <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
     <style id="theme-styles"></style>
     <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
@@ -332,6 +333,17 @@
 <blockquote>
 <p>💡 Using a bundler will allow for optimal <a href="https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking">tree shaking</a>, which will ensure the smallest size and most efficient usage. Our <a href="getting-started/#starter-templates-">starter templates</a> already provide this for you!</p>
 </blockquote>
+<h2><a id="react-wrappers-" class="anchor" href="getting-started/#react-wrappers-" aria-hidden="true"></a>React Wrappers 🎁</h2>
+<p>React makes some assumptions about HTML elements that don't fully apply to custom elements, as it treats lower-case tag names differently from upper-case component names in ways that can make custom elements harder than necessary to use.</p>
+<p>Omni Components provides a separate package with each web component wrapped into a React component.</p>
+<p>You can install Omni Components for React locally with the following command:</p>
+<pre><code class="language-bash">npm install @capitec/omni-components-react
+</code></pre>
+<p>Or you can use Omni Components for React directly via a CDN:</p>
+<pre><code class="language-jsx">import { OmniButton } from &quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components-react@esm/button/index.js&quot;;
+
+const App = () =&gt; &lt;OmniButton label='Click' type='primary'/&gt;; 
+</code></pre>
 <h2><a id="starter-templates-" class="anchor" href="getting-started/#starter-templates-" aria-hidden="true"></a>Starter Templates 🔰</h2>
 <p>To help bootstrap a development project, we offer the following application starter template repositories:</p>
 <ul>

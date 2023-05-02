@@ -34,6 +34,7 @@
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara"  as="style">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
     <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
     <style id="theme-styles"></style>
     <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
@@ -307,7 +308,7 @@
 </blockquote>
 <h2><a id="local-installation-" class="anchor" href="getting-started/#local-installation-" aria-hidden="true"></a>Local Installation 💾</h2>
 <p>You can also install Omni Components locally with the following command:</p>
-<pre><code class="language-bash">npm install @capitec/omni-components
+<pre><code class="language-bash">npm install '@capitec/omni-components'
 </code></pre>
 <p>With the latest package installed from NPM, <a href="getting-started/#bundling-">you can use a bundler</a>. The ESM package used for <a href="getting-started/#cdn-installation-easiest-">CDN Installation</a> has its dependencies bundled already which allows it to be used without the need to install dependencies. However when using the local installation from NPM, the dependencies need to be provided externally, or you would need to <a href="getting-started/#bundling-">bundle the dependencies</a>.</p>
 <blockquote>
@@ -328,7 +329,7 @@
 <h2><a id="bundling-" class="anchor" href="getting-started/#bundling-" aria-hidden="true"></a>Bundling 💼</h2>
 <p>Omni Components is distributed as a collection of standard ES modules that <a href="https://caniuse.com/es6-module">all modern browsers can understand</a>. However, importing a lot of modules can result in a lot of HTTP requests and potentially longer load times. Using a CDN can alleviate this, but some users may wish to further optimize their imports with a bundler.</p>
 <p>To use Omni Components with a bundler, first install it from NPM along with your bundler of choice:</p>
-<pre><code class="language-bash">npm install @capitec/omni-components
+<pre><code class="language-bash">npm install '@capitec/omni-components'
 </code></pre>
 <blockquote>
 <p>💡 Using a bundler will allow for optimal <a href="https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking">tree shaking</a>, which will ensure the smallest size and most efficient usage. Our <a href="getting-started/#starter-templates-">starter templates</a> already provide this for you!</p>
@@ -337,7 +338,7 @@
 <p>React makes some assumptions about HTML elements that don't fully apply to custom elements, as it treats lower-case tag names differently from upper-case component names in ways that can make custom elements harder than necessary to use.</p>
 <p>Omni Components provides a separate package with each web component wrapped into a React component.</p>
 <p>You can install Omni Components for React locally with the following command:</p>
-<pre><code class="language-bash">npm install @capitec/omni-components-react
+<pre><code class="language-bash">npm install '@capitec/omni-components-react'
 </code></pre>
 <p>Or you can use Omni Components for React directly via a CDN:</p>
 <pre><code class="language-jsx">import { OmniButton } from &quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components-react@esm/button/index.js&quot;;

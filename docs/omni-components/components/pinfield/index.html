@@ -33,6 +33,8 @@
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons"  as="style"/>
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara"  as="style">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
     <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
     <style id="theme-styles"></style>
     <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
@@ -90,7 +92,7 @@
                     </div>
                     <div class="header-version-section">
                         <div class="header-version" id="header-version-indicator">
-                            0.5.0
+                            0.6.0
                         </div>
                         <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
@@ -142,6 +144,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/check">
                 Check
             </a>
@@ -170,6 +179,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/datepicker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/emailfield">
                 Email Field
             </a>
@@ -186,6 +202,13 @@
              
             href="./components/icon">
                 Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/keyboard">
+                Keyboard
             </a>
         </div>
         <div class="menu-item ">
@@ -276,13 +299,36 @@
 <article class="component">
     <div class="component-meta">
         <div class="component-name">PinField</div>
-        <div class="component-desc">Pin input control to enter masked numeric values.</div> 
+        <div class="component-desc">Input control to enter a masked numeric value.</div> 
         <div class="component-info">
             <div class="component-info-item">
+                <div>Usage</div>
+                <div class="component-framework-toggle docs-omni-component">
+                    <div class="selected-framework" id="select-html">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                            <title>HTML5 Logo Badge</title>
+                            <path fill="#E34F26" d="M71,460 L30,0 481,0 440,460 255,512"></path>
+                            <path fill="#EF652A" d="M256,472 L405,431 440,37 256,37"></path>
+                            <path fill="#EBEBEB" d="M256,208 L181,208 176,150 256,150 256,94 255,94 114,94 115,109 129,265 256,265zM256,355 L255,355 192,338 188,293 158,293 132,293 139,382 255,414 256,414z"></path>
+                            <path fill="#FFF" d="M255,208 L255,265 325,265 318,338 255,355 255,414 371,382 372,372 385,223 387,208 371,208zM255,94 L255,129 255,150 255,150 392,150 392,150 392,150 393,138 396,109 397,94z"></path>
+                        </svg>
+                    </div>
+                    <div id="select-react">
+                        <img style="height: 24px; width: 24px;" src="./assets/images/react.svg" alt="React" />
+                    </div>
+                </div>
+            </div>
+            <div class="component-info-item">
                 <div>Module</div>
-                <div class="component-info-item-code">
+                <div class="component-info-item-code" id="html-imports">
                     <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/pin-field&#39;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
+                        content_copy
+                    </span>
+                </div>           
+                <div class="component-info-item-code no-display" id="react-imports">
+                    <pre><code class="language-js no-code-scroll" id="component-import-code-react">import { OmniPinField } from &quot;@capitec/omni-components-react/pin-field&quot;;</code></pre>
+                    <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code-react');return false;">
                         content_copy
                     </span>
                 </div>
@@ -299,11 +345,15 @@
                 </div>
             </div>
             <div class="component-info-item">
-                <div>Package</div>
+                <div>Packages</div>
                 <div>
-                    <a href="https://www.npmjs.com/package/@capitec/omni-components" target="blank" class="component-info-item-link">
+                    <a href="https://www.npmjs.com/package/@capitec/omni-components" target="blank" class="component-info-item-link" id="html-package">
                         <img src="./assets/images/npm.svg" class="component-info-item-img">
                         @capitec/omni-components
+                    </a>
+                    <a href="https://www.npmjs.com/package/@capitec/omni-components-react" target="blank" class="component-info-item-link no-display" id="react-package">
+                        <img src="./assets/images/npm.svg" class="component-info-item-img">
+                        @capitec/omni-components-react
                     </a>
                 </div>
             </div>
@@ -329,6 +379,13 @@
                                 tag="omni-pin-field" 
                                 key="Interactive"
                                 interactive >
+                            </story-renderer>
+                            <div class="name" id="story-max-length">Max Length</div>
+                            <story-renderer 
+                                path="./dist/pin-field/PinField.stories.js" 
+                                tag="omni-pin-field" 
+                                key="Max_Length"
+                                 >
                             </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
@@ -356,6 +413,13 @@
                                 path="./dist/pin-field/PinField.stories.js" 
                                 tag="omni-pin-field" 
                                 key="Value"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-clear">Clear</div>
+                            <story-renderer 
+                                path="./dist/pin-field/PinField.stories.js" 
+                                tag="omni-pin-field" 
+                                key="Clear"
                                  >
                             </story-renderer>
                             <div class="name" id="story-prefix">Prefix</div>
@@ -386,6 +450,9 @@
                                     <a href="components/pinfield/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
                                     </a>
+                                    <a href="components/pinfield/#story-max-length" id="story-max-length-a" class="item">
+                                        Max Length
+                                    </a>
                                     <a href="components/pinfield/#story-label" id="story-label-a" class="item">
                                         Label
                                     </a>
@@ -397,6 +464,9 @@
                                     </a>
                                     <a href="components/pinfield/#story-value" id="story-value-a" class="item">
                                         Value
+                                    </a>
+                                    <a href="components/pinfield/#story-clear" id="story-clear-a" class="item">
+                                        Clear
                                     </a>
                                     <a href="components/pinfield/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
@@ -416,7 +486,7 @@
 
                 
                 
-                    <h2 class="component-props-table-header" style="padding-top: 24px;">Properties</h2>
+                    <h2 class="component-props-table-header">Properties</h2>
                     <div class="docs-search-area">
                         <omni-search-field id="attribute-search"></omni-search-field>
                     </div>
@@ -431,6 +501,20 @@
                                 </tr>
                             </thead>
                             <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">noNativeKeyboard</td>
+                                    <td data-label="Attribute" scope="row">no-native-keyboard&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
+                                    <td data-label="Description">Disables native on screen keyboards for the component.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">maxLength</td>
+                                    <td data-label="Attribute" scope="row">max-length&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">number | undefined</code></pre></td>
+                                    <td data-label="Description">Maximum character input length.</td>
+                                </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">label</td>
@@ -475,6 +559,13 @@
                                 </tr>
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">clearable</td>
+                                    <td data-label="Attribute" scope="row">clearable&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description">Toggles the ability to clear the value of the component.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">dir</td>
                                     <td data-label="Attribute" scope="row">dir&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
@@ -492,8 +583,36 @@
                         </table>
                     </div>
                 
+
                 
                 
+                
+                
+                
+                    <h2 class="component-props-table-header">Events</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="event-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-events">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">change</td>
+                                    <td data-label="Type"><pre><code class="language-js">Event</code></pre></td>
+                                    <td data-label="Description"></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 
                 
                 
@@ -518,6 +637,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
                                     <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">clear</code></pre></td>
+                                    <td data-label="Description">Replaces the icon for the clear slot.</td>
                                 </tr>
                                 
                                 <tr>
@@ -546,7 +670,6 @@
                 
             </div>
             <div class="component-tab" id="styles" role="tabpanel">
-                <div style="padding-top: 24px;"></div>
                 
                     
                     
@@ -816,6 +939,11 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Form focussed label disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-transform-scale</code></pre></td>
                                         <td data-label="Description">Form focussed label transform scale.</td>
                                     </tr>
@@ -963,6 +1091,26 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-hover-color</code></pre></td>
                                         <td data-label="Description">Form error hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-right</code></pre></td>
+                                        <td data-label="Description">Form clear control right margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-left</code></pre></td>
+                                        <td data-label="Description"> Form clear control left margin.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-width</code></pre></td>
+                                        <td data-label="Description">Form clear control width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-icon-color</code></pre></td>
+                                        <td data-label="Description">Form clear icon color.</td>
                                     </tr>
                                     
                                 </tbody>

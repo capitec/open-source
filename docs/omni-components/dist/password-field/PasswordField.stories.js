@@ -1,19 +1,28 @@
-import"../chunks-js/chunk.UYVLNYTK.js";import"../chunks-js/chunk.XY3ENUSG.js";import"../chunks-js/chunk.CXYUGQRY.js";import"../chunks-js/chunk.QNJXPAWJ.js";import"../chunks-js/chunk.52JZFYEK.js";import"../chunks-js/chunk.ZTJGZLZP.js";import"../chunks-js/chunk.G4OP6JHJ.js";import{a as E,b as g,c as $,d as b,e as v,f as B,g as T}from"../chunks-js/chunk.EF6ECE3Y.js";import"../chunks-js/chunk.75BXIUBR.js";import{k as d}from"../chunks-js/chunk.WA6C3RAL.js";import"../chunks-js/chunk.MPJVWYSG.js";import"../chunks-js/chunk.HEGWAMTE.js";import"../chunks-js/chunk.BMVIQMEU.js";import"../chunks-js/chunk.FJG2EZL6.js";import{b as c,c as L}from"../chunks-js/chunk.SNS3RAAO.js";import{a}from"../chunks-js/chunk.7QF4VYJR.js";import{a as l}from"../chunks-js/chunk.CFP25WDL.js";import{b as f,c as w}from"../chunks-js/chunk.555UF2OF.js";import{d as s}from"../chunks-js/chunk.ZDXRLLLZ.js";import"../chunks-js/chunk.YPV66JA3.js";import"../chunks-js/chunk.F27L6OQP.js";import"../chunks-js/chunk.7YN44Q4N.js";import"../chunks-js/chunk.CHYIO324.js";import{b as t,d as n}from"../chunks-js/chunk.CIM3NS6G.js";import{h as A,l as x,o as F}from"../chunks-js/chunk.2ZZQBHAA.js";x();F();var C=A(L(),1);var oe={title:"UI Components/Password Field",component:"omni-password-field"},te={render:e=>t`
+import"../chunks-js/chunk.26N7V3DZ.js";import"../chunks-js/chunk.WCB52SLW.js";import"../chunks-js/chunk.HKWFE27C.js";import"../chunks-js/chunk.YGXFZZKN.js";import"../chunks-js/chunk.ZR4UECQ6.js";import{a as x,b as E,c as P,d as C,e as L,f as v,g as B,h as k}from"../chunks-js/chunk.M3SJH7XF.js";import"../chunks-js/chunk.K2UMXYHA.js";import"../chunks-js/chunk.P5BVWJU5.js";import"../chunks-js/chunk.E3RY574V.js";import"../chunks-js/chunk.XGCBNSF2.js";import{a as A}from"../chunks-js/chunk.IRJIQSYL.js";import{a as l}from"../chunks-js/chunk.G3QHRCKP.js";import{a as $,b as p}from"../chunks-js/chunk.MHLMY33S.js";import{l as a}from"../chunks-js/chunk.BM33DA64.js";import"../chunks-js/chunk.P3AVSJ2D.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZPV4YWBP.js";import{a as m}from"../chunks-js/chunk.PJH7M65U.js";import{b as f,c as w}from"../chunks-js/chunk.N6OKW4B2.js";import{d as i}from"../chunks-js/chunk.W54IKPJD.js";import"../chunks-js/chunk.2TH7MEM4.js";import"../chunks-js/chunk.B6SUKNHE.js";import"../chunks-js/chunk.2HYOR3YM.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as t,d as r}from"../chunks-js/chunk.F6MIXR4E.js";import{h as g,m as b,p as F}from"../chunks-js/chunk.BF43NN75.js";b();F();var I=g(A(),1);var ie={title:"UI Components/Password Field",component:"omni-password-field"},re={render:e=>t`
     <omni-password-field
       data-testid="test-password-field"
-      label="${l(e.label)}"
+      label="${m(e.label)}"
       value="${e.value}"
-      hint="${l(e.hint)}"
-      error="${l(e.error)}"
-      ?disabled="${e.disabled}">${e.prefix?t`${`\r
-`}${a(d("prefix",e.prefix))}`:n}${e.suffix?t`${`\r
-`}${a(d("suffix",e.suffix))}`:n}${e.hide?t`${`\r
-`}${a(d("hide",e.hide))}`:n}${e.show?t`${`\r
-`}${a(d("show",e.show))}`:n}</omni-password-field>
-  `,name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,prefix:"",suffix:"",hide:"",show:""},play:async e=>{var u,S,y;let i=w(e.canvasElement).getByTestId("test-password-field"),o=C.fn();i.addEventListener("input",o),i.addEventListener("click",o);let m=(u=i.shadowRoot)==null?void 0:u.getElementById("inputField"),r=(S=i.shadowRoot)==null?void 0:S.querySelector("slot[name=show]");await s(r).toBeTruthy(),await c.click(r,{pointerEventsCheck:0});let p=(y=i.shadowRoot)==null?void 0:y.querySelector("slot[name=hide]");await s(p).toBeTruthy(),await c.click(p,{pointerEventsCheck:0}),await c.type(m,"Value Update",{pointerEventsCheck:0});let h="Value Update";navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):(await f(()=>s(m).toHaveValue(h),{timeout:3e3}),await f(()=>s(o).toBeCalledTimes(h.length+1),{timeout:3e3}))}},se=E("omni-password-field"),ie=g("omni-password-field"),re=$("omni-password-field"),ne=b("omni-password-field","Password123"),ae=v("omni-password-field"),le=B("omni-password-field"),de=T("omni-password-field","Password123"),me={render:e=>t`
-    <omni-password-field data-testid="test-password-field" label="${l(e.label)}" ?disabled="${e.disabled}">
+      hint="${m(e.hint)}"
+      error="${m(e.error)}"
+      ?disabled="${e.disabled}"
+      ?clearable="${e.clearable}">${e.prefix?t`${`\r
+`}${l(a("prefix",e.prefix))}`:r}
+      ${e.clear?t`${`\r
+`}${l(a("clear",e.clear))}`:r}${e.suffix?t`${`\r
+`}${l(a("suffix",e.suffix))}`:r}${e.hide?t`${`\r
+`}${l(a("hide",e.hide))}`:r}${e.show?t`${`\r
+`}${l(a("show",e.show))}`:r}</omni-password-field>
+  `,name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,clearable:!1,prefix:"",suffix:"",clear:"",hide:"",show:""},play:async e=>{var u,y,S;let s=w(e.canvasElement).getByTestId("test-password-field");s.value="";let o=I.fn();s.addEventListener("input",o),s.addEventListener("click",o);let n=(u=s.shadowRoot)==null?void 0:u.getElementById("inputField");$(n);let d=(y=s.shadowRoot)==null?void 0:y.querySelector("slot[name=show]");await i(d).toBeTruthy(),await p.click(d,{pointerEventsCheck:0});let c=(S=s.shadowRoot)==null?void 0:S.querySelector("slot[name=hide]");await i(c).toBeTruthy(),await p.click(c,{pointerEventsCheck:0}),await p.type(n,"Value Update",{pointerEventsCheck:0});let h="Value Update";await f(()=>i(n).toHaveValue(h),{timeout:3e3}),await f(()=>i(o).toBeCalledTimes(h.length+1),{timeout:3e3})}},le=x("omni-password-field"),ae=E("omni-password-field"),ne=P("omni-password-field"),de=C("omni-password-field","Password123"),me=B("omni-password-field","Password123"),ce=L("omni-password-field"),pe=v("omni-password-field"),fe=k("omni-password-field","Password123"),we={render:e=>t`
+    <omni-password-field data-testid="test-password-field" label="${m(e.label)}" ?disabled="${e.disabled}">
       <omni-lock-open-icon style="fill: orange;" slot="show"></omni-lock-open-icon>
       <omni-lock-closed-icon style="fill: lightgreen;" slot="hide"></omni-lock-closed-icon>
     </omni-password-field>
-  `,name:"Custom Icon Slot",description:"Set html content to display as the visibility indicators of the field.",args:{label:"Custom Icon Slot"},play:async e=>{var r;let o=(r=w(e.canvasElement).getByTestId("test-password-field").shadowRoot)==null?void 0:r.querySelector("slot[name=show]");await s(o).toBeTruthy();let m=o==null?void 0:o.assignedElements().find(p=>p.tagName.toLocaleLowerCase()==="omni-lock-open-icon");await s(m).toBeTruthy()}};export{me as Custom_Icon_Slot,de as Disabled,re as Error_Label,ie as Hint,te as Interactive,se as Label,ae as Prefix,le as Suffix,ne as Value,oe as default};
+  `,frameworkSources:[{framework:"React",load:e=>`import { OmniPasswordField } from "@capitec/omni-components-react/password-field";
+import { OmniLockClosedIcon,OmniLockOpenIcon } from "@capitec/omni-components-react/icons";
+
+const App = () => <OmniPasswordField${e.label?` label='${e.label}'`:""}${e.disabled?" disabled":""}>
+                    <OmniLockOpenIcon style={{fill: 'orange'}} slot="show"/>
+                    <OmniLockClosedIcon style={{fill: 'lightgreen'}} slot="hide"/>
+                  </OmniPasswordField>;`}],name:"Custom Icon Slot",description:"Set html content to display as the visibility indicators of the field.",args:{label:"Custom Icon Slot"},play:async e=>{var d;let o=(d=w(e.canvasElement).getByTestId("test-password-field").shadowRoot)==null?void 0:d.querySelector("slot[name=show]");await i(o).toBeTruthy();let n=o==null?void 0:o.assignedElements().find(c=>c.tagName.toLocaleLowerCase()==="omni-lock-open-icon");await i(n).toBeTruthy()}};export{me as Clear,we as Custom_Icon_Slot,fe as Disabled,ne as Error_Label,ae as Hint,re as Interactive,le as Label,ce as Prefix,pe as Suffix,de as Value,ie as default};
 //# sourceMappingURL=PasswordField.stories.js.map

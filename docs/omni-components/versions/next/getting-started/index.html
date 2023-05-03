@@ -33,6 +33,8 @@
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/icon?family=Material+Icons"  as="style"/>
     <link rel="stylesheet preload" href="https://fonts.googleapis.com/css?family=Hind Vadodara"  as="style">
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
     <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
     <style id="theme-styles"></style>
     <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
@@ -142,6 +144,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/check">
                 Check
             </a>
@@ -170,6 +179,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/datepicker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/emailfield">
                 Email Field
             </a>
@@ -186,6 +202,13 @@
              
             href="./components/icon">
                 Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/keyboard">
+                Keyboard
             </a>
         </div>
         <div class="menu-item ">
@@ -275,45 +298,60 @@
 
 <article class="component static-article">    
     <h1><a id="installation" class="anchor" href="getting-started/#installation" aria-hidden="true"></a>Installation</h1>
-<p>You can use Omni Components via CDN or by installing it locally. You can also <a href="getting-started/#cherry-picking-">cherry pick</a> individual components for faster load times.</p>
+<p>You can use Omni Components via CDN or by installing it locally.</p>
 <h2><a id="cdn-installation-easiest-" class="anchor" href="getting-started/#cdn-installation-easiest-" aria-hidden="true"></a>CDN Installation (Easiest) 📡</h2>
-<p>The easiest way to install Omni Components is with the CDN. Just a script of type module using our ESM package as source.</p>
-<pre><code class="language-html">
-&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/dist/omni-components.js&quot; &gt;&lt;/script&gt;
+<p>The easiest way to install Omni Components is with the CDN:</p>
+<pre><code class="language-html">&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/dist/omni-components.js&quot;&gt;&lt;/script&gt;
 </code></pre>
-<br/>
-<strong> 
-<p>If you're only using a few components, it will be more efficient to <a href="getting-started/#cherry-picking-">cherry pick</a> the ones you need. </strong></p>
+<blockquote>
+<p>💡 If you're only using a few components, it will be more efficient to <a href="getting-started/#cherry-picking-">cherry pick</a> the ones you need.</p>
+</blockquote>
 <h2><a id="local-installation-" class="anchor" href="getting-started/#local-installation-" aria-hidden="true"></a>Local Installation 💾</h2>
-<p>If you don't want to use the CDN, you can install Omni Components locally with the following command.</p>
-<pre><code class="language-bash">
-npm install @capitec/omni-components
+<p>You can also install Omni Components locally with the following command:</p>
+<pre><code class="language-bash">npm install '@capitec/omni-components'
 </code></pre>
-<p>With the latest package installed from NPM, <a href="getting-started/#bundling-">you can use a bundler</a>.<br>
-The ESM package used for <a href="getting-started/#cdn-installation-easiest-">CDN Installation</a> has its dependencies bundled already which allows it to be used without the need to install dependencies.<br>
-However when using the local installation from NPM, the dependencies need to be provided externally, or you would need to <a href="getting-started/#bundling-">bundle the dependencies</a>.</p>
-<p><strong> For clarity, the docs will usually show imports from <code>@capitec/omni-components</code>. If you're not using a module resolver or bundler, you'll need to adjust these paths to point to the folder Omni Components is in. </strong></p>
+<p>With the latest package installed from NPM, <a href="getting-started/#bundling-">you can use a bundler</a>. The ESM package used for <a href="getting-started/#cdn-installation-easiest-">CDN Installation</a> has its dependencies bundled already which allows it to be used without the need to install dependencies. However when using the local installation from NPM, the dependencies need to be provided externally, or you would need to <a href="getting-started/#bundling-">bundle the dependencies</a>.</p>
+<blockquote>
+<p>💡 For clarity, the docs will usually show imports from <code>@capitec/omni-components</code>. If you're not using a module resolver or bundler, you'll need to adjust these paths to point to the folder Omni Components is in.</p>
+</blockquote>
 <h2><a id="cherry-picking-" class="anchor" href="getting-started/#cherry-picking-" aria-hidden="true"></a>Cherry Picking 🍒</h2>
 <p>The CDN approach is the <em>easiest</em> way to load Omni Components, but easy isn't always efficient. You'll incur the full size of the library even if you only use a handful of components. This is convenient for prototyping or if you're using most of the components, but it may result in longer load times in production. To improve this, you can cherry pick the components you need.</p>
 <p>Cherry picking can be done from your local install or <a href="https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/">directly from the CDN</a>. This will limit the number of files the browser has to download and reduce the amount of bytes being transferred. The disadvantage is that you need to load components manually.</p>
 <p>Here's an example that loads only the button component.</p>
-<pre><code class="language-html">
-&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/dist/button/Button.js&quot; &gt;&lt;/script&gt;
+<pre><code class="language-html">&lt;script type=&quot;module&quot; src=&quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components@esm/dist/button/Button.js&quot;&gt;&lt;/script&gt;
 
 &lt;omni-button label=&quot;Button&quot; type=&quot;secondary&quot;&gt;&lt;/omni-button&gt;
 </code></pre>
-<p>Note that some components may have dependencies that are automatically imported when you cherry pick.</p>
-<p><strong>Never cherry pick components or utilities from <code>omni-components.js</code> as this will still cause the browser to load the entire library. Instead, cherry pick from specific modules as shown above.</strong></p>
-<br/>
-<strong> You will see files named `chunk.[hash].js` in the `chunks-js` directory. Never import these files directly, as they are generated and change from version to version. </strong>
+<p>NOTE: Some components may have dependencies that are automatically imported when you cherry pick.</p>
+<blockquote>
+<p>💡  <em>Never</em> cherry pick components or utilities from <code>omni-components.js</code> as this will still cause the browser to load the entire library. Instead, cherry pick from specific modules as shown above. You will also see files named <code>chunk.[hash].js</code> in the <code>chunks-js</code> directory, never import these files directly, as they are generated and change from version to version.</p>
+</blockquote>
 <h2><a id="bundling-" class="anchor" href="getting-started/#bundling-" aria-hidden="true"></a>Bundling 💼</h2>
 <p>Omni Components is distributed as a collection of standard ES modules that <a href="https://caniuse.com/es6-module">all modern browsers can understand</a>. However, importing a lot of modules can result in a lot of HTTP requests and potentially longer load times. Using a CDN can alleviate this, but some users may wish to further optimize their imports with a bundler.</p>
-<p>To use Omni Components with a bundler, first install it from NPM along with your bundler of choice.</p>
-<pre><code class="language-bash">
-npm install @capitec/omni-components
+<p>To use Omni Components with a bundler, first install it from NPM along with your bundler of choice:</p>
+<pre><code class="language-bash">npm install '@capitec/omni-components'
 </code></pre>
-<p>Using a bundler will allow for optimal tree shaking, which will ensure the smallest size and most efficient usage.</p>
-<!-- TODO: Add links to template repositories here with example bundling -->
+<blockquote>
+<p>💡 Using a bundler will allow for optimal <a href="https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking">tree shaking</a>, which will ensure the smallest size and most efficient usage. Our <a href="getting-started/#starter-templates-">starter templates</a> already provide this for you!</p>
+</blockquote>
+<h2><a id="react-wrappers-" class="anchor" href="getting-started/#react-wrappers-" aria-hidden="true"></a>React Wrappers 🎁</h2>
+<p>React makes some assumptions about HTML elements that don't fully apply to custom elements, as it treats lower-case tag names differently from upper-case component names in ways that can make custom elements harder than necessary to use.</p>
+<p>Omni Components provides a separate package with each web component wrapped into a React component.</p>
+<p>You can install Omni Components for React locally with the following command:</p>
+<pre><code class="language-bash">npm install '@capitec/omni-components-react'
+</code></pre>
+<p>Or you can use Omni Components for React directly via a CDN:</p>
+<pre><code class="language-jsx">import { OmniButton } from &quot;https://cdn.jsdelivr.net/npm/@capitec/omni-components-react@esm/button/index.js&quot;;
+
+const App = () =&gt; &lt;OmniButton label='Click' type='primary'/&gt;; 
+</code></pre>
+<h2><a id="starter-templates-" class="anchor" href="getting-started/#starter-templates-" aria-hidden="true"></a>Starter Templates 🔰</h2>
+<p>To help bootstrap a development project, we offer the following application starter template repositories:</p>
+<ul>
+<li><a href="https://github.com/capitec/template-pwa-lit">Lit Starter</a> - For <a href="https://lit.dev">Lit</a>-based SPA development.</li>
+<li><a href="https://github.com/capitec/template-pwa-vue">Vue Starter</a> - For <a href="https://vuejs.org/">Vue</a>-based SPA development.</li>
+<li><a href="https://github.com/capitec/template-pwa-react">React Starter</a> - For <a href="https://react.dev/">React</a>-based SPA development.</li>
+</ul>
 
 </article>
 </main>

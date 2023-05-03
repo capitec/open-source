@@ -1,19 +1,22 @@
-import"../chunks-js/chunk.3FAJTS4J.js";import"../chunks-js/chunk.NMWKNT2T.js";import"../chunks-js/chunk.G4OP6JHJ.js";import{a as C,b,c as F,d as $,e as v,f as A,g}from"../chunks-js/chunk.EF6ECE3Y.js";import{k as f}from"../chunks-js/chunk.WA6C3RAL.js";import"../chunks-js/chunk.MPJVWYSG.js";import"../chunks-js/chunk.HEGWAMTE.js";import"../chunks-js/chunk.BMVIQMEU.js";import"../chunks-js/chunk.FJG2EZL6.js";import{a as c,b as n,c as T}from"../chunks-js/chunk.SNS3RAAO.js";import{a as u}from"../chunks-js/chunk.7QF4VYJR.js";import{a as t}from"../chunks-js/chunk.CFP25WDL.js";import{b as o,c as x}from"../chunks-js/chunk.555UF2OF.js";import{d as i}from"../chunks-js/chunk.ZDXRLLLZ.js";import"../chunks-js/chunk.F27L6OQP.js";import"../chunks-js/chunk.7YN44Q4N.js";import"../chunks-js/chunk.CHYIO324.js";import{b as a,d as l}from"../chunks-js/chunk.CIM3NS6G.js";import{h,l as y,o as S}from"../chunks-js/chunk.2ZZQBHAA.js";y();S();var B=h(T(),1);var Y={title:"UI Components/Currency Field",component:"omni-currency-field"},Z={render:e=>a`
+import"../chunks-js/chunk.M53XPUTZ.js";import"../chunks-js/chunk.5TKLJSC4.js";import{a as x,b as w,c as $,d as C,e as F,f as v,g as B,h as A}from"../chunks-js/chunk.M3SJH7XF.js";import"../chunks-js/chunk.P5BVWJU5.js";import"../chunks-js/chunk.E3RY574V.js";import"../chunks-js/chunk.XGCBNSF2.js";import{a as g}from"../chunks-js/chunk.IRJIQSYL.js";import{a as s}from"../chunks-js/chunk.G3QHRCKP.js";import{a as c,b as i}from"../chunks-js/chunk.MHLMY33S.js";import{l as u}from"../chunks-js/chunk.BM33DA64.js";import"../chunks-js/chunk.P3AVSJ2D.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZPV4YWBP.js";import{a as r}from"../chunks-js/chunk.PJH7M65U.js";import{b as a,c as b}from"../chunks-js/chunk.N6OKW4B2.js";import{d as o}from"../chunks-js/chunk.W54IKPJD.js";import"../chunks-js/chunk.B6SUKNHE.js";import"../chunks-js/chunk.2HYOR3YM.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as n,d as l}from"../chunks-js/chunk.F6MIXR4E.js";import{h as L,m as y,p as S}from"../chunks-js/chunk.BF43NN75.js";y();S();var h=L(g(),1);var te={title:"UI Components/Currency Field",component:"omni-currency-field"},re={render:e=>n`
         <omni-currency-field
             data-testId="test-currency-field"
-            label="${t(e.label)}"
-            value="${t(e.value)}"
-            hint="${t(e.hint)}"
-            error="${t(e.error)}"
+            label="${r(e.label)}"
+            value="${r(e.value)}"
+            hint="${r(e.hint)}"
+            error="${r(e.error)}"
             ?disabled="${e.disabled}"
+            ?clearable="${e.clearable}"
             fractional-precision="${e.fractionalPrecision}"
-            fractional-separator="${t(e.fractionalSeparator)}"
-            thousands-separator="${t(e.thousandsSeparator)}"
-            currency-symbol="${t(e.currencySymbol)}"
-            formatter="${t(e.formatter)}"           
-            >${e.prefix?a`${`\r
-`}${u(f("prefix",e.prefix))}`:l}${e.suffix?a`${`\r
-`}${u(f("suffix",e.suffix))}`:l}${e.prefix||e.suffix?`\r
+            fractional-separator="${r(e.fractionalSeparator)}"
+            thousands-separator="${r(e.thousandsSeparator)}"
+            currency-symbol="${r(e.currencySymbol)}"
+            formatter="${r(e.formatter)}"           
+            >${e.prefix?n`${`\r
+`}${s(u("prefix",e.prefix))}`:l}
+            ${e.clear?n`${`\r
+`}${s(u("clear",e.clear))}`:l}${e.suffix?n`${`\r
+`}${s(u("suffix",e.suffix))}`:l}${e.prefix||e.suffix||e.clear?`\r
 `:l}</omni-currency-field>
-    `,name:"Interactive",args:{label:"Label",value:"123456789",hint:"",error:"",disabled:!1,prefix:"",suffix:"",fractionalPrecision:2,fractionalSeparator:".",thousandsSeparator:",",currencySymbol:"$",formatter:"\\B(?=(\\d{3})+(?!\\d))"},play:async e=>{var d;let s=x(e.canvasElement).getByTestId("test-currency-field"),r=(d=s.shadowRoot)==null?void 0:d.getElementById("inputField");c(r),r.value="";let m=B.fn();s.addEventListener("input",m);let p="1200000.15";await n.type(r,p),navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):(await o(()=>i(r).toHaveValue("1,200,000.15"),{timeout:3e3}),await o(()=>i(m).toBeCalledTimes(p.length),{timeout:3e3}));let w="{Backspace}";c(r),await n.type(r,w,{initialSelectionStart:10,initialSelectionEnd:10}),await s.updateComplete,navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):await o(()=>i(r).toHaveValue("1,200,000"),{timeout:3e3});let I="{ArrowLeft>3/}{Backspace}";await n.type(r,I),navigator.userAgent==="Test Runner"?console.log("CICD Test - Not Visual"):await o(()=>i(r).toHaveValue("120,000"),{timeout:3e3})}},ee=C("omni-currency-field"),re=b("omni-currency-field"),te=F("omni-currency-field"),oe=$("omni-currency-field","100.15"),ie=v("omni-currency-field"),ne=A("omni-currency-field"),ae=g("omni-currency-field","100.15");export{ae as Disabled,te as Error_Label,re as Hint,Z as Interactive,ee as Label,ie as Prefix,ne as Suffix,oe as Value,Y as default};
+    `,name:"Interactive",args:{label:"Label",value:"123456789",hint:"",error:"",disabled:!1,clearable:!1,prefix:"",suffix:"",clear:"",fractionalPrecision:2,fractionalSeparator:".",thousandsSeparator:",",currencySymbol:"$",formatter:"\\B(?=(\\d{3})+(?!\\d))"},play:async e=>{var d;let f=b(e.canvasElement).getByTestId("test-currency-field"),t=(d=f.shadowRoot)==null?void 0:d.getElementById("inputField");c(t),t.value="",await i.click(t),await t.focus(),await t.blur();let p=h.fn();f.addEventListener("beforeinput",p);let m="120000015";await i.type(t,m),await a(()=>o(t).toHaveValue("1,200,000.15"),{timeout:3e3}),await a(()=>o(p).toBeCalledTimes(m.length),{timeout:3e3});let H="{Backspace>2/}";c(t),await i.type(t,H,{initialSelectionStart:12,initialSelectionEnd:12}),await f.updateComplete,await a(()=>o(t).toHaveValue("12,000.00"),{timeout:3e3});let I="{ArrowLeft>3/}{Backspace}";await i.type(t,I),await a(()=>o(t).toHaveValue("1,200.00"),{timeout:3e3}),t.setSelectionRange(0,10);let E="88.88";await i.paste(E),await a(()=>o(t).toHaveValue("88.88"),{timeout:3e3}),c(t),t.value="",await i.type(t,m),await a(()=>o(t).toHaveValue("1,200,000.15"),{timeout:3e3}),t.setSelectionRange(3,10);let V="4abc";await i.paste(V),await a(()=>o(t).toHaveValue("124.15"),{timeout:3e3})}},ae=x("omni-currency-field"),ie=w("omni-currency-field"),oe=$("omni-currency-field"),ne=C("omni-currency-field","1200.50"),le=B("omni-currency-field","1200.50"),ce=F("omni-currency-field"),se=v("omni-currency-field"),ue=A("omni-currency-field","1200");export{le as Clear,ue as Disabled,oe as Error_Label,ie as Hint,re as Interactive,ae as Label,ce as Prefix,se as Suffix,ne as Value,te as default};
 //# sourceMappingURL=CurrencyField.stories.js.map

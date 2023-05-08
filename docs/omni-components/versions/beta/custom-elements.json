@@ -1625,6 +1625,14 @@
               "name": "--omni-check-indicator-color"
             },
             {
+              "description": "Indicator icon width.",
+              "name": "--omni-check-indicator-icon-width"
+            },
+            {
+              "description": "Indicator icon height.",
+              "name": "--omni-check-indicator-icon-height"
+            },
+            {
               "description": "Checked Background color.",
               "name": "--omni-check-checked-background-color"
             },

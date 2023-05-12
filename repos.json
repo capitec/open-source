@@ -1,6 +1,11 @@
 {
   "repos": [
     {
+      "display": "Omni Widget",
+      "logo": "https://raw.githubusercontent.com/capitec/omni-widget/develop/docs/logos/omni.png",
+      "name": "omni-widget"
+    },
+    {
       "display": "Omni Router",
       "logo": "https://raw.githubusercontent.com/capitec/omni-router/develop/docs/logos/omni.png",
       "name": "omni-router",

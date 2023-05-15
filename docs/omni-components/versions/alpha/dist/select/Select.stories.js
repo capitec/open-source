@@ -357,7 +357,7 @@ const App = () => <OmniSelect label="${e.label}" items={stringItems}>
             const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];   
 
             async function promiseSearchFilter(filterValue, items) {
-                await new Promise<void>((r) => setTimeout(() => r(), 2000));
+                await new Promise((r) => setTimeout(() => r(), 2000));
                 return customSearch(filterValue, items);
             }
             
@@ -382,7 +382,7 @@ const App = () => <OmniSelect label="${e.label}" items={stringItems}>
 
 
         async function promiseSearchFilter(filterValue, items) {
-            await new Promise<void>((r) => setTimeout(() => r(), 2000));
+            await new Promise((r) => setTimeout(() => r(), 2000));
             return customSearch(filterValue, items);
         }
         

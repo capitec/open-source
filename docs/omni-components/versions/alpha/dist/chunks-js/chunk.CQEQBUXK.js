@@ -215,6 +215,7 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";
                     margin-right: var(--omni-form-clear-control-margin-right, 10px);
                     margin-left: var(--omni-form-clear-control-margin-left, 10px);
                     width: var(--omni-form-clear-control-width, 20px);
+                    align-items: center;
                 }
 
                 .clear-click {
@@ -260,4 +261,4 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";
                     </slot>
             </div>`:r}
         </div>`}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({reflect:!0})],e.prototype,"value",2),t([a({type:Object,reflect:!0})],e.prototype,"data",2),t([a({type:String,reflect:!0})],e.prototype,"hint",2),t([a({type:String,reflect:!0})],e.prototype,"error",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
-//# sourceMappingURL=chunk.P5BVWJU5.js.map
+//# sourceMappingURL=chunk.CQEQBUXK.js.map

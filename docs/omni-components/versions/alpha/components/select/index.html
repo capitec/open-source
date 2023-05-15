@@ -422,6 +422,34 @@
                                 key="Custom_Control_Slot"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-searchable">Searchable</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Searchable"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-search-function">Custom Search Function</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Search_Function"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-server-side-filtering">Server Side Filtering</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Server_Side_Filtering"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-search-clear-icon">Custom Search Clear Icon</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Search_Clear_Icon"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
                                 path="./dist/select/Select.stories.js" 
@@ -443,11 +471,18 @@
                                 key="Error_Label"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-clear">Clear</div>
+                            <div class="name" id="story-clearable">Clearable</div>
                             <story-renderer 
                                 path="./dist/select/Select.stories.js" 
                                 tag="omni-select" 
-                                key="Clear"
+                                key="Clearable"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-clear-slot-icon">Custom Clear Slot Icon</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Clear_Slot_Icon"
                                  >
                             </story-renderer>
                             <div class="name" id="story-prefix">Prefix</div>
@@ -489,6 +524,18 @@
                                     <a href="components/select/#story-custom-control-slot" id="story-custom-control-slot-a" class="item">
                                         Custom Control Slot
                                     </a>
+                                    <a href="components/select/#story-searchable" id="story-searchable-a" class="item">
+                                        Searchable
+                                    </a>
+                                    <a href="components/select/#story-custom-search-function" id="story-custom-search-function-a" class="item">
+                                        Custom Search Function
+                                    </a>
+                                    <a href="components/select/#story-server-side-filtering" id="story-server-side-filtering-a" class="item">
+                                        Server Side Filtering
+                                    </a>
+                                    <a href="components/select/#story-custom-search-clear-icon" id="story-custom-search-clear-icon-a" class="item">
+                                        Custom Search Clear Icon
+                                    </a>
                                     <a href="components/select/#story-label" id="story-label-a" class="item">
                                         Label
                                     </a>
@@ -498,8 +545,11 @@
                                     <a href="components/select/#story-error-label" id="story-error-label-a" class="item">
                                         Error Label
                                     </a>
-                                    <a href="components/select/#story-clear" id="story-clear-a" class="item">
-                                        Clear
+                                    <a href="components/select/#story-clearable" id="story-clearable-a" class="item">
+                                        Clearable
+                                    </a>
+                                    <a href="components/select/#story-custom-clear-slot-icon" id="story-custom-clear-slot-icon-a" class="item">
+                                        Custom Clear Slot Icon
                                     </a>
                                     <a href="components/select/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
@@ -535,7 +585,7 @@
                                 <tr>
                                     <td data-label="Name" scope="row">items</td>
                                     <td data-label="Attribute" scope="row">items&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">SelectItems | (() =&gt; SelectItems) | undefined</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">SelectItems | ((filterValue?: string) =&gt; SelectItems) | undefined</code></pre></td>
                                     <td data-label="Description">Selectable items of the select component.</td>
                                 </tr>
                                 
@@ -561,10 +611,24 @@
                                 </tr>
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">searchable</td>
+                                    <td data-label="Attribute" scope="row">searchable&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description">Toggles the ability to search the items of the select of the component.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">renderItem</td>
                                     <td data-label="Attribute" scope="row">&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">RenderFunction | undefined</code></pre></td>
                                     <td data-label="Description">Render function for each item.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">filterItems</td>
+                                    <td data-label="Attribute" scope="row">&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">(filterValue: string, items: SelectTypes) =&gt; SelectItems | undefined</code></pre></td>
+                                    <td data-label="Description">Custom search function for items instead of using the default.</td>
                                 </tr>
                                 
                                 <tr>
@@ -741,6 +805,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">arrow</code></pre></td>
                                     <td data-label="Description">Replaces the icon for the arrow slot (Displays on desktop and tablet devices).</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">search-clear</code></pre></td>
+                                    <td data-label="Description">Replaces the icon in the Search field (Displays when searchable is set to true).</td>
                                 </tr>
                                 
                             </tbody>
@@ -1314,6 +1383,11 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-background-color</code></pre></td>
+                                        <td data-label="Description">Select dialog background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-modal-max-height</code></pre></td>
                                         <td data-label="Description">Select dialog height.</td>
                                     </tr>
@@ -1324,7 +1398,7 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-background-color</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-backdrop-color</code></pre></td>
                                         <td data-label="Description">Select dialog background color.</td>
                                     </tr>
                                     
@@ -1476,6 +1550,51 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-loading-indicator-height</code></pre></td>
                                         <td data-label="Description">Select loading indicator height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-color</code></pre></td>
+                                        <td data-label="Description">Select search field font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-family</code></pre></td>
+                                        <td data-label="Description">Select search field font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-size</code></pre></td>
+                                        <td data-label="Description">Select search field font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-weight</code></pre></td>
+                                        <td data-label="Description">Select search field font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-top</code></pre></td>
+                                        <td data-label="Description">Select search field top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Select search field bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-left</code></pre></td>
+                                        <td data-label="Description">Select search field left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-right</code></pre></td>
+                                        <td data-label="Description">Select search field right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-background-color</code></pre></td>
+                                        <td data-label="Description">Select search field background color.</td>
                                     </tr>
                                     
                                 </tbody>

@@ -166,6 +166,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                 }
 
                 /* Search field styles */
+
                 .searchField {
                     white-space: nowrap;
                     overflow: hidden;
@@ -199,12 +200,12 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
 				}
 
                 /* Search field clear icons styles */
+
                 .search-control {
                     display: flex;
                   
                     margin-right: var(--omni-select-search-clear-control-margin-right, 10px);
                     margin-left: var(--omni-select-search-clear-control-margin-left, 10px);
-                    border-bottom: var(--omni-select-search-control-bottom-border, 1px solid var(--omni-primary-color));
                 }
 
                 .search-clear-click {
@@ -229,7 +230,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                        margin: unset;
                        border-style: none;
                        padding: unset;
-                       width: 100%;
+                       width: 100vw;
                        left: var(--omni-select-dialog-left, 0px);
                        right: var(--omni-select-dialog-right, 0px);
                        bottom: var(--omni-select-dialog-bottom, 0px);
@@ -250,7 +251,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
 
                    .items {
                         min-height: var(--omni-select-items-min-height, 150px);
-                   }
+                    }
                
                    .search-control {
                        display: flex;
@@ -258,6 +259,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                        margin-right: var(--omni-select-search-clear-control-margin-right, 0px);
                        margin-left: var(--omni-select-search-clear-control-margin-left, 0px);
                        background-color: var(--omni-select-clear-div-color, var(--omni-background-color));
+                       border-bottom: var(--omni-select-search-control-bottom-border, 1px solid var(--omni-primary-color));
                    }
 
                    .search-clear-click {
@@ -307,4 +309,4 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?o` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([d("#select")],t.prototype,"_selectElement",2),r([d("#searchField")],t.prototype,"_searchElement",2),r([s({type:Array,reflect:!0})],t.prototype,"items",2),r([s({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([s({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([s({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([s({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([s({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([s({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([l()],t.prototype,"_popUp",2),r([l()],t.prototype,"_bottomOfViewport",2),r([l()],t.prototype,"_isMobile",2),r([l()],t.prototype,"_searchValue",2),t=r([v("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.YWUNGAPZ.js.map
+//# sourceMappingURL=chunk.GC4CPK4C.js.map

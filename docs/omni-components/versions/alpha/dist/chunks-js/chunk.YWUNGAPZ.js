@@ -166,7 +166,6 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                 }
 
                 /* Search field styles */
-
                 .searchField {
                     white-space: nowrap;
                     overflow: hidden;
@@ -200,12 +199,12 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
 				}
 
                 /* Search field clear icons styles */
-
                 .search-control {
                     display: flex;
                   
                     margin-right: var(--omni-select-search-clear-control-margin-right, 10px);
                     margin-left: var(--omni-select-search-clear-control-margin-left, 10px);
+                    border-bottom: var(--omni-select-search-control-bottom-border, 1px solid var(--omni-primary-color));
                 }
 
                 .search-clear-click {
@@ -247,6 +246,10 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                
                    .items-dialog::backdrop {
                        background: var(--omni-select-dialog-backdrop-color, rgba(0, 0, 0, 0.1));
+                   }
+
+                   .items {
+                        min-height: var(--omni-select-items-min-height, 150px);
                    }
                
                    .search-control {
@@ -299,9 +302,9 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                 </div>
             </div>`:a}renderControl(){let e={icon:!0,disabled:this.disabled,error:this.error};return o`<div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
             ${this._isMobile?o`<slot name="more"><omni-more-icon class=${c(e)}></omni-more-icon></slot>`:o`<slot name="arrow"><omni-chevron-down-icon class=${c(e)}></omni-chevron-down-icon></slot>`}
-        </div>`}async _renderOptions(){let e=[],i=0;return typeof this.items=="function"?e=await this.items(this._searchValue):e=await this.items,Array.isArray(e)&&(this._searchValue&&this.filterItems&&typeof this.filterItems=="function"?e=await this.filterItems(this._searchValue,e):e=e.filter(n=>this._filterOption(n)),i=e.length),i===0?o`<div class="none">${this.emptyMessage}</div>`:e.map(n=>this._renderOption(n))}_filterOption(e){return this._searchValue?typeof e=="string"?e.toString().toLowerCase().includes(this._searchValue.toLowerCase()):e[this.displayField].toString().toLowerCase().includes(this._searchValue.toLowerCase()):!0}_renderOption(e){return o` <div
+        </div>`}async _renderOptions(){let e=[],i=0;return typeof this.items=="function"?e=await this.items(this._searchValue):e=await this.items,Array.isArray(e)&&(this._searchValue&&this.filterItems&&typeof this.filterItems=="function"?e=await this.filterItems(this._searchValue,e):e=e.filter(n=>this._filterOption(n)),i=e.length),i===0?o`<div class="none">${this.emptyMessage}</div>`:e.map(n=>this._renderOption(n))}_filterOption(e){return this._searchValue?typeof e=="string"?e.toString().toLowerCase().includes(this._searchValue.toLowerCase()):!this.displayField||!e.hasOwnProperty(this.displayField)?!0:e[this.displayField].toString().toLowerCase().includes(this._searchValue.toLowerCase()):!0}_renderOption(e){return o` <div
             class="item ${this.value===(typeof e=="string"?e:e[this.displayField])||this.value===e?"selected":""}"
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?o` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([d("#select")],t.prototype,"_selectElement",2),r([d("#searchField")],t.prototype,"_searchElement",2),r([s({type:Array,reflect:!0})],t.prototype,"items",2),r([s({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([s({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([s({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([s({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([s({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([s({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([l()],t.prototype,"_popUp",2),r([l()],t.prototype,"_bottomOfViewport",2),r([l()],t.prototype,"_isMobile",2),r([l()],t.prototype,"_searchValue",2),t=r([v("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.2BH3FUZ4.js.map
+//# sourceMappingURL=chunk.YWUNGAPZ.js.map

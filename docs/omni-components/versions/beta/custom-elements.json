@@ -492,7 +492,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        locale=\"${ifNotEmpty(args.locale)}\"\n        value=\"${ifNotEmpty(args.value)}\"\n    >       \n    </omni-calendar>\n    `,\n    name: 'Interactive',\n    args: {\n        locale: '',\n        value: ''\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        locale=\"${ifNotEmpty(args.locale)}\"\n        value=\"${ifNotEmpty(args.value)}\"\n        min-date=\"${ifNotEmpty(args.minDate)}\"\n        max-date=\"${ifNotEmpty(args.maxDate)}\"\n    >       \n    </omni-calendar>\n    `,\n    name: 'Interactive',\n    args: {\n        locale: '',\n        value: '',\n        maxDate: '',\n        minDate: ''\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -509,6 +509,22 @@
             "text": "ComponentStoryFormat<Args>"
           },
           "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        locale=\"${args.locale}\"\n        >\n    </omni-calendar>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniCalendar } from \"@capitec/omni-components-react/calendar\";\n\nconst App = () => <OmniCalendar${args.locale ? ` locale='${args.locale}'` : ''}/>;`\n        }\n    ],\n    name: 'Locale',\n    description: 'Set the locale of the Calendar.',\n    args: {\n        locale: 'ja-JP'\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        await expect(calendar).toHaveAttribute('locale', 'ja-JP');\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Min_Date",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        min-date=\"${ifNotEmpty(args.minDate)}\"\n        value=\"${ifNotEmpty(args.value)}\"\n        >\n    </omni-calendar>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniCalendar } from \"@capitec/omni-components-react/calendar\";\n\nconst App = () => <OmniCalendar${args.minDate ? ` min-date='${args.minDate}'` : ''}${args.value ? ` value='${args.value}'` : ''}/>;`\n        }\n    ],\n    name: 'Min Date',\n    description: 'Limit the Calendar to only have selectable dates after and including the specified min-date.',\n    args: {\n        minDate: '2023-04-14',\n        value: '2023-04-15'\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        calendar.value = context.args.value;\n        await expect(calendar).toHaveAttribute('min-date', context.args.minDate);\n\n        const days = Array.from(calendar.shadowRoot?.querySelectorAll('.day') as NodeListOf<Element>);\n        const isExcluded = days[17];\n\n        await expect(isExcluded).toHaveClass('excluded');\n\n        const preValue = calendar.value;\n\n        await userEvent.click(isExcluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(calendar).toHaveValue(preValue);\n\n        const isIncluded = days[20];\n\n        await expect(isIncluded).not.toHaveClass('excluded');\n\n        await userEvent.click(isIncluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(calendar).not.toHaveValue(preValue);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Date",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-calendar\n        data-testid=\"test-calendar\"\n        max-date=\"${ifNotEmpty(args.maxDate)}\"\n        value=\"${ifNotEmpty(args.value)}\"\n        >\n    </omni-calendar>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniCalendar } from \"@capitec/omni-components-react/calendar\";\n\nconst App = () => <OmniCalendar${args.maxDate ? ` max-date='${args.maxDate}'` : ''}${args.value ? ` value='${args.value}'` : ''}/>;`\n        }\n    ],\n    name: 'Max Date',\n    description: 'Limit the Calendar to only have selectable dates before and including the specified max-date.',\n    args: {\n        maxDate: '2023-04-14',\n        value: '2023-04-13'\n    } as Args,\n    play: async (context) => {\n        const calendar = within(context.canvasElement).getByTestId<Calendar>('test-calendar');\n        calendar.value = context.args.value;\n        await expect(calendar).toHaveAttribute('max-date', context.args.maxDate);\n\n        const days = Array.from(calendar.shadowRoot?.querySelectorAll('.day') as NodeListOf<Element>);\n        const isExcluded = days[20];\n\n        await expect(isExcluded).toHaveClass('excluded');\n\n        const preValue = calendar.value;\n\n        await userEvent.click(isExcluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(calendar).toHaveValue(preValue);\n\n        const isIncluded = days[15];\n\n        await expect(isIncluded).not.toHaveClass('excluded');\n\n        await userEvent.click(isIncluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(calendar).not.toHaveValue(preValue);\n    }\n}"
         }
       ],
       "exports": [
@@ -540,6 +556,22 @@
           "name": "Locale",
           "declaration": {
             "name": "Locale",
+            "module": "src/calendar/Calendar.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Min_Date",
+          "declaration": {
+            "name": "Min_Date",
+            "module": "src/calendar/Calendar.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Date",
+          "declaration": {
+            "name": "Max_Date",
             "module": "src/calendar/Calendar.stories.ts"
           }
         }
@@ -935,6 +967,26 @@
             },
             {
               "kind": "field",
+              "name": "minDate",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The minimum date inclusively allowed to be selected.",
+              "attribute": "min-date",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxDate",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The maximum date inclusively allowed to be selected.",
+              "attribute": "max-date",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "value",
               "type": {
                 "text": "string | undefined"
@@ -1093,6 +1145,24 @@
                   "name": "year",
                   "type": {
                     "text": "number"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_isOutOfRange",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "date",
+                  "type": {
+                    "text": "DateTime"
                   }
                 }
               ]
@@ -1261,6 +1331,24 @@
               "description": "The locale used for formatting the output of the Calendar.",
               "fieldName": "locale",
               "attribute": "locale"
+            },
+            {
+              "name": "min-date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The minimum date inclusively allowed to be selected.",
+              "fieldName": "minDate",
+              "attribute": "min-date"
+            },
+            {
+              "name": "max-date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The maximum date inclusively allowed to be selected.",
+              "fieldName": "maxDate",
+              "attribute": "max-date"
             },
             {
               "name": "value",
@@ -5207,7 +5295,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        locale: 'en-us'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-date-picker\n            data-testid=\"test-date-picker\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${ifNotEmpty(args.value)}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            locale=\"${args.locale}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            min-date=\"${ifNotEmpty(args.minDate)}\"\n            max-date=\"${ifNotEmpty(args.maxDate)}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-date-picker\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Select a Date',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        locale: 'en-us',\n        maxDate: '',\n        minDate: '',\n        clearable: false\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        await userEvent.click(datePicker);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = datePicker.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n        await userEvent.click(controlLabel as HTMLDivElement);\n        await userEvent.click(controlLabel as HTMLDivElement);\n\n        const yearGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.year-grid')) as HTMLElement;\n        await expect(yearGrid).toBeTruthy();\n\n        const yearButtons = yearGrid.querySelectorAll('.year');\n        const yearButtonArray = [...yearButtons];\n        const yearButton = yearButtonArray.filter((year) => year.textContent === '2020');\n        await expect(yearButton[0]).toBeTruthy();\n        await userEvent.click(yearButton[0]);\n\n        const monthGrid = (await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.month-grid')) as HTMLElement;\n        await expect(monthGrid).toBeTruthy();\n\n        const monthButtons = monthGrid.querySelectorAll('.month');\n        const monthButtonsArray = [...monthButtons];\n        const monthButton = monthButtonsArray.filter((month) => month.textContent === 'Dec');\n        await expect(monthButton[0]).toBeTruthy();\n        await userEvent.click(monthButton[0]);\n        const daysGrid = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.day-grid');\n        await expect(daysGrid).toBeTruthy();\n\n        //Find the day button at the specified position\n        const dayButton = calendar.shadowRoot?.querySelectorAll('div.day > div.day-label')[15] as HTMLElement;\n        await expect(dayButton).toBeTruthy();\n        await userEvent.click(dayButton);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -5224,6 +5312,22 @@
             "text": "ComponentStoryFormat<Args>"
           },
           "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        .value=\"${args.value}\"\n        locale=\"${args.locale}\"\n    >\n    </omni-date-picker>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniDatePicker } from \"@capitec/omni-components-react/date-picker\";\n\nconst App = () => <OmniDatePicker${args.label ? ` label='${args.label}'` : ''}${args.locale ? ` locale='${args.locale}'` : ''}/>;`\n        }\n    ],\n    name: 'Locale',\n    description: 'Set the current locale of the Date Picker component.',\n    args: {\n        label: 'Locale',\n        locale: testLocale\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        const click = jest.fn();\n        datePicker.addEventListener('click', click);\n\n        await userEvent.click(datePicker);\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as HTMLElement;\n        //const calendar = await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '.calendar');\n        await expect(calendar).toBeTruthy();\n\n        const controlLabel = await querySelectorAsync(calendar.shadowRoot as ShadowRoot, '.control-label');\n        await expect(controlLabel).toBeTruthy();\n\n        await expect(controlLabel).toHaveTextContent(localDate.monthLong + ' ' + localDate.year);\n        await userEvent.click(datePicker);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Min_Date",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        min-date=\"${ifNotEmpty(args.minDate)}\"\n        value=\"${ifNotEmpty(args.value)}\"\n    >\n    </omni-date-picker>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniDatePicker } from \"@capitec/omni-components-react/date-picker\";\n\nconst App = () => <OmniDatePicker${args.label ? ` label='${args.label}'` : ''}${args.minDate ? ` min-date='${args.minDate}'` : ''}${\n                args.value ? ` value='${args.value}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Min Date',\n    description: 'Limit the Date Picker to only have selectable dates after and including the specified min-date.',\n    args: {\n        minDate: '2023-04-14',\n        value: '2023-04-15'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        datePicker.value = context.args.value;\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as Calendar;\n        await expect(calendar).toBeTruthy();\n\n        await waitFor(() => expect(calendar).toHaveAttribute('min-date', context.args.minDate), {\n            timeout: 3000\n        });\n\n        const days = Array.from(calendar.shadowRoot?.querySelectorAll('.day') as NodeListOf<Element>);\n        const isExcluded = days[17];\n\n        await expect(isExcluded).toHaveClass('excluded');\n\n        const preValue = datePicker.value;\n\n        await userEvent.click(isExcluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(datePicker).toHaveValue(preValue);\n\n        const isIncluded = days[20];\n\n        await expect(isIncluded).not.toHaveClass('excluded');\n\n        await userEvent.click(isIncluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(datePicker).not.toHaveValue(preValue);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Date",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-date-picker\n        data-testid=\"test-date-picker\"\n        label=\"${ifNotEmpty(args.label)}\"\n        max-date=\"${ifNotEmpty(args.maxDate)}\"\n        value=\"${ifNotEmpty(args.value)}\"\n    >\n    </omni-date-picker>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniDatePicker } from \"@capitec/omni-components-react/date-picker\";\n\nconst App = () => <OmniDatePicker${args.label ? ` label='${args.label}'` : ''}${args.maxDate ? ` max-date='${args.maxDate}'` : ''}${\n                args.value ? ` value='${args.value}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Date',\n    description: 'Limit the Date Picker to only have selectable dates before and including the specified max-date.',\n    args: {\n        maxDate: '2023-04-14',\n        value: '2023-04-13'\n    } as Args,\n    play: async (context) => {\n        const datePicker = within(context.canvasElement).getByTestId<DatePicker>('test-date-picker');\n        datePicker.value = context.args.value;\n\n        await userEvent.click(datePicker);\n\n        const calendar = (await querySelectorAsync(datePicker.shadowRoot as ShadowRoot, '#calendar')) as Calendar;\n        await expect(calendar).toBeTruthy();\n\n        await waitFor(() => expect(calendar).toHaveAttribute('max-date', context.args.maxDate), {\n            timeout: 3000\n        });\n\n        const days = Array.from(calendar.shadowRoot?.querySelectorAll('.day') as NodeListOf<Element>);\n        const isExcluded = days[20];\n\n        await expect(isExcluded).toHaveClass('excluded');\n\n        const preValue = datePicker.value;\n\n        await userEvent.click(isExcluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(datePicker).toHaveValue(preValue);\n\n        const isIncluded = days[15];\n\n        await expect(isIncluded).not.toHaveClass('excluded');\n\n        await userEvent.click(isIncluded, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(datePicker).not.toHaveValue(preValue);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -5283,6 +5387,22 @@
           "name": "Locale",
           "declaration": {
             "name": "Locale",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Min_Date",
+          "declaration": {
+            "name": "Min_Date",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Date",
+          "declaration": {
+            "name": "Max_Date",
             "module": "src/date-picker/DatePicker.stories.ts"
           }
         },
@@ -5504,6 +5624,26 @@
               },
               "description": "The locale used for formatting the output of the Date time picker.",
               "attribute": "locale",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "minDate",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The minimum date inclusively allowed to be selected.",
+              "attribute": "min-date",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxDate",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The maximum date inclusively allowed to be selected.",
+              "attribute": "max-date",
               "reflects": true
             },
             {
@@ -5903,6 +6043,24 @@
               "description": "The locale used for formatting the output of the Date time picker.",
               "fieldName": "locale",
               "attribute": "locale"
+            },
+            {
+              "name": "min-date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The minimum date inclusively allowed to be selected.",
+              "fieldName": "minDate",
+              "attribute": "min-date"
+            },
+            {
+              "name": "max-date",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The maximum date inclusively allowed to be selected.",
+              "fieldName": "maxDate",
+              "attribute": "max-date"
             },
             {
               "name": "label",
@@ -18137,8 +18295,9 @@
           "parameters": [
             {
               "name": "value",
+              "optional": true,
               "type": {
-                "text": "string"
+                "text": "string | null"
               }
             }
           ],

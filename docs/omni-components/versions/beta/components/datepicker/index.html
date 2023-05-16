@@ -394,6 +394,20 @@
                                 key="Locale"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-min-date">Min Date</div>
+                            <story-renderer 
+                                path="./dist/date-picker/DatePicker.stories.js" 
+                                tag="omni-date-picker" 
+                                key="Min_Date"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-max-date">Max Date</div>
+                            <story-renderer 
+                                path="./dist/date-picker/DatePicker.stories.js" 
+                                tag="omni-date-picker" 
+                                key="Max_Date"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
                                 path="./dist/date-picker/DatePicker.stories.js" 
@@ -456,6 +470,12 @@
                                     <a href="components/datepicker/#story-locale" id="story-locale-a" class="item">
                                         Locale
                                     </a>
+                                    <a href="components/datepicker/#story-min-date" id="story-min-date-a" class="item">
+                                        Min Date
+                                    </a>
+                                    <a href="components/datepicker/#story-max-date" id="story-max-date-a" class="item">
+                                        Max Date
+                                    </a>
                                     <a href="components/datepicker/#story-label" id="story-label-a" class="item">
                                         Label
                                     </a>
@@ -507,6 +527,20 @@
                                     <td data-label="Attribute" scope="row">locale&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                     <td data-label="Description">The locale used for formatting the output of the Date time picker.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">minDate</td>
+                                    <td data-label="Attribute" scope="row">min-date&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">The minimum date inclusively allowed to be selected.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">maxDate</td>
+                                    <td data-label="Attribute" scope="row">max-date&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">The maximum date inclusively allowed to be selected.</td>
                                 </tr>
                                 
                                 <tr>

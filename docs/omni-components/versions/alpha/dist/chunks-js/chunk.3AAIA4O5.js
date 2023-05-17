@@ -211,7 +211,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
 
                 .search-clear-click {
                     display: flex;
-                    align-items: center;
+                    align-items: center;                  
                 }
 
                 .search-clear-icon {
@@ -222,6 +222,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                 ::slotted([slot='search-clear']){
                     width: var(--omni-select-search-clear-icon-width, 20px);
                     cursor: pointer;
+                    align-items: center;
                 }
 
                /* Mobile device styling */
@@ -310,4 +311,4 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?o` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([d("#select")],t.prototype,"_selectElement",2),r([d("#searchField")],t.prototype,"_searchElement",2),r([s({type:Array,reflect:!0})],t.prototype,"items",2),r([s({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([s({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([s({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([s({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([s({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([s({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([l()],t.prototype,"_popUp",2),r([l()],t.prototype,"_bottomOfViewport",2),r([l()],t.prototype,"_isMobile",2),r([l()],t.prototype,"_searchValue",2),t=r([v("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.WCXJ5A33.js.map
+//# sourceMappingURL=chunk.3AAIA4O5.js.map

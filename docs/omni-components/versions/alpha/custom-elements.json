@@ -16010,32 +16010,12 @@
               "name": "--omni-select-items-container-background-color"
             },
             {
-              "description": "Select dialog left.",
-              "name": "--omni-select-dialog-left"
+              "description": "Select items container z-index.",
+              "name": "--omni-select-items-container-z-index"
             },
             {
-              "description": "Select dialog right.",
-              "name": "--omni-select-dialog-right"
-            },
-            {
-              "description": "Select dialog bottom.",
-              "name": "--omni-select-dialog-bottom"
-            },
-            {
-              "description": "Select dialog background color.",
-              "name": "--omni-select-dialog-background-color"
-            },
-            {
-              "description": "Select dialog height.",
-              "name": "--omni-select-dialog-modal-max-height"
-            },
-            {
-              "description": "Select dialog modal max width.",
-              "name": "--omni-select-dialog-modal-max-width"
-            },
-            {
-              "description": "Select dialog background color.",
-              "name": "--omni-select-dialog-backdrop-color"
+              "description": "Select items max height.",
+              "name": "--omni-select-items-max-height"
             },
             {
               "description": "Select items container width",
@@ -16050,54 +16030,6 @@
               "name": "--omni-select-items-container-render-bottom-top"
             },
             {
-              "description": "Select item header left.",
-              "name": "--omni-select-item-header-left"
-            },
-            {
-              "description": "Select item header right.",
-              "name": "--omni-select-item-header-right"
-            },
-            {
-              "description": "Select item header font family.",
-              "name": "--omni-select-item-header-font-family"
-            },
-            {
-              "description": "Select item header font size.",
-              "name": "--omni-select-item-header-font-size"
-            },
-            {
-              "description": "Select item header font weight.",
-              "name": "--omni-select-item-header-font-weight"
-            },
-            {
-              "description": "Select item header font background color.",
-              "name": "--omni-select-item-header-font-background-color"
-            },
-            {
-              "description": "Select item header top padding.",
-              "name": "--omni-select-item-header-padding-top"
-            },
-            {
-              "description": "Select item head bottom padding.",
-              "name": "--omni-select-item-header-padding-bottom"
-            },
-            {
-              "description": "Select item head right padding.",
-              "name": "--omni-select-item-header-padding-right"
-            },
-            {
-              "description": "Select item head left padding.",
-              "name": "--omni-select-item-header-padding-left"
-            },
-            {
-              "description": "Select item header top left border radius.",
-              "name": "--omni-select-item-header-item-border-top-left-radius"
-            },
-            {
-              "description": "Select item header top right border radius.",
-              "name": "--omni-select-item-header-item-border-top-right-radius"
-            },
-            {
               "description": "Select items height.",
               "name": "--omni-select-items-height"
             },
@@ -16106,12 +16038,20 @@
               "name": "--omni-select-items-width"
             },
             {
+              "description": "Select items background color.",
+              "name": "--omni-select-items-background-color"
+            },
+            {
               "description": "Select item font color.",
               "name": "--omni-select-item-font-color"
             },
             {
               "description": "Select item font family.",
               "name": "--omni-select-item-font-family"
+            },
+            {
+              "description": "Select item font size.",
+              "name": "--omni-select-item-font-size"
             },
             {
               "description": "Select item font weight.",
@@ -16190,8 +16130,160 @@
               "name": "--omni-select-search-field-padding-right"
             },
             {
+              "description": "Select search field width.",
+              "name": "--omni-select-search-field-width"
+            },
+            {
+              "description": "Select search field top border width.",
+              "name": "--omni-select-search-field-top-border-width"
+            },
+            {
+              "description": "Select search field left border width.",
+              "name": "--omni-select-search-field-left-border-width"
+            },
+            {
+              "description": "Select search field right border width.",
+              "name": "--omni-select-search-field-right-border-width"
+            },
+            {
+              "description": "Select search field bottom border width.",
+              "name": "--omni-select-search-field-bottom-border-width"
+            },
+            {
+              "description": "Select search field bottom border color.",
+              "name": "--omni-select-search-field-bottom-border-color"
+            },
+            {
               "description": "Select search field background color.",
               "name": "--omni-select-search-field-background-color"
+            },
+            {
+              "description": "Select search field clear control right margin.",
+              "name": "--omni-select-search-clear-control-margin-right"
+            },
+            {
+              "description": "Select search field clear control left margin.",
+              "name": "--omni-select-search-clear-control-margin-left"
+            },
+            {
+              "description": " Select search field clear control bottom border.",
+              "name": "--omni-select-search-control-bottom-border"
+            },
+            {
+              "description": "Select search field clear div right padding.",
+              "name": "--omni-select-search-clear-div-right-padding"
+            },
+            {
+              "description": "Select search field clear icon height.",
+              "name": "--omni-select-search-clear-icon-height"
+            },
+            {
+              "description": "Select search field clear icon width.",
+              "name": "--omni-select-search-clear-icon-width"
+            },
+            {
+              "description": "Select search field clear icon color.",
+              "name": "--omni-select-search-clear-icon-color"
+            },
+            {
+              "description": "Select item header left.",
+              "name": "--omni-select-item-header-left"
+            },
+            {
+              "description": "Select item header right.",
+              "name": "--omni-select-item-header-right"
+            },
+            {
+              "description": "Select item header font color.",
+              "name": "--omni-select-item-header-font-color"
+            },
+            {
+              "description": "Select item header font family.",
+              "name": "--omni-select-item-header-font-family"
+            },
+            {
+              "description": "Select item header font size.",
+              "name": "--omni-select-item-header-font-size"
+            },
+            {
+              "description": "Select item header font weight.",
+              "name": "--omni-select-item-header-font-weight"
+            },
+            {
+              "description": "Select item header font background color.",
+              "name": "--omni-select-item-header-font-background-color"
+            },
+            {
+              "description": "Select item header top padding.",
+              "name": "--omni-select-item-header-padding-top"
+            },
+            {
+              "description": "Select item head bottom padding.",
+              "name": "--omni-select-item-header-padding-bottom"
+            },
+            {
+              "description": "Select item head right padding.",
+              "name": "--omni-select-item-header-padding-right"
+            },
+            {
+              "description": "Select item head left padding.",
+              "name": "--omni-select-item-header-padding-left"
+            },
+            {
+              "description": "Select item header top left border radius.",
+              "name": "--omni-select-item-header-item-border-top-left-radius"
+            },
+            {
+              "description": "Select item header top right border radius.",
+              "name": "--omni-select-item-header-item-border-top-right-radius"
+            },
+            {
+              "description": "Select dialog width",
+              "name": "--omni-select-dialog-width"
+            },
+            {
+              "description": "Select dialog left.",
+              "name": "--omni-select-dialog-left"
+            },
+            {
+              "description": "Select dialog right.",
+              "name": "--omni-select-dialog-right"
+            },
+            {
+              "description": "Select dialog bottom.",
+              "name": "--omni-select-dialog-bottom"
+            },
+            {
+              "description": "Select dialog background color.",
+              "name": "--omni-select-dialog-background-color"
+            },
+            {
+              "description": "Select dialog modal max width.",
+              "name": "--omni-select-dialog-modal-max-width"
+            },
+            {
+              "description": "Select dialog height.",
+              "name": "--omni-select-dialog-modal-max-height"
+            },
+            {
+              "description": "Select dialog background color.",
+              "name": "--omni-select-dialog-backdrop-color"
+            },
+            {
+              "description": "Select dialog items min height.",
+              "name": "--omni-select-dialog-items-min-height"
+            },
+            {
+              "description": "Select dialog search clear control right margin.",
+              "name": "--omni-select-dialog-search-clear-control-margin-right"
+            },
+            {
+              "description": "Select dialog search clear control left margin.",
+              "name": "--omni-select-dialog-search-clear-control-margin-left"
+            },
+            {
+              "description": "Select dialog search clear div right padding.",
+              "name": "--omni-select-dialog-search-clear-div-right-padding"
             }
           ],
           "slots": [
@@ -16332,7 +16424,7 @@
               "type": {
                 "text": "(filterValue: string, items: SelectTypes) => SelectItems | undefined"
               },
-              "description": "Custom search function for items instead of using the default."
+              "description": "Custom search function for items instead of using the default provided."
             },
             {
               "kind": "field",

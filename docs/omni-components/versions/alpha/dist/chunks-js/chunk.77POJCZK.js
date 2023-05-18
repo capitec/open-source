@@ -29,7 +29,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                 }
 
                 .field.disabled {
-                    color: var(--omni-select-field-disabled-font-color,  #7C7C7C);
+                    color: var(--omni-select-field-disabled-font-color,#7C7C7C);
                 }
 
                 .field.error {
@@ -81,10 +81,6 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                         top: var(--omni-select-items-container-render-bottom-top, 0px);
                         transform: translateY(-100%);
                     }
-
-                    .searchField {
-
-                    }
                 }
 
                 /* Only applies styles to transform the control icon if on Desktop */
@@ -98,26 +94,6 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                         transform: none;
                         transition: all linear 0.15s;
                     }
-                }
-
-                /* Should only display for mobile rendering */
-                .header {
-                    left: var(--omni-select-item-header-left, 0px);
-                    right: var(--omni-select-item-header-right, 0px);
-
-                    color: var(--omni-select-item-header-font-color, #ffffff);
-                    font-family: var(--omni-select-item-header-font-family, var(--omni-font-family));
-                    font-size: var(--omni-select-item-header-font-size, var(--omni-font-size));
-                    font-weight: var(--omni-select-item-header-font-weight, var(--omni-font-weight));
-                    background-color: var(--omni-select-item-header-background-color, var(--omni-primary-color));
-
-                    padding-top: var(--omni-select-item-header-padding-top, 14px);
-                    padding-bottom: var(--omni-select-item-header-padding-bottom, 14px);
-                    padding-right: var(--omni-select-item-header-padding-right, 10px);
-                    padding-left: var(--omni-select-item-header-padding-left, 10px);
-
-                    border-top-left-radius: var(--omni-select-item-header-border-top-left-radius, 10px);
-                    border-top-right-radius: var(--omni-select-item-header-border-top-right-radius, 10px);
                 }
 
                 .items {
@@ -185,7 +161,6 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
 
                     width: var(--omni-select-search-field-width,100%);
 
-
                     border-top-width: var(--omni-select-search-field-top-border-width, 0);
 					border-left-width: var(--omni-select-search-field-left-border-width, 0);
 					border-right-width: var(--omni-select-search-field-right-border-width, 0);
@@ -200,7 +175,6 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
 				}
 
                 /* Search field clear icons styles */
-
                 .search-control {
                     display: flex;
                   
@@ -213,16 +187,36 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                     display: inline-flex;
                     align-items: center;
                     cursor: pointer;
-                    padding-right: 10px          
+                    padding-right: var(--omni-select-search-clear-div-right-padding, 10px);        
                 }
 
                 .search-clear-icon,
-                ::slotted([slot='search-clear']){
+                ::slotted([slot='search-clear']) {
+                    cursor: pointer;
                     height: var(--omni-select-search-clear-icon-height,20px);
                     width: var(--omni-select-search-clear-icon-width, 20px);
-                    cursor: pointer;
                     fill: var(--omni-select-search-clear-icon-color, var(--omni-primary-color));
                 }
+
+                /* Should only display for mobile rendering */
+               .header {
+                   left: var(--omni-select-item-header-left, 0px);
+                   right: var(--omni-select-item-header-right, 0px);
+               
+                   color: var(--omni-select-item-header-font-color, var(--omni-font-color));
+                   font-family: var(--omni-select-item-header-font-family, var(--omni-font-family));
+                   font-size: var(--omni-select-item-header-font-size, var(--omni-font-size));
+                   font-weight: var(--omni-select-item-header-font-weight, var(--omni-font-weight));
+                   background-color: var(--omni-select-item-header-background-color, var(--omni-primary-color));
+               
+                   padding-top: var(--omni-select-item-header-padding-top, 14px);
+                   padding-bottom: var(--omni-select-item-header-padding-bottom, 14px);
+                   padding-right: var(--omni-select-item-header-padding-right, 10px);
+                   padding-left: var(--omni-select-item-header-padding-left, 10px);
+               
+                   border-top-left-radius: var(--omni-select-item-header-border-top-left-radius, 10px);
+                   border-top-right-radius: var(--omni-select-item-header-border-top-right-radius, 10px);
+               }
 
                /* Mobile device styling */
                @media screen and (max-width: 766px) {
@@ -232,7 +226,7 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                        margin: unset;
                        border-style: none;
                        padding: unset;
-                       width: 100vw;
+                       width: var(--omni-select-dialog-width,100vw);
                        left: var(--omni-select-dialog-left, 0px);
                        right: var(--omni-select-dialog-right, 0px);
                        bottom: var(--omni-select-dialog-bottom, 0px);
@@ -240,34 +234,30 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
                    }
                    
                    .items-dialog:modal{
-                       max-width: var(--omni-select-dialog-modal-max-width, 100%);
-                       max-height: var(--omni-select-dialog-modal-max-height, 240px);
-                       
                        display: flex;
                        flex-direction: column;
+                       max-width: var(--omni-select-dialog-modal-max-width, 100vw);
+                       max-height: var(--omni-select-dialog-modal-max-height, 240px);                  
                    }
                
                    .items-dialog::backdrop {
-                       background: var(--omni-select-dialog-backdrop-color, rgba(0, 0, 0, 0.1));
+                      background: var(--omni-select-dialog-backdrop-color, rgba(0, 0, 0, 0.1));
                    }
 
                    .items {
-                        min-height: var(--omni-select-items-min-height, 150px);
+                      min-height: var(--omni-select-dialog-items-min-height, 150px);
                     }
                
-                   .search-control {
-                       display: flex;
-                     
-                       margin-right: var(--omni-select-search-clear-control-margin-right, 0px);
-                       margin-left: var(--omni-select-search-clear-control-margin-left, 0px);
-                       background-color: var(--omni-select-clear-div-color, var(--omni-background-color));
+                   .search-control {              
+                       margin-right: var(--omni-select-dialog-search-clear-control-margin-right, 0px);
+                       margin-left: var(--omni-select-dialog-search-clear-control-margin-left, 0px);
                    }
 
                    .search-clear-click {
                        display: inline-flex;
                        align-items: center;
                        cursor: pointer;
-                       padding-right: 10px
+                       padding-right: var(--omni-select-dialog-search-clear-div-right-padding, 10px);
                    }
                }
             `]}renderContent(){var i,n;let e={field:!0,disabled:this.disabled,error:this.error};return o`
@@ -311,4 +301,4 @@ import{b as m}from"./chunk.Y2FJIW7X.js";import{a as u}from"./chunk.K2UMXYHA.js";
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?o` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return o`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([d("#select")],t.prototype,"_selectElement",2),r([d("#searchField")],t.prototype,"_searchElement",2),r([s({type:Array,reflect:!0})],t.prototype,"items",2),r([s({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([s({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([s({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([s({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([s({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([s({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([l()],t.prototype,"_popUp",2),r([l()],t.prototype,"_bottomOfViewport",2),r([l()],t.prototype,"_isMobile",2),r([l()],t.prototype,"_searchValue",2),t=r([v("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.7E27BTHS.js.map
+//# sourceMappingURL=chunk.77POJCZK.js.map

@@ -4190,7 +4190,7 @@
         },
         {
           "kind": "function",
-          "name": "CustomClearableSlotIcon",
+          "name": "CustomClearableSlot",
           "parameters": [
             {
               "name": "tagName",
@@ -4286,9 +4286,9 @@
         },
         {
           "kind": "js",
-          "name": "CustomClearableSlotIcon",
+          "name": "CustomClearableSlot",
           "declaration": {
-            "name": "CustomClearableSlotIcon",
+            "name": "CustomClearableSlot",
             "module": "src/core/OmniInputStories.ts"
           }
         },
@@ -12470,6 +12470,10 @@
         },
         {
           "kind": "variable",
+          "name": "Custom_Clear_Slot_Icon"
+        },
+        {
+          "kind": "variable",
           "name": "Prefix"
         },
         {
@@ -12542,6 +12546,14 @@
           "name": "Clearable",
           "declaration": {
             "name": "Clearable",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot_Icon",
+          "declaration": {
+            "name": "Custom_Clear_Slot_Icon",
             "module": "src/password-field/PasswordField.stories.ts"
           }
         },
@@ -16233,11 +16245,11 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Search_Icon",
+          "name": "Custom_Search_Slot",
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?searchable=\"${args.searchable}\">\n        <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n    </omni-select>\n`,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => `\n            <omni-select id='omni-select' label=\"${args.label}\" searchable>\n                <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n            </omni-select>\n    <script defer>\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ];  \n        select = document.getElementById('omni-select');\n        select.items = stringItems;\n    </script>`\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSelect } from \"@capitec/omni-components-react/select\";\n\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ];\n\n        const App = () => <OmniSelect label=\"${args.label}\" items={stringItems} searchable>\n        <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style={{fill: 'orange'}}><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n        </OmniSelect>`\n        }\n    ],\n    name: 'Custom Search Clear Icon',\n    description: 'Select component with a custom search field clear icon',\n    args: {\n        label: 'Custom Search Icon',\n        searchable: true,\n        items: stringItems\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n\n        await userEvent.click(select);\n\n        const searchField = (await querySelectorAsync(select!.shadowRoot!, '#searchField')) as HTMLInputElement;\n        await expect(searchField).toBeTruthy();\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(searchField);\n        await userEvent.click(searchField);\n\n        const value = 'Bruce';\n        await userEvent.type(searchField, value);\n\n        const slotElement = select.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=search-clear]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n\n        //Add check to find the items-container once the component is opened.\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(stringItems[0]);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?searchable=\"${args.searchable}\">\n        <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n    </omni-select>\n`,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => `\n            <omni-select id='omni-select' label=\"${args.label}\" searchable>\n                <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n            </omni-select>\n    <script defer>\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ];  \n        select = document.getElementById('omni-select');\n        select.items = stringItems;\n    </script>`\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSelect } from \"@capitec/omni-components-react/select\";\n\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ];\n\n        const App = () => <OmniSelect label=\"${args.label}\" items={stringItems} searchable>\n        <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style={{fill: 'orange'}}><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z\"/></svg>\n        </OmniSelect>`\n        }\n    ],\n    name: 'Custom Search Field Slot',\n    description: 'Select component with search field custom slotted icon.',\n    args: {\n        label: 'Custom Search Slot',\n        searchable: true,\n        items: stringItems\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n\n        await userEvent.click(select);\n\n        const searchField = (await querySelectorAsync(select!.shadowRoot!, '#searchField')) as HTMLInputElement;\n        await expect(searchField).toBeTruthy();\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(searchField);\n        await userEvent.click(searchField);\n\n        const value = 'Bruce';\n        await userEvent.type(searchField, value);\n\n        const slotElement = select.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=search-clear]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n\n        //Add check to find the items-container once the component is opened.\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(stringItems[0]);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -16358,9 +16370,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Search_Icon",
+          "name": "Custom_Search_Slot",
           "declaration": {
-            "name": "Custom_Search_Icon",
+            "name": "Custom_Search_Slot",
             "module": "src/select/Select.stories.ts"
           }
         },
@@ -18151,7 +18163,7 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
         },
         {
           "kind": "variable",
@@ -18220,9 +18232,9 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
             "module": "src/text-field/TextField.stories.ts"
           }
         },

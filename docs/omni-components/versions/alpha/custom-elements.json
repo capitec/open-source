@@ -2555,7 +2555,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -2632,9 +2632,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/color-field/ColorField.stories.ts"
           }
         },
@@ -4344,7 +4344,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -4417,9 +4417,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/currency-field/CurrencyField.stories.ts"
           }
         },
@@ -5406,7 +5406,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -5503,9 +5503,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/date-picker/DatePicker.stories.ts"
           }
         },
@@ -6371,7 +6371,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -6444,9 +6444,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/email-field/EmailField.stories.ts"
           }
         },
@@ -11736,7 +11736,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -11809,9 +11809,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/number-field/NumberField.stories.ts"
           }
         },
@@ -12478,7 +12478,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -12559,9 +12559,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/password-field/PasswordField.stories.ts"
           }
         },
@@ -13284,7 +13284,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -13365,9 +13365,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/pin-field/PinField.stories.ts"
           }
         },
@@ -15435,7 +15435,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -15508,9 +15508,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/search-field/SearchField.stories.ts"
           }
         },
@@ -16277,7 +16277,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -16418,9 +16418,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/select/Select.stories.ts"
           }
         },
@@ -18175,7 +18175,7 @@
         },
         {
           "kind": "variable",
-          "name": "Custom_Clear_Slot_Icon"
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -18248,9 +18248,9 @@
         },
         {
           "kind": "js",
-          "name": "Custom_Clear_Slot_Icon",
+          "name": "Custom_Clear_Slot",
           "declaration": {
-            "name": "Custom_Clear_Slot_Icon",
+            "name": "Custom_Clear_Slot",
             "module": "src/text-field/TextField.stories.ts"
           }
         },

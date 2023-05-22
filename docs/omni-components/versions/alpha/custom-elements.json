@@ -11206,6 +11206,496 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/modal/Modal.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        header: raw`<strong>Header Content</strong>`,\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        footer: raw`<span>Footer Content</span>`,\n        hide: true,\n        headerAlign: 'left',\n        headerLabel: 'Header Label',\n        noFullscreen: false,\n        noHeader: false,\n        noFooter: false\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Header_Label",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'Header Label',\n    args: {\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        hide: true,\n        headerLabel: 'Header Label'\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Header_Align",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'Header Align',\n    args: {\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        hide: true,\n        headerLabel: 'Header Aligned',\n        headerAlign: 'center'\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Header_Slot",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'Header Slot',\n    args: {\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        hide: true,\n        header: raw`<span>Header <strong>Slot</strong></span>`\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "No_Header",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n       <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n           args.hide = false;\n           document.dispatchEvent(\n               new CustomEvent('story-renderer-interactive-update', {\n                   bubbles: true,\n                   composed: true\n               })\n           );\n       }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'No Header',\n    args: {\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        hide: true,\n        noHeader: true\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Footer_Slot",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'Footer Slot',\n    args: {\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        hide: true,\n        footer: raw`<span>Footer <strong>Slot</strong></span>`\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "No_Footer",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Modal\" ></omni-button>\n        ${modalHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n            ${getSourceFromLit(modalHtml(args))}\n            <script>\n                const modal = document.querySelector('omni-modal');\n                modal.hide = false;\n                modal.addEventListener('click-outside', (e) => {\n                    modal.hide = true;\n                });\n            </script>\n            `\n        }\n    ],\n    name: 'No Footer',\n    args: {\n        '[Default Slot]': raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n        hide: true,\n        noFooter: true\n    },\n    play: async (context) => {\n        let modal = within(context.canvasElement).getByTestId<Modal>('test-modal');\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(context.canvasElement, '[data-testid=\"test-modal\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Scripted_Modal",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n                    <omni-button data-testid=\"test-modal-btn\" @click=\"${() => {\n                        args.hide = false;\n                        if (modal) {\n                            modal.hide = false;\n                        } else {\n                            modal = Modal.show({\n                                body: () =>\n                                    raw`<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>`,\n                                footer: footer,\n                                header: args.header,\n                                headerAlign: args.headerAlign,\n                                id: 'some-id'\n                            });\n                            if (modal) {\n                                modal.setAttribute('data-testid', 'test-modal-scripted');\n                                modal.addEventListener('click-outside', () => {\n                                    modal!.hide = true;\n                                    args.hide = true;\n\n                                    document.dispatchEvent(\n                                        new CustomEvent('story-renderer-interactive-update', {\n                                            bubbles: true,\n                                            composed: true\n                                        })\n                                    );\n                                });\n                            }\n                        }\n\n                        document.dispatchEvent(\n                            new CustomEvent('story-renderer-interactive-update', {\n                                bubbles: true,\n                                composed: true\n                            })\n                        );\n                    }}\" label=\"Show Modal\" ></omni-button>\n     `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => raw`\n                <script type=\"module\">                        \n                        import { Modal } from '@capitec/omni-components/modal';\n\n                        const footer = document.createElement('div');\n                        footer.textContent = 'The footer';\n                        footer.style.color = 'orange';\n\n                        const modal = Modal.show({\n                            body: () => '<span style=\"min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;\">Body Content</span>',\n                            footer: footer,\n                            header: 'Header Content',\n                            headerAlign: 'right',\n                            id: 'some-id'\n                        });\n                        if (modal) {\n                            modal.addEventListener('click-outside', () => {\n                                modal.hide = true;\n                            });\n                        }\n                </script>\n            `\n        }\n    ],\n    name: 'Scripted Modal',\n    args: {\n        hide: true,\n        header: 'Header Content',\n        headerAlign: 'right'\n    },\n    play: async (context) => {\n        let modal = document.querySelector('[data-testid=\"test-modal-scripted\"]') as Modal;\n\n        await expect(modal && !modal.hide).toBeFalsy();\n\n        const btn = within(context.canvasElement).getByTestId<Button>('test-modal-btn');\n        btn.click();\n\n        modal = (await querySelectorAsync(document, '[data-testid=\"test-modal-scripted\"]')) as Modal;\n\n        await expect(modal && !modal.hide).toBeTruthy();\n\n        const footerSlot = modal.shadowRoot?.querySelector('slot[name=\"footer\"]') as HTMLSlotElement;\n        const footerRenderer = footerSlot.assignedElements().find((e) => (e as RenderElement).renderer) as RenderElement;\n\n        await waitFor(async () => await expect(Array.from(footerRenderer.shadowRoot!.children)).toContain(footer));\n\n        const footerContent = Array.from(footerRenderer.shadowRoot!.children);\n        await expect(footerContent.length).toBe(1);\n\n        const headerSlot = modal.shadowRoot?.querySelector('slot[name=\"header\"]') as HTMLSlotElement;\n        const headerRenderer = headerSlot.assignedElements().find((e) => (e as RenderElement).renderer) as RenderElement;\n\n        await waitFor(async () => await expect(headerRenderer.shadowRoot!.textContent).toBe(context.args.header));\n\n        await userEvent.click(modal.dialog, {\n            pointerEventsCheck: 0\n        });\n\n        await expect(modal && !modal.hide).toBeFalsy();\n    }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Header_Label",
+          "declaration": {
+            "name": "Header_Label",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Header_Align",
+          "declaration": {
+            "name": "Header_Align",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Header_Slot",
+          "declaration": {
+            "name": "Header_Slot",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "No_Header",
+          "declaration": {
+            "name": "No_Header",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Footer_Slot",
+          "declaration": {
+            "name": "Footer_Slot",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "No_Footer",
+          "declaration": {
+            "name": "No_Footer",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Scripted_Modal",
+          "declaration": {
+            "name": "Scripted_Modal",
+            "module": "src/modal/Modal.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/modal/Modal.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Control to display modal content with optional header and footer content.",
+          "name": "Modal",
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component header.",
+              "name": "header"
+            },
+            {
+              "description": "Content to render inside the component body.",
+              "name": "[Default Slot]"
+            },
+            {
+              "description": "Content to render inside the component footer.",
+              "name": "footer"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "headerLabel",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Title text to be displayed in header area.",
+              "attribute": "header-label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "headerAlign",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Header text alignment:\n - `left` Align header to the left.\n - `center` Align header to the center.\n - `right` Align header to the right.",
+              "attribute": "header-align",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hide",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will hide the modal.",
+              "attribute": "hide",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "noHeader",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will not display the header section of the modal",
+              "attribute": "no-header",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "noFooter",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will not display the footer section of the modal",
+              "attribute": "no-footer",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "noFullscreen",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will not apply the modal as fullscreen on mobile viewports.",
+              "attribute": "no-fullscreen",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "privacy": "public",
+              "static": true,
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "ModalInit"
+                  },
+                  "description": "Initialisation context for Modal element that will be created."
+                }
+              ],
+              "description": "Creates a new Modal element with the provided context and appends it to the DOM (either to document body or to provided target parent element)."
+            },
+            {
+              "kind": "method",
+              "name": "notifyClickOutside",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderHeader"
+            },
+            {
+              "kind": "method",
+              "name": "_renderFooter"
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "click-outside",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when a click or touch occurs outside the modal container."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "header-label",
+              "type": {
+                "text": "string"
+              },
+              "default": "''",
+              "description": "Title text to be displayed in header area.",
+              "fieldName": "headerLabel",
+              "attribute": "header-label"
+            },
+            {
+              "name": "header-align",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Header text alignment:\n - `left` Align header to the left.\n - `center` Align header to the center.\n - `right` Align header to the right.",
+              "fieldName": "headerAlign",
+              "attribute": "header-align"
+            },
+            {
+              "name": "hide",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will hide the modal.",
+              "fieldName": "hide",
+              "attribute": "hide"
+            },
+            {
+              "name": "no-header",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will not display the header section of the modal",
+              "fieldName": "noHeader",
+              "attribute": "no-header"
+            },
+            {
+              "name": "no-footer",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will not display the footer section of the modal",
+              "fieldName": "noFooter",
+              "attribute": "no-footer"
+            },
+            {
+              "name": "no-fullscreen",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will not apply the modal as fullscreen on mobile viewports.",
+              "fieldName": "noFullscreen",
+              "attribute": "no-fullscreen"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-modal",
+          "import": "```js\nimport '@capitec/omni-components/modal';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RenderFunction",
+          "declaration": {
+            "name": "RenderFunction",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RenderResult",
+          "declaration": {
+            "name": "RenderResult",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Modal",
+          "declaration": {
+            "name": "Modal",
+            "module": "src/modal/Modal.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-modal",
+          "declaration": {
+            "name": "Modal",
+            "module": "src/modal/Modal.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "ModalInit",
+          "type": "{\n    /**\n     * The id to apply to the Modal element.\n     */\n    id?: string;\n\n    /**\n     * The container to append the Modal as child. If not provided will append to a new div element on the document body.\n     */\n    parent?: string | HTMLElement | DocumentFragment | null;\n\n    /**\n     * A function that returns, or an instance of content to render as modal body\n     */\n    body: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the modal header\n     */\n    header?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the modal footer\n     */\n    footer?: RenderFunction | RenderResult;\n\n    /**\n     * Header text alignment:\n     *  - `left` Align header to the left.\n     *  - `center` Align header to the center.\n     *  - `right` Align header to the right.\n     */\n    headerAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * If true, will not display the header section of the modal\n     */\n    noHeader?: boolean;\n\n    /**\n     * If true, will not display the footer section of the modal\n     */\n    noFooter?: boolean;\n\n    /**\n     * If true will not apply the modal as fullscreen on mobile viewports.\n     */\n    noFullscreen?: boolean;\n}"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/modal/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/modal/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Modal.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/number-field/NumberField.stories.ts",
       "declarations": [
         {
@@ -19812,7 +20302,7 @@
             {
               "name": "parent",
               "type": {
-                "text": "Element | ShadowRoot"
+                "text": "Element | ShadowRoot | Document"
               }
             },
             {

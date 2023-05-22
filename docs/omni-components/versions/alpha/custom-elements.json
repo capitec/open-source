@@ -3722,7 +3722,15 @@
             },
             {
               "description": "Form clear icon color.",
-              "name": "--omni-form-clear-icon-color"
+              "name": "--omni-form-clear-slot-color"
+            },
+            {
+              "description": "Form clear slot height.",
+              "name": "--omni-form-clear-slot-height"
+            },
+            {
+              "description": "Form clear slot width.",
+              "name": "--omni-form-clear-slot-width"
             }
           ],
           "slots": [

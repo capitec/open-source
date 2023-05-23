@@ -1,92 +1,150 @@
-import{a as E}from"../chunks-js/chunk.3LJLMJ54.js";import"../chunks-js/chunk.Y2FJIW7X.js";import"../chunks-js/chunk.M6SSC5HK.js";import"../chunks-js/chunk.STJOQLHS.js";import"../chunks-js/chunk.E3RY574V.js";import"../chunks-js/chunk.V3AH72NQ.js";import{a as p}from"../chunks-js/chunk.G3QHRCKP.js";import{b as i}from"../chunks-js/chunk.MHLMY33S.js";import{D as m,l as w,w as a,y as s}from"../chunks-js/chunk.IFPMJPKV.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.P3AVSJ2D.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.ZPV4YWBP.js";import{a as b}from"../chunks-js/chunk.6QCQBNRL.js";import{b as f,c as r}from"../chunks-js/chunk.N6OKW4B2.js";import{d as n}from"../chunks-js/chunk.W54IKPJD.js";import"../chunks-js/chunk.2HYOR3YM.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as d,d as h}from"../chunks-js/chunk.F6MIXR4E.js";import{l as A,m as C,p as B}from"../chunks-js/chunk.BF43NN75.js";C();B();var Z={title:"UI Components/Modal",component:"omni-modal"},l=e=>d`
+import{a as k}from"../chunks-js/chunk.FTN5RR7Q.js";import"../chunks-js/chunk.Y2FJIW7X.js";import"../chunks-js/chunk.M6SSC5HK.js";import"../chunks-js/chunk.STJOQLHS.js";import"../chunks-js/chunk.E3RY574V.js";import"../chunks-js/chunk.V3AH72NQ.js";import{a as f}from"../chunks-js/chunk.G3QHRCKP.js";import{b as d}from"../chunks-js/chunk.MHLMY33S.js";import{D as m,l as C,w as a,y as s}from"../chunks-js/chunk.IFPMJPKV.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.P3AVSJ2D.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.ZPV4YWBP.js";import{a as B}from"../chunks-js/chunk.6QCQBNRL.js";import{b as $,c as r}from"../chunks-js/chunk.N6OKW4B2.js";import{d as n}from"../chunks-js/chunk.W54IKPJD.js";import"../chunks-js/chunk.2HYOR3YM.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as i,d as u}from"../chunks-js/chunk.F6MIXR4E.js";import{a as p,b as h,l as v,m as S,p as x}from"../chunks-js/chunk.BF43NN75.js";S();x();var re={title:"UI Components/Modal",component:"omni-modal"},l=e=>i`
         <omni-modal
             @click-outside="${()=>{e.hide=!0,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}"
             data-testid="test-modal"
             ?hide="${e.hide}"
             ?no-fullscreen="${e.noFullscreen}"
-            header-label="${b(e.headerLabel)}"
-            header-align="${b(e.headerAlign)}"
+            header-label="${B(e.headerLabel)}"
+            header-align="${B(e.headerAlign)}"
             ?no-header="${e.noHeader}"
-            ?no-footer="${e.noFooter}">${e.header?d`${`\r
-`}${p(w("header",e.header))}`:h}${e["[Default Slot]"]?d`${`\r
-`}${p(e["[Default Slot]"])}`:h}${e.footer?d`${`\r
-`}${p(w("footer",e.footer))}`:h}
+            ?no-footer="${e.noFooter}">${e.header?i`${`\r
+`}${f(C("header",e.header))}`:u}${e["[Default Slot]"]?i`${`\r
+`}${f(e["[Default Slot]"])}`:u}${e.footer?typeof e.footer=="string"?i`${`\r
+`}${f(C("footer",e.footer))}`:i`${`\r
+`}${e.footer(e)}`:u}
         </omni-modal>
-`,ee={render:e=>d`
+`,F,b=a(F||(F=v([`<div slot="footer">
+    <omni-button id="modal-close-btn" label="Close"></omni-button>
+    <script defer>
+        document.getElementById('modal-close-btn').addEventListener('click', () => {
+            document.getElementById('omni-modal').hide = true;
+        });
+    <\/script>
+</div>`]))),g=e=>i`
+<div slot="footer">
+    <omni-button id="modal-close-btn" label="Close" @click="${()=>{e.hide=!0,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}"></omni-button>
+</div>`,ie={render:e=>i`
         <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
-            ${m(l(e),t=>{let o=t.querySelector("omni-modal");o&&o.removeAttribute("hide")})}
-            
-            `}],name:"Interactive",args:{header:a`<strong>Header Content</strong>`,"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,footer:a`<span>Footer Content</span>`,hide:!0,headerAlign:"left",headerLabel:"Header Label",noFullscreen:!1,noHeader:!1,noFooter:!1},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},te={render:e=>d`
+            ${m(l(e),t=>{let o=t.querySelector("omni-modal");o&&o.removeAttribute("hide")})}            
+            `}],name:"Interactive",args:{header:a`<strong style="padding-left: 10px;">Slotted Header Content</strong>`,"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,footer:a`<span>Footer Content</span>`,hide:!0,headerAlign:"left",headerLabel:"Header Label",noFullscreen:!1,noHeader:!1,noFooter:!1},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},le={description:"Set text content to display in the modal header.",render:e=>i`
         <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
-            ${m(l(e),t=>{let o=t.querySelector("omni-modal");o&&o.removeAttribute("hide")})}
+            ${m(l(h(p({},e),{footer:b})),t=>{let o=t.querySelector("omni-modal");o&&(o.removeAttribute("hide"),o.setAttribute("id","omni-modal"))})}
             `},{framework:"React",load:e=>`import { OmniModal } from "@capitec/omni-components-react/modal";
+import { OmniButton } from "@capitec/omni-components-react/button";
             
-const App = () => <OmniModal${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>
-                    <span style={{
-                        minWidth: "777px",
-                        minHeight: "434px",
-                        display: "flex",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        alignItems: "center"
-                      }}>Body Content</span>
-                  </OmniModal>;`}],name:"Header Label",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,headerLabel:"Header Label"},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},oe={render:e=>d`
+const App = () => {
+    let omniModal = null;
+    const setRef = e => {
+        omniModal = e;
+    }
+    return (<OmniModal ref={setRef}${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>        
+               <span style={{
+                   minWidth: "777px",
+                   minHeight: "434px",
+                   display: "flex",
+                   justifyContent: "center",
+                   textAlign: "center",
+                   alignItems: "center"
+                 }}>Body Content</span>
+               <div slot="footer">
+                 <OmniButton label="Close" onclick={() => {
+                     omniModal.hide = true;
+                 }}/>
+               </div>
+             </OmniModal>);
+}`}],name:"Header Label",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,headerLabel:"Header Label",footer:g},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},de={description:"Align header content horizontally.",render:e=>i`
         <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
-            ${m(l(e),t=>{let o=t.querySelector("omni-modal");o&&o.removeAttribute("hide")})}
+            ${m(l(h(p({},e),{footer:b})),t=>{let o=t.querySelector("omni-modal");o&&(o.removeAttribute("hide"),o.setAttribute("id","omni-modal"))})}
             
             `},{framework:"React",load:e=>`import { OmniModal } from "@capitec/omni-components-react/modal";
+import { OmniButton } from "@capitec/omni-components-react/button";
             
-const App = () => <OmniModal${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>
-                    <span style={{
-                        minWidth: "777px",
-                        minHeight: "434px",
-                        display: "flex",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        alignItems: "center"
-                      }}>Body Content</span>
-                  </OmniModal>;`}],name:"Header Align",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,headerLabel:"Header Aligned",headerAlign:"center"},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},ne={render:e=>d`
+const App = () => {
+    let omniModal = null;
+    const setRef = e => {
+        omniModal = e;
+    }
+    return (<OmniModal ref={setRef}${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>        
+                <span style={{
+                    minWidth: "777px",
+                    minHeight: "434px",
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    alignItems: "center"
+                    }}>Body Content</span>
+                <div slot="footer">
+                    <OmniButton label="Close" onclick={() => {
+                        omniModal.hide = true;
+                    }}/>
+                </div>
+            </OmniModal>);
+}`}],name:"Header Align",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,headerLabel:"Header Aligned",headerAlign:"center",footer:g},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},se={description:"Set custom html content to display in modal header.",render:e=>i`
         <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
-            ${m(l(e),t=>{let o=t.querySelector("omni-modal");o&&o.removeAttribute("hide")})}
+            ${m(l(h(p({},e),{footer:b})),t=>{let o=t.querySelector("omni-modal");o&&(o.removeAttribute("hide"),o.setAttribute("id","omni-modal"))})}
             
             `},{framework:"React",load:e=>`import { OmniModal } from "@capitec/omni-components-react/modal";
+import { OmniButton } from "@capitec/omni-components-react/button";
             
-const App = () => <OmniModal${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>
-                    <span slot="header">Header <strong>Slot</strong></span>
-                    <span style={{
-                        minWidth: "777px",
-                        minHeight: "434px",
-                        display: "flex",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        alignItems: "center"
-                      }}>Body Content</span>
-                  </OmniModal>;`}],name:"Header Slot",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,header:a`<span>Header <strong>Slot</strong></span>`},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},ae={render:e=>d`
+const App = () => {
+    let omniModal = null;
+    const setRef = e => {
+        omniModal = e;
+    }
+    return (<OmniModal ref={setRef}${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>        
+                <span slot="header">Header <strong>Slot</strong></span>
+                <span style={{
+                    minWidth: "777px",
+                    minHeight: "434px",
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    alignItems: "center"
+                    }}>Body Content</span>
+                <div slot="footer">
+                    <OmniButton label="Close" onclick={() => {
+                        omniModal.hide = true;
+                    }}/>
+                </div>
+            </OmniModal>);
+}`}],name:"Header Slot",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,header:a`<span>Header <strong>Slot</strong></span>`,footer:g},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},me={description:"Remove the header section of the modal.",render:e=>i`
        <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
-            ${m(l(e),t=>{let o=t.querySelector("omni-modal");o&&o.removeAttribute("hide")})}
+            ${m(l(h(p({},e),{footer:b})),t=>{let o=t.querySelector("omni-modal");o&&(o.removeAttribute("hide"),o.setAttribute("id","omni-modal"))})}
             
             `},{framework:"React",load:e=>`import { OmniModal } from "@capitec/omni-components-react/modal";
+import { OmniButton } from "@capitec/omni-components-react/button";
             
-const App = () => <OmniModal${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>
-                    <span style={{
-                        minWidth: "777px",
-                        minHeight: "434px",
-                        display: "flex",
-                        justifyContent: "center",
-                        textAlign: "center",
-                        alignItems: "center"
-                      }}>Body Content</span>
-                  </OmniModal>;`}],name:"No Header",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,noHeader:!0},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},re={render:e=>d`
+const App = () => {
+    let omniModal = null;
+    const setRef = e => {
+        omniModal = e;
+    }
+    return (<OmniModal ref={setRef}${e.headerLabel?` header-label='${e.headerLabel}'`:""}${e.headerAlign?` header-align='${e.headerAlign}'`:""}${e.noFooter?" no-footer":""}${e.noHeader?" no-header":""}${e.noFullscreen?" no-fullscreen":""}>        
+                <span style={{
+                    minWidth: "777px",
+                    minHeight: "434px",
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    alignItems: "center"
+                    }}>Body Content</span>
+                <div slot="footer">
+                    <OmniButton label="Close" onclick={() => {
+                        omniModal.hide = true;
+                    }}/>
+                </div>
+            </OmniModal>);
+}`}],name:"No Header",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,noHeader:!0,footer:g},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},ce={description:"Set custom html content to display in modal footer.",render:e=>i`
         <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
@@ -104,7 +162,7 @@ const App = () => <OmniModal${e.headerLabel?` header-label='${e.headerLabel}'`:"
                         alignItems: "center"
                       }}>Body Content</span>
                       <span slot="footer">Footer <strong>Slot</strong></span>
-                  </OmniModal>;`}],name:"Footer Slot",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,footer:a`<span>Footer <strong>Slot</strong></span>`},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},le={render:e=>d`
+                  </OmniModal>;`}],name:"Footer Slot",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,footer:a`<span>Footer <strong>Slot</strong></span>`},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},pe={description:"Remove the footer section of the modal.",render:e=>i`
         <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
         ${l(e)}
     `,frameworkSources:[{framework:"HTML",load:e=>a`
@@ -121,9 +179,9 @@ const App = () => <OmniModal${e.headerLabel?` header-label='${e.headerLabel}'`:"
                         textAlign: "center",
                         alignItems: "center"
                       }}>Body Content</span>
-                  </OmniModal>;`}],name:"No Footer",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,noFooter:!0},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},u=document.createElement("div");u.textContent="The footer";u.style.color="orange";var c,S,de={render:e=>d`
-                    <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,c?c.hide=!1:(c=E.show({body:()=>a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,footer:u,header:e.header,headerAlign:e.headerAlign,id:"some-id"}),c&&(c.setAttribute("data-testid","test-modal-scripted"),c.addEventListener("click-outside",()=>{c.hide=!0,e.hide=!0,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}))),document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
-     `,frameworkSources:[{framework:"HTML",load:e=>a(S||(S=A([`
+                  </OmniModal>;`}],name:"No Footer",args:{"[Default Slot]":a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,hide:!0,noFooter:!0},play:async e=>{let t=r(e.canvasElement).getByTestId("test-modal");await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(e.canvasElement,'[data-testid="test-modal"]'),await n(t&&!t.hide).toBeTruthy(),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}},y=document.createElement("div");y.textContent="The footer";y.style.color="orange";var c,H,he={description:()=>i`Create and show an <code class="language-html">&lt;omni-modal&gt;</code> instance programmatically.`,render:e=>i`
+                    <omni-button data-testid="test-modal-btn" @click="${()=>{e.hide=!1,c?c.hide=!1:(c=k.show({body:()=>a`<span style="min-width: 777px;min-height: 434px;display: flex;justify-content: center;text-align: center;align-items: center;">Body Content</span>`,footer:y,header:e.header,headerAlign:e.headerAlign,id:"some-id"}),c&&(c.setAttribute("data-testid","test-modal-scripted"),c.addEventListener("click-outside",()=>{c.hide=!0,e.hide=!0,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}))),document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Modal" ></omni-button>
+     `,frameworkSources:[{framework:"HTML",load:e=>a(H||(H=v([`
                 <script type="module">                        
                         import { Modal } from '@capitec/omni-components/modal';
 
@@ -161,5 +219,5 @@ const modal = Modal.show({
             
 const App = () => <>
                     App Content
-                  </>;`}],name:"Scripted Modal",args:{hide:!0,header:"Header Content",headerAlign:"right"},play:async e=>{var $,v;let t=document.querySelector('[data-testid="test-modal-scripted"]');await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(document,'[data-testid="test-modal-scripted"]'),await n(t&&!t.hide).toBeTruthy();let g=(($=t.shadowRoot)==null?void 0:$.querySelector('slot[name="footer"]')).assignedElements().find(y=>y.renderer);await f(async()=>await n(Array.from(g.shadowRoot.children)).toContain(u));let M=Array.from(g.shadowRoot.children);await n(M.length).toBe(1);let x=((v=t.shadowRoot)==null?void 0:v.querySelector('slot[name="header"]')).assignedElements().find(y=>y.renderer);await f(async()=>await n(x.shadowRoot.textContent).toBe(e.args.header)),await i.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}};export{re as Footer_Slot,oe as Header_Align,te as Header_Label,ne as Header_Slot,ee as Interactive,le as No_Footer,ae as No_Header,de as Scripted_Modal,Z as default};
+                  </>;`}],name:"Scripted Modal",args:{hide:!0,header:"Header Content",headerAlign:"right"},play:async e=>{var A,E;let t=document.querySelector('[data-testid="test-modal-scripted"]');await n(t&&!t.hide).toBeFalsy(),r(e.canvasElement).getByTestId("test-modal-btn").click(),t=await s(document,'[data-testid="test-modal-scripted"]'),await n(t&&!t.hide).toBeTruthy();let M=((A=t.shadowRoot)==null?void 0:A.querySelector('slot[name="footer"]')).assignedElements().find(w=>w.renderer);await $(async()=>await n(Array.from(M.shadowRoot.children)).toContain(y));let T=Array.from(M.shadowRoot.children);await n(T.length).toBe(1);let L=((E=t.shadowRoot)==null?void 0:E.querySelector('slot[name="header"]')).assignedElements().find(w=>w.renderer);await $(async()=>await n(L.shadowRoot.textContent).toBe(e.args.header)),await d.click(t.dialog,{pointerEventsCheck:0}),await n(t&&!t.hide).toBeFalsy()}};export{ce as Footer_Slot,de as Header_Align,le as Header_Label,se as Header_Slot,ie as Interactive,pe as No_Footer,me as No_Header,he as Scripted_Modal,re as default};
 //# sourceMappingURL=Modal.stories.js.map

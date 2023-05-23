@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Color Field - Omni Components</title>
+    <title>Modal - Omni Components</title>
     <base href="/open-source/docs/omni-components/versions/beta/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/beta/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
     <!-- Preload material fonts to lessen chance of icons as text on slower networks -->
@@ -162,9 +162,9 @@
                 Chip
             </a>
         </div>
-        <div class="menu-item selected">
-            <a class="menu-link selected"
-            aria-current="page" 
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/colorfield">
                 Color Field
             </a>
@@ -218,9 +218,9 @@
                 Label
             </a>
         </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
             href="./components/modal">
                 Modal
             </a>
@@ -305,8 +305,8 @@
 
 <article class="component">
     <div class="component-meta">
-        <div class="component-name">ColorField</div>
-        <div class="component-desc">Color input control.</div> 
+        <div class="component-name">Modal</div>
+        <div class="component-desc">Control to display modal content with optional header and footer content.</div> 
         <div class="component-info">
             <div class="component-info-item">
                 <div>Usage</div>
@@ -328,13 +328,13 @@
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code" id="html-imports">
-                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/color-field&#39;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/modal&#39;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
                         content_copy
                     </span>
                 </div>           
                 <div class="component-info-item-code no-display" id="react-imports">
-                    <pre><code class="language-js no-code-scroll" id="component-import-code-react">import { OmniColorField } from &quot;@capitec/omni-components-react/color-field&quot;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code-react">import { OmniModal } from &quot;@capitec/omni-components-react/modal&quot;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code-react');return false;">
                         content_copy
                     </span>
@@ -343,7 +343,7 @@
             <div class="component-info-item">
                 <div>Source</div>
                 <div>
-                    <a href="https://github.com/capitec/omni-components/tree/develop/src/color-field/ColorField.ts" target="blank" class="component-info-item-link">
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/modal/Modal.ts" target="blank" class="component-info-item-link">
                         <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
                             <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
                         </svg>
@@ -382,97 +382,87 @@
                             
                             <div class="name" id="story-interactive">Interactive</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
                                 key="Interactive"
                                 interactive >
                             </story-renderer>
-                            <div class="name" id="story-label">Label</div>
+                            <div class="name" id="story-header-label">Header Label</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Label"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="Header_Label"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-hint">Hint</div>
+                            <div class="name" id="story-header-align">Header Align</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Hint"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="Header_Align"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-error-label">Error Label</div>
+                            <div class="name" id="story-header-slot">Header Slot</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Error_Label"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="Header_Slot"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-value">Value</div>
+                            <div class="name" id="story-no-header">No Header</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Value"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="No_Header"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-clear">Clear</div>
+                            <div class="name" id="story-footer-slot">Footer Slot</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Clear"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="Footer_Slot"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-prefix">Prefix</div>
+                            <div class="name" id="story-no-footer">No Footer</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Prefix"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="No_Footer"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-suffix">Suffix</div>
+                            <div class="name" id="story-scripted-modal">Scripted Modal</div>
                             <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Suffix"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-disabled">Disabled</div>
-                            <story-renderer 
-                                path="./dist/color-field/ColorField.stories.js" 
-                                tag="omni-color-field" 
-                                key="Disabled"
+                                path="./dist/modal/Modal.stories.js" 
+                                tag="omni-modal" 
+                                key="Scripted_Modal"
                                  >
                             </story-renderer>
                         </div>
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
-                                    <a href="components/colorfield/#story-interactive" id="story-interactive-a" class="item">
+                                    <a href="components/modal/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
                                     </a>
-                                    <a href="components/colorfield/#story-label" id="story-label-a" class="item">
-                                        Label
+                                    <a href="components/modal/#story-header-label" id="story-header-label-a" class="item">
+                                        Header Label
                                     </a>
-                                    <a href="components/colorfield/#story-hint" id="story-hint-a" class="item">
-                                        Hint
+                                    <a href="components/modal/#story-header-align" id="story-header-align-a" class="item">
+                                        Header Align
                                     </a>
-                                    <a href="components/colorfield/#story-error-label" id="story-error-label-a" class="item">
-                                        Error Label
+                                    <a href="components/modal/#story-header-slot" id="story-header-slot-a" class="item">
+                                        Header Slot
                                     </a>
-                                    <a href="components/colorfield/#story-value" id="story-value-a" class="item">
-                                        Value
+                                    <a href="components/modal/#story-no-header" id="story-no-header-a" class="item">
+                                        No Header
                                     </a>
-                                    <a href="components/colorfield/#story-clear" id="story-clear-a" class="item">
-                                        Clear
+                                    <a href="components/modal/#story-footer-slot" id="story-footer-slot-a" class="item">
+                                        Footer Slot
                                     </a>
-                                    <a href="components/colorfield/#story-prefix" id="story-prefix-a" class="item">
-                                        Prefix
+                                    <a href="components/modal/#story-no-footer" id="story-no-footer-a" class="item">
+                                        No Footer
                                     </a>
-                                    <a href="components/colorfield/#story-suffix" id="story-suffix-a" class="item">
-                                        Suffix
-                                    </a>
-                                    <a href="components/colorfield/#story-disabled" id="story-disabled-a" class="item">
-                                        Disabled
+                                    <a href="components/modal/#story-scripted-modal" id="story-scripted-modal-a" class="item">
+                                        Scripted Modal
                                     </a>
                             </div>
                         </div>
@@ -500,52 +490,48 @@
                             <tbody id="component-attributes">
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">label</td>
-                                    <td data-label="Attribute" scope="row">label&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">Text label.</td>
+                                    <td data-label="Name" scope="row">headerLabel</td>
+                                    <td data-label="Attribute" scope="row">header-label&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Title text to be displayed in header area.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">value</td>
-                                    <td data-label="Attribute" scope="row">value&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt; | undefined</code></pre></td>
-                                    <td data-label="Description">Value entered into the form component.</td>
+                                    <td data-label="Name" scope="row">headerAlign</td>
+                                    <td data-label="Attribute" scope="row">header-align&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | undefined</code></pre></td>
+                                    <td data-label="Description">Header text horizontal alignment:
+ - `left` Align header to the left.
+ - `center` Align header to the center.
+ - `right` Align header to the right.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">data</td>
-                                    <td data-label="Attribute" scope="row">data&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">object | undefined</code></pre></td>
-                                    <td data-label="Description">Data associated with the component.</td>
+                                    <td data-label="Name" scope="row">hide</td>
+                                    <td data-label="Attribute" scope="row">hide&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
+                                    <td data-label="Description">If true, will hide the modal.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">hint</td>
-                                    <td data-label="Attribute" scope="row">hint&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">Hint message to assist the user.</td>
+                                    <td data-label="Name" scope="row">noHeader</td>
+                                    <td data-label="Attribute" scope="row">no-header&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
+                                    <td data-label="Description">If true, will not display the header section of the modal</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">error</td>
-                                    <td data-label="Attribute" scope="row">error&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">Error message guiding a user to correct a mistake.</td>
+                                    <td data-label="Name" scope="row">noFooter</td>
+                                    <td data-label="Attribute" scope="row">no-footer&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
+                                    <td data-label="Description">If true, will not display the footer section of the modal</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">disabled</td>
-                                    <td data-label="Attribute" scope="row">disabled&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                    <td data-label="Description">Indicator if the component should be disabled.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">clearable</td>
-                                    <td data-label="Attribute" scope="row">clearable&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                    <td data-label="Description">Toggles the ability to clear the value of the component.</td>
+                                    <td data-label="Name" scope="row">noFullscreen</td>
+                                    <td data-label="Attribute" scope="row">no-fullscreen&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
+                                    <td data-label="Description">If true, will not apply the modal as fullscreen on mobile viewports.</td>
                                 </tr>
                                 
                                 <tr>
@@ -588,9 +574,9 @@
                             <tbody id="component-events">
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">change</td>
-                                    <td data-label="Type"><pre><code class="language-js">Event</code></pre></td>
-                                    <td data-label="Description"></td>
+                                    <td data-label="Name" scope="row">click-outside</td>
+                                    <td data-label="Type"><pre><code class="language-js">CustomEvent</code></pre></td>
+                                    <td data-label="Description">Dispatched when a click or touch occurs outside the modal container.</td>
                                 </tr>
                                 
                             </tbody>
@@ -599,6 +585,77 @@
                 
                 
                 
+                
+                    <h2 class="component-props-table-header">Types</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="type-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-types">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">ModalInit</td>
+                                    <td data-label="Type"><pre><code class="language-js">{
+    /**
+     * The id to apply to the Modal element.
+     */
+    id?: string;
+
+    /**
+     * The container to append the Modal as child. If not provided will append to a new div element on the document body.
+     */
+    parent?: string | HTMLElement | DocumentFragment | null;
+
+    /**
+     * A function that returns, or an instance of content to render as modal body
+     */
+    body: RenderFunction | RenderResult;
+
+    /**
+     * A function that returns, or an instance of content to render in the modal header
+     */
+    header?: RenderFunction | RenderResult;
+
+    /**
+     * A function that returns, or an instance of content to render in the modal footer
+     */
+    footer?: RenderFunction | RenderResult;
+
+    /**
+     * Header text alignment:
+     *  - `left` Align header to the left.
+     *  - `center` Align header to the center.
+     *  - `right` Align header to the right.
+     */
+    headerAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39;;
+
+    /**
+     * If true, will not display the header section of the modal
+     */
+    noHeader?: boolean;
+
+    /**
+     * If true, will not display the footer section of the modal
+     */
+    noFooter?: boolean;
+
+    /**
+     * If true will not apply the modal as fullscreen on mobile viewports.
+     */
+    noFullscreen?: boolean;
+}</code></pre></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
                 
                                 
                 
@@ -623,18 +680,18 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">clear</code></pre></td>
-                                    <td data-label="Description">Replaces the icon for the clear slot.</td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">header</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component header.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">prefix</code></pre></td>
-                                    <td data-label="Description">Replaces the icon for the prefix slot.</td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component body.</td>
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row"><pre><code class="language-js">suffix</code></pre></td>
-                                    <td data-label="Description">Replaces the icon for the suffix slot.</td>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">footer</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component footer.</td>
                                 </tr>
                                 
                             </tbody>
@@ -782,317 +839,6 @@
                 
                     
                     
-                        <h2 class="component-props-table-header" >Base Form Variables</h2>
-                        <div class="docs-search-area">
-                            <omni-search-field class="css-category" data-category="Base Form Variables"></omni-search-field>
-                        </div>
-                        <div class="component-props-table-wrapper">
-                            <table class="component-props-table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Name</th>
-                                        <th scope="col">Description</th>
-                                    </tr>
-                                </thead>
-                                <tbody data-category="Base Form Variables" class="component-css-props">
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-container-font-family</code></pre></td>
-                                        <td data-label="Description"> Container font family.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-container-width</code></pre></td>
-                                        <td data-label="Description">Container width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-container-height</code></pre></td>
-                                        <td data-label="Description">Container height.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-border-radius</code></pre></td>
-                                        <td data-label="Description">Layout border radius.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-background-color</code></pre></td>
-                                        <td data-label="Description">Layout background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-height</code></pre></td>
-                                        <td data-label="Description">Layout height.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-layout-width</code></pre></td>
-                                        <td data-label="Description">Layout width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-top</code></pre></td>
-                                        <td data-label="Description">Form border top.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-bottom</code></pre></td>
-                                        <td data-label="Description">Form border bottom.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-left</code></pre></td>
-                                        <td data-label="Description">Form border left.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-right</code></pre></td>
-                                        <td data-label="Description">Form border right.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-width</code></pre></td>
-                                        <td data-label="Description">Form border width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-radius</code></pre></td>
-                                        <td data-label="Description">Form border radius.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-style</code></pre></td>
-                                        <td data-label="Description">Form border style.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-border-color</code></pre></td>
-                                        <td data-label="Description">Form border color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-margin-left</code></pre></td>
-                                        <td data-label="Description">Form label margin left.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-text-align</code></pre></td>
-                                        <td data-label="Description">Form label text align.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-color</code></pre></td>
-                                        <td data-label="Description">Form label color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-font-size</code></pre></td>
-                                        <td data-label="Description">Form label font size.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-font-weight</code></pre></td>
-                                        <td data-label="Description">Form label font weight.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-z-index</code></pre></td>
-                                        <td data-label="Description">Form label z-index.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-border-width</code></pre></td>
-                                        <td data-label="Description">Form focussed border width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-border-color</code></pre></td>
-                                        <td data-label="Description">Form focussed border color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-disabled-background-color</code></pre></td>
-                                        <td data-label="Description">Form focussed label disabled background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-transform-scale</code></pre></td>
-                                        <td data-label="Description">Form focussed label transform scale.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-margin-left</code></pre></td>
-                                        <td data-label="Description">Form focussed label left margin.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-color</code></pre></td>
-                                        <td data-label="Description">Form focussed label color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-error-label-color</code></pre></td>
-                                        <td data-label="Description">Form focussed error label color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-background-color</code></pre></td>
-                                        <td data-label="Description">Form focussed label background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-padding-left</code></pre></td>
-                                        <td data-label="Description">Form focussed label left.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-focussed-label-padding-right</code></pre></td>
-                                        <td data-label="Description">Form focussed label right.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-color</code></pre></td>
-                                        <td data-label="Description">Form error label color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-border-color</code></pre></td>
-                                        <td data-label="Description">Form error border color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-label-disabled-color</code></pre></td>
-                                        <td data-label="Description">Form label disabled color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-border-color</code></pre></td>
-                                        <td data-label="Description">Form disabled border color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-background-color</code></pre></td>
-                                        <td data-label="Description">Form disabled background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-focussed-label-background-color</code></pre></td>
-                                        <td data-label="Description">Form disabled label focussed background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-color</code></pre></td>
-                                        <td data-label="Description">Form hint label font color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-family</code></pre></td>
-                                        <td data-label="Description">Form hint label font family.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-size</code></pre></td>
-                                        <td data-label="Description">Form hint label font size.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-font-weight</code></pre></td>
-                                        <td data-label="Description">Form hint label font weight.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-padding-top</code></pre></td>
-                                        <td data-label="Description">Form hint label top padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-padding-left</code></pre></td>
-                                        <td data-label="Description">Form hint label left padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hint-label-border-width</code></pre></td>
-                                        <td data-label="Description">Form hint label border width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-color</code></pre></td>
-                                        <td data-label="Description">Form error label font color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-family</code></pre></td>
-                                        <td data-label="Description">Form error label font family.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-size</code></pre></td>
-                                        <td data-label="Description">Form error label font size.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-font-weight</code></pre></td>
-                                        <td data-label="Description">Form error label font weight.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-padding-top</code></pre></td>
-                                        <td data-label="Description">Form error label top padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-padding-left</code></pre></td>
-                                        <td data-label="Description">Form error label left padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-label-border-width</code></pre></td>
-                                        <td data-label="Description">Form error label border width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-hover-color</code></pre></td>
-                                        <td data-label="Description">Form hover color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-disabled-hover-color</code></pre></td>
-                                        <td data-label="Description">Form disabled hover color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-error-hover-color</code></pre></td>
-                                        <td data-label="Description">Form error hover color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-right</code></pre></td>
-                                        <td data-label="Description">Form clear control right margin.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-margin-left</code></pre></td>
-                                        <td data-label="Description"> Form clear control left margin.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-control-width</code></pre></td>
-                                        <td data-label="Description">Form clear control width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-icon-color</code></pre></td>
-                                        <td data-label="Description">Form clear icon color.</td>
-                                    </tr>
-                                    
-                                </tbody>
-                            </table>
-                        </div>
-                    
-                
-                    
-                    
                         <h2 class="component-props-table-header" >Component Variables</h2>
                         <div class="docs-search-area">
                             <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
@@ -1108,73 +854,178 @@
                                 <tbody data-category="Component Variables" class="component-css-props">
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-text-align</code></pre></td>
-                                        <td data-label="Description">Color field text align.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-dialog-top</code></pre></td>
+                                        <td data-label="Description">Top position for wrapping `HTMLDialogElement`.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-font-color</code></pre></td>
-                                        <td data-label="Description">Color field font color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-dialog-left</code></pre></td>
+                                        <td data-label="Description">Left position for wrapping `HTMLDialogElement`.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-font-family</code></pre></td>
-                                        <td data-label="Description">Color field font family.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-dialog-right</code></pre></td>
+                                        <td data-label="Description">Right position for wrapping `HTMLDialogElement`.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-font-size</code></pre></td>
-                                        <td data-label="Description">Color field font size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-dialog-bottom</code></pre></td>
+                                        <td data-label="Description">Bottom position for wrapping `HTMLDialogElement`.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-font-weight</code></pre></td>
-                                        <td data-label="Description">Color field font weight.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-dialog-background</code></pre></td>
+                                        <td data-label="Description">Background for wrapping `HTMLDialogElement` backdrop.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-height</code></pre></td>
-                                        <td data-label="Description">Color field height.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-container-padding</code></pre></td>
+                                        <td data-label="Description">Padding for modal content container.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-min-height</code></pre></td>
-                                        <td data-label="Description">Color field min height.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-container-box-shadow</code></pre></td>
+                                        <td data-label="Description">Box shadow for modal content container.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-min-width</code></pre></td>
-                                        <td data-label="Description">Color field min width.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-max-width</code></pre></td>
+                                        <td data-label="Description">Max width for modal content container.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-padding</code></pre></td>
-                                        <td data-label="Description">Color field width.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-max-height</code></pre></td>
+                                        <td data-label="Description">Max height for modal content container.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-text-select</code></pre></td>
-                                        <td data-label="Description">Color field text selection.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-font-color</code></pre></td>
+                                        <td data-label="Description">Font color for modal header.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-picker-height</code></pre></td>
-                                        <td data-label="Description">Color field picker height.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-font-family</code></pre></td>
+                                        <td data-label="Description">Font family for modal header.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-picker-width</code></pre></td>
-                                        <td data-label="Description">Color field picker width.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for modal header.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-disabled-font-color</code></pre></td>
-                                        <td data-label="Description">Color field disabled font color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-font-weight</code></pre></td>
+                                        <td data-label="Description">Font weight for modal header.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-color-field-error-font-color</code></pre></td>
-                                        <td data-label="Description">Color field error font color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-background</code></pre></td>
+                                        <td data-label="Description">Background for modal header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-padding-left</code></pre></td>
+                                        <td data-label="Description">Left padding for modal header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-padding-top</code></pre></td>
+                                        <td data-label="Description">Top padding for modal header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-padding-right</code></pre></td>
+                                        <td data-label="Description">Right padding for modal header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Bottom padding for modal header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-header-border-radius</code></pre></td>
+                                        <td data-label="Description">Border radius for modal header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-font-color</code></pre></td>
+                                        <td data-label="Description">Font color for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-font-family</code></pre></td>
+                                        <td data-label="Description">Font family for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-font-weight</code></pre></td>
+                                        <td data-label="Description">Font weight for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-padding</code></pre></td>
+                                        <td data-label="Description">Padding for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-background</code></pre></td>
+                                        <td data-label="Description">Background for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-body-overflow</code></pre></td>
+                                        <td data-label="Description">Overflow for modal body.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-no-header-body-border-top-radius</code></pre></td>
+                                        <td data-label="Description">Top border radius for modal body when there is no header.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-no-footer-body-border-bottom-radius</code></pre></td>
+                                        <td data-label="Description">Bottom border radius for modal body when there is no footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-text-align</code></pre></td>
+                                        <td data-label="Description">Text align for modal footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-padding</code></pre></td>
+                                        <td data-label="Description">Padding for modal footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-font-color</code></pre></td>
+                                        <td data-label="Description">Font color for modal footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-font-family</code></pre></td>
+                                        <td data-label="Description">Font family for modal footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-font-size</code></pre></td>
+                                        <td data-label="Description">Font size for modal footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-font-weight</code></pre></td>
+                                        <td data-label="Description">Font weight for modal footer.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-modal-footer-background</code></pre></td>
+                                        <td data-label="Description">Background for modal footer.</td>
                                     </tr>
                                     
                                 </tbody>

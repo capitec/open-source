@@ -4,7 +4,7 @@
       "display": "Omni Widget",
       "logo": "https://raw.githubusercontent.com/capitec/omni-widget/develop/docs/logos/omni.png",
       "name": "omni-widget",
-      "description": "Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content with bi-directional communication.",
+      "description": "Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content.",
       "version": "0.1.1"
     },
     {

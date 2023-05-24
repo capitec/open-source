@@ -429,6 +429,34 @@
                                 key="Custom_Control_Slot"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-searchable">Searchable</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Searchable"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-search">Custom Search</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Search"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-server-side-filtering">Server Side Filtering</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Server_Side_Filtering"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-search-slot">Custom Search Slot</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Search_Slot"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-label">Label</div>
                             <story-renderer 
                                 path="./dist/select/Select.stories.js" 
@@ -450,11 +478,18 @@
                                 key="Error_Label"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-clear">Clear</div>
+                            <div class="name" id="story-clearable">Clearable</div>
                             <story-renderer 
                                 path="./dist/select/Select.stories.js" 
                                 tag="omni-select" 
-                                key="Clear"
+                                key="Clearable"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-clear-slot">Custom Clear Slot</div>
+                            <story-renderer 
+                                path="./dist/select/Select.stories.js" 
+                                tag="omni-select" 
+                                key="Custom_Clear_Slot"
                                  >
                             </story-renderer>
                             <div class="name" id="story-prefix">Prefix</div>
@@ -496,6 +531,18 @@
                                     <a href="components/select/#story-custom-control-slot" id="story-custom-control-slot-a" class="item">
                                         Custom Control Slot
                                     </a>
+                                    <a href="components/select/#story-searchable" id="story-searchable-a" class="item">
+                                        Searchable
+                                    </a>
+                                    <a href="components/select/#story-custom-search" id="story-custom-search-a" class="item">
+                                        Custom Search
+                                    </a>
+                                    <a href="components/select/#story-server-side-filtering" id="story-server-side-filtering-a" class="item">
+                                        Server Side Filtering
+                                    </a>
+                                    <a href="components/select/#story-custom-search-slot" id="story-custom-search-slot-a" class="item">
+                                        Custom Search Slot
+                                    </a>
                                     <a href="components/select/#story-label" id="story-label-a" class="item">
                                         Label
                                     </a>
@@ -505,8 +552,11 @@
                                     <a href="components/select/#story-error-label" id="story-error-label-a" class="item">
                                         Error Label
                                     </a>
-                                    <a href="components/select/#story-clear" id="story-clear-a" class="item">
-                                        Clear
+                                    <a href="components/select/#story-clearable" id="story-clearable-a" class="item">
+                                        Clearable
+                                    </a>
+                                    <a href="components/select/#story-custom-clear-slot" id="story-custom-clear-slot-a" class="item">
+                                        Custom Clear Slot
                                     </a>
                                     <a href="components/select/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
@@ -542,7 +592,7 @@
                                 <tr>
                                     <td data-label="Name" scope="row">items</td>
                                     <td data-label="Attribute" scope="row">items&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">SelectItems | (() =&gt; SelectItems) | undefined</code></pre></td>
+                                    <td data-label="Type"><pre><code class="language-js">SelectItems | ((filterValue?: string) =&gt; SelectItems) | undefined</code></pre></td>
                                     <td data-label="Description">Selectable items of the select component.</td>
                                 </tr>
                                 
@@ -568,10 +618,24 @@
                                 </tr>
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">searchable</td>
+                                    <td data-label="Attribute" scope="row">searchable&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
+                                    <td data-label="Description">Toggles the ability to search the items of the select of the component.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">renderItem</td>
                                     <td data-label="Attribute" scope="row">&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">RenderFunction | undefined</code></pre></td>
                                     <td data-label="Description">Render function for each item.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">filterItems</td>
+                                    <td data-label="Attribute" scope="row">&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">(filterValue: string, items: SelectTypes) =&gt; SelectItems | undefined</code></pre></td>
+                                    <td data-label="Description">Custom search function for items instead of using the default provided.</td>
                                 </tr>
                                 
                                 <tr>
@@ -748,6 +812,11 @@
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">arrow</code></pre></td>
                                     <td data-label="Description">Replaces the icon for the arrow slot (Displays on desktop and tablet devices).</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">search-clear</code></pre></td>
+                                    <td data-label="Description">Replaces the icon in the Search field (Displays when searchable is set to true).</td>
                                 </tr>
                                 
                             </tbody>
@@ -1195,8 +1264,18 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-icon-color</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-slot-color</code></pre></td>
                                         <td data-label="Description">Form clear icon color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-slot-height</code></pre></td>
+                                        <td data-label="Description">Form clear slot height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-slot-width</code></pre></td>
+                                        <td data-label="Description">Form clear slot width.</td>
                                     </tr>
                                     
                                 </tbody>
@@ -1306,33 +1385,13 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-left</code></pre></td>
-                                        <td data-label="Description">Select dialog left.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-items-container-z-index</code></pre></td>
+                                        <td data-label="Description">Select items container z-index.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-right</code></pre></td>
-                                        <td data-label="Description">Select dialog right.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-bottom</code></pre></td>
-                                        <td data-label="Description">Select dialog bottom.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-modal-max-height</code></pre></td>
-                                        <td data-label="Description">Select dialog height.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-modal-max-width</code></pre></td>
-                                        <td data-label="Description">Select dialog modal max width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-background-color</code></pre></td>
-                                        <td data-label="Description">Select dialog background color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-items-max-height</code></pre></td>
+                                        <td data-label="Description">Select items max height.</td>
                                     </tr>
                                     
                                     <tr>
@@ -1351,66 +1410,6 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-left</code></pre></td>
-                                        <td data-label="Description">Select item header left.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-right</code></pre></td>
-                                        <td data-label="Description">Select item header right.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-family</code></pre></td>
-                                        <td data-label="Description">Select item header font family.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-size</code></pre></td>
-                                        <td data-label="Description">Select item header font size.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-weight</code></pre></td>
-                                        <td data-label="Description">Select item header font weight.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-background-color</code></pre></td>
-                                        <td data-label="Description">Select item header font background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-top</code></pre></td>
-                                        <td data-label="Description">Select item header top padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-bottom</code></pre></td>
-                                        <td data-label="Description">Select item head bottom padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-right</code></pre></td>
-                                        <td data-label="Description">Select item head right padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-left</code></pre></td>
-                                        <td data-label="Description">Select item head left padding.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-item-border-top-left-radius</code></pre></td>
-                                        <td data-label="Description">Select item header top left border radius.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-item-border-top-right-radius</code></pre></td>
-                                        <td data-label="Description">Select item header top right border radius.</td>
-                                    </tr>
-                                    
-                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-items-height</code></pre></td>
                                         <td data-label="Description">Select items height.</td>
                                     </tr>
@@ -1421,6 +1420,11 @@
                                     </tr>
                                     
                                     <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-items-background-color</code></pre></td>
+                                        <td data-label="Description">Select items background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-font-color</code></pre></td>
                                         <td data-label="Description">Select item font color.</td>
                                     </tr>
@@ -1428,6 +1432,11 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-font-family</code></pre></td>
                                         <td data-label="Description">Select item font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-font-size</code></pre></td>
+                                        <td data-label="Description">Select item font size.</td>
                                     </tr>
                                     
                                     <tr>
@@ -1483,6 +1492,221 @@
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-loading-indicator-height</code></pre></td>
                                         <td data-label="Description">Select loading indicator height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-color</code></pre></td>
+                                        <td data-label="Description">Select search field font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-family</code></pre></td>
+                                        <td data-label="Description">Select search field font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-size</code></pre></td>
+                                        <td data-label="Description">Select search field font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-font-weight</code></pre></td>
+                                        <td data-label="Description">Select search field font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-top</code></pre></td>
+                                        <td data-label="Description">Select search field top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Select search field bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-left</code></pre></td>
+                                        <td data-label="Description">Select search field left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-padding-right</code></pre></td>
+                                        <td data-label="Description">Select search field right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-width</code></pre></td>
+                                        <td data-label="Description">Select search field width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-top-border-width</code></pre></td>
+                                        <td data-label="Description">Select search field top border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-left-border-width</code></pre></td>
+                                        <td data-label="Description">Select search field left border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-right-border-width</code></pre></td>
+                                        <td data-label="Description">Select search field right border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-bottom-border-width</code></pre></td>
+                                        <td data-label="Description">Select search field bottom border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-bottom-border-color</code></pre></td>
+                                        <td data-label="Description">Select search field bottom border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-field-background-color</code></pre></td>
+                                        <td data-label="Description">Select search field background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-control-bottom-border</code></pre></td>
+                                        <td data-label="Description"> Select search field clear control bottom border.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-clear-div-right-padding</code></pre></td>
+                                        <td data-label="Description">Select search field clear div right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-clear-div-background-color</code></pre></td>
+                                        <td data-label="Description">Select search field clear div background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-clear-icon-height</code></pre></td>
+                                        <td data-label="Description">Select search field clear icon height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-clear-icon-width</code></pre></td>
+                                        <td data-label="Description">Select search field clear icon width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-search-clear-icon-color</code></pre></td>
+                                        <td data-label="Description">Select search field clear icon color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-left</code></pre></td>
+                                        <td data-label="Description">Select item header left.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-right</code></pre></td>
+                                        <td data-label="Description">Select item header right.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-color</code></pre></td>
+                                        <td data-label="Description">Select item header font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-family</code></pre></td>
+                                        <td data-label="Description">Select item header font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-size</code></pre></td>
+                                        <td data-label="Description">Select item header font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-weight</code></pre></td>
+                                        <td data-label="Description">Select item header font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-font-background-color</code></pre></td>
+                                        <td data-label="Description">Select item header font background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-top</code></pre></td>
+                                        <td data-label="Description">Select item header top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Select item head bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-right</code></pre></td>
+                                        <td data-label="Description">Select item head right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-padding-left</code></pre></td>
+                                        <td data-label="Description">Select item head left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-item-border-top-left-radius</code></pre></td>
+                                        <td data-label="Description">Select item header top left border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-item-header-item-border-top-right-radius</code></pre></td>
+                                        <td data-label="Description">Select item header top right border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-width</code></pre></td>
+                                        <td data-label="Description">Select dialog width</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-left</code></pre></td>
+                                        <td data-label="Description">Select dialog left.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-right</code></pre></td>
+                                        <td data-label="Description">Select dialog right.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-bottom</code></pre></td>
+                                        <td data-label="Description">Select dialog bottom.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-background-color</code></pre></td>
+                                        <td data-label="Description">Select dialog background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-modal-max-width</code></pre></td>
+                                        <td data-label="Description">Select dialog modal max width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-modal-max-height</code></pre></td>
+                                        <td data-label="Description">Select dialog height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-backdrop-color</code></pre></td>
+                                        <td data-label="Description">Select dialog background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-select-dialog-items-min-height</code></pre></td>
+                                        <td data-label="Description">Select dialog items min height.</td>
                                     </tr>
                                     
                                 </tbody>

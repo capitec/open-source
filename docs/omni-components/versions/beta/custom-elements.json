@@ -2551,7 +2551,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -2620,9 +2624,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/color-field/ColorField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/color-field/ColorField.stories.ts"
           }
         },
@@ -3710,7 +3722,15 @@
             },
             {
               "description": "Form clear icon color.",
-              "name": "--omni-form-clear-icon-color"
+              "name": "--omni-form-clear-slot-color"
+            },
+            {
+              "description": "Form clear slot height.",
+              "name": "--omni-form-clear-slot-height"
+            },
+            {
+              "description": "Form clear slot width.",
+              "name": "--omni-form-clear-slot-width"
             }
           ],
           "slots": [
@@ -4178,6 +4198,25 @@
         },
         {
           "kind": "function",
+          "name": "CustomClearableSlot",
+          "parameters": [
+            {
+              "name": "tagName",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "inputValue",
+              "default": "'The input value'",
+              "type": {
+                "text": "string | number | string[]"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "function",
           "name": "DisabledStory",
           "parameters": [
             {
@@ -4255,6 +4294,14 @@
         },
         {
           "kind": "js",
+          "name": "CustomClearableSlot",
+          "declaration": {
+            "name": "CustomClearableSlot",
+            "module": "src/core/OmniInputStories.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "DisabledStory",
           "declaration": {
             "name": "DisabledStory",
@@ -4293,7 +4340,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -4358,9 +4409,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/currency-field/CurrencyField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/currency-field/CurrencyField.stories.ts"
           }
         },
@@ -5343,7 +5402,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -5432,9 +5495,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/date-picker/DatePicker.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/date-picker/DatePicker.stories.ts"
           }
         },
@@ -6296,7 +6367,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -6361,9 +6436,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/email-field/EmailField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/email-field/EmailField.stories.ts"
           }
         },
@@ -11813,7 +11896,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -11878,9 +11965,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/number-field/NumberField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/number-field/NumberField.stories.ts"
           }
         },
@@ -12543,7 +12638,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -12616,9 +12715,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/password-field/PasswordField.stories.ts"
           }
         },
@@ -13337,7 +13444,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -13410,9 +13521,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/pin-field/PinField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/pin-field/PinField.stories.ts"
           }
         },
@@ -15464,7 +15583,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -15529,9 +15652,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/search-field/SearchField.stories.ts"
           }
         },
@@ -16198,7 +16329,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            id-field=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            empty-message=\"${args.emptyMessage}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        items: displayItems as Record<string, unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: '',\n        emptyMessage: 'No items provided'\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-select\n            data-testid=\"test-select\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            .items=\"${args.items}\"\n            display-field=\"${args.displayField}\"\n            .renderItem=\"${args.renderItem}\"\n            .filterItems=\"${args.filterItems}\"\n            id-field=\"${args.idField}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\"\n            ?searchable=\"${args.searchable}\"\n            empty-message=\"${args.emptyMessage}\"\n            >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }\n            ${args.loading_indicator ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('loading_indicator', args.loading_indicator))}${'\\r\\n'}` : nothing}${\n        args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing\n    }</omni-select\n        >\n    `,\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        searchable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        items: displayItems as Record<string, unknown>[],\n        displayField: 'label',\n        idField: 'id',\n        loading_indicator: '',\n        emptyMessage: 'No items provided'\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        const change = jest.fn();\n        select.addEventListener('click', click);\n        select.addEventListener('change', change);\n\n        await userEvent.click(select);\n        await userEvent.click(select);\n\n        await expect(click).toBeCalledTimes(2);\n\n        const controlButton = select.shadowRoot?.getElementById('control');\n\n        await expect(controlButton).toBeTruthy();\n\n        await userEvent.click(select);\n\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n\n        await expect(change).toBeCalledTimes(1);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -16250,6 +16381,38 @@
         },
         {
           "kind": "variable",
+          "name": "Searchable",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" display-field=\"${args.displayField}\" id-field=\"${\n        args.idField\n    }\" ?searchable=\"${args.searchable}\">\n    </omni-select>\n`,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (\n                args\n            ) => `<omni-select id='omni-select' label=\"${args.label}\" display-field=\"${args.displayField}\" id-field=\"${args.idField}\" searchable></omni-select>\n        <script defer>\n            const displayItems = [\n                { id: '1', label: 'Peter Parker' },\n                { id: '2', label: 'James Howlett' },\n                { id: '3', label: 'Tony Stark' },\n                { id: '4', label: 'Steve Rodgers' },\n                { id: '5', label: 'Bruce Banner' },\n                { id: '6', label: 'Wanda Maximoff' },\n                { id: '7', label: 'TChalla' },\n                { id: '8', label: 'Henry P. McCoy' },\n                { id: '9', label: 'Carl Lucas' },\n                { id: '10', label: 'Frank Castle' }\n            ];  \n            select = document.getElementById('omni-select');\n            select.items = displayItems;\n        </script>`\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSelect } from \"@capitec/omni-components-react/select\";\n\nconst displayItems = [\n    { id: '1', label: 'Peter Parker' },\n    { id: '2', label: 'James Howlett' },\n    { id: '3', label: 'Tony Stark' },\n    { id: '4', label: 'Steve Rodgers' },\n    { id: '5', label: 'Bruce Banner' },\n    { id: '6', label: 'Wanda Maximoff' },\n    { id: '7', label: 'TChalla' },\n    { id: '8', label: 'Henry P. McCoy' },\n    { id: '9', label: 'Carl Lucas' },\n    { id: '10', label: 'Frank Castle' }\n];\nconst App = () => <OmniSelect label=\"${args.label}\" display-field=\"${args.displayField}\" id-field=\"${args.idField}\" items={displayItems} searchable></OmniSelect>`\n        }\n    ],\n    name: 'Searchable',\n    description: 'Adds a search input to limit the options to Select',\n    args: {\n        label: 'Searchable',\n        displayField: 'label',\n        idField: 'id',\n        searchable: true,\n        items: displayItems as Record<string, unknown>[]\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n\n        await userEvent.click(select);\n\n        const searchField = (await querySelectorAsync(select!.shadowRoot!, '#searchField')) as HTMLInputElement;\n        await expect(searchField).toBeTruthy();\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(searchField);\n        await userEvent.click(searchField);\n\n        const value = 'Peter';\n        await userEvent.type(searchField, value);\n\n        //Add check to find the items-container once the component is opened.\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(displayItems[0].label);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Search",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?searchable=\"${args.searchable}\" .filterItems=\"${\n        args.filterItems\n    }\">\n    </omni-select>\n`,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => `<omni-select id='omni-select' label=\"${args.label}\" searchable></omni-select>\n    <script defer>\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ];  \n        function customSearch(filter, items){\n            if(Array.isArray(items) && filter !== null) {\n                return items = items.filter((i) => itemFilter(filter,i));\n            } else {\n                return items;\n            }\n        }\n        function itemFilter(filter, item){\n            return item.includes(filter);\n        }\n        select = document.getElementById('omni-select');\n        select.items = stringItems;\n        select.filterItems = customSearch;\n    </script>`\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSelect } from \"@capitec/omni-components-react/select\";\n\nconst stringItems = [\n    'Bruce Wayne', \n    'Clark Kent', \n    'Barry Allen', \n    'Arthur Curry', \n    'Hal Jordan'\n];\nfunction customSearch(filter, items){\n    if(Array.isArray(items) && filter !== null){\n        return items = items.filter((i) => itemFilter(filter,i));\n    } else {\n        return items;\n    }\n}\nfunction itemFilter(filter, item){\n    return item.includes(filter);\n}\nconst App = () => <OmniSelect label=\"${args.label}\" items={stringItems} filterItems={customSearch} searchable>\n</OmniSelect>`\n        }\n    ],\n    name: 'Custom Search',\n    description: 'Custom search function',\n    args: {\n        label: 'Custom Search',\n        searchable: true,\n        items: stringItems,\n        filterItems: customSearch\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n\n        await userEvent.click(select);\n\n        const searchField = (await querySelectorAsync(select!.shadowRoot!, '#searchField')) as HTMLInputElement;\n        await expect(searchField).toBeTruthy();\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(searchField);\n        await userEvent.click(searchField);\n\n        const value = 'Bruce';\n        await userEvent.type(searchField, value);\n\n        //Add check to find the items-container once the component is opened.\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(stringItems[0]);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Server_Side_Filtering",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?searchable=\"${args.searchable}\" .filterItems=\"${\n        args.filterItems\n    }\">\n    </omni-select>\n`,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => `<omni-select id='omni-select' label=\"${args.label}\" searchable></omni-select>\n    <script defer>\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ]; \n        async function searchFilter(filter,items){\n            await new Promise((r) => setTimeout(() => r(), 2000));\n            return customSearch(filter,items);\n        }\n        \n        function customSearch(filter, items){\n            if(Array.isArray(items) && filter !== null) {\n                return items = items.filter((i) => itemFilter(filter,i));\n            } else {\n                return items;\n            }\n        }\n        function itemFilter(filter, item){\n            return item.includes(filter);\n        }\n        select = document.getElementById('omni-select');\n        select.items = stringItems;\n        select.filterItems = searchFilter;\n    </script>`\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSelect } from \"@capitec/omni-components-react/select\";\n\nconst stringItems = [\n    'Bruce Wayne', \n    'Clark Kent', \n    'Barry Allen', \n    'Arthur Curry', \n    'Hal Jordan'\n];\nasync function searchFilter(filter, items){\n    await new Promise((r) => setTimeout(() => r(), 2000));\n    return customSearch(filter,items);\n}\nfunction customSearch(filter, items){\n    if(Array.isArray(items) && filter !== null){\n        return items = items.filter((i) => itemFilter(filter,i));\n    } else {\n        return items;\n    }\n}\nfunction itemFilter(filter, item){\n    return item.includes(filter);\n}\nconst App = () => <OmniSelect label=\"${args.label}\" items={stringItems} filterItems={searchFilter} searchable></OmniSelect>`\n        }\n    ],\n    name: 'Server Side Filtering',\n    description: 'Select with server side filtering',\n    args: {\n        label: 'Server Side Filtering',\n        searchable: true,\n        items: stringItems,\n        filterItems: promiseSearchFilter\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n\n        await userEvent.click(select);\n\n        const searchField = (await querySelectorAsync(select!.shadowRoot!, '#searchField')) as HTMLInputElement;\n        await expect(searchField).toBeTruthy();\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(searchField);\n        await userEvent.click(searchField);\n\n        const value = 'Bruce';\n        await userEvent.type(searchField, value);\n\n        //Add check to find the items-container once the component is opened.\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        let item;\n        // TODO: Fix race conditions in tests\n        if (navigator.userAgent === 'Test Runner') {\n            item = await querySelectorAsync(select.shadowRoot!, '.item', undefined, 3000);\n        } else {\n            item = await querySelectorAsync(select.shadowRoot!, '.item', undefined, 5000);\n        }\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(stringItems[0]);\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Search_Slot",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-select data-testid=\"test-select\" label=\"${ifNotEmpty(args.label)}\" .items=\"${args.items}\" ?searchable=\"${args.searchable}\">\n    <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"  width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z\" /></svg>\n    </omni-select>\n`,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => `\n            <omni-select id='omni-select' label=\"${args.label}\" searchable>\n              <svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"  width=\"24px\" height=\"24px\" style=\"fill: orange;\"><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z\" /></svg>\n            </omni-select>\n    <script defer>\n        const stringItems = [\n            'Bruce Wayne', \n            'Clark Kent', \n            'Barry Allen', \n            'Arthur Curry', \n            'Hal Jordan'\n        ];  \n        select = document.getElementById('omni-select');\n        select.items = stringItems;\n    </script>`\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSelect } from \"@capitec/omni-components-react/select\";\n\nconst stringItems = [\n    'Bruce Wayne', \n    'Clark Kent', \n    'Barry Allen', \n    'Arthur Curry', \n    'Hal Jordan'\n];\nconst App = () => <OmniSelect label=\"${args.label}\" items={stringItems} searchable>\n<svg slot=\"search-clear\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24px\" height=\"24px\" style={{fill: 'orange'}}><path d=\"M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z\" /></svg>\n</OmniSelect>`\n        }\n    ],\n    name: 'Custom Search Field Slot',\n    description: 'Select component with search field custom slotted icon.',\n    args: {\n        label: 'Custom Search Slot',\n        searchable: true,\n        items: stringItems\n    } as Args,\n    play: async (context) => {\n        const select = within(context.canvasElement).getByTestId<Select>('test-select');\n        const click = jest.fn();\n        select.addEventListener('click', click);\n\n        await userEvent.click(select);\n\n        const searchField = (await querySelectorAsync(select!.shadowRoot!, '#searchField')) as HTMLInputElement;\n        await expect(searchField).toBeTruthy();\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(searchField);\n        await userEvent.click(searchField);\n\n        const value = 'Bruce';\n        await userEvent.type(searchField, value);\n\n        const slotElement = select.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=search-clear]');\n        await expect(slotElement).toBeTruthy();\n\n        const foundSlottedSvgElement = slotElement?.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'svg');\n        await expect(foundSlottedSvgElement).toBeTruthy();\n\n        //Add check to find the items-container once the component is opened.\n        const itemContainer = await querySelectorAsync(select!.shadowRoot!, '#items-container');\n        await expect(itemContainer).toBeTruthy();\n\n        const items = select.shadowRoot?.getElementById('items');\n        await expect(items).toBeTruthy();\n\n        const item = await querySelectorAsync(select!.shadowRoot!, '.item');\n\n        await expect(item).toBeTruthy();\n        await userEvent.click(item as HTMLDivElement);\n\n        const selectField = select.shadowRoot?.getElementById('select');\n        await expect(selectField).toHaveValue(stringItems[0]);\n    }\n}"
+        },
+        {
+          "kind": "variable",
           "name": "Label"
         },
         {
@@ -16262,7 +16425,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -16339,6 +16506,38 @@
         },
         {
           "kind": "js",
+          "name": "Searchable",
+          "declaration": {
+            "name": "Searchable",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Search",
+          "declaration": {
+            "name": "Custom_Search",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Server_Side_Filtering",
+          "declaration": {
+            "name": "Server_Side_Filtering",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Search_Slot",
+          "declaration": {
+            "name": "Custom_Search_Slot",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "Label",
           "declaration": {
             "name": "Label",
@@ -16363,9 +16562,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/select/Select.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/select/Select.stories.ts"
           }
         },
@@ -16465,28 +16672,12 @@
               "name": "--omni-select-items-container-background-color"
             },
             {
-              "description": "Select dialog left.",
-              "name": "--omni-select-dialog-left"
+              "description": "Select items container z-index.",
+              "name": "--omni-select-items-container-z-index"
             },
             {
-              "description": "Select dialog right.",
-              "name": "--omni-select-dialog-right"
-            },
-            {
-              "description": "Select dialog bottom.",
-              "name": "--omni-select-dialog-bottom"
-            },
-            {
-              "description": "Select dialog height.",
-              "name": "--omni-select-dialog-modal-max-height"
-            },
-            {
-              "description": "Select dialog modal max width.",
-              "name": "--omni-select-dialog-modal-max-width"
-            },
-            {
-              "description": "Select dialog background color.",
-              "name": "--omni-select-dialog-background-color"
+              "description": "Select items max height.",
+              "name": "--omni-select-items-max-height"
             },
             {
               "description": "Select items container width",
@@ -16501,54 +16692,6 @@
               "name": "--omni-select-items-container-render-bottom-top"
             },
             {
-              "description": "Select item header left.",
-              "name": "--omni-select-item-header-left"
-            },
-            {
-              "description": "Select item header right.",
-              "name": "--omni-select-item-header-right"
-            },
-            {
-              "description": "Select item header font family.",
-              "name": "--omni-select-item-header-font-family"
-            },
-            {
-              "description": "Select item header font size.",
-              "name": "--omni-select-item-header-font-size"
-            },
-            {
-              "description": "Select item header font weight.",
-              "name": "--omni-select-item-header-font-weight"
-            },
-            {
-              "description": "Select item header font background color.",
-              "name": "--omni-select-item-header-font-background-color"
-            },
-            {
-              "description": "Select item header top padding.",
-              "name": "--omni-select-item-header-padding-top"
-            },
-            {
-              "description": "Select item head bottom padding.",
-              "name": "--omni-select-item-header-padding-bottom"
-            },
-            {
-              "description": "Select item head right padding.",
-              "name": "--omni-select-item-header-padding-right"
-            },
-            {
-              "description": "Select item head left padding.",
-              "name": "--omni-select-item-header-padding-left"
-            },
-            {
-              "description": "Select item header top left border radius.",
-              "name": "--omni-select-item-header-item-border-top-left-radius"
-            },
-            {
-              "description": "Select item header top right border radius.",
-              "name": "--omni-select-item-header-item-border-top-right-radius"
-            },
-            {
               "description": "Select items height.",
               "name": "--omni-select-items-height"
             },
@@ -16557,12 +16700,20 @@
               "name": "--omni-select-items-width"
             },
             {
+              "description": "Select items background color.",
+              "name": "--omni-select-items-background-color"
+            },
+            {
               "description": "Select item font color.",
               "name": "--omni-select-item-font-color"
             },
             {
               "description": "Select item font family.",
               "name": "--omni-select-item-font-family"
+            },
+            {
+              "description": "Select item font size.",
+              "name": "--omni-select-item-font-size"
             },
             {
               "description": "Select item font weight.",
@@ -16607,6 +16758,178 @@
             {
               "description": "Select loading indicator height.",
               "name": "--omni-select-loading-indicator-height"
+            },
+            {
+              "description": "Select search field font color.",
+              "name": "--omni-select-search-field-font-color"
+            },
+            {
+              "description": "Select search field font family.",
+              "name": "--omni-select-search-field-font-family"
+            },
+            {
+              "description": "Select search field font size.",
+              "name": "--omni-select-search-field-font-size"
+            },
+            {
+              "description": "Select search field font weight.",
+              "name": "--omni-select-search-field-font-weight"
+            },
+            {
+              "description": "Select search field top padding.",
+              "name": "--omni-select-search-field-padding-top"
+            },
+            {
+              "description": "Select search field bottom padding.",
+              "name": "--omni-select-search-field-padding-bottom"
+            },
+            {
+              "description": "Select search field left padding.",
+              "name": "--omni-select-search-field-padding-left"
+            },
+            {
+              "description": "Select search field right padding.",
+              "name": "--omni-select-search-field-padding-right"
+            },
+            {
+              "description": "Select search field width.",
+              "name": "--omni-select-search-field-width"
+            },
+            {
+              "description": "Select search field top border width.",
+              "name": "--omni-select-search-field-top-border-width"
+            },
+            {
+              "description": "Select search field left border width.",
+              "name": "--omni-select-search-field-left-border-width"
+            },
+            {
+              "description": "Select search field right border width.",
+              "name": "--omni-select-search-field-right-border-width"
+            },
+            {
+              "description": "Select search field bottom border width.",
+              "name": "--omni-select-search-field-bottom-border-width"
+            },
+            {
+              "description": "Select search field bottom border color.",
+              "name": "--omni-select-search-field-bottom-border-color"
+            },
+            {
+              "description": "Select search field background color.",
+              "name": "--omni-select-search-field-background-color"
+            },
+            {
+              "description": " Select search field clear control bottom border.",
+              "name": "--omni-select-search-control-bottom-border"
+            },
+            {
+              "description": "Select search field clear div right padding.",
+              "name": "--omni-select-search-clear-div-right-padding"
+            },
+            {
+              "description": "Select search field clear div background color.",
+              "name": "--omni-select-search-clear-div-background-color"
+            },
+            {
+              "description": "Select search field clear icon height.",
+              "name": "--omni-select-search-clear-icon-height"
+            },
+            {
+              "description": "Select search field clear icon width.",
+              "name": "--omni-select-search-clear-icon-width"
+            },
+            {
+              "description": "Select search field clear icon color.",
+              "name": "--omni-select-search-clear-icon-color"
+            },
+            {
+              "description": "Select item header left.",
+              "name": "--omni-select-item-header-left"
+            },
+            {
+              "description": "Select item header right.",
+              "name": "--omni-select-item-header-right"
+            },
+            {
+              "description": "Select item header font color.",
+              "name": "--omni-select-item-header-font-color"
+            },
+            {
+              "description": "Select item header font family.",
+              "name": "--omni-select-item-header-font-family"
+            },
+            {
+              "description": "Select item header font size.",
+              "name": "--omni-select-item-header-font-size"
+            },
+            {
+              "description": "Select item header font weight.",
+              "name": "--omni-select-item-header-font-weight"
+            },
+            {
+              "description": "Select item header font background color.",
+              "name": "--omni-select-item-header-font-background-color"
+            },
+            {
+              "description": "Select item header top padding.",
+              "name": "--omni-select-item-header-padding-top"
+            },
+            {
+              "description": "Select item head bottom padding.",
+              "name": "--omni-select-item-header-padding-bottom"
+            },
+            {
+              "description": "Select item head right padding.",
+              "name": "--omni-select-item-header-padding-right"
+            },
+            {
+              "description": "Select item head left padding.",
+              "name": "--omni-select-item-header-padding-left"
+            },
+            {
+              "description": "Select item header top left border radius.",
+              "name": "--omni-select-item-header-item-border-top-left-radius"
+            },
+            {
+              "description": "Select item header top right border radius.",
+              "name": "--omni-select-item-header-item-border-top-right-radius"
+            },
+            {
+              "description": "Select dialog width",
+              "name": "--omni-select-dialog-width"
+            },
+            {
+              "description": "Select dialog left.",
+              "name": "--omni-select-dialog-left"
+            },
+            {
+              "description": "Select dialog right.",
+              "name": "--omni-select-dialog-right"
+            },
+            {
+              "description": "Select dialog bottom.",
+              "name": "--omni-select-dialog-bottom"
+            },
+            {
+              "description": "Select dialog background color.",
+              "name": "--omni-select-dialog-background-color"
+            },
+            {
+              "description": "Select dialog modal max width.",
+              "name": "--omni-select-dialog-modal-max-width"
+            },
+            {
+              "description": "Select dialog height.",
+              "name": "--omni-select-dialog-modal-max-height"
+            },
+            {
+              "description": "Select dialog background color.",
+              "name": "--omni-select-dialog-backdrop-color"
+            },
+            {
+              "description": "Select dialog items min height.",
+              "name": "--omni-select-dialog-items-min-height"
             }
           ],
           "slots": [
@@ -16649,12 +16972,24 @@
             {
               "description": "Replaces the icon for the arrow slot (Displays on desktop and tablet devices).",
               "name": "arrow"
+            },
+            {
+              "description": "Replaces the icon in the Search field (Displays when searchable is set to true).",
+              "name": "search-clear"
             }
           ],
           "members": [
             {
               "kind": "field",
               "name": "_selectElement",
+              "type": {
+                "text": "HTMLInputElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_searchElement",
               "type": {
                 "text": "HTMLInputElement | undefined"
               },
@@ -16672,7 +17007,7 @@
               "kind": "field",
               "name": "items",
               "type": {
-                "text": "SelectItems | (() => SelectItems) | undefined"
+                "text": "SelectItems | ((filterValue?: string) => SelectItems) | undefined"
               },
               "description": "Selectable items of the select component.",
               "attribute": "items",
@@ -16712,11 +17047,30 @@
             },
             {
               "kind": "field",
+              "name": "searchable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to search the items of the select of the component.",
+              "attribute": "searchable",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "renderItem",
               "type": {
                 "text": "RenderFunction | undefined"
               },
               "description": "Render function for each item."
+            },
+            {
+              "kind": "field",
+              "name": "filterItems",
+              "type": {
+                "text": "(filterValue: string, items: SelectTypes) => SelectItems | undefined"
+              },
+              "description": "Custom search function for items instead of using the default provided."
             },
             {
               "kind": "field",
@@ -16744,6 +17098,14 @@
               },
               "privacy": "private",
               "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_searchValue",
+              "type": {
+                "text": "string | undefined"
+              },
+              "privacy": "private"
             },
             {
               "kind": "method",
@@ -16816,6 +17178,14 @@
             },
             {
               "kind": "method",
+              "name": "_onSearchFieldInput"
+            },
+            {
+              "kind": "method",
+              "name": "_onSearchFieldClear"
+            },
+            {
+              "kind": "method",
               "name": "renderContent",
               "privacy": "protected",
               "return": {
@@ -16844,6 +17214,10 @@
             },
             {
               "kind": "method",
+              "name": "_renderSearchField"
+            },
+            {
+              "kind": "method",
               "name": "renderControl",
               "privacy": "protected",
               "return": {
@@ -16859,6 +17233,18 @@
             {
               "kind": "method",
               "name": "_renderOptions"
+            },
+            {
+              "kind": "method",
+              "name": "_filterOption",
+              "parameters": [
+                {
+                  "name": "item",
+                  "type": {
+                    "text": "string | Record<string, unknown>"
+                  }
+                }
+              ]
             },
             {
               "kind": "method",
@@ -17108,7 +17494,7 @@
             {
               "name": "items",
               "type": {
-                "text": "SelectItems | (() => SelectItems) | undefined"
+                "text": "SelectItems | ((filterValue?: string) => SelectItems) | undefined"
               },
               "description": "Selectable items of the select component.",
               "fieldName": "items",
@@ -17142,6 +17528,16 @@
               "description": "Message displayed in the items container when no items are bound to the component.",
               "fieldName": "emptyMessage",
               "attribute": "empty-message"
+            },
+            {
+              "name": "searchable",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false",
+              "description": "Toggles the ability to search the items of the select of the component.",
+              "fieldName": "searchable",
+              "attribute": "searchable"
             },
             {
               "name": "label",
@@ -17927,7 +18323,11 @@
         },
         {
           "kind": "variable",
-          "name": "Clear"
+          "name": "Clearable"
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Clear_Slot"
         },
         {
           "kind": "variable",
@@ -17992,9 +18392,17 @@
         },
         {
           "kind": "js",
-          "name": "Clear",
+          "name": "Clearable",
           "declaration": {
-            "name": "Clear",
+            "name": "Clearable",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Clear_Slot",
+          "declaration": {
+            "name": "Custom_Clear_Slot",
             "module": "src/text-field/TextField.stories.ts"
           }
         },

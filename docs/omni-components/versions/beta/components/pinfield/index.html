@@ -422,11 +422,18 @@
                                 key="Value"
                                  >
                             </story-renderer>
-                            <div class="name" id="story-clear">Clear</div>
+                            <div class="name" id="story-clearable">Clearable</div>
                             <story-renderer 
                                 path="./dist/pin-field/PinField.stories.js" 
                                 tag="omni-pin-field" 
-                                key="Clear"
+                                key="Clearable"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-clear-slot">Custom Clear Slot</div>
+                            <story-renderer 
+                                path="./dist/pin-field/PinField.stories.js" 
+                                tag="omni-pin-field" 
+                                key="Custom_Clear_Slot"
                                  >
                             </story-renderer>
                             <div class="name" id="story-prefix">Prefix</div>
@@ -472,8 +479,11 @@
                                     <a href="components/pinfield/#story-value" id="story-value-a" class="item">
                                         Value
                                     </a>
-                                    <a href="components/pinfield/#story-clear" id="story-clear-a" class="item">
-                                        Clear
+                                    <a href="components/pinfield/#story-clearable" id="story-clearable-a" class="item">
+                                        Clearable
+                                    </a>
+                                    <a href="components/pinfield/#story-custom-clear-slot" id="story-custom-clear-slot-a" class="item">
+                                        Custom Clear Slot
                                     </a>
                                     <a href="components/pinfield/#story-prefix" id="story-prefix-a" class="item">
                                         Prefix
@@ -1116,8 +1126,18 @@
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-icon-color</code></pre></td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-slot-color</code></pre></td>
                                         <td data-label="Description">Form clear icon color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-slot-height</code></pre></td>
+                                        <td data-label="Description">Form clear slot height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-form-clear-slot-width</code></pre></td>
+                                        <td data-label="Description">Form clear slot width.</td>
                                     </tr>
                                     
                                 </tbody>

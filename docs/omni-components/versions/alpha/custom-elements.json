@@ -13775,18 +13775,6 @@
             },
             {
               "kind": "method",
-              "name": "_onPaste",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "ClipboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "_iconClicked",
               "parameters": [
                 {

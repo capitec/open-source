@@ -13759,18 +13759,6 @@
             },
             {
               "kind": "method",
-              "name": "_keyDown",
-              "parameters": [
-                {
-                  "name": "e",
-                  "type": {
-                    "text": "KeyboardEvent"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
               "name": "_keyInput"
             },
             {

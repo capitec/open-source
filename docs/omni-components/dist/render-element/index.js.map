@@ -1,6 +1,6 @@
 {
   "version": 3,
   "sources": ["../../src/render-element/index.ts"],
-  "mappings": "gTAAAA,IAAAC",
+  "mappings": "uVAAAA,IAAAC",
   "names": ["init_define_process_argv", "init_global"]
 }

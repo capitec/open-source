@@ -92,16 +92,23 @@
                     </div>
                     <div class="header-version-section">
                         <div class="header-version" id="header-version-indicator">
-                            0.6.0
+                            0.7.0
                         </div>
                         <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
                 </div>
                 <div class="header-actions">
-                    <span class="material-icons docs-omni-component action" style="display: none;" id="header-theme-edit-btn">
+                    <span class="header-action-section">
+                        <div class="docs-omni-component action hidden-until-760 action" style="height: 37px; width: 37px;" id="header-framework-select-btn">
+                            
+                        </div>
+                        <select class="docs-select theme-select transparent hidden-until-760" id="header-framework-native-select"></select>
+                        <omni-select class="shrink-omni-select docs-omni-component hidden-after-760" id="header-framework-select"></omni-select>
+                    </span>
+                    <span class="header-action-section material-icons docs-omni-component action" style="display: none;" id="header-theme-edit-btn">
                         edit
                     </span>
-                    <span class="header-theme-section">
+                    <span class="header-action-section">
                         <span class="material-icons docs-omni-component action hidden-until-760 action" style="height: 37px; width: 37px;" id="header-theme-select-btn">
                             format_color_fill
                         </span>
@@ -165,28 +172,28 @@
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/colorfield">
+            href="./components/color-field">
                 Color Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/currencyfield">
+            href="./components/currency-field">
                 Currency Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/datepicker">
+            href="./components/date-picker">
                 Date Picker
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/emailfield">
+            href="./components/email-field">
                 Email Field
             </a>
         </div>
@@ -221,21 +228,28 @@
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/numberfield">
+            href="./components/modal">
+                Modal
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/number-field">
                 Number Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/passwordfield">
+            href="./components/password-field">
                 Password Field
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/pinfield">
+            href="./components/pin-field">
                 Pin Field
             </a>
         </div>
@@ -249,21 +263,21 @@
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/radiogroup">
+            href="./components/radio-group">
                 Radio Group
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/renderelement">
+            href="./components/render-element">
                 Render Element
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/searchfield">
+            href="./components/search-field">
                 Search Field
             </a>
         </div>
@@ -284,7 +298,7 @@
         <div class="menu-item ">
             <a class="menu-link "
              
-            href="./components/textfield">
+            href="./components/text-field">
                 Text Field
             </a>
         </div>
@@ -301,23 +315,6 @@
         <div class="component-name">Icon</div>
         <div class="component-desc">Component that displays an icon.</div> 
         <div class="component-info">
-            <div class="component-info-item">
-                <div>Usage</div>
-                <div class="component-framework-toggle docs-omni-component">
-                    <div class="selected-framework" id="select-html">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
-                            <title>HTML5 Logo Badge</title>
-                            <path fill="#E34F26" d="M71,460 L30,0 481,0 440,460 255,512"></path>
-                            <path fill="#EF652A" d="M256,472 L405,431 440,37 256,37"></path>
-                            <path fill="#EBEBEB" d="M256,208 L181,208 176,150 256,150 256,94 255,94 114,94 115,109 129,265 256,265zM256,355 L255,355 192,338 188,293 158,293 132,293 139,382 255,414 256,414z"></path>
-                            <path fill="#FFF" d="M255,208 L255,265 325,265 318,338 255,355 255,414 371,382 372,372 385,223 387,208 371,208zM255,94 L255,129 255,150 255,150 392,150 392,150 392,150 393,138 396,109 397,94z"></path>
-                        </svg>
-                    </div>
-                    <div id="select-react">
-                        <img style="height: 24px; width: 24px;" src="./assets/images/react.svg" alt="React" />
-                    </div>
-                </div>
-            </div>
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code" id="html-imports">

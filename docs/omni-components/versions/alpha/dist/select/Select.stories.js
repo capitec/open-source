@@ -1,4 +1,4 @@
-import"../chunks-js/chunk.MUJSZT2H.js";import"../chunks-js/chunk.Y2FJIW7X.js";import"../chunks-js/chunk.F7QUJQT5.js";import"../chunks-js/chunk.STJOQLHS.js";import"../chunks-js/chunk.XLKVLWPJ.js";import"../chunks-js/chunk.32LOAOEJ.js";import{a as L,b as x,c as E,e as R,f as M,g as H,h as P}from"../chunks-js/chunk.RYXMLQGX.js";import"../chunks-js/chunk.K2UMXYHA.js";import"../chunks-js/chunk.I3LVDBCB.js";import"../chunks-js/chunk.E3RY574V.js";import"../chunks-js/chunk.XGCBNSF2.js";import{a as D}from"../chunks-js/chunk.IRJIQSYL.js";import"../chunks-js/chunk.LCIHREUY.js";import{a as $,b as r}from"../chunks-js/chunk.MHLMY33S.js";import{m as I,x as A,z as m}from"../chunks-js/chunk.WI5F3R4J.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.P3AVSJ2D.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.ZPV4YWBP.js";import{a as c}from"../chunks-js/chunk.6QCQBNRL.js";import{c as h}from"../chunks-js/chunk.N6OKW4B2.js";import{d as l}from"../chunks-js/chunk.W54IKPJD.js";import{a as v}from"../chunks-js/chunk.32OT4JFD.js";import"../chunks-js/chunk.B6SUKNHE.js";import"../chunks-js/chunk.2HYOR3YM.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as d,d as g}from"../chunks-js/chunk.F6MIXR4E.js";import{h as _,m as F,p as C}from"../chunks-js/chunk.BF43NN75.js";F();C();var y=_(D(),1);var ye={title:"UI Components/Select",component:"omni-select"},S=[{id:"1",label:"Peter Parker"},{id:"2",label:"James Howlett"},{id:"3",label:"Tony Stark"},{id:"4",label:"Steve Rodgers"},{id:"5",label:"Bruce Banner"},{id:"6",label:"Wanda Maximoff"},{id:"7",label:"TChalla"},{id:"8",label:"Henry P. McCoy"},{id:"9",label:"Carl Lucas"},{id:"10",label:"Frank Castle"}],f=["Bruce Wayne","Clark Kent","Barry Allen","Arthur Curry","Hal Jordan"];async function O(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),e}async function W(e,t){return await new Promise(a=>setTimeout(()=>a(),2e3)),j(e,t)}function j(e,t){return Array.isArray(t)&&e!==null?t=t.filter(a=>J(e,a)):t}function J(e,t){return t.toString().toLowerCase().includes(e.toLowerCase())}var pe={render:e=>d`
+import"../chunks-js/chunk.ZWRYBXS7.js";import"../chunks-js/chunk.Y2FJIW7X.js";import"../chunks-js/chunk.F7QUJQT5.js";import"../chunks-js/chunk.STJOQLHS.js";import"../chunks-js/chunk.XLKVLWPJ.js";import"../chunks-js/chunk.32LOAOEJ.js";import{a as L,b as x,c as E,e as R,f as M,g as H,h as P}from"../chunks-js/chunk.RYXMLQGX.js";import"../chunks-js/chunk.K2UMXYHA.js";import"../chunks-js/chunk.I3LVDBCB.js";import"../chunks-js/chunk.E3RY574V.js";import"../chunks-js/chunk.XGCBNSF2.js";import{a as D}from"../chunks-js/chunk.IRJIQSYL.js";import"../chunks-js/chunk.LCIHREUY.js";import{a as $,b as r}from"../chunks-js/chunk.MHLMY33S.js";import{m as I,x as A,z as m}from"../chunks-js/chunk.WI5F3R4J.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.P3AVSJ2D.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.ZPV4YWBP.js";import{a as c}from"../chunks-js/chunk.6QCQBNRL.js";import{c as h}from"../chunks-js/chunk.N6OKW4B2.js";import{d as l}from"../chunks-js/chunk.W54IKPJD.js";import{a as v}from"../chunks-js/chunk.32OT4JFD.js";import"../chunks-js/chunk.B6SUKNHE.js";import"../chunks-js/chunk.2HYOR3YM.js";import"../chunks-js/chunk.CWNKFZ3E.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as d,d as g}from"../chunks-js/chunk.F6MIXR4E.js";import{h as _,m as F,p as C}from"../chunks-js/chunk.BF43NN75.js";F();C();var y=_(D(),1);var ye={title:"UI Components/Select",component:"omni-select"},S=[{id:"1",label:"Peter Parker"},{id:"2",label:"James Howlett"},{id:"3",label:"Tony Stark"},{id:"4",label:"Steve Rodgers"},{id:"5",label:"Bruce Banner"},{id:"6",label:"Wanda Maximoff"},{id:"7",label:"TChalla"},{id:"8",label:"Henry P. McCoy"},{id:"9",label:"Carl Lucas"},{id:"10",label:"Frank Castle"}],f=["Bruce Wayne","Clark Kent","Barry Allen","Arthur Curry","Hal Jordan"];async function O(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),e}async function W(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),j(e,f)}function j(e,t){return Array.isArray(t)&&e!==null?t=t.filter(a=>J(e,a)):t}function J(e,t){return t.toString().toLowerCase().includes(e.toLowerCase())}var pe={render:e=>d`
         <omni-select
             data-testid="test-select"
             label="${c(e.label)}"
@@ -412,9 +412,9 @@ const App = () => <OmniSelect label="${e.label}" items={stringItems} filterItems
             'Arthur Curry', 
             'Hal Jordan'
         ]; 
-        async function searchFilter(filter,items){
+        async function searchServerFilter(filter){
             await new Promise((r) => setTimeout(() => r(), 2000));
-            return customSearch(filter,items);
+            return customSearch(filter,stringItems);
         }
         
         function customSearch(filter, items){
@@ -424,12 +424,12 @@ const App = () => <OmniSelect label="${e.label}" items={stringItems} filterItems
                 return items;
             }
         }
+
         function itemFilter(filter, item){
             return item.includes(filter);
         }
         select = document.getElementById('omni-select');
-        select.items = stringItems;
-        select.filterItems = searchFilter;
+        select.items = searchFilter;
     <\/script>`},{framework:"React",load:e=>`import { OmniSelect } from "@capitec/omni-components-react/select";
 
 const stringItems = [
@@ -439,9 +439,9 @@ const stringItems = [
     'Arthur Curry', 
     'Hal Jordan'
 ];
-async function searchFilter(filter, items){
+async function searchFilter(filter){
     await new Promise((r) => setTimeout(() => r(), 2000));
-    return customSearch(filter,items);
+    return customSearch(filter,stringItems);
 }
 function customSearch(filter, items){
     if(Array.isArray(items) && filter !== null){
@@ -453,7 +453,8 @@ function customSearch(filter, items){
 function itemFilter(filter, item){
     return item.includes(filter);
 }
-const App = () => <OmniSelect label="${e.label}" items={stringItems} filterItems={searchFilter} searchable></OmniSelect>`}],name:"Server Side Filtering",description:"Select with server side filtering",args:{label:"Server Side Filtering",searchable:!0,items:f,filterItems:W},play:async e=>{var u,w;let t=h(e.canvasElement).getByTestId("test-select"),a=y.fn();t.addEventListener("click",a),await r.click(t);let i=await m(t.shadowRoot,"#searchField");await l(i).toBeTruthy(),$(i),await r.click(i);let s="Bruce";await r.type(i,s);let o=await m(t.shadowRoot,"#items-container");await l(o).toBeTruthy();let n=(u=t.shadowRoot)==null?void 0:u.getElementById("items");await l(n).toBeTruthy();let p;navigator.userAgent==="Test Runner"?p=await m(t.shadowRoot,".item",void 0,3e3):p=await m(t.shadowRoot,".item",void 0,5e3),await l(p).toBeTruthy(),await r.click(p);let b=(w=t.shadowRoot)==null?void 0:w.getElementById("select");await l(b).toHaveValue(f[0])}},$e={render:e=>d`
+
+const App = () => <OmniSelect label="${e.label}" items={searchFilter} searchable></OmniSelect>`}],name:"Server Side Filtering",description:"Select with server side filtering",args:{label:"Server Side Filtering",searchable:!0,items:W},play:async e=>{var u,w;let t=h(e.canvasElement).getByTestId("test-select"),a=y.fn();t.addEventListener("click",a),await r.click(t);let i=await m(t.shadowRoot,"#searchField");await l(i).toBeTruthy(),$(i),await r.click(i);let s="Bruce";await r.type(i,s);let o=await m(t.shadowRoot,"#items-container");await l(o).toBeTruthy();let n=(u=t.shadowRoot)==null?void 0:u.getElementById("items");await l(n).toBeTruthy();let p;navigator.userAgent==="Test Runner"?p=await m(t.shadowRoot,".item",void 0,3e3):p=await m(t.shadowRoot,".item",void 0,5e3),await l(p).toBeTruthy(),await r.click(p);let b=(w=t.shadowRoot)==null?void 0:w.getElementById("select");await l(b).toHaveValue(f[0])}},$e={render:e=>d`
     <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}" ?searchable="${e.searchable}">
     <svg slot="search-clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z" /></svg>
     </omni-select>

@@ -1,4 +1,4 @@
-import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";import{b as i}from"./chunk.S2K25ADN.js";import{a as f,b as o,d as r}from"./chunk.F6MIXR4E.js";import{j as t,m as s,p as c}from"./chunk.BF43NN75.js";s();c();var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1;this.clearable=!1}_clearValue(l){if(this.disabled)return l.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0})),l.stopPropagation()}static get styles(){return[f`
+import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";import{b as i}from"./chunk.S2K25ADN.js";import{a as f,b as o,d as r}from"./chunk.F6MIXR4E.js";import{j as t,m as d,p as c}from"./chunk.BF43NN75.js";d();c();var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1;this.clearable=!1}_clearValue(l){if(this.disabled)return l.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0})),l.stopPropagation()}static get styles(){return[f`
                 ${super.styles}
 
                 :host {
@@ -221,7 +221,6 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";
                     display: inline-flex;
                     align-items: center;
                     cursor: pointer;
-                    /*padding-right: var(--omni-select-search-clear-div-right-padding, 10px);    */
                 }
 
                 .clear-icon {
@@ -255,7 +254,7 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(l=!1){var d;let a={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":l};return o`${this.label?o`<div class=${n(a)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}renderClear(){return o`
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(l=!1){var s;let a={label:!0,error:(s=this.error)!=null?s:!1,disabled:this.disabled,"focused-static":l};return o`${this.label?o`<div class=${n(a)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}renderClear(){return o`
         <div class="clear-control">
             ${this.clearable&&this.value&&!this.disabled?o`
             <div id="clear-click" class="clear-click" @click="${l=>this._clearValue(l)}">
@@ -264,4 +263,4 @@ import{a as n}from"./chunk.2HYOR3YM.js";import{i as m}from"./chunk.CWNKFZ3E.js";
                     </slot>
             </div>`:r}
         </div>`}};t([i({type:String,reflect:!0})],e.prototype,"label",2),t([i({reflect:!0})],e.prototype,"value",2),t([i({type:Object,reflect:!0})],e.prototype,"data",2),t([i({type:String,reflect:!0})],e.prototype,"hint",2),t([i({type:String,reflect:!0})],e.prototype,"error",2),t([i({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([i({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
-//# sourceMappingURL=chunk.I3LVDBCB.js.map
+//# sourceMappingURL=chunk.AMDN2Z2F.js.map

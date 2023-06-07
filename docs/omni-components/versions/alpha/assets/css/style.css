@@ -186,14 +186,11 @@ header .header-version-select {
 }
 
 .header-actions>.action {
-    padding: 5px;
+    padding: 7px;
     cursor: pointer;
     border-radius: 6px;
     border: 1px solid var(--docs-border-color);
     display: flex;
-
-    /* Height */
-    height: 37px;
 }
 
 .header-actions>.action,
@@ -621,6 +618,20 @@ h2 {
 .static-article pre.language-html * {
     font-size: 13px;
     font-family: monospace;
+}
+
+.static-article code:not([class]) {
+    font-family: ui-monospace, monospace;
+    font-size: 14px;
+}
+    
+.static-article li>code:not([class]),
+.static-article p>code:not([class]),
+.static-article a>code:not([class]) {
+    padding: 2px 6px;
+    margin: 0;
+    background: var(--docs-border-color) !important;
+    border-radius: 6px;
 }
 
 .static-article blockquote {

@@ -13847,19 +13847,31 @@
             },
             {
               "kind": "method",
-              "name": "_keyDown",
+              "name": "_isNumber",
               "parameters": [
                 {
-                  "name": "e",
+                  "name": "number",
                   "type": {
-                    "text": "KeyboardEvent"
+                    "text": "string"
                   }
                 }
               ]
             },
             {
               "kind": "method",
-              "name": "_keyInput"
+              "name": "_beforeInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onInput"
             },
             {
               "kind": "method",

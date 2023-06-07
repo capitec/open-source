@@ -216,7 +216,7 @@ ${O.toString()}`))}else l()},i)})()})}function Si(e){let t=e.toLowerCase().split
                                     `)}
                             `}}"></omni-render-element>
                 `}),e==null||e.addEventListener("click-outside",()=>{e.hide=!0,t.value="",i.data=""}),e.classList.add("search-modal")),setTimeout(()=>{t==null||t.focus()},10)});function a(l){switch(l){case"component":return Gt`
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none"/>
                         <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
                     </svg>
@@ -285,4 +285,4 @@ ${O.toString()}`))}else l()},i)})()})}function Si(e){let t=e.toLowerCase().split
  * Copyright (c) 2013-2015, 2017, Jon Schlinkert.
  * Released under the MIT License.
  */
-//# sourceMappingURL=chunk.VX4HTDBM.js.map
+//# sourceMappingURL=chunk.BQ6JZBYB.js.map

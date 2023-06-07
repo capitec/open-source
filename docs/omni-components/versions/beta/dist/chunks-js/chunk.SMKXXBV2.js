@@ -214,14 +214,14 @@ import{a as s}from"./chunk.RWAXFZOX.js";import{h as c}from"./chunk.QA3WYCV3.js";
                     margin-top: var(--omni-button-slot-margin-top, 10px);
                 }
             `]}render(){var n;return e`
-      <button
-        id="button"
-        class=${s({button:!0,[`slot-${this.slotPosition}`]:this.slotPosition,[`${this.type}`]:this.type,disabled:(n=this.disabled)!=null?n:!1})}
-        ?disabled=${this.disabled}
-        aria-disabled=${this.disabled?"true":"false"}
-        tabindex=${this.disabled?"-1":"0"}>
-        <slot></slot>
-        ${this.label?e`<label id="label" class="label">${this.label}</label>`:l}
-      </button>
-    `}};r([t({type:String,reflect:!0})],o.prototype,"type",2),r([t({type:String,reflect:!0})],o.prototype,"label",2),r([t({type:String,reflect:!0,attribute:"slot-position"})],o.prototype,"slotPosition",2),r([t({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=r([d("omni-button")],o);export{o as a};
-//# sourceMappingURL=chunk.YIMALO63.js.map
+            <button
+                id="button"
+                class=${s({button:!0,[`slot-${this.slotPosition}`]:this.label?this.slotPosition:!1,[`${this.type}`]:this.type,disabled:(n=this.disabled)!=null?n:!1})}
+                ?disabled=${this.disabled}
+                aria-disabled=${this.disabled?"true":"false"}
+                tabindex=${this.disabled?"-1":"0"}>
+                <slot></slot>
+                ${this.label?e`<label id="label" class="label">${this.label}</label>`:l}
+            </button>
+        `}};r([t({type:String,reflect:!0})],o.prototype,"type",2),r([t({type:String,reflect:!0})],o.prototype,"label",2),r([t({type:String,reflect:!0,attribute:"slot-position"})],o.prototype,"slotPosition",2),r([t({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=r([d("omni-button")],o);export{o as a};
+//# sourceMappingURL=chunk.SMKXXBV2.js.map

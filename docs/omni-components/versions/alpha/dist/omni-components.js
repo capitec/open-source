@@ -22,4 +22,5 @@ export * from './search-field/index.js';
 export * from './select/index.js';
 export * from './switch/index.js';
 export * from './text-field/index.js';
+export * from './toast/index.js';
 export * from './utils/index.js';

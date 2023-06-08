@@ -19171,6 +19171,892 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/toast/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/Toast.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-toast\n            data-testid=\"test-toast\"\n            detail=\"${ifNotEmpty(args.detail)}\"\n            header=\"${ifNotEmpty(args.header)}\"\n            type=\"${ifNotEmpty(args.type)}\"\n            ?closeable=\"${args.closeable}\">\n            ${args.prefix ? html`${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${unsafeHTML(args['[Default Slot]'])}\n            ${args.close ? html`${unsafeHTML(assignToSlot('close', args.close))}` : nothing}\n        </omni-toast>\n    `,\n    name: 'Interactive',\n    args: {\n        closeable: false,\n        detail: 'The toast description',\n        header: 'The toast message',\n        type: 'success',\n        prefix: undefined,\n        '[Default Slot]': undefined,\n        close: undefined\n    },\n    play: async (context) => {\n        const toast = within(context.canvasElement).getByTestId<Toast>('test-toast');\n        toast.focus();\n    }\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/toast/Toast.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/toast/Toast.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/Toast.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Popup to visually notify a user of a header.",
+          "name": "Toast",
+          "cssProperties": [
+            {
+              "description": "Min Width.",
+              "name": "--omni-toast-min-width"
+            },
+            {
+              "description": "Max Width.",
+              "name": "--omni-toast-max-width"
+            },
+            {
+              "description": "Width.",
+              "name": "--omni-toast-width"
+            },
+            {
+              "description": "The z-index.",
+              "name": "--omni-toast-z-index"
+            },
+            {
+              "description": "Border width.",
+              "name": "--omni-toast-border-width"
+            },
+            {
+              "description": "Border radius.",
+              "name": "--omni-toast-border-radius"
+            },
+            {
+              "description": "Box shadow.",
+              "name": "--omni-toast-box-shadow"
+            },
+            {
+              "description": "Container padding.",
+              "name": "--omni-toast-padding"
+            },
+            {
+              "description": "Horizontal spacing between icon from `type` and content.",
+              "name": "--omni-toast-horizontal-gap"
+            },
+            {
+              "description": "Symmetrical size of icon from `type`.",
+              "name": "--omni-toast-icon-size"
+            },
+            {
+              "description": "Font family for header.",
+              "name": "--omni-toast-header-font-family"
+            },
+            {
+              "description": "Font size for header.",
+              "name": "--omni-toast-header-font-size"
+            },
+            {
+              "description": "Font weight for header.",
+              "name": "--omni-toast-header-font-weight"
+            },
+            {
+              "description": "Line height for header.",
+              "name": "--omni-toast-header-line-height"
+            },
+            {
+              "description": "Font family for detail.",
+              "name": "--omni-toast-detail-font-family"
+            },
+            {
+              "description": "Font size for detail.",
+              "name": "--omni-toast-detail-font-size"
+            },
+            {
+              "description": "Font weight for detail.",
+              "name": "--omni-toast-detail-font-weight"
+            },
+            {
+              "description": "Line height for detail.",
+              "name": "--omni-toast-detail-line-height"
+            },
+            {
+              "description": "Vertical space between detail and header.",
+              "name": "--omni-toast-vertical-gap"
+            },
+            {
+              "description": "The default background applied when no `type` is set.",
+              "name": "--omni-toast-background"
+            },
+            {
+              "description": "The default font color applied when no `type` is set.",
+              "name": "--omni-toast-default-font-color"
+            },
+            {
+              "description": "Border color. *",
+              "name": "--omni-toast-border-color"
+            },
+            {
+              "description": "The background applied when  `type` is set to `success`.",
+              "name": "--omni-toast-success-background"
+            },
+            {
+              "description": "The font color applied when `type` is set to `success`.",
+              "name": "--omni-toast-success-font-color"
+            },
+            {
+              "description": "The border color applied when  `type` is set to `success`.",
+              "name": "--omni-toast-success-border-color"
+            },
+            {
+              "description": "The icon color applied when  `type` is set to `success`.",
+              "name": "--omni-toast-success-icon-color"
+            },
+            {
+              "description": "The background applied when  `type` is set to `warning`.",
+              "name": "--omni-toast-warning-background"
+            },
+            {
+              "description": "The font color applied when `type` is set to `warning`.",
+              "name": "--omni-toast-warning-font-color"
+            },
+            {
+              "description": "The border color applied when  `type` is set to `warning`.",
+              "name": "--omni-toast-warning-border-color"
+            },
+            {
+              "description": "The icon color applied when  `type` is set to `warning`.",
+              "name": "--omni-toast-warning-icon-color"
+            },
+            {
+              "description": "The background applied when  `type` is set to `error`.",
+              "name": "--omni-toast-error-background"
+            },
+            {
+              "description": "The font color applied when `type` is set to `error`.",
+              "name": "--omni-toast-error-font-color"
+            },
+            {
+              "description": "The border color applied when  `type` is set to `error`.",
+              "name": "--omni-toast-error-border-color"
+            },
+            {
+              "description": "The icon color applied when  `type` is set to `error`.",
+              "name": "--omni-toast-error-icon-color"
+            },
+            {
+              "description": "The background applied when  `type` is set to `info`.",
+              "name": "--omni-toast-info-background"
+            },
+            {
+              "description": "The font color applied when `type` is set to `info`.",
+              "name": "--omni-toast-info-font-color"
+            },
+            {
+              "description": "The border color applied when  `type` is set to `info`.",
+              "name": "--omni-toast-info-border-color"
+            },
+            {
+              "description": "The icon color applied when  `type` is set to `info`.",
+              "name": "--omni-toast-info-icon-color"
+            },
+            {
+              "description": "Padding applied to close button when `closeable`.",
+              "name": "--omni-toast-close-padding"
+            },
+            {
+              "description": "Symmetrical size applied to close button when `closeable`.",
+              "name": "--omni-toast-close-size"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render before toast header area.",
+              "name": "prefix"
+            },
+            {
+              "description": "Content to render inside the component header area.",
+              "name": "[Default Slot]"
+            },
+            {
+              "description": "Content to render as the close button when `closeable`.",
+              "name": "close"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
+              },
+              "default": "'none'",
+              "description": "The type of toast to display.",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "header",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The toast title.",
+              "attribute": "header",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "detail",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The toast detail.",
+              "attribute": "detail",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "closeable",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will display a close button that fires a `close-click` event when clicked.",
+              "attribute": "closeable",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_raiseCloseClick",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "MouseEvent"
+                  },
+                  "description": "The mouse click event."
+                }
+              ],
+              "description": "Raise `close-click` event."
+            },
+            {
+              "kind": "method",
+              "name": "iconTemplate",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "Generate the toast status icon template."
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "close-click",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "type": {
+                "text": "CustomEvent<{ old: Boolean; new: Boolean; }>"
+              },
+              "description": "Dispatched when the control value is changed to either on or off.",
+              "name": "value-change"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
+              },
+              "default": "'none'",
+              "description": "The type of toast to display.",
+              "fieldName": "type",
+              "attribute": "type"
+            },
+            {
+              "name": "header",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The toast title.",
+              "fieldName": "header",
+              "attribute": "header"
+            },
+            {
+              "name": "detail",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The toast detail.",
+              "fieldName": "detail",
+              "attribute": "detail"
+            },
+            {
+              "name": "closeable",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will display a close button that fires a `close-click` event when clicked.",
+              "fieldName": "closeable",
+              "attribute": "closeable"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-toast",
+          "import": "```js\nimport '@capitec/omni-components/toast';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/Toast.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-toast",
+          "declaration": {
+            "name": "Toast",
+            "module": "src/toast/Toast.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/ToastStack.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n<div>\n    <p>The <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> component can be authored as an element or created via script.</p>\n    <p>This example illustrates the component authored as an element. An important consideration to keep in mind when using this approach is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n    <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n</div>\n    `,\n    render: (args: Args) => {\n        return html`<omni-button @click=\"${() => {\n            if (!interactiveStack) {\n                const parent = document.createElement('div');\n                parent.style.display = 'contents';\n                document.body.appendChild(parent);\n                renderToElement(\n                    renderStack(args, (el) => (interactiveStack = el as ToastStack)),\n                    parent\n                );\n                document.dispatchEvent(\n                    new CustomEvent('story-renderer-interactive-update', {\n                        bubbles: true,\n                        composed: true\n                    })\n                );\n            } else {\n                interactiveStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n                interactiveStack.showToast({\n                    type: 'info',\n                    header: 'Test',\n                    detail: 'Test Info',\n                    closeable: true,\n                    // duration: 15000,\n                    prefix: html`✅`,\n                    close: html`❎`,\n                    content: html`<span>My Extra <strong>Content</strong></span>`\n                });\n            }\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args))\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        reverse: false,\n        position: 'bottom',\n        '[Default Slot]': raw`<omni-toast\n    data-toast-duration=\"15000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"success\"\n    closeable>\n</omni-toast>\n<omni-toast\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"warning\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"3000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"info\"\n    >\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"10000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"error\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"15000\"\n    detail=\"The toast description\"\n    header=\"The toast message\">\n</omni-toast>`\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "description": "\n<div>\n    <p>The <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> component can be authored as an element or created via script.</p>\n    <p>This example illustrates the component authored as an element. An important consideration to keep in mind when using this approach is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n    <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n</div>\n    "
+        },
+        {
+          "kind": "variable",
+          "name": "Slotted_Toasts",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n        <div>\n            <p>Display slotted <code class=\"language-html\">&lt;omni-toast&gt;</code> elements in order.<p>\n            <p>Slotted toasts can be configured to auto-close after specified milliseconds with the <code class=\"language-js\">data-toast-duration</code> attribute, after which they will be removed from the parent element.</p>\n            <p>Slotted toasts with the <code class=\"language-js\">closeable</code> attribute will be removed from the parent element when their <code class=\"language-js\">close-click</code> event gets fired (usually via click of the close button).</p>    \n        <div>`,\n    render: (args: Args) => {\n        return html`<omni-button @click=\"${() => {\n            const parent = slottedStack?.parentElement ? slottedStack.parentElement : document.createElement('div');\n            if (!slottedStack) {\n                parent.style.display = 'contents';\n                document.body.appendChild(parent);\n            } else {\n                slottedStack.innerHTML = args['[Default Slot]'];\n            }\n            renderToElement(\n                renderStack(args, (el) => (slottedStack = el as ToastStack), 'test-toast-stack-slotted'),\n                parent\n            );\n            slottedStack?.requestUpdate();\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args))\n        }\n    ],\n    name: 'Slotted Toasts',\n    args: {\n        reverse: false,\n        position: 'bottom',\n        '[Default Slot]': raw`<omni-toast\n    data-toast-duration=\"15000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"success\"\n    closeable>\n</omni-toast>\n<omni-toast\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"warning\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"3000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"info\"\n    >\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"10000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"error\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"15000\"\n    detail=\"The toast description\"\n    header=\"The toast message\">\n</omni-toast>`\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack-slotted');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "description": "\n        <div>\n            <p>Display slotted <code class=\"language-html\">&lt;omni-toast&gt;</code> elements in order.<p>\n            <p>Slotted toasts can be configured to auto-close after specified milliseconds with the <code class=\"language-js\">data-toast-duration</code> attribute, after which they will be removed from the parent element.</p>\n            <p>Slotted toasts with the <code class=\"language-js\">closeable</code> attribute will be removed from the parent element when their <code class=\"language-js\">close-click</code> event gets fired (usually via click of the close button).</p>    \n        <div>"
+        },
+        {
+          "kind": "variable",
+          "name": "Show_From_Script",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n        <div>\n            <p>Create new <code class=\"language-html\">&lt;omni-toast&gt;</code> elements from script.<p>\n            <p>Toasts can be configured to auto-close after specified milliseconds with the <code class=\"language-js\">duration</code> property, after which they will be removed from the parent element.</p>\n            <p>Toasts with the <code class=\"language-js\">closeable</code> property will be removed from the parent element when their <code class=\"language-js\">close-click</code> event gets fired (usually via click of the close button).</p>\n            <p>All <code class=\"language-html\">&lt;omni-toast&gt;</code> attributes can be configured as well as additional render functions that can bed provided for slotted content on the toasts.</p>    \n        <div>`,\n    render: (args: Args) => {\n        return html`<omni-button @click=\"${() => {\n            if (!addedStack) {\n                const parent = document.createElement('div');\n                parent.style.display = 'contents';\n                document.body.appendChild(parent);\n                renderToElement(\n                    renderStack(args, (el) => (addedStack = el as ToastStack), 'test-toast-stack-added'),\n                    parent\n                );\n                document.dispatchEvent(\n                    new CustomEvent('story-renderer-interactive-update', {\n                        bubbles: true,\n                        composed: true\n                    })\n                );\n            }\n            addedStack!.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n            addedStack!.showToast({\n                type: 'info',\n                header: 'Test',\n                detail: 'Test Info',\n                closeable: true,\n                // duration: 15000,\n                prefix: `✅`,\n                close: `❎`,\n                content: raw`<span>My Extra <strong>Content</strong></span>`\n            });\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args)),\n            sourceParts: {\n                htmlFragment: (args) => getSourceFromLit(renderStack(args)),\n                jsFragment: `const toastStack = document.querySelector('omni-toast-stack');\ntoastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\ntoastStack.showToast({\n    type: 'info',\n    header: 'Test',\n    detail: 'Test Info',\n    closeable: true,\n    // duration: 15000, // Do not set duration to keep toast until closed by user.\n    prefix: '✅',\n    close: '❎',\n    content: '<span>My Extra <strong>Content</strong></span>'\n});\n                `\n            }\n        }\n    ],\n    name: 'Show from script',\n    args: {\n        reverse: false,\n        position: 'bottom',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack-added');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "description": "\n        <div>\n            <p>Create new <code class=\"language-html\">&lt;omni-toast&gt;</code> elements from script.<p>\n            <p>Toasts can be configured to auto-close after specified milliseconds with the <code class=\"language-js\">duration</code> property, after which they will be removed from the parent element.</p>\n            <p>Toasts with the <code class=\"language-js\">closeable</code> property will be removed from the parent element when their <code class=\"language-js\">close-click</code> event gets fired (usually via click of the close button).</p>\n            <p>All <code class=\"language-html\">&lt;omni-toast&gt;</code> attributes can be configured as well as additional render functions that can bed provided for slotted content on the toasts.</p>    \n        <div>"
+        },
+        {
+          "kind": "variable",
+          "name": "Create_From_Script",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n        <div>\n            <p>Create an <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> instance from script.<p>\n            <p>An important consideration to keep in mind when using authoring the element via html is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n            <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script as in this example can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n        <div>`,\n    render: (args: Args) => {\n        if (!createdStack) {\n            createdStack = ToastStack.create({\n                position: 'top',\n                reverse: true\n            });\n            createdStack?.setAttribute('data-testid', 'test-toast-stack-created');\n        }\n        return html`<omni-button @click=\"${() => {\n            createdStack!.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n            createdStack!.showToast({\n                type: 'info',\n                header: 'Test',\n                detail: 'Test Info',\n                closeable: true,\n                // duration: 15000,\n                prefix: `✅`,\n                close: `❎`,\n                content: raw`<span>My Extra <strong>Content</strong></span>`\n            });\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args)),\n            sourceParts: {\n                htmlFragment: raw`<div>HTML Content</div>`,\n                jsFragment: `import { ToastStack } from '@capitec/omni-components/toast';\nconst toastStack = ToastStack.create({\n    position: 'top',\n    reverse: true\n});\n\ntoastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\ntoastStack.showToast({\n    type: 'info',\n    header: 'Test',\n    detail: 'Test Info',\n    closeable: true,\n    // duration: 15000, // Do not set duration to keep toast until closed by user.\n    prefix: '✅',\n    close: '❎',\n    content: '<span>My Extra <strong>Content</strong></span>'\n});\n                `\n            }\n        }\n    ],\n    name: 'Create from script',\n    args: {\n        reverse: false,\n        position: 'bottom',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack-created');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "description": "\n        <div>\n            <p>Create an <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> instance from script.<p>\n            <p>An important consideration to keep in mind when using authoring the element via html is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n            <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script as in this example can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n        <div>"
+        },
+        {
+          "kind": "variable",
+          "name": "Position",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n        <div>\n            <p>Position <code class=\"language-html\">&lt;omni-toast&gt;</code> elements in the stack.<p>\n            <br/>\n            <span>The <code class=\"language-javascript\">'position'</code> attribute supports the following options:\n                <ul>\n                    <li><code class=\"language-javascript\">'top'</code></li>\n                    <li><code class=\"language-javascript\">'bottom'</code> (Default)</li>\n                    <li><code class=\"language-javascript\">'left'</code></li>\n                    <li><code class=\"language-javascript\">'right'</code></li>\n                    <li><code class=\"language-javascript\">'top-left'</code></li>\n                    <li><code class=\"language-javascript\">'top-right'</code></li>\n                    <li><code class=\"language-javascript\">'bottom-left'</code></li>\n                    <li><code class=\"language-javascript\">'bottom-right'</code></li>\n                </ul>\n            </span>\n        <div>`,\n    render: (args: Args) => {\n        return html`<omni-button @click=\"${() => {\n            if (!positionStack) {\n                const parent = document.createElement('div');\n                parent.style.display = 'contents';\n                document.body.appendChild(parent);\n                renderToElement(\n                    renderStack(args, (el) => (positionStack = el as ToastStack), 'test-toast-stack-position'),\n                    parent\n                );\n                document.dispatchEvent(\n                    new CustomEvent('story-renderer-interactive-update', {\n                        bubbles: true,\n                        composed: true\n                    })\n                );\n            }\n            positionStack!.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n            positionStack!.showToast({\n                type: 'info',\n                header: 'Test',\n                detail: 'Test Info',\n                closeable: true,\n                // duration: 15000,\n                prefix: `✅`,\n                close: `❎`,\n                content: raw`<span>My Extra <strong>Content</strong></span>`\n            });\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args)),\n            sourceParts: {\n                htmlFragment: (args) => getSourceFromLit(renderStack(args)),\n                jsFragment: `const toastStack = document.querySelector('omni-toast-stack');\ntoastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\ntoastStack.showToast({\n    type: 'info',\n    header: 'Test',\n    detail: 'Test Info',\n    closeable: true,\n    // duration: 15000, // Do not set duration to keep toast until closed by user.\n    prefix: '✅',\n    close: '❎',\n    content: '<span>My Extra <strong>Content</strong></span>'\n});\n                `\n            }\n        }\n    ],\n    name: 'Position',\n    args: {\n        reverse: false,\n        position: 'right',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack-position');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "description": "\n        <div>\n            <p>Position <code class=\"language-html\">&lt;omni-toast&gt;</code> elements in the stack.<p>\n            <br/>\n            <span>The <code class=\"language-javascript\">'position'</code> attribute supports the following options:\n                <ul>\n                    <li><code class=\"language-javascript\">'top'</code></li>\n                    <li><code class=\"language-javascript\">'bottom'</code> (Default)</li>\n                    <li><code class=\"language-javascript\">'left'</code></li>\n                    <li><code class=\"language-javascript\">'right'</code></li>\n                    <li><code class=\"language-javascript\">'top-left'</code></li>\n                    <li><code class=\"language-javascript\">'top-right'</code></li>\n                    <li><code class=\"language-javascript\">'bottom-left'</code></li>\n                    <li><code class=\"language-javascript\">'bottom-right'</code></li>\n                </ul>\n            </span>\n        <div>"
+        },
+        {
+          "kind": "variable",
+          "name": "Reverse",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n        <div>\n            <p>Reverse <code class=\"language-html\">&lt;omni-toast&gt;</code> elements in the stack.<p>\n            <p>By default newest toasts are showed at the bottom of the stack. When reversed, newest toasts are showed on top of the stack.</p>\n        <div>`,\n    render: (args: Args) => {\n        return html`<omni-button @click=\"${() => {\n            if (!reverseStack) {\n                renderToElement(\n                    renderStack(args, (el) => (reverseStack = el as ToastStack), 'test-toast-stack-reverse'),\n                    document.body\n                );\n                document.dispatchEvent(\n                    new CustomEvent('story-renderer-interactive-update', {\n                        bubbles: true,\n                        composed: true\n                    })\n                );\n            }\n            reverseStack!.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n            reverseStack!.showToast({\n                type: 'info',\n                header: 'Test',\n                detail: 'Test Info',\n                closeable: true,\n                // duration: 15000,\n                prefix: `✅`,\n                close: `❎`,\n                content: raw`<span>My Extra <strong>Content</strong></span>`\n            });\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args)),\n            sourceParts: {\n                htmlFragment: (args) => getSourceFromLit(renderStack(args)),\n                jsFragment: `const toastStack = document.querySelector('omni-toast-stack');\ntoastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\ntoastStack.showToast({\n    type: 'info',\n    header: 'Test',\n    detail: 'Test Info',\n    closeable: true,\n    // duration: 15000, // Do not set duration to keep toast until closed by user.\n    prefix: '✅',\n    close: '❎',\n    content: '<span>My Extra <strong>Content</strong></span>'\n});\n                `\n            }\n        }\n    ],\n    name: 'Reverse',\n    args: {\n        reverse: true,\n        position: 'bottom',\n        '[Default Slot]': undefined\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack-reverse');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "description": "\n        <div>\n            <p>Reverse <code class=\"language-html\">&lt;omni-toast&gt;</code> elements in the stack.<p>\n            <p>By default newest toasts are showed at the bottom of the stack. When reversed, newest toasts are showed on top of the stack.</p>\n        <div>"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Slotted_Toasts",
+          "declaration": {
+            "name": "Slotted_Toasts",
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Show_From_Script",
+          "declaration": {
+            "name": "Show_From_Script",
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Create_From_Script",
+          "declaration": {
+            "name": "Create_From_Script",
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Position",
+          "declaration": {
+            "name": "Position",
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Reverse",
+          "declaration": {
+            "name": "Reverse",
+            "module": "src/toast/ToastStack.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/ToastStack.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "A toast container that animates in and stacks toast elements.",
+          "name": "ToastStack",
+          "cssProperties": [
+            {
+              "description": "The z-index of the stack.",
+              "name": "--omni-toast-stack-z-index"
+            },
+            {
+              "description": "The font color applied to the stack.",
+              "name": "--omni-toast-stack-font-color"
+            },
+            {
+              "description": "The position from the bottom toast `position` is set to `bottom`, `bottom-left`, or `bottom-right`.",
+              "name": "--omni-toast-stack-anchor-bottom"
+            },
+            {
+              "description": "The position from the bottom toast `position` is set to `top`, `top-left`, or `top-right`.",
+              "name": "--omni-toast-stack-anchor-top"
+            },
+            {
+              "description": "The position from the bottom toast `position` is set to `left`, `top-left`, or `bottom-left`.",
+              "name": "--omni-toast-stack-anchor-left"
+            },
+            {
+              "description": "The position from the bottom toast `position` is set to `right`, `top-right`, or `bottom-right`.",
+              "name": "--omni-toast-stack-anchor-right"
+            },
+            {
+              "description": "The vertical gap between toast elements in the stack.",
+              "name": "--omni-toast-stack-gap"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Toast(s) to be displayed",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "position",
+              "type": {
+                "text": "| 'top'\n        | 'bottom'\n        | 'left'\n        | 'right'\n        | 'top-left'\n        | 'top-right'\n        | 'bottom-left'\n        | 'bottom-right'"
+              },
+              "default": "'bottom'",
+              "description": "The position to stack toasts",
+              "attribute": "position",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "reverse",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Reverse the order of toast with newest toasts showed on top of the stack. By default newest toasts are showed at the bottom of the stack.",
+              "attribute": "reverse",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "toastContainer",
+              "type": {
+                "text": "HTMLDivElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "slotElement",
+              "type": {
+                "text": "HTMLSlotElement"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "create",
+              "privacy": "public",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "ToastStackInit"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "showToast",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "ShowToastInit"
+                  }
+                }
+              ],
+              "description": "Push a toast message onto the toast stack."
+            },
+            {
+              "kind": "method",
+              "name": "onSlotChange",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "evt",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "closeToast",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "slideIn",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "toast",
+                  "type": {
+                    "text": "Toast"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "position",
+              "type": {
+                "text": "| 'top'\n        | 'bottom'\n        | 'left'\n        | 'right'\n        | 'top-left'\n        | 'top-right'\n        | 'bottom-left'\n        | 'bottom-right'"
+              },
+              "default": "'bottom'",
+              "description": "The position to stack toasts",
+              "fieldName": "position",
+              "attribute": "position"
+            },
+            {
+              "name": "reverse",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Reverse the order of toast with newest toasts showed on top of the stack. By default newest toasts are showed at the bottom of the stack.",
+              "fieldName": "reverse",
+              "attribute": "reverse"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-toast-stack",
+          "import": "```js\nimport '@capitec/omni-components/toast';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToastStack",
+          "declaration": {
+            "name": "ToastStack",
+            "module": "src/toast/ToastStack.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-toast-stack",
+          "declaration": {
+            "name": "ToastStack",
+            "module": "src/toast/ToastStack.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "ToastStackInit",
+          "type": "{\n    /**\n     * The id to apply to the ToastStack element.\n     */\n    id?: string;\n\n    /**\n     * The container to append the ToastStack as child. If not provided will append to a new div element on the document body.\n     */\n    parent?: string | HTMLElement | DocumentFragment | null;\n\n    /**\n     * The position to stack toasts\n     */\n    position?: 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';\n    /**\n     * Reverse the order of toast with newest toasts showed on top of the stack. By default newest toasts are showed at the bottom of the stack.\n     */\n    reverse?: boolean;\n}"
+        },
+        {
+          "alias": "ShowToastInit",
+          "type": "{\n    /**\n     * The type of toast to display.\n     */\n    type: 'success' | 'warning' | 'error' | 'info' | 'none';\n\n    /**\n     * The toast title.\n     */\n    header?: string;\n\n    /**\n     * The toast description.\n     */\n    detail?: string;\n\n    /**\n     * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n     */\n    closeable?: boolean;\n\n    /**\n     * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.\n     */\n    duration?: number;\n\n    /**\n     * Content to render before toast message area.\n     */\n    prefix?: RenderFunction | RenderResult;\n\n    /**\n     * Content to render inside the component message area.\n     */\n    content?: RenderFunction | RenderResult;\n\n    /**\n     * Content to render as the close button when `closeable`.\n     */\n    close?: RenderFunction | RenderResult;\n}"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/toast/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Toast.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./ToastStack.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/utils/CodeEditor.ts",
       "declarations": [
         {

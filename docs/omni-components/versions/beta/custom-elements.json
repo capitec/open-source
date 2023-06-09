@@ -9,7 +9,7 @@
         {
           "kind": "variable",
           "name": "Interactive",
-          "default": "{\n    render: (args: Args) => html`\n    <omni-button\n      data-testid=\"test-button\"\n      type=\"${args.type}\"\n      label=\"${ifNotEmpty(args.label)}\"\n      slot-position=\"${args.slotPosition}\"\n      ?disabled=${args.disabled}>\n      ${unsafeHTML(args['[Default Slot]'])}\n    </omni-button>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Interactive!.render!(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        type: 'secondary',\n        label: 'Button',\n        slotPosition: 'top',\n        disabled: false,\n        '[Default Slot]': raw`<omni-icon icon=\"@material/thumb_up\"></omni-icon>`\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(button, {\n            pointerEventsCheck: 0\n        });\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-button\n      data-testid=\"test-button\"\n      type=\"${args.type}\"\n      label=\"${ifNotEmpty(args.label)}\"\n      slot-position=\"${args.slotPosition}\"\n      ?disabled=${args.disabled}>\n      ${unsafeHTML(args['[Default Slot]'])}\n    </omni-button>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Interactive?.render?.(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        type: 'secondary',\n        label: 'Button',\n        slotPosition: 'top',\n        disabled: false,\n        '[Default Slot]': raw`<omni-icon icon=\"@material/thumb_up\"></omni-icon>`\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const click = jest.fn();\n        button.addEventListener('click', () => click());\n        await userEvent.click(button, {\n            pointerEventsCheck: 0\n        });\n        await userEvent.click(button, {\n            pointerEventsCheck: 0\n        });\n        await expect(click).toBeCalledTimes(2);\n    }\n}"
         },
         {
           "kind": "variable",
@@ -26,13 +26,13 @@
         {
           "kind": "variable",
           "name": "Slot",
-          "default": "{\n    render: () => html`\n    <omni-button data-testid=\"test-button\">\n      <omni-icon size=\"default\" icon=\"./assets/images/direction.svg\"></omni-icon>\n    </omni-button>\n  `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { OmniIcon } from \"@capitec/omni-components-react/icon\";\n\nconst App = () => <OmniButton>\n                    <OmniIcon size=\"default\" icon=\"./assets/images/direction.svg\" />\n                  </OmniButton>;`\n        }\n    ],\n    name: 'Slot',\n    description: 'Set html content to display within.',\n    args: {},\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const slotElement = button.shadowRoot?.querySelector('slot');\n        const foundSlottedOmniIconElement = slotElement?.assignedElements().find((e) => e.tagName.toLowerCase() === 'omni-icon');\n        await expect(foundSlottedOmniIconElement).toBeTruthy();\n    }\n}",
+          "default": "{\n    render: () => html`\n    <omni-button data-testid=\"test-button\">\n      <omni-icon size=\"default\" icon=\"./assets/images/direction.svg\"></omni-icon>\n    </omni-button>\n  `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: () => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { OmniIcon } from \"@capitec/omni-components-react/icon\";\n\nconst App = () => <OmniButton>\n                    <OmniIcon size=\"default\" icon=\"./assets/images/direction.svg\" />\n                  </OmniButton>;`\n        }\n    ],\n    name: 'Slot',\n    description: 'Set html content to display within.',\n    args: {},\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button');\n        const slotElement = button.shadowRoot?.querySelector('slot');\n        const foundSlottedOmniIconElement = slotElement?.assignedElements().find((e) => e.tagName.toLowerCase() === 'omni-icon');\n        await expect(foundSlottedOmniIconElement).toBeTruthy();\n    }\n}",
           "description": "Set html content to display within."
         },
         {
           "kind": "variable",
           "name": "Disabled",
-          "default": "{\n    render: (args: Args) => html` <omni-button disabled label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\n\nconst App = () => <OmniButton${args.label ? ` label='${args.label}'` : ''}${args.disabled ? ` disabled` : ''}/>;`\n        },\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Disabled!.render!(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        }\n    ],\n    name: 'Disabled',\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button'); // Test for disabled CSS.\n\n        const buttonElement = button.shadowRoot?.getElementById('button');\n        const foundDisabledClass = buttonElement?.classList.contains('disabled');\n        await expect(foundDisabledClass).toBeTruthy(); // Test for not clickable.\n\n        const click = jest.fn();\n        // eslint-disable-next-line @typescript-eslint/no-unused-vars\n        button.addEventListener('click', (e) => {\n            click();\n        });\n        await expect(() => userEvent.click(button)).rejects.toThrow(/pointer-events: none/);\n        await expect(() => userEvent.click(button)).rejects.toThrow(/pointer-events: none/);\n        await expect(click).toBeCalledTimes(0);\n    }\n}",
+          "default": "{\n    render: (args: Args) => html` <omni-button disabled label=\"${args.label}\" data-testid=\"test-button\"></omni-button> `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\n\nconst App = () => <OmniButton${args.label ? ` label='${args.label}'` : ''}${args.disabled ? ` disabled` : ''}/>;`\n        },\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Disabled?.render?.(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        }\n    ],\n    name: 'Disabled',\n    description: 'Prevent interaction (pointer events).',\n    args: {\n        label: 'Disabled',\n        disabled: true\n    },\n    play: async (context) => {\n        const button = within(context.canvasElement).getByTestId<Button>('test-button'); // Test for disabled CSS.\n\n        const buttonElement = button.shadowRoot?.getElementById('button');\n        const foundDisabledClass = buttonElement?.classList.contains('disabled');\n        await expect(foundDisabledClass).toBeTruthy(); // Test for not clickable.\n\n        const click = jest.fn();\n        // eslint-disable-next-line @typescript-eslint/no-unused-vars\n        button.addEventListener('click', (e) => {\n            click();\n        });\n        await expect(() => userEvent.click(button)).rejects.toThrow(/pointer-events: none/);\n        await expect(() => userEvent.click(button)).rejects.toThrow(/pointer-events: none/);\n        await expect(click).toBeCalledTimes(0);\n    }\n}",
           "description": "Prevent interaction (pointer events)."
         }
       ],
@@ -132,8 +132,8 @@
               "name": "--omni-button-padding-right"
             },
             {
-              "description": "Primary \"type\" background color.",
-              "name": "--omni-button-primary-background-color"
+              "description": "Primary \"type\" background.",
+              "name": "--omni-button-primary-background"
             },
             {
               "description": "Primary \"type\" border color.",
@@ -148,20 +148,28 @@
               "name": "--omni-button-primary-color"
             },
             {
-              "description": "Primary \"type\" active back color.",
-              "name": "--omni-button-primary-active-background-color"
-            },
-            {
-              "description": "Primary \"type\" hover box shadow.",
-              "name": "--omni-button-primary-hover-box-shadow"
+              "description": "Primary \"type\" hover background.",
+              "name": "--omni-button-primary-hover-background"
             },
             {
               "description": "Primary \"type\" hover border color.",
               "name": "--omni-button-primary-hover-border-color"
             },
             {
-              "description": "Secondary \"type\" background color.",
-              "name": "--omni-button-secondary-background-color"
+              "description": "Primary \"type\" hover border width.",
+              "name": "--omni-button-primary-hover-border-width"
+            },
+            {
+              "description": "Primary \"type\" hover box shadow.",
+              "name": "--omni-button-primary-hover-box-shadow"
+            },
+            {
+              "description": "Primary \"type\" active back color.",
+              "name": "--omni-button-primary-active-background"
+            },
+            {
+              "description": "Secondary \"type\" background.",
+              "name": "--omni-button-secondary-background"
             },
             {
               "description": "Secondary \"type\" border color.",
@@ -176,20 +184,28 @@
               "name": "--omni-button-secondary-color"
             },
             {
-              "description": "Secondary \"type\" active background color.",
-              "name": "--omni-button-secondary-active-background-color"
-            },
-            {
-              "description": "Secondary \"type\" hover box shadow.",
-              "name": "--omni-button-secondary-hover-box-shadow"
+              "description": "Secondary \"type\" hover background.",
+              "name": "--omni-button-secondary-hover-background"
             },
             {
               "description": "Secondary \"type\" hover border color.",
               "name": "--omni-button-secondary-hover-border-color"
             },
             {
-              "description": "Clear \"type\" background color.",
-              "name": "--omni-button-clear-background-color"
+              "description": "Secondary \"type\" hover border width.",
+              "name": "--omni-button-secondary-hover-border-width"
+            },
+            {
+              "description": "Secondary \"type\" hover box shadow.",
+              "name": "--omni-button-secondary-hover-box-shadow"
+            },
+            {
+              "description": "Secondary \"type\" active background.",
+              "name": "--omni-button-secondary-active-background"
+            },
+            {
+              "description": "Clear \"type\" background.",
+              "name": "--omni-button-clear-background"
             },
             {
               "description": "Clear \"type\" border color.",
@@ -204,12 +220,24 @@
               "name": "--omni-button-clear-color"
             },
             {
-              "description": "Clear \"type\" hover background color.",
-              "name": "--omni-button-clear-hover-background-color"
+              "description": "Clear \"type\" hover background.",
+              "name": "--omni-button-clear-hover-background"
             },
             {
-              "description": "Clear \"type\" active background color.",
-              "name": "--omni-button-clear-active-background-color"
+              "description": "Clear \"type\" hover border color.",
+              "name": "--omni-button-clear-hover-border-color"
+            },
+            {
+              "description": "Clear \"type\" hover border width.",
+              "name": "--omni-button-clear-hover-border-width"
+            },
+            {
+              "description": "Clear \"type\" hover color.",
+              "name": "--omni-button-clear-hover-color"
+            },
+            {
+              "description": "Clear \"type\" active background.",
+              "name": "--omni-button-clear-active-background"
             },
             {
               "description": "Clear \"type\" active border color.",
@@ -220,8 +248,8 @@
               "name": "--omni-button-clear-active-border-width"
             },
             {
-              "description": "White \"type\" background color.",
-              "name": "--omni-button-white-background-color"
+              "description": "White \"type\" background.",
+              "name": "--omni-button-white-background"
             },
             {
               "description": "White \"type\" border color.",
@@ -236,8 +264,24 @@
               "name": "--omni-button-white-color"
             },
             {
-              "description": "White \"type\" active background color.",
-              "name": "--omni-button-white-active-background-color"
+              "description": "White \"type\" hover background.",
+              "name": "--omni-button-white-hover-background"
+            },
+            {
+              "description": "White \"type\" hover border color.",
+              "name": "--omni-button-white-hover-border-color"
+            },
+            {
+              "description": "White \"type\" hover border width.",
+              "name": "--omni-button-white-hover-border-width"
+            },
+            {
+              "description": "White \"type\" hover box shadow.",
+              "name": "--omni-button-white-hover-box-shadow"
+            },
+            {
+              "description": "White \"type\" active background.",
+              "name": "--omni-button-white-active-background"
             },
             {
               "description": "White \"type\" active border color.",
@@ -248,28 +292,16 @@
               "name": "--omni-button-white-active-border-width"
             },
             {
-              "description": "White \"type\" hover background color.",
-              "name": "--omni-button-white-hover-background-color"
-            },
-            {
-              "description": "White \"type\" hover box shadow.",
-              "name": "--omni-button-white-hover-box-shadow"
-            },
-            {
-              "description": "White \"type\" hover border color.",
-              "name": "--omni-button-white-hover-border-color"
-            },
-            {
               "description": "Disabled border color.",
               "name": "--omni-button-disabled-border-color"
             },
             {
-              "description": "Disabled background color.",
-              "name": "--omni-button-disabled-background-color"
+              "description": "Disabled background.",
+              "name": "--omni-button-disabled-background"
             },
             {
-              "description": "Disabled active background color.",
-              "name": "--omni-button-disabled-active-hover-background-color"
+              "description": "Disabled hover and active background.",
+              "name": "--omni-button-disabled-active-hover-background"
             },
             {
               "description": "Slot margin left (When positioned right of label).",

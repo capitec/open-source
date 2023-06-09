@@ -13535,7 +13535,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${args.maxLength}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n        const value = 1234;\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n            timeout: 3000\n        });\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${args.maxLength}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n        pinField.addEventListener('click', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        const showSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=show]');\n        await expect(showSlotElement).toBeTruthy();\n        await userEvent.click(showSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n        const hideSlotElement = pinField.shadowRoot?.querySelector<HTMLSlotElement>('slot[name=hide]');\n        await expect(hideSlotElement).toBeTruthy();\n        await userEvent.click(hideSlotElement as HTMLSlotElement, {\n            pointerEventsCheck: 0\n        });\n\n        await userEvent.type(inputField, '1234', {\n            pointerEventsCheck: 0\n        });\n\n        const value = '1234';\n\n        // Required to clear userEvent Symbol that keeps hidden state of previously typed values via userEvent. If not cleared this cannot be run multiple times with the same results\n        setUIValueClean(inputField);\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(interactions).toBeCalledTimes(value.toString().length + 1), {\n            timeout: 3000\n        });\n    }\n}"
         },
         {
           "kind": "variable",
@@ -13543,7 +13543,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}>\n    </omni-pin-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniPinField } from \"@capitec/omni-components-react/pin-field\";\n\nconst App = () => <OmniPinField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? ` max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the character input length based on the value provided.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n\n        await userEvent.type(inputField, '12345678910', {\n            pointerEventsCheck: 0\n        });\n        const value = 12345;\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(inputField.value).toBe(String(value)), {\n            timeout: 3000\n        });\n    }\n}",
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}>\n    </omni-pin-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniPinField } from \"@capitec/omni-components-react/pin-field\";\n\nconst App = () => <OmniPinField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? ` max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the character input length based on the value provided.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    },\n    play: async (context) => {\n        const pinField = within(context.canvasElement).getByTestId<PinField>('test-pin-field');\n        pinField.value = '';\n\n        const interactions = jest.fn();\n        pinField.addEventListener('input', interactions);\n\n        const inputField = pinField.shadowRoot?.getElementById('inputField') as HTMLInputElement;\n\n        await userEvent.type(inputField, '12345678910', {\n            pointerEventsCheck: 0\n        });\n        const value = '12345';\n\n        await waitFor(() => expect(inputField).toHaveValue(value), {\n            timeout: 3000\n        });\n\n        await waitFor(() => expect(inputField.value).toBe(String(value)), {\n            timeout: 3000\n        });\n    }\n}",
           "description": "Limit the character input length based on the value provided."
         },
         {
@@ -13867,6 +13867,18 @@
             },
             {
               "kind": "method",
+              "name": "_sanitiseValue",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_blurOnEnter",
               "parameters": [
                 {
@@ -13879,19 +13891,31 @@
             },
             {
               "kind": "method",
-              "name": "_keyDown",
+              "name": "_isNumber",
               "parameters": [
                 {
-                  "name": "e",
+                  "name": "number",
                   "type": {
-                    "text": "KeyboardEvent"
+                    "text": "string"
                   }
                 }
               ]
             },
             {
               "kind": "method",
-              "name": "_keyInput"
+              "name": "_beforeInput",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "InputEvent"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_onInput"
             },
             {
               "kind": "method",

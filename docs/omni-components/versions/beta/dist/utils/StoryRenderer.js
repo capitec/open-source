@@ -80,7 +80,7 @@ import"../chunks-js/chunk.PRA3TVHK.js";import{a as Fe}from"../chunks-js/chunk.EQ
                 </code-editor>
             </div>
 
-            <div class="two-part ${!((z=this.story)!=null&&z.play)&&((W=(K=this.story.frameworkSources)==null?void 0:K.find(l=>l.framework===s))==null?void 0:W.disableCodePen)&&!a?"no-display":""}">
+            <div class="two-part ${!((z=this.story)!=null&&z.play)&&((W=(K=this.story.frameworkSources)==null?void 0:K.find(l=>l.framework===s))==null?void 0:W.disableCodePen)?"no-display":""}">
             
                 <div class="play-tests">
                     ${(X=this.story)!=null&&X.play?R`

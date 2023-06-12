@@ -326,7 +326,7 @@
 <article class="component">
     <div class="component-meta">
         <div class="component-name">Toast</div>
-        <div class="component-desc">Popup to visually notify a user of a header.</div> 
+        <div class="component-desc">Component to visually notify a user of a message.</div> 
         <div class="component-info">
             <div class="component-info-item">
                 <div>Module</div>
@@ -390,12 +390,62 @@
                                 key="Interactive"
                                 interactive >
                             </story-renderer>
+                            <div class="name" id="story-custom-slotted-content">Custom Slotted Content</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Custom_Slotted_Content"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-slotted-prefix">Custom Slotted Prefix</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Custom_Slotted_Prefix"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-closeable">Closeable</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Closeable"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-slotted-close">Custom Slotted Close</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Custom_Slotted_Close"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-type">Type</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Type"
+                                 >
+                            </story-renderer>
                         </div>
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
                                     <a href="components/toast/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
+                                    </a>
+                                    <a href="components/toast/#story-custom-slotted-content" id="story-custom-slotted-content-a" class="item">
+                                        Custom Slotted Content
+                                    </a>
+                                    <a href="components/toast/#story-custom-slotted-prefix" id="story-custom-slotted-prefix-a" class="item">
+                                        Custom Slotted Prefix
+                                    </a>
+                                    <a href="components/toast/#story-closeable" id="story-closeable-a" class="item">
+                                        Closeable
+                                    </a>
+                                    <a href="components/toast/#story-custom-slotted-close" id="story-custom-slotted-close-a" class="item">
+                                        Custom Slotted Close
+                                    </a>
+                                    <a href="components/toast/#story-type" id="story-type-a" class="item">
+                                        Type
                                     </a>
                             </div>
                         </div>
@@ -492,13 +542,7 @@
                                 <tr>
                                     <td data-label="Name" scope="row">close-click</td>
                                     <td data-label="Type"><pre><code class="language-js">CustomEvent</code></pre></td>
-                                    <td data-label="Description"></td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">value-change</td>
-                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;{ old: Boolean; new: Boolean; }&gt;</code></pre></td>
-                                    <td data-label="Description">Dispatched when the control value is changed to either on or off.</td>
+                                    <td data-label="Description">Dispatched when the close button is clicked when `closeable`.</td>
                                 </tr>
                                 
                             </tbody>
@@ -532,12 +576,12 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">prefix</code></pre></td>
-                                    <td data-label="Description">Content to render before toast header area.</td>
+                                    <td data-label="Description">Content to render before toast message area.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
-                                    <td data-label="Description">Content to render inside the component header area.</td>
+                                    <td data-label="Description">Content to render inside the component message area.</td>
                                 </tr>
                                 
                                 <tr>

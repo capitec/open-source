@@ -1,4 +1,4 @@
-import{h as d}from"./chunk.PNTHLTQK.js";import{a as c,b as n}from"./chunk.S2K25ADN.js";import{a as l,b as o,e}from"./chunk.L3RZWW2F.js";import{j as r,m as a,p as s}from"./chunk.BF43NN75.js";a();s();var t=class extends d{constructor(){super(...arguments);this.type="none"}_raiseCloseClick(i){this.dispatchEvent(new CustomEvent("close-click",{detail:{}})),i.stopPropagation()}static get styles(){return[super.styles,l`
+import{h as d}from"./chunk.PNTHLTQK.js";import{a as c,b as i}from"./chunk.S2K25ADN.js";import{a as l,b as o,e}from"./chunk.L3RZWW2F.js";import{j as r,m as a,p as s}from"./chunk.BF43NN75.js";a();s();var t=class extends d{constructor(){super(...arguments);this.type="none"}_raiseCloseClick(n){this.dispatchEvent(new CustomEvent("close-click",{detail:{}})),n.stopPropagation()}static get styles(){return[super.styles,l`
 			:host {
 				display: flex;
 				flex-direction: row;
@@ -52,6 +52,12 @@ import{h as d}from"./chunk.PNTHLTQK.js";import{a as c,b as n}from"./chunk.S2K25A
 
 				width: var(--omni-toast-icon-size, 24px);
 				height: var(--omni-toast-icon-size, 24px);
+
+				min-width: var(--omni-toast-icon-size, 24px);
+				min-height: var(--omni-toast-icon-size, 24px);
+
+				max-width: var(--omni-toast-icon-size, 24px);
+				max-height: var(--omni-toast-icon-size, 24px);
 			}
 
 			.content {
@@ -232,7 +238,7 @@ import{h as d}from"./chunk.PNTHLTQK.js";import{a as c,b as n}from"./chunk.S2K25A
 
             ${this.closeable?o`
                         <div class="closer">
-                            <div class="close-btn" @click="${i=>this._raiseCloseClick(i)}">
+                            <div class="close-btn" @click="${n=>this._raiseCloseClick(n)}">
                                 <slot name="close">
                                     <omni-close-icon></omni-close-icon>
                                 </slot>
@@ -266,5 +272,5 @@ import{h as d}from"./chunk.PNTHLTQK.js";import{a as c,b as n}from"./chunk.S2K25A
 							<path id="icon" fill="orange" fill-rule="nonzero" d="M12,16 C12.5522847,16 13,16.4477153 13,17 C13,17.5522847 12.5522847,18 12,18 C11.4477153,18 11,17.5522847 11,17 C11,16.4477153 11.4477153,16 12,16 Z M12,6.25 C12.3796958,6.25 12.693491,6.53215388 12.7431534,6.89822944 L12.75,7 L12.75,14 C12.75,14.4142136 12.4142136,14.75 12,14.75 C11.6203042,14.75 11.306509,14.4678461 11.2568466,14.1017706 L11.25,14 L11.25,7 C11.25,6.58578644 11.5857864,6.25 12,6.25 Z"></path>
 						</g>
 					</svg>
-				`;default:return e}}};r([n({type:String,reflect:!0})],t.prototype,"type",2),r([n({type:String,reflect:!0})],t.prototype,"header",2),r([n({type:String,reflect:!0})],t.prototype,"detail",2),r([n({type:Boolean,reflect:!0})],t.prototype,"closeable",2),t=r([c("omni-toast")],t);export{t as a};
-//# sourceMappingURL=chunk.WGRKCCTQ.js.map
+				`;default:return e}}};r([i({type:String,reflect:!0})],t.prototype,"type",2),r([i({type:String,reflect:!0})],t.prototype,"header",2),r([i({type:String,reflect:!0})],t.prototype,"detail",2),r([i({type:Boolean,reflect:!0})],t.prototype,"closeable",2),t=r([c("omni-toast")],t);export{t as a};
+//# sourceMappingURL=chunk.5PIFEB5V.js.map

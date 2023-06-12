@@ -18486,6 +18486,526 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/tab/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tab/Tab.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args) => html`\n        <omni-tab data-testid=\"test-tab\">\n            ${unsafeHTML(args['[Default Slot]'])}\n        </omni-tab>\n    `,\n    name: 'Interactive',\n    description: 'Content rendered within a omni-tab component for best practice examples check the tab group examples',\n    args: {\n        '[Default Slot]': raw`<div>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n</div>`\n    },\n    play: async (context) => {\n        const tab = within(context.canvasElement).getByTestId<Tab>('test-tab');\n    }\n}",
+          "description": "Content rendered within a omni-tab component for best practice examples check the tab group examples"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/tab/Tab.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/tab/Tab.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tab/Tab.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Control that can be used to display slotted content used within a omni-tab-group component.",
+          "name": "Tab",
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component body.",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-tab",
+          "import": "```js\nimport '@capitec/omni-components/tab';\n```",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Tab",
+          "declaration": {
+            "name": "Tab",
+            "module": "src/tab/Tab.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-tab",
+          "declaration": {
+            "name": "Tab",
+            "module": "src/tab/Tab.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tab/TabGroup.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <div style=\"height: 400px; width: 400px;\">\n    <omni-tab-group\n        data-testid='test-tab-group'\n        selected-index=\"${ifDefined(args.selectedIndex)}\"\n        >\n        ${unsafeHTML(args['[Default Slot]'])}\n    </omni-tab-group></div>\n`,\n    name: 'Interactive',\n    args: {\n        selectedIndex: undefined,\n        '[Default Slot]': raw`<omni-tab data-omni-tab-label=\"Tab-1\">\n    <div>\n        <omni-label label=\"Tab 1 content label\"></omni-label>\n        <omni-label label=\"Tab 1 content label\"></omni-label>\n        <omni-label label=\"Tab 1 content label\"></omni-label>\n    </div>\n</omni-tab>\n<omni-tab data-omni-tab-label=\"Tab-2\">\n    <omni-label label=\"Tab 2 content label\"></omni-label>\n</omni-tab>\n<omni-tab data-omni-tab-label=\"Tab-3\">\n    <omni-label label=\"Tab 3 content label\"></omni-label>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tab = within(context.canvasElement).getByTestId<Tab>('test-tab');\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Active",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n\n    <omni-tab-group\n        data-testid='test-tab-group'>\n        <omni-tab             \n        data-omni-tab-label=\"Tab 1\">\n        </omni-tab>\n        <omni-tab             \n        data-omni-tab-label=\"Tab 2\">\n        </omni-tab>\n        <omni-tab             \n        data-omni-tab-label=\"Tab 3\">\n        </omni-tab>\n    </omni-tab-group>\n\n`,\n    name: 'Active',\n    description: 'Set a text value to display within the omni-tab.',\n    args: {\n        selectedIndex: 0\n    },\n    play: async (context) => {\n        const tab = within(context.canvasElement).getByTestId<Tab>('test-tab');\n    }\n}",
+          "description": "Set a text value to display within the omni-tab."
+        },
+        {
+          "kind": "variable",
+          "name": "Tabs",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args) => html`\n    <omni-tab-group\n        data-testid='test-tab-group'>\n        ${unsafeHTML(args['[Default Slot]'])}\n\n    </omni-tab-group>\n`,\n    name: 'Tabs',\n    description: 'Render a omni-tab-group component with nested omni-tab components',\n    args: {\n        '[Default Slot]': raw`<omni-tab \n        data-omni-tab-label=\"Tab 1\"            \n        data-testid=\"test-tab-1\">\n        <div>\n            <omni-label label=\"Tab 1 content label\"></omni-label>\n            <omni-label label=\"Tab 1 content label\"></omni-label>\n            <omni-label label=\"Tab 1 content label\"></omni-label>\n        </div>\n    </omni-tab>\n    <omni-tab           \n        data-omni-tab-label=\"Tab 2\">\n        <div>\n            <omni-label label=\"Tab 2 content label\"></omni-label>\n            <omni-label label=\"Tab 2 content label\"></omni-label>\n            <omni-label label=\"Tab 2 content label\"></omni-label>\n        </div>\n    </omni-tab>\n    <omni-tab            \n        data-omni-tab-label=\"Tab 3\">\n        <div>\n            <omni-label label=\"Tab 3 content label\"></omni-label>\n            <omni-label label=\"Tab 3 content label\"></omni-label>\n            <omni-label label=\"Tab 3 content label\"></omni-label>\n        </div>\n    </omni-tab>`\n    },\n    play: async (context) => {\n        const tab = within(context.canvasElement).getByTestId<Tab>('test-tab');\n    }\n}",
+          "description": "Render a omni-tab-group component with nested omni-tab components"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/tab/TabGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/tab/TabGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Active",
+          "declaration": {
+            "name": "Active",
+            "module": "src/tab/TabGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Tabs",
+          "declaration": {
+            "name": "Tabs",
+            "module": "src/tab/TabGroup.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tab/TabGroup.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Component that displays content in tabs.",
+          "name": "TabGroup",
+          "cssProperties": [
+            {
+              "description": "Tab group tab bar width.",
+              "name": "--omni-tab-group-tab-bar-width"
+            },
+            {
+              "description": "Tab group tab bar height.",
+              "name": "--omni-tab-bar-height"
+            },
+            {
+              "description": "Tab group tab bar bottom border.",
+              "name": "--omni-tab-group-tab-bar-border-bottom"
+            },
+            {
+              "description": "Tab group tab bar background color.",
+              "name": "--omni-tab-group-tab-bar-background-color"
+            },
+            {
+              "description": "Tab group tab height.",
+              "name": "--omni-tab-group-tab-height"
+            },
+            {
+              "description": "Tab group tab min width.",
+              "name": "--omni-tab-group-tab-min-width"
+            },
+            {
+              "description": "Tab group tab max width.",
+              "name": "--omni-tab-group-tab-max-width"
+            },
+            {
+              "description": "Tab group tab hover background.",
+              "name": "--omni-tab-group-tab-hover-background-color"
+            },
+            {
+              "description": "-",
+              "name": "--omni-tab-group-tab-label-container-height"
+            },
+            {
+              "description": "-",
+              "name": "--omni-tab-group-tab-tab-indicator-height"
+            },
+            {
+              "description": "Tab group tab label font size.",
+              "name": "--omni-tab-group-tab-label-font-size"
+            },
+            {
+              "description": "Tab group tab label font weight.",
+              "name": "--omni-tab-group-tab-label-font-weight"
+            },
+            {
+              "description": "Tab group tab label font color.",
+              "name": "--omni-tab-group-tab-label-font-color"
+            },
+            {
+              "description": "Tab group selected Tab font color.",
+              "name": "--theme-tab-selected-font-color"
+            },
+            {
+              "description": "Tab group selected tab indicator height.",
+              "name": "--omni-tab-group-tab-indicator-height"
+            },
+            {
+              "description": ".",
+              "name": "--omni-tab-group-tab-indicator-height"
+            },
+            {
+              "description": ".",
+              "name": "--omni-tab-group-tab-indicator-color"
+            },
+            {
+              "description": ".",
+              "name": "--omni-tab-group-tab-indicator-border-radius"
+            },
+            {
+              "description": ".",
+              "name": "--omni-tab-group-tab-indicator-width"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the component body.",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "_observer",
+              "type": {
+                "text": "MutationObserver | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "selectTab",
+              "parameters": [
+                {
+                  "name": "tab",
+                  "type": {
+                    "text": "Element"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "tab-select",
+              "type": {
+                "text": "CustomEvent<{}>"
+              },
+              "description": "Dispatched when one of the omni-tabs is clicked."
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-tab-group",
+          "globalAttributes": [
+            {
+              "attribute": " data-omni-tab-label",
+              "description": "Set the label for the tab in the group.",
+              "type": "string"
+            },
+            {
+              "attribute": " data-omni-tab-active",
+              "description": "Set the active tab in the group.",
+              "type": "boolean"
+            }
+          ],
+          "import": "```js\nimport '@capitec/omni-components/tab-group';\n```",
+          "customElement": true,
+          "attributes": [
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ]
+        },
+        {
+          "kind": "variable",
+          "name": "activeAttribute",
+          "type": {
+            "text": "string"
+          },
+          "default": "'data-omni-tab-active'",
+          "description": "Indicates which slot is active"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TabGroup",
+          "declaration": {
+            "name": "TabGroup",
+            "module": "src/tab/TabGroup.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-tab-group",
+          "declaration": {
+            "name": "TabGroup",
+            "module": "src/tab/TabGroup.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "activeAttribute",
+          "declaration": {
+            "name": "activeAttribute",
+            "module": "src/tab/TabGroup.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tab/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Tab.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./TabGroup.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/text-field/README.md",
       "declarations": [],
       "exports": []

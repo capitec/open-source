@@ -19755,7 +19755,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    description: () => html`\n<div>\n    <p>The <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> component can be authored as an element or created via script.</p>\n    <p>This example illustrates the component authored as an element. An important consideration to keep in mind when using this approach is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n    <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n</div>\n    `,\n    render: (args: Args) => {\n        const parent = interactiveStack?.parentElement ?? document.createElement('div');\n        if (interactiveStack) {\n            renderToElement(\n                renderStack(args, (el) => (interactiveStack = el as ToastStack)),\n                parent\n            );\n        }\n        return html`<omni-button @click=\"${() => {\n            if (!interactiveStack) {\n                parent.style.display = 'contents';\n                document.body.appendChild(parent);\n            } else {\n                interactiveStack.innerHTML = args['[Default Slot]'];\n            }\n            renderToElement(\n                renderStack(args, (el) => (interactiveStack = el as ToastStack)),\n                parent\n            );\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args))\n        },\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(renderStack(args)).replaceAll(' closeable', ' :closeable=\"true\"').replaceAll(' reverse', ' :reverse=\"true\"')\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        reverse: false,\n        position: 'bottom',\n        '[Default Slot]': raw`<omni-toast\n    data-toast-duration=\"15000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"success\"\n    closeable>\n</omni-toast>\n<omni-toast\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"warning\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"3000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"info\"\n    >\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"10000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"error\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"15000\"\n    detail=\"The toast description\"\n    header=\"The toast message\">\n</omni-toast>`\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack');\n        await toastStack.updateComplete;\n        toastStack.focus();\n        toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 15000 });\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n    }\n}",
+          "default": "{\n    description: () => html`\n<div>\n    <p>The <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> component can be authored as an element or created via script.</p>\n    <p>This example illustrates the component authored as an element. An important consideration to keep in mind when using this approach is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n    <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n</div>\n    `,\n    render: (args: Args) => {\n        const parent = interactiveStack?.parentElement ?? document.createElement('div');\n        if (interactiveStack) {\n            renderToElement(\n                renderStack(args, (el) => (interactiveStack = el as ToastStack)),\n                parent\n            );\n        }\n        return html`<omni-button @click=\"${() => {\n            if (!interactiveStack) {\n                parent.style.display = 'contents';\n                document.body.appendChild(parent);\n            } else {\n                interactiveStack.innerHTML = args['[Default Slot]'];\n            }\n            renderToElement(\n                renderStack(args, (el) => (interactiveStack = el as ToastStack)),\n                parent\n            );\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\">Show Toasts</omni-button>`;\n    },\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            load: (args) => getSourceFromLit(renderStack(args))\n        },\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(renderStack(args)).replaceAll(' closeable', ' :closeable=\"true\"').replaceAll(' reverse', ' :reverse=\"true\"')\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        reverse: false,\n        position: 'bottom',\n        '[Default Slot]': raw`<omni-toast\n    data-toast-duration=\"4000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"success\"\n    closeable>\n</omni-toast>\n<omni-toast\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"warning\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"3000\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"info\"\n    >\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"4500\"\n    detail=\"The toast description\"\n    header=\"The toast message\"\n    type=\"error\"\n    closeable>\n</omni-toast>\n<omni-toast\n    data-toast-duration=\"2000\"\n    detail=\"The toast description\"\n    header=\"The toast message\">\n</omni-toast>`\n    },\n    play: async (context) => {\n        const btn = context.canvasElement.querySelector('omni-button');\n        if (btn) {\n            btn.click();\n        }\n        const toastStack = within(document.body).getByTestId<ToastStack>('test-toast-stack');\n        const toastRemove = jest.fn();\n        toastStack.addEventListener('toast-remove', () => toastRemove());\n        await toastStack.updateComplete;\n        toastStack.focus();\n        const shown = toastStack.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 2000 });\n        const toastStackRemove = jest.fn();\n        shown.addEventListener('toast-stack-remove', () => toastStackRemove());\n        toastStack.showToast({\n            type: 'info',\n            header: 'Test',\n            detail: 'Test Info',\n            closeable: true,\n            // duration: 15000,\n            prefix: html`✅`,\n            close: html`❎`,\n            content: html`<span>My Extra <strong>Content</strong></span>`\n        });\n\n        // Wait for toast removals\n        await new Promise((resolve) => setTimeout(resolve, 6000));\n\n        await expect(toastRemove).toBeCalledTimes(5);\n        await expect(toastStackRemove).toBeCalled();\n\n        await expect(toastStack.childElementCount).toBe(2);\n\n        toastStack.innerHTML = '';\n    }\n}",
           "description": "\n<div>\n    <p>The <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> component can be authored as an element or created via script.</p>\n    <p>This example illustrates the component authored as an element. An important consideration to keep in mind when using this approach is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class=\"language-html\">z-index</code> related issues.</p>\n    <p>Creating the <code class=\"language-html\">&lt;omni-toast-stack&gt;</code> via script can help avoid this issue as it by default parents the newly created instance to the document body. The parent can still be specified to be a different element, however the same considerations will then apply.</p>\n</div>\n    "
         },
         {
@@ -19953,6 +19953,11 @@
               "privacy": "private"
             },
             {
+              "kind": "field",
+              "name": "toastCloseClickBound",
+              "privacy": "private"
+            },
+            {
               "kind": "method",
               "name": "create",
               "privacy": "public",
@@ -20006,6 +20011,19 @@
                   "name": "e",
                   "type": {
                     "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "raiseToastRemove",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "toast",
+                  "type": {
+                    "text": "Element"
                   }
                 }
               ]
@@ -20071,6 +20089,22 @@
                 "name": "OmniElement",
                 "module": "src/core/OmniElement.ts"
               }
+            }
+          ],
+          "events": [
+            {
+              "name": "toast-remove",
+              "type": {
+                "text": "CustomEvent<Toast>"
+              },
+              "description": "Dispatched when the a toast is removed from the stack."
+            },
+            {
+              "type": {
+                "text": "CustomEvent<ToastStack>"
+              },
+              "description": "Dispatched from a toast when it is removed from the stack.",
+              "name": "toast-stack-remove"
             }
           ],
           "attributes": [

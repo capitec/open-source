@@ -77,7 +77,7 @@ import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25A
                 ${a.map(t=>o`
                     <div class='tab' @click='${()=>this.selectTab(t)}'>
                         <div class="tab-label-container">
-                            <div class="tab-label">${t.getAttribute("data-omni-tab-label")}</div>
+                            <div class="tab-label ${t.hasAttribute(e)?"selected":""}">${t.getAttribute("data-omni-tab-label")}</div>
                         </div>
                         ${t.hasAttribute(e)?o`<div class="indicator"></div>`:c}
                     </div>
@@ -86,4 +86,4 @@ import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25A
 
 			<slot @slotchange="${()=>this.requestUpdate()}"></slot>
         `}};b([h()],r.prototype,"_observer",2),r=b([p("omni-tab-group")],r);var e="data-omni-tab-active";export{r as a,e as b};
-//# sourceMappingURL=chunk.3NNY34ES.js.map
+//# sourceMappingURL=chunk.UCUU2PAR.js.map

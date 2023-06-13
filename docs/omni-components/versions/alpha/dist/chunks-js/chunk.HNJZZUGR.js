@@ -1,4 +1,4 @@
-import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25ADN.js";import{a as d,b as o,e as c}from"./chunk.L3RZWW2F.js";import{j as b,m as s,p as l}from"./chunk.BF43NN75.js";s();l();var r=class extends m{connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(a=>{var t;for(let i of a)i.type==="attributes"&&this.requestUpdate();(t=this._observer)==null||t.observe(this,{attributes:!0,attributeFilter:["data-omni-tab-label"],subtree:!0})})}disconnectedCallback(){this._observer&&this._observer.disconnect(),super.disconnectedCallback()}selectTab(a){if(!a)return;let t=Array.from(this.children),i=t.find(n=>n.hasAttribute(e));t.forEach(n=>{n.removeAttribute(e)}),a.setAttribute(e,""),this.dispatchEvent(new CustomEvent("tab-select",{detail:{previous:i,selected:a}})),this.requestUpdate()}static get styles(){return[super.styles,d`
+import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25ADN.js";import{a as d,b as r,e as c}from"./chunk.L3RZWW2F.js";import{j as b,m as l,p as s}from"./chunk.BF43NN75.js";l();s();var o=class extends m{connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(a=>{var t;for(let i of a)i.type==="attributes"&&this.requestUpdate();(t=this._observer)==null||t.observe(this,{attributes:!0,attributeFilter:["data-omni-tab-label"],subtree:!0})})}disconnectedCallback(){this._observer&&this._observer.disconnect(),super.disconnectedCallback()}selectTab(a){if(!a)return;let t=Array.from(this.children),i=t.find(n=>n.hasAttribute(e));t.forEach(n=>{n.removeAttribute(e)}),a.setAttribute(e,""),this.dispatchEvent(new CustomEvent("tab-select",{detail:{previous:i,selected:a}})),this.requestUpdate()}static get styles(){return[super.styles,d`
             :host {
                 width:100%;
                 height:100%;
@@ -38,6 +38,7 @@ import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25A
                 font-size: var(--omni-tab-group-tab-label-font-size, var(--omni-font-size));
                 font-weight: var(--omni-tab-group-tab-label-font-weight, var(--omni-font-weight));
                 color: var(--omni-tab-group-tab-label-font-color, var(--omni-font-color));
+                font-family: var(--omni-tab-group-tab-label-font-family, var(--omni-font-family));
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
@@ -72,18 +73,18 @@ import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25A
                 display: none !important;
             }
 
-        `]}render(){let a=Array.from(this.children);return!a.find(t=>t.hasAttribute(e))&&a.length>0&&a[0].setAttribute(e,""),o`
+        `]}render(){let a=Array.from(this.children);return!a.find(t=>t.hasAttribute(e))&&a.length>0&&a[0].setAttribute(e,""),r`
             <div class='tab-bar'>
-                ${a.map(t=>o`
+                ${a.map(t=>r`
                     <div class='tab' @click='${()=>this.selectTab(t)}'>
                         <div class="tab-label-container">
                             <div class="tab-label ${t.hasAttribute(e)?"selected":""}">${t.getAttribute("data-omni-tab-label")}</div>
                         </div>
-                        ${t.hasAttribute(e)?o`<div class="indicator"></div>`:c}
+                        ${t.hasAttribute(e)?r`<div class="indicator"></div>`:c}
                     </div>
                 `)}
             </div>
 
 			<slot @slotchange="${()=>this.requestUpdate()}"></slot>
-        `}};b([h()],r.prototype,"_observer",2),r=b([p("omni-tab-group")],r);var e="data-omni-tab-active";export{r as a,e as b};
-//# sourceMappingURL=chunk.UCUU2PAR.js.map
+        `}};b([h()],o.prototype,"_observer",2),o=b([p("omni-tab-group")],o);var e="data-omni-tab-active";export{o as a,e as b};
+//# sourceMappingURL=chunk.HNJZZUGR.js.map

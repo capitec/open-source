@@ -18778,6 +18778,14 @@
               "name": "--omni-tab-group-tab-label-font-color"
             },
             {
+              "description": "Tab group tab label font family.",
+              "name": "--omni-tab-group-tab-label-font-family"
+            },
+            {
+              "description": "Tab group selected tab label font color.",
+              "name": "--omni-tab-group-tab-selected-font-color"
+            },
+            {
               "description": "Tab group selected Tab font color.",
               "name": "--theme-tab-selected-font-color"
             },

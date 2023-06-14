@@ -1,4 +1,4 @@
-import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25ADN.js";import{a as d,b as r,e as c}from"./chunk.L3RZWW2F.js";import{j as b,m as l,p as s}from"./chunk.BF43NN75.js";l();s();var o=class extends m{connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(a=>{var t;for(let i of a)i.type==="attributes"&&this.requestUpdate();(t=this._observer)==null||t.observe(this,{attributes:!0,attributeFilter:["data-omni-tab-label"],subtree:!0})})}disconnectedCallback(){this._observer&&this._observer.disconnect(),super.disconnectedCallback()}selectTab(a){if(!a)return;let t=Array.from(this.children),i=t.find(n=>n.hasAttribute(e));t.forEach(n=>{n.removeAttribute(e)}),a.setAttribute(e,""),this.dispatchEvent(new CustomEvent("tab-select",{detail:{previous:i,selected:a}})),this.requestUpdate()}static get styles(){return[super.styles,d`
+import{h as v}from"./chunk.PNTHLTQK.js";import{a as h,c as m}from"./chunk.S2K25ADN.js";import{a as c,b as o,e as d}from"./chunk.L3RZWW2F.js";import{j as b,m as s,p as l}from"./chunk.BF43NN75.js";s();l();var r=class extends v{connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(a=>{var t;for(let i of a)i.type==="attributes"&&this.requestUpdate();(t=this._observer)==null||t.observe(this,{attributes:!0,attributeFilter:["data-omni-tab-label"],subtree:!0})})}disconnectedCallback(){this._observer&&this._observer.disconnect(),super.disconnectedCallback()}selectTab(a){if(!a)return;let t=Array.from(this.children),i=t.find(n=>n.hasAttribute(e));t.forEach(n=>{n.removeAttribute(e)}),a.setAttribute(e,""),this.dispatchEvent(new CustomEvent("tab-select",{detail:{previous:i,selected:a}})),this.requestUpdate()}static get styles(){return[super.styles,c`
             :host {
                 width:100%;
                 height:100%;
@@ -45,8 +45,8 @@ import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25A
 
             }
 
-            :host > .tab-bar > .tab > .tab-label-container > .tab-label.selected {
-                color: var(--omni-tab-group-tab-selected-font-color, var(--omni-accent-color));
+            :host > .tab-bar > .tab > .tab-label-container > .tab-label.active {
+                color: var(--omni-tab-group-tab-active-font-color, var(--omni-accent-color));
             }
 
             :host > .tab-bar > div > .indicator {
@@ -56,35 +56,22 @@ import{h as m}from"./chunk.PNTHLTQK.js";import{a as p,c as h}from"./chunk.S2K25A
                 width: var(--omni-tab-group-tab-indicator-width, 100%);
             }
 
-            :host > .tab-slot {
-                display: flex;
-                flex: 1 1 auto;
-					
-                width: 100%;
-                height: 100%;
-
-                padding-left: var(--omni-tab-group-tab-content-padding-left, 10px);
-                padding-right: var(--omni-tab-group-tab-content-padding-right, 10px);
-                padding-top: var(--omni-tab-group-tab-content-padding-top, 10px);
-                padding-bottom: var(--omni-tab-group-tab-content-padding-bottom, 10px);
-            }
-
             ::slotted(*:not([data-omni-tab-active])) {
                 display: none !important;
             }
 
-        `]}render(){let a=Array.from(this.children);return!a.find(t=>t.hasAttribute(e))&&a.length>0&&a[0].setAttribute(e,""),r`
+        `]}render(){let a=Array.from(this.children);return!a.find(t=>t.hasAttribute(e))&&a.length>0&&a[0].setAttribute(e,""),o`
             <div class='tab-bar'>
-                ${a.map(t=>r`
+                ${a.map(t=>o`
                     <div class='tab' @click='${()=>this.selectTab(t)}'>
                         <div class="tab-label-container">
-                            <div class="tab-label ${t.hasAttribute(e)?"selected":""}">${t.getAttribute("data-omni-tab-label")}</div>
+                            <div class="tab-label ${t.hasAttribute(e)?"active":""}">${t.getAttribute("data-omni-tab-label")}</div>
                         </div>
-                        ${t.hasAttribute(e)?r`<div class="indicator"></div>`:c}
+                        ${t.hasAttribute(e)?o`<div class="indicator"></div>`:d}
                     </div>
                 `)}
             </div>
 
 			<slot @slotchange="${()=>this.requestUpdate()}"></slot>
-        `}};b([h()],o.prototype,"_observer",2),o=b([p("omni-tab-group")],o);var e="data-omni-tab-active";export{o as a,e as b};
-//# sourceMappingURL=chunk.HNJZZUGR.js.map
+        `}};b([m()],r.prototype,"_observer",2),r=b([h("omni-tab-group")],r);var e="data-omni-tab-active";export{r as a,e as b};
+//# sourceMappingURL=chunk.DQUPYYSW.js.map

@@ -6,4 +6,4 @@ import{h as i}from"./chunk.PNTHLTQK.js";import{a as l}from"./chunk.S2K25ADN.js";
       `]}render(){return s`
             <slot></slot>
         `}};e=t([l("omni-tab")],e);export{e as a};
-//# sourceMappingURL=chunk.HFQ75O5I.js.map
+//# sourceMappingURL=chunk.AMHTFALX.js.map

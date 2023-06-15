@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/tab/Tab.ts"],
+  "mappings": "qLAAAA,IAAAC,IAuBO,IAAMC,EAAN,cAAkBC,CAAY,CACjC,WAAoB,QAAS,CACzB,MAAO,CACH,MAAM,OACNC;AAAA;AAAA;AAAA;AAAA;AAAA,OAMJ,CACJ,CAEmB,QAAyB,CACxC,OAAOC;AAAA;AAAA,SAGX,CACJ,EAlBaH,EAANI,EAAA,CADNC,EAAc,UAAU,GACZL",
+  "names": ["init_define_process_argv", "init_global", "Tab", "OmniElement", "i", "y", "__decorateClass", "e"]
+}

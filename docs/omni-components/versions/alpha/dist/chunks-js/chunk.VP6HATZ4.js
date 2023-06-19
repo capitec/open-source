@@ -1,4 +1,4 @@
-import{h as v}from"./chunk.PNTHLTQK.js";import{a as h,c as m}from"./chunk.S2K25ADN.js";import{a as c,b as o,e as d}from"./chunk.L3RZWW2F.js";import{j as b,m as s,p as l}from"./chunk.BF43NN75.js";s();l();var r=class extends v{connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(a=>{var t;for(let i of a)i.type==="attributes"&&this.requestUpdate();(t=this._observer)==null||t.observe(this,{attributes:!0,attributeFilter:["data-omni-tab-label"],subtree:!0})})}disconnectedCallback(){this._observer&&this._observer.disconnect(),super.disconnectedCallback()}selectTab(a){if(!a)return;let t=Array.from(this.children),i=t.find(n=>n.hasAttribute(e));t.forEach(n=>{n.removeAttribute(e)}),a.setAttribute(e,""),this.dispatchEvent(new CustomEvent("tab-select",{detail:{previous:i,selected:a}})),this.requestUpdate()}static get styles(){return[super.styles,c`
+import{h as v}from"./chunk.PNTHLTQK.js";import{a as m,c as h}from"./chunk.S2K25ADN.js";import{a as c,b as o,e as d}from"./chunk.L3RZWW2F.js";import{j as b,m as s,p as l}from"./chunk.BF43NN75.js";s();l();var r=class extends v{connectedCallback(){super.connectedCallback(),this._observer=new MutationObserver(a=>{var t;for(let i of a)i.type==="attributes"&&this.requestUpdate();(t=this._observer)==null||t.observe(this,{attributes:!0,attributeFilter:["data-omni-tab-label"],subtree:!0})})}disconnectedCallback(){this._observer&&this._observer.disconnect(),super.disconnectedCallback()}selectTab(a){if(!a)return;let t=Array.from(this.children),i=t.find(n=>n.hasAttribute(e));t.forEach(n=>{n.removeAttribute(e)}),a.setAttribute(e,""),this.dispatchEvent(new CustomEvent("tab-select",{detail:{previous:i,selected:a}})),this.requestUpdate()}static get styles(){return[super.styles,c`
             :host {
                 width:100%;
                 height:100%;
@@ -18,12 +18,16 @@ import{h as v}from"./chunk.PNTHLTQK.js";import{a as h,c as m}from"./chunk.S2K25A
             /* Tab */
             :host > .tab-bar > .tab {
                 height: var(--omni-tab-group-tab-height, 100%);
-                min-width: var(--omni-tab-group-tab-min-width, 100px);
-                max-width: var(--omni-tab-group-tab-max-width, 300px);
+                min-width: var(--omni-tab-group-tab-min-width, auto);
+                max-width: var(--omni-tab-group-tab-max-width, auto);
+                margin: var(--omni-tab-group-tab-margin, 6px);
             }
 
-            :host > .tab-bar > .tab:hover {
-                background-color: var(--omni-tab-group-tab-hover-background-color, var(--omni-accent-hover-color));
+            /* Added to resolve sticky hover state on mobile devices */
+            @media (hover: hover) {
+                :host > .tab-bar > .tab:hover {
+                    background-color: var(--omni-tab-group-tab-hover-background-color, var(--omni-accent-hover-color));
+                }
             }
 
             :host > .tab-bar > .tab > .tab-label-container {
@@ -53,7 +57,7 @@ import{h as v}from"./chunk.PNTHLTQK.js";import{a as h,c as m}from"./chunk.S2K25A
                 height: var(--omni-tab-group-tab-indicator-height, 4px);
                 background-color: var(--omni-tab-group-tab-indicator-color, var(--omni-primary-color));
                 border-radius: var(--omni-tab-group-tab-indicator-border-radius, 100px 100px 0 0);
-                width: var(--omni-tab-group-tab-indicator-width, 100%);
+                width: var(--omni-tab-group-tab-indicator-width, auto);
             }
 
             ::slotted(*:not([data-omni-tab-active])) {
@@ -73,5 +77,5 @@ import{h as v}from"./chunk.PNTHLTQK.js";import{a as h,c as m}from"./chunk.S2K25A
             </div>
 
 			<slot @slotchange="${()=>this.requestUpdate()}"></slot>
-        `}};b([m()],r.prototype,"_observer",2),r=b([h("omni-tab-group")],r);var e="data-omni-tab-active";export{r as a,e as b};
-//# sourceMappingURL=chunk.DQUPYYSW.js.map
+        `}};b([h()],r.prototype,"_observer",2),r=b([m("omni-tab-group")],r);var e="data-omni-tab-active";export{r as a,e as b};
+//# sourceMappingURL=chunk.VP6HATZ4.js.map

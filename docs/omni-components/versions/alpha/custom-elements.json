@@ -18500,8 +18500,8 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args) => html`\n        <omni-tab data-testid=\"test-tab\">\n            ${unsafeHTML(args['[Default Slot]'])}\n        </omni-tab>\n    `,\n    name: 'Interactive',\n    description: () => html`\n    <div>\n        Content rendered within a <code class=\"language-html\">&lt;omni-tab&gt;</code> component for best practice examples check the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> examples.\n    <div>\n    `,\n    args: {\n        '[Default Slot]': raw`<div>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n</div>`\n    },\n    play: async (context) => {\n        const tab = within(context.canvasElement).getByTestId<Tab>('test-tab');\n    }\n}",
-          "description": "\n    <div>\n        Content rendered within a <code class=\"language-html\">&lt;omni-tab&gt;</code> component for best practice examples check the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> examples.\n    <div>\n    "
+          "default": "{\n    render: (args) => html`\n        <omni-tab data-testid=\"test-tab\">\n            ${unsafeHTML(args['[Default Slot]'])}\n        </omni-tab>\n    `,\n    name: 'Interactive',\n    description: () => html`\n    <div>\n        Content rendered within a <code class=\"language-html\">&lt;omni-tab&gt;</code> component which is typically used in the <omni-hyperlink href='../components/tab-group'><code class=\"language-html\">&lt;omni-tab-group&gt;</code></omni-hyperlink>.\n    <div>\n    `,\n    args: {\n        '[Default Slot]': raw`<div>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n    <omni-label label=\"Tab 1 content label\"></omni-label>\n</div>`\n    },\n    play: async (context) => {\n        const tab = within(context.canvasElement).getByTestId<Tab>('test-tab');\n    }\n}",
+          "description": "\n    <div>\n        Content rendered within a <code class=\"language-html\">&lt;omni-tab&gt;</code> component which is typically used in the <omni-hyperlink href='../components/tab-group'><code class=\"language-html\">&lt;omni-tab-group&gt;</code></omni-hyperlink>.\n    <div>\n    "
         }
       ],
       "exports": [
@@ -18752,6 +18752,10 @@
             {
               "description": "Tab group tab max width.",
               "name": "--omni-tab-group-tab-max-width"
+            },
+            {
+              "description": "Tab group tab margin.",
+              "name": "--omni-tab-group-tab-margin"
             },
             {
               "description": "Tab group tab hover background.",

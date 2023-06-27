@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as t,m as e,p as i}from"./chunk.BF43NN75.js";e();i();var a=class extends s{static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as a,m as e,p as i}from"./chunk.BF43NN75.js";e();i();var t=class extends s{static get styles(){return[super.styles,n`
 
             /* host styles */
             :host {
@@ -33,6 +33,9 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
                 min-width: var(--omni-tab-header-min-width, auto);
                 max-width: var(--omni-tab-header-max-width, auto);
                 margin: var(--omni-tab-header-margin, 6px);
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         
             /* Added to resolve sticky hover state on mobile devices */
@@ -45,7 +48,7 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
 
             :host > .indicator-bar {
                 height: var(--omni-tab-header-indicator-bar-height, 4px);
-                border-radius: var(--omni-tab-header-indicato-bar-border-radius, 100px 100px 0 0);
+                border-radius: var(--omni-tab-header-indicator-bar-border-radius, 100px 100px 0 0);
                 width: var(--omni-tab-header-indicator-bar-width, auto);
             }
 
@@ -63,5 +66,5 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
             <div class="indicator-bar">
                 ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:d}
             </div>
-        `}};t([o({type:String,reflect:!0})],a.prototype,"for",2),t([o({type:Object,reflect:!1})],a.prototype,"data",2),a=t([h("omni-tab-header")],a);export{a};
-//# sourceMappingURL=chunk.NNFQ4ZLF.js.map
+        `}};a([o({type:String,reflect:!0})],t.prototype,"for",2),a([o({type:Object,reflect:!1})],t.prototype,"data",2),t=a([h("omni-tab-header")],t);export{t as a};
+//# sourceMappingURL=chunk.KHMNCI4T.js.map

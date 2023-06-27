@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/tab/Tab.stories.ts"],
-  "mappings": "65BAAAA,IAAAC,IAkBA,IAAOC,EAAQ,CACX,MAAO,oBACP,UAAW,UACf,EAMaC,EAA0C,CACnD,OAASC,GAASC;AAAA;AAAA,cAERC,EAAWF,EAAK,iBAAiB;AAAA;AAAA,MAG3C,KAAM,cACN,YAAa,IAAMC;AAAA;AAAA;AAAA;AAAA,MAKnB,KAAM,CACF,iBAAkBE;AAAA;AAAA;AAAA;AAAA,OAKtB,EACA,KAAM,MAAOC,GAAY,CACrB,IAAMC,EAAMC,EAAOF,EAAQ,aAAa,EAAE,YAAiB,UAAU,CACzE,CACJ",
-  "names": ["init_define_process_argv", "init_global", "Tab_stories_default", "Interactive", "args", "y", "o", "raw", "context", "tab", "getQueriesForElement"]
-}

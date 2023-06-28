@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as a,m as e,p as i}from"./chunk.BF43NN75.js";e();i();var t=class extends s{static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as e}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as a,m as o,p as i}from"./chunk.BF43NN75.js";o();i();var t=class extends s{static get styles(){return[super.styles,n`
 
             /* host styles */
             :host {
@@ -47,6 +47,9 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
         
 
             :host > .indicator-bar {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 height: var(--omni-tab-header-indicator-bar-height, 4px);
                 border-radius: var(--omni-tab-header-indicator-bar-border-radius, 100px 100px 0 0);
                 width: var(--omni-tab-header-indicator-bar-width, auto);
@@ -66,5 +69,5 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
             <div class="indicator-bar">
                 ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:d}
             </div>
-        `}};a([o({type:String,reflect:!0})],t.prototype,"for",2),a([o({type:Object,reflect:!1})],t.prototype,"data",2),t=a([h("omni-tab-header")],t);export{t as a};
-//# sourceMappingURL=chunk.KHMNCI4T.js.map
+        `}};a([e({type:String,reflect:!0})],t.prototype,"for",2),a([e({type:Object,reflect:!1})],t.prototype,"data",2),t=a([h("omni-tab-header")],t);export{t as a};
+//# sourceMappingURL=chunk.NDEMMUG2.js.map

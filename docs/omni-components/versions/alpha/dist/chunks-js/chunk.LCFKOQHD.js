@@ -24,7 +24,7 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                height: calc(var(--omni-tab-header-group-tab-label-container-height, 100%) - var(--omni-tab-header-group-tab-tab-indicator-height, 4px));
+                height: calc(var(--omni-tab-header-height, 100%) - var(--omni-tab-header-indicator-height, 4px));
             }
         
             /* Tab */
@@ -67,4 +67,4 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
                 ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:d}
             </div>
         `}};a([o({type:String,reflect:!0})],t.prototype,"for",2),a([o({type:Object,reflect:!1})],t.prototype,"data",2),t=a([h("omni-tab-header")],t);export{t as a};
-//# sourceMappingURL=chunk.KHMNCI4T.js.map
+//# sourceMappingURL=chunk.LCFKOQHD.js.map

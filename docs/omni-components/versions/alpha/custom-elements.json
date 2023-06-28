@@ -18726,40 +18726,36 @@
               "name": "--omni-tab-header-margin"
             },
             {
-              "description": "Tab group tab hover background.",
+              "description": "Tab header tab hover background.",
               "name": "--omni-tab-header-hover-background-color"
             },
             {
-              "description": "Tab group tab label container height.",
-              "name": "--omni-tab-header-tab-label-container-height"
+              "description": "Tab header indicator bar height.",
+              "name": "--omni-tab-header-indicator-bar-height"
             },
             {
-              "description": "Tab group tab active indicator height.",
-              "name": "--omni-tab-header-tab-tab-indicator-height"
+              "description": " Tab header indicator bar border radius.",
+              "name": "--omni-tab-header-indicator-bar-border-radius"
             },
             {
-              "description": "Tab group active tab label font color.",
-              "name": "--omni-tab-header-group-tab-selected-font-color"
+              "description": "Tab header indicator bar width.",
+              "name": "--omni-tab-header-indicator-bar-width"
             },
             {
-              "description": "Tab group active Tab font color.",
-              "name": "--theme-tab-selected-font-color"
+              "description": "Tab header indicator height.",
+              "name": "--omni-tab-header-indicator-height"
             },
             {
-              "description": "Tab group active tab indicator height.",
-              "name": "--omni-tab-header-group-tab-indicator-height"
+              "description": "Tab header indicator color.",
+              "name": "--omni-tab-header-indicator-color"
             },
             {
-              "description": "Tab group active tab indicator color.",
-              "name": "--omni-tab-header-group-tab-indicator-color"
+              "description": "Tab header indicator border radius.",
+              "name": "--omni-tab-header-indicator-border-radius"
             },
             {
-              "description": "Tab group active tab indicator border radius.",
-              "name": "--omni-tab-header-group-tab-indicator-border-radius"
-            },
-            {
-              "description": "Tab group active tab indicator width.",
-              "name": "--omni-tab-header-group-tab-indicator-width"
+              "description": "Tab header indicator width.",
+              "name": "--omni-tab-header-indicator-width"
             }
           ],
           "slots": [
@@ -18920,8 +18916,8 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-tabs data-testid='test-tabs'>\n        ${args.header ? html`${'\\r\\n'}${unsafeHTML(args.header)}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tabs>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' active', ' :active=\"true\"').replace(' disabled', ' :disabled=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    description: () => html`\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Headers are managed by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot and displays the slotted content of the <code class=\"language-html\">&lt;omni-tab&gt;</code> with the <code>active</code> attribute. \n        </p>\n        <p>\n        The <code>active</code> attribute is applied to the first nested tab, if the <code>active</code> attribute is not specified on a nested <code class=\"language-html\">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.\n        </p>\n    `,\n    args: {\n        header: '',\n        '[Default Slot]': raw`<omni-tab header='Tab 1'>\n    <div>Tab 1 Content</div>\n</omni-tab>\n<omni-tab header='Tab 2'>\n    <div>Tab 2 Content</div>\n</omni-tab>\n<omni-tab header='Tab 3'>\n    <div>Tab 3 Content</div>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tabs = within(context.canvasElement).getByTestId<Tabs>('test-tabs');\n        const click = jest.fn();\n        tabs.addEventListener('click', click);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabs.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tabs in the tab bar\n        const nestedTabs = tabBar.querySelectorAll('omni-tab-header');\n        await expect(nestedTabs).toBeTruthy();\n        const tabsArray = [...nestedTabs];\n\n        //Get the active tab.\n        const activeTab = tabsArray.find((c) => c.hasAttribute('data-active'));\n        await expect(activeTab).toBeTruthy;\n\n        //Click the second tab.\n        await userEvent.click(tabsArray[1]);\n\n        const nextActiveTab = tabsArray.find((c) => c.hasAttribute('data-active'));\n\n        await expect(nextActiveTab).toBeTruthy;\n    }\n}",
-          "description": "\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Headers are managed by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot and displays the slotted content of the <code class=\"language-html\">&lt;omni-tab&gt;</code> with the <code>active</code> attribute. \n        </p>\n        <p>\n        The <code>active</code> attribute is applied to the first nested tab, if the <code>active</code> attribute is not specified on a nested <code class=\"language-html\">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.\n        </p>\n    "
+          "default": "{\n    render: (args: Args) => html`\n    <omni-tabs data-testid='test-tabs'>\n        ${args.header ? html`${'\\r\\n'}${unsafeHTML(args.header)}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tabs>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' active', ' :active=\"true\"').replace(' disabled', ' :disabled=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    description: () => html`\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Headers are managed by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot by setting the <code>slot</code> attribute like the following \"<code class=\"language-js\">slot=\"header\"</code>\", and displays the slotted content of the <code class=\"language-html\">&lt;omni-tab&gt;</code> with the <code>active</code> attribute set. \n        </p>\n        <p>\n        The <code>active</code> attribute is applied to the first nested tab, if the <code>active</code> attribute is not specified on a nested <code class=\"language-html\">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.\n        </p>\n    `,\n    args: {\n        header: '',\n        '[Default Slot]': raw`<omni-tab header='Tab 1'>\n    <div>Tab 1 Content</div>\n</omni-tab>\n<omni-tab header='Tab 2'>\n    <div>Tab 2 Content</div>\n</omni-tab>\n<omni-tab header='Tab 3'>\n    <div>Tab 3 Content</div>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tabs = within(context.canvasElement).getByTestId<Tabs>('test-tabs');\n        const click = jest.fn();\n        tabs.addEventListener('click', click);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabs.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tabs in the tab bar\n        const nestedTabs = tabBar.querySelectorAll('omni-tab-header');\n        await expect(nestedTabs).toBeTruthy();\n        const tabsArray = [...nestedTabs];\n\n        //Get the active tab.\n        const activeTab = tabsArray.find((c) => c.hasAttribute('data-active'));\n        await expect(activeTab).toBeTruthy;\n\n        //Click the second tab.\n        await userEvent.click(tabsArray[1]);\n\n        const nextActiveTab = tabsArray.find((c) => c.hasAttribute('data-active'));\n\n        await expect(nextActiveTab).toBeTruthy;\n    }\n}",
+          "description": "\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Headers are managed by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot by setting the <code>slot</code> attribute like the following \"<code class=\"language-js\">slot=\"header\"</code>\", and displays the slotted content of the <code class=\"language-html\">&lt;omni-tab&gt;</code> with the <code>active</code> attribute set. \n        </p>\n        <p>\n        The <code>active</code> attribute is applied to the first nested tab, if the <code>active</code> attribute is not specified on a nested <code class=\"language-html\">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.\n        </p>\n    "
         },
         {
           "kind": "variable",
@@ -19031,6 +19027,78 @@
             {
               "description": "Tabs tab bar background color.",
               "name": "--omni-tabs-tab-bar-background-color"
+            },
+            {
+              "description": "Tab header component font color.",
+              "name": "--omni-tab-header-font-color"
+            },
+            {
+              "description": "Tab header component font family.",
+              "name": "--omni-tab-header-font-family"
+            },
+            {
+              "description": "Tab header component font size.",
+              "name": "--omni-tab-header-font-size"
+            },
+            {
+              "description": "Tab header component font weight.",
+              "name": "--omni-tab-header-font-weight"
+            },
+            {
+              "description": "Tab header component disabled background color.",
+              "name": "--omni-tab-header-disabled-background-color"
+            },
+            {
+              "description": "Tab component header active font color.",
+              "name": "--omni-tab-header-active-font-color"
+            },
+            {
+              "description": "Tab header component tab height.",
+              "name": "--omni-tab-header-height"
+            },
+            {
+              "description": "Tab header component tab min width.",
+              "name": "--omni-tab-header-min-width"
+            },
+            {
+              "description": "Tab header component tab max width.",
+              "name": "--omni-tab-header-max-width"
+            },
+            {
+              "description": "Tab header component tab margin.",
+              "name": "--omni-tab-header-margin"
+            },
+            {
+              "description": "Tab header component tab hover background.",
+              "name": "--omni-tab-header-hover-background-color"
+            },
+            {
+              "description": "Tab header component indicator bar height.",
+              "name": "--omni-tab-header-indicator-bar-height"
+            },
+            {
+              "description": " Tab header component indicator bar border radius.",
+              "name": "--omni-tab-header-indicator-bar-border-radius"
+            },
+            {
+              "description": "Tab header component indicator bar width.",
+              "name": "--omni-tab-header-indicator-bar-width"
+            },
+            {
+              "description": "Tab header component indicator height.",
+              "name": "--omni-tab-header-indicator-height"
+            },
+            {
+              "description": "Tab header component indicator color.",
+              "name": "--omni-tab-header-indicator-color"
+            },
+            {
+              "description": "Tab header component indicator border radius.",
+              "name": "--omni-tab-header-indicator-border-radius"
+            },
+            {
+              "description": "Tab header component indicator width.",
+              "name": "--omni-tab-header-indicator-width"
             }
           ],
           "slots": [

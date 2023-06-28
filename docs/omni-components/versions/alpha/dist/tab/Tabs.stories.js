@@ -1,9 +1,19 @@
-import"../chunks-js/chunk.QBZFTDUD.js";import"../chunks-js/chunk.KHMNCI4T.js";import"../chunks-js/chunk.E4G6RS5W.js";import"../chunks-js/chunk.VAH5TOPR.js";import{a as B}from"../chunks-js/chunk.JSH3M4FH.js";import{b as v}from"../chunks-js/chunk.XOIHXH3W.js";import{b as t}from"../chunks-js/chunk.FVJIJQ42.js";import{c as b}from"../chunks-js/chunk.WPESAYH2.js";import"../chunks-js/chunk.TTUIP4EN.js";import{E as w,x as f,z as m}from"../chunks-js/chunk.LSBYP56E.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.VW2P7YAN.js";import"../chunks-js/chunk.MYG5FMLT.js";import"../chunks-js/chunk.2EDJFZZN.js";import{a as g}from"../chunks-js/chunk.N3FDHMD3.js";import"../chunks-js/chunk.YX3UUKJ3.js";import"../chunks-js/chunk.XUUOUKOL.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.LUCH4Y6K.js";import"../chunks-js/chunk.PNTHLTQK.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as r,e as p}from"../chunks-js/chunk.L3RZWW2F.js";import{h as x,m as y,p as L}from"../chunks-js/chunk.BF43NN75.js";y();L();var O=x(B(),1);var W={title:"UI Components/Tabs",component:"omni-tabs"},A={render:a=>r`
+import"../chunks-js/chunk.QBZFTDUD.js";import"../chunks-js/chunk.KHMNCI4T.js";import"../chunks-js/chunk.E4G6RS5W.js";import"../chunks-js/chunk.VAH5TOPR.js";import{a as B}from"../chunks-js/chunk.JSH3M4FH.js";import{b as v}from"../chunks-js/chunk.XOIHXH3W.js";import{b as t}from"../chunks-js/chunk.FVJIJQ42.js";import{c as b}from"../chunks-js/chunk.WPESAYH2.js";import"../chunks-js/chunk.TTUIP4EN.js";import{E as f,x as u,z as d}from"../chunks-js/chunk.LSBYP56E.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.VW2P7YAN.js";import"../chunks-js/chunk.MYG5FMLT.js";import"../chunks-js/chunk.2EDJFZZN.js";import{a as p}from"../chunks-js/chunk.N3FDHMD3.js";import"../chunks-js/chunk.YX3UUKJ3.js";import"../chunks-js/chunk.XUUOUKOL.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.LUCH4Y6K.js";import"../chunks-js/chunk.PNTHLTQK.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as r,e as g}from"../chunks-js/chunk.L3RZWW2F.js";import{h as x,m as y,p as L}from"../chunks-js/chunk.BF43NN75.js";y();L();var O=x(B(),1);var W={title:"UI Components/Tabs",component:"omni-tabs"},A={render:a=>r`
     <omni-tabs data-testid='test-tabs'>
         ${a["[Default Slot]"]?r`${`\r
-`}${g(a["[Default Slot]"])}`:p}
+`}${p(a["[Default Slot]"])}`:g}
     </omni-tabs>
-`,frameworkSources:[{framework:"Vue",load:a=>w(A.render(a),void 0,e=>e.replace(" active",' :active="true"').replace(" disabled",' :disabled="true"'))}],name:"Interactive",args:{"[Default Slot]":f`<omni-tab header='Tab 1'>
+`,frameworkSources:[{framework:"Vue",load:a=>f(A.render(a),void 0,e=>e.replace(" active",' :active="true"').replace(" disabled",' :disabled="true"'))}],name:"Interactive",description:()=>r`
+        <p>
+        The <code class="language-html">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class="language-html">&lt;omni-tab&gt;</code> component(s). 
+        </p>
+        <p>
+        This results in dynamically generated tab headers for each tab based on the value of the <code class="language-js">header</code> attribute of the <code class="language-html">&lt;omni-tab&gt;</code> component and displays the slotted content of the <code class="language-html">&lt;omni-tab&gt;</code> with the <code class="language-js">active</code> attribute. 
+        </p>
+        <p>
+        The active attribute is applied to the first nested tab, if the active attribute is not specified on a nested <code class="language-html">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.
+        </p>
+    `,args:{"[Default Slot]":u`<omni-tab header='Tab 1'>
     <div>Tab 1 Content</div>
 </omni-tab>
 <omni-tab header='Tab 2'>
@@ -11,10 +21,10 @@ import"../chunks-js/chunk.QBZFTDUD.js";import"../chunks-js/chunk.KHMNCI4T.js";im
 </omni-tab>
 <omni-tab header='Tab 3'>
     <div>Tab 3 Content</div>
-</omni-tab>`},play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),i=O.fn();e.addEventListener("click",i);let s=await m(e.shadowRoot,".tab-bar");await t(s).toBeTruthy();let n=s.querySelectorAll("omni-tab-header");await t(n).toBeTruthy();let o=[...n],l=o.find(d=>d.hasAttribute("data-active"));await t(l).toBeTruthy,await v.click(o[1]);let u=o.find(d=>d.hasAttribute("data-active"));await t(u).toBeTruthy}},X={render:a=>r`
+</omni-tab>`},play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),n=O.fn();e.addEventListener("click",n);let l=await d(e.shadowRoot,".tab-bar");await t(l).toBeTruthy();let i=l.querySelectorAll("omni-tab-header");await t(i).toBeTruthy();let o=[...i],s=o.find(m=>m.hasAttribute("data-active"));await t(s).toBeTruthy,await v.click(o[1]);let w=o.find(m=>m.hasAttribute("data-active"));await t(w).toBeTruthy}},X={render:a=>r`
     <omni-tabs data-testid='test-tabs'>
         ${a["[Default Slot]"]?r`${`\r
-`}${g(a["[Default Slot]"])}`:p}
+`}${p(a["[Default Slot]"])}`:g}
     </omni-tabs>
 `,frameworkSources:[{framework:"React",load:()=>`import { OmniTabs, OmniTab } from "@capitec/omni-components-react/tab";
 import { OmniLabel } from "@capitec/omni-components-react/label";
@@ -32,9 +42,9 @@ const App = () =>
 </OmniTab>
 </OmniTabs>;`}],name:"Basic",description:()=>r`
     <div>
-        This is the recommended use of the <code class="language-html">&lt;omni-tabs&gt;</code> component with the nested <code class="language-html">&lt;omni-tab&gt;</code> component(s), this will result in a dynamically generated headers for each tab based on the value of the <code class="language-js">header</code> attribute of the <code class="language-html">&lt;omni-tab&gt;</code>.
+        This is the recommended use of the <code class="language-html">&lt;omni-tabs&gt;</code> with nested <code class="language-html">&lt;omni-tab&gt;</code> component(s), this results in dynamically generated headers for each tab based on the value of the <code class="language-js">header</code> attribute of the <code class="language-html">&lt;omni-tab&gt;</code>.
     <div>
-    `,args:{"[Default Slot]":f`<omni-tab header='Tab 1'>
+    `,args:{"[Default Slot]":u`<omni-tab header='Tab 1'>
             <div>Tab 1 Content</div>
         </omni-tab>
         <omni-tab header='Tab 2'>
@@ -43,7 +53,7 @@ const App = () =>
         <omni-tab header="Tab 3">
             <div>Tab 3 Content</div>
         </omni-tab>
-        `},play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),i=await m(e.shadowRoot,".tab-bar");await t(i).toBeTruthy();let s=i.querySelectorAll("omni-tab-header");await t(s).toBeTruthy();let n=[...s];await t(n.length).toBe(3);let o=n.find(l=>l.hasAttribute("data-active"));await t(o).toBeTruthy}},h={render:()=>r`
+        `},play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),n=await d(e.shadowRoot,".tab-bar");await t(n).toBeTruthy();let l=n.querySelectorAll("omni-tab-header");await t(l).toBeTruthy();let i=[...l];await t(i.length).toBe(3);let o=i.find(s=>s.hasAttribute("data-active"));await t(o).toBeTruthy}},h={render:()=>r`
     <omni-tabs data-testid='test-tabs'>
         <omni-tab header='Tab 1'>
             <omni-label label='Label of Tab 1'></omni-label>
@@ -56,7 +66,7 @@ const App = () =>
         </omni-tab>
     </omni-tabs>
 
-`,frameworkSources:[{framework:"Vue",load:a=>{var e;return w((e=h==null?void 0:h.render)==null?void 0:e.call(h,a),void 0,i=>i.replace(" active",' :active="true"'))}},{framework:"React",load:()=>`import { OmniTabs, OmniTab } from "@capitec/omni-components-react/tab";
+`,frameworkSources:[{framework:"Vue",load:a=>{var e;return f((e=h==null?void 0:h.render)==null?void 0:e.call(h,a),void 0,n=>n.replace(" active",' :active="true"'))}},{framework:"React",load:()=>`import { OmniTabs, OmniTab } from "@capitec/omni-components-react/tab";
 import { OmniLabel } from "@capitec/omni-components-react/label";
 
 const App = () =>
@@ -72,9 +82,9 @@ const App = () =>
     </OmniTab>
 </OmniTabs>;`}],args:{},name:"Active",description:()=>r`
     <div>
-        Set which <code class="language-html">&lt;omni-tab&gt;</code> in the <code class="language-html">&lt;omni-tabs&gt;</code> should be selected. This is based on setting the <code class="language-js">active</code> attribute.
+        Set which <code class="language-html">&lt;omni-tab&gt;</code> in the <code class="language-html">&lt;omni-tabs&gt;</code> should be active by default. This is based on setting the <code class="language-js">active</code> attribute of one of the nested <code class="language-html">&lt;omni-tab&gt;</code> components.
     <div>
-    `,play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),i=await m(e.shadowRoot,".tab-bar");await t(i).toBeTruthy();let s=i.querySelectorAll("omni-tab-header");await t(s).toBeTruthy();let n=[...s],o=n.find(l=>l.hasAttribute("data-active"));await t(o).toBeTruthy,await t(o).toEqual(n[1])}},T={render:()=>r`
+    `,play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),n=await d(e.shadowRoot,".tab-bar");await t(n).toBeTruthy();let l=n.querySelectorAll("omni-tab-header");await t(l).toBeTruthy();let i=[...l],o=i.find(s=>s.hasAttribute("data-active"));await t(o).toBeTruthy,await t(o).toEqual(i[1])}},T={render:()=>r`
     <omni-tabs data-testid='test-tabs'>
         <omni-tab header='Tab 1'>
             <omni-label label='Label of Tab 1'></omni-label>
@@ -87,7 +97,7 @@ const App = () =>
         </omni-tab>
     </omni-tabs>
 
-`,frameworkSources:[{framework:"Vue",load:a=>{var e;return w((e=T==null?void 0:T.render)==null?void 0:e.call(T,a),void 0,i=>i.replace(" disabled",' :disabled="true"'))}},{framework:"React",load:()=>`import { OmniTabs, OmniTab } from "@capitec/omni-components-react/tab";
+`,frameworkSources:[{framework:"Vue",load:a=>{var e;return f((e=T==null?void 0:T.render)==null?void 0:e.call(T,a),void 0,n=>n.replace(" disabled",' :disabled="true"'))}},{framework:"React",load:()=>`import { OmniTabs, OmniTab } from "@capitec/omni-components-react/tab";
 import { OmniLabel } from "@capitec/omni-components-react/label";
 
 const App = () =>
@@ -105,10 +115,10 @@ const App = () =>
     <div>
         Set which <code class="language-html">&lt;omni-tab&gt;</code> in the <code class="language-html">&lt;omni-tabs&gt;</code> component should be disabled. This is based on setting the <code class="language-js">disabled</code> attribute.
     <div>
-    `,args:{},play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),i=await m(e.shadowRoot,".tab-bar");await t(i).toBeTruthy();let s=i.querySelectorAll("omni-tab-header");await t(s).toBeTruthy();let n=[...s],o=n.find(l=>l.hasAttribute("data-disabled"));await t(o).toBeTruthy,await t(o).toEqual(n[2])}},Y={render:a=>r`
+    `,args:{},play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),n=await d(e.shadowRoot,".tab-bar");await t(n).toBeTruthy();let l=n.querySelectorAll("omni-tab-header");await t(l).toBeTruthy();let i=[...l],o=i.find(s=>s.hasAttribute("data-disabled"));await t(o).toBeTruthy,await t(o).toEqual(i[2])}},Y={render:a=>r`
     <omni-tabs data-testid='test-tabs'>
         ${a["[Default Slot]"]?r`${`\r
-`}${g(a["[Default Slot]"])}`:p}
+`}${p(a["[Default Slot]"])}`:g}
     </omni-tabs>
 `,frameworkSources:[{framework:"React",load:()=>`import { OmniTabs, OmniTab, OmniTabHeader } from "@capitec/omni-components-react/tab";
 import { OmniIcon } from "@capitec/omni-components-react/icon";
@@ -147,7 +157,7 @@ const App = () =>
 <OmniTab id="right">
  <div>Right</div>
 </OmniTab>
-</OmniTabs>;`}],name:"Advanced",args:{"[Default Slot]":f`
+</OmniTabs>;`}],name:"Advanced",args:{"[Default Slot]":u`
         <omni-tab-header slot="header" for="up">
             <omni-icon size="default">
             <svg xmlns="http://www.w3.org/2000/svg" fill="orange" width="20px" height="20px"><path d="M5.47 8.47a.75.75 0 0 0 1.06 1.06l4.72-4.72V21c0 .38.282.693.648.743l.102.007a.75.75 0 0 0 .75-.75V4.81l4.72 4.72a.75.75 0 0 0 .976.073l.084-.073a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 0 0-1.06 0Z"/></svg>
@@ -182,7 +192,7 @@ const App = () =>
         </omni-tab>
         `},description:()=>r`
     <div>
-        For slotting custom content into the header use the <code class="language-html">&lt;omni-tab-header&gt;</code> component in the <code class="language-html">&lt;omni-tabs&gt;</code> component.
+        For slotting custom content into the header use the <code class="language-html">&lt;omni-tab-header&gt;</code> component in the <code class="language-html">&lt;omni-tabs&gt;</code> component and ensure you have a <code class="language-html">&lt;omni-tab&gt;</code> component which has a <code class="language-js">for</code> attribute that matches the <code class="language-html">&lt;omni-tab-header&gt;</code> <code class="language-js">id</code> attribute to display slotted content.
     <div>
-    `,play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),i=O.fn();e.addEventListener("click",i);let s=await m(e.shadowRoot,".tab-bar");await t(s).toBeTruthy();let n=s.querySelector('slot[name="header"]');await t(n).toBeTruthy();let o=n==null?void 0:n.assignedElements().filter(c=>c.tagName.toLowerCase()==="omni-tab-header");await t(o).toBeTruthy();let l=o==null?void 0:o.find(c=>c.hasAttribute("data-active"));await t(l).toBeTruthy();let u=l==null?void 0:l.querySelector("omni-icon");await t(u).toBeTruthy();let d=l==null?void 0:l.querySelector("svg");await t(d).toBeTruthy(),await v.click(o[1]);let S=o.find(c=>c.hasAttribute("data-active"));await t(S).toBeTruthy}};export{h as Active,Y as Advanced,X as Basic,T as Disabled,A as Interactive,W as default};
+    `,play:async a=>{let e=b(a.canvasElement).getByTestId("test-tabs"),n=O.fn();e.addEventListener("click",n);let l=await d(e.shadowRoot,".tab-bar");await t(l).toBeTruthy();let i=l.querySelector('slot[name="header"]');await t(i).toBeTruthy();let o=i==null?void 0:i.assignedElements().filter(c=>c.tagName.toLowerCase()==="omni-tab-header");await t(o).toBeTruthy();let s=o==null?void 0:o.find(c=>c.hasAttribute("data-active"));await t(s).toBeTruthy();let w=s==null?void 0:s.querySelector("omni-icon");await t(w).toBeTruthy();let m=s==null?void 0:s.querySelector("svg");await t(m).toBeTruthy(),await v.click(o[1]);let S=o.find(c=>c.hasAttribute("data-active"));await t(S).toBeTruthy}};export{h as Active,Y as Advanced,X as Basic,T as Disabled,A as Interactive,W as default};
 //# sourceMappingURL=Tabs.stories.js.map

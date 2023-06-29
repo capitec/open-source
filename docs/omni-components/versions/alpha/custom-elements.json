@@ -18519,7 +18519,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "Tab header label.",
+              "description": "Tab header label, use the omni-tab-header component for more complex header layouts",
               "attribute": "header",
               "reflects": true
             },
@@ -18529,7 +18529,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
-              "description": "Indicator if the component is disabled.",
+              "description": "Indicator if the tab is disabled.",
               "attribute": "disabled",
               "reflects": true
             },
@@ -18539,7 +18539,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
-              "description": "Indicator if the component is active.",
+              "description": "Indicator if the tab is active.",
               "attribute": "active",
               "reflects": true
             },
@@ -18599,7 +18599,7 @@
               "type": {
                 "text": "string | undefined"
               },
-              "description": "Tab header label.",
+              "description": "Tab header label, use the omni-tab-header component for more complex header layouts",
               "fieldName": "header",
               "attribute": "header"
             },
@@ -18608,7 +18608,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
-              "description": "Indicator if the component is disabled.",
+              "description": "Indicator if the tab is disabled.",
               "fieldName": "disabled",
               "attribute": "disabled"
             },
@@ -18617,7 +18617,7 @@
               "type": {
                 "text": "boolean | undefined"
               },
-              "description": "Indicator if the component is active.",
+              "description": "Indicator if the tab is active.",
               "fieldName": "active",
               "attribute": "active"
             },
@@ -18916,8 +18916,8 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-tabs data-testid='test-tabs'>\n        ${args.header ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('header', args.header))}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tabs>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' active', ' :active=\"true\"').replace(' disabled', ' :disabled=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    description: () => html`\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Headers are managed by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot by setting the <code>slot</code> attribute to <code class=\"language-js\">\"header\"</code>, and displays the slotted content of the <code class=\"language-html\">&lt;omni-tab&gt;</code> with the <code>active</code> attribute set. \n        </p>\n        <p>\n        The <code>active</code> attribute is applied to the first nested tab, if the <code>active</code> attribute is not specified on a nested <code class=\"language-html\">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.\n        </p>\n    `,\n    args: {\n        header: '',\n        '[Default Slot]': raw`<omni-tab header='Tab 1'>\n    <div>Tab 1 Content</div>\n</omni-tab>\n<omni-tab header='Tab 2'>\n    <div>Tab 2 Content</div>\n</omni-tab>\n<omni-tab header='Tab 3'>\n    <div>Tab 3 Content</div>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tabsElement = within(context.canvasElement).getByTestId<Tabs>('test-tabs');\n        const tabSelect = jest.fn();\n        tabsElement.addEventListener('tab-select', tabSelect);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabsElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n        // Get the active tab header.\n        const activeTabHeader = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        // Confirm that the active tab header is the first one in the tab header array\n        await expect(activeTabHeader).toEqual(tabHeadersArray[0]);\n        // Click the second tab header.\n        await userEvent.click(tabHeadersArray[1]);\n        // Get the updated active tab and confirm that it is the one that was clicked.\n        const nextActiveTab = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        await expect(nextActiveTab).toEqual(tabHeadersArray[1]);\n        // Confirm that the tab select event was emitted.\n        await expect(tabSelect).toBeCalledTimes(1);\n        // Get the default slot for Tabs element and get the new active Tab\n        const tabsSlotElement = (await querySelectorAsync(tabsElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        const activeTabElement = tabsSlotElement.assignedElements().find((e) => e.hasAttribute('active')) as Tab;\n        // Confirm that the active tabs header is equal to the expected value.\n        await expect(activeTabElement.header).toEqual('Tab 2');\n    }\n}",
-          "description": "\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Headers are managed by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot by setting the <code>slot</code> attribute to <code class=\"language-js\">\"header\"</code>, and displays the slotted content of the <code class=\"language-html\">&lt;omni-tab&gt;</code> with the <code>active</code> attribute set. \n        </p>\n        <p>\n        The <code>active</code> attribute is applied to the first nested tab, if the <code>active</code> attribute is not specified on a nested <code class=\"language-html\">&lt;omni-tab&gt;</code>. Clicking on one of the tab headers will result in its associated tab being active and the tab's slotted content being displayed.\n        </p>\n    "
+          "default": "{\n    render: (args: Args) => html`\n    <omni-tabs data-testid='test-tabs'>\n        ${args.header ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('header', args.header))}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tabs>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' active', ' :active=\"true\"').replace(' disabled', ' :disabled=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    description: () => html`\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Tab headers are rendered by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot. \n        </p>\n    `,\n    args: {\n        header: '',\n        '[Default Slot]': raw`<omni-tab header='Tab 1'>\n    <div>Tab 1 Content</div>\n</omni-tab>\n<omni-tab header='Tab 2'>\n    <div>Tab 2 Content</div>\n</omni-tab>\n<omni-tab header='Tab 3'>\n    <div>Tab 3 Content</div>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tabsElement = within(context.canvasElement).getByTestId<Tabs>('test-tabs');\n        const tabSelect = jest.fn();\n        tabsElement.addEventListener('tab-select', tabSelect);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabsElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n        // Get the active tab header.\n        const activeTabHeader = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        // Confirm that the active tab header is the first one in the tab header array\n        await expect(activeTabHeader).toEqual(tabHeadersArray[0]);\n        // Click the second tab header.\n        await userEvent.click(tabHeadersArray[1]);\n        // Get the updated active tab and confirm that it is the one that was clicked.\n        const nextActiveTab = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        await expect(nextActiveTab).toEqual(tabHeadersArray[1]);\n        // Confirm that the tab select event was emitted.\n        await expect(tabSelect).toBeCalledTimes(1);\n        // Get the default slot for Tabs element and get the new active Tab\n        const tabsSlotElement = (await querySelectorAsync(tabsElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        const activeTabElement = tabsSlotElement.assignedElements().find((e) => e.hasAttribute('active')) as Tab;\n        // Confirm that the active tabs header is equal to the expected value.\n        await expect(activeTabElement.header).toEqual('Tab 2');\n    }\n}",
+          "description": "\n        <p>\n        The <code class=\"language-html\">&lt;omni-tabs&gt;</code> component will display content based on the nested <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Tab headers are rendered by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tabs&gt;</code> header slot. \n        </p>\n    "
         },
         {
           "kind": "variable",

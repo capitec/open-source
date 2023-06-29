@@ -502,8 +502,8 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">tab-select</td>
-                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;{}&gt;</code></pre></td>
-                                    <td data-label="Description">Dispatched when one of the omni-tab(s) is selected.</td>
+                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;{ previous: HTMLElement, selected: HTMLElement}&gt;</code></pre></td>
+                                    <td data-label="Description">Dispatched when an omni-tab is selected.</td>
                                 </tr>
                                 
                             </tbody>
@@ -537,12 +537,12 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
-                                    <td data-label="Description">Content to render inside the component body.</td>
+                                    <td data-label="Description">All omni-tab components that are managed by this component.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">header</code></pre></td>
-                                    <td data-label="Description">The header slot used to slot omni-tab-header components.</td>
+                                    <td data-label="Description">Optional omni-tab-header components associated with each omni-tab component.</td>
                                 </tr>
                                 
                             </tbody>

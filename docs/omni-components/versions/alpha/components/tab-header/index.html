@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Switch - Omni Components</title>
+    <title>Tab Header - Omni Components</title>
     <base href="/open-source/docs/omni-components/versions/alpha/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/alpha/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
 
@@ -279,23 +279,23 @@
                 Select
             </a>
         </div>
-        <div class="menu-item selected">
-            <a class="menu-link selected"
-            aria-current="page" 
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/switch">
                 Switch
             </a>
         </div>
         <div class="menu-item ">
             <a class="menu-link "
-             
+            aria-current="page" 
             href="./components/tab">
                 Tab
             </a>
         </div>
-        <div class="menu-item ">
-            <a class="menu-link "
-             
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
             href="./components/tab-header">
                 Tab Header
             </a>
@@ -338,19 +338,19 @@
 
 <article class="component">
     <div class="component-meta">
-        <div class="component-name">Switch  </div>
-        <div class="component-desc">Control to switch a value on or off.</div> 
+        <div class="component-name">Tab Header  </div>
+        <div class="component-desc">Control that can be used to display custom slotted content, for use within an omni-tabs component and associated omni-tab component.</div> 
         <div class="component-info">
             <div class="component-info-item">
                 <div>Module</div>
                 <div class="component-info-item-code" id="html-imports">
-                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/switch&#39;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/tab&#39;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
                         content_copy
                     </span>
                 </div>           
                 <div class="component-info-item-code no-display" id="react-imports">
-                    <pre><code class="language-js no-code-scroll" id="component-import-code-react">import { OmniSwitch } from &quot;@capitec/omni-components-react/switch&quot;;</code></pre>
+                    <pre><code class="language-js no-code-scroll" id="component-import-code-react">import { OmniTabHeader } from &quot;@capitec/omni-components-react/tab&quot;;</code></pre>
                     <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code-react');return false;">
                         content_copy
                     </span>
@@ -359,7 +359,7 @@
             <div class="component-info-item">
                 <div>Source</div>
                 <div>
-                    <a href="https://github.com/capitec/omni-components/tree/develop/src/switch/Switch.ts" target="blank" class="component-info-item-link">
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/tab/TabHeader.ts" target="blank" class="component-info-item-link">
                         <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
                             <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
                         </svg>
@@ -396,79 +396,19 @@
                     <div class="component-tab-content">
                         <div class="component-stories">
                             
-                            <div class="name" id="story-interactive">Interactive</div>
+                            <div class="name" id="story-advanced">Advanced</div>
                             <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Interactive"
-                                interactive >
-                            </story-renderer>
-                            <div class="name" id="story-label">Label</div>
-                            <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Label"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-hint">Hint</div>
-                            <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Hint"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-error-label">Error Label</div>
-                            <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Error_Label"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-checked">Checked</div>
-                            <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Checked"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-disabled">Disabled</div>
-                            <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Disabled"
-                                 >
-                            </story-renderer>
-                            <div class="name" id="story-slot">Slot</div>
-                            <story-renderer 
-                                path="./dist/switch/Switch.stories.js" 
-                                tag="omni-switch" 
-                                key="Slot"
+                                path="./dist/tab/TabHeader.stories.js" 
+                                tag="omni-tab-header" 
+                                key="Advanced"
                                  >
                             </story-renderer>
                         </div>
                         <div class="component-toc-wrapper">
                             <div class="component-toc">
                                 
-                                    <a href="components/switch/#story-interactive" id="story-interactive-a" class="item">
-                                        Interactive
-                                    </a>
-                                    <a href="components/switch/#story-label" id="story-label-a" class="item">
-                                        Label
-                                    </a>
-                                    <a href="components/switch/#story-hint" id="story-hint-a" class="item">
-                                        Hint
-                                    </a>
-                                    <a href="components/switch/#story-error-label" id="story-error-label-a" class="item">
-                                        Error Label
-                                    </a>
-                                    <a href="components/switch/#story-checked" id="story-checked-a" class="item">
-                                        Checked
-                                    </a>
-                                    <a href="components/switch/#story-disabled" id="story-disabled-a" class="item">
-                                        Disabled
-                                    </a>
-                                    <a href="components/switch/#story-slot" id="story-slot-a" class="item">
-                                        Slot
+                                    <a href="components/tab-header/#story-advanced" id="story-advanced-a" class="item">
+                                        Advanced
                                     </a>
                             </div>
                         </div>
@@ -496,45 +436,17 @@
                             <tbody id="component-attributes">
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">label</td>
-                                    <td data-label="Attribute" scope="row">label&nbsp;</td>
+                                    <td data-label="Name" scope="row">for</td>
+                                    <td data-label="Attribute" scope="row">for&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">Text label.</td>
+                                    <td data-label="Description">Indicator of which omni-tab element with the matching corresponding id attribute should be displayed.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">data</td>
-                                    <td data-label="Attribute" scope="row">data&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">object | undefined</code></pre></td>
+                                    <td data-label="Attribute" scope="row">&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">unknown | undefined</code></pre></td>
                                     <td data-label="Description">Data associated with the component.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">hint</td>
-                                    <td data-label="Attribute" scope="row">hint&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">Hint message to assist the user.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">error</td>
-                                    <td data-label="Attribute" scope="row">error&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">An error message to guide users to correct a mistake.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">checked</td>
-                                    <td data-label="Attribute" scope="row">checked&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
-                                    <td data-label="Description">Indicator if the component is checked or not.</td>
-                                </tr>
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">disabled</td>
-                                    <td data-label="Attribute" scope="row">disabled&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
-                                    <td data-label="Description">Indicator if the component is disabled.</td>
                                 </tr>
                                 
                                 <tr>
@@ -560,31 +472,6 @@
                 
                 
                 
-                
-                    <h2 class="component-props-table-header">Events</h2>
-                    <div class="docs-search-area">
-                        <omni-search-field id="event-search"></omni-search-field>
-                    </div>
-                    <div class="component-props-table-wrapper">
-                        <table class="component-props-table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Type</th>
-                                    <th scope="col">Description</th>
-                                </tr>
-                            </thead>
-                            <tbody id="component-events">
-                                
-                                <tr>
-                                    <td data-label="Name" scope="row">value-change</td>
-                                    <td data-label="Type"><pre><code class="language-js">CustomEvent&lt;{ old: Boolean; new: Boolean; }&gt;</code></pre></td>
-                                    <td data-label="Description">Dispatched when the switch checked state is changed.</td>
-                                </tr>
-                                
-                            </tbody>
-                        </table>
-                    </div>
                 
                 
                 
@@ -613,7 +500,7 @@
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
-                                    <td data-label="Description">Content to render inside the component.</td>
+                                    <td data-label="Description">Content to render inside the tab header.</td>
                                 </tr>
                                 
                             </tbody>
@@ -776,148 +663,93 @@
                                 <tbody data-category="Component Variables" class="component-css-props">
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-label-font-color</code></pre></td>
-                                        <td data-label="Description">Label font color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-font-color</code></pre></td>
+                                        <td data-label="Description">Tab header font color.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-label-font-family</code></pre></td>
-                                        <td data-label="Description">Label font family.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-font-family</code></pre></td>
+                                        <td data-label="Description">Tab header font family.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-label-font-size</code></pre></td>
-                                        <td data-label="Description">Label font size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-font-size</code></pre></td>
+                                        <td data-label="Description">Tab header font size.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-label-font-weight</code></pre></td>
-                                        <td data-label="Description">Label font weight.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-font-weight</code></pre></td>
+                                        <td data-label="Description">Tab header font weight.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-label-spacing</code></pre></td>
-                                        <td data-label="Description">Label left margin spacing.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Tab header disabled background color.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-hint-label-font-color</code></pre></td>
-                                        <td data-label="Description">Hint text font color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-active-font-color</code></pre></td>
+                                        <td data-label="Description">Tab header active font color.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-hint-label-font-family</code></pre></td>
-                                        <td data-label="Description">Hint text font family.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-height</code></pre></td>
+                                        <td data-label="Description">Tab header tab height.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-hint-label-font-size</code></pre></td>
-                                        <td data-label="Description">Hint text font size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-min-width</code></pre></td>
+                                        <td data-label="Description">Tab header tab min width.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-hint-label-font-weight</code></pre></td>
-                                        <td data-label="Description">Hint text font weight.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-max-width</code></pre></td>
+                                        <td data-label="Description">Tab header tab max width.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-error-label-font-color</code></pre></td>
-                                        <td data-label="Description">Error text font color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-margin</code></pre></td>
+                                        <td data-label="Description">Tab header tab margin.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-error-label-font-family</code></pre></td>
-                                        <td data-label="Description">Error text font family.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-hover-background-color</code></pre></td>
+                                        <td data-label="Description">Tab header tab hover background.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-error-label-font-size</code></pre></td>
-                                        <td data-label="Description">Error text font size.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-bar-height</code></pre></td>
+                                        <td data-label="Description">Tab header indicator bar height.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-input-error-label-font-weight</code></pre></td>
-                                        <td data-label="Description">Error text font weight.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-bar-border-radius</code></pre></td>
+                                        <td data-label="Description"> Tab header indicator bar border radius.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-track-width</code></pre></td>
-                                        <td data-label="Description">Track width.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-bar-width</code></pre></td>
+                                        <td data-label="Description">Tab header indicator bar width.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-track-height</code></pre></td>
-                                        <td data-label="Description">Track height.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-height</code></pre></td>
+                                        <td data-label="Description">Tab header indicator height.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-track-background-color</code></pre></td>
-                                        <td data-label="Description">Track background color.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-color</code></pre></td>
+                                        <td data-label="Description">Tab header indicator color.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-track-border-radius</code></pre></td>
-                                        <td data-label="Description">Track border radius.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-border-radius</code></pre></td>
+                                        <td data-label="Description">Tab header indicator border radius.</td>
                                     </tr>
                                     
                                     <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-track-inset</code></pre></td>
-                                        <td data-label="Description">Track inset margins.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-knob-height</code></pre></td>
-                                        <td data-label="Description">Knob height.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-knob-width</code></pre></td>
-                                        <td data-label="Description">Knob width.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-knob-background-color</code></pre></td>
-                                        <td data-label="Description">Knob background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-knob-box-shadow</code></pre></td>
-                                        <td data-label="Description">Knob box shadow.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-knob-hover-box-shadow</code></pre></td>
-                                        <td data-label="Description">Knob hover box shadow.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-track-background-color</code></pre></td>
-                                        <td data-label="Description">Track checked background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-hover-knob-box-shadow</code></pre></td>
-                                        <td data-label="Description">Knob checked hover box shadow.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-track-background-color</code></pre></td>
-                                        <td data-label="Description">Track disabled background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-checked-knob-background-color</code></pre></td>
-                                        <td data-label="Description">Knob checked background color.</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-knob-background-color</code></pre></td>
-                                        <td data-label="Description">Knob disabled background color..</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-switch-disabled-knob-box-shadow</code></pre></td>
-                                        <td data-label="Description">Knob disabled hover box shadow.</td>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-tab-header-indicator-width</code></pre></td>
+                                        <td data-label="Description">Tab header indicator width.</td>
                                     </tr>
                                     
                                 </tbody>

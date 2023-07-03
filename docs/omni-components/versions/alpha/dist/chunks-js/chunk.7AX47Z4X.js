@@ -32,4 +32,4 @@ import{a as T}from"./chunk.LB764BBD.js";import{h as q}from"./chunk.PNTHLTQK.js";
                 </div>
                 <slot @slotchange="${()=>this.requestUpdate()}"></slot>
         `}};b([g()],n.prototype,"_observer",2),n=b([A("omni-tabs")],n);var o="active",c="disabled",d="data-active",E="data-disabled";export{n as a,o as b,c};
-//# sourceMappingURL=chunk.N57I3NXS.js.map
+//# sourceMappingURL=chunk.7AX47Z4X.js.map

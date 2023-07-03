@@ -20,7 +20,7 @@ import{a as T}from"./chunk.LB764BBD.js";import{h as q}from"./chunk.PNTHLTQK.js";
                 ::slotted(*:not([active]):not([slot])) {
                     display: none !important;
                 }
-            `]}render(){let e=Array.from(this.querySelectorAll("omni-tab-header")).filter(t=>t.slot==="header"),r=Array.from(this.querySelectorAll("omni-tab"));if(r.length>0){if(r.find(t=>t.hasAttribute(o))){let t=r.find(s=>s.hasAttribute(o)),i=e.find(s=>s.for===t.id);i&&(i.setAttribute(d,""),i.requestUpdate())}else{r[0].setAttribute(o,"");let t=e.find(i=>i.for===r[0].id);t&&(t.setAttribute(d,""),t.requestUpdate())}e.length>0&&r.filter(t=>t.hasAttribute(c)).forEach(t=>{let i=e.find(s=>s.for===t.id);i&&(i.setAttribute(E,""),i.requestUpdate())})}return l`
+            `]}render(){let e=Array.from(this.querySelectorAll("omni-tab-header")).filter(t=>t.slot==="header"),r=Array.from(this.querySelectorAll("omni-tab"));if(r.length>0){if(r.find(t=>t.hasAttribute(o)||t.active)){let t=r.find(s=>s.hasAttribute(o)),i=e.find(s=>s.for===t.id);i&&(i.setAttribute(d,""),i.requestUpdate())}else{r[0].setAttribute(o,"");let t=e.find(i=>i.for===r[0].id);t&&(t.setAttribute(d,""),t.requestUpdate())}e.length>0&&r.filter(t=>t.hasAttribute(c)).forEach(t=>{let i=e.find(s=>s.for===t.id);i&&(i.setAttribute(E,""),i.requestUpdate())})}return l`
                 <div class='tab-bar' @click="${t=>this.selectTab(t.target)}">
                     <slot name='header' @slotchange="${()=>this.requestUpdate()}">
                         ${r.map(t=>t.hasAttribute("header")?l`
@@ -32,4 +32,4 @@ import{a as T}from"./chunk.LB764BBD.js";import{h as q}from"./chunk.PNTHLTQK.js";
                 </div>
                 <slot @slotchange="${()=>this.requestUpdate()}"></slot>
         `}};b([g()],n.prototype,"_observer",2),n=b([A("omni-tab-group")],n);var o="active",c="disabled",d="data-active",E="data-disabled";export{n as a,o as b,c};
-//# sourceMappingURL=chunk.KOV4TFXF.js.map
+//# sourceMappingURL=chunk.3KRFWNJ7.js.map

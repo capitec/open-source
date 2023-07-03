@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as a,m as e,p as i}from"./chunk.BF43NN75.js";e();i();var t=class extends s{static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as e}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as t,m as o,p as i}from"./chunk.BF43NN75.js";o();i();var a=class extends s{static get styles(){return[super.styles,n`
 
                 /* host styles */
                 :host {
@@ -11,7 +11,7 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
                 }
 
                 :host([data-disabled]){
-                    cursor: not-allowed;
+                    cursor: var(--omni-tab-header-disabled-cursor, not-allowed);
                     background-color: var(--omni-tab-header-disabled-background-color, var(--omni-disabled-background-color)); 
                 }
 
@@ -66,5 +66,5 @@ import{h as s}from"./chunk.PNTHLTQK.js";import{a as h,b as o}from"./chunk.S2K25A
             <div class="indicator-bar">
                 ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:d}
             </div>
-        `}};a([o({type:String,reflect:!0})],t.prototype,"for",2),a([o({type:Object,reflect:!1})],t.prototype,"data",2),t=a([h("omni-tab-header")],t);export{t as a};
-//# sourceMappingURL=chunk.DRHLE6Y6.js.map
+        `}};t([e({type:String,reflect:!0})],a.prototype,"for",2),t([e({type:Object,reflect:!1})],a.prototype,"data",2),a=t([h("omni-tab-header")],a);export{a};
+//# sourceMappingURL=chunk.FN3REF6I.js.map

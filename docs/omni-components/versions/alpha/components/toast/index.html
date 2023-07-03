@@ -403,6 +403,27 @@
                                 key="Interactive"
                                 interactive >
                             </story-renderer>
+                            <div class="name" id="story-showing-toasts">Showing Toasts</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Showing_Toasts"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-configure-toast">Configure Toast</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Configure_Toast"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-stacking-toasts">Stacking Toasts</div>
+                            <story-renderer 
+                                path="./dist/toast/Toast.stories.js" 
+                                tag="omni-toast" 
+                                key="Stacking_Toasts"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-custom-slotted-content">Custom Slotted Content</div>
                             <story-renderer 
                                 path="./dist/toast/Toast.stories.js" 
@@ -444,6 +465,15 @@
                                 
                                     <a href="components/toast/#story-interactive" id="story-interactive-a" class="item">
                                         Interactive
+                                    </a>
+                                    <a href="components/toast/#story-showing-toasts" id="story-showing-toasts-a" class="item">
+                                        Showing Toasts
+                                    </a>
+                                    <a href="components/toast/#story-configure-toast" id="story-configure-toast-a" class="item">
+                                        Configure Toast
+                                    </a>
+                                    <a href="components/toast/#story-stacking-toasts" id="story-stacking-toasts-a" class="item">
+                                        Stacking Toasts
                                     </a>
                                     <a href="components/toast/#story-custom-slotted-content" id="story-custom-slotted-content-a" class="item">
                                         Custom Slotted Content
@@ -511,6 +541,14 @@
                                     <td data-label="Attribute" scope="row">closeable&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
                                     <td data-label="Description">If true, will display a close button that fires a `close-click` event when clicked.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">current</td>
+                                    <td data-label="Attribute" scope="row">&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Description">Global singleton ToastStack used for showing a toast, either by adding to, or replacing.
+Use `Toast.show` function to add or replace toasts to this instance.</td>
                                 </tr>
                                 
                                 <tr>

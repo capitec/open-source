@@ -1,6 +1,6 @@
 {
   "version": 3,
   "sources": ["../../src/toast/index.ts"],
-  "mappings": "6iBAAAA,IAAAC",
+  "mappings": "igBAAAA,IAAAC",
   "names": ["init_define_process_argv", "init_global"]
 }

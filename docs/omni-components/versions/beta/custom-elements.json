@@ -20083,6 +20083,33 @@
         },
         {
           "kind": "variable",
+          "name": "Showing_Toasts",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n    <div>\n        Toasts can be shown programmatically using the static <code class=\"language-js\">Toast.show()</code> function. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-toast-show\"\n            label=\"Show Toast\"\n            @click=\"${() => {\n                Toast.configure({\n                    position: 'bottom',\n                    reverse: false,\n                    stack: true,\n                    closeable: undefined,\n                    duration: undefined\n                });\n                Toast.show({\n                    type: 'success',\n                    header: 'Success!',\n                    detail: 'It was successful.'\n                });\n            }}\"\n            >\n        </omni-button>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\ndocument.querySelector('omni-button').addEventListener('click', () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"showToast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nwindow.vueData = {\n    showToast: () => {\n        Toast.show({\n            type: 'success',\n            header: 'Success!',\n            detail: 'It was successful.'\n        });\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"\\${showToast}\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n}`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Toast } from '@capitec/omni-components-react/toast';\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n};\n\nconst App = () => <OmniButton label=\"Show Toast\" onclick={showToast}/>;`\n        }\n    ],\n    name: 'Showing Toast Programmatically',\n    args: {}\n}",
+          "description": "\n    <div>\n        Toasts can be shown programmatically using the static <code class=\"language-js\">Toast.show()</code> function. \n    <div>\n    "
+        },
+        {
+          "kind": "variable",
+          "name": "Configure_Toast",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n    <div>\n       Programmatically shown Toasts can be configured using the static <code class=\"language-js\">Toast.configure()</code> function. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-toast-configure\"\n            label=\"Show Toast\"\n            @click=\"${() => {\n                Toast.configure({\n                    position: 'left',\n                    reverse: true,\n                    stack: true,\n                    closeable: undefined,\n                    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n                    duration: undefined\n                });\n                Toast.show({\n                    type: 'success',\n                    header: 'Success!',\n                    detail: 'It was successful.'\n                });\n            }}\"\n            >\n        </omni-button>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\ndocument.querySelector('omni-button').addEventListener('click', () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"showToast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nwindow.vueData = {\n    showToast: () => {\n        Toast.show({\n            type: 'success',\n            header: 'Success!',\n            detail: 'It was successful.'\n        });\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"\\${showToast}\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n}`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Toast } from '@capitec/omni-components-react/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n};\n\nconst App = () => <OmniButton label=\"Show Toast\" onclick={showToast}/>;`\n        }\n    ],\n    name: 'Configure Toast Programmatically',\n    args: {}\n}",
+          "description": "\n    <div>\n       Programmatically shown Toasts can be configured using the static <code class=\"language-js\">Toast.configure()</code> function. \n    <div>\n    "
+        },
+        {
+          "kind": "variable",
+          "name": "Replacing_Toasts",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n    <div>\n        Toasts can be replaced instead of stacked when shown programmatically via the static <code class=\"language-js\">Toast.show()</code> function by using the static <code class=\"language-js\">Toast.configure()</code> function to set <code>stack</code> to <code class=\"language-js\">false</code>. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-toast-show\"\n            label=\"Show Toast\"\n            @click=\"${() => {\n                Toast.configure({\n                    position: 'bottom',\n                    reverse: false,\n                    stack: false,\n                    closeable: undefined,\n                    duration: undefined\n                });\n                Toast.show({\n                    type: 'success',\n                    header: 'Success!',\n                    detail: 'It was successful.',\n                    closeable: true,\n                    // Defaults to 3000ms (or configured duration via Toast.configure function) when not specified. If set to 0 will be infinite (or until close clicked)\n                    duration: 0\n                });\n            }}\"\n            >\n        </omni-button>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({ stack: false });\n\ndocument.querySelector('omni-button').addEventListener('click', () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.',\n        closeable: true,\n        // Defaults to 3000ms (or configured duration via Toast.configure function) when not specified. If set to 0 will be infinite (or until close clicked)\n        duration: 0\n    });\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"showToast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({ stack: false });\n\nwindow.vueData = {\n    showToast: () => {\n        Toast.show({\n            stack: true,\n            type: 'success',\n            header: 'Success!',\n            detail: 'It was successful.',\n            closeable: true,\n            // Defaults to 3000ms (or configured duration via Toast.configure function) when not specified. If set to 0 will be infinite (or until close clicked)\n            duration: 0\n        });\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"\\${showToast}\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({ stack: false });\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.',\n        closeable: true,\n        // Defaults to 3000ms (or configured duration via Toast.configure function) when not specified. If set to 0 will be infinite (or until close clicked)\n        duration: 0\n    });\n}`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Toast } from '@capitec/omni-components-react/toast';\n\nToast.configure({ stack: false });\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.',\n        closeable: true,\n        // Defaults to 3000ms (or configured duration via Toast.configure function) when not specified. If set to 0 will be infinite (or until close clicked)\n        duration: 0\n    });\n};\n\nconst App = () => <OmniButton label=\"Show Toast\" onclick={showToast}/>;`\n        }\n    ],\n    name: 'Replacing Toast Programmatically',\n    args: {}\n}",
+          "description": "\n    <div>\n        Toasts can be replaced instead of stacked when shown programmatically via the static <code class=\"language-js\">Toast.show()</code> function by using the static <code class=\"language-js\">Toast.configure()</code> function to set <code>stack</code> to <code class=\"language-js\">false</code>. \n    <div>\n    "
+        },
+        {
+          "kind": "variable",
           "name": "Custom_Slotted_Content",
           "type": {
             "text": "ComponentStoryFormat<Args>"
@@ -20140,6 +20167,30 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/toast/Toast.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Showing_Toasts",
+          "declaration": {
+            "name": "Showing_Toasts",
+            "module": "src/toast/Toast.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Configure_Toast",
+          "declaration": {
+            "name": "Configure_Toast",
+            "module": "src/toast/Toast.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Replacing_Toasts",
+          "declaration": {
+            "name": "Replacing_Toasts",
             "module": "src/toast/Toast.stories.ts"
           }
         },
@@ -20418,6 +20469,62 @@
               "description": "If true, will display a close button that fires a `close-click` event when clicked.",
               "attribute": "closeable",
               "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "stack",
+              "type": {
+                "text": "ToastStack & {\n        /**\n         * When true, will append toast to the toast stack. Otherwise when false will replace any toast(s). Defaults to true.\n         */\n        stack?: boolean;\n\n        /**\n         * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n         */\n        closeable?: boolean;\n\n        /**\n         * If provided will be the time in milliseconds the toast is displayed before being automatically removed from the stack.\n         * Defaults to 3000ms when not provided.\n         * When set to 0 will amount to no timeout.\n         */\n        duration?: number;\n    } | undefined"
+              },
+              "privacy": "private",
+              "static": true
+            },
+            {
+              "kind": "field",
+              "name": "current",
+              "privacy": "public",
+              "static": true,
+              "description": "Global singleton ToastStack used for showing a toast, either by adding to, or replacing.\nUse `Toast.show` function to add or replace toasts to this instance."
+            },
+            {
+              "kind": "method",
+              "name": "configure",
+              "privacy": "public",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "{\n        /**\n         * The position to stack toasts\n         */\n        position?: 'top' | 'bottom' | 'left' | 'right' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';\n\n        /**\n         * Reverse the order of toast with newest toasts showed on top of the stack. By default newest toasts are showed at the bottom of the stack.\n         */\n        reverse?: boolean;\n\n        /**\n         * When true, will append toast to the toast stack. Otherwise when false will replace any toast(s). Defaults to true.\n         */\n        stack?: boolean;\n\n        /**\n         * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n         */\n        closeable?: boolean;\n\n        /**\n         * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.\n         * Defaults to 3000ms when not provided.\n         * When set to 0 it will never be auto removed.\n         */\n        duration?: number;\n    }"
+                  }
+                }
+              ],
+              "description": "Configure the global singleton ToastStack used for showing a toast, either by adding to, or replacing.\nUse `Toast.show` function to add or replace toasts to this instance.",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "privacy": "public",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "options",
+                  "type": {
+                    "text": "ShowToastInit"
+                  }
+                }
+              ],
+              "description": "Show a toast message.",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
             },
             {
               "kind": "method",
@@ -20814,6 +20921,7 @@
               "parameters": [
                 {
                   "name": "init",
+                  "optional": true,
                   "type": {
                     "text": "ToastStackInit"
                   },
@@ -20845,6 +20953,27 @@
                   "text": ""
                 }
               }
+            },
+            {
+              "kind": "method",
+              "name": "showInstance",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "instance",
+                  "type": {
+                    "text": "Toast"
+                  }
+                },
+                {
+                  "name": "options",
+                  "optional": true,
+                  "type": {
+                    "text": "ShowToastOptions"
+                  }
+                }
+              ],
+              "description": "Push a toast instance onto the toast stack."
             },
             {
               "kind": "method",
@@ -21062,6 +21191,10 @@
         {
           "alias": "ShowToastInit",
           "type": "{\n    /**\n     * The type of toast to display.\n     */\n    type: 'success' | 'warning' | 'error' | 'info' | 'none';\n\n    /**\n     * The toast title.\n     */\n    header?: string;\n\n    /**\n     * The toast description.\n     */\n    detail?: string;\n\n    /**\n     * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n     */\n    closeable?: boolean;\n\n    /**\n     * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.\n     */\n    duration?: number;\n\n    /**\n     * Content to render before toast message area.\n     */\n    prefix?: RenderFunction | RenderResult;\n\n    /**\n     * Content to render inside the component message area.\n     */\n    content?: RenderFunction | RenderResult;\n\n    /**\n     * Content to render as the close button when `closeable`.\n     */\n    close?: RenderFunction | RenderResult;\n}"
+        },
+        {
+          "alias": "ShowToastOptions",
+          "type": "{\n    /**\n     * If provided will be the time in milliseconds the toast is displayed before being automatically removed from the stack.\n     */\n    duration?: number;\n\n    /**\n     * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n     */\n    closeable?: boolean;\n}"
         }
       ]
     },

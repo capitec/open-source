@@ -24,7 +24,7 @@ import{a as P}from"./chunk.DZCGDWRW.js";import{a as S}from"./chunk.LUCH4Y6K.js";
                 }
 
                 .field.error {
-                    color: var(--omni-currency-field-error-font-color);
+                    color: var(--omni-currency-field-error-font-color, var(--omni-font-color));
                 }
 
                 .label {
@@ -48,4 +48,4 @@ import{a as P}from"./chunk.DZCGDWRW.js";import{a as S}from"./chunk.LUCH4Y6K.js";
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};f([T("#inputField")],l.prototype,"_inputElement",2),f([d({type:String,reflect:!0,attribute:"currency-symbol"})],l.prototype,"currencySymbol",2),f([d({type:String,reflect:!0,attribute:"thousands-separator"})],l.prototype,"thousandsSeparator",2),f([d({type:String,reflect:!0,attribute:"fractional-separator"})],l.prototype,"fractionalSeparator",2),f([d({type:Number,reflect:!0,attribute:"fractional-precision"})],l.prototype,"fractionalPrecision",2),f([d({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],l.prototype,"noNativeKeyboard",2),f([d({type:String,reflect:!0})],l.prototype,"formatter",2),l=f([E("omni-currency-field")],l);export{l as a};
-//# sourceMappingURL=chunk.GID6PZA2.js.map
+//# sourceMappingURL=chunk.HV7HPMP7.js.map

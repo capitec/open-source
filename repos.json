@@ -19,7 +19,7 @@
       "logo": "https://raw.githubusercontent.com/capitec/omni-components/develop/.tooling/eleventy/assets/images/logo.png",
       "name": "omni-components",
       "description": "Modern UI component library for mobile and web",
-      "version": "0.7.0"
+      "version": "0.8.0"
     }
   ]
 }

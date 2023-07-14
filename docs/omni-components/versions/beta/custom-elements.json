@@ -128,7 +128,7 @@
               "name": "--omni-button-padding-left"
             },
             {
-              "description": "Component padding right.",
+              "description": "Component padding right. PRIMARY",
               "name": "--omni-button-padding-right"
             },
             {
@@ -160,12 +160,44 @@
               "name": "--omni-button-primary-hover-border-width"
             },
             {
+              "description": "Primary \"type\" hover color.",
+              "name": "--omni-button-primary-hover-color"
+            },
+            {
               "description": "Primary \"type\" hover box shadow.",
               "name": "--omni-button-primary-hover-box-shadow"
             },
             {
               "description": "Primary \"type\" active back color.",
               "name": "--omni-button-primary-active-background"
+            },
+            {
+              "description": "Primary \"type\" active border color.",
+              "name": "--omni-button-primary-active-border-color"
+            },
+            {
+              "description": "Primary \"type\" active border width.",
+              "name": "--omni-button-primary-active-border-width"
+            },
+            {
+              "description": "Primary \"type\" active color.",
+              "name": "--omni-button-primary-active-color"
+            },
+            {
+              "description": "Primary \"type\" disabled back color.",
+              "name": "--omni-button-primary-disabled-background"
+            },
+            {
+              "description": "Primary \"type\" disabled border color.",
+              "name": "--omni-button-primary-disabled-border-color"
+            },
+            {
+              "description": "Primary \"type\" disabled border width.",
+              "name": "--omni-button-primary-disabled-border-width"
+            },
+            {
+              "description": "Primary \"type\" disabled color. SECONDARY",
+              "name": "--omni-button-primary-disabled-color"
             },
             {
               "description": "Secondary \"type\" background.",
@@ -196,12 +228,44 @@
               "name": "--omni-button-secondary-hover-border-width"
             },
             {
+              "description": "Secondary \"type\" hover color.",
+              "name": "--omni-button-secondary-hover-color"
+            },
+            {
               "description": "Secondary \"type\" hover box shadow.",
               "name": "--omni-button-secondary-hover-box-shadow"
             },
             {
               "description": "Secondary \"type\" active background.",
               "name": "--omni-button-secondary-active-background"
+            },
+            {
+              "description": "Secondary \"type\" active border color.",
+              "name": "--omni-button-secondary-active-border-color"
+            },
+            {
+              "description": "Secondary \"type\" active border width.",
+              "name": "--omni-button-secondary-active-border-width"
+            },
+            {
+              "description": "Secondary \"type\" active color.",
+              "name": "--omni-button-secondary-active-color"
+            },
+            {
+              "description": "Secondary \"type\" disabled back color.",
+              "name": "--omni-button-secondary-disabled-background"
+            },
+            {
+              "description": "Secondary \"type\" disabled border color.",
+              "name": "--omni-button-secondary-disabled-border-color"
+            },
+            {
+              "description": "Secondary \"type\" disabled border width.",
+              "name": "--omni-button-secondary-disabled-border-width"
+            },
+            {
+              "description": "Secondary \"type\" disabled color. CLEAR",
+              "name": "--omni-button-secondary-disabled-color"
             },
             {
               "description": "Clear \"type\" background.",
@@ -248,6 +312,26 @@
               "name": "--omni-button-clear-active-border-width"
             },
             {
+              "description": "Clear \"type\" active color.",
+              "name": "--omni-button-clear-active-color"
+            },
+            {
+              "description": "Clear \"type\" disabled back color.",
+              "name": "--omni-button-clear-disabled-background"
+            },
+            {
+              "description": "Clear \"type\" disabled border color.",
+              "name": "--omni-button-clear-disabled-border-color"
+            },
+            {
+              "description": "Clear \"type\" disabled border width.",
+              "name": "--omni-button-clear-disabled-border-width"
+            },
+            {
+              "description": "Clear \"type\" disabled color. WHITE",
+              "name": "--omni-button-clear-disabled-color"
+            },
+            {
               "description": "White \"type\" background.",
               "name": "--omni-button-white-background"
             },
@@ -290,6 +374,26 @@
             {
               "description": "White \"type\" active border width.",
               "name": "--omni-button-white-active-border-width"
+            },
+            {
+              "description": "White \"type\" hover color.",
+              "name": "--omni-button-white-active-color"
+            },
+            {
+              "description": "White \"type\" disabled back color.",
+              "name": "--omni-button-white-disabled-background"
+            },
+            {
+              "description": "White \"type\" disabled border color.",
+              "name": "--omni-button-white-disabled-border-color"
+            },
+            {
+              "description": "White \"type\" disabled border width.",
+              "name": "--omni-button-white-disabled-border-width"
+            },
+            {
+              "description": "White \"type\" disabled color.",
+              "name": "--omni-button-white-disabled-color"
             },
             {
               "description": "Disabled border color.",

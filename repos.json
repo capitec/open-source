@@ -5,7 +5,7 @@
       "logo": "https://raw.githubusercontent.com/capitec/omni-state/develop/docs/logos/omni.png",
       "name": "omni-state",
       "description": "Simple web app state and storage management",
-      "version": "0.1.0"
+      "version": "0.1.1"
     },
     {
       "display": "Omni Widget",

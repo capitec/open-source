@@ -4,6 +4,879 @@
   "modules": [
     {
       "kind": "javascript-module",
+      "path": "src/alert/Alert.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Showing_Alerts",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n    <div>\n        Alerts can be shown programmatically using the static <code class=\"language-js\">Alert.show()</code> function. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-alert-show\"\n            label=\"Show Alert\"\n            @click=\"${() => {\n                Alert.show({\n                    status: 'success',\n                    message: 'Success!',\n                    description: 'It was successful.'\n                });\n            }}\"\n            >\n        </omni-button>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Alert\"></omni-button>`,\n                jsFragment: `import { Alert } from '@capitec/omni-components/alert';\n\ndocument.querySelector('omni-button').addEventListener('click', () => {    \n    Alert.show({\n        status: 'success',\n        message: 'Success!',\n        description: 'It was successful.',\n    });\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Alert\" @click=\"showAlert\"></omni-button>`,\n                jsFragment: `import { Alert } from '@capitec/omni-components/alert';\n\nwindow.vueData = {\n    showAlert: () => {        \n        Alert.show({\n            status: 'success',\n            message: 'Success!',\n            description: 'It was successful.',\n        });\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Alert\" @click=\"\\${showAlert}\"></omni-button>`,\n                jsFragment: `import { Alert } from '@capitec/omni-components/alert';\n\nconst showAlert = () => {\n    Alert.show({\n        status: 'success',\n        message: 'Success!',\n        description: 'It was successful.',\n    });\n}`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Alert } from '@capitec/omni-components-react/alert';\n\nconst showAlert = () => {\n    Alert.show({\n        status: 'success',\n        message: 'Success!',\n        description: 'It was successful.',\n    });\n};\n\nconst App = () => <OmniButton label=\"Show Alert\" onclick={showAlert}/>;`\n        }\n    ],\n    name: 'Showing Alert Programmatically',\n    args: {}\n}",
+          "description": "It was successful."
+        },
+        {
+          "kind": "variable",
+          "name": "Showing_Alerts_Async",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n    <div>\n        Alerts can be asynchronously shown and awaited programmatically using the static <code class=\"language-js\">Alert.showAsync()</code> function. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-alert-show\"\n            label=\"Show Alert\"\n            @click=\"${() => {\n                Alert.showAsync({\n                    status: 'info',\n                    message: 'Async Alert!',\n                    description: `Click \"Yes\" for \"primary\" reason or \"No\" for \"secondary\" reason.\nIf closed from script via the \"hide\" function on the Alert instance, the reason would be \"auto\".`,\n                    enableSecondary: true,\n                    primaryAction: 'Yes',\n                    secondaryAction: 'No'\n                }).then((r) => {\n                    reason = r;\n                    document.dispatchEvent(\n                        new CustomEvent('story-renderer-interactive-update', {\n                            bubbles: true,\n                            composed: true\n                        })\n                    );\n                });\n            }}\"\n            >\n        </omni-button>\n        <div>${reason}</div>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Alert\"></omni-button>\n<div id=\"reason\"></div>`,\n                jsFragment: `import { Alert } from '@capitec/omni-components/alert';\n\ndocument.querySelector('omni-button').addEventListener('click', async () => {    \n    const reason = await Alert.showAsync({\n        status: 'info',\n        message: 'Async Alert!',\n        description: \\`Click \"Yes\" for \"primary\" reason or \"No\" for \"secondary\" reason.\nIf closed from script via the \"hide\" function on the Alert instance, the reason would be \"auto\".\\`,\n        enableSecondary: true,\n        primaryAction: 'Yes',\n        secondaryAction: 'No'\n    });\n    document.getElementById('reason').innerHTML = reason;\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Alert\" @click=\"showAlert\"></omni-button>\n<div id=\"reason\"></div>`,\n                jsFragment: `import { Alert } from '@capitec/omni-components/alert';\n\nwindow.vueData = {\n    showAlert: async () => {   \n        const reason = await Alert.showAsync({\n            status: 'info',\n            message: 'Async Alert!',\n            description: \\`Click \"Yes\" for \"primary\" reason or \"No\" for \"secondary\" reason.\n    If closed from script via the \"hide\" function on the Alert instance, the reason would be \"auto\".\\`,\n            enableSecondary: true,\n            primaryAction: 'Yes',\n            secondaryAction: 'No'\n        });\n        document.getElementById('reason').innerHTML = reason;\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Alert\" @click=\"\\${showAlert}\"></omni-button>\n<div id=\"reason\"></div>`,\n                jsFragment: `import { Alert } from '@capitec/omni-components/alert';\n\nconst showAlert = async () => {   \n    const reason = await Alert.showAsync({\n        status: 'info',\n        message: 'Async Alert!',\n        description: \\`Click \"Yes\" for \"primary\" reason or \"No\" for \"secondary\" reason.\nIf closed from script via the \"hide\" function on the Alert instance, the reason would be \"auto\".\\`,\n        enableSecondary: true,\n        primaryAction: 'Yes',\n        secondaryAction: 'No'\n    });\n    document.getElementById('reason').innerHTML = reason;\n};`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Alert } from '@capitec/omni-components-react/alert';\n\nconst showAlert = async () => {   \n    const reason = await Alert.showAsync({\n        status: 'info',\n        message: 'Async Alert!',\n        description: \\`Click \"Yes\" for \"primary\" reason or \"No\" for \"secondary\" reason.\nIf closed from script via the \"hide\" function on the Alert instance, the reason would be \"auto\".\\`,\n        enableSecondary: true,\n        primaryAction: 'Yes',\n        secondaryAction: 'No'\n    });\n    document.getElementById('reason').innerHTML = reason;\n};\n\nconst App = () => <>\n                    <OmniButton label=\"Show Alert\" onclick={showAlert}/>\n                    <div id=\"reason\"></div>\n                  </>;`\n        }\n    ],\n    name: 'Showing Async Alert Programmatically',\n    args: {}\n}",
+          "description": "Click \"Yes\" for \"primary\" reason or \"No\" for \"secondary\" reason.\nIf closed from script via the \"hide\" function on the Alert instance, the reason would be \"auto\"."
+        },
+        {
+          "kind": "variable",
+          "name": "Status",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n    <div>\n        <p>Set the display status of the <code class=\"language-html\">&lt;omni-alert&gt;</code>.<p>\n        <br/>\n        <span>The <code>status</code> attribute supports the following options:\n            <ul>\n                <li><code class=\"language-javascript\">'success'</code> - Checkmark icon to indicate success.</li>\n                <li><code class=\"language-javascript\">'warning'</code> - Yield icon to indicate warning.</li>\n                <li><code class=\"language-javascript\">'error'</code> - Exclamation icon to indicate error.</li>\n                <li><code class=\"language-javascript\">'info'</code> - Information icon to indicate info.</li>\n                <li><code class=\"language-javascript\">'none'</code> - No icon. (Default)</li>\n            </ul>\n        </span>\n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Status',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: 'success',\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Header_Align",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: 'Align header content horizontally.',\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Header Align',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: 'left',\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Primary_Action",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: 'Set the label for the primary action button.',\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Primary Action',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: 'Acknowledge',\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Secondary_Action",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`\n        <span>\n            <ul>\n                <li>Set the label for the secondary action button with the <code>secondary-action</code> attribute.</li>\n                <li>Enable the secondary action button with the <code>enable-secondary</code> attribute.</li>\n            </ul>\n        </span>\n        \n        `,\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Secondary Action',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: true,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: 'Back',\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Action_Align",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: 'Align the action button(s) horizontally.',\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Action Align',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: true,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: 'Accept',\n        secondaryAction: 'Decline',\n        actionAlign: 'center'\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Status_Indicator",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: 'Render content as the status indicator instead of default status icons.',\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Custom Status Indicator',\n    args: {\n        'status-indicator': raw`<span style=\"padding-right: 4px;\">🔓</span>`,\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Header",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`Render content as the header message area. This overrides any text specified via the <code>message</code> attribute.`,\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Custom Header',\n    args: {\n        'status-indicator': '',\n        header: raw`<span>Alert using the <code>header</code> slot</span>`,\n        '[Default Slot]': '',\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Body",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () => html`Render rich html content in the description. This appends to text specified via the <code>description</code> attribute.`,\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Custom Body',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': raw`<span>Alert using the default slot and the <code>description</code> attribute.</span>`,\n        primary: '',\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Primary_Action",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () =>\n        html`Render rich html content as the primary action. This replaces any text specified via the <code>primary-action</code> attribute.`,\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Custom Primary Action',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: raw`<button style=\"margin: 6px;\">My Button</button>`,\n        secondary: '',\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: undefined,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        },
+        {
+          "kind": "variable",
+          "name": "Custom_Secondary_Action",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    description: () =>\n        html`Render rich html content as the secondary action. This replaces any text specified via the <code>secondary-action</code> attribute.`,\n    render: (args: Args) => html`\n        <omni-button data-testid=\"test-alert-btn\" @click=\"${() => {\n            args.hide = false;\n            document.dispatchEvent(\n                new CustomEvent('story-renderer-interactive-update', {\n                    bubbles: true,\n                    composed: true\n                })\n            );\n        }}\" label=\"Show Alert\" ></omni-button>\n        ${args.hide ? nothing : alertHtml(args)}\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: (args) => raw`\n                ${getSourceFromLit(alertHtml(args))}            \n                `,\n                jsFragment: `document.querySelector('omni-alert').show();`\n            }\n        }\n    ],\n    name: 'Custom Secondary Action',\n    args: {\n        'status-indicator': '',\n        header: '',\n        '[Default Slot]': '',\n        primary: '',\n        secondary: raw`<span style=\"padding: 6px;\">↩</span>`,\n\n        hide: true,\n\n        message: 'Message Alert',\n        description: 'Additional context for the alert.',\n\n        enableSecondary: true,\n\n        status: undefined,\n        headerAlign: undefined,\n        primaryAction: undefined,\n        secondaryAction: undefined,\n        actionAlign: undefined\n    }\n}",
+          "description": "Additional context for the alert."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Showing_Alerts",
+          "declaration": {
+            "name": "Showing_Alerts",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Showing_Alerts_Async",
+          "declaration": {
+            "name": "Showing_Alerts_Async",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Status",
+          "declaration": {
+            "name": "Status",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Header_Align",
+          "declaration": {
+            "name": "Header_Align",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Primary_Action",
+          "declaration": {
+            "name": "Primary_Action",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Secondary_Action",
+          "declaration": {
+            "name": "Secondary_Action",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Action_Align",
+          "declaration": {
+            "name": "Action_Align",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Status_Indicator",
+          "declaration": {
+            "name": "Custom_Status_Indicator",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Header",
+          "declaration": {
+            "name": "Custom_Header",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Body",
+          "declaration": {
+            "name": "Custom_Body",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Primary_Action",
+          "declaration": {
+            "name": "Custom_Primary_Action",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Custom_Secondary_Action",
+          "declaration": {
+            "name": "Custom_Secondary_Action",
+            "module": "src/alert/Alert.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/alert/Alert.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Component that displays an alert.",
+          "name": "Alert",
+          "cssProperties": [
+            {
+              "description": "Minimum width for alert.",
+              "name": "--omni-alert-min-width"
+            },
+            {
+              "description": "Maximum width for alert.",
+              "name": "--omni-alert-max-width"
+            },
+            {
+              "description": "Alert border.",
+              "name": "--omni-alert-border"
+            },
+            {
+              "description": "Alert border radius.",
+              "name": "--omni-alert-border-radius"
+            },
+            {
+              "description": "Alert box shadow.",
+              "name": "--omni-alert-box-shadow"
+            },
+            {
+              "description": "Alert fade in and out animation duration.",
+              "name": "--omni-alert-animation-duration"
+            },
+            {
+              "description": "Alert content top padding.",
+              "name": "--omni-alert-padding-top"
+            },
+            {
+              "description": "Alert content bottom padding.",
+              "name": "--omni-alert-padding-bottom"
+            },
+            {
+              "description": "Alert content left padding.",
+              "name": "--omni-alert-padding-left"
+            },
+            {
+              "description": "Alert content right padding.",
+              "name": "--omni-alert-padding-right"
+            },
+            {
+              "description": "Alert header font color.",
+              "name": "--omni-alert-header-font-color"
+            },
+            {
+              "description": "Alert header font family.",
+              "name": "--omni-alert-header-font-family"
+            },
+            {
+              "description": "Alert header font size.",
+              "name": "--omni-alert-header-font-size"
+            },
+            {
+              "description": "Alert header font weight.",
+              "name": "--omni-alert-header-font-weight"
+            },
+            {
+              "description": "Alert header line height.",
+              "name": "--omni-alert-header-line-height"
+            },
+            {
+              "description": "Alert header background.",
+              "name": "--omni-alert-header-background"
+            },
+            {
+              "description": "Alert header top padding.",
+              "name": "--omni-alert-header-padding-top"
+            },
+            {
+              "description": "Alert header bottom padding.",
+              "name": "--omni-alert-header-padding-bottom"
+            },
+            {
+              "description": "Alert header left padding.",
+              "name": "--omni-alert-header-padding-left"
+            },
+            {
+              "description": "Alert header right padding.",
+              "name": "--omni-alert-header-padding-right"
+            },
+            {
+              "description": "Alert description font color.",
+              "name": "--omni-alert-description-font-color"
+            },
+            {
+              "description": "Alert description font family.",
+              "name": "--omni-alert-description-font-family"
+            },
+            {
+              "description": "Alert description font size.",
+              "name": "--omni-alert-description-font-size"
+            },
+            {
+              "description": "Alert description font weight.",
+              "name": "--omni-alert-description-font-weight"
+            },
+            {
+              "description": "Alert description line height.",
+              "name": "--omni-alert-description-line-height"
+            },
+            {
+              "description": "Alert description top padding.",
+              "name": "--omni-alert-description-padding-top"
+            },
+            {
+              "description": "Alert description bottom padding.",
+              "name": "--omni-alert-description-padding-bottom"
+            },
+            {
+              "description": "Alert description left padding.",
+              "name": "--omni-alert-description-padding-left"
+            },
+            {
+              "description": "Alert description right padding.",
+              "name": "--omni-alert-description-padding-right"
+            },
+            {
+              "description": "Alert action button(s) top padding.",
+              "name": "--omni-alert-action-button-padding-top"
+            },
+            {
+              "description": "Alert action button(s) bottom padding.",
+              "name": "--omni-alert-action-button-padding-bottom"
+            },
+            {
+              "description": "Alert action button(s) left padding.",
+              "name": "--omni-alert-action-button-padding-left"
+            },
+            {
+              "description": "Alert action button(s) right padding.",
+              "name": "--omni-alert-action-button-padding-right"
+            },
+            {
+              "description": "Alert action button(s) internal top padding.",
+              "name": "--omni-alert-action-button-internal-padding-top"
+            },
+            {
+              "description": "Alert action button(s) internal bottom padding.",
+              "name": "--omni-alert-action-button-internal-padding-bottom"
+            },
+            {
+              "description": "Alert action button(s) internal left padding.",
+              "name": "--omni-alert-action-button-internal-padding-left"
+            },
+            {
+              "description": "Alert action button(s) internal right padding.",
+              "name": "--omni-alert-action-button-internal-padding-right"
+            },
+            {
+              "description": "Alert header horizontal space between status indicator and header content.",
+              "name": "--omni-header-horizontal-gap"
+            },
+            {
+              "description": "Alert header status indicator symmetrical size.",
+              "name": "--omni-header-status-size"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Internal `omni-modal` element instance.",
+              "name": "modal"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for container of header and description content.",
+              "name": "content"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for header.",
+              "name": "header"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for container of action button(s).",
+              "name": "actions"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render as the status indicator instead of default status icons.",
+              "name": "status-indicator"
+            },
+            {
+              "description": "Content to render inside the component message area.",
+              "name": "header"
+            },
+            {
+              "description": "Content to render inside the component description body.",
+              "name": "[Default Slot]"
+            },
+            {
+              "description": "Content to render as the primary action button.",
+              "name": "primary"
+            },
+            {
+              "description": "Content to render as the secondary action button.",
+              "name": "secondary"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
+              },
+              "default": "'none'",
+              "description": "The alert status.",
+              "attribute": "status",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "message",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert header message.",
+              "attribute": "message",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "headerAlign",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Header content horizontal alignment:\n - `left` Align header to the left.\n - `center` Align header to the center.\n - `right` Align header to the right.",
+              "attribute": "header-align",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "description",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert detail message.",
+              "attribute": "description",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "primaryAction",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The primary action button label.",
+              "attribute": "primary-action",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "secondaryAction",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The secondary action button label.",
+              "attribute": "secondary-action",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "enableSecondary",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will provide a secondary action button.",
+              "attribute": "enable-secondary",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "actionAlign",
+              "type": {
+                "text": "'left' | 'center' | 'right' | 'stretch' | undefined"
+              },
+              "description": "Action button(s) horizontal alignment:\n - `left` Align action button(s) to the left.\n - `center` Align action button(s) to the center.\n - `right` Align action button(s) to the right.",
+              "attribute": "action-align",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "create",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "AlertInit"
+                  }
+                }
+              ],
+              "description": "Create a global notification element without showing it.",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "AlertInit & {\n            onClose?: (reason: 'auto' | 'primary' | 'secondary') => void;\n        }"
+                  }
+                }
+              ],
+              "description": "Show a global notification element.",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showAsync",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "AlertInit"
+                  }
+                }
+              ],
+              "description": "Show a global notification element asynchronously, waits for it to close and returns the reason for close.",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showAsync",
+              "description": "Show the notification asynchronously, waits for it to close and returns the reason for close.",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "return": {
+                "type": {
+                  "text": ""
+                }
+              },
+              "description": "Show the notification."
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "description": "Hide the notification and remove the component from the DOM"
+            },
+            {
+              "kind": "method",
+              "name": "onActionClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "secondary",
+                  "optional": true,
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "alert-close",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "name": "alert-action-click",
+              "type": {
+                "text": "CustomEvent"
+              }
+            },
+            {
+              "description": "Dispatched when the close button is clicked.",
+              "name": "close-click"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "status",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
+              },
+              "default": "'none'",
+              "description": "The alert status.",
+              "fieldName": "status",
+              "attribute": "status"
+            },
+            {
+              "name": "message",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert header message.",
+              "fieldName": "message",
+              "attribute": "message"
+            },
+            {
+              "name": "header-align",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Header content horizontal alignment:\n - `left` Align header to the left.\n - `center` Align header to the center.\n - `right` Align header to the right.",
+              "fieldName": "headerAlign",
+              "attribute": "header-align"
+            },
+            {
+              "name": "description",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert detail message.",
+              "fieldName": "description",
+              "attribute": "description"
+            },
+            {
+              "name": "primary-action",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The primary action button label.",
+              "fieldName": "primaryAction",
+              "attribute": "primary-action"
+            },
+            {
+              "name": "secondary-action",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The secondary action button label.",
+              "fieldName": "secondaryAction",
+              "attribute": "secondary-action"
+            },
+            {
+              "name": "enable-secondary",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will provide a secondary action button.",
+              "fieldName": "enableSecondary",
+              "attribute": "enable-secondary"
+            },
+            {
+              "name": "action-align",
+              "type": {
+                "text": "'left' | 'center' | 'right' | 'stretch' | undefined"
+              },
+              "description": "Action button(s) horizontal alignment:\n - `left` Align action button(s) to the left.\n - `center` Align action button(s) to the center.\n - `right` Align action button(s) to the right.",
+              "fieldName": "actionAlign",
+              "attribute": "action-align"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "/src/core/OmniElement.js"
+          },
+          "tagName": "omni-alert",
+          "import": "```js\nimport '@capitec/omni-components/alert';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RenderFunction",
+          "declaration": {
+            "name": "RenderFunction",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RenderResult",
+          "declaration": {
+            "name": "RenderResult",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Alert",
+          "declaration": {
+            "name": "Alert",
+            "module": "src/alert/Alert.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-alert",
+          "declaration": {
+            "name": "Alert",
+            "module": "src/alert/Alert.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "AlertInit",
+          "type": "{\n    /**\n     * The id to apply to the Alert element.\n     */\n    id?: string;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert status indicator\n     */\n    statusIndicator?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the alert header\n     */\n    header?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as alert body\n     */\n    body?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert primary action\n     */\n    primary?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert secondary action\n     */\n    secondary?: RenderFunction | RenderResult;\n\n    /**\n     * The alert status.\n     */\n    status?: 'success' | 'warning' | 'error' | 'info' | 'none';\n\n    /**\n     * The alert header message.\n     */\n    message?: string;\n\n    /**\n     * Header content horizontal alignment:\n     *  - `left` Align header to the left.\n     *  - `center` Align header to the center.\n     *  - `right` Align header to the right.\n     */\n    headerAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * The alert detail message.\n     */\n    description?: string;\n\n    /**\n     * The primary action button label.\n     */\n    primaryAction?: string;\n\n    /**\n     * The secondary action button label.\n     */\n    secondaryAction?: string;\n\n    /**\n     * If true, will provide a secondary action button.\n     */\n    enableSecondary?: boolean;\n\n    /**\n     * Action button(s) horizontal alignment:\n     *  - `left` Align action button(s) to the left.\n     *  - `center` Align action button(s) to the center.\n     *  - `right` Align action button(s) to the right.\n     */\n    actionAlign?: 'left' | 'center' | 'right' | 'stretch';\n}"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/alert/README.md",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/alert/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Alert.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/button/Button.spec.ts",
       "declarations": [],
       "exports": []
@@ -18840,20 +19713,20 @@
         {
           "kind": "variable",
           "name": "Basic",
-          "default": "{\n    render: () => html`\n    <omni-tab-group data-testid=\"test-tab-group\">\n        <omni-tab header=\"Tab 1\">\n            <div>Tab 1 Content</div>\n        </omni-tab>\n     <omni-tab header=\"Tab 2\">\n        <div>Tab 2 Content</div>\n    </omni-tab>\n    <omni-tab header=\"Tab 3\">\n        <div>Tab 3 Content</div>\n    </omni-tab>\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab } from \"@capitec/omni-components-react/tab\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTab header=\"Tab 1\">\n    <OmniLabel label=\"Label of Tab 1\"/>\n </OmniTab>\n <OmniTab header=\"Tab 2\">\n    <OmniLabel label=\"Label of Tab 2\"/>\n </OmniTab>\n <OmniTab header=\"Tab 3\">\n    <OmniLabel label=\"Label of Tab 3\"/>\n </OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    name: 'Basic',\n    description: () => html`\n    <div>\n        This is the recommended use of the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> with slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s), headers for each tab are set by setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code>.\n    <div>\n    `,\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n        // Confirm that 3 Tab headers exist.\n        await expect(tabHeadersArray.length).toBe(3);\n\n        // Get the default slot of the Tab element.\n        const tabsSlotElement = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        // Get the all the Tab elements in the default slot.\n        const tabElements = tabsSlotElement.assignedElements();\n        // Confirm that there is 3 tab elements in the default slot.\n        await expect(tabElements.length).toBe(3);\n    }\n}",
-          "description": "\n    <div>\n        This is the recommended use of the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> with slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s), headers for each tab are set by setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code>.\n    <div>\n    "
+          "default": "{\n    render: () => html`\n    <omni-tab-group data-testid=\"test-tab-group\">\n        <omni-tab header=\"Tab 1\">\n            <div>Tab 1 Content</div>\n        </omni-tab>\n     <omni-tab header=\"Tab 2\">\n        <div>Tab 2 Content</div>\n    </omni-tab>\n    <omni-tab header=\"Tab 3\">\n        <div>Tab 3 Content</div>\n    </omni-tab>\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab } from \"@capitec/omni-components-react/tab\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTab header=\"Tab 1\">\n    <OmniLabel label=\"Label of Tab 1\"/>\n </OmniTab>\n <OmniTab header=\"Tab 2\">\n    <OmniLabel label=\"Label of Tab 2\"/>\n </OmniTab>\n <OmniTab header=\"Tab 3\">\n    <OmniLabel label=\"Label of Tab 3\"/>\n </OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    name: 'Basic',\n    description: () => html`\n    <div>\n        This is the recommended use. Headers for each tab is set by the <code>header</code> attribute.\n    <div>\n    `,\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n        // Confirm that 3 Tab headers exist.\n        await expect(tabHeadersArray.length).toBe(3);\n\n        // Get the default slot of the Tab element.\n        const tabsSlotElement = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        // Get the all the Tab elements in the default slot.\n        const tabElements = tabsSlotElement.assignedElements();\n        // Confirm that there is 3 tab elements in the default slot.\n        await expect(tabElements.length).toBe(3);\n    }\n}",
+          "description": "\n    <div>\n        This is the recommended use. Headers for each tab is set by the <code>header</code> attribute.\n    <div>\n    "
         },
         {
           "kind": "variable",
           "name": "Active",
-          "default": "{\n    render: () => html`\n    <omni-tab-group data-testid='test-tab-group'>\n        <omni-tab header=\"Tab 1\">\n            <omni-label label=\"Label of Tab 1\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 2\" active>\n            <omni-label label=\"Label of Tab 2\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 3\">\n            <omni-label label=\"Label of Tab 3\"></omni-label>\n        </omni-tab>\n    </omni-tab-group>\n`,\n\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Active?.render?.(args), undefined, (s) => s.replace(' active', ' :active=\"true\"'))\n        },\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab } from \"@capitec/omni-components-react/tab\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTab header=\"Tab 1\">\n     <OmniLabel label='Label of Tab 1'/>\n </OmniTab>\n <OmniTab header=\"Tab 2\" active>\n     <OmniLabel label='Label of Tab 2'/>\n </OmniTab>\n <OmniTab header=\"Tab 3\">\n     <OmniLabel label='Label of Tab 3'/>\n </OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    args: {},\n    name: 'Active',\n    description: () => html`\n    <div>\n        Set which <code class=\"language-html\">&lt;omni-tab&gt;</code> slotted in the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> should be active by default. By setting the <code>active</code> attribute of one of the slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> components.\n    <div>\n    `,\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n\n        //Get the active tab header.\n        const activeTabHeader = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        await expect(activeTabHeader).toBeTruthy();\n        // Confirm that the active tab header is the second one in the tab header array\n        await expect(activeTabHeader).toEqual(tabHeadersArray[1]);\n        // Click on the first tab header\n        await userEvent.click(tabHeadersArray[0]);\n\n        // Get the default slot for all the Tabs\n        const tabsSlotElement = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        // Get the active tab\n        const tabElement = tabsSlotElement.assignedElements().find((e) => e.hasAttribute('active')) as Tab;\n        // Get the active tab component slot\n        const tabElementSlot = (await querySelectorAsync(tabElement.shadowRoot as ShadowRoot, 'slot')) as HTMLSlotElement;\n        // Get the active tab label element based on the value of the label attribute and confirm that the label exists.\n        const labelElement = tabElementSlot.assignedElements().find((e) => e.getAttribute('label') === 'Label of Tab 1') as Tab;\n        await expect(labelElement).toBeTruthy();\n    }\n}",
-          "description": "\n    <div>\n        Set which <code class=\"language-html\">&lt;omni-tab&gt;</code> slotted in the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> should be active by default. By setting the <code>active</code> attribute of one of the slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> components.\n    <div>\n    "
+          "default": "{\n    render: () => html`\n    <omni-tab-group data-testid='test-tab-group'>\n        <omni-tab header=\"Tab 1\">\n            <omni-label label=\"Label of Tab 1\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 2\" active>\n            <omni-label label=\"Label of Tab 2\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 3\">\n            <omni-label label=\"Label of Tab 3\"></omni-label>\n        </omni-tab>\n    </omni-tab-group>\n`,\n\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Active?.render?.(args), undefined, (s) => s.replace(' active', ' :active=\"true\"'))\n        },\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab } from \"@capitec/omni-components-react/tab\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTab header=\"Tab 1\">\n     <OmniLabel label='Label of Tab 1'/>\n </OmniTab>\n <OmniTab header=\"Tab 2\" active>\n     <OmniLabel label='Label of Tab 2'/>\n </OmniTab>\n <OmniTab header=\"Tab 3\">\n     <OmniLabel label='Label of Tab 3'/>\n </OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    args: {},\n    name: 'Active',\n    description: () => html`\n    <div>\n     Set the <code>active</code> attribute on an <code class=\"language-html\">&lt;omni-tab&gt;</code> to indicate its active. By default, the first slotted one is active.\n    <div>\n    `,\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n\n        //Get the active tab header.\n        const activeTabHeader = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        await expect(activeTabHeader).toBeTruthy();\n        // Confirm that the active tab header is the second one in the tab header array\n        await expect(activeTabHeader).toEqual(tabHeadersArray[1]);\n        // Click on the first tab header\n        await userEvent.click(tabHeadersArray[0]);\n\n        // Get the default slot for all the Tabs\n        const tabsSlotElement = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        // Get the active tab\n        const tabElement = tabsSlotElement.assignedElements().find((e) => e.hasAttribute('active')) as Tab;\n        // Get the active tab component slot\n        const tabElementSlot = (await querySelectorAsync(tabElement.shadowRoot as ShadowRoot, 'slot')) as HTMLSlotElement;\n        // Get the active tab label element based on the value of the label attribute and confirm that the label exists.\n        const labelElement = tabElementSlot.assignedElements().find((e) => e.getAttribute('label') === 'Label of Tab 1') as Tab;\n        await expect(labelElement).toBeTruthy();\n    }\n}",
+          "description": "\n    <div>\n     Set the <code>active</code> attribute on an <code class=\"language-html\">&lt;omni-tab&gt;</code> to indicate its active. By default, the first slotted one is active.\n    <div>\n    "
         },
         {
           "kind": "variable",
           "name": "Disabled",
-          "default": "{\n    render: () => html`\n    <omni-tab-group data-testid=\"test-tab-group\">\n        <omni-tab header=\"Tab 1\">\n            <omni-label label=\"Label of Tab 1\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 2\">\n            <omni-label label=\"Label of Tab 2\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 3\" disabled>\n            <omni-label label=\"Label of Tab 3\"></omni-label>\n        </omni-tab>\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Disabled?.render?.(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        },\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab } from \"@capitec/omni-components-react/tab\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTab header=\"Tab 1\">\n    <OmniLabel label=\"Label of Tab 1\"/>\n </OmniTab>\n <OmniTab header=\"Tab 2\">\n    <OmniLabel label=\"Label of Tab 2\"/>\n </OmniTab>\n <OmniTab header=\"Tab 3\" disabled>\n    <OmniLabel label=\"Label of Tab 3\"/>\n </OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    name: 'Disabled',\n    description: () => html`\n    <div>\n        Set a <code class=\"language-html\">&lt;omni-tab&gt;</code> slotted in the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component to be disabled by setting <code>disabled</code> attribute.\n    <div>\n    `,\n    args: {},\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n        const tabSelect = jest.fn();\n        tabGroupElement.addEventListener('tab-select', tabSelect);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n\n        // Get all the tabs in the tab bar\n        const tabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabsHeadersArray = [...tabHeaders];\n\n        //Get the disabled tab.\n        const disabledTabHeader = tabsHeadersArray.find((c) => c.hasAttribute('data-disabled')) as TabHeader;\n        // Confirm that the disabled tab the last tab in the tab header array.\n        await expect(disabledTabHeader).toEqual(tabsHeadersArray[2]);\n\n        //Click the disabled tab header twice\n        await userEvent.click(disabledTabHeader);\n        await userEvent.click(disabledTabHeader);\n        // Confirm that the tab select event was emitted zero times.\n        await expect(tabSelect).toBeCalledTimes(0);\n        // Click the second tab header\n        await userEvent.click(tabsHeadersArray[1]);\n        // Confirm that the tab select event was emitted once.\n        await expect(tabSelect).toBeCalledTimes(1);\n    }\n}",
-          "description": "\n    <div>\n        Set a <code class=\"language-html\">&lt;omni-tab&gt;</code> slotted in the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component to be disabled by setting <code>disabled</code> attribute.\n    <div>\n    "
+          "default": "{\n    render: () => html`\n    <omni-tab-group data-testid=\"test-tab-group\">\n        <omni-tab header=\"Tab 1\">\n            <omni-label label=\"Label of Tab 1\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 2\">\n            <omni-label label=\"Label of Tab 2\"></omni-label>\n        </omni-tab>\n        <omni-tab header=\"Tab 3\" disabled>\n            <omni-label label=\"Label of Tab 3\"></omni-label>\n        </omni-tab>\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Disabled?.render?.(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        },\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab } from \"@capitec/omni-components-react/tab\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTab header=\"Tab 1\">\n    <OmniLabel label=\"Label of Tab 1\"/>\n </OmniTab>\n <OmniTab header=\"Tab 2\">\n    <OmniLabel label=\"Label of Tab 2\"/>\n </OmniTab>\n <OmniTab header=\"Tab 3\" disabled>\n    <OmniLabel label=\"Label of Tab 3\"/>\n </OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    name: 'Disabled',\n    description: () => html`\n    <div>\n     Set the <code>disabled</code> attribute on an <code class=\"language-html\">&lt;omni-tab&gt;</code> to indicate its disabled.\n    <div>\n    `,\n    args: {},\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n        const tabSelect = jest.fn();\n        tabGroupElement.addEventListener('tab-select', tabSelect);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n\n        // Get all the tabs in the tab bar\n        const tabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabsHeadersArray = [...tabHeaders];\n\n        //Get the disabled tab.\n        const disabledTabHeader = tabsHeadersArray.find((c) => c.hasAttribute('data-disabled')) as TabHeader;\n        // Confirm that the disabled tab the last tab in the tab header array.\n        await expect(disabledTabHeader).toEqual(tabsHeadersArray[2]);\n\n        //Click the disabled tab header twice\n        await userEvent.click(disabledTabHeader);\n        await userEvent.click(disabledTabHeader);\n        // Confirm that the tab select event was emitted zero times.\n        await expect(tabSelect).toBeCalledTimes(0);\n        // Click the second tab header\n        await userEvent.click(tabsHeadersArray[1]);\n        // Confirm that the tab select event was emitted once.\n        await expect(tabSelect).toBeCalledTimes(1);\n    }\n}",
+          "description": "\n    <div>\n     Set the <code>disabled</code> attribute on an <code class=\"language-html\">&lt;omni-tab&gt;</code> to indicate its disabled.\n    <div>\n    "
         }
       ],
       "exports": [
@@ -18889,7 +19762,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Control that can be used to display slotted content, for use within an omni-tab-group component.",
+          "description": "Control that can be used to display slotted content, for use within an Tab Group component.",
           "name": "Tab",
           "slots": [
             {
@@ -19079,8 +19952,8 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-tab-group data-testid=\"test-tab-group\">\n        ${args.header ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('header', args.header))}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' active', ' :active=\"true\"').replace(' disabled', ' :disabled=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    description: () => html`\n        <p>\n        The <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component will display content based on the slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Tab headers are rendered by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> header slot. \n        </p>\n    `,\n    args: {\n        header: '',\n        '[Default Slot]': raw`<omni-tab header=\"Tab 1\">\n    <div>Tab 1 Content</div>\n</omni-tab>\n<omni-tab header=\"Tab 2\">\n    <div>Tab 2 Content</div>\n</omni-tab>\n<omni-tab header=\"Tab 3\">\n    <div>Tab 3 Content</div>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n        const tabSelect = jest.fn();\n        tabGroupElement.addEventListener('tab-select', tabSelect);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n        // Get the active tab header.\n        const activeTabHeader = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        // Confirm that the active tab header is the first one in the tab header array\n        await expect(activeTabHeader).toEqual(tabHeadersArray[0]);\n        // Click the second tab header.\n        await userEvent.click(tabHeadersArray[1]);\n        // Get the updated active tab and confirm that it is the one that was clicked.\n        const nextActiveTab = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        await expect(nextActiveTab).toEqual(tabHeadersArray[1]);\n        // Confirm that the tab select event was emitted.\n        await expect(tabSelect).toBeCalledTimes(1);\n        // Get the default slot for Tabs element and get the new active Tab\n        const tabsSlotElement = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        const activeTabElement = tabsSlotElement.assignedElements().find((e) => e.hasAttribute('active')) as Tab;\n        // Confirm that the active tabs header is equal to the expected value.\n        await expect(activeTabElement.header).toEqual('Tab 2');\n    }\n}",
-          "description": "\n        <p>\n        The <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component will display content based on the slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        Tab headers are rendered by either setting the <code>header</code> attribute of the <code class=\"language-html\">&lt;omni-tab&gt;</code> component or via slotted <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component(s) that targets the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> header slot. \n        </p>\n    "
+          "default": "{\n    render: (args: Args) => html`\n    <omni-tab-group data-testid=\"test-tab-group\">\n        ${args.header ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('header', args.header))}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' active', ' :active=\"true\"').replace(' disabled', ' :disabled=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    description: () => html`\n        <p>\n        The <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component will display content based on the slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        For an advanced use case check the <omni-hyperlink href='./components/tab-header'><code class=\"language-html\">&lt;omni-tab-header&gt;</code></omni-hyperlink> example.\n        </p>\n    `,\n    args: {\n        header: '',\n        '[Default Slot]': raw`<omni-tab header=\"Tab 1\">\n    <div>Tab 1 Content</div>\n</omni-tab>\n<omni-tab header=\"Tab 2\">\n    <div>Tab 2 Content</div>\n</omni-tab>\n<omni-tab header=\"Tab 3\">\n    <div>Tab 3 Content</div>\n</omni-tab>`\n    },\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n        const tabSelect = jest.fn();\n        tabGroupElement.addEventListener('tab-select', tabSelect);\n\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Get all the tab headers in the tab bar\n        const nestedTabHeaders = tabBar.querySelectorAll('omni-tab-header');\n        const tabHeadersArray = [...nestedTabHeaders];\n        // Get the active tab header.\n        const activeTabHeader = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        // Confirm that the active tab header is the first one in the tab header array\n        await expect(activeTabHeader).toEqual(tabHeadersArray[0]);\n        // Click the second tab header.\n        await userEvent.click(tabHeadersArray[1]);\n        // Get the updated active tab and confirm that it is the one that was clicked.\n        const nextActiveTab = tabHeadersArray.find((c) => c.hasAttribute('data-active'));\n        await expect(nextActiveTab).toEqual(tabHeadersArray[1]);\n        // Confirm that the tab select event was emitted.\n        await expect(tabSelect).toBeCalledTimes(1);\n        // Get the default slot for Tabs element and get the new active Tab\n        const tabsSlotElement = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, 'slot:not([name])')) as HTMLSlotElement;\n        const activeTabElement = tabsSlotElement.assignedElements().find((e) => e.hasAttribute('active')) as Tab;\n        // Confirm that the active tabs header is equal to the expected value.\n        await expect(activeTabElement.header).toEqual('Tab 2');\n    }\n}",
+          "description": "\n        <p>\n        The <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component will display content based on the slotted <code class=\"language-html\">&lt;omni-tab&gt;</code> component(s). \n        </p>\n        <p>\n        For an advanced use case check the <omni-hyperlink href='./components/tab-header'><code class=\"language-html\">&lt;omni-tab-header&gt;</code></omni-hyperlink> example.\n        </p>\n    "
         }
       ],
       "exports": [
@@ -19105,19 +19978,19 @@
           "cssProperties": [
             {
               "description": "Tabs tab bar width.",
-              "name": "--omni-tabs-tab-bar-width"
+              "name": "--omni-tab-group-tab-bar-width"
             },
             {
               "description": "Tabs tab bar height.",
-              "name": "--omni-tabs-tab-bar-height"
+              "name": "--omni-tab-group-tab-bar-height"
             },
             {
               "description": "Tabs tab bar bottom border.",
-              "name": "--omni-tabs-tab-bar-border-bottom"
+              "name": "--omni-tab-group-tab-bar-border-bottom"
             },
             {
               "description": "Tabs tab bar background color.",
-              "name": "--omni-tabs-tab-bar-background-color"
+              "name": "--omni-tab-group-tab-bar-background-color"
             },
             {
               "description": "Tab header font color.",
@@ -19300,8 +20173,7 @@
           },
           "tagName": "omni-tab-group",
           "cssInherit": [
-            "omni-tab-header",
-            "omni-tab"
+            "omni-tab-header"
           ],
           "import": "```js\nimport '@capitec/omni-components/tab';\n```",
           "customElement": true,
@@ -19397,8 +20269,8 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-tab-group data-testid='test-tab-group'>\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab, OmniTabHeader } from \"@capitec/omni-components-react/tab\";\nimport { OmniIcon } from \"@capitec/omni-components-react/icon\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTabHeader slot=\"header\" for=\"up\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"orange\"><path d=\"M5.47 8.47a.75.75 0 0 0 1.06 1.06l4.72-4.72V21c0 .38.282.693.648.743l.102.007a.75.75 0 0 0 .75-.75V4.81l4.72 4.72a.75.75 0 0 0 .976.073l.084-.073a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 0 0-1.06 0Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTabHeader slot=\"header\" for=\"down\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"green\"><path d=\"M18.53 15.53a.75.75 0 0 0-1.06-1.06l-4.72 4.72V3a.75.75 0 0 0-.648-.743L12 2.25a.75.75 0 0 0-.75.75v16.19l-4.72-4.72a.75.75 0 0 0-.976-.073l-.084.073a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTabHeader slot=\"header\" for=\"left\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"purple\"><path d=\"M8.47 5.47a.75.75 0 0 1 1.06 1.06l-4.72 4.72H21a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.75.75H4.81l4.72 4.72a.75.75 0 0 1 .073.976l-.073.084a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 0-1.06Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTabHeader slot=\"header\" for=\"right\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"red\"><path d=\"M15.53 5.47a.75.75 0 0 0-1.06 1.06l4.72 4.72H3a.75.75 0 0 0-.743.648L2.25 12c0 .414.336.75.75.75h16.19l-4.72 4.72a.75.75 0 0 0-.073.976l.073.084a.75.75 0 0 0 1.06 0l6-6a.75.75 0 0 0 0-1.06Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTab id=\"up\">\n <div>Up</div>\n</OmniTab>\n<OmniTab id=\"down\">\n <div>Down</div>\n</OmniTab>\n<OmniTab id=\"left\">\n <div>Left</div>\n</OmniTab>\n<OmniTab id=\"right\">\n <div>Right</div>\n</OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    name: 'Advanced',\n    args: {\n        '[Default Slot]': raw`\n        <omni-tab-header slot=\"header\" for=\"up\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"orange\"><path d=\"M5.47 8.47a.75.75 0 0 0 1.06 1.06l4.72-4.72V21c0 .38.282.693.648.743l.102.007a.75.75 0 0 0 .75-.75V4.81l4.72 4.72a.75.75 0 0 0 .976.073l.084-.073a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 0 0-1.06 0Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab-header slot=\"header\" for=\"down\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"green\"><path d=\"M18.53 15.53a.75.75 0 0 0-1.06-1.06l-4.72 4.72V3a.75.75 0 0 0-.648-.743L12 2.25a.75.75 0 0 0-.75.75v16.19l-4.72-4.72a.75.75 0 0 0-.976-.073l-.084.073a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab-header slot=\"header\" for=\"left\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"purple\"><path d=\"M8.47 5.47a.75.75 0 0 1 1.06 1.06l-4.72 4.72H21a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.75.75H4.81l4.72 4.72a.75.75 0 0 1 .073.976l-.073.084a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 0-1.06Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab-header slot=\"header\" for=\"right\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"red\"><path d=\"M15.53 5.47a.75.75 0 0 0-1.06 1.06l4.72 4.72H3a.75.75 0 0 0-.743.648L2.25 12c0 .414.336.75.75.75h16.19l-4.72 4.72a.75.75 0 0 0-.073.976l.073.084a.75.75 0 0 0 1.06 0l6-6a.75.75 0 0 0 0-1.06Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab id=\"up\">\n            <div>Up</div>\n        </omni-tab>\n        <omni-tab id=\"down\">\n            <div>Down</div>\n        </omni-tab>\n        <omni-tab id=\"left\">\n            <div>Left</div>\n        </omni-tab>\n        <omni-tab id=\"right\">\n            <div>Right</div>\n        </omni-tab>\n        `\n    },\n    description: () => html`\n    <div>\n        For slotting custom content into the header use the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component that targets the header slot of the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component and ensure you have a <code class=\"language-html\">&lt;omni-tab&gt;</code> component which has an <code>id</code> attribute that matches the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> <code>for</code> attribute to display slotted content.\n    <div>\n    `,\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Check for the slot then check the content of the slot\n        const slotElement = tabBar.querySelector<HTMLSlotElement>('slot[name=\"header\"]');\n        await expect(slotElement).toBeTruthy();\n\n        //Get all the tab headers in the header slot.\n        const tabHeaders = slotElement?.assignedElements().filter((e) => e.tagName.toLowerCase() === 'omni-tab-header') as HTMLElement[];\n        await expect(tabHeaders).toBeTruthy();\n\n        //Get the active tab header.\n        const activeTabHeader = tabHeaders?.find((c) => c.hasAttribute('data-active'));\n        await expect(activeTabHeader).toBeTruthy();\n\n        //Get nested omni-icon.\n        const omniIcon = activeTabHeader?.querySelector<HTMLElement>('omni-icon');\n        await expect(omniIcon).toBeTruthy();\n\n        //Get nested svg\n        const svgElement = activeTabHeader?.querySelector<HTMLElement>('svg');\n        await expect(svgElement).toBeTruthy();\n\n        //Click the second tab.\n        await userEvent.click(tabHeaders[1]);\n        const nextActiveTab = tabHeaders.find((c) => c.hasAttribute('data-active'));\n        await expect(nextActiveTab).toBeTruthy();\n    }\n}",
-          "description": "\n    <div>\n        For slotting custom content into the header use the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component that targets the header slot of the <code class=\"language-html\">&lt;omni-tab-group&gt;</code> component and ensure you have a <code class=\"language-html\">&lt;omni-tab&gt;</code> component which has an <code>id</code> attribute that matches the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> <code>for</code> attribute to display slotted content.\n    <div>\n    "
+          "default": "{\n    render: (args: Args) => html`\n    <omni-tab-group data-testid='test-tab-group'>\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-tab-group>\n`,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: () => `import { OmniTabGroup, OmniTab, OmniTabHeader } from \"@capitec/omni-components-react/tab\";\nimport { OmniIcon } from \"@capitec/omni-components-react/icon\";\n\nconst App = () =>\n<OmniTabGroup>\n <OmniTabHeader slot=\"header\" for=\"up\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"orange\"><path d=\"M5.47 8.47a.75.75 0 0 0 1.06 1.06l4.72-4.72V21c0 .38.282.693.648.743l.102.007a.75.75 0 0 0 .75-.75V4.81l4.72 4.72a.75.75 0 0 0 .976.073l.084-.073a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 0 0-1.06 0Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTabHeader slot=\"header\" for=\"down\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"green\"><path d=\"M18.53 15.53a.75.75 0 0 0-1.06-1.06l-4.72 4.72V3a.75.75 0 0 0-.648-.743L12 2.25a.75.75 0 0 0-.75.75v16.19l-4.72-4.72a.75.75 0 0 0-.976-.073l-.084.073a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTabHeader slot=\"header\" for=\"left\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"purple\"><path d=\"M8.47 5.47a.75.75 0 0 1 1.06 1.06l-4.72 4.72H21a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.75.75H4.81l4.72 4.72a.75.75 0 0 1 .073.976l-.073.084a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 0-1.06Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTabHeader slot=\"header\" for=\"right\">\n  <OmniIcon size=\"default\">\n   <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"red\"><path d=\"M15.53 5.47a.75.75 0 0 0-1.06 1.06l4.72 4.72H3a.75.75 0 0 0-.743.648L2.25 12c0 .414.336.75.75.75h16.19l-4.72 4.72a.75.75 0 0 0-.073.976l.073.084a.75.75 0 0 0 1.06 0l6-6a.75.75 0 0 0 0-1.06Z\"/></svg>\n  </OmniIcon>\n </OmniTabHeader>\n <OmniTab id=\"up\">\n <div>Up</div>\n</OmniTab>\n<OmniTab id=\"down\">\n <div>Down</div>\n</OmniTab>\n<OmniTab id=\"left\">\n <div>Left</div>\n</OmniTab>\n<OmniTab id=\"right\">\n <div>Right</div>\n</OmniTab>\n</OmniTabGroup>;`\n        }\n    ],\n    name: 'Advanced',\n    args: {\n        '[Default Slot]': raw`\n        <omni-tab-header slot=\"header\" for=\"up\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"orange\"><path d=\"M5.47 8.47a.75.75 0 0 0 1.06 1.06l4.72-4.72V21c0 .38.282.693.648.743l.102.007a.75.75 0 0 0 .75-.75V4.81l4.72 4.72a.75.75 0 0 0 .976.073l.084-.073a.75.75 0 0 0 0-1.06l-6-6a.75.75 0 0 0-1.06 0Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab-header slot=\"header\" for=\"down\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"green\"><path d=\"M18.53 15.53a.75.75 0 0 0-1.06-1.06l-4.72 4.72V3a.75.75 0 0 0-.648-.743L12 2.25a.75.75 0 0 0-.75.75v16.19l-4.72-4.72a.75.75 0 0 0-.976-.073l-.084.073a.75.75 0 0 0 0 1.06l6 6a.75.75 0 0 0 1.06 0Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab-header slot=\"header\" for=\"left\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"purple\"><path d=\"M8.47 5.47a.75.75 0 0 1 1.06 1.06l-4.72 4.72H21a.75.75 0 0 1 .743.648l.007.102a.75.75 0 0 1-.75.75H4.81l4.72 4.72a.75.75 0 0 1 .073.976l-.073.084a.75.75 0 0 1-1.06 0l-6-6a.75.75 0 0 1 0-1.06Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab-header slot=\"header\" for=\"right\">\n            <omni-icon size=\"default\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 28 28\" width=\"100%\" height=\"100%\" fill=\"red\"><path d=\"M15.53 5.47a.75.75 0 0 0-1.06 1.06l4.72 4.72H3a.75.75 0 0 0-.743.648L2.25 12c0 .414.336.75.75.75h16.19l-4.72 4.72a.75.75 0 0 0-.073.976l.073.084a.75.75 0 0 0 1.06 0l6-6a.75.75 0 0 0 0-1.06Z\"/></svg>\n            </omni-icon>\n        </omni-tab-header>\n        <omni-tab id=\"up\">\n            <div>Up</div>\n        </omni-tab>\n        <omni-tab id=\"down\">\n            <div>Down</div>\n        </omni-tab>\n        <omni-tab id=\"left\">\n            <div>Left</div>\n        </omni-tab>\n        <omni-tab id=\"right\">\n            <div>Right</div>\n        </omni-tab>\n        `\n    },\n    description: () => html`\n    <div>\n        For slotting custom content into the header use the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component that targets the header slot of the <omni-hyperlink href='./components/tab-group'><code class=\"language-html\">&lt;omni-tab-group&gt;</code></omni-hyperlink> component by setting <code class=\"language-js\">slot=\"header\"</code> and ensure you have a <omni-hyperlink href='./components/tab'><code class=\"language-html\">&lt;omni-tab&gt;</code></omni-hyperlink> component which has an <code>id</code> attribute that matches the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> <code>for</code> attribute to display slotted content.\n    <div>\n    `,\n    play: async (context) => {\n        const tabGroupElement = within(context.canvasElement).getByTestId<TabGroup>('test-tab-group');\n        // Get the tab bar element\n        const tabBar = (await querySelectorAsync(tabGroupElement.shadowRoot as ShadowRoot, '.tab-bar')) as HTMLElement;\n        await expect(tabBar).toBeTruthy();\n\n        // Check for the slot then check the content of the slot\n        const slotElement = tabBar.querySelector<HTMLSlotElement>('slot[name=\"header\"]');\n        await expect(slotElement).toBeTruthy();\n\n        //Get all the tab headers in the header slot.\n        const tabHeaders = slotElement?.assignedElements().filter((e) => e.tagName.toLowerCase() === 'omni-tab-header') as HTMLElement[];\n        await expect(tabHeaders).toBeTruthy();\n\n        //Get the active tab header.\n        const activeTabHeader = tabHeaders?.find((c) => c.hasAttribute('data-active'));\n        await expect(activeTabHeader).toBeTruthy();\n\n        //Get nested omni-icon.\n        const omniIcon = activeTabHeader?.querySelector<HTMLElement>('omni-icon');\n        await expect(omniIcon).toBeTruthy();\n\n        //Get nested svg\n        const svgElement = activeTabHeader?.querySelector<HTMLElement>('svg');\n        await expect(svgElement).toBeTruthy();\n\n        //Click the second tab.\n        await userEvent.click(tabHeaders[1]);\n        const nextActiveTab = tabHeaders.find((c) => c.hasAttribute('data-active'));\n        await expect(nextActiveTab).toBeTruthy();\n    }\n}",
+          "description": "\n    <div>\n        For slotting custom content into the header use the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> component that targets the header slot of the <omni-hyperlink href='./components/tab-group'><code class=\"language-html\">&lt;omni-tab-group&gt;</code></omni-hyperlink> component by setting <code class=\"language-js\">slot=\"header\"</code> and ensure you have a <omni-hyperlink href='./components/tab'><code class=\"language-html\">&lt;omni-tab&gt;</code></omni-hyperlink> component which has an <code>id</code> attribute that matches the <code class=\"language-html\">&lt;omni-tab-header&gt;</code> <code>for</code> attribute to display slotted content.\n    <div>\n    "
         }
       ],
       "exports": [
@@ -19418,7 +20290,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Control that can be used to display custom slotted content, for use within an omni-tabs component and associated omni-tab component.",
+          "description": "Control that can be used to display custom slotted content, for use within Tab Group component with associated Tab component.",
           "name": "TabHeader",
           "cssProperties": [
             {
@@ -20452,7 +21324,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    description: () => html`\n    <div>\n       Programmatically shown Toasts can be configured using the static <code class=\"language-js\">Toast.configure()</code> function. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-toast-configure\"\n            label=\"Show Toast\"\n            @click=\"${() => {\n                Toast.configure({\n                    position: 'left',\n                    reverse: true,\n                    stack: true,\n                    closeable: undefined,\n                    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n                    duration: undefined\n                });\n                Toast.show({\n                    type: 'success',\n                    header: 'Success!',\n                    detail: 'It was successful.',\n                });\n            }}\"\n            >\n        </omni-button>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\ndocument.querySelector('omni-button').addEventListener('click', () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"showToast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nwindow.vueData = {\n    showToast: () => {\n        Toast.show({\n            type: 'success',\n            header: 'Success!',\n            detail: 'It was successful.'\n        });\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"\\${showToast}\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n}`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Toast } from '@capitec/omni-components-react/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n};\n\nconst App = () => <OmniButton label=\"Show Toast\" onclick={showToast}/>;`\n        }\n    ],\n    name: 'Configure Toast Programmatically',\n    args: {}\n}",
+          "default": "{\n    description: () => html`\n    <div>\n       Programmatically shown Toasts can be configured using the static <code class=\"language-js\">Toast.configure()</code> function. \n    <div>\n    `,\n    render: (args: Args) => html`\n        <omni-button\n            data-testid=\"test-toast-configure\"\n            label=\"Show Toast\"\n            @click=\"${() => {\n                Toast.configure({\n                    position: 'left',\n                    reverse: true,\n                    stack: true,\n                    closeable: undefined,\n                    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n                    duration: undefined\n                });\n                Toast.show({\n                    type: 'success',\n                    header: 'Success!',\n                    detail: 'It was successful.'\n                });\n            }}\"\n            >\n        </omni-button>\n    `,\n    frameworkSources: [\n        {\n            framework: 'HTML',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\ndocument.querySelector('omni-button').addEventListener('click', () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n});`\n            }\n        },\n        {\n            framework: 'Vue',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"showToast\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nwindow.vueData = {\n    showToast: () => {\n        Toast.show({\n            type: 'success',\n            header: 'Success!',\n            detail: 'It was successful.'\n        });\n    }\n};`\n            }\n        },\n        {\n            framework: 'Lit',\n            sourceParts: {\n                htmlFragment: raw`<omni-button label=\"Show Toast\" @click=\"\\${showToast}\"></omni-button>`,\n                jsFragment: `import { Toast } from '@capitec/omni-components/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n}`\n            }\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniButton } from \"@capitec/omni-components-react/button\";\nimport { Toast } from '@capitec/omni-components-react/toast';\n\nToast.configure({\n    position: 'left',\n    reverse: true,\n    stack: true,\n    closeable: undefined,\n    // Defaults to 3000ms when not specified. If set to 0 will be infinite (or until close clicked)\n    duration: undefined\n});\n\nconst showToast = () => {\n    Toast.show({\n        type: 'success',\n        header: 'Success!',\n        detail: 'It was successful.'\n    });\n};\n\nconst App = () => <OmniButton label=\"Show Toast\" onclick={showToast}/>;`\n        }\n    ],\n    name: 'Configure Toast Programmatically',\n    args: {}\n}",
           "description": "\n    <div>\n       Programmatically shown Toasts can be configured using the static <code class=\"language-js\">Toast.configure()</code> function. \n    <div>\n    "
         },
         {
@@ -20830,7 +21702,7 @@
               "kind": "field",
               "name": "stack",
               "type": {
-                "text": "ToastStack & {\n        /**\n         * When true, will append toast to the toast stack. Otherwise when false will replace any toast(s). Defaults to true.\n         */\n        stack?: boolean;\n\n        /**\n         * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n         */\n        closeable?: boolean;\n\n        /**\n         * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.\n         * Defaults to 3000ms when not provided.\n         * When set to 0 will amount to no timeout.\n         */\n        duration?: number;\n    } | undefined"
+                "text": "ToastStack & {\n        /**\n         * When true, will append toast to the toast stack. Otherwise when false will replace any toast(s). Defaults to true.\n         */\n        stack?: boolean;\n\n        /**\n         * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n         */\n        closeable?: boolean;\n\n        /**\n         * If provided will be the time in milliseconds the toast is displayed before being automatically removed from the stack.\n         * Defaults to 3000ms when not provided.\n         * When set to 0 will amount to no timeout.\n         */\n        duration?: number;\n    } | undefined"
               },
               "privacy": "private",
               "static": true
@@ -21556,7 +22428,7 @@
         },
         {
           "alias": "ShowToastOptions",
-          "type": "{\n    /**\n     * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.\n     */\n    duration?: number;\n\n    /**\n     * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n     */\n    closeable?: boolean;\n}"
+          "type": "{\n    /**\n     * If provided will be the time in milliseconds the toast is displayed before being automatically removed from the stack.\n     */\n    duration?: number;\n\n    /**\n     * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.\n     */\n    closeable?: boolean;\n}"
         }
       ]
     },

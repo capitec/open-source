@@ -11,18 +11,15 @@
     <base href="/open-source/docs/omni-components/versions/alpha/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/alpha/'</script>
     <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
 
+    <!-- For preload links below -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- Hind Vadodara -->
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=block" rel="preload" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=block" rel="stylesheet" crossorigin />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=block" rel="preload stylesheet" as="style" crossorigin />
 
     <!-- Material Icons --> 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="preload" as="style" crossorigin />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet" crossorigin />
-    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="preload stylesheet" as="style" crossorigin />
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
@@ -132,6 +129,13 @@
         </div>
         <div class="menu-item separator"><div class="line"></div></div>
         
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/alert">
+                Alert
+            </a>
+        </div>
         <div class="menu-item ">
             <a class="menu-link "
              
@@ -676,7 +680,7 @@
                                     <td data-label="Name" scope="row">ShowToastOptions</td>
                                     <td data-label="Type"><pre><code class="language-js">{
     /**
-     * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.
+     * If provided will be the time in milliseconds the toast is displayed before being automatically removed from the stack.
      */
     duration?: number;
 

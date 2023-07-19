@@ -435,6 +435,13 @@
                                 key="Header_Align"
                                  >
                             </story-renderer>
+                            <div class="name" id="story-description-align">Description Align</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Description_Align"
+                                 >
+                            </story-renderer>
                             <div class="name" id="story-primary-action">Primary Action</div>
                             <story-renderer 
                                 path="./dist/alert/Alert.stories.js" 
@@ -510,6 +517,9 @@
                                     <a href="components/alert/#story-header-align" id="story-header-align-a" class="item">
                                         Header Align
                                     </a>
+                                    <a href="components/alert/#story-description-align" id="story-description-align-a" class="item">
+                                        Description Align
+                                    </a>
                                     <a href="components/alert/#story-primary-action" id="story-primary-action-a" class="item">
                                         Primary Action
                                     </a>
@@ -563,7 +573,7 @@
                                     <td data-label="Name" scope="row">status</td>
                                     <td data-label="Attribute" scope="row">status&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">&#39;success&#39; | &#39;warning&#39; | &#39;error&#39; | &#39;info&#39; | &#39;none&#39;</code></pre></td>
-                                    <td data-label="Description">The alert status.</td>
+                                    <td data-label="Description">The alert status (Defaults to 'none').</td>
                                 </tr>
                                 
                                 <tr>
@@ -577,10 +587,7 @@
                                     <td data-label="Name" scope="row">headerAlign</td>
                                     <td data-label="Attribute" scope="row">header-align&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | undefined</code></pre></td>
-                                    <td data-label="Description">Header content horizontal alignment:
- - `left` Align header to the left.
- - `center` Align header to the center.
- - `right` Align header to the right.</td>
+                                    <td data-label="Description">Header content horizontal alignment:<br/> - <code>left</code> Align header to the left.<br/> - <code>center</code> Align header to the center. (Default)<br/> - <code>right</code> Align header to the right.</td>
                                 </tr>
                                 
                                 <tr>
@@ -591,17 +598,24 @@
                                 </tr>
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">descriptionAlign</td>
+                                    <td data-label="Attribute" scope="row">description-align&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | undefined</code></pre></td>
+                                    <td data-label="Description">Description content horizontal alignment:<br/> - <code>left</code> Align description content to the left.<br/> - <code>center</code> Align description content to the center. (Default)<br/> - <code>right</code> Align description content to the right.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">primaryAction</td>
                                     <td data-label="Attribute" scope="row">primary-action&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">The primary action button label.</td>
+                                    <td data-label="Description">The primary action button label (Defaults to 'Ok').</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">secondaryAction</td>
                                     <td data-label="Attribute" scope="row">secondary-action&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
-                                    <td data-label="Description">The secondary action button label.</td>
+                                    <td data-label="Description">The secondary action button label (Defaults to 'Cancel').</td>
                                 </tr>
                                 
                                 <tr>
@@ -615,10 +629,7 @@
                                     <td data-label="Name" scope="row">actionAlign</td>
                                     <td data-label="Attribute" scope="row">action-align&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | &#39;stretch&#39; | undefined</code></pre></td>
-                                    <td data-label="Description">Action button(s) horizontal alignment:
- - `left` Align action button(s) to the left.
- - `center` Align action button(s) to the center.
- - `right` Align action button(s) to the right.</td>
+                                    <td data-label="Description">Action button(s) horizontal alignment:<br/> - <code>left</code> Align action button(s) to the left.<br/> - <code>center</code> Align action button(s) to the center.<br/> - <code>right</code> Align action button(s) to the right. (Default)<br/> - <code>stretch</code> Align action button(s) stretched to fill the horizontal space.</td>
                                 </tr>
                                 
                                 <tr>
@@ -633,6 +644,92 @@
                                     <td data-label="Attribute" scope="row">lang&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                     <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Instance Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">showAsync</td>
+                                    <td data-label="Parameters"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Promise&lt;&quot;auto&quot; | &quot;primary&quot; | &quot;secondary&quot;&gt;</code></pre></td>
+                                    <td data-label="Description">Show the <code>omni-alert</code> asynchronously, waits for it to close and returns the reason for close.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">show</td>
+                                    <td data-label="Parameters"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Alert</code></pre></td>
+                                    <td data-label="Description">Show the <code>omni-alert</code>.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">hide</td>
+                                    <td data-label="Parameters"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">void</code></pre></td>
+                                    <td data-label="Description">Hide the <code>omni-alert</code> and remove the component from the DOM</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Static Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">create</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - AlertInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Alert</code></pre></td>
+                                    <td data-label="Description">Create a global <code>omni-alert</code> element without showing it.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">show</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - AlertInit &amp; {
+            onClose?: (reason: &#39;auto&#39; | &#39;primary&#39; | &#39;secondary&#39;) =&gt; void;
+        }</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Alert</code></pre></td>
+                                    <td data-label="Description">Show a global <code>omni-alert</code> element.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">showAsync</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - AlertInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Promise&lt;&quot;auto&quot; | &quot;primary&quot; | &quot;secondary&quot;&gt;</code></pre></td>
+                                    <td data-label="Description">Show a global <code>omni-alert</code> element asynchronously, waits for it to close and returns the reason for close.</td>
                                 </tr>
                                 
                             </tbody>
@@ -733,7 +830,7 @@
     secondary?: RenderFunction | RenderResult;
 
     /**
-     * The alert status.
+     * The alert status (Defaults to &#39;none&#39;).
      */
     status?: &#39;success&#39; | &#39;warning&#39; | &#39;error&#39; | &#39;info&#39; | &#39;none&#39;;
 
@@ -745,7 +842,7 @@
     /**
      * Header content horizontal alignment:
      *  - `left` Align header to the left.
-     *  - `center` Align header to the center.
+     *  - `center` Align header to the center. (Default)
      *  - `right` Align header to the right.
      */
     headerAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39;;
@@ -756,12 +853,20 @@
     description?: string;
 
     /**
-     * The primary action button label.
+     * Description content horizontal alignment:
+     *  - `left` Align description content to the left.
+     *  - `center` Align description content to the center. (Default)
+     *  - `right` Align description content to the right.
+     */
+    descriptionAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39;;
+
+    /**
+     * The primary action button label (Defaults to &#39;Ok&#39;).
      */
     primaryAction?: string;
 
     /**
-     * The secondary action button label.
+     * The secondary action button label (Defaults to &#39;Cancel&#39;).
      */
     secondaryAction?: string;
 
@@ -774,7 +879,8 @@
      * Action button(s) horizontal alignment:
      *  - `left` Align action button(s) to the left.
      *  - `center` Align action button(s) to the center.
-     *  - `right` Align action button(s) to the right.
+     *  - `right` Align action button(s) to the right. (Default)
+     *  - `stretch` Align action button(s) stretched to fill the horizontal space.
      */
     actionAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39; | &#39;stretch&#39;;
 }</code></pre></td>

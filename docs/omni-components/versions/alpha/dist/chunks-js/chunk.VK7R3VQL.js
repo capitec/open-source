@@ -1,4 +1,4 @@
-import{a as s}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";import{a as l,b as t}from"./chunk.S2K25ADN.js";import{a as b,b as e,e as d}from"./chunk.L3RZWW2F.js";import{j as r,m as a,p as i}from"./chunk.BF43NN75.js";a();i();var o=class extends c{constructor(){super(...arguments);this.type="secondary";this.slotPosition="left"}static get styles(){return[super.styles,b`
+import{a as m}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";import{a as l,b as t}from"./chunk.S2K25ADN.js";import{a as d,b as e,e as b}from"./chunk.L3RZWW2F.js";import{j as r,m as n,p as i}from"./chunk.BF43NN75.js";n();i();var o=class extends c{constructor(){super(...arguments);this.type="secondary";this.slotPosition="left"}static get styles(){return[super.styles,d`
                 :host {
                     box-sizing: border-box;
                     display: inline-flex;
@@ -65,12 +65,23 @@ import{a as s}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";
                     background: var(--omni-button-primary-hover-background, var(--omni-primary-hover-color));
                     border-color: var(--omni-button-primary-hover-border-color, var(--omni-primary-hover-color));
                     border-width: var(--omni-button-primary-hover-border-width, var(--omni-border-width));
+                    color: var(--omni-button-primary-hover-color, var(--omni-background-color));
                     box-shadow: var(--omni-button-primary-hover-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15));
                 }
 
                 .button.primary:active {
                     background: var(--omni-button-primary-active-background, var(--omni-primary-active-color));
+                    border-color: var(--omni-button-primary-active-border-color, var(--omni-primary-active-color));
+                    border-width: var(--omni-button-primary-active-border-width, var(--omni-border-width));
+                    color: var(--omni-button-primary-active-color, var(--omni-background-color));
                     box-shadow: none;
+                }
+
+                .button.primary.disabled {
+                    background: var(--omni-button-primary-disabled-background, var(--omni-disabled-background-color));
+                    border-color: var(--omni-button-primary-disabled-border-color, var(--omni-disabled-border-color));
+                    border-width: var(--omni-button-primary-disabled-border-width, var(--omni-border-width));
+                    color: var(--omni-button-primary-disabled-color, var(--omni-background-color));
                 }
 
                 /* SECONDARY */
@@ -86,12 +97,23 @@ import{a as s}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";
                     background: var(--omni-button-secondary-hover-background, var(--omni-background-hover-color));
                     border-color: var(--omni-button-secondary-hover-border-color, var(--omni-primary-hover-color));
                     border-width: var(--omni-button-secondary-hover-border-width, var(--omni-border-width));
+                    color: var(--omni-button-secondary-hover-color, var(--omni-primary-color));
                     box-shadow: var(--omni-button-secondary-hover-box-shadow, 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.15));
                 }
 
                 .button.secondary:active {
                     background: var(--omni-button-secondary-active-background, var(--omni-background-active-color));
+                    border-color: var(--omni-button-secondary-active-border-color, var(--omni-primary-hover-color));
+                    border-width: var(--omni-button-secondary-active-border-width, var(--omni-border-width));
+                    color: var(--omni-button-secondary-active-color, var(--omni-primary-color));
                     box-shadow: none;
+                }
+
+                .button.secondary.disabled {
+                    background: var(--omni-button-secondary-disabled-background, var(--omni-disabled-background-color));
+                    border-color: var(--omni-button-secondary-disabled-border-color, var(--omni-disabled-border-color));
+                    border-width: var(--omni-button-secondary-disabled-border-width, var(--omni-border-width));
+                    color: var(--omni-button-secondary-disabled-color, var(--omni-primary-color));
                 }
 
                 /* CLEAR */
@@ -114,8 +136,16 @@ import{a as s}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";
                     background: var(--omni-button-clear-active-background, var(--omni-background-active-color));
                     border-color: var(--omni-button-clear-active-border-color, transparent);
                     border-width: var(--omni-button-clear-active-border-width, var(--omni-border-width));
+                    color: var(--omni-button-clear-active-color, var(--omni-primary-color));
                     box-shadow: none;
                     outline: none;
+                }
+                
+                .button.clear.disabled {
+                    background: var(--omni-button-clear-disabled-background, var(--omni-disabled-background-color));
+                    border-color: var(--omni-button-clear-disabled-border-color, var(--omni-disabled-background-color));
+                    border-width: var(--omni-button-clear-disabled-border-width, var(--omni-border-width));
+                    color: var(--omni-button-clear-disabled-color, var(--omni-primary-color));
                 }
 
                 /* WHITE */
@@ -138,16 +168,22 @@ import{a as s}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";
                     background: var(--omni-button-white-active-background, var(--omni-background-active-color));
                     border-color: var(--omni-button-white-active-border-color, transparent);
                     border-width: var(--omni-button-white-active-border-width, var(--omni-border-width));
+                    color: var(--omni-button-white-active-color, var(--omni-primary-color));
                     box-shadow: none;
                     outline: none;
+                }
+
+                .button.white:disabled {
+                    background: var(--omni-button-white-disabled-background, var(--omni-disabled-background-color));
+                    border-color: var(--omni-button-white-disabled-border-color, var(--omni-disabled-border-color));
+                    border-width: var(--omni-button-white-disabled-border-width, var(--omni-border-width));
+                    color: var(--omni-button-white-disabled-color, var(--omni-background-color));
                 }
 
                 /* DISABLED */
 
                 .button.disabled {
                     cursor: default;
-                    border-color: var(--omni-button-disabled-border-color, var(--omni-disabled-border-color));
-                    background: var(--omni-button-disabled-background, var(--omni-disabled-background-color));
                 }
 
                 .button.disabled:hover,
@@ -221,15 +257,15 @@ import{a as s}from"./chunk.FT5UPVZS.js";import{h as c}from"./chunk.6C4LMRM7.js";
                 .button.slot-bottom > ::slotted(*) {
                     margin-top: var(--omni-button-slot-margin-top, 10px);
                 }
-            `]}render(){var n;return e`
+            `]}render(){var a;return e`
             <button
                 id="button"
-                class=${s({button:!0,[`slot-${this.slotPosition}`]:this.label?this.slotPosition:!1,[`${this.type}`]:this.type,disabled:(n=this.disabled)!=null?n:!1})}
+                class=${m({button:!0,[`slot-${this.slotPosition}`]:this.label?this.slotPosition:!1,[`${this.type}`]:this.type,disabled:(a=this.disabled)!=null?a:!1})}
                 ?disabled=${this.disabled}
                 aria-disabled=${this.disabled?"true":"false"}
                 tabindex=${this.disabled?"-1":"0"}>
                 <slot></slot>
-                ${this.label?e`<label id="label" class="label">${this.label}</label>`:d}
+                ${this.label?e`<label id="label" class="label">${this.label}</label>`:b}
             </button>
         `}};r([t({type:String,reflect:!0})],o.prototype,"type",2),r([t({type:String,reflect:!0})],o.prototype,"label",2),r([t({type:String,reflect:!0,attribute:"slot-position"})],o.prototype,"slotPosition",2),r([t({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=r([l("omni-button")],o);export{o as a};
-//# sourceMappingURL=chunk.YN7IXZEJ.js.map
+//# sourceMappingURL=chunk.VK7R3VQL.js.map

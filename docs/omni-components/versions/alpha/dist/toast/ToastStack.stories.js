@@ -170,7 +170,9 @@ const onRef = e => {
     });
 }`}},{framework:"Vue",sourceParts:{htmlFragment:t=>n(a(t)).replaceAll(" closeable",' :closeable="true"').replaceAll(" reverse",' :reverse="true"')+`
 <!-- Execute function on Vue load -->
+<div style="display: none;">
 {{ (() =>  { run() })() }}
+</div>
 `,jsFragment:`window.vueData = {
     run: async () => {
 
@@ -317,7 +319,9 @@ const onRef = e => {
     });
 }`}},{framework:"Vue",sourceParts:{htmlFragment:t=>n(a(t)).replaceAll(" closeable",' :closeable="true"').replaceAll(" reverse",' :reverse="true"')+`
 <!-- Execute function on Vue load -->
+<div style="display: none;">
 {{ (() =>  { run() })() }}
+</div>
 `,jsFragment:`window.vueData = {
     run: async () => {
 
@@ -396,7 +400,9 @@ const onRef = e => {
     });
 }`}},{framework:"Vue",sourceParts:{htmlFragment:t=>n(a(t)).replaceAll(" closeable",' :closeable="true"').replaceAll(" reverse",' :reverse="true"')+`
 <!-- Execute function on Vue load -->
+<div style="display: none;">
 {{ (() =>  { run() })() }}
+</div>
 `,jsFragment:`window.vueData = {
     run: async () => {
 

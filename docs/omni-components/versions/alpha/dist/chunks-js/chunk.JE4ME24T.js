@@ -30,7 +30,7 @@ import{h}from"./chunk.6C4LMRM7.js";import{a as m,b as a,d as g}from"./chunk.S2K2
 			}
 			
 			omni-modal:not([hide]) {
-				animation: fadein var(--omni-alert-animation-duration, 0.5s) ease-in-out;
+				animation: fadein var(--omni-alert-animation-duration, 0.2s) ease-in-out;
 				animation-fill-mode: forwards;
 			}
 
@@ -247,4 +247,4 @@ import{h}from"./chunk.6C4LMRM7.js";import{a as m,b as a,d as g}from"./chunk.S2K2
                     </div>
 			</omni-modal>
 		`}};i([g("omni-modal")],r.prototype,"modal",2),i([a({type:String,reflect:!0})],r.prototype,"status",2),i([a({type:String,reflect:!0})],r.prototype,"message",2),i([a({type:String,attribute:"header-align",reflect:!0})],r.prototype,"headerAlign",2),i([a({type:String,reflect:!0})],r.prototype,"description",2),i([a({type:String,attribute:"description-align",reflect:!0})],r.prototype,"descriptionAlign",2),i([a({type:String,reflect:!0,attribute:"primary-action"})],r.prototype,"primaryAction",2),i([a({type:String,reflect:!0,attribute:"secondary-action"})],r.prototype,"secondaryAction",2),i([a({type:Boolean,reflect:!0,attribute:"enable-secondary"})],r.prototype,"enableSecondary",2),i([a({type:String,attribute:"action-align",reflect:!0})],r.prototype,"actionAlign",2),r=i([m("omni-alert")],r);export{r as a};
-//# sourceMappingURL=chunk.BZL2XUIQ.js.map
+//# sourceMappingURL=chunk.JE4ME24T.js.map

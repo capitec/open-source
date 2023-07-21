@@ -1,10 +1,10 @@
-import"../chunks-js/chunk.7PB6MSJN.js";import"../chunks-js/chunk.CNNXAJ4V.js";import"../chunks-js/chunk.YIANFESX.js";import{a as E,b as P,c as H,e as M,f as R,g as j,h as J}from"../chunks-js/chunk.IRA62FXI.js";import"../chunks-js/chunk.5DQX5M47.js";import"../chunks-js/chunk.DZCGDWRW.js";import"../chunks-js/chunk.Y2FNDKPS.js";import{a as _}from"../chunks-js/chunk.JSH3M4FH.js";import{a as $,b as s}from"../chunks-js/chunk.XOIHXH3W.js";import{a as c}from"../chunks-js/chunk.XCXCHO25.js";import{b as a}from"../chunks-js/chunk.FVJIJQ42.js";import{c as b}from"../chunks-js/chunk.WPESAYH2.js";import"../chunks-js/chunk.TTUIP4EN.js";import{E as h,m as F,x as f,z as m}from"../chunks-js/chunk.TJTW5ASN.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.VW2P7YAN.js";import"../chunks-js/chunk.MYG5FMLT.js";import"../chunks-js/chunk.2EDJFZZN.js";import{a as k}from"../chunks-js/chunk.N3FDHMD3.js";import"../chunks-js/chunk.YX3UUKJ3.js";import"../chunks-js/chunk.XUUOUKOL.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.LUCH4Y6K.js";import"../chunks-js/chunk.PNTHLTQK.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as d,e as I}from"../chunks-js/chunk.L3RZWW2F.js";import{h as O,m as x,p as L}from"../chunks-js/chunk.BF43NN75.js";x();L();var u=O(_(),1);var Ie={title:"UI Components/Select",component:"omni-select"},v=[{id:"1",label:"Peter Parker"},{id:"2",label:"James Howlett"},{id:"3",label:"Tony Stark"},{id:"4",label:"Steve Rodgers"},{id:"5",label:"Bruce Banner"},{id:"6",label:"Wanda Maximoff"},{id:"7",label:"TChalla"},{id:"8",label:"Henry P. McCoy"},{id:"9",label:"Carl Lucas"},{id:"10",label:"Frank Castle"}],g=["Bruce Wayne","Clark Kent","Barry Allen","Arthur Curry","Hal Jordan"];async function D(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),e}async function K(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),W(e,g)}function W(e,t){return Array.isArray(t)&&e?t=t.filter(l=>V(e,l)):t}function V(e,t){return t.toString().toLowerCase().includes(e.toLowerCase())}var C={render:e=>d`
+import"../chunks-js/chunk.XDEFRDXZ.js";import"../chunks-js/chunk.CNNXAJ4V.js";import"../chunks-js/chunk.YIANFESX.js";import{a as f,b as h,c as w,e as g,f as S,g as $,h as v}from"../chunks-js/chunk.L542EVWB.js";import"../chunks-js/chunk.5DQX5M47.js";import"../chunks-js/chunk.INUETMMB.js";import"../chunks-js/chunk.Y2FNDKPS.js";import{E as s,m,x as a}from"../chunks-js/chunk.TJTW5ASN.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.VW2P7YAN.js";import"../chunks-js/chunk.MYG5FMLT.js";import"../chunks-js/chunk.2EDJFZZN.js";import{a as o}from"../chunks-js/chunk.N3FDHMD3.js";import"../chunks-js/chunk.YX3UUKJ3.js";import"../chunks-js/chunk.XUUOUKOL.js";import"../chunks-js/chunk.LB764BBD.js";import{a as l}from"../chunks-js/chunk.XCXCHO25.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.LUCH4Y6K.js";import"../chunks-js/chunk.PNTHLTQK.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as i,e as n}from"../chunks-js/chunk.L3RZWW2F.js";import{m as b,p as y}from"../chunks-js/chunk.BF43NN75.js";b();y();var d=[{id:"1",label:"Peter Parker"},{id:"2",label:"James Howlett"},{id:"3",label:"Tony Stark"},{id:"4",label:"Steve Rodgers"},{id:"5",label:"Bruce Banner"},{id:"6",label:"Wanda Maximoff"},{id:"7",label:"TChalla"},{id:"8",label:"Henry P. McCoy"},{id:"9",label:"Carl Lucas"},{id:"10",label:"Frank Castle"}],c=["Bruce Wayne","Clark Kent","Barry Allen","Arthur Curry","Hal Jordan"];async function F(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),e}async function C(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),I(e,c)}function I(e,t){return Array.isArray(t)&&e?t=t.filter(r=>k(e,r)):t}function k(e,t){return t.toString().toLowerCase().includes(e.toLowerCase())}var u={render:e=>i`
         <omni-select
             data-testid="test-select"
-            label="${c(e.label)}"
+            label="${l(e.label)}"
             value="${e.value}"
-            hint="${c(e.hint)}"
-            error="${c(e.error)}"
+            hint="${l(e.hint)}"
+            error="${l(e.error)}"
             .items="${e.items}"
             display-field="${e.displayField}"
             .renderItem="${e.renderItem}"
@@ -15,30 +15,30 @@ import"../chunks-js/chunk.7PB6MSJN.js";import"../chunks-js/chunk.CNNXAJ4V.js";im
             ?clearable="${e.clearable}"
             ?searchable="${e.searchable}"
             empty-message="${e.emptyMessage}"
-            >${e.prefix?d`${`\r
-`}${k(F("prefix",e.prefix))}`:I}
-            ${e.clear?d`${`\r
-`}${k(F("clear",e.clear))}`:I}${e.suffix?d`${`\r
-`}${k(F("suffix",e.suffix))}`:I}
-            ${e.loading_indicator?d`${`\r
-`}${k(F("loading_indicator",e.loading_indicator))}${`\r
-`}`:I}${e.prefix||e.suffix||e.clear?`\r
-`:I}</omni-select
+            >${e.prefix?i`${`\r
+`}${o(m("prefix",e.prefix))}`:n}
+            ${e.clear?i`${`\r
+`}${o(m("clear",e.clear))}`:n}${e.suffix?i`${`\r
+`}${o(m("suffix",e.suffix))}`:n}
+            ${e.loading_indicator?i`${`\r
+`}${o(m("loading_indicator",e.loading_indicator))}${`\r
+`}`:n}${e.prefix||e.suffix||e.clear?`\r
+`:n}</omni-select
         >
-    `,frameworkSources:[{framework:"Vue",sourceParts:{htmlFragment:e=>h(C.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="displayItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
+    `,frameworkSources:[{framework:"Vue",sourceParts:{htmlFragment:e=>s(u.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="displayItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
     displayItems: ${JSON.stringify(e.items,void 0,2)}
-};`}},{framework:"Lit",sourceParts:{htmlFragment:e=>h(C.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="${displayItems}"')),jsFragment:e=>`const displayItems = ${JSON.stringify(e.items,void 0,2)};`}},{framework:"HTML",load:e=>h(C.render(e),t=>t.firstElementChild.id="omni-select",t=>t+`
+};`}},{framework:"Lit",sourceParts:{htmlFragment:e=>s(u.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="${displayItems}"')),jsFragment:e=>`const displayItems = ${JSON.stringify(e.items,void 0,2)};`}},{framework:"HTML",load:e=>s(u.render(e),t=>t.firstElementChild.id="omni-select",t=>t+`
 <script defer>
     const displayItems = ${JSON.stringify(e.items,void 0,2)};       
     const select = document.getElementById('omni-select');
     select.items = displayItems;
-<\/script>`)}],name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,clearable:!1,searchable:!1,prefix:"",suffix:"",clear:"",items:v,displayField:"label",idField:"id",loading_indicator:"",emptyMessage:"No items provided"},play:async e=>{var p,w,B;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn(),i=u.fn();t.addEventListener("click",l),t.addEventListener("change",i),await s.click(t),await s.click(t),await a(l).toBeCalledTimes(2);let r=(p=t.shadowRoot)==null?void 0:p.getElementById("control");await a(r).toBeTruthy(),await s.click(t);let o=await m(t.shadowRoot,"#items-container");await a(o).toBeTruthy();let n=(w=t.shadowRoot)==null?void 0:w.getElementById("items");await a(n).toBeTruthy();let y=await m(t.shadowRoot,".item");await a(y).toBeTruthy(),await s.click(y);let S=(B=t.shadowRoot)==null?void 0:B.getElementById("select");await a(S).toHaveValue(v[0].label),await a(i).toBeCalledTimes(1)}},N={render:e=>d`
+<\/script>`)}],name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,clearable:!1,searchable:!1,prefix:"",suffix:"",clear:"",items:d,displayField:"label",idField:"id",loading_indicator:"",emptyMessage:"No items provided"}},A={render:e=>i`
         <omni-select
             data-testid="test-select"
-            label="${c(e.label)}"
+            label="${l(e.label)}"
             .data="${e.data}"
-            hint="${c(e.hint)}"
-            error="${c(e.error)}"
+            hint="${l(e.hint)}"
+            error="${l(e.error)}"
             .items="${e.items}"
             display-field="${e.displayField}"
             .renderItem="${e.renderItem}"
@@ -88,7 +88,7 @@ import"../chunks-js/chunk.7PB6MSJN.js";import"../chunks-js/chunk.CNNXAJ4V.js";im
     select.renderItem = renderItem;
     select.items = () => promiseDisplayItems(displayItems);
 <\/script>
-`},{framework:"Vue",sourceParts:{htmlFragment:e=>h(N.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="promiseDisplayItems" :render-item.camel="renderItem"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
+`},{framework:"Vue",sourceParts:{htmlFragment:e=>s(A.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="promiseDisplayItems" :render-item.camel="renderItem"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
     promiseDisplayItems: async () => {
         await new Promise((r) => setTimeout(() => r(), 2000));
         return [
@@ -115,7 +115,7 @@ import"../chunks-js/chunk.7PB6MSJN.js";import"../chunks-js/chunk.CNNXAJ4V.js";im
     
         return i;
     }
-};`}},{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${() => promiseDisplayItems(displayItems)}" .renderItem="\${renderItem}" id-field="${e.idField}"></omni-select>`,jsFragment:e=>`const displayItems = [
+};`}},{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${() => promiseDisplayItems(displayItems)}" .renderItem="\${renderItem}" id-field="${e.idField}"></omni-select>`,jsFragment:e=>`const displayItems = [
     { id: '1', label: 'Peter Parker' },
     { id: '2', label: 'James Howlett' },
     { id: '3', label: 'Tony Stark' },
@@ -175,20 +175,20 @@ async function renderItem(item) {
 
     return i;
 }           
-const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={() => promiseDisplayItems(displayItems)} renderItem={renderItem} />;`}],name:"Async",description:"Render each item from an async function.",args:{label:"Async item renderer function",data:{},items:()=>D(v),displayField:"label",idField:"id",renderItem:async e=>{await new Promise((l,i)=>{setTimeout(l,2e3)});let t=document.createElement("i");return t.innerText=e.label,t.style.color="red",t}},play:async e=>{var n;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn(),i=u.fn();t.addEventListener("click",l),t.addEventListener("change",i),await s.click(t);let r;navigator.userAgent==="Test Runner"?r=await m(t.shadowRoot,".item",void 0,3e3):r=await m(t.shadowRoot,".item",void 0,5e3),await s.click(r);let o=(n=t.shadowRoot)==null?void 0:n.getElementById("select");await a(o).toHaveValue(v[0].label)}},q={render:e=>d`
+const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={() => promiseDisplayItems(displayItems)} renderItem={renderItem} />;`}],name:"Async",description:"Render each item from an async function.",args:{label:"Async item renderer function",data:{},items:()=>F(d),displayField:"label",idField:"id",renderItem:async e=>{await new Promise((r,p)=>{setTimeout(r,2e3)});let t=document.createElement("i");return t.innerText=e.label,t.style.color="red",t}}},x={render:e=>i`
         <omni-select
             data-testid="test-select"
-            label="${c(e.label)}"
+            label="${l(e.label)}"
             .data="${e.data}"
-            hint="${c(e.hint)}"
-            error="${c(e.error)}"
+            hint="${l(e.hint)}"
+            error="${l(e.error)}"
             .items="${e.items}"
             display-field="${e.displayField}"
             .renderItem="${e.renderItem}"
             id-field="${e.idField}">
-            ${k(F("loading_indicator",e.loading_indicator))}
+            ${o(m("loading_indicator",e.loading_indicator))}
         </omni-select>
-    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${() => promiseDisplayItems(displayItems)}" .renderItem="\${renderItem}" id-field="${e.idField}">
+    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${() => promiseDisplayItems(displayItems)}" .renderItem="\${renderItem}" id-field="${e.idField}">
     <span slot="loading_indicator">...</span>
 </omni-select>`,jsFragment:`const displayItems = [
     { id: '1', label: 'Peter Parker' },
@@ -219,7 +219,7 @@ const renderItem = async (item) => {
 
     return i;
 }
-`}},{framework:"Vue",sourceParts:{htmlFragment:e=>h(q.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="promiseDisplayItems" :render-item.camel="renderItem"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
+`}},{framework:"Vue",sourceParts:{htmlFragment:e=>s(x.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="promiseDisplayItems" :render-item.camel="renderItem"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
     promiseDisplayItems: async () => {
         await new Promise((r) => setTimeout(() => r(), 2000));
         return [
@@ -324,17 +324,17 @@ async function renderItem(item) {
 }           
 const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={() => promiseDisplayItems(displayItems)} renderItem={renderItem}>
                     <span slot="loading_indicator">...</span>
-                  </OmniSelect>;`}],name:"Loading Slot",description:"Set html content to render while populating items list.",args:{label:"Loading Slot",data:{},items:()=>D(v),displayField:"label",idField:"id",renderItem:async e=>{await new Promise((l,i)=>{setTimeout(l,2e3)});let t=document.createElement("i");return t.innerText=e.label,t.style.color="red",t},loading_indicator:f`<span>...</span>`},play:async e=>{var n;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn(),i=u.fn();t.addEventListener("click",l),t.addEventListener("change",i),await s.click(t);let r;navigator.userAgent==="Test Runner"?r=await m(t.shadowRoot,".item",void 0,3e3):r=await m(t.shadowRoot,".item",void 0,5e3),await s.click(r);let o=(n=t.shadowRoot)==null?void 0:n.getElementById("select");await a(o).toHaveValue(v[0].label)}},ke={render:e=>d`
+                  </OmniSelect>;`}],name:"Loading Slot",description:"Set html content to render while populating items list.",args:{label:"Loading Slot",data:{},items:()=>F(d),displayField:"label",idField:"id",renderItem:async e=>{await new Promise((r,p)=>{setTimeout(r,2e3)});let t=document.createElement("i");return t.innerText=e.label,t.style.color="red",t},loading_indicator:a`<span>...</span>`}},X={render:e=>i`
         <omni-select
             data-testid="test-select"
-            label="${c(e.label)}"
-            hint="${c(e.hint)}"
-            error="${c(e.error)}"
+            label="${l(e.label)}"
+            hint="${l(e.hint)}"
+            error="${l(e.error)}"
             .items="${e.items}"
             display-field="${e.displayField}"
             id-field="${e.idField}">
         </omni-select>
-    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${stringItems}" id-field="${e.idField}"></omni-select>`,jsFragment:"const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];"}},{framework:"Vue",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" display-field="${e.displayField}" .items="stringItems" id-field="${e.idField}"></omni-select>`,jsFragment:`window.vueData = {
+    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${stringItems}" id-field="${e.idField}"></omni-select>`,jsFragment:"const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];"}},{framework:"Vue",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" display-field="${e.displayField}" .items="stringItems" id-field="${e.idField}"></omni-select>`,jsFragment:`window.vueData = {
     stringItems: ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan']
 };`}},{framework:"HTML",load:e=>`
             
@@ -353,19 +353,19 @@ const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField
 `},{framework:"React",load:e=>`import { OmniSelect } from "@capitec/omni-components-react/select";
 
 const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];    
-const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={stringItems} />;`}],name:"String",description:"Use a string array as the items source.",args:{label:"String",items:g,displayField:"label",idField:"id"},play:async e=>{var n;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn(),i=u.fn();t.addEventListener("click",l),t.addEventListener("change",i),await s.click(t);let r=await m(t.shadowRoot,".item");await s.click(r);let o=(n=t.shadowRoot)==null?void 0:n.getElementById("select");await a(o).toHaveValue(g[0])}},Fe={render:e=>d`
+const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={stringItems} />;`}],name:"String",description:"Use a string array as the items source.",args:{label:"String",items:c,displayField:"label",idField:"id"}},Y={render:e=>i`
         <omni-select
             data-testid="test-select"
-            label="${c(e.label)}"
-            hint="${c(e.hint)}"
-            error="${c(e.error)}"
+            label="${l(e.label)}"
+            hint="${l(e.hint)}"
+            error="${l(e.error)}"
             .renderSelection="${e.renderSelection}"
             value="${e.value}"
             .items="${e.items}"
             display-field="${e.displayField}"
             id-field="${e.idField}">
         </omni-select>
-    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" .items="\${stringItems}" .renderSelection="\${renderSelection}" value="${e.value}"></omni-select>`,jsFragment:`const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];
+    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" .items="\${stringItems}" .renderSelection="\${renderSelection}" value="${e.value}"></omni-select>`,jsFragment:`const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];
 
 async function renderSelection(item) {
     await new Promise((resolve, reject) => {
@@ -376,7 +376,7 @@ async function renderSelection(item) {
     i.innerText = item;
     i.style.color = 'blue';
     return i;
-}`}},{framework:"Vue",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" .items="stringItems" :render-selection.camel="renderSelection" value="${e.value}"></omni-select>`,jsFragment:e=>`window.vueData = {
+}`}},{framework:"Vue",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" .items="stringItems" :render-selection.camel="renderSelection" value="${e.value}"></omni-select>`,jsFragment:e=>`window.vueData = {
     stringItems: ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'],
     renderSelection: async (item) => {
         await new Promise((resolve, reject) => {
@@ -427,10 +427,10 @@ async function renderSelection(item) {
     return i;
 }
 const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];    
-const App = () => <OmniSelect label="${e.label}" value="${e.value}" items={stringItems} renderSelection={renderSelection}/>;`}],name:"Selection Renderer",description:"Provide a function to render custom html content for the selection.",args:{label:"Selection Renderer",items:g,renderSelection:async e=>{await new Promise((l,i)=>{setTimeout(l,2e3)});let t=document.createElement("i");return t.innerText=e,t.style.color="blue",t},value:"Clark Kent"},play:async e=>{var n;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn(),i=u.fn();t.addEventListener("click",l),t.addEventListener("change",i),await s.click(t);let r=await m(t.shadowRoot,".item");await s.click(r);let o=(n=t.shadowRoot)==null?void 0:n.getElementById("select");await a(o).toHaveValue(g[0])}},Be={render:e=>d`
+const App = () => <OmniSelect label="${e.label}" value="${e.value}" items={stringItems} renderSelection={renderSelection}/>;`}],name:"Selection Renderer",description:"Provide a function to render custom html content for the selection.",args:{label:"Selection Renderer",items:c,renderSelection:async e=>{await new Promise((r,p)=>{setTimeout(r,2e3)});let t=document.createElement("i");return t.innerText=e,t.style.color="blue",t},value:"Clark Kent"}},ee={render:e=>i`
         <omni-select
             data-testid="test-select"
-            label="${c(e.label)}"
+            label="${l(e.label)}"
             .items="${e.items}"
             display-field="${e.displayField}"
             empty-message="${e.emptyMessage}"
@@ -438,20 +438,20 @@ const App = () => <OmniSelect label="${e.label}" value="${e.value}" items={strin
         </omni-select>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniSelect } from "@capitec/omni-components-react/select";
               
-const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" empty-message="${e.emptyMessage}" id-field="${e.idField}"/>;`}],name:"Empty Message",description:"Set a text value to display when there are no items.",args:{label:"Empty",items:[],emptyMessage:"No items provided",displayField:"label",idField:"id"},play:async e=>{let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn();t.addEventListener("click",l),await s.click(t);let i=await m(t.shadowRoot,".none");await a(i).toHaveTextContent(e.args.emptyMessage)}},U={render:e=>d`
-        <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}" ?disabled="${e.disabled}">
+const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" empty-message="${e.emptyMessage}" id-field="${e.idField}"/>;`}],name:"Empty Message",description:"Set a text value to display when there are no items.",args:{label:"Empty",items:[],emptyMessage:"No items provided",displayField:"label",idField:"id"}},B={render:e=>i`
+        <omni-select data-testid="test-select" label="${l(e.label)}" .items="${e.items}" ?disabled="${e.disabled}">
         </omni-select>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniSelect } from "@capitec/omni-components-react/select";
 
-const App = () => <OmniSelect label="${e.label}" disabled/>;`},{framework:"Vue",load:e=>h(U.render(e),void 0,t=>t.replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"'))}],name:"Disabled",description:"Prevent interaction (pointer events).",args:{label:"Disabled",disabled:!0,items:v},play:async e=>{let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn();t.addEventListener("click",l),await a(()=>s.click(t)).rejects.toThrow(/pointer-events: none/),await a(l).toBeCalledTimes(0)}},z={render:e=>d`
-        <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}">
+const App = () => <OmniSelect label="${e.label}" disabled/>;`},{framework:"Vue",load:e=>s(B.render(e),void 0,t=>t.replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"'))}],name:"Disabled",description:"Prevent interaction (pointer events).",args:{label:"Disabled",disabled:!0,items:d}},P={render:e=>i`
+        <omni-select data-testid="test-select" label="${l(e.label)}" .items="${e.items}">
             <svg slot="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z"/></svg>
             <svg slot="more" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z"/></svg>
         </omni-select>
-    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" .items="\${stringItems}">
+    `,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" .items="\${stringItems}">
     <svg slot="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z"/></svg>
     <svg slot="more" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z"/></svg>
-</omni-select>`,jsFragment:"const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];"}},{framework:"Vue",sourceParts:{htmlFragment:e=>h(z.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="stringItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
+</omni-select>`,jsFragment:"const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan'];"}},{framework:"Vue",sourceParts:{htmlFragment:e=>s(P.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="stringItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
     stringItems: ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry', 'Hal Jordan']
 };`}},{framework:"HTML",load:e=>`
             
@@ -473,10 +473,10 @@ const stringItems = ['Bruce Wayne', 'Clark Kent', 'Barry Allen', 'Arthur Curry',
 const App = () => <OmniSelect label="${e.label}" items={stringItems}>                    
                     <svg slot="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style={{fill: 'orange'}}><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z"/></svg>
                     <svg slot="more" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style={{fill: 'orange'}}><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM12 7a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 .743.648L17 12a.75.75 0 0 1-.75.75h-3.5v3.5a.75.75 0 0 1-.648.743L12 17a.75.75 0 0 1-.75-.75v-3.5h-3.5a.75.75 0 0 1-.743-.648L7 12a.75.75 0 0 1 .75-.75h3.5v-3.5a.75.75 0 0 1 .648-.743Z"/></svg>
-                  </OmniSelect>;`}],name:"Custom Control Slot",description:"Set html content to display within the available control slots.",args:{label:"Custom slots",items:g},play:async e=>{var l,i;let t=b(e.canvasElement).getByTestId("test-select");if(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767){let r=(l=t.shadowRoot)==null?void 0:l.querySelector("slot[name=arrow]");await a(r).toBeTruthy();let o=r==null?void 0:r.assignedElements().find(n=>n.tagName.toLocaleLowerCase()==="svg");await a(o).toBeTruthy()}else{let r=(i=t.shadowRoot)==null?void 0:i.querySelector("slot[name=more]");await a(r).toBeTruthy();let o=r==null?void 0:r.assignedElements().find(n=>n.tagName.toLocaleLowerCase()==="svg");await a(o).toBeTruthy()}}},G={render:e=>d`
-    <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}" display-field="${e.displayField}" id-field="${e.idField}" ?searchable="${e.searchable}">
+                  </OmniSelect>;`}],name:"Custom Control Slot",description:"Set html content to display within the available control slots.",args:{label:"Custom slots",items:c}},T={render:e=>i`
+    <omni-select data-testid="test-select" label="${l(e.label)}" .items="${e.items}" display-field="${e.displayField}" id-field="${e.idField}" ?searchable="${e.searchable}">
     </omni-select>
-`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${displayItems}" id-field="${e.idField}" searchable></omni-select>`,jsFragment:`const displayItems = [
+`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" display-field="${e.displayField}" .items="\${displayItems}" id-field="${e.idField}" searchable></omni-select>`,jsFragment:`const displayItems = [
     { id: '1', label: 'Peter Parker' },
     { id: '2', label: 'James Howlett' },
     { id: '3', label: 'Tony Stark' },
@@ -487,7 +487,7 @@ const App = () => <OmniSelect label="${e.label}" items={stringItems}>
     { id: '8', label: 'Henry P. McCoy' },
     { id: '9', label: 'Carl Lucas' },
     { id: '10', label: 'Frank Castle' }
-];`}},{framework:"Vue",sourceParts:{htmlFragment:e=>h(G.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="displayItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
+];`}},{framework:"Vue",sourceParts:{htmlFragment:e=>s(T.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="displayItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`window.vueData = {
     displayItems: [
         { id: '1', label: 'Peter Parker' },
         { id: '2', label: 'James Howlett' },
@@ -530,10 +530,10 @@ const displayItems = [
     { id: '9', label: 'Carl Lucas' },
     { id: '10', label: 'Frank Castle' }
 ];
-const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={displayItems} searchable></OmniSelect>`}],name:"Searchable",description:"Adds a search input to limit the options to Select",args:{label:"Searchable",displayField:"label",idField:"id",searchable:!0,items:v},play:async e=>{var p,w;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn();t.addEventListener("click",l),await s.click(t);let i=await m(t.shadowRoot,"#searchField");await a(i).toBeTruthy(),$(i),await s.click(i);let r="Peter";await s.type(i,r);let o=await m(t.shadowRoot,"#items-container");await a(o).toBeTruthy();let n=(p=t.shadowRoot)==null?void 0:p.getElementById("items");await a(n).toBeTruthy();let y=await m(t.shadowRoot,".item");await a(y).toBeTruthy(),await s.click(y);let S=(w=t.shadowRoot)==null?void 0:w.getElementById("select");await a(S).toHaveValue(v[0].label)}},Q={render:e=>d`
-    <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}" ?searchable="${e.searchable}" .filterItems="${e.filterItems}">
+const App = () => <OmniSelect label="${e.label}" display-field="${e.displayField}" id-field="${e.idField}" items={displayItems} searchable></OmniSelect>`}],name:"Searchable",description:"Adds a search input to limit the options to Select",args:{label:"Searchable",displayField:"label",idField:"id",searchable:!0,items:d}},L={render:e=>i`
+    <omni-select data-testid="test-select" label="${l(e.label)}" .items="${e.items}" ?searchable="${e.searchable}" .filterItems="${e.filterItems}">
     </omni-select>
-`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}"  .items="\${stringItems}" .filterItems="\${customSearch}" searchable></omni-select>`,jsFragment:`const stringItems = [
+`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}"  .items="\${stringItems}" .filterItems="\${customSearch}" searchable></omni-select>`,jsFragment:`const stringItems = [
     'Bruce Wayne', 
     'Clark Kent', 
     'Barry Allen', 
@@ -551,7 +551,7 @@ function customSearch(filter, items){
 function itemFilter(filter, item){
     return item.includes(filter);
 }
-`}},{framework:"Vue",sourceParts:{htmlFragment:e=>h(Q.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="stringItems" :filter-items.camel="customSearch"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`function itemFilter(filter, item){
+`}},{framework:"Vue",sourceParts:{htmlFragment:e=>s(L.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="stringItems" :filter-items.camel="customSearch"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`function itemFilter(filter, item){
     return item.includes(filter);
 }
 
@@ -612,10 +612,10 @@ function itemFilter(filter, item){
     return item.includes(filter);
 }
 const App = () => <OmniSelect label="${e.label}" items={stringItems} filterItems={customSearch} searchable>
-</OmniSelect>`}],name:"Custom Search",description:"Custom search function",args:{label:"Custom Search",searchable:!0,items:g,filterItems:W},play:async e=>{var p,w;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn();t.addEventListener("click",l),await s.click(t);let i=await m(t.shadowRoot,"#searchField");await a(i).toBeTruthy(),$(i),await s.click(i);let r="Bruce";await s.type(i,r);let o=await m(t.shadowRoot,"#items-container");await a(o).toBeTruthy();let n=(p=t.shadowRoot)==null?void 0:p.getElementById("items");await a(n).toBeTruthy();let y=await m(t.shadowRoot,".item");await a(y).toBeTruthy(),await s.click(y);let S=(w=t.shadowRoot)==null?void 0:w.getElementById("select");await a(S).toHaveValue(g[0])}},X={render:e=>d`
-    <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}" ?searchable="${e.searchable}">
+</OmniSelect>`}],name:"Custom Search",description:"Custom search function",args:{label:"Custom Search",searchable:!0,items:c,filterItems:I}},M={render:e=>i`
+    <omni-select data-testid="test-select" label="${l(e.label)}" .items="${e.items}" ?searchable="${e.searchable}">
     </omni-select>
-`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" .items="\${serverSideFilterItems}" searchable></omni-select>`,jsFragment:`const stringItems = [
+`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" .items="\${serverSideFilterItems}" searchable></omni-select>`,jsFragment:`const stringItems = [
     'Bruce Wayne', 
     'Clark Kent', 
     'Barry Allen', 
@@ -638,7 +638,7 @@ function customSearch(filter, items){
 function itemFilter(filter, item){
     return item.includes(filter);
 } 
-`}},{framework:"Vue",sourceParts:{htmlFragment:e=>h(X.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="serverSideFilterItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`const stringItems = [
+`}},{framework:"Vue",sourceParts:{htmlFragment:e=>s(M.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="serverSideFilterItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:e=>`const stringItems = [
     'Bruce Wayne', 
     'Clark Kent', 
     'Barry Allen', 
@@ -714,11 +714,11 @@ function itemFilter(filter, item){
     return item.includes(filter);
 }
 
-const App = () => <OmniSelect label="${e.label}" items={searchFilter} searchable></OmniSelect>`}],name:"Server Side Filtering",description:"Select with server side filtering",args:{label:"Server Side Filtering",searchable:!0,items:K},play:async e=>{var p,w;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn();t.addEventListener("click",l),await s.click(t);let i=await m(t.shadowRoot,"#searchField");await a(i).toBeTruthy(),$(i),await s.click(i);let r="Bruce";await s.type(i,r);let o=await m(t.shadowRoot,"#items-container");await a(o).toBeTruthy();let n=(p=t.shadowRoot)==null?void 0:p.getElementById("items");await a(n).toBeTruthy();let y;navigator.userAgent==="Test Runner"?y=await m(t.shadowRoot,".item",void 0,3e3):y=await m(t.shadowRoot,".item",void 0,5e3),await a(y).toBeTruthy(),await s.click(y);let S=(w=t.shadowRoot)==null?void 0:w.getElementById("select");await a(S).toHaveValue(g[0])}},Y={render:e=>d`
-    <omni-select data-testid="test-select" label="${c(e.label)}" .items="${e.items}" ?searchable="${e.searchable}">
+const App = () => <OmniSelect label="${e.label}" items={searchFilter} searchable></OmniSelect>`}],name:"Server Side Filtering",description:"Select with server side filtering",args:{label:"Server Side Filtering",searchable:!0,items:C}},H={render:e=>i`
+    <omni-select data-testid="test-select" label="${l(e.label)}" .items="${e.items}" ?searchable="${e.searchable}">
     <svg slot="search-clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z" /></svg>
     </omni-select>
-`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>f`<omni-select label="${e.label}" .items="\${stringItems}" searchable>
+`,frameworkSources:[{framework:"Lit",sourceParts:{htmlFragment:e=>a`<omni-select label="${e.label}" .items="\${stringItems}" searchable>
     <svg slot="search-clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"  width="24px" height="24px" style="fill: orange;"><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z" /></svg>
 </omni-select>`,jsFragment:`const stringItems = [
     'Bruce Wayne', 
@@ -726,7 +726,7 @@ const App = () => <OmniSelect label="${e.label}" items={searchFilter} searchable
     'Barry Allen', 
     'Arthur Curry', 
     'Hal Jordan'
-];  `}},{framework:"Vue",sourceParts:{htmlFragment:e=>h(Y.render(e),t=>{var l;return(l=t.firstElementChild)==null?void 0:l.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="stringItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:`const stringItems = [
+];  `}},{framework:"Vue",sourceParts:{htmlFragment:e=>s(H.render(e),t=>{var r;return(r=t.firstElementChild)==null?void 0:r.setAttribute("replace-token","x")},t=>t.replace('replace-token="x"','.items="stringItems"').replace(" disabled",' :disabled="true"').replace(" clearable",' :clearable="true"').replace(" searchable",' :searchable="true"')),jsFragment:`const stringItems = [
     'Bruce Wayne', 
     'Clark Kent', 
     'Barry Allen', 
@@ -760,5 +760,5 @@ const stringItems = [
 ];
 const App = () => <OmniSelect label="${e.label}" items={stringItems} searchable>
 <svg slot="search-clear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px" style={{fill: 'orange'}}><path d="M12 2.25c5.385 0 9.75 4.365 9.75 9.75s-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12 6.615 2.25 12 2.25Zm0 1.5a8.25 8.25 0 1 0 0 16.5 8.25 8.25 0 0 0 0-16.5ZM8.47 8.47a.75.75 0 0 1 1.06 0L12 10.939l2.47-2.47a.75.75 0 0 1 .976-.072l.084.073a.75.75 0 0 1 0 1.06L13.061 12l2.47 2.47a.75.75 0 0 1 .072.976l-.073.084a.75.75 0 0 1-1.06 0L12 13.061l-2.47 2.47a.75.75 0 0 1-.976.072l-.084-.073a.75.75 0 0 1 0-1.06L10.939 12l-2.47-2.47a.75.75 0 0 1-.072-.976Z" /></svg>
-</OmniSelect>`}],name:"Custom Search Field Slot",description:"Select component with search field custom slotted icon.",args:{label:"Custom Search Slot",searchable:!0,items:g},play:async e=>{var B,T,A;let t=b(e.canvasElement).getByTestId("test-select"),l=u.fn();t.addEventListener("click",l),await s.click(t);let i=await m(t.shadowRoot,"#searchField");await a(i).toBeTruthy(),$(i),await s.click(i);let r="Bruce";await s.type(i,r);let o=(B=t.shadowRoot)==null?void 0:B.querySelector("slot[name=search-clear]");await a(o).toBeTruthy();let n=o==null?void 0:o.assignedElements().find(Z=>Z.tagName.toLocaleLowerCase()==="svg");await a(n).toBeTruthy();let y=await m(t.shadowRoot,"#items-container");await a(y).toBeTruthy();let S=(T=t.shadowRoot)==null?void 0:T.getElementById("items");await a(S).toBeTruthy();let p=await m(t.shadowRoot,".item");await a(p).toBeTruthy(),await s.click(p);let w=(A=t.shadowRoot)==null?void 0:A.getElementById("select");await a(w).toHaveValue(g[0])}},$e=E("omni-select"),Ce=P("omni-select"),Te=H("omni-select"),Ae=j("omni-select"),xe=J("omni-select"),Le=M("omni-select"),Ee=R("omni-select");export{N as Async_Per_Item,Ae as Clearable,xe as Custom_Clear_Slot,z as Custom_Control_Slot,Q as Custom_Search,Y as Custom_Search_Slot,U as Disabled,Be as Empty_Message,Te as Error_Label,Ce as Hint,C as Interactive,$e as Label,q as Loading_Slot,Le as Prefix,G as Searchable,Fe as Selection_Renderer,X as Server_Side_Filtering,ke as String_Array,Ee as Suffix,Ie as default};
+</OmniSelect>`}],name:"Custom Search Field Slot",description:"Select component with search field custom slotted icon.",args:{label:"Custom Search Slot",searchable:!0,items:c}},te=f("omni-select"),re=h("omni-select"),le=w("omni-select"),ie=$("omni-select"),ae=v("omni-select"),se=g("omni-select"),ne=S("omni-select");export{A as Async_Per_Item,ie as Clearable,ae as Custom_Clear_Slot,P as Custom_Control_Slot,L as Custom_Search,H as Custom_Search_Slot,B as Disabled,ee as Empty_Message,le as Error_Label,re as Hint,u as Interactive,te as Label,x as Loading_Slot,se as Prefix,T as Searchable,Y as Selection_Renderer,M as Server_Side_Filtering,X as String_Array,ne as Suffix};
 //# sourceMappingURL=Select.stories.js.map

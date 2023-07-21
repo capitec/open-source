@@ -1,7 +1,6 @@
-import * as jestMock from 'jest-mock';
 import { testLabelBehaviour, testHintBehaviour, testErrorBehaviour, testValueBehaviour, testClearableBehaviour, testCustomClearableSlotBehaviour, testPrefixBehaviour, testSuffixBehaviour, testDisabledBehaviour } from '../core/OmniInputPlaywright.js';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
-test(`Text Field - Interactive`, async ({ page, browserName }) => {
+import { test, expect, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
+test(`Text Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/text-field/');
         await page.evaluate(() => document.fonts.ready);
@@ -12,11 +11,7 @@ test(`Text Field - Interactive`, async ({ page, browserName }) => {
             await t.updateComplete;
         });
         await expect(textField).toHaveScreenshot('text-field.png');
-        const inputFn = jestMock.fn();
-        await page.exposeFunction('jestInput', () => inputFn());
-        await textField.evaluate((node) => {
-            node.addEventListener('input', () => window.jestInput());
-        });
+        const inputFn = await mockEventListener(textField, 'input');
         const inputField = textField.locator('#inputField');
         const value = 'Value Update';
         await inputField.type(value);
@@ -25,13 +20,13 @@ test(`Text Field - Interactive`, async ({ page, browserName }) => {
         await expect(textField).toHaveScreenshot('text-field-value.png');
     });
 });
-testLabelBehaviour('omni-text-field');
-testHintBehaviour('omni-text-field');
-testErrorBehaviour('omni-text-field');
-testValueBehaviour('omni-text-field');
-testClearableBehaviour('omni-text-field');
-testCustomClearableSlotBehaviour('omni-text-field');
-testPrefixBehaviour('omni-text-field');
-testSuffixBehaviour('omni-text-field');
-testDisabledBehaviour('omni-text-field');
+test('Text Field - Label Behaviour', testLabelBehaviour('omni-text-field'));
+test('Text Field - Hint Behaviour', testHintBehaviour('omni-text-field'));
+test('Text Field - Error Behaviour', testErrorBehaviour('omni-text-field'));
+test('Text Field - Value Behaviour', testValueBehaviour('omni-text-field'));
+test('Text Field - Clearable Behaviour', testClearableBehaviour('omni-text-field'));
+test('Text Field - Custom Clear Slot Behaviour', testCustomClearableSlotBehaviour('omni-text-field'));
+test('Text Field - Prefix Behaviour', testPrefixBehaviour('omni-text-field'));
+test('Text Field - Suffix Behaviour', testSuffixBehaviour('omni-text-field'));
+test('Text Field - Disabled Behaviour', testDisabledBehaviour('omni-text-field'));
 //# sourceMappingURL=TextField.spec.js.map

@@ -1,23 +1,16 @@
-import * as jestMock from 'jest-mock';
 import { testLabelBehaviour, testHintBehaviour, testErrorBehaviour, testValueBehaviour, testClearableBehaviour, testCustomClearableSlotBehaviour, testPrefixBehaviour, testSuffixBehaviour, testDisabledBehaviour } from '../core/OmniInputPlaywright.js';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
-test(`Password Field - Interactive`, async ({ page, browserName }) => {
+import { test, expect, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
+test(`Password Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/password-field/');
         await page.evaluate(() => document.fonts.ready);
-        await page.waitForSelector('[data-testid]', {});
         const passwordField = page.locator('[data-testid]').first();
         passwordField.evaluate(async (t) => {
             t.value = '';
             await t.updateComplete;
         });
         await expect(passwordField).toHaveScreenshot('password-field.png');
-        const interactions = jestMock.fn();
-        await page.exposeFunction('jestInteract', () => interactions());
-        await passwordField.evaluate((node) => {
-            node.addEventListener('input', () => window.jestInteract());
-            node.addEventListener('click', () => window.jestInteract());
-        });
+        const inputFn = await mockEventListener(passwordField, 'input');
         const showSlotElement = passwordField.locator('slot[name=show]');
         await expect(showSlotElement).toHaveCount(1);
         await showSlotElement.click();
@@ -30,24 +23,23 @@ test(`Password Field - Interactive`, async ({ page, browserName }) => {
         const value = 'Value Update';
         await inputField.type(value);
         await expect(inputField).toHaveValue(value);
-        await expect(interactions).toBeCalledTimes(value.length);
+        await expect(inputFn).toBeCalledTimes(value.length);
         await expect(passwordField).toHaveScreenshot('password-field-value.png');
     });
 });
-testLabelBehaviour('omni-password-field');
-testHintBehaviour('omni-password-field');
-testErrorBehaviour('omni-password-field');
-testValueBehaviour('omni-password-field');
-testClearableBehaviour('omni-password-field');
-testCustomClearableSlotBehaviour('omni-password-field');
-testPrefixBehaviour('omni-password-field');
-testSuffixBehaviour('omni-password-field');
-testDisabledBehaviour('omni-password-field');
-test(`Password Field - Custom Icon Slot`, async ({ page, browserName }) => {
+test('Password Field - Label Behaviour', testLabelBehaviour('omni-password-field'));
+test('Password Field - Hint Behaviour', testHintBehaviour('omni-password-field'));
+test('Password Field - Error Behaviour', testErrorBehaviour('omni-password-field'));
+test('Password Field - Value Behaviour', testValueBehaviour('omni-password-field'));
+test('Password Field - Clearable Behaviour', testClearableBehaviour('omni-password-field'));
+test('Password Field - Custom Clear Slot Behaviour', testCustomClearableSlotBehaviour('omni-password-field'));
+test('Password Field - Prefix Behaviour', testPrefixBehaviour('omni-password-field'));
+test('Password Field - Suffix Behaviour', testSuffixBehaviour('omni-password-field'));
+test('Password Field - Disabled Behaviour', testDisabledBehaviour('omni-password-field'));
+test(`Password Field - Custom Icon Slot Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/password-field/');
         await page.evaluate(() => document.fonts.ready);
-        const args = await page.locator('story-renderer[key=Custom_Icon_Slot]').evaluate((storyRenderer) => storyRenderer.story.args);
         const container = page.locator('.Custom_Icon_Slot');
         const passwordField = container.locator('[data-testid]').first();
         passwordField.evaluate(async (t) => {

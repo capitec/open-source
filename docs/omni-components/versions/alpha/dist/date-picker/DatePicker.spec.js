@@ -1,12 +1,10 @@
-import * as jestMock from 'jest-mock';
 import { DateTime } from 'luxon';
 import { testLabelBehaviour, testHintBehaviour, testErrorBehaviour, testClearableBehaviour, testCustomClearableSlotBehaviour, testPrefixBehaviour, testSuffixBehaviour } from '../core/OmniInputPlaywright.js';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
-test(`Date Picker - Visual and Behaviour`, async ({ page, isMobile }) => {
+import { test, expect, getStoryArgs, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
+test(`Date Picker - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/date-picker/');
         await page.waitForSelector('[data-testid]', {});
-        const args = await page.locator('story-renderer[key=Value]').evaluate((storyRenderer) => storyRenderer.story.args);
         const datePicker = page.locator('.Value').getByTestId('test-date-picker');
         // Prepare test data
         await datePicker.evaluate(async (d) => {
@@ -55,11 +53,10 @@ test(`Date Picker - Visual and Behaviour`, async ({ page, isMobile }) => {
         await expect(datePicker).toHaveScreenshot('date-picker-after.png');
     });
 });
-test(`Date Picker - Value Behaviour`, async ({ page, isMobile }) => {
+test(`Date Picker - Value Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/date-picker/');
         await page.waitForSelector('[data-testid]', {});
-        const args = await page.locator('story-renderer[key=Value]').evaluate((storyRenderer) => storyRenderer.story.args);
         const datePicker = page.locator('.Value').getByTestId('test-date-picker');
         await datePicker.evaluate(async (d) => {
             d.value = '2023-01-01';
@@ -72,14 +69,13 @@ test(`Date Picker - Value Behaviour`, async ({ page, isMobile }) => {
         await expect(calendar).toHaveAttribute('value', (await datePicker.getAttribute('value')));
     });
 });
-test(`Date Picker - Locale Behaviour`, async ({ page, isMobile }) => {
+test(`Date Picker - Locale Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         const localDate = DateTime.fromISO('2022-06-21');
         const isoDate = localDate.toISODate();
         const testLocale = 'en-ZA';
         await page.goto('/components/date-picker/');
         await page.waitForSelector('[data-testid]', {});
-        const args = await page.locator('story-renderer[key=Locale]').evaluate((storyRenderer) => storyRenderer.story.args);
         const datePicker = page.locator('.Locale').getByTestId('test-date-picker');
         // Prepare test data
         await datePicker.evaluate(async (d, args) => {
@@ -100,7 +96,7 @@ test(`Date Picker - Min Date Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/date-picker/');
         await page.waitForSelector('[data-testid]', {});
-        const args = await page.locator('story-renderer[key=Min_Date]').evaluate((storyRenderer) => storyRenderer.story.args);
+        const args = await getStoryArgs(page, 'Min_Date');
         const datePicker = page.locator('.Min_Date').getByTestId('test-date-picker');
         await datePicker.evaluate(async (d, args) => {
             d.value = args.value;
@@ -131,7 +127,7 @@ test(`Date Picker - Max Date Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/date-picker/');
         await page.waitForSelector('[data-testid]', {});
-        const args = await page.locator('story-renderer[key=Max_Date]').evaluate((storyRenderer) => storyRenderer.story.args);
+        const args = await getStoryArgs(page, 'Max_Date');
         const datePicker = page.locator('.Max_Date').getByTestId('test-date-picker');
         await datePicker.evaluate(async (d, args) => {
             d.value = args.value;
@@ -158,30 +154,25 @@ test(`Date Picker - Max Date Behaviour`, async ({ page }) => {
         await expect(datePicker).not.toHaveAttribute('value', preValue);
     });
 });
-testLabelBehaviour('omni-date-picker');
-testHintBehaviour('omni-date-picker');
-testErrorBehaviour('omni-date-picker');
-testClearableBehaviour('omni-date-picker');
-testCustomClearableSlotBehaviour('omni-date-picker');
-testPrefixBehaviour('omni-date-picker');
-testSuffixBehaviour('omni-date-picker');
+test('Date Picker - Label Behaviour', testLabelBehaviour('omni-date-picker'));
+test('Date Picker - Hint Behaviour', testHintBehaviour('omni-date-picker'));
+test('Date Picker - Error Behaviour', testErrorBehaviour('omni-date-picker'));
+test('Date Picker - Clearable Behaviour', testClearableBehaviour('omni-date-picker'));
+test('Date Picker - Custom Clear Slot Behaviour', testCustomClearableSlotBehaviour('omni-date-picker'));
+test('Date Picker - Prefix Behaviour', testPrefixBehaviour('omni-date-picker'));
+test('Date Picker - Suffix Behaviour', testSuffixBehaviour('omni-date-picker'));
 test(`Date Picker - Disabled Behaviour`, async ({ page, isMobile }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/date-picker/');
         await page.waitForSelector('[data-testid]', {});
-        const args = await page.locator('story-renderer[key=Disabled]').evaluate((storyRenderer) => storyRenderer.story.args);
+        const args = await getStoryArgs(page, 'Disabled');
         const datePicker = page.locator('.Disabled').getByTestId('test-date-picker');
         await datePicker.evaluate(async (d, args) => {
             d.value = args.value;
             await d.updateComplete;
         }, args);
         await expect(datePicker).toHaveScreenshot('date-picker-initial.png');
-        //Click event test.
-        const click = jestMock.fn();
-        await page.exposeFunction('jestClick', () => click());
-        await datePicker.evaluate((node) => {
-            node.addEventListener('click', () => window.jestClick());
-        });
+        const click = await mockEventListener(datePicker, 'click');
         await datePicker.click({
             force: true
         });

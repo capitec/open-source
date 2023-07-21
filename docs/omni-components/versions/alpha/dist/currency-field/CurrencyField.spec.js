@@ -1,10 +1,8 @@
-import * as jestMock from 'jest-mock';
 import { testLabelBehaviour, testHintBehaviour, testErrorBehaviour, testValueBehaviour, testClearableBehaviour, testCustomClearableSlotBehaviour, testPrefixBehaviour, testSuffixBehaviour, testDisabledBehaviour } from '../core/OmniInputPlaywright.js';
-import { test, expect, withCoverage /*keyboardPaste, clipboardCopy*/ } from '../utils/JestPlaywright.js';
-test(`Currency Field - Visual and Behaviour`, async ({ page, isMobile }) => {
+import { test, expect, mockEventListener, withCoverage /*keyboardPaste, clipboardCopy*/ } from '../utils/JestPlaywright.js';
+test(`Currency Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/currency-field/');
-        const args = await page.locator('story-renderer[key=Interactive]').evaluate((storyRenderer) => storyRenderer.story.args);
         const currencyField = page.locator('.Interactive').getByTestId('test-currency-field');
         await currencyField.evaluate(async (c) => {
             c.value = '';
@@ -19,11 +17,7 @@ test(`Currency Field - Visual and Behaviour`, async ({ page, isMobile }) => {
         await expect(currencyField).toHaveScreenshot('currency-field-focussed.png');
         await inputField.blur();
         await expect(currencyField).toHaveScreenshot('currency-field-blurred.png');
-        const beforeinput = jestMock.fn();
-        await page.exposeFunction('jestbeforeinput', () => beforeinput());
-        await currencyField.evaluate((node) => {
-            node.addEventListener('beforeinput', () => window.jestbeforeinput());
-        });
+        const beforeinput = await mockEventListener(currencyField, 'beforeinput');
         const value = '120000015';
         await inputField.type(value);
         // Check the following value as input value is formatted to currency value;
@@ -68,13 +62,13 @@ test(`Currency Field - Visual and Behaviour`, async ({ page, isMobile }) => {
         //TODO add tests for before input scenarios
     });
 });
-testLabelBehaviour('omni-currency-field');
-testHintBehaviour('omni-currency-field');
-testErrorBehaviour('omni-currency-field');
-testValueBehaviour('omni-currency-field');
-testClearableBehaviour('omni-currency-field');
-testCustomClearableSlotBehaviour('omni-currency-field');
-testPrefixBehaviour('omni-currency-field');
-testSuffixBehaviour('omni-currency-field');
-testDisabledBehaviour('omni-currency-field');
+test('Currency Field - Label Behaviour', testLabelBehaviour('omni-currency-field'));
+test('Currency Field - Hint Behaviour', testHintBehaviour('omni-currency-field'));
+test('Currency Field - Error Behaviour', testErrorBehaviour('omni-currency-field'));
+test('Currency Field - Value Behaviour', testValueBehaviour('omni-currency-field'));
+test('Currency Field - Clearable Behaviour', testClearableBehaviour('omni-currency-field'));
+test('Currency Field - Custom Clear Slot Behaviour', testCustomClearableSlotBehaviour('omni-currency-field'));
+test('Currency Field - Prefix Behaviour', testPrefixBehaviour('omni-currency-field'));
+test('Currency Field - Suffix Behaviour', testSuffixBehaviour('omni-currency-field'));
+test('Currency Field - Disabled Behaviour', testDisabledBehaviour('omni-currency-field'));
 //# sourceMappingURL=CurrencyField.spec.js.map

@@ -1,16 +1,10 @@
-import * as jestMock from 'jest-mock';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
+import { test, expect, getStoryArgs, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
 test(`Hyperlink - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/hyperlink/');
-        const args = await page.locator('story-renderer[key=Interactive]').evaluate((storyRenderer) => storyRenderer.story.args);
         const hyperlink = page.locator('.Interactive').getByTestId('test-hyperlink');
         await expect(hyperlink).toHaveScreenshot('hyperlink-initial.png');
-        const click = jestMock.fn();
-        await page.exposeFunction('jestClick', () => click());
-        await hyperlink.evaluate((node) => {
-            node.addEventListener('click', () => window.jestClick());
-        });
+        const click = await mockEventListener(hyperlink, 'click');
         await hyperlink.click({
             force: true
         });
@@ -23,7 +17,7 @@ test(`Hyperlink - Visual and Behaviour`, async ({ page }) => {
 test(`Hyperlink - Label Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/hyperlink/');
-        const args = await page.locator('story-renderer[key=Label]').evaluate((storyRenderer) => storyRenderer.story.args);
+        const args = await getStoryArgs(page, 'Label');
         const hyperlink = page.locator('.Label').getByTestId('test-hyperlink');
         await expect(hyperlink).toHaveScreenshot('hyperlink-initial.png');
         await expect(hyperlink.getByText(args.label)).toHaveCount(1);
@@ -39,10 +33,10 @@ test(`Hyperlink - Size Visual`, async ({ page }) => {
 test(`Hyperlink - Href Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/hyperlink/');
-        const args = await page.locator('story-renderer[key=Href]').evaluate((storyRenderer) => storyRenderer.story.args);
+        const args = await getStoryArgs(page, 'Href');
         const hyperlink = page.locator('.Href').getByTestId('test-hyperlink');
         await expect(hyperlink).toHaveScreenshot('hyperlink-initial.png');
-        // Start waiting for popup before clicking. Note no await.
+        // Start waiting for popup before clicking. Note there is no await, rather the promise is kept as a reference
         const popupPromise = page.waitForEvent('popup');
         await hyperlink.click();
         const newPage = await popupPromise;
@@ -55,14 +49,9 @@ test(`Hyperlink - Href Behaviour`, async ({ page }) => {
 test(`Hyperlink - Disabled Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/hyperlink/');
-        const args = await page.locator('story-renderer[key=Disabled]').evaluate((storyRenderer) => storyRenderer.story.args);
         const hyperlink = page.locator('.Disabled').getByTestId('test-hyperlink');
         await expect(hyperlink).toHaveScreenshot('hyperlink-initial.png');
-        const click = jestMock.fn();
-        await page.exposeFunction('jestClick', () => click());
-        await hyperlink.evaluate((node) => {
-            node.addEventListener('click', () => window.jestClick());
-        });
+        const click = await mockEventListener(hyperlink, 'click');
         await hyperlink.click({
             force: true
         });

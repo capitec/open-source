@@ -3,6 +3,7 @@ import fs from 'fs';
 // import { platform } from 'os';
 import { expect as expectPatched, test } from '@playwright/test';
 export * from '@playwright/test';
+import { fn } from 'jest-mock';
 //@ts-ignore
 import jsdom from 'jsdom';
 //@ts-ignore
@@ -125,5 +126,39 @@ async function withCoverage(page, testAction) {
     }
     return result;
 }
-export { expect, withCoverage /*keyboardCopy, keyboardPaste, clipboardCopy*/ };
+/**
+ * Read story args from story renderer with provided key
+ */
+async function getStoryArgs(page, key, readySelector = '[data-testid]') {
+    await page.waitForSelector(readySelector);
+    const args = await page.locator(`story-renderer[key=${key}]`).evaluate((storyRenderer) => { var _a; return (_a = storyRenderer === null || storyRenderer === void 0 ? void 0 : storyRenderer.story) === null || _a === void 0 ? void 0 : _a.args; });
+    return args;
+}
+async function mockEventListener(locatorOrHandle, eventName) {
+    var _a;
+    const tempFunction = `mock_${v4()}`;
+    const eventFunction = fn();
+    if (!locatorOrHandle) {
+        return eventFunction;
+    }
+    let page;
+    const evalFunc = (node, { tempFunction, eventName }) => {
+        //@ts-ignore
+        node.addEventListener(eventName, () => window[tempFunction]());
+    };
+    if (locatorOrHandle.ownerFrame) {
+        const handle = locatorOrHandle;
+        page = (_a = (await handle.ownerFrame())) === null || _a === void 0 ? void 0 : _a.page();
+        await page.exposeFunction(tempFunction, () => eventFunction());
+        await handle.evaluate(evalFunc, { tempFunction, eventName });
+    }
+    else {
+        const locator = locatorOrHandle;
+        page = locator.page();
+        await page.exposeFunction(tempFunction, () => eventFunction());
+        await locator.evaluate(evalFunc, { tempFunction, eventName });
+    }
+    return eventFunction;
+}
+export { expect, withCoverage, getStoryArgs, mockEventListener /*keyboardCopy, keyboardPaste, clipboardCopy*/ };
 //# sourceMappingURL=JestPlaywright.js.map

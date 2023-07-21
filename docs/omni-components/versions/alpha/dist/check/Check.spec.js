@@ -1,9 +1,8 @@
-import * as jestMock from 'jest-mock';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
+import { test, expect, getStoryArgs, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
 test(`Check - Label Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/check/');
-        const args = await page.locator('story-renderer[key=Label]').evaluate(getStoryArgs());
+        const args = await getStoryArgs(page, 'Label');
         const check = page.locator('.Label').getByTestId('test-check');
         const labelElement = check.locator('label');
         await expect(labelElement).toHaveText(args.label);
@@ -13,7 +12,7 @@ test(`Check - Label Behaviour`, async ({ page }) => {
 test(`Check - Hint Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/check/');
-        const args = await page.locator('story-renderer[key=Hint]').evaluate(getStoryArgs());
+        const args = await getStoryArgs(page, 'Hint');
         const check = page.locator('.Hint').getByTestId('test-check');
         const hintElement = check.locator('.hint');
         await expect(hintElement).toHaveText(args.hint);
@@ -23,7 +22,7 @@ test(`Check - Hint Behaviour`, async ({ page }) => {
 test(`Check - Error Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/check/');
-        const args = await page.locator('story-renderer[key=Error_Label]').evaluate(getStoryArgs());
+        const args = await getStoryArgs(page, 'Error_Label');
         const check = page.locator('.Error_Label').getByTestId('test-check');
         const errorElement = check.locator('.error');
         await expect(errorElement).toHaveText(args.error);
@@ -63,10 +62,7 @@ test(`Check - Disabled Behaviour`, async ({ page }) => {
         // Test initial disabled.
         await expect(disabledElement).toBeVisible();
         await expect(check).toHaveScreenshot('check-disabled.png');
-        // Test not clickable when disabled.
-        const click = jestMock.fn();
-        await page.exposeFunction('setCheckClicked', () => click());
-        await check.evaluate((n) => n.addEventListener('click', () => window.setCheckClicked()));
+        const click = await mockEventListener(check, 'click');
         await check.click({
             force: true
         });
@@ -78,8 +74,7 @@ test(`Check - Slot Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/check/');
         const check = page.locator('.Slot').getByTestId('test-check');
-        const slottedContent = await check.innerHTML();
-        await expect(slottedContent).toEqual('Slotted');
+        await expect(await check.innerHTML()).toEqual('Slotted');
         await expect(check).toHaveScreenshot('check-slot.png');
     });
 });
@@ -101,8 +96,4 @@ test(`Check - Custom Indeterminate Icon Behaviour`, async ({ page }) => {
         await expect(check).toHaveScreenshot('check-custom-indeterminate-icon.png');
     });
 });
-function getStoryArgs() {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    return (storyRenderer) => { var _a; return (_a = storyRenderer === null || storyRenderer === void 0 ? void 0 : storyRenderer.story) === null || _a === void 0 ? void 0 : _a.args; };
-}
 //# sourceMappingURL=Check.spec.js.map

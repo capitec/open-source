@@ -1,4 +1,4 @@
-import{a as u}from"./chunk.BKUUO7ED.js";import{a as b}from"./chunk.ZGHDW2L3.js";import{b as c}from"./chunk.MDYAUJ3Z.js";import{a as d}from"./chunk.FT5UPVZS.js";import{g as m}from"./chunk.6C4LMRM7.js";import{a as v,b as s,c as l,d as h}from"./chunk.S2K25ADN.js";import{a as g,b as i,e as a}from"./chunk.L3RZWW2F.js";import{j as r,m as p,p as f}from"./chunk.BF43NN75.js";p();f();var t=class extends b{constructor(){super(...arguments);this.idField="id";this.emptyMessage="No items provided";this.searchable=!1;this._popUp=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._checkforMobile(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._checkScreenDimensions(),window.addEventListener("resize",this._checkScreenDimensions.bind(this)),window.addEventListener("scroll",this._checkScreenDimensions.bind(this))}_inputClick(e){let o=e.composedPath(),n=this.renderRoot.querySelector("#search-control");this.searchable&&o.includes(n)||this._togglePopup()}_windowClick(e){let o=this.renderRoot.querySelector("#items-dialog"),n=e.composedPath();n&&(!n.includes(this)||this._isMobile&&o&&n.findIndex(w=>w===o)===0)&&this._popUp&&this._togglePopup()}_controlClick(){this._togglePopup()}_togglePopup(){if(this._popUp){if(this._popUp=!1,this._searchValue=void 0,this._isMobile){let e=this.renderRoot.querySelector("#items-dialog");e&&e.close()}}else if(this._popUp=!0,this._isMobile){let e=this.renderRoot.querySelector("#items-dialog");e&&e.showModal()}}async _onItemClick(e){var o;this.value=e,await this.updateComplete,(o=this._selectElement)==null||o.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}async _checkScreenDimensions(){await this._checkForBottomOfScreen(),this._checkforMobile(),await this._itemsMaxHeightChange()}async _checkForBottomOfScreen(){visualViewport&&(visualViewport.height-this.getBoundingClientRect().bottom<150?this._bottomOfViewport=!0:this._bottomOfViewport=!1)}_checkforMobile(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}async _itemsMaxHeightChange(e){if(e&&(this._itemsContainer=e),this._itemsContainer&&!this._isMobile&&(await this.updateComplete,visualViewport)){let o="";this._bottomOfViewport?o=visualViewport.height-this.getBoundingClientRect().height-(this.searchable&&this._searchElement?this._searchElement.height:0)-(visualViewport.height-this.getBoundingClientRect().top)-10+"px":o=visualViewport.height-this.getBoundingClientRect().bottom-(this.searchable&&this._searchElement?this._searchElement.offsetHeight:0)-10+"px",this._itemsContainer.style.maxHeight=`var(--omni-select-items-max-height, ${o})`}}_onSearchFieldInput(){var e;this._searchValue=(e=this._searchElement)==null?void 0:e.value,this.requestUpdate()}_onSearchFieldClear(){this._searchValue=void 0,this._searchElement&&(this._searchElement.value=""),this.requestUpdate()}static get styles(){return[super.styles,g`
+import{a as w}from"./chunk.BKUUO7ED.js";import{a as y}from"./chunk.ZGHDW2L3.js";import{b as m}from"./chunk.MDYAUJ3Z.js";import{a as c}from"./chunk.FT5UPVZS.js";import{g as f}from"./chunk.6C4LMRM7.js";import{a as b,b as a,c as d,d as p}from"./chunk.S2K25ADN.js";import{a as u,b as i,e as l}from"./chunk.L3RZWW2F.js";import{j as r,m as g,p as v}from"./chunk.BF43NN75.js";g();v();var t=class extends y{constructor(){super(...arguments);this.value=null;this.idField="id";this.emptyMessage="No items provided";this.searchable=!1;this._popUp=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this._checkforMobile(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._checkScreenDimensions(),window.addEventListener("resize",this._checkScreenDimensions.bind(this)),window.addEventListener("scroll",this._checkScreenDimensions.bind(this))}_inputClick(e){if(this.disabled){e.preventDefault(),e.stopImmediatePropagation();return}let o=e.composedPath(),s=this.renderRoot.querySelector("#search-control");this.searchable&&o.includes(s)||this._togglePopup()}_windowClick(e){let o=this.renderRoot.querySelector("#items-dialog"),s=e.composedPath();s&&(!s.includes(this)||this._isMobile&&o&&s.findIndex(_=>_===o)===0)&&this._popUp&&this._togglePopup()}_controlClick(){this._togglePopup()}_togglePopup(){if(this._popUp){if(this._popUp=!1,this._searchValue=void 0,this._isMobile){let e=this.renderRoot.querySelector("#items-dialog");e&&e.close()}}else if(this._popUp=!0,this._isMobile){let e=this.renderRoot.querySelector("#items-dialog");e&&e.showModal()}}async _onItemClick(e){var o;this.value=e,await this.updateComplete,(o=this._selectElement)==null||o.dispatchEvent(new Event("change",{bubbles:!0,composed:!0}))}async _checkScreenDimensions(){await this._checkForBottomOfScreen(),this._checkforMobile(),await this._itemsMaxHeightChange()}async _checkForBottomOfScreen(){visualViewport&&(visualViewport.height-this.getBoundingClientRect().bottom<150?this._bottomOfViewport=!0:this._bottomOfViewport=!1)}_checkforMobile(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}async _itemsMaxHeightChange(e){if(e&&(this._itemsContainer=e),this._itemsContainer&&!this._isMobile&&(await this.updateComplete,visualViewport)){let o="";this._bottomOfViewport?o=visualViewport.height-this.getBoundingClientRect().height-(this.searchable&&this._searchElement?this._searchElement.height:0)-(visualViewport.height-this.getBoundingClientRect().top)-10+"px":o=visualViewport.height-this.getBoundingClientRect().bottom-(this.searchable&&this._searchElement?this._searchElement.offsetHeight:0)-10+"px",this._itemsContainer.style.maxHeight=`var(--omni-select-items-max-height, ${o})`}}_onSearchFieldInput(){var e;this._searchValue=(e=this._searchElement)==null?void 0:e.value,this.requestUpdate()}_onSearchFieldClear(){this._searchValue=void 0,this._searchElement&&(this._searchElement.value=""),this.requestUpdate()}static get styles(){return[super.styles,u`
                 /* Added to ensure that component has pointer cursor applied */
                 :host {
                     cursor: pointer;
@@ -246,40 +246,40 @@ import{a as u}from"./chunk.BKUUO7ED.js";import{a as b}from"./chunk.ZGHDW2L3.js";
                         min-height: var(--omni-select-dialog-items-min-height, 150px);
                     }
                 }
-            `]}renderContent(){var o,n;let e={field:!0,disabled:this.disabled,error:this.error};return i`
+            `]}renderContent(){var o,s;let e={field:!0,disabled:this.disabled,error:this.error};return i`
             <input
-                style="${this.renderSelection?"display: none":a}"
-                class=${d(e)}
+                style="${this.renderSelection?"display: none":l}"
+                class=${c(e)}
                 data-omni-keyboard-hidden
                 id="select"
                 type="text"
                 readonly
                 inputMode="none"
                 ?disabled=${this.disabled}
-                .value=${u((n=typeof this.value!="string"&&this.displayField?((o=this.value)!=null?o:{})[this.displayField]:this.value)!=null?n:"")}
+                .value=${w((s=typeof this.value!="string"&&this.displayField?((o=this.value)!=null?o:{})[this.displayField]:this.value)!=null?s:"")}
                 tabindex="${this.disabled?-1:0}" />
             ${this.renderSelection?i`
                         <div 
-                            class=${d(e)} 
+                            class=${c(e)} 
                             style="pointer-events: none;">
                             ${this.value?i` 
                                         <omni-render-element style="height: inherit; width: inherit;" .data="${this.value}" .renderer="${this.renderSelection}">
                                             <omni-loading-icon slot="loading_indicator" style="height: 100%; max-width: 24px;"></omni-loading-icon>
                                         </omni-render-element>
-                                        `:a}
-                        </div>`:a}
+                                        `:l}
+                        </div>`:l}
         `}renderPicker(){return this._isMobile?i`
             <dialog id="items-dialog" class="items-dialog">
-                ${this._isMobile&&this.label?i`<div class="header">${this.label}</div>`:a}
+                ${this._isMobile&&this.label?i`<div class="header">${this.label}</div>`:l}
                 ${this._renderSearchField()}
-                <div ${c(this._itemsMaxHeightChange)} id="items" class="items"> ${m(this._renderOptions(),i`<div>${this.renderLoading()}</div>`)}</div>
+                <div ${m(this._itemsMaxHeightChange)} id="items" class="items"> ${f(this._renderOptions(),i`<div>${this.renderLoading()}</div>`)}</div>
             </dialog>
             `:this._popUp?i`
             <div id="items-container" class="items-container ${this._bottomOfViewport?"bottom":""}">
                 ${this._renderSearchField()}
-                <div ${c(this._itemsMaxHeightChange)} id="items" class="items"> ${m(this._renderOptions(),i`<div>${this.renderLoading()}</div>`)}</div>
+                <div ${m(this._itemsMaxHeightChange)} id="items" class="items"> ${f(this._renderOptions(),i`<div>${this.renderLoading()}</div>`)}</div>
             </div>
-        `:a}_renderSearchField(){return this.searchable?i`
+        `:l}_renderSearchField(){return this.searchable?i`
             <div id="search-control" class='search-control'>
                 <input type="text" class="searchField" id="searchField" placeholder="Search..." @input="${this._onSearchFieldInput}" />
                 <div id="search-clear-click" class="search-clear-click" @click="${this._onSearchFieldClear}">
@@ -287,14 +287,14 @@ import{a as u}from"./chunk.BKUUO7ED.js";import{a as b}from"./chunk.ZGHDW2L3.js";
                         <slot name="search-clear">
                             <omni-clear-icon class="search-clear-icon"></omni-clear-icon>
                         </slot>
-                    `:a}
+                    `:l}
                 </div>
-            </div>`:a}renderControl(){let e={icon:!0,disabled:this.disabled,error:this.error};return i`
+            </div>`:l}renderControl(){let e={icon:!0,disabled:this.disabled,error:this.error};return i`
         <div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
-            ${this._isMobile?i`<slot name="more"><omni-more-icon class=${d(e)}></omni-more-icon></slot>`:i`<slot name="arrow"><omni-chevron-down-icon class=${d(e)}></omni-chevron-down-icon></slot>`}
-        </div>`}async _renderOptions(){let e=[],o=0;return typeof this.items=="function"?e=await this.items(this._searchValue):e=await this.items,Array.isArray(e)&&(this._searchValue&&this.filterItems&&typeof this.filterItems=="function"?e=await this.filterItems(this._searchValue,e):e=e.filter(n=>this._filterOption(n)),o=e.length),o===0?i`<div class="none">${this.emptyMessage}</div>`:e.map(n=>this._renderOption(n))}_filterOption(e){return this._searchValue?typeof e=="string"?e.toString().toLowerCase().includes(this._searchValue.toLowerCase()):!this.displayField||!e.hasOwnProperty(this.displayField)?!0:e[this.displayField].toString().toLowerCase().includes(this._searchValue.toLowerCase()):!0}_renderOption(e){return i` <div
+            ${this._isMobile?i`<slot name="more"><omni-more-icon class=${c(e)}></omni-more-icon></slot>`:i`<slot name="arrow"><omni-chevron-down-icon class=${c(e)}></omni-chevron-down-icon></slot>`}
+        </div>`}async _renderOptions(){let e=[],o=0;return typeof this.items=="function"?e=await this.items(this._searchValue):e=await this.items,Array.isArray(e)&&(this._searchValue&&this.filterItems&&typeof this.filterItems=="function"?e=await this.filterItems(this._searchValue,e):e=e.filter(s=>this._filterOption(s)),o=e.length),o===0?i`<div class="none">${this.emptyMessage}</div>`:e.map(s=>this._renderOption(s))}_filterOption(e){return this._searchValue?typeof e=="string"?e.toString().toLowerCase().includes(this._searchValue.toLowerCase()):!this.displayField||!e.hasOwnProperty(this.displayField)?!0:e[this.displayField].toString().toLowerCase().includes(this._searchValue.toLowerCase()):!0}_renderOption(e){return i` <div
             class="item ${this.value===(typeof e=="string"?e:e[this.displayField])||this.value===e?"selected":""}"
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?i` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
-        </div>`}renderLoading(){return i`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([h("#select")],t.prototype,"_selectElement",2),r([h("#searchField")],t.prototype,"_searchElement",2),r([s({type:Array,reflect:!0})],t.prototype,"items",2),r([s({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([s({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([s({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([s({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([s({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([s({type:Object,reflect:!1})],t.prototype,"renderSelection",2),r([s({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([l()],t.prototype,"_popUp",2),r([l()],t.prototype,"_bottomOfViewport",2),r([l()],t.prototype,"_isMobile",2),r([l()],t.prototype,"_searchValue",2),t=r([v("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.AKFA5FZI.js.map
+        </div>`}renderLoading(){return i`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([p("#select")],t.prototype,"_selectElement",2),r([p("#searchField")],t.prototype,"_searchElement",2),r([a({reflect:!0,converter:{toAttribute(n){var h;try{return!n||typeof n=="string"?n:(h=JSON.stringify(n))!=null?h:null}catch(e){return n}},fromAttribute(n){try{return n&&typeof n=="string"&&(n.includes("{")||n.includes("["))?JSON.parse(n):n}catch(h){return n}}}})],t.prototype,"value",2),r([a({type:Array,reflect:!0})],t.prototype,"items",2),r([a({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([a({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([a({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([a({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([a({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([a({type:Object,reflect:!1})],t.prototype,"renderSelection",2),r([a({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([d()],t.prototype,"_popUp",2),r([d()],t.prototype,"_bottomOfViewport",2),r([d()],t.prototype,"_isMobile",2),r([d()],t.prototype,"_searchValue",2),t=r([b("omni-select")],t);export{t as a};
+//# sourceMappingURL=chunk.4KTNPAGQ.js.map

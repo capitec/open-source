@@ -1,4 +1,4 @@
-import{a as S}from"../chunks-js/chunk.7SY74BYL.js";import"../chunks-js/chunk.VB3ZKFMN.js";import{E as n,x as i}from"../chunks-js/chunk.7KM4B723.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.UHIDETPL.js";import"../chunks-js/chunk.KPSG3GC4.js";import{b as k}from"../chunks-js/chunk.MDYAUJ3Z.js";import"../chunks-js/chunk.VTL5CONA.js";import{a as b}from"../chunks-js/chunk.5DDJQYYG.js";import"../chunks-js/chunk.3U7QFP2Q.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.VK7R3VQL.js";import{a as y}from"../chunks-js/chunk.XCXCHO25.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as s,e as g,g as c}from"../chunks-js/chunk.L3RZWW2F.js";import{m as h,p as T}from"../chunks-js/chunk.BF43NN75.js";h();T();var z={title:"UI Components/Toast Stack",component:"omni-toast-stack"},a=(t,e,o)=>s`
+import{a as S}from"../chunks-js/chunk.7SY74BYL.js";import"../chunks-js/chunk.VB3ZKFMN.js";import{E as n,x as i}from"../chunks-js/chunk.7KM4B723.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.UHIDETPL.js";import"../chunks-js/chunk.KPSG3GC4.js";import{b as k}from"../chunks-js/chunk.MDYAUJ3Z.js";import"../chunks-js/chunk.VTL5CONA.js";import{a as b}from"../chunks-js/chunk.5DDJQYYG.js";import"../chunks-js/chunk.3U7QFP2Q.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.VK7R3VQL.js";import{a as y}from"../chunks-js/chunk.XCXCHO25.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as s,e as g,g as c}from"../chunks-js/chunk.L3RZWW2F.js";import{m as h,p as T}from"../chunks-js/chunk.BF43NN75.js";h();T();var a=(t,e,o)=>s`
 <omni-toast-stack
         ${e?k(e):g}
         data-testid="${o!=null?o:"test-toast-stack"}" 
@@ -6,7 +6,7 @@ import{a as S}from"../chunks-js/chunk.7SY74BYL.js";import"../chunks-js/chunk.VB3
         ?reverse="${t.reverse}">
     ${b(t["[Default Slot]"])}
 </omni-toast-stack>
-`,l,U={description:()=>s`
+`,l,_={description:()=>s`
 <div>
     <p>The <code class="language-html">&lt;omni-toast-stack&gt;</code> component can be authored as an element or created via script.</p>
     <p>This example illustrates the component authored as an element. An important consideration to keep in mind when using this approach is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class="language-html">z-index</code> related issues.</p>
@@ -43,7 +43,7 @@ import{a as S}from"../chunks-js/chunk.7SY74BYL.js";import"../chunks-js/chunk.VB3
     data-toast-duration="2000"
     detail="The toast description"
     header="The toast message">
-</omni-toast>`}},r,B={description:()=>s`
+</omni-toast>`}},r,W={description:()=>s`
         <div>
             <p>Display slotted <code class="language-html">&lt;omni-toast&gt;</code> elements in order.<p>
             <p>Slotted toasts can be configured to auto-close after specified milliseconds with the <code class="language-js">data-toast-duration</code> attribute, after which they will be removed from the parent element.</p>
@@ -114,7 +114,7 @@ const App = () => <OmniToastStack position="${t.position}" >
     data-toast-duration="15000"
     detail="The toast description"
     header="The toast message">
-</omni-toast>`}},p,N={description:()=>s`
+</omni-toast>`}},p,z={description:()=>s`
         <div>
             <p>Create new <code class="language-html">&lt;omni-toast&gt;</code> elements from script.<p>
             <p>Toasts can be configured to auto-close after specified milliseconds with the <code class="language-js">duration</code> property, after which they will be removed from the parent element.</p>
@@ -197,7 +197,7 @@ const onRef = e => {
         });
         
     }
-};`}}],name:"Show from script",args:{reverse:!1,position:"bottom","[Default Slot]":void 0}},d,G={description:()=>s`
+};`}}],name:"Show from script",args:{reverse:!1,position:"bottom","[Default Slot]":void 0}},d,B={description:()=>s`
         <div>
             <p>Create an <code class="language-html">&lt;omni-toast-stack&gt;</code> instance from script.<p>
             <p>An important consideration to keep in mind when using authoring the element via html is that in order for the element to properly overlay all other content, it needs to be a root level element to avoid <code class="language-html">z-index</code> related issues.</p>
@@ -253,7 +253,7 @@ toastStack.showToast({
     prefix: '\u2705',
     close: '\u274E',
     content: '<span>My Extra <strong>Content</strong></span>'
-});`}}],name:"Create from script",args:{reverse:!1,position:"bottom","[Default Slot]":void 0}},u,J={description:()=>s`
+});`}}],name:"Create from script",args:{reverse:!1,position:"bottom","[Default Slot]":void 0}},u,N={description:()=>s`
         <div>
             <p>Position <code class="language-html">&lt;omni-toast&gt;</code> elements in the stack.<p>
             <br/>
@@ -346,7 +346,7 @@ const onRef = e => {
         });
         
     }
-};`}}],name:"Position",args:{reverse:!1,position:"right","[Default Slot]":void 0}},m,K={description:()=>s`
+};`}}],name:"Position",args:{reverse:!1,position:"right","[Default Slot]":void 0}},m,U={description:()=>s`
         <div>
             <p>Reverse <code class="language-html">&lt;omni-toast&gt;</code> elements in the stack.<p>
             <p>By default newest toasts are showed at the bottom of the stack. When reversed, newest toasts are showed on top of the stack.</p>
@@ -427,5 +427,5 @@ const onRef = e => {
         });
         
     }
-};`}}],name:"Reverse",args:{reverse:!0,position:"bottom","[Default Slot]":void 0}};export{G as Create_From_Script,U as Interactive,J as Position,K as Reverse,N as Show_From_Script,B as Slotted_Toasts,z as default};
+};`}}],name:"Reverse",args:{reverse:!0,position:"bottom","[Default Slot]":void 0}};export{B as Create_From_Script,_ as Interactive,N as Position,U as Reverse,z as Show_From_Script,W as Slotted_Toasts};
 //# sourceMappingURL=ToastStack.stories.js.map

@@ -1,7 +1,6 @@
-import * as jestMock from 'jest-mock';
 import { testLabelBehaviour, testHintBehaviour, testErrorBehaviour, testValueBehaviour, testClearableBehaviour, testCustomClearableSlotBehaviour, testPrefixBehaviour, testSuffixBehaviour, testDisabledBehaviour } from '../core/OmniInputPlaywright.js';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
-test(`Number Field - Interactive`, async ({ page, browserName }) => {
+import { test, expect, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
+test(`Number Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/number-field/');
         await page.evaluate(() => document.fonts.ready);
@@ -11,11 +10,7 @@ test(`Number Field - Interactive`, async ({ page, browserName }) => {
             await t.updateComplete;
         });
         await expect(numberField).toHaveScreenshot('number-field.png');
-        const inputFn = jestMock.fn();
-        await page.exposeFunction('jestInput', () => inputFn());
-        await numberField.evaluate((node) => {
-            node.addEventListener('input', () => window.jestInput());
-        });
+        const inputFn = await mockEventListener(numberField, 'input');
         const inputField = numberField.locator('#inputField');
         const value = '12345';
         await inputField.type(value);
@@ -24,13 +19,13 @@ test(`Number Field - Interactive`, async ({ page, browserName }) => {
         await expect(numberField).toHaveScreenshot('number-field-value.png');
     });
 });
-testLabelBehaviour('omni-number-field');
-testHintBehaviour('omni-number-field');
-testErrorBehaviour('omni-number-field');
-testValueBehaviour('omni-number-field');
-testClearableBehaviour('omni-number-field');
-testCustomClearableSlotBehaviour('omni-number-field');
-testPrefixBehaviour('omni-number-field');
-testSuffixBehaviour('omni-number-field');
-testDisabledBehaviour('omni-number-field');
+test('Number Field - Label Behaviour', testLabelBehaviour('omni-number-field'));
+test('Number Field - Hint Behaviour', testHintBehaviour('omni-number-field'));
+test('Number Field - Error Behaviour', testErrorBehaviour('omni-number-field'));
+test('Number Field - Value Behaviour', testValueBehaviour('omni-number-field'));
+test('Number Field - Clearable Behaviour', testClearableBehaviour('omni-number-field'));
+test('Number Field - Custom Clear Slot Behaviour', testCustomClearableSlotBehaviour('omni-number-field'));
+test('Number Field - Prefix Behaviour', testPrefixBehaviour('omni-number-field'));
+test('Number Field - Suffix Behaviour', testSuffixBehaviour('omni-number-field'));
+test('Number Field - Disabled Behaviour', testDisabledBehaviour('omni-number-field'));
 //# sourceMappingURL=NumberField.spec.js.map

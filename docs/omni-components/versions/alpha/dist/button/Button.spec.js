@@ -1,5 +1,4 @@
-import * as jestMock from 'jest-mock';
-import { test, expect, withCoverage } from '../utils/JestPlaywright.js';
+import { test, expect, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
 test(`Button - Visual Secondary`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/button/');
@@ -50,11 +49,7 @@ test(`Button - Interactive Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/button/');
         const button = page.locator('.Interactive').locator('[data-testid=test-button]');
-        const click = jestMock.fn();
-        await page.exposeFunction('jestClick', () => click());
-        await button.evaluate((node) => {
-            node.addEventListener('click', () => window.jestClick());
-        });
+        const click = await mockEventListener(button, 'click');
         await button.click();
         await button.click();
         await expect(click).toBeCalledTimes(2);
@@ -76,6 +71,7 @@ test(`Button - Label Behaviour`, async ({ page }) => {
         const button = page.locator('.Label').locator('[data-testid=test-button]');
         const labelElement = button.locator('#label');
         await expect(labelElement).toHaveText(args.label);
+        await expect(button).toHaveScreenshot('button-label.png');
     });
 });
 test(`Button - Slot Behaviour`, async ({ page }) => {
@@ -83,6 +79,7 @@ test(`Button - Slot Behaviour`, async ({ page }) => {
         await page.goto('/components/button/');
         const button = page.locator('.Slot').locator('[data-testid=test-button]');
         const slotElement = button.locator('slot');
+        // Check for element in default slot
         const foundSlottedOmniIconElement = await slotElement.evaluateHandle((s) => s.assignedElements().find((e) => e.tagName.toLowerCase() === 'omni-icon'));
         await expect(foundSlottedOmniIconElement.asElement()).toBeTruthy();
     });
@@ -96,11 +93,7 @@ test(`Button - Disabled Behaviour`, async ({ page }) => {
         const foundDisabledClass = await buttonElement.evaluate((btn) => btn === null || btn === void 0 ? void 0 : btn.classList.contains('disabled'));
         await expect(foundDisabledClass).toBeTruthy();
         await expect(buttonElement).toHaveClass(/disabled/);
-        const click = jestMock.fn();
-        await page.exposeFunction('jestClick', () => click());
-        await button.evaluate((node) => {
-            node.addEventListener('click', () => window.jestClick());
-        });
+        const click = await mockEventListener(button, 'click');
         await button.click({
             force: true
         });

@@ -4,35 +4,157 @@
   "modules": [
     {
       "kind": "javascript-module",
-      "path": "/Users/runner/work/omni-components/omni-components/src/utils/Directives.ts",
+      "path": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts",
       "declarations": [
         {
+          "kind": "variable",
+          "name": "expect",
+          "default": "expectPatched"
+        },
+        {
           "kind": "function",
-          "name": "ifNotEmpty",
-          "return": {
-            "type": {
-              "text": ""
-            }
-          },
+          "name": "withCoverage",
           "parameters": [
             {
-              "name": "value",
-              "optional": true,
+              "name": "this",
               "type": {
-                "text": "string | null"
+                "text": "any"
+              }
+            },
+            {
+              "name": "page",
+              "type": {
+                "text": "Page"
+              }
+            },
+            {
+              "name": "testAction",
+              "type": {
+                "text": "() => T | Promise<T>"
               }
             }
           ],
-          "description": "Lit directive that only applies when provided value is not falsy(undefined, null, or empty string)"
+          "return": {
+            "type": {
+              "text": "Promise<any>"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "getStoryArgs",
+          "parameters": [
+            {
+              "name": "page",
+              "type": {
+                "text": "Page"
+              }
+            },
+            {
+              "name": "key",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "readySelector",
+              "default": "'[data-testid]'"
+            }
+          ],
+          "description": "Read story args from story renderer with provided key",
+          "return": {
+            "type": {
+              "text": "Promise<T>"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "mockEventListener",
+          "parameters": [
+            {
+              "name": "locatorOrHandle",
+              "type": {
+                "text": "Locator | ElementHandle | null | undefined"
+              }
+            },
+            {
+              "name": "eventName",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "name": "callback",
+              "optional": true,
+              "type": {
+                "text": "(e: Event) => void"
+              }
+            }
+          ],
+          "return": {
+            "type": {
+              "text": "Promise<Mock<UnknownFunction>>"
+            }
+          }
+        },
+        {
+          "kind": "function",
+          "name": "createWaitHandle",
+          "return": {
+            "type": {
+              "text": "{ completed: Promise<T>; release: (value: T) => void; error: (reason?: any) => void; }"
+            }
+          }
         }
       ],
       "exports": [
         {
           "kind": "js",
-          "name": "ifNotEmpty",
+          "name": "*",
           "declaration": {
-            "name": "ifNotEmpty",
-            "module": "/Users/runner/work/omni-components/omni-components/src/utils/Directives.ts"
+            "name": "*",
+            "package": "@playwright/test"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "expect",
+          "declaration": {
+            "name": "expect",
+            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "withCoverage",
+          "declaration": {
+            "name": "withCoverage",
+            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "getStoryArgs",
+          "declaration": {
+            "name": "getStoryArgs",
+            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "mockEventListener",
+          "declaration": {
+            "name": "mockEventListener",
+            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "createWaitHandle",
+          "declaration": {
+            "name": "createWaitHandle",
+            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
           }
         }
       ]
@@ -1111,6 +1233,1238 @@
         {
           "alias": "ModalInit",
           "type": "{\n    /**\n     * The id to apply to the Modal element.\n     */\n    id?: string;\n\n    /**\n     * The container to append the Modal as child. If not provided will append to a new div element on the document body.\n     */\n    parent?: string | HTMLElement | DocumentFragment | null;\n\n    /**\n     * A function that returns, or an instance of content to render as modal body\n     */\n    body: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the modal header\n     */\n    header?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the modal footer\n     */\n    footer?: RenderFunction | RenderResult;\n\n    /**\n     * Header text alignment:\n     *  - `left` Align header to the left.\n     *  - `center` Align header to the center.\n     *  - `right` Align header to the right.\n     */\n    headerAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * If true, will not display the header section of the modal\n     */\n    noHeader?: boolean;\n\n    /**\n     * If true, will not display the footer section of the modal\n     */\n    noFooter?: boolean;\n\n    /**\n     * If true will not apply the modal as fullscreen on mobile viewports.\n     */\n    noFullscreen?: boolean;\n}"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/Users/runner/work/omni-components/omni-components/src/button/Button.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Control that allows an action to be executed.",
+          "name": "Button",
+          "cssProperties": [
+            {
+              "description": "Component font family.",
+              "name": "--omni-button-font-family"
+            },
+            {
+              "description": "Component font size.",
+              "name": "--omni-button-font-size"
+            },
+            {
+              "description": "Component font weight.",
+              "name": "--omni-button-font-weight"
+            },
+            {
+              "description": "Component line height.",
+              "name": "--omni-button-line-height"
+            },
+            {
+              "description": "Component border radius.",
+              "name": "--omni-button-border-radius"
+            },
+            {
+              "description": "Component padding top.",
+              "name": "--omni-button-padding-top"
+            },
+            {
+              "description": "Component padding bottom.",
+              "name": "--omni-button-padding-bottom"
+            },
+            {
+              "description": "Component padding left.",
+              "name": "--omni-button-padding-left"
+            },
+            {
+              "description": "Component padding right. PRIMARY",
+              "name": "--omni-button-padding-right"
+            },
+            {
+              "description": "Primary \"type\" background.",
+              "name": "--omni-button-primary-background"
+            },
+            {
+              "description": "Primary \"type\" border color.",
+              "name": "--omni-button-primary-border-color"
+            },
+            {
+              "description": "Primary \"type\" border width.",
+              "name": "--omni-button-primary-border-width"
+            },
+            {
+              "description": "Primary \"type\" color.",
+              "name": "--omni-button-primary-color"
+            },
+            {
+              "description": "Primary \"type\" hover background.",
+              "name": "--omni-button-primary-hover-background"
+            },
+            {
+              "description": "Primary \"type\" hover border color.",
+              "name": "--omni-button-primary-hover-border-color"
+            },
+            {
+              "description": "Primary \"type\" hover border width.",
+              "name": "--omni-button-primary-hover-border-width"
+            },
+            {
+              "description": "Primary \"type\" hover color.",
+              "name": "--omni-button-primary-hover-color"
+            },
+            {
+              "description": "Primary \"type\" hover box shadow.",
+              "name": "--omni-button-primary-hover-box-shadow"
+            },
+            {
+              "description": "Primary \"type\" active back color.",
+              "name": "--omni-button-primary-active-background"
+            },
+            {
+              "description": "Primary \"type\" active border color.",
+              "name": "--omni-button-primary-active-border-color"
+            },
+            {
+              "description": "Primary \"type\" active border width.",
+              "name": "--omni-button-primary-active-border-width"
+            },
+            {
+              "description": "Primary \"type\" active color.",
+              "name": "--omni-button-primary-active-color"
+            },
+            {
+              "description": "Primary \"type\" disabled back color.",
+              "name": "--omni-button-primary-disabled-background"
+            },
+            {
+              "description": "Primary \"type\" disabled border color.",
+              "name": "--omni-button-primary-disabled-border-color"
+            },
+            {
+              "description": "Primary \"type\" disabled border width.",
+              "name": "--omni-button-primary-disabled-border-width"
+            },
+            {
+              "description": "Primary \"type\" disabled color. SECONDARY",
+              "name": "--omni-button-primary-disabled-color"
+            },
+            {
+              "description": "Secondary \"type\" background.",
+              "name": "--omni-button-secondary-background"
+            },
+            {
+              "description": "Secondary \"type\" border color.",
+              "name": "--omni-button-secondary-border-color"
+            },
+            {
+              "description": "Secondary \"type\" border width.",
+              "name": "--omni-button-secondary-border-width"
+            },
+            {
+              "description": "Secondary \"type\" color.",
+              "name": "--omni-button-secondary-color"
+            },
+            {
+              "description": "Secondary \"type\" hover background.",
+              "name": "--omni-button-secondary-hover-background"
+            },
+            {
+              "description": "Secondary \"type\" hover border color.",
+              "name": "--omni-button-secondary-hover-border-color"
+            },
+            {
+              "description": "Secondary \"type\" hover border width.",
+              "name": "--omni-button-secondary-hover-border-width"
+            },
+            {
+              "description": "Secondary \"type\" hover color.",
+              "name": "--omni-button-secondary-hover-color"
+            },
+            {
+              "description": "Secondary \"type\" hover box shadow.",
+              "name": "--omni-button-secondary-hover-box-shadow"
+            },
+            {
+              "description": "Secondary \"type\" active background.",
+              "name": "--omni-button-secondary-active-background"
+            },
+            {
+              "description": "Secondary \"type\" active border color.",
+              "name": "--omni-button-secondary-active-border-color"
+            },
+            {
+              "description": "Secondary \"type\" active border width.",
+              "name": "--omni-button-secondary-active-border-width"
+            },
+            {
+              "description": "Secondary \"type\" active color.",
+              "name": "--omni-button-secondary-active-color"
+            },
+            {
+              "description": "Secondary \"type\" disabled back color.",
+              "name": "--omni-button-secondary-disabled-background"
+            },
+            {
+              "description": "Secondary \"type\" disabled border color.",
+              "name": "--omni-button-secondary-disabled-border-color"
+            },
+            {
+              "description": "Secondary \"type\" disabled border width.",
+              "name": "--omni-button-secondary-disabled-border-width"
+            },
+            {
+              "description": "Secondary \"type\" disabled color. CLEAR",
+              "name": "--omni-button-secondary-disabled-color"
+            },
+            {
+              "description": "Clear \"type\" background.",
+              "name": "--omni-button-clear-background"
+            },
+            {
+              "description": "Clear \"type\" border color.",
+              "name": "--omni-button-clear-border-color"
+            },
+            {
+              "description": "Clear \"type\" border width.",
+              "name": "--omni-button-clear-border-width"
+            },
+            {
+              "description": "Clear \"type\" color.",
+              "name": "--omni-button-clear-color"
+            },
+            {
+              "description": "Clear \"type\" hover background.",
+              "name": "--omni-button-clear-hover-background"
+            },
+            {
+              "description": "Clear \"type\" hover border color.",
+              "name": "--omni-button-clear-hover-border-color"
+            },
+            {
+              "description": "Clear \"type\" hover border width.",
+              "name": "--omni-button-clear-hover-border-width"
+            },
+            {
+              "description": "Clear \"type\" hover color.",
+              "name": "--omni-button-clear-hover-color"
+            },
+            {
+              "description": "Clear \"type\" active background.",
+              "name": "--omni-button-clear-active-background"
+            },
+            {
+              "description": "Clear \"type\" active border color.",
+              "name": "--omni-button-clear-active-border-color"
+            },
+            {
+              "description": "Clear \"type\" active border width.",
+              "name": "--omni-button-clear-active-border-width"
+            },
+            {
+              "description": "Clear \"type\" active color.",
+              "name": "--omni-button-clear-active-color"
+            },
+            {
+              "description": "Clear \"type\" disabled back color.",
+              "name": "--omni-button-clear-disabled-background"
+            },
+            {
+              "description": "Clear \"type\" disabled border color.",
+              "name": "--omni-button-clear-disabled-border-color"
+            },
+            {
+              "description": "Clear \"type\" disabled border width.",
+              "name": "--omni-button-clear-disabled-border-width"
+            },
+            {
+              "description": "Clear \"type\" disabled color. WHITE",
+              "name": "--omni-button-clear-disabled-color"
+            },
+            {
+              "description": "White \"type\" background.",
+              "name": "--omni-button-white-background"
+            },
+            {
+              "description": "White \"type\" border color.",
+              "name": "--omni-button-white-border-color"
+            },
+            {
+              "description": "White \"type\" border width.",
+              "name": "--omni-button-white-border-width"
+            },
+            {
+              "description": "White \"type\" color.",
+              "name": "--omni-button-white-color"
+            },
+            {
+              "description": "White \"type\" hover background.",
+              "name": "--omni-button-white-hover-background"
+            },
+            {
+              "description": "White \"type\" hover border color.",
+              "name": "--omni-button-white-hover-border-color"
+            },
+            {
+              "description": "White \"type\" hover border width.",
+              "name": "--omni-button-white-hover-border-width"
+            },
+            {
+              "description": "White \"type\" hover box shadow.",
+              "name": "--omni-button-white-hover-box-shadow"
+            },
+            {
+              "description": "White \"type\" active background.",
+              "name": "--omni-button-white-active-background"
+            },
+            {
+              "description": "White \"type\" active border color.",
+              "name": "--omni-button-white-active-border-color"
+            },
+            {
+              "description": "White \"type\" active border width.",
+              "name": "--omni-button-white-active-border-width"
+            },
+            {
+              "description": "White \"type\" hover color.",
+              "name": "--omni-button-white-active-color"
+            },
+            {
+              "description": "White \"type\" disabled back color.",
+              "name": "--omni-button-white-disabled-background"
+            },
+            {
+              "description": "White \"type\" disabled border color.",
+              "name": "--omni-button-white-disabled-border-color"
+            },
+            {
+              "description": "White \"type\" disabled border width.",
+              "name": "--omni-button-white-disabled-border-width"
+            },
+            {
+              "description": "White \"type\" disabled color.",
+              "name": "--omni-button-white-disabled-color"
+            },
+            {
+              "description": "Disabled border color.",
+              "name": "--omni-button-disabled-border-color"
+            },
+            {
+              "description": "Disabled background.",
+              "name": "--omni-button-disabled-background"
+            },
+            {
+              "description": "Disabled hover and active background.",
+              "name": "--omni-button-disabled-active-hover-background"
+            },
+            {
+              "description": "Slot margin left (When positioned right of label).",
+              "name": "--omni-button-slot-margin-right"
+            },
+            {
+              "description": "Slot margin bottom (When positioned top of label).",
+              "name": "--omni-button-slot-margin-bottom"
+            },
+            {
+              "description": "Slot margin left (When positioned right of label).",
+              "name": "--omni-button-slot-margin-left"
+            },
+            {
+              "description": "Slot margin top (When positioned bottom of label).",
+              "name": "--omni-button-slot-margin-top"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside button, can be positioned using {@link slotPosition} property.",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "type",
+              "type": {
+                "text": "'primary' | 'secondary' | 'clear' | 'white'"
+              },
+              "default": "'secondary'",
+              "description": "Display type.",
+              "attribute": "type",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Text label.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "slotPosition",
+              "type": {
+                "text": "'left' | 'top' | 'right' | 'bottom'"
+              },
+              "default": "'left'",
+              "description": "Position of slotted content.",
+              "attribute": "slot-position",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the component is disabled.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<unknown>"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "type",
+              "type": {
+                "text": "'primary' | 'secondary' | 'clear' | 'white'"
+              },
+              "default": "'secondary'",
+              "description": "Display type.",
+              "fieldName": "type",
+              "attribute": "type"
+            },
+            {
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Text label.",
+              "fieldName": "label",
+              "attribute": "label"
+            },
+            {
+              "name": "slot-position",
+              "type": {
+                "text": "'left' | 'top' | 'right' | 'bottom'"
+              },
+              "default": "'left'",
+              "description": "Position of slotted content.",
+              "fieldName": "slotPosition",
+              "attribute": "slot-position"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the component is disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "//Users/runner/work/omni-components/omni-components/src/core/OmniElement.js"
+          },
+          "tagName": "omni-button",
+          "import": "```js\nimport '@capitec/omni-components/button';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Button",
+          "declaration": {
+            "name": "Button",
+            "module": "/Users/runner/work/omni-components/omni-components/src/button/Button.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-button",
+          "declaration": {
+            "name": "Button",
+            "module": "/Users/runner/work/omni-components/omni-components/src/button/Button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/Users/runner/work/omni-components/omni-components/src/alert/Alert.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Component that displays an alert.",
+          "name": "Alert",
+          "cssProperties": [
+            {
+              "description": "Minimum width for alert.",
+              "name": "--omni-alert-min-width"
+            },
+            {
+              "description": "Maximum width for alert.",
+              "name": "--omni-alert-max-width"
+            },
+            {
+              "description": "Alert border.",
+              "name": "--omni-alert-border"
+            },
+            {
+              "description": "Alert border radius.",
+              "name": "--omni-alert-border-radius"
+            },
+            {
+              "description": "Alert box shadow.",
+              "name": "--omni-alert-box-shadow"
+            },
+            {
+              "description": "Alert fade in and out animation duration.",
+              "name": "--omni-alert-animation-duration"
+            },
+            {
+              "description": "Alert content top padding.",
+              "name": "--omni-alert-padding-top"
+            },
+            {
+              "description": "Alert content bottom padding.",
+              "name": "--omni-alert-padding-bottom"
+            },
+            {
+              "description": "Alert content left padding.",
+              "name": "--omni-alert-padding-left"
+            },
+            {
+              "description": "Alert content right padding.",
+              "name": "--omni-alert-padding-right"
+            },
+            {
+              "description": "Alert header font color.",
+              "name": "--omni-alert-header-font-color"
+            },
+            {
+              "description": "Alert header font family.",
+              "name": "--omni-alert-header-font-family"
+            },
+            {
+              "description": "Alert header font size.",
+              "name": "--omni-alert-header-font-size"
+            },
+            {
+              "description": "Alert header font weight.",
+              "name": "--omni-alert-header-font-weight"
+            },
+            {
+              "description": "Alert header line height.",
+              "name": "--omni-alert-header-line-height"
+            },
+            {
+              "description": "Alert header background.",
+              "name": "--omni-alert-header-background"
+            },
+            {
+              "description": "Alert header top padding.",
+              "name": "--omni-alert-header-padding-top"
+            },
+            {
+              "description": "Alert header bottom padding.",
+              "name": "--omni-alert-header-padding-bottom"
+            },
+            {
+              "description": "Alert header left padding.",
+              "name": "--omni-alert-header-padding-left"
+            },
+            {
+              "description": "Alert header right padding.",
+              "name": "--omni-alert-header-padding-right"
+            },
+            {
+              "description": "Alert description font color.",
+              "name": "--omni-alert-description-font-color"
+            },
+            {
+              "description": "Alert description font family.",
+              "name": "--omni-alert-description-font-family"
+            },
+            {
+              "description": "Alert description font size.",
+              "name": "--omni-alert-description-font-size"
+            },
+            {
+              "description": "Alert description font weight.",
+              "name": "--omni-alert-description-font-weight"
+            },
+            {
+              "description": "Alert description line height.",
+              "name": "--omni-alert-description-line-height"
+            },
+            {
+              "description": "Alert description top padding.",
+              "name": "--omni-alert-description-padding-top"
+            },
+            {
+              "description": "Alert description bottom padding.",
+              "name": "--omni-alert-description-padding-bottom"
+            },
+            {
+              "description": "Alert description left padding.",
+              "name": "--omni-alert-description-padding-left"
+            },
+            {
+              "description": "Alert description right padding.",
+              "name": "--omni-alert-description-padding-right"
+            },
+            {
+              "description": "Alert action button(s) top padding.",
+              "name": "--omni-alert-action-button-padding-top"
+            },
+            {
+              "description": "Alert action button(s) bottom padding.",
+              "name": "--omni-alert-action-button-padding-bottom"
+            },
+            {
+              "description": "Alert action button(s) left padding.",
+              "name": "--omni-alert-action-button-padding-left"
+            },
+            {
+              "description": "Alert action button(s) right padding.",
+              "name": "--omni-alert-action-button-padding-right"
+            },
+            {
+              "description": "Alert action button(s) internal top padding.",
+              "name": "--omni-alert-action-button-internal-padding-top"
+            },
+            {
+              "description": "Alert action button(s) internal bottom padding.",
+              "name": "--omni-alert-action-button-internal-padding-bottom"
+            },
+            {
+              "description": "Alert action button(s) internal left padding.",
+              "name": "--omni-alert-action-button-internal-padding-left"
+            },
+            {
+              "description": "Alert action button(s) internal right padding.",
+              "name": "--omni-alert-action-button-internal-padding-right"
+            },
+            {
+              "description": "Alert header horizontal space between status indicator and header content.",
+              "name": "--omni-alert-header-horizontal-gap"
+            },
+            {
+              "description": "Alert header status indicator symmetrical size.",
+              "name": "--omni-alert-header-status-size"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "Internal `omni-modal` element instance.",
+              "name": "modal"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for container of header and description content.",
+              "name": "content"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for each line of description (does not include slotted description content).",
+              "name": "content"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for header.",
+              "name": "header"
+            },
+            {
+              "description": "Internal `HTMLDivElement` instance for container of action button(s).",
+              "name": "actions"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render as the status indicator instead of default status icons.",
+              "name": "status-indicator"
+            },
+            {
+              "description": "Content to render inside the component message area.",
+              "name": "header"
+            },
+            {
+              "description": "Content to render inside the component description body.",
+              "name": "[Default Slot]"
+            },
+            {
+              "description": "Content to render as the primary action button.",
+              "name": "primary"
+            },
+            {
+              "description": "Content to render as the secondary action button.",
+              "name": "secondary"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "status",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
+              },
+              "default": "'none'",
+              "description": "The alert status (Defaults to 'none').",
+              "attribute": "status",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "message",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert header message.",
+              "attribute": "message",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "headerAlign",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Header content horizontal alignment:\n - `left` Align header to the left.\n - `center` Align header to the center. (Default)\n - `right` Align header to the right.",
+              "attribute": "header-align",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "description",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert detail message.",
+              "attribute": "description",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "descriptionAlign",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Description content horizontal alignment:\n - `left` Align description content to the left.\n - `center` Align description content to the center. (Default)\n - `right` Align description content to the right.",
+              "attribute": "description-align",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "primaryAction",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The primary action button label (Defaults to 'Ok').",
+              "attribute": "primary-action",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "secondaryAction",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The secondary action button label (Defaults to 'Cancel').",
+              "attribute": "secondary-action",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "enableSecondary",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will provide a secondary action button.",
+              "attribute": "enable-secondary",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "actionAlign",
+              "type": {
+                "text": "'left' | 'center' | 'right' | 'stretch' | undefined"
+              },
+              "description": "Action button(s) horizontal alignment:\n - `left` Align action button(s) to the left.\n - `center` Align action button(s) to the center.\n - `right` Align action button(s) to the right. (Default)\n - `stretch` Align action button(s) stretched to fill the horizontal space.",
+              "attribute": "action-align",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "create",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "AlertInit"
+                  }
+                }
+              ],
+              "description": "Create a global `omni-alert` element without showing it.",
+              "return": {
+                "type": {
+                  "text": "Alert"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "AlertInit & {\n            onClose?: (reason: 'auto' | 'primary' | 'secondary') => void;\n        }"
+                  }
+                }
+              ],
+              "description": "Show a global `omni-alert` element.",
+              "return": {
+                "type": {
+                  "text": "Alert"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showAsync",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "init",
+                  "type": {
+                    "text": "AlertInit"
+                  }
+                }
+              ],
+              "description": "Show a global `omni-alert` element asynchronously, waits for it to close and returns the reason for close.",
+              "return": {
+                "type": {
+                  "text": "Promise<\"auto\" | \"primary\" | \"secondary\">"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "showAsync",
+              "description": "Show the `omni-alert` asynchronously, waits for it to close and returns the reason for close.",
+              "return": {
+                "type": {
+                  "text": "Promise<\"auto\" | \"primary\" | \"secondary\">"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "return": {
+                "type": {
+                  "text": "Alert"
+                }
+              },
+              "description": "Show the `omni-alert`."
+            },
+            {
+              "kind": "method",
+              "name": "hide",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "description": "Hide the `omni-alert` and remove the component from the DOM"
+            },
+            {
+              "kind": "method",
+              "name": "onActionClick",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "secondary",
+                  "optional": true,
+                  "type": {
+                    "text": "boolean"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<unknown>"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "alert-close",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when the alert is closed."
+            },
+            {
+              "name": "alert-action-click",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when an alert action button is clicked."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "status",
+              "type": {
+                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
+              },
+              "default": "'none'",
+              "description": "The alert status (Defaults to 'none').",
+              "fieldName": "status",
+              "attribute": "status"
+            },
+            {
+              "name": "message",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert header message.",
+              "fieldName": "message",
+              "attribute": "message"
+            },
+            {
+              "name": "header-align",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Header content horizontal alignment:\n - `left` Align header to the left.\n - `center` Align header to the center. (Default)\n - `right` Align header to the right.",
+              "fieldName": "headerAlign",
+              "attribute": "header-align"
+            },
+            {
+              "name": "description",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The alert detail message.",
+              "fieldName": "description",
+              "attribute": "description"
+            },
+            {
+              "name": "description-align",
+              "type": {
+                "text": "'left' | 'center' | 'right' | undefined"
+              },
+              "description": "Description content horizontal alignment:\n - `left` Align description content to the left.\n - `center` Align description content to the center. (Default)\n - `right` Align description content to the right.",
+              "fieldName": "descriptionAlign",
+              "attribute": "description-align"
+            },
+            {
+              "name": "primary-action",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The primary action button label (Defaults to 'Ok').",
+              "fieldName": "primaryAction",
+              "attribute": "primary-action"
+            },
+            {
+              "name": "secondary-action",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "The secondary action button label (Defaults to 'Cancel').",
+              "fieldName": "secondaryAction",
+              "attribute": "secondary-action"
+            },
+            {
+              "name": "enable-secondary",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "If true, will provide a secondary action button.",
+              "fieldName": "enableSecondary",
+              "attribute": "enable-secondary"
+            },
+            {
+              "name": "action-align",
+              "type": {
+                "text": "'left' | 'center' | 'right' | 'stretch' | undefined"
+              },
+              "description": "Action button(s) horizontal alignment:\n - `left` Align action button(s) to the left.\n - `center` Align action button(s) to the center.\n - `right` Align action button(s) to the right. (Default)\n - `stretch` Align action button(s) stretched to fill the horizontal space.",
+              "fieldName": "actionAlign",
+              "attribute": "action-align"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "//Users/runner/work/omni-components/omni-components/src/core/OmniElement.js"
+          },
+          "tagName": "omni-alert",
+          "import": "```js\nimport '@capitec/omni-components/alert';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "RenderFunction",
+          "declaration": {
+            "name": "RenderFunction",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "RenderResult",
+          "declaration": {
+            "name": "RenderResult",
+            "module": "../render-element/RenderElement.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Alert",
+          "declaration": {
+            "name": "Alert",
+            "module": "/Users/runner/work/omni-components/omni-components/src/alert/Alert.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-alert",
+          "declaration": {
+            "name": "Alert",
+            "module": "/Users/runner/work/omni-components/omni-components/src/alert/Alert.ts"
+          }
+        }
+      ],
+      "typeAliases": [
+        {
+          "alias": "AlertInit",
+          "type": "{\n    /**\n     * The id to apply to the Alert element.\n     */\n    id?: string;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert status indicator\n     */\n    statusIndicator?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the alert header\n     */\n    header?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as alert body\n     */\n    body?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert primary action\n     */\n    primary?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert secondary action\n     */\n    secondary?: RenderFunction | RenderResult;\n\n    /**\n     * The alert status (Defaults to 'none').\n     */\n    status?: 'success' | 'warning' | 'error' | 'info' | 'none';\n\n    /**\n     * The alert header message.\n     */\n    message?: string;\n\n    /**\n     * Header content horizontal alignment:\n     *  - `left` Align header to the left.\n     *  - `center` Align header to the center. (Default)\n     *  - `right` Align header to the right.\n     */\n    headerAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * The alert detail message.\n     */\n    description?: string;\n\n    /**\n     * Description content horizontal alignment:\n     *  - `left` Align description content to the left.\n     *  - `center` Align description content to the center. (Default)\n     *  - `right` Align description content to the right.\n     */\n    descriptionAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * The primary action button label (Defaults to 'Ok').\n     */\n    primaryAction?: string;\n\n    /**\n     * The secondary action button label (Defaults to 'Cancel').\n     */\n    secondaryAction?: string;\n\n    /**\n     * If true, will provide a secondary action button.\n     */\n    enableSecondary?: boolean;\n\n    /**\n     * Action button(s) horizontal alignment:\n     *  - `left` Align action button(s) to the left.\n     *  - `center` Align action button(s) to the center.\n     *  - `right` Align action button(s) to the right. (Default)\n     *  - `stretch` Align action button(s) stretched to fill the horizontal space.\n     */\n    actionAlign?: 'left' | 'center' | 'right' | 'stretch';\n}"
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/alert/Alert.spec.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/Users/runner/work/omni-components/omni-components/src/utils/Directives.ts",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "ifNotEmpty",
+          "return": {
+            "type": {
+              "text": "any"
+            }
+          },
+          "parameters": [
+            {
+              "name": "value",
+              "optional": true,
+              "type": {
+                "text": "string | null"
+              }
+            }
+          ],
+          "description": "Lit directive that only applies when provided value is not falsy(undefined, null, or empty string)"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ifNotEmpty",
+          "declaration": {
+            "name": "ifNotEmpty",
+            "module": "/Users/runner/work/omni-components/omni-components/src/utils/Directives.ts"
+          }
         }
       ]
     },
@@ -6671,550 +8025,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/Users/runner/work/omni-components/omni-components/src/button/Button.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Control that allows an action to be executed.",
-          "name": "Button",
-          "cssProperties": [
-            {
-              "description": "Component font family.",
-              "name": "--omni-button-font-family"
-            },
-            {
-              "description": "Component font size.",
-              "name": "--omni-button-font-size"
-            },
-            {
-              "description": "Component font weight.",
-              "name": "--omni-button-font-weight"
-            },
-            {
-              "description": "Component line height.",
-              "name": "--omni-button-line-height"
-            },
-            {
-              "description": "Component border radius.",
-              "name": "--omni-button-border-radius"
-            },
-            {
-              "description": "Component padding top.",
-              "name": "--omni-button-padding-top"
-            },
-            {
-              "description": "Component padding bottom.",
-              "name": "--omni-button-padding-bottom"
-            },
-            {
-              "description": "Component padding left.",
-              "name": "--omni-button-padding-left"
-            },
-            {
-              "description": "Component padding right. PRIMARY",
-              "name": "--omni-button-padding-right"
-            },
-            {
-              "description": "Primary \"type\" background.",
-              "name": "--omni-button-primary-background"
-            },
-            {
-              "description": "Primary \"type\" border color.",
-              "name": "--omni-button-primary-border-color"
-            },
-            {
-              "description": "Primary \"type\" border width.",
-              "name": "--omni-button-primary-border-width"
-            },
-            {
-              "description": "Primary \"type\" color.",
-              "name": "--omni-button-primary-color"
-            },
-            {
-              "description": "Primary \"type\" hover background.",
-              "name": "--omni-button-primary-hover-background"
-            },
-            {
-              "description": "Primary \"type\" hover border color.",
-              "name": "--omni-button-primary-hover-border-color"
-            },
-            {
-              "description": "Primary \"type\" hover border width.",
-              "name": "--omni-button-primary-hover-border-width"
-            },
-            {
-              "description": "Primary \"type\" hover color.",
-              "name": "--omni-button-primary-hover-color"
-            },
-            {
-              "description": "Primary \"type\" hover box shadow.",
-              "name": "--omni-button-primary-hover-box-shadow"
-            },
-            {
-              "description": "Primary \"type\" active back color.",
-              "name": "--omni-button-primary-active-background"
-            },
-            {
-              "description": "Primary \"type\" active border color.",
-              "name": "--omni-button-primary-active-border-color"
-            },
-            {
-              "description": "Primary \"type\" active border width.",
-              "name": "--omni-button-primary-active-border-width"
-            },
-            {
-              "description": "Primary \"type\" active color.",
-              "name": "--omni-button-primary-active-color"
-            },
-            {
-              "description": "Primary \"type\" disabled back color.",
-              "name": "--omni-button-primary-disabled-background"
-            },
-            {
-              "description": "Primary \"type\" disabled border color.",
-              "name": "--omni-button-primary-disabled-border-color"
-            },
-            {
-              "description": "Primary \"type\" disabled border width.",
-              "name": "--omni-button-primary-disabled-border-width"
-            },
-            {
-              "description": "Primary \"type\" disabled color. SECONDARY",
-              "name": "--omni-button-primary-disabled-color"
-            },
-            {
-              "description": "Secondary \"type\" background.",
-              "name": "--omni-button-secondary-background"
-            },
-            {
-              "description": "Secondary \"type\" border color.",
-              "name": "--omni-button-secondary-border-color"
-            },
-            {
-              "description": "Secondary \"type\" border width.",
-              "name": "--omni-button-secondary-border-width"
-            },
-            {
-              "description": "Secondary \"type\" color.",
-              "name": "--omni-button-secondary-color"
-            },
-            {
-              "description": "Secondary \"type\" hover background.",
-              "name": "--omni-button-secondary-hover-background"
-            },
-            {
-              "description": "Secondary \"type\" hover border color.",
-              "name": "--omni-button-secondary-hover-border-color"
-            },
-            {
-              "description": "Secondary \"type\" hover border width.",
-              "name": "--omni-button-secondary-hover-border-width"
-            },
-            {
-              "description": "Secondary \"type\" hover color.",
-              "name": "--omni-button-secondary-hover-color"
-            },
-            {
-              "description": "Secondary \"type\" hover box shadow.",
-              "name": "--omni-button-secondary-hover-box-shadow"
-            },
-            {
-              "description": "Secondary \"type\" active background.",
-              "name": "--omni-button-secondary-active-background"
-            },
-            {
-              "description": "Secondary \"type\" active border color.",
-              "name": "--omni-button-secondary-active-border-color"
-            },
-            {
-              "description": "Secondary \"type\" active border width.",
-              "name": "--omni-button-secondary-active-border-width"
-            },
-            {
-              "description": "Secondary \"type\" active color.",
-              "name": "--omni-button-secondary-active-color"
-            },
-            {
-              "description": "Secondary \"type\" disabled back color.",
-              "name": "--omni-button-secondary-disabled-background"
-            },
-            {
-              "description": "Secondary \"type\" disabled border color.",
-              "name": "--omni-button-secondary-disabled-border-color"
-            },
-            {
-              "description": "Secondary \"type\" disabled border width.",
-              "name": "--omni-button-secondary-disabled-border-width"
-            },
-            {
-              "description": "Secondary \"type\" disabled color. CLEAR",
-              "name": "--omni-button-secondary-disabled-color"
-            },
-            {
-              "description": "Clear \"type\" background.",
-              "name": "--omni-button-clear-background"
-            },
-            {
-              "description": "Clear \"type\" border color.",
-              "name": "--omni-button-clear-border-color"
-            },
-            {
-              "description": "Clear \"type\" border width.",
-              "name": "--omni-button-clear-border-width"
-            },
-            {
-              "description": "Clear \"type\" color.",
-              "name": "--omni-button-clear-color"
-            },
-            {
-              "description": "Clear \"type\" hover background.",
-              "name": "--omni-button-clear-hover-background"
-            },
-            {
-              "description": "Clear \"type\" hover border color.",
-              "name": "--omni-button-clear-hover-border-color"
-            },
-            {
-              "description": "Clear \"type\" hover border width.",
-              "name": "--omni-button-clear-hover-border-width"
-            },
-            {
-              "description": "Clear \"type\" hover color.",
-              "name": "--omni-button-clear-hover-color"
-            },
-            {
-              "description": "Clear \"type\" active background.",
-              "name": "--omni-button-clear-active-background"
-            },
-            {
-              "description": "Clear \"type\" active border color.",
-              "name": "--omni-button-clear-active-border-color"
-            },
-            {
-              "description": "Clear \"type\" active border width.",
-              "name": "--omni-button-clear-active-border-width"
-            },
-            {
-              "description": "Clear \"type\" active color.",
-              "name": "--omni-button-clear-active-color"
-            },
-            {
-              "description": "Clear \"type\" disabled back color.",
-              "name": "--omni-button-clear-disabled-background"
-            },
-            {
-              "description": "Clear \"type\" disabled border color.",
-              "name": "--omni-button-clear-disabled-border-color"
-            },
-            {
-              "description": "Clear \"type\" disabled border width.",
-              "name": "--omni-button-clear-disabled-border-width"
-            },
-            {
-              "description": "Clear \"type\" disabled color. WHITE",
-              "name": "--omni-button-clear-disabled-color"
-            },
-            {
-              "description": "White \"type\" background.",
-              "name": "--omni-button-white-background"
-            },
-            {
-              "description": "White \"type\" border color.",
-              "name": "--omni-button-white-border-color"
-            },
-            {
-              "description": "White \"type\" border width.",
-              "name": "--omni-button-white-border-width"
-            },
-            {
-              "description": "White \"type\" color.",
-              "name": "--omni-button-white-color"
-            },
-            {
-              "description": "White \"type\" hover background.",
-              "name": "--omni-button-white-hover-background"
-            },
-            {
-              "description": "White \"type\" hover border color.",
-              "name": "--omni-button-white-hover-border-color"
-            },
-            {
-              "description": "White \"type\" hover border width.",
-              "name": "--omni-button-white-hover-border-width"
-            },
-            {
-              "description": "White \"type\" hover box shadow.",
-              "name": "--omni-button-white-hover-box-shadow"
-            },
-            {
-              "description": "White \"type\" active background.",
-              "name": "--omni-button-white-active-background"
-            },
-            {
-              "description": "White \"type\" active border color.",
-              "name": "--omni-button-white-active-border-color"
-            },
-            {
-              "description": "White \"type\" active border width.",
-              "name": "--omni-button-white-active-border-width"
-            },
-            {
-              "description": "White \"type\" hover color.",
-              "name": "--omni-button-white-active-color"
-            },
-            {
-              "description": "White \"type\" disabled back color.",
-              "name": "--omni-button-white-disabled-background"
-            },
-            {
-              "description": "White \"type\" disabled border color.",
-              "name": "--omni-button-white-disabled-border-color"
-            },
-            {
-              "description": "White \"type\" disabled border width.",
-              "name": "--omni-button-white-disabled-border-width"
-            },
-            {
-              "description": "White \"type\" disabled color.",
-              "name": "--omni-button-white-disabled-color"
-            },
-            {
-              "description": "Disabled border color.",
-              "name": "--omni-button-disabled-border-color"
-            },
-            {
-              "description": "Disabled background.",
-              "name": "--omni-button-disabled-background"
-            },
-            {
-              "description": "Disabled hover and active background.",
-              "name": "--omni-button-disabled-active-hover-background"
-            },
-            {
-              "description": "Slot margin left (When positioned right of label).",
-              "name": "--omni-button-slot-margin-right"
-            },
-            {
-              "description": "Slot margin bottom (When positioned top of label).",
-              "name": "--omni-button-slot-margin-bottom"
-            },
-            {
-              "description": "Slot margin left (When positioned right of label).",
-              "name": "--omni-button-slot-margin-left"
-            },
-            {
-              "description": "Slot margin top (When positioned bottom of label).",
-              "name": "--omni-button-slot-margin-top"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "description": "Content to render inside button, can be positioned using {@link slotPosition} property.",
-              "name": "[Default Slot]"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "type",
-              "type": {
-                "text": "'primary' | 'secondary' | 'clear' | 'white'"
-              },
-              "default": "'secondary'",
-              "description": "Display type.",
-              "attribute": "type",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "label",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "Text label.",
-              "attribute": "label",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "slotPosition",
-              "type": {
-                "text": "'left' | 'top' | 'right' | 'bottom'"
-              },
-              "default": "'left'",
-              "description": "Position of slotted content.",
-              "attribute": "slot-position",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "disabled",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "Indicator if the component is disabled.",
-              "attribute": "disabled",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "dir",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to set the base direction of text for display",
-              "attribute": "dir",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "lang",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to identify the language of text content on the web",
-              "attribute": "lang",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderLoading",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "TemplateResult | typeof nothing"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderAsync",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "Promise<unknown>"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            }
-          ],
-          "attributes": [
-            {
-              "name": "type",
-              "type": {
-                "text": "'primary' | 'secondary' | 'clear' | 'white'"
-              },
-              "default": "'secondary'",
-              "description": "Display type.",
-              "fieldName": "type",
-              "attribute": "type"
-            },
-            {
-              "name": "label",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "Text label.",
-              "fieldName": "label",
-              "attribute": "label"
-            },
-            {
-              "name": "slot-position",
-              "type": {
-                "text": "'left' | 'top' | 'right' | 'bottom'"
-              },
-              "default": "'left'",
-              "description": "Position of slotted content.",
-              "fieldName": "slotPosition",
-              "attribute": "slot-position"
-            },
-            {
-              "name": "disabled",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "Indicator if the component is disabled.",
-              "fieldName": "disabled",
-              "attribute": "disabled"
-            },
-            {
-              "name": "dir",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to set the base direction of text for display",
-              "fieldName": "dir",
-              "attribute": "dir",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "name": "lang",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to identify the language of text content on the web",
-              "fieldName": "lang",
-              "attribute": "lang",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "OmniElement",
-            "module": "//Users/runner/work/omni-components/omni-components/src/core/OmniElement.js"
-          },
-          "tagName": "omni-button",
-          "import": "```js\nimport '@capitec/omni-components/button';\n```",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "Button",
-          "declaration": {
-            "name": "Button",
-            "module": "/Users/runner/work/omni-components/omni-components/src/button/Button.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "omni-button",
-          "declaration": {
-            "name": "Button",
-            "module": "/Users/runner/work/omni-components/omni-components/src/button/Button.ts"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "/Users/runner/work/omni-components/omni-components/src/utils/StoryRenderer.ts",
       "declarations": [
         {
@@ -7429,7 +8239,7 @@
               ],
               "return": {
                 "type": {
-                  "text": "1 | -1 | 0"
+                  "text": "0 | 1 | -1"
                 }
               }
             },
@@ -7617,7 +8427,12 @@
                 "text": "Record<\n        string,\n        {\n            control: 'color' | 'text';\n            description: string;\n            category: string;\n            subcategory: string;\n            value: string;\n        }\n    >"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "Record<string, { control: \"color\" | \"text\"; description: string; category: string; subcategory: string; value: string; }>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7635,7 +8450,12 @@
                 "text": "Package"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "JavaScriptModule | undefined"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7653,7 +8473,12 @@
                 "text": "Package"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "JavaScriptModule | undefined"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7677,7 +8502,12 @@
                 "text": "Package"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "{ name: string; description: string; }"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7718,7 +8548,12 @@
                 "text": "Package"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "{ name: string; description: string; }"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7730,7 +8565,12 @@
                 "text": "any"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "{ name: string; description: string; }"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7748,7 +8588,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7767,7 +8612,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7779,7 +8629,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "Promise<any>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7798,7 +8653,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "any"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7817,7 +8677,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "any"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7829,7 +8694,12 @@
                 "text": "Element"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "void"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7841,7 +8711,12 @@
                 "text": "Package"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "{ extraTags?: Record<string, TagSpec> | undefined; extraGlobalAttributes?: Record<string, readonly string[] | null> | undefined; }"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7851,7 +8726,12 @@
               "name": "path",
               "default": "'./custom-elements.json'"
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "Promise<{ extraTags?: Record<string, TagSpec> | undefined; extraGlobalAttributes?: Record<string, readonly string[] | null> | undefined; }>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7861,7 +8741,12 @@
               "name": "path",
               "default": "'./custom-elements.json'"
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "Promise<Package>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7873,7 +8758,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7885,7 +8775,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7904,7 +8799,12 @@
               }
             }
           ],
-          "description": "Interprets a template literal as a raw HTML string.\n\n```ts\nconst header = (title: string) => raw`<h1>${title}</h1>`;\n```\n\nThe `raw` tag returns a string that can be used directly as ```innerHTML``` or as ```unsafeHTML``` via lit."
+          "description": "Interprets a template literal as a raw HTML string.\n\n```ts\nconst header = (title: string) => raw`<h1>${title}</h1>`;\n```\n\nThe `raw` tag returns a string that can be used directly as ```innerHTML``` or as ```unsafeHTML``` via lit.",
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7959,19 +8859,39 @@
                 "text": "number"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "Promise<unknown>"
+            }
+          }
         },
         {
           "kind": "function",
-          "name": "setupThemes"
+          "name": "setupThemes",
+          "return": {
+            "type": {
+              "text": "Promise<void>"
+            }
+          }
         },
         {
           "kind": "function",
-          "name": "setupEleventy"
+          "name": "setupEleventy",
+          "return": {
+            "type": {
+              "text": "Promise<void>"
+            }
+          }
         },
         {
           "kind": "function",
-          "name": "setupTheming"
+          "name": "setupTheming",
+          "return": {
+            "type": {
+              "text": "Promise<void>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -7983,7 +8903,12 @@
                 "text": "Event"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "Promise<void>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -8026,7 +8951,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "string"
+            }
+          }
         }
       ],
       "exports": [
@@ -8322,655 +9252,6 @@
     },
     {
       "kind": "javascript-module",
-      "path": "/Users/runner/work/omni-components/omni-components/src/alert/Alert.ts",
-      "declarations": [
-        {
-          "kind": "class",
-          "description": "Component that displays an alert.",
-          "name": "Alert",
-          "cssProperties": [
-            {
-              "description": "Minimum width for alert.",
-              "name": "--omni-alert-min-width"
-            },
-            {
-              "description": "Maximum width for alert.",
-              "name": "--omni-alert-max-width"
-            },
-            {
-              "description": "Alert border.",
-              "name": "--omni-alert-border"
-            },
-            {
-              "description": "Alert border radius.",
-              "name": "--omni-alert-border-radius"
-            },
-            {
-              "description": "Alert box shadow.",
-              "name": "--omni-alert-box-shadow"
-            },
-            {
-              "description": "Alert fade in and out animation duration.",
-              "name": "--omni-alert-animation-duration"
-            },
-            {
-              "description": "Alert content top padding.",
-              "name": "--omni-alert-padding-top"
-            },
-            {
-              "description": "Alert content bottom padding.",
-              "name": "--omni-alert-padding-bottom"
-            },
-            {
-              "description": "Alert content left padding.",
-              "name": "--omni-alert-padding-left"
-            },
-            {
-              "description": "Alert content right padding.",
-              "name": "--omni-alert-padding-right"
-            },
-            {
-              "description": "Alert header font color.",
-              "name": "--omni-alert-header-font-color"
-            },
-            {
-              "description": "Alert header font family.",
-              "name": "--omni-alert-header-font-family"
-            },
-            {
-              "description": "Alert header font size.",
-              "name": "--omni-alert-header-font-size"
-            },
-            {
-              "description": "Alert header font weight.",
-              "name": "--omni-alert-header-font-weight"
-            },
-            {
-              "description": "Alert header line height.",
-              "name": "--omni-alert-header-line-height"
-            },
-            {
-              "description": "Alert header background.",
-              "name": "--omni-alert-header-background"
-            },
-            {
-              "description": "Alert header top padding.",
-              "name": "--omni-alert-header-padding-top"
-            },
-            {
-              "description": "Alert header bottom padding.",
-              "name": "--omni-alert-header-padding-bottom"
-            },
-            {
-              "description": "Alert header left padding.",
-              "name": "--omni-alert-header-padding-left"
-            },
-            {
-              "description": "Alert header right padding.",
-              "name": "--omni-alert-header-padding-right"
-            },
-            {
-              "description": "Alert description font color.",
-              "name": "--omni-alert-description-font-color"
-            },
-            {
-              "description": "Alert description font family.",
-              "name": "--omni-alert-description-font-family"
-            },
-            {
-              "description": "Alert description font size.",
-              "name": "--omni-alert-description-font-size"
-            },
-            {
-              "description": "Alert description font weight.",
-              "name": "--omni-alert-description-font-weight"
-            },
-            {
-              "description": "Alert description line height.",
-              "name": "--omni-alert-description-line-height"
-            },
-            {
-              "description": "Alert description top padding.",
-              "name": "--omni-alert-description-padding-top"
-            },
-            {
-              "description": "Alert description bottom padding.",
-              "name": "--omni-alert-description-padding-bottom"
-            },
-            {
-              "description": "Alert description left padding.",
-              "name": "--omni-alert-description-padding-left"
-            },
-            {
-              "description": "Alert description right padding.",
-              "name": "--omni-alert-description-padding-right"
-            },
-            {
-              "description": "Alert action button(s) top padding.",
-              "name": "--omni-alert-action-button-padding-top"
-            },
-            {
-              "description": "Alert action button(s) bottom padding.",
-              "name": "--omni-alert-action-button-padding-bottom"
-            },
-            {
-              "description": "Alert action button(s) left padding.",
-              "name": "--omni-alert-action-button-padding-left"
-            },
-            {
-              "description": "Alert action button(s) right padding.",
-              "name": "--omni-alert-action-button-padding-right"
-            },
-            {
-              "description": "Alert action button(s) internal top padding.",
-              "name": "--omni-alert-action-button-internal-padding-top"
-            },
-            {
-              "description": "Alert action button(s) internal bottom padding.",
-              "name": "--omni-alert-action-button-internal-padding-bottom"
-            },
-            {
-              "description": "Alert action button(s) internal left padding.",
-              "name": "--omni-alert-action-button-internal-padding-left"
-            },
-            {
-              "description": "Alert action button(s) internal right padding.",
-              "name": "--omni-alert-action-button-internal-padding-right"
-            },
-            {
-              "description": "Alert header horizontal space between status indicator and header content.",
-              "name": "--omni-header-horizontal-gap"
-            },
-            {
-              "description": "Alert header status indicator symmetrical size.",
-              "name": "--omni-header-status-size"
-            }
-          ],
-          "cssParts": [
-            {
-              "description": "Internal `omni-modal` element instance.",
-              "name": "modal"
-            },
-            {
-              "description": "Internal `HTMLDivElement` instance for container of header and description content.",
-              "name": "content"
-            },
-            {
-              "description": "Internal `HTMLDivElement` instance for each line of description (does not include slotted description content).",
-              "name": "content"
-            },
-            {
-              "description": "Internal `HTMLDivElement` instance for header.",
-              "name": "header"
-            },
-            {
-              "description": "Internal `HTMLDivElement` instance for container of action button(s).",
-              "name": "actions"
-            }
-          ],
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "description": "Content to render as the status indicator instead of default status icons.",
-              "name": "status-indicator"
-            },
-            {
-              "description": "Content to render inside the component message area.",
-              "name": "header"
-            },
-            {
-              "description": "Content to render inside the component description body.",
-              "name": "[Default Slot]"
-            },
-            {
-              "description": "Content to render as the primary action button.",
-              "name": "primary"
-            },
-            {
-              "description": "Content to render as the secondary action button.",
-              "name": "secondary"
-            }
-          ],
-          "members": [
-            {
-              "kind": "field",
-              "name": "status",
-              "type": {
-                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
-              },
-              "default": "'none'",
-              "description": "The alert status (Defaults to 'none').",
-              "attribute": "status",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "message",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The alert header message.",
-              "attribute": "message",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "headerAlign",
-              "type": {
-                "text": "'left' | 'center' | 'right' | undefined"
-              },
-              "description": "Header content horizontal alignment:\n - `left` Align header to the left.\n - `center` Align header to the center. (Default)\n - `right` Align header to the right.",
-              "attribute": "header-align",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "description",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The alert detail message.",
-              "attribute": "description",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "descriptionAlign",
-              "type": {
-                "text": "'left' | 'center' | 'right' | undefined"
-              },
-              "description": "Description content horizontal alignment:\n - `left` Align description content to the left.\n - `center` Align description content to the center. (Default)\n - `right` Align description content to the right.",
-              "attribute": "description-align",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "primaryAction",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The primary action button label (Defaults to 'Ok').",
-              "attribute": "primary-action",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "secondaryAction",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The secondary action button label (Defaults to 'Cancel').",
-              "attribute": "secondary-action",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "enableSecondary",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "If true, will provide a secondary action button.",
-              "attribute": "enable-secondary",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "actionAlign",
-              "type": {
-                "text": "'left' | 'center' | 'right' | 'stretch' | undefined"
-              },
-              "description": "Action button(s) horizontal alignment:\n - `left` Align action button(s) to the left.\n - `center` Align action button(s) to the center.\n - `right` Align action button(s) to the right. (Default)\n - `stretch` Align action button(s) stretched to fill the horizontal space.",
-              "attribute": "action-align",
-              "reflects": true
-            },
-            {
-              "kind": "method",
-              "name": "create",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "init",
-                  "type": {
-                    "text": "AlertInit"
-                  }
-                }
-              ],
-              "description": "Create a global `omni-alert` element without showing it.",
-              "return": {
-                "type": {
-                  "text": "Alert"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "show",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "init",
-                  "type": {
-                    "text": "AlertInit & {\n            onClose?: (reason: 'auto' | 'primary' | 'secondary') => void;\n        }"
-                  }
-                }
-              ],
-              "description": "Show a global `omni-alert` element.",
-              "return": {
-                "type": {
-                  "text": "Alert"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "showAsync",
-              "static": true,
-              "parameters": [
-                {
-                  "name": "init",
-                  "type": {
-                    "text": "AlertInit"
-                  }
-                }
-              ],
-              "description": "Show a global `omni-alert` element asynchronously, waits for it to close and returns the reason for close.",
-              "return": {
-                "type": {
-                  "text": "Promise<\"auto\" | \"primary\" | \"secondary\">"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "showAsync",
-              "description": "Show the `omni-alert` asynchronously, waits for it to close and returns the reason for close.",
-              "return": {
-                "type": {
-                  "text": "Promise<\"auto\" | \"primary\" | \"secondary\">"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "show",
-              "return": {
-                "type": {
-                  "text": "Alert"
-                }
-              },
-              "description": "Show the `omni-alert`."
-            },
-            {
-              "kind": "method",
-              "name": "hide",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              },
-              "description": "Hide the `omni-alert` and remove the component from the DOM"
-            },
-            {
-              "kind": "method",
-              "name": "onActionClick",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "secondary",
-                  "optional": true,
-                  "type": {
-                    "text": "boolean"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "field",
-              "name": "dir",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to set the base direction of text for display",
-              "attribute": "dir",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "lang",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to identify the language of text content on the web",
-              "attribute": "lang",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderLoading",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "TemplateResult | typeof nothing"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "kind": "method",
-              "name": "renderAsync",
-              "privacy": "protected",
-              "return": {
-                "type": {
-                  "text": "Promise<unknown>"
-                }
-              },
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            }
-          ],
-          "events": [
-            {
-              "name": "alert-close",
-              "type": {
-                "text": "CustomEvent"
-              }
-            },
-            {
-              "name": "alert-action-click",
-              "type": {
-                "text": "CustomEvent"
-              }
-            },
-            {
-              "description": "Dispatched when the close button is clicked.",
-              "name": "close-click"
-            }
-          ],
-          "attributes": [
-            {
-              "name": "status",
-              "type": {
-                "text": "'success' | 'warning' | 'error' | 'info' | 'none'"
-              },
-              "default": "'none'",
-              "description": "The alert status (Defaults to 'none').",
-              "fieldName": "status",
-              "attribute": "status"
-            },
-            {
-              "name": "message",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The alert header message.",
-              "fieldName": "message",
-              "attribute": "message"
-            },
-            {
-              "name": "header-align",
-              "type": {
-                "text": "'left' | 'center' | 'right' | undefined"
-              },
-              "description": "Header content horizontal alignment:\n - `left` Align header to the left.\n - `center` Align header to the center. (Default)\n - `right` Align header to the right.",
-              "fieldName": "headerAlign",
-              "attribute": "header-align"
-            },
-            {
-              "name": "description",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The alert detail message.",
-              "fieldName": "description",
-              "attribute": "description"
-            },
-            {
-              "name": "description-align",
-              "type": {
-                "text": "'left' | 'center' | 'right' | undefined"
-              },
-              "description": "Description content horizontal alignment:\n - `left` Align description content to the left.\n - `center` Align description content to the center. (Default)\n - `right` Align description content to the right.",
-              "fieldName": "descriptionAlign",
-              "attribute": "description-align"
-            },
-            {
-              "name": "primary-action",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The primary action button label (Defaults to 'Ok').",
-              "fieldName": "primaryAction",
-              "attribute": "primary-action"
-            },
-            {
-              "name": "secondary-action",
-              "type": {
-                "text": "string | undefined"
-              },
-              "description": "The secondary action button label (Defaults to 'Cancel').",
-              "fieldName": "secondaryAction",
-              "attribute": "secondary-action"
-            },
-            {
-              "name": "enable-secondary",
-              "type": {
-                "text": "boolean | undefined"
-              },
-              "description": "If true, will provide a secondary action button.",
-              "fieldName": "enableSecondary",
-              "attribute": "enable-secondary"
-            },
-            {
-              "name": "action-align",
-              "type": {
-                "text": "'left' | 'center' | 'right' | 'stretch' | undefined"
-              },
-              "description": "Action button(s) horizontal alignment:\n - `left` Align action button(s) to the left.\n - `center` Align action button(s) to the center.\n - `right` Align action button(s) to the right. (Default)\n - `stretch` Align action button(s) stretched to fill the horizontal space.",
-              "fieldName": "actionAlign",
-              "attribute": "action-align"
-            },
-            {
-              "name": "dir",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to set the base direction of text for display",
-              "fieldName": "dir",
-              "attribute": "dir",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            },
-            {
-              "name": "lang",
-              "type": {
-                "text": "string"
-              },
-              "description": "Used to identify the language of text content on the web",
-              "fieldName": "lang",
-              "attribute": "lang",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            }
-          ],
-          "superclass": {
-            "name": "OmniElement",
-            "module": "//Users/runner/work/omni-components/omni-components/src/core/OmniElement.js"
-          },
-          "tagName": "omni-alert",
-          "import": "```js\nimport '@capitec/omni-components/alert';\n```",
-          "customElement": true
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "RenderFunction",
-          "declaration": {
-            "name": "RenderFunction",
-            "module": "../render-element/RenderElement.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "RenderResult",
-          "declaration": {
-            "name": "RenderResult",
-            "module": "../render-element/RenderElement.js"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "Alert",
-          "declaration": {
-            "name": "Alert",
-            "module": "/Users/runner/work/omni-components/omni-components/src/alert/Alert.ts"
-          }
-        },
-        {
-          "kind": "custom-element-definition",
-          "name": "omni-alert",
-          "declaration": {
-            "name": "Alert",
-            "module": "/Users/runner/work/omni-components/omni-components/src/alert/Alert.ts"
-          }
-        }
-      ],
-      "typeAliases": [
-        {
-          "alias": "AlertInit",
-          "type": "{\n    /**\n     * The id to apply to the Alert element.\n     */\n    id?: string;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert status indicator\n     */\n    statusIndicator?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render in the alert header\n     */\n    header?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as alert body\n     */\n    body?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert primary action\n     */\n    primary?: RenderFunction | RenderResult;\n\n    /**\n     * A function that returns, or an instance of content to render as the alert secondary action\n     */\n    secondary?: RenderFunction | RenderResult;\n\n    /**\n     * The alert status (Defaults to 'none').\n     */\n    status?: 'success' | 'warning' | 'error' | 'info' | 'none';\n\n    /**\n     * The alert header message.\n     */\n    message?: string;\n\n    /**\n     * Header content horizontal alignment:\n     *  - `left` Align header to the left.\n     *  - `center` Align header to the center. (Default)\n     *  - `right` Align header to the right.\n     */\n    headerAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * The alert detail message.\n     */\n    description?: string;\n\n    /**\n     * Description content horizontal alignment:\n     *  - `left` Align description content to the left.\n     *  - `center` Align description content to the center. (Default)\n     *  - `right` Align description content to the right.\n     */\n    descriptionAlign?: 'left' | 'center' | 'right';\n\n    /**\n     * The primary action button label (Defaults to 'Ok').\n     */\n    primaryAction?: string;\n\n    /**\n     * The secondary action button label (Defaults to 'Cancel').\n     */\n    secondaryAction?: string;\n\n    /**\n     * If true, will provide a secondary action button.\n     */\n    enableSecondary?: boolean;\n\n    /**\n     * Action button(s) horizontal alignment:\n     *  - `left` Align action button(s) to the left.\n     *  - `center` Align action button(s) to the center.\n     *  - `right` Align action button(s) to the right. (Default)\n     *  - `stretch` Align action button(s) stretched to fill the horizontal space.\n     */\n    actionAlign?: 'left' | 'center' | 'right' | 'stretch';\n}"
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
       "path": "src/alert/Alert.stories.ts",
       "declarations": [
         {
@@ -9233,124 +9514,6 @@
           "declaration": {
             "name": "*",
             "package": "./Alert.js"
-          }
-        }
-      ]
-    },
-    {
-      "kind": "javascript-module",
-      "path": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts",
-      "declarations": [
-        {
-          "kind": "variable",
-          "name": "expect",
-          "default": "expectPatched"
-        },
-        {
-          "kind": "function",
-          "name": "withCoverage",
-          "parameters": [
-            {
-              "name": "this",
-              "type": {
-                "text": "any"
-              }
-            },
-            {
-              "name": "page",
-              "type": {
-                "text": "Page"
-              }
-            },
-            {
-              "name": "testAction",
-              "type": {
-                "text": "() => T | Promise<T>"
-              }
-            }
-          ]
-        },
-        {
-          "kind": "function",
-          "name": "getStoryArgs",
-          "parameters": [
-            {
-              "name": "page",
-              "type": {
-                "text": "Page"
-              }
-            },
-            {
-              "name": "key",
-              "type": {
-                "text": "string"
-              }
-            },
-            {
-              "name": "readySelector",
-              "default": "'[data-testid]'"
-            }
-          ],
-          "description": "Read story args from story renderer with provided key"
-        },
-        {
-          "kind": "function",
-          "name": "mockEventListener",
-          "parameters": [
-            {
-              "name": "locatorOrHandle",
-              "type": {
-                "text": "Locator | ElementHandle | null | undefined"
-              }
-            },
-            {
-              "name": "eventName",
-              "type": {
-                "text": "string"
-              }
-            }
-          ]
-        }
-      ],
-      "exports": [
-        {
-          "kind": "js",
-          "name": "*",
-          "declaration": {
-            "name": "*",
-            "package": "@playwright/test"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "expect",
-          "declaration": {
-            "name": "expect",
-            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "withCoverage",
-          "declaration": {
-            "name": "withCoverage",
-            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "getStoryArgs",
-          "declaration": {
-            "name": "getStoryArgs",
-            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
-          }
-        },
-        {
-          "kind": "js",
-          "name": "mockEventListener",
-          "declaration": {
-            "name": "mockEventListener",
-            "module": "/Users/runner/work/omni-components/omni-components/src/utils/JestPlaywright.ts"
           }
         }
       ]
@@ -11951,7 +12114,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -11963,7 +12131,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -11975,7 +12148,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -11994,7 +12172,12 @@
                 "text": "string | number | string[]"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -12006,7 +12189,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -12018,7 +12206,12 @@
                 "text": "string"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -12037,7 +12230,12 @@
                 "text": "string | number | string[]"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -12056,7 +12254,12 @@
                 "text": "string | number | string[]"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         },
         {
           "kind": "function",
@@ -12075,7 +12278,12 @@
                 "text": "string | number | string[]"
               }
             }
-          ]
+          ],
+          "return": {
+            "type": {
+              "text": "ComponentStoryFormat<U>"
+            }
+          }
         }
       ],
       "exports": [

@@ -132,6 +132,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/alert">
+                Alert
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/button">
                 Button
             </a>
@@ -537,15 +544,14 @@
                                     <td data-label="Name" scope="row">closeable</td>
                                     <td data-label="Attribute" scope="row">closeable&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
-                                    <td data-label="Description">If true, will display a close button that fires a `close-click` event when clicked.</td>
+                                    <td data-label="Description">If true, will display a close button that fires a <code>close-click</code> event when clicked.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">current</td>
                                     <td data-label="Attribute" scope="row">&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js"></code></pre></td>
-                                    <td data-label="Description">Global singleton ToastStack used for showing a toast, either by adding to, or replacing.
-Use `Toast.show` function to add or replace toasts to this instance.</td>
+                                    <td data-label="Description">Global singleton ToastStack used for showing a toast, either by adding to, or replacing.<br/>Use <code>Toast.show</code> function to add or replace toasts to this instance.</td>
                                 </tr>
                                 
                                 <tr>
@@ -560,6 +566,71 @@ Use `Toast.show` function to add or replace toasts to this instance.</td>
                                     <td data-label="Attribute" scope="row">lang&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                     <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Static Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">configure</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">options - {
+        /**
+         * The position to stack toasts
+         */
+        position?: &#39;top&#39; | &#39;bottom&#39; | &#39;left&#39; | &#39;right&#39; | &#39;top-left&#39; | &#39;top-right&#39; | &#39;bottom-left&#39; | &#39;bottom-right&#39;;
+
+        /**
+         * Reverse the order of toast with newest toasts showed on top of the stack. By default newest toasts are showed at the bottom of the stack.
+         */
+        reverse?: boolean;
+
+        /**
+         * When true, will append toast to the toast stack. Otherwise when false will replace any toast(s). Defaults to true.
+         */
+        stack?: boolean;
+
+        /**
+         * If true, will display a close button that fires a `close-click` event when clicked and removes the toast from the stack.
+         */
+        closeable?: boolean;
+
+        /**
+         * If provided will be the time in millisecond the toast is displayed before being automatically removed from the stack.
+         * Defaults to 3000ms when not provided.
+         * When set to 0 it will never be auto removed.
+         */
+        duration?: number;
+    }</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">ToastStack &amp; { stack?: boolean | undefined; closeable?: boolean | undefined; duration?: number | undefined; }</code></pre></td>
+                                    <td data-label="Description">Configure the global singleton ToastStack used for showing a toast, either by adding to, or replacing.<br/>Use <code>Toast.show</code> function to add or replace toasts to this instance.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">show</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">options - ShowToastInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Toast</code></pre></td>
+                                    <td data-label="Description">Show a toast message.</td>
                                 </tr>
                                 
                             </tbody>
@@ -590,7 +661,7 @@ Use `Toast.show` function to add or replace toasts to this instance.</td>
                                 <tr>
                                     <td data-label="Name" scope="row">close-click</td>
                                     <td data-label="Type"><pre><code class="language-js">CustomEvent</code></pre></td>
-                                    <td data-label="Description">Dispatched when the close button is clicked when `closeable`.</td>
+                                    <td data-label="Description">Dispatched when the close button is clicked when <code>closeable</code>.</td>
                                 </tr>
                                 
                             </tbody>
@@ -634,7 +705,7 @@ Use `Toast.show` function to add or replace toasts to this instance.</td>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row"><pre><code class="language-js">close</code></pre></td>
-                                    <td data-label="Description">Content to render as the close button when `closeable`.</td>
+                                    <td data-label="Description">Content to render as the close button when <code>closeable</code>.</td>
                                 </tr>
                                 
                             </tbody>
@@ -838,12 +909,12 @@ Use `Toast.show` function to add or replace toasts to this instance.</td>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-horizontal-gap</code></pre></td>
-                                        <td data-label="Description">Horizontal spacing between icon from `type` and content.</td>
+                                        <td data-label="Description">Horizontal spacing between icon from <code>type</code> and content.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-icon-size</code></pre></td>
-                                        <td data-label="Description">Symmetrical size of icon from `type`.</td>
+                                        <td data-label="Description">Symmetrical size of icon from <code>type</code>.</td>
                                     </tr>
                                     
                                     <tr>
@@ -893,12 +964,12 @@ Use `Toast.show` function to add or replace toasts to this instance.</td>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-background</code></pre></td>
-                                        <td data-label="Description">The default background applied when no `type` is set.</td>
+                                        <td data-label="Description">The default background applied when no <code>type</code> is set.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-default-font-color</code></pre></td>
-                                        <td data-label="Description">The default font color applied when no `type` is set.</td>
+                                        <td data-label="Description">The default font color applied when no <code>type</code> is set.</td>
                                     </tr>
                                     
                                     <tr>
@@ -908,92 +979,92 @@ Use `Toast.show` function to add or replace toasts to this instance.</td>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-success-background</code></pre></td>
-                                        <td data-label="Description">The background applied when  `type` is set to `success`.</td>
+                                        <td data-label="Description">The background applied when  <code>type</code> is set to <code>success</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-success-font-color</code></pre></td>
-                                        <td data-label="Description">The font color applied when `type` is set to `success`.</td>
+                                        <td data-label="Description">The font color applied when <code>type</code> is set to <code>success</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-success-border-color</code></pre></td>
-                                        <td data-label="Description">The border color applied when  `type` is set to `success`.</td>
+                                        <td data-label="Description">The border color applied when  <code>type</code> is set to <code>success</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-success-icon-color</code></pre></td>
-                                        <td data-label="Description">The icon color applied when  `type` is set to `success`.</td>
+                                        <td data-label="Description">The icon color applied when  <code>type</code> is set to <code>success</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-warning-background</code></pre></td>
-                                        <td data-label="Description">The background applied when  `type` is set to `warning`.</td>
+                                        <td data-label="Description">The background applied when  <code>type</code> is set to <code>warning</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-warning-font-color</code></pre></td>
-                                        <td data-label="Description">The font color applied when `type` is set to `warning`.</td>
+                                        <td data-label="Description">The font color applied when <code>type</code> is set to <code>warning</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-warning-border-color</code></pre></td>
-                                        <td data-label="Description">The border color applied when  `type` is set to `warning`.</td>
+                                        <td data-label="Description">The border color applied when  <code>type</code> is set to <code>warning</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-warning-icon-color</code></pre></td>
-                                        <td data-label="Description">The icon color applied when  `type` is set to `warning`.</td>
+                                        <td data-label="Description">The icon color applied when  <code>type</code> is set to <code>warning</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-error-background</code></pre></td>
-                                        <td data-label="Description">The background applied when  `type` is set to `error`.</td>
+                                        <td data-label="Description">The background applied when  <code>type</code> is set to <code>error</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-error-font-color</code></pre></td>
-                                        <td data-label="Description">The font color applied when `type` is set to `error`.</td>
+                                        <td data-label="Description">The font color applied when <code>type</code> is set to <code>error</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-error-border-color</code></pre></td>
-                                        <td data-label="Description">The border color applied when  `type` is set to `error`.</td>
+                                        <td data-label="Description">The border color applied when  <code>type</code> is set to <code>error</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-error-icon-color</code></pre></td>
-                                        <td data-label="Description">The icon color applied when  `type` is set to `error`.</td>
+                                        <td data-label="Description">The icon color applied when  <code>type</code> is set to <code>error</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-info-background</code></pre></td>
-                                        <td data-label="Description">The background applied when  `type` is set to `info`.</td>
+                                        <td data-label="Description">The background applied when  <code>type</code> is set to <code>info</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-info-font-color</code></pre></td>
-                                        <td data-label="Description">The font color applied when `type` is set to `info`.</td>
+                                        <td data-label="Description">The font color applied when <code>type</code> is set to <code>info</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-info-border-color</code></pre></td>
-                                        <td data-label="Description">The border color applied when  `type` is set to `info`.</td>
+                                        <td data-label="Description">The border color applied when  <code>type</code> is set to <code>info</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-info-icon-color</code></pre></td>
-                                        <td data-label="Description">The icon color applied when  `type` is set to `info`.</td>
+                                        <td data-label="Description">The icon color applied when  <code>type</code> is set to <code>info</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-close-padding</code></pre></td>
-                                        <td data-label="Description">Padding applied to close button when `closeable`.</td>
+                                        <td data-label="Description">Padding applied to close button when <code>closeable</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-close-size</code></pre></td>
-                                        <td data-label="Description">Symmetrical size applied to close button when `closeable`.</td>
+                                        <td data-label="Description">Symmetrical size applied to close button when <code>closeable</code>.</td>
                                     </tr>
                                     
                                 </tbody>

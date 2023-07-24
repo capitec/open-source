@@ -134,7 +134,7 @@ async function getStoryArgs(page, key, readySelector = '[data-testid]') {
     const args = await page.locator(`story-renderer[key=${key}]`).evaluate((storyRenderer) => { var _a; return (_a = storyRenderer === null || storyRenderer === void 0 ? void 0 : storyRenderer.story) === null || _a === void 0 ? void 0 : _a.args; });
     return args;
 }
-async function mockEventListener(locatorOrHandle, eventName) {
+async function mockEventListener(locatorOrHandle, eventName, callback) {
     var _a;
     const tempFunction = `mock_${v4()}`;
     const eventFunction = fn();
@@ -142,23 +142,77 @@ async function mockEventListener(locatorOrHandle, eventName) {
         return eventFunction;
     }
     let page;
-    const evalFunc = (node, { tempFunction, eventName }) => {
-        //@ts-ignore
-        node.addEventListener(eventName, () => window[tempFunction]());
+    const evalFunc = (node, { tempFunction, eventName, fullEvent }) => {
+        // Stringify Event https://stackoverflow.com/a/58416333
+        function stringifyObject(object, maxDepth = 4, currentDepth = 0) {
+            if (currentDepth > maxDepth)
+                return object === null || object === void 0 ? void 0 : object.toString();
+            const obj = {};
+            for (const key in object) {
+                let value = object[key];
+                if (value instanceof Node)
+                    if (value instanceof Element) {
+                        value = value.outerHTML;
+                    }
+                    else if (value.textContent) {
+                        value = value.textContent;
+                    }
+                    else if (value.id) {
+                        value = { id: value.id };
+                    }
+                    else {
+                        value = value.toString();
+                    }
+                else if (value instanceof Window) {
+                    value = 'Window';
+                }
+                else if (value instanceof Object) {
+                    value = stringifyObject(value, maxDepth, currentDepth + 1);
+                }
+                obj[key] = value;
+            }
+            return currentDepth ? obj : JSON.stringify(obj);
+        }
+        node.addEventListener(eventName, (e) => {
+            const eData = fullEvent ? stringifyObject(e) : '';
+            // console.log(e);
+            // console.log(eData);
+            //@ts-ignore
+            window[tempFunction](eData);
+        });
+    };
+    const pageFunction = (e) => {
+        eventFunction();
+        if (callback) {
+            callback(JSON.parse(e));
+        }
     };
     if (locatorOrHandle.ownerFrame) {
         const handle = locatorOrHandle;
         page = (_a = (await handle.ownerFrame())) === null || _a === void 0 ? void 0 : _a.page();
-        await page.exposeFunction(tempFunction, () => eventFunction());
-        await handle.evaluate(evalFunc, { tempFunction, eventName });
+        await page.exposeFunction(tempFunction, pageFunction);
+        await handle.evaluate(evalFunc, { tempFunction, eventName, fullEvent: Boolean(callback) });
     }
     else {
         const locator = locatorOrHandle;
         page = locator.page();
-        await page.exposeFunction(tempFunction, () => eventFunction());
-        await locator.evaluate(evalFunc, { tempFunction, eventName });
+        await page.exposeFunction(tempFunction, pageFunction);
+        await locator.evaluate(evalFunc, { tempFunction, eventName, fullEvent: Boolean(callback) });
     }
     return eventFunction;
 }
-export { expect, withCoverage, getStoryArgs, mockEventListener /*keyboardCopy, keyboardPaste, clipboardCopy*/ };
+function createWaitHandle() {
+    let resolveFn;
+    let rejectFn;
+    const promise = new Promise((resolve, reject) => {
+        resolveFn = resolve;
+        rejectFn = reject;
+    });
+    return {
+        completed: promise,
+        release: resolveFn,
+        error: rejectFn
+    };
+}
+export { expect, withCoverage, getStoryArgs, mockEventListener, createWaitHandle /*keyboardCopy, keyboardPaste, clipboardCopy*/ };
 //# sourceMappingURL=JestPlaywright.js.map

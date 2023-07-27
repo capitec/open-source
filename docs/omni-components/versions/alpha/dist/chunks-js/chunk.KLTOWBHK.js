@@ -1,4 +1,4 @@
-import{a as n}from"./chunk.LUCH4Y6K.js";import{i as m}from"./chunk.PNTHLTQK.js";import{b as i}from"./chunk.S2K25ADN.js";import{a as f,b as o,e as r}from"./chunk.L3RZWW2F.js";import{j as t,m as d,p as c}from"./chunk.BF43NN75.js";d();c();var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1;this.clearable=!1}_clearValue(l){if(this.disabled)return l.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0})),l.stopPropagation()}static get styles(){return[f`
+import{a as n}from"./chunk.LUCH4Y6K.js";import{i as m}from"./chunk.PNTHLTQK.js";import{b as a}from"./chunk.S2K25ADN.js";import{a as f,b as o,e as r}from"./chunk.L3RZWW2F.js";import{j as t,m as s,p as c}from"./chunk.BF43NN75.js";s();c();var e=class extends m{constructor(){super(...arguments);this.value=null;this.disabled=!1;this.clearable=!1}_clearValue(l){if(this.disabled)return l.stopImmediatePropagation();this.value="",this.dispatchEvent(new Event("change",{bubbles:!0,composed:!0})),l.stopPropagation()}static get styles(){return[f`
                 ${super.styles}
 
                 :host {
@@ -87,44 +87,49 @@ import{a as n}from"./chunk.LUCH4Y6K.js";import{i as m}from"./chunk.PNTHLTQK.js";
                     border-color: var(--omni-form-focussed-border-color, var(--omni-primary-active-color));
                 }
 
-                :host([value]:not([value=''])) .layout  > .label,
+                :host([value]:not([value=''])) .container:not(.no-float-label) .layout  > .label,
+                .container.float-label .layout  > .label,
                 .layout:focus-within > .label:not(.focused-static)
                 {
                     top: 0px;
                     margin-left: var(--omni-form-focussed-label-margin-left, 10px);
                 }
-
+                
                 .layout:focus-within > .label {
                     color: var(--omni-form-focussed-label-color, var(--omni-primary-color));
                 }
-
-                :host([value]:not([value=''])) .layout  > .label.error,
+                
+                :host([value]:not([value=''])) .container:not(.no-float-label) .layout  > .label.error,
+                .container.float-label .layout  > .label.error,
                 .layout:focus-within > .label.error {
                     color: var(--omni-form-focussed-error-label-color, var(--omni-error-font-color));
                 }
-            
-                :host([value]:not([value=''])) .layout  > .label > div::before,
+                
+                :host([value]:not([value=''])) .container:not(.no-float-label) .layout  > .label > div::before,
+                .container.float-label .layout  > .label > div::before,
                 .layout:focus-within > .label:not(.focused-static) > div::before
                 {
                     content: "";
-					display: block;           
-					background-color: var(--omni-form-focussed-label-background-color, var(--omni-background-color));
-					position: absolute;
-					left: calc(var(--omni-form-focussed-label-padding-left, 3px) * -1);
-					right: calc(var(--omni-form-focussed-label-padding-right, 3px) * -1);
-    				height: 50%;
-					z-index: -1;
+                    display: block;           
+                    background-color: var(--omni-form-focussed-label-background-color, var(--omni-background-color));
+                    position: absolute;
+                    left: calc(var(--omni-form-focussed-label-padding-left, 3px) * -1);
+                    right: calc(var(--omni-form-focussed-label-padding-right, 3px) * -1);
+                    height: 50%;
+                    z-index: -1;
                     top:50%;
                     width: calc(100% + var(--omni-form-focussed-label-padding-left, 3px) + var(--omni-form-focussed-label-padding-right, 3px));
                 }
-
-                :host([value]:not([value=''])) .layout.disabled  > .label > div::before,
+                
+                :host([value]:not([value=''])) .container:not(.no-float-label) .layout.disabled  > .label > div::before,
+                .container.float-label .layout.disabled  > .label > div::before,
                 .layout.disabled:focus-within > .label > div::before 
                 {
                     background-color: var(--omni-form-focussed-label-disabled-background-color, var(--omni-disabled-background-color));
                 }
-
-                :host([value]:not([value=''])) .layout  > .label > div,
+                
+                :host([value]:not([value=''])) .container:not(.no-float-label) .layout  > .label > div,
+                .container.float-label .layout  > .label > div,
                 .layout:focus-within > .label > div {
                     transform: scale(var(--omni-form-focussed-label-transform-scale), 0.9);
                     transform-origin: center left;
@@ -242,7 +247,7 @@ import{a as n}from"./chunk.LUCH4Y6K.js";import{i as m}from"./chunk.PNTHLTQK.js";
                     display: flex;
                     align-items: center;
                 }
-            `]}render(){var a;let l={layout:!0,error:(a=this.error)!=null?a:!1,disabled:this.disabled};return o`
+            `]}render(){var i;let l={layout:!0,error:(i=this.error)!=null?i:!1,disabled:this.disabled};return o`
             <div class="container">
                 <div class=${n(l)}>
                     <div class="border"></div>
@@ -255,7 +260,7 @@ import{a as n}from"./chunk.LUCH4Y6K.js";import{i as m}from"./chunk.PNTHLTQK.js";
                 </div>
                 ${this.renderHint()} ${this.renderError()}
             </div>
-        `}renderPrefix(){return r}renderContent(){return r}renderLabel(l=!1){var s;let a={label:!0,error:(s=this.error)!=null?s:!1,disabled:this.disabled,"focused-static":l};return o`${this.label?o`<div class=${n(a)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}renderClear(){return o`
+        `}renderPrefix(){return r}renderContent(){return r}renderLabel(l=!1){var d;let i={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":l};return o`${this.label?o`<div class=${n(i)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}renderClear(){return o`
         <div class="clear-control">
             ${this.clearable&&this.value&&!this.disabled?o`
             <div id="clear-click" class="clear-click" @click="${l=>this._clearValue(l)}">
@@ -263,5 +268,5 @@ import{a as n}from"./chunk.LUCH4Y6K.js";import{i as m}from"./chunk.PNTHLTQK.js";
                         <omni-clear-icon class="clear-icon"></omni-clear-icon>
                     </slot>
             </div>`:r}
-        </div>`}};t([i({type:String,reflect:!0})],e.prototype,"label",2),t([i({reflect:!0})],e.prototype,"value",2),t([i({type:Object,reflect:!0})],e.prototype,"data",2),t([i({type:String,reflect:!0})],e.prototype,"hint",2),t([i({type:String,reflect:!0})],e.prototype,"error",2),t([i({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([i({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
-//# sourceMappingURL=chunk.INUETMMB.js.map
+        </div>`}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({reflect:!0})],e.prototype,"value",2),t([a({type:Object,reflect:!0})],e.prototype,"data",2),t([a({type:String,reflect:!0})],e.prototype,"hint",2),t([a({type:String,reflect:!0})],e.prototype,"error",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
+//# sourceMappingURL=chunk.KLTOWBHK.js.map

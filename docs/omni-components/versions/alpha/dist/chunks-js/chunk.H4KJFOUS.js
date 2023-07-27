@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.5DQX5M47.js";import{a as u}from"./chunk.INUETMMB.js";import{a as c}from"./chunk.LB764BBD.js";import{a as f}from"./chunk.LUCH4Y6K.js";import{a as d,b as a,c as l,d as p}from"./chunk.S2K25ADN.js";import{a as s,b as t}from"./chunk.L3RZWW2F.js";import{j as i,m as n,p as r}from"./chunk.BF43NN75.js";n();r();var o=class extends u{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("focus",this._focusInput.bind(this),{capture:!0})}_focusInput(){let e=this._inputElement;e&&setTimeout(function(){e.selectionStart=e.selectionEnd=1e4},0)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}_iconClicked(e){if(this.disabled)return e.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",e.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as x}from"./chunk.KLTOWBHK.js";import{a as w}from"./chunk.LB764BBD.js";import{a as _}from"./chunk.LUCH4Y6K.js";import{a as b,b as s,c as y,d as r}from"./chunk.S2K25ADN.js";import{a as g,b as o}from"./chunk.L3RZWW2F.js";import{j as i,m as h,p as v}from"./chunk.BF43NN75.js";h();v();var t=class extends x{constructor(){var e;super();this.type="password";this._value="";this._value=(e=this.value)!=null?e:"",Object.defineProperty(this,"value",{get:()=>this._value,set:n=>{var a,l,d,p,c,f,m,u;this._value=n!=null?n:"",this._setInputValue(),this._value?((l=(a=this.container)==null?void 0:a.classList)==null||l.add("float-label"),(p=(d=this.container)==null?void 0:d.classList)==null||p.remove("no-float-label")):((f=(c=this.container)==null?void 0:c.classList)==null||f.remove("float-label"),(u=(m=this.container)==null?void 0:m.classList)==null||u.add("no-float-label")),this.requestUpdate()}})}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("focus",this._focusInput.bind(this),{capture:!0})}async firstUpdated(){this._setInputValue()}_setInputValue(){this._inputElement&&(this._inputElement.value=this.value)}_focusInput(){let e=this._inputElement;e&&setTimeout(function(){e.selectionStart=e.selectionEnd=1e4},0)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}_iconClicked(e){if(this.disabled)return e.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",e.stopPropagation()}static get styles(){return[super.styles,g`
                 .control-box {
                     display: flex;
                     align-items: center;
@@ -59,18 +59,17 @@ import{a as m}from"./chunk.5DQX5M47.js";import{a as u}from"./chunk.INUETMMB.js";
                 .field.error {
                     color: var(--omni-password-field-error-font-color, var(--omni-font-color));
                 }
-            `]}renderControl(){return t`
+            `]}renderControl(){return o`
       <div class="control-box" @click="${e=>this._iconClicked(e)}">
-        ${this.type==="password"?t` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `:t` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `}
+        ${this.type==="password"?o` <slot name="show"><omni-eye-visible-icon class="show-icon"></omni-eye-visible-icon></slot> `:o` <slot name="hide"><omni-eye-hidden-icon class="hide-icon"></omni-eye-hidden-icon></slot> `}
       </div>
-    `}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return t`
+    `}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return o`
       <input
-        class=${f(e)}
+        class=${_(e)}
         id="inputField"
         .type="${this.type}"
-        inputmode="${c(this.noNativeKeyboard?"none":void 0)}"
-        .value=${m(this.value)}
+        inputmode="${w(this.noNativeKeyboard?"none":void 0)}"
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
-    `}};i([l()],o.prototype,"type",2),i([a({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],o.prototype,"noNativeKeyboard",2),i([p("#inputField")],o.prototype,"_inputElement",2),o=i([d("omni-password-field")],o);export{o as a};
-//# sourceMappingURL=chunk.IACLMTZQ.js.map
+    `}};i([y()],t.prototype,"type",2),i([s({type:String,reflect:!1})],t.prototype,"value",2),i([s({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),i([r("#inputField")],t.prototype,"_inputElement",2),i([r(".container")],t.prototype,"container",2),t=i([b("omni-password-field")],t);export{t as a};
+//# sourceMappingURL=chunk.H4KJFOUS.js.map

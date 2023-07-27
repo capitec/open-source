@@ -1,4 +1,4 @@
-import{a as u}from"./chunk.5DQX5M47.js";import{a as p}from"./chunk.INUETMMB.js";import{a as f}from"./chunk.LB764BBD.js";import{a as m}from"./chunk.LUCH4Y6K.js";import{a as l,b as d,d as s}from"./chunk.S2K25ADN.js";import{a as r,b as a}from"./chunk.L3RZWW2F.js";import{j as i,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var t=class extends p{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value,this.requestUpdate()}static get styles(){return[super.styles,r`
+import{a as u}from"./chunk.5DQX5M47.js";import{a as p}from"./chunk.KLTOWBHK.js";import{a as f}from"./chunk.LB764BBD.js";import{a as m}from"./chunk.LUCH4Y6K.js";import{a as l,b as d,d as s}from"./chunk.S2K25ADN.js";import{a as r,b as a}from"./chunk.L3RZWW2F.js";import{j as i,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var t=class extends p{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value,this.requestUpdate()}static get styles(){return[super.styles,r`
                 .field {
                     flex: 1 1 auto;
 
@@ -37,4 +37,4 @@ import{a as u}from"./chunk.5DQX5M47.js";import{a as p}from"./chunk.INUETMMB.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};i([s("#inputField")],t.prototype,"_inputElement",2),i([d({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),t=i([l("omni-text-field")],t);export{t as a};
-//# sourceMappingURL=chunk.7FHJKXMC.js.map
+//# sourceMappingURL=chunk.24VLDTBM.js.map

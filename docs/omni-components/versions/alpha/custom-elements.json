@@ -14800,7 +14800,7 @@
               ],
               "return": {
                 "type": {
-                  "text": "string"
+                  "text": "any"
                 }
               }
             },
@@ -14837,6 +14837,23 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "_setValue",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
             },
             {
               "kind": "method",

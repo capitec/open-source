@@ -14800,7 +14800,7 @@
               ],
               "return": {
                 "type": {
-                  "text": "string"
+                  "text": "any"
                 }
               }
             },
@@ -14837,6 +14837,23 @@
                   }
                 }
               ]
+            },
+            {
+              "kind": "method",
+              "name": "_setValue",
+              "parameters": [
+                {
+                  "name": "value",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
             },
             {
               "kind": "method",
@@ -19429,6 +19446,21 @@
           "members": [
             {
               "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown> | undefined"
+              },
+              "default": "null as unknown",
+              "description": "Override for the value property inherited from the OmniFormElement component with reflect set to false.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
               "name": "noNativeKeyboard",
               "type": {
                 "text": "boolean | undefined"
@@ -19444,6 +19476,32 @@
                 "text": "HTMLInputElement | undefined"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "container",
+              "type": {
+                "text": "HTMLDivElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_value",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
+            },
+            {
+              "kind": "method",
+              "name": "_setInputValue",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
             },
             {
               "kind": "method",
@@ -19534,21 +19592,6 @@
               },
               "description": "Text label.",
               "attribute": "label",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string | number | Record<string, unknown> | undefined"
-              },
-              "default": "null as unknown",
-              "description": "Value entered into the form component.",
-              "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
                 "name": "OmniFormElement",
@@ -19808,6 +19851,20 @@
               "attribute": "no-native-keyboard"
             },
             {
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown> | undefined"
+              },
+              "default": "null as unknown",
+              "description": "Override for the value property inherited from the OmniFormElement component with reflect set to false.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "label",
               "type": {
                 "text": "string | undefined"
@@ -19815,20 +19872,6 @@
               "description": "Text label.",
               "fieldName": "label",
               "attribute": "label",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string | number | Record<string, unknown> | undefined"
-              },
-              "default": "null as unknown",
-              "description": "Value entered into the form component.",
-              "fieldName": "value",
-              "attribute": "value",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
@@ -20116,6 +20159,21 @@
             },
             {
               "kind": "field",
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown> | undefined"
+              },
+              "default": "null as unknown",
+              "description": "Override for the value property inherited from the OmniFormElement component with reflect set to false.",
+              "attribute": "value",
+              "reflects": true,
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
+              }
+            },
+            {
+              "kind": "field",
               "name": "maxLength",
               "type": {
                 "text": "number | undefined"
@@ -20129,6 +20187,14 @@
               "name": "_inputElement",
               "type": {
                 "text": "HTMLInputElement | undefined"
+              },
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "container",
+              "type": {
+                "text": "HTMLDivElement | undefined"
               },
               "privacy": "private"
             },
@@ -20148,6 +20214,15 @@
                 "text": "boolean | undefined"
               },
               "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_value",
+              "type": {
+                "text": "string"
+              },
+              "privacy": "private",
+              "default": "''"
             },
             {
               "kind": "method",
@@ -20170,14 +20245,6 @@
             {
               "kind": "method",
               "name": "_sanitiseValue",
-              "parameters": [
-                {
-                  "name": "value",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
               "return": {
                 "type": {
                   "text": "void"
@@ -20297,21 +20364,6 @@
               },
               "description": "Text label.",
               "attribute": "label",
-              "reflects": true,
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "value",
-              "type": {
-                "text": "string | number | Record<string, unknown> | undefined"
-              },
-              "default": "null as unknown",
-              "description": "Value entered into the form component.",
-              "attribute": "value",
               "reflects": true,
               "inheritedFrom": {
                 "name": "OmniFormElement",
@@ -20580,6 +20632,20 @@
               "attribute": "max-length"
             },
             {
+              "name": "value",
+              "type": {
+                "text": "string | number | Record<string, unknown> | undefined"
+              },
+              "default": "null as unknown",
+              "description": "Override for the value property inherited from the OmniFormElement component with reflect set to false.",
+              "fieldName": "value",
+              "attribute": "value",
+              "inheritedFrom": {
+                "name": "OmniFormElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
+              }
+            },
+            {
               "name": "label",
               "type": {
                 "text": "string | undefined"
@@ -20587,20 +20653,6 @@
               "description": "Text label.",
               "fieldName": "label",
               "attribute": "label",
-              "inheritedFrom": {
-                "name": "OmniFormElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"
-              }
-            },
-            {
-              "name": "value",
-              "type": {
-                "text": "string | number | Record<string, unknown> | undefined"
-              },
-              "default": "null as unknown",
-              "description": "Value entered into the form component.",
-              "fieldName": "value",
-              "attribute": "value",
               "inheritedFrom": {
                 "name": "OmniFormElement",
                 "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniFormElement.ts"

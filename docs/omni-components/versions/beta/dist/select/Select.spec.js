@@ -61,6 +61,7 @@ test(`Select - Async Per Item Behaviour`, async ({ page, isMobile }) => {
             await s.updateComplete;
         }, displayItems);
         await selectComponent.click();
+        // Added for cases where the items do not load in time before taking a screenshot.
         await page.waitForTimeout(200);
         await expect(selectComponent).toHaveScreenshot('select-open.png');
         if (isMobile) {
@@ -149,6 +150,7 @@ test(`Select - Selection Render Behaviour`, async ({ page, isMobile }) => {
         const item = selectComponent.locator('.item').first();
         await expect(item).toHaveCount(1);
         await item.click();
+        // Added timeout to wait for items to render.
         await page.waitForTimeout(100);
         const selectionRender = selectComponent.locator('omni-render-element');
         await expect(selectComponent).toHaveAttribute('value', argItems[0]);

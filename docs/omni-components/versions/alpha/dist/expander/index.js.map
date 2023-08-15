@@ -1,6 +1,6 @@
 {
   "version": 3,
   "sources": ["../../src/expander/index.ts"],
-  "mappings": "4TAAAA,IAAAC",
+  "mappings": "0YAAAA,IAAAC",
   "names": ["init_define_process_argv", "init_global"]
 }

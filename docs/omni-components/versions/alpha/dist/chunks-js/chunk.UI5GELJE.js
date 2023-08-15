@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.6C4LMRM7.js";import{a as p,b as t}from"./chunk.S2K25ADN.js";import{a as o,b as n,e as l}from"./chunk.L3RZWW2F.js";import{j as i,m as r,p as d}from"./chunk.BF43NN75.js";r();d();var e=class extends s{constructor(){super(...arguments);this.buttonAlignment="right"}connectedCallback(){super.connectedCallback(),this.addEventListener("animationend",this._animationCompleted.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("animationend",this._animationCompleted.bind(this)),super.disconnectedCallback()}_headerClick(a){a.stopPropagation(),!this.disabled&&(this.expanded?this._collapse():this._expand())}_animationCompleted(){this.hasAttribute("expanding")&&(this.removeAttribute("expanding"),this.expanded=!0),this.hasAttribute("collapsing")&&(this.removeAttribute("collapsing"),this.expanded=!1)}_expand(){this.expanded===!0||this.hasAttribute("expanding")||(this.removeAttribute("collapsing"),this.setAttribute("expanding",""),this.dispatchEvent(new CustomEvent("expand",{detail:{label:this.label}})))}_collapse(){this.expanded===!1||this.hasAttribute("collapsing")||(this.removeAttribute("expanding"),this.setAttribute("collapsing",""),this.dispatchEvent(new CustomEvent("collapse",{detail:{label:this.label}})))}static get styles(){return[super.styles,o`
+import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25ADN.js";import{a as o,b as i,e as l}from"./chunk.L3RZWW2F.js";import{j as t,m as r,p as d}from"./chunk.BF43NN75.js";r();d();var e=class extends p{constructor(){super(...arguments);this.buttonAlignment="right"}connectedCallback(){super.connectedCallback(),this.addEventListener("animationend",this._animationCompleted.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("animationend",this._animationCompleted.bind(this)),super.disconnectedCallback()}_headerClick(n){n.stopPropagation(),!this.disabled&&(this.expanded?this._collapse():this._expand())}_animationCompleted(){this.hasAttribute("expanding")&&(this.removeAttribute("expanding"),this.expanded=!0),this.hasAttribute("collapsing")&&(this.removeAttribute("collapsing"),this.expanded=!1)}_expand(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!0||this.hasAttribute("expanding"))return;this.removeAttribute("collapsing"),this.setAttribute("expanding","")}else this.expanded=!0;this.dispatchEvent(new CustomEvent("expand",{detail:{label:this.label}}))}_collapse(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!1||this.hasAttribute("collapsing"))return;this.removeAttribute("expanding"),this.setAttribute("collapsing","")}else this.expanded=!1;this.dispatchEvent(new CustomEvent("collapse",{detail:{label:this.label}}))}static get styles(){return[super.styles,o`
 				:host {
 					min-height: var(--omni-expander-header-min-height, 50px);
 					max-height: var(--omni-expander-header-max-height, 50px);
@@ -170,6 +170,16 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as p,b as t}from"./chunk.S2K25A
 					animation-fill-mode: forwards;
 				}
 
+                @media (prefers-reduced-motion) {
+                    :host([expanding]) {
+                        animation: unset;
+                    }
+
+                    :host([collapsing]) {
+                        animation: unset;
+                    }
+                }
+
                 @keyframes expand {
 					0% {
 						max-height: var(--omni-expander-header-height, 50px);
@@ -196,21 +206,21 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as p,b as t}from"./chunk.S2K25A
 					}
 				}
 
-            `]}render(){return n`
-        <div class="header" @click="${a=>this._headerClick(a)}">
+            `]}render(){return i`
+        <div class="header" @click="${n=>this._headerClick(n)}">
             ${this._renderHeader()}
         </div>
         <div class="expander-content">
             <slot></slot>
         </div>		
 
-        `}_renderHeader(){return n`
-        ${this.buttonAlignment==="left"?n`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
-        ${this.label?n`<omni-label label="${this.label}"></omni-label>`:l}
-        ${this.buttonAlignment==="right"?n`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
-        `}_renderIcon(){return n`
+        `}_renderHeader(){return i`
+        ${this.buttonAlignment==="left"?i`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
+        ${this.label?i`<omni-label label="${this.label}"></omni-label>`:l}
+        ${this.buttonAlignment==="right"?i`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
+        `}_renderIcon(){return i`
         <div class='header-icon-container'>
             <slot name='header-icon'></slot>
         </div>
-        `}};i([t({type:String,reflect:!0})],e.prototype,"label",2),i([t({type:Boolean,reflect:!0})],e.prototype,"expanded",2),i([t({type:Boolean,reflect:!0})],e.prototype,"disabled",2),i([t({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=i([p("omni-expander")],e);export{e as a};
-//# sourceMappingURL=chunk.F42DS2PW.js.map
+        `}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({type:Boolean,reflect:!0})],e.prototype,"expanded",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=t([s("omni-expander")],e);export{e as a};
+//# sourceMappingURL=chunk.UI5GELJE.js.map

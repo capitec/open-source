@@ -17620,6 +17620,18 @@
               "name": "--omni-expander-header-hover-background"
             },
             {
+              "description": "Expander header label font color.",
+              "name": "--omni-expander-header-label-font-color"
+            },
+            {
+              "description": "Expander header label font size.",
+              "name": "--omni-expander-header-label-font-size"
+            },
+            {
+              "description": "Expander header label font weight.",
+              "name": "--omni-expander-header-label-font-weight"
+            },
+            {
               "description": "Expander header disabled background.",
               "name": "--omni-expander-header-disabled-background"
             },

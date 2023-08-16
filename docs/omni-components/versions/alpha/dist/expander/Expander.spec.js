@@ -4,14 +4,13 @@ test(`Expander - Visual and Behaviour`, async ({ page }) => {
         await page.goto('/components/expander/');
         const expander = page.locator('.Interactive').getByTestId('test-expander');
         await expect(expander).toHaveScreenshot('expander-initial.png');
-        const animantionEnd = await mockEventListener(expander, 'animationend');
+        await expect(expander).not.toHaveAttribute('expanded', '');
         const expanderHeader = expander.locator('.header');
         await expanderHeader.click();
         await expect(expander).toHaveAttribute('expanded', '');
         await expect(expander).toHaveScreenshot('expander-expanded.png');
         await expanderHeader.click();
-        await page.waitForTimeout(600);
-        await expect(animantionEnd).toBeCalledTimes(2);
+        await expect(expander).not.toHaveAttribute('expanded', '');
     });
 });
 test(`Expander - Disabled Behaviour`, async ({ page }) => {

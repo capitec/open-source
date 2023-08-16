@@ -27,4 +27,4 @@ import{h as m}from"./chunk.6C4LMRM7.js";import{a as l,b as c,c as p}from"./chunk
                 <slot></slot>
             </div>
         `}};i([c({type:String,reflect:!0,attribute:"expand-mode"})],r.prototype,"expandMode",2),i([p()],r.prototype,"_observer",2),r=i([l("omni-expander-group")],r);export{r as a};
-//# sourceMappingURL=chunk.JI6JRLQR.js.map
+//# sourceMappingURL=chunk.6B5YB3N7.js.map

@@ -17994,6 +17994,20 @@
               "name": "--omni-expander-group-container-margin-bottom"
             }
           ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Default slot to slot multiple expanders.",
+              "name": "[Default Slot]"
+            }
+          ],
           "members": [
             {
               "kind": "field",
@@ -18139,17 +18153,7 @@
           },
           "tagName": "omni-expander-group",
           "import": "```js\nimport '@capitec/omni-components/expander';\n```",
-          "customElement": true,
-          "slots": [
-            {
-              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
-              "name": "loading_indicator",
-              "inheritedFrom": {
-                "name": "OmniElement",
-                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
-              }
-            }
-          ]
+          "customElement": true
         }
       ],
       "exports": [
@@ -18216,7 +18220,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-expander data-testid=\"test-expander\" label=\"${ifNotEmpty(args.label)}\">\n        <svg slot=\"expand-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander${args.label ? ` label='${args.label}'` : ''}>\n    <svg slot=\"expand-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Slotted Expand Icon',\n    description: 'Custom slotted expand icon',\n    args: {\n        label: 'Slotted Expand Icon'\n    }\n}",
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander data-testid=\"test-expander\" label=\"${ifNotEmpty(args.label)}\">\n        ${unsafeHTML(args.expand_icon)}\n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniExpander${args.label ? ` label='${args.label}'` : ''}>\n    <svg slot=\"expand-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Slotted Expand Icon',\n    description: 'Custom slotted expand icon',\n    args: {\n        label: 'Slotted Expand Icon',\n        expand_icon: raw`<svg slot=\"expand-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>`\n    }\n}",
           "description": "Custom slotted expand icon"
         },
         {
@@ -18225,7 +18229,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-expander data-testid=\"test-expander\" label=\"${ifNotEmpty(args.label)}\">\n        <svg slot=\"header-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander${args.label ? ` label='${args.label}'` : ''}>\n    <svg slot=\"header-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Slotted Header Icon',\n    description: 'Custom slotted header icon',\n    args: {\n        label: 'Slotted Header Icon'\n    }\n}",
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander data-testid=\"test-expander\" label=\"${ifNotEmpty(args.label)}\">\n        ${unsafeHTML(args.header_icon)}       \n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander${args.label ? ` label='${args.label}'` : ''}>\n    <svg slot=\"header-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Slotted Header Icon',\n    description: 'Custom slotted header icon',\n    args: {\n        label: 'Slotted Header Icon',\n        header_icon: raw`<svg slot=\"header-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>`\n    }\n}",
           "description": "Custom slotted header icon"
         }
       ],
@@ -18305,7 +18309,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-expander-group\n    data-testid=\"test-expander-group\"\n    expand-mode=\"${args.expandMode}\"\n    >\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-expander-group>\n    `,\n    name: 'Expand Mode',\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpanderGroup, OmniExpander } from \"@capitec/omni-components-react/expander\";\n            import { OmniLabel } from \"@capitec/omni-components-react/label\";\n        \n            const App = () => <OmniExpanderGroup ${args.expandMode ? ` expand-mode='${args.expandMode}'` : ''}>\n            <OmniExpander label=\"First Expander\">\n             <OmniLabel label=\"First expander content\"></OmniLabel>\n            </OmniExpander>\n            <OmniExpander label=\"Second Expander\">\n             <OmniLabel label=\"Second expander content\"></OmniLabel>\n            </OmniExpander>\n            </OmniExpanderGroup>;`\n        }\n    ],\n    description: () => html`<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> opens one <code class=\"language-html\">&lt;omni-expander&gt;</code> by default, to expand mutiple set the attribute <code class=\"language-js\">expand-mode=\"multiple\"</code>. \n    </p>`,\n    args: {\n        expandMode: 'multiple',\n        '[Default Slot]': raw`<omni-expander label=\"First Expander\">\n            <omni-label label=\"First expander content\"></omni-label>\n        </omni-expander>\n        <omni-expander label=\"Second Expander\">\n            <omni-label label=\"Second expander content\"></omni-label>\n        </omni-expander>`\n    }\n}",
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander-group\n    data-testid=\"test-expander-group\"\n    expand-mode=\"${args.expandMode}\"\n    >\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-expander-group>\n    `,\n    name: 'Expand Mode',\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpanderGroup, OmniExpander } from \"@capitec/omni-components-react/expander\";\n            import { OmniLabel } from \"@capitec/omni-components-react/label\";\n        \nconst App = () => \n<OmniExpanderGroup ${args.expandMode ? ` expand-mode='${args.expandMode}'` : ''}>\n    <OmniExpander label=\"First Expander\">\n        <OmniLabel label=\"First expander content\"></OmniLabel>\n    </OmniExpander>\n    <OmniExpander label=\"Second Expander\">\n        <OmniLabel label=\"Second expander content\"></OmniLabel>\n    </OmniExpander>\n</OmniExpanderGroup>;`\n        }\n    ],\n    description: () => html`<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> opens one <code class=\"language-html\">&lt;omni-expander&gt;</code> by default, to expand mutiple set the attribute <code class=\"language-js\">expand-mode=\"multiple\"</code>. \n    </p>`,\n    args: {\n        expandMode: 'multiple',\n        '[Default Slot]': raw`<omni-expander label=\"First Expander\">\n            <omni-label label=\"First expander content\"></omni-label>\n        </omni-expander>\n        <omni-expander label=\"Second Expander\">\n            <omni-label label=\"Second expander content\"></omni-label>\n        </omni-expander>`\n    }\n}",
           "description": "<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> opens one <code class=\"language-html\">&lt;omni-expander&gt;</code> by default, to expand mutiple set the attribute <code class=\"language-js\">expand-mode=\"multiple\"</code>. \n    </p>"
         }
       ],

@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as t,m as o,p as i}from"./chunk.BF43NN75.js";o();i();var a=class extends s{static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25ADN.js";import{a as d,b as r,e as n}from"./chunk.L3RZWW2F.js";import{j as t,m as o,p as i}from"./chunk.BF43NN75.js";o();i();var a=class extends s{static get styles(){return[super.styles,d`
 
                 /* host styles */
                 :host {
@@ -6,6 +6,8 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                     font-family: var(--omni-tab-header-font-family, var(--omni-font-family));
                     font-size: var(--omni-tab-header-font-size, var(--omni-font-size));
                     font-weight: var(--omni-tab-header-font-weight, var(--omni-font-weight));
+                    width: var(--omni-tab-header-width, 100%);
+                    height: var(--omni-tab-header-height, 100%);
                     cursor: pointer;
 
                 }
@@ -64,7 +66,7 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                 <slot></slot>
             </div>
             <div class="indicator-bar">
-                ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:d}
+                ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:n}
             </div>
         `}};t([e({type:String,reflect:!0})],a.prototype,"for",2),t([e({type:Object,reflect:!1})],a.prototype,"data",2),a=t([h("omni-tab-header")],a);export{a};
-//# sourceMappingURL=chunk.QNDZZT7F.js.map
+//# sourceMappingURL=chunk.F7PW7Z4H.js.map

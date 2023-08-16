@@ -24494,6 +24494,14 @@
               "name": "--omni-tab-header-font-weight"
             },
             {
+              "description": "Tab header height.",
+              "name": "--omni-tab-header-height"
+            },
+            {
+              "description": "Tab header width.",
+              "name": "--omni-tab-header-width"
+            },
+            {
               "description": "Tab header disabled cursor.",
               "name": "--omni-tab-header-disabled-cursor"
             },
@@ -24747,6 +24755,14 @@
             {
               "description": "Tab header font weight.",
               "name": "--omni-tab-header-font-weight"
+            },
+            {
+              "description": "Tab header height.",
+              "name": "--omni-tab-header-height"
+            },
+            {
+              "description": "Tab header width.",
+              "name": "--omni-tab-header-width"
             },
             {
               "description": "Tab header disabled cursor.",

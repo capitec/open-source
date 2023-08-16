@@ -24285,6 +24285,12 @@
           "kind": "class",
           "description": "Control that can be used to display slotted content, for use within an Tab Group component.",
           "name": "Tab",
+          "cssProperties": [
+            {
+              "description": "Tab background.",
+              "name": "--omni-tab-background-color"
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",

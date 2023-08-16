@@ -100,7 +100,7 @@ import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25A
                     padding: var(--omni-expander-header-icon-container-padding, 10px 10px);
                 }
 
-                ::slotted([slot='header_icon']) {
+                ::slotted([slot='header-icon']) {
                     width: var(--omni-expander-header-icon-slot-width, 20px);
                     height: var(--omni-expander-header-icon-slot-height, 20px);
                 }
@@ -223,4 +223,4 @@ import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25A
             <slot name='header-icon'></slot>
         </div>
         `}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({type:Boolean,reflect:!0})],e.prototype,"expanded",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=t([s("omni-expander")],e);export{e as a};
-//# sourceMappingURL=chunk.UI5GELJE.js.map
+//# sourceMappingURL=chunk.ME5ELBQO.js.map

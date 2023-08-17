@@ -17660,6 +17660,10 @@
               "name": "--omni-expander-content-closed-padding-bottom"
             },
             {
+              "description": "Bottom border of the expander content.",
+              "name": "--omni-expander-content-expanded-border-bottom"
+            },
+            {
               "description": "Expander header icon container padding.",
               "name": "--omni-expander-header-icon-container-padding"
             },

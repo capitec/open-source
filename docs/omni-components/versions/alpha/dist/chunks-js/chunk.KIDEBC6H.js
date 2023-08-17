@@ -1,9 +1,9 @@
-import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25ADN.js";import{a as o,b as i,e as l}from"./chunk.L3RZWW2F.js";import{j as t,m as r,p as d}from"./chunk.BF43NN75.js";r();d();var e=class extends p{constructor(){super(...arguments);this.buttonAlignment="right"}connectedCallback(){super.connectedCallback(),this.addEventListener("animationend",this._animationCompleted.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("animationend",this._animationCompleted.bind(this)),super.disconnectedCallback()}_headerClick(n){n.stopPropagation(),!this.disabled&&(this.expanded?this._collapse():this._expand())}_animationCompleted(){this.hasAttribute("expanding")&&(this.removeAttribute("expanding"),this.expanded=!0),this.hasAttribute("collapsing")&&(this.removeAttribute("collapsing"),this.expanded=!1)}_expand(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!0||this.hasAttribute("expanding"))return;this.removeAttribute("collapsing"),this.setAttribute("expanding","")}else this.expanded=!0;this.dispatchEvent(new CustomEvent("expand",{detail:{label:this.label}}))}_collapse(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!1||this.hasAttribute("collapsing"))return;this.removeAttribute("expanding"),this.setAttribute("collapsing","")}else this.expanded=!1;this.dispatchEvent(new CustomEvent("collapse",{detail:{label:this.label}}))}static get styles(){return[super.styles,o`
+import{h as s}from"./chunk.6C4LMRM7.js";import{a as l,b as o}from"./chunk.S2K25ADN.js";import{a,b as t,e as p}from"./chunk.L3RZWW2F.js";import{j as i,m as r,p as d}from"./chunk.BF43NN75.js";r();d();var e=class extends s{constructor(){super(...arguments);this.buttonAlignment="right"}connectedCallback(){super.connectedCallback(),this.addEventListener("animationend",this._animationCompleted.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("animationend",this._animationCompleted.bind(this)),super.disconnectedCallback()}_headerClick(n){n.stopPropagation(),!this.disabled&&(this.expanded?this._collapse():this._expand())}_animationCompleted(){this.hasAttribute("expanding")&&(this.removeAttribute("expanding"),this.expanded=!0),this.hasAttribute("collapsing")&&(this.removeAttribute("collapsing"),this.expanded=!1)}_expand(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!0||this.hasAttribute("expanding"))return;this.removeAttribute("collapsing"),this.setAttribute("expanding","")}else this.expanded=!0;this.dispatchEvent(new CustomEvent("expand",{detail:{label:this.label}}))}_collapse(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!1||this.hasAttribute("collapsing"))return;this.removeAttribute("expanding"),this.setAttribute("collapsing","")}else this.expanded=!1;this.dispatchEvent(new CustomEvent("collapse",{detail:{label:this.label}}))}static get styles(){return[super.styles,a`
 				:host {
 					min-height: var(--omni-expander-header-min-height, 50px);
 					max-height: var(--omni-expander-header-max-height, 50px);
 				}
-			`,o`
+			`,a`
 
             
                 :host {
@@ -86,6 +86,11 @@ import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25A
 					overflow: hidden;
 					padding-top: var(--omni-expander-content-closed-padding-top, 0px);
 					padding-bottom: var(--omni-expander-content-closed-padding-bottom, 0px);
+				}
+
+                :host([expanding]) > .expander-content,
+                :host([expanded]) > .expander-content {
+                    border-bottom: var(--omni-expander-content-expanded-border-bottom, 1px solid var(--omni-primary-color));
 				}
 
 
@@ -206,7 +211,7 @@ import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25A
 					}
 				}
 
-            `]}render(){return i`
+            `]}render(){return t`
         <div class="header" @click="${n=>this._headerClick(n)}">
             ${this._renderHeader()}
         </div>
@@ -214,13 +219,13 @@ import{h as p}from"./chunk.6C4LMRM7.js";import{a as s,b as a}from"./chunk.S2K25A
             <slot></slot>
         </div>		
 
-        `}_renderHeader(){return i`
-        ${this.buttonAlignment==="left"?i`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
-        ${this.label?i`<omni-label label="${this.label}"></omni-label>`:l}
-        ${this.buttonAlignment==="right"?i`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
-        `}_renderIcon(){return i`
+        `}_renderHeader(){return t`
+        ${this.buttonAlignment==="left"?t`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
+        ${this.label?t`<omni-label label="${this.label}"></omni-label>`:p}
+        ${this.buttonAlignment==="right"?t`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
+        `}_renderIcon(){return t`
         <div class='header-icon-container'>
             <slot name='header-icon'></slot>
         </div>
-        `}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({type:Boolean,reflect:!0})],e.prototype,"expanded",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=t([s("omni-expander")],e);export{e as a};
-//# sourceMappingURL=chunk.XSJDOJOU.js.map
+        `}};i([o({type:String,reflect:!0})],e.prototype,"label",2),i([o({type:Boolean,reflect:!0})],e.prototype,"expanded",2),i([o({type:Boolean,reflect:!0})],e.prototype,"disabled",2),i([o({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=i([l("omni-expander")],e);export{e as a};
+//# sourceMappingURL=chunk.KIDEBC6H.js.map

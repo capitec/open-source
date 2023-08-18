@@ -1,7 +1,7 @@
-import"../chunks-js/chunk.63M2GMLQ.js";import"../chunks-js/chunk.O4APVQFJ.js";import"../chunks-js/chunk.FRB67NMW.js";import"../chunks-js/chunk.MW4VXBNP.js";import{x as l}from"../chunks-js/chunk.7KM4B723.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.UHIDETPL.js";import"../chunks-js/chunk.KPSG3GC4.js";import"../chunks-js/chunk.MDYAUJ3Z.js";import"../chunks-js/chunk.VTL5CONA.js";import{a as n}from"../chunks-js/chunk.5DDJQYYG.js";import"../chunks-js/chunk.3U7QFP2Q.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as t,e as i}from"../chunks-js/chunk.L3RZWW2F.js";import{m as e,p as o}from"../chunks-js/chunk.BF43NN75.js";e();o();var I={render:a=>t`
-    <omni-tab-group class="tab-group-story-component" data-testid='test-tab-group'>
-        ${a["[Default Slot]"]?t`${`\r
-`}${n(a["[Default Slot]"])}`:i}
+import"../chunks-js/chunk.63M2GMLQ.js";import"../chunks-js/chunk.O4APVQFJ.js";import"../chunks-js/chunk.Q2ATV56U.js";import"../chunks-js/chunk.MW4VXBNP.js";import{x as l}from"../chunks-js/chunk.7KM4B723.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.UHIDETPL.js";import"../chunks-js/chunk.KPSG3GC4.js";import"../chunks-js/chunk.MDYAUJ3Z.js";import"../chunks-js/chunk.VTL5CONA.js";import{a as n}from"../chunks-js/chunk.5DDJQYYG.js";import"../chunks-js/chunk.3U7QFP2Q.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as a,e as i}from"../chunks-js/chunk.L3RZWW2F.js";import{m as e,p as o}from"../chunks-js/chunk.BF43NN75.js";e();o();var I={render:t=>a`
+    <omni-tab-group data-testid='test-tab-group'>
+        ${t["[Default Slot]"]?a`${`\r
+`}${n(t["[Default Slot]"])}`:i}
     </omni-tab-group>
 `,frameworkSources:[{framework:"React",load:()=>`import { OmniTabGroup, OmniTab, OmniTabHeader } from "@capitec/omni-components-react/tab";
 import { OmniIcon } from "@capitec/omni-components-react/icon";
@@ -73,7 +73,7 @@ const App = () =>
         <omni-tab id="right">
             <div>Right</div>
         </omni-tab>
-        `},description:()=>t`
+        `},description:()=>a`
     <div>
         For slotting custom content into the header use the <code class="language-html">&lt;omni-tab-header&gt;</code> component that targets the header slot of the <omni-hyperlink href='./components/tab-group'><code class="language-html">&lt;omni-tab-group&gt;</code></omni-hyperlink> component by setting <code class="language-js">slot="header"</code> and ensure you have a <omni-hyperlink href='./components/tab'><code class="language-html">&lt;omni-tab&gt;</code></omni-hyperlink> component which has an <code>id</code> attribute that matches the <code class="language-html">&lt;omni-tab-header&gt;</code> <code>for</code> attribute to display slotted content.
     <div>

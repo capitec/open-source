@@ -9,6 +9,7 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                     min-width: var(--omni-tab-header-min-width, 50px);
                     width: var(--omni-tab-header-width, 100%);
                     height: var(--omni-tab-header-height, 100%);
+                    padding: var(--omni-tab-header-padding);
                     cursor: pointer;
                 }
 
@@ -69,4 +70,4 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                 ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:n}
             </div>
         `}};t([e({type:String,reflect:!0})],a.prototype,"for",2),t([e({type:Object,reflect:!1})],a.prototype,"data",2),a=t([h("omni-tab-header")],a);export{a};
-//# sourceMappingURL=chunk.Q2ATV56U.js.map
+//# sourceMappingURL=chunk.VM7CJC4R.js.map

@@ -24292,7 +24292,7 @@
           "cssProperties": [
             {
               "description": "Tab background.",
-              "name": "--omni-tab-background-color"
+              "name": "--omni-tab-background"
             }
           ],
           "slots": [
@@ -24514,6 +24514,10 @@
             {
               "description": "Tab header width.",
               "name": "--omni-tab-header-width"
+            },
+            {
+              "description": "Tab header padding.",
+              "name": "--omni-tab-header-padding"
             },
             {
               "description": "Tab header disabled cursor.",
@@ -24781,6 +24785,10 @@
             {
               "description": "Tab header width.",
               "name": "--omni-tab-header-width"
+            },
+            {
+              "description": "Tab header padding.",
+              "name": "--omni-tab-header-padding"
             },
             {
               "description": "Tab header disabled cursor.",

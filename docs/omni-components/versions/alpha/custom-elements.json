@@ -17885,14 +17885,14 @@
             {
               "name": "expand",
               "type": {
-                "text": "CustomEvent<{}>"
+                "text": "CustomEvent<{ label: string; }>"
               },
               "description": "Dispatched when the expander is expanded."
             },
             {
               "name": "collapse",
               "type": {
-                "text": "CustomEvent<{}>"
+                "text": "CustomEvent<{ label: string; }>"
               },
               "description": "Dispatched when the expander is collapsed."
             }

@@ -17566,6 +17566,798 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/expander/Expander.spec.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/Users/runner/work/omni-components/omni-components/src/expander/Expander.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Component that groups together content in an expanded box.",
+          "name": "Expander",
+          "cssProperties": [
+            {
+              "description": "Expander component minimum height.",
+              "name": "--omni-expander-header-min-height"
+            },
+            {
+              "description": "Expander component maximum height.",
+              "name": "--omni-expander-header-max-height"
+            },
+            {
+              "description": "Expander component width.",
+              "name": "--omni-expander-width"
+            },
+            {
+              "description": "Expander component background.",
+              "name": "--omni-expander-background"
+            },
+            {
+              "description": "Expander component expanded height.",
+              "name": "--omni-expander-expanded-height"
+            },
+            {
+              "description": "Expander header width.",
+              "name": "--omni-expander-header-width"
+            },
+            {
+              "description": "Expander header height.",
+              "name": "--omni-expander-header-height"
+            },
+            {
+              "description": "Expander header padding.",
+              "name": "--omni-expander-header-padding"
+            },
+            {
+              "description": "Expander header border top.",
+              "name": "--omni-expander-header-border-top"
+            },
+            {
+              "description": "Expander header hover background.",
+              "name": "--omni-expander-header-hover-background"
+            },
+            {
+              "description": "Expander header label font color.",
+              "name": "--omni-expander-header-label-font-color"
+            },
+            {
+              "description": "Expander header label font size.",
+              "name": "--omni-expander-header-label-font-size"
+            },
+            {
+              "description": "Expander header label font weight.",
+              "name": "--omni-expander-header-label-font-weight"
+            },
+            {
+              "description": "Expander header disabled background.",
+              "name": "--omni-expander-header-disabled-background"
+            },
+            {
+              "description": "Expander content width.",
+              "name": "--omni-expander-content-width"
+            },
+            {
+              "description": "Expander content height.",
+              "name": "--omni-expander-content-height"
+            },
+            {
+              "description": " Expander content border.",
+              "name": "--omni-expander-content-border"
+            },
+            {
+              "description": "Expander content padding.",
+              "name": "--omni-expander-content-padding"
+            },
+            {
+              "description": " Expander content closed top padding.",
+              "name": "--omni-expander-content-closed-padding-top"
+            },
+            {
+              "description": "Expander content closed bottom padding.",
+              "name": "--omni-expander-content-closed-padding-bottom"
+            },
+            {
+              "description": "Bottom border of the expander content.",
+              "name": "--omni-expander-content-expanded-border-bottom"
+            },
+            {
+              "description": "Expander header icon container padding.",
+              "name": "--omni-expander-header-icon-container-padding"
+            },
+            {
+              "description": "Expander header icon slot width.",
+              "name": "--omni-expander-header-icon-slot-width"
+            },
+            {
+              "description": "Expander header icon slot height.",
+              "name": "--omni-expander-header-icon-slot-height"
+            },
+            {
+              "description": "Expander expand icon container padding.",
+              "name": "--omni-expander-expand-icon-container-padding"
+            },
+            {
+              "description": "Expander expand icon width.",
+              "name": "--omni-expander-expand-icon-width"
+            },
+            {
+              "description": "Expander expand icon height.",
+              "name": "--omni-expander-expand-icon-height"
+            },
+            {
+              "description": "Expander expand icon color.",
+              "name": "--omni-expander-expand-icon-color"
+            },
+            {
+              "description": "Expander expanding content top padding.",
+              "name": "--omni-expander-expanding-container-padding-top"
+            },
+            {
+              "description": "Expander expanding content bottom padding.",
+              "name": "--omni-expander-expanding-container-padding-bottom"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Content to render inside the expander once expanded.",
+              "name": "[Default Slot]"
+            },
+            {
+              "description": "Replaces the expand icon by default this will be the omni-chevron-down-icon.",
+              "name": "expand-icon"
+            },
+            {
+              "description": "Replaces the icon in the header which is usually placed on the opposite end of the expand icon.",
+              "name": "header-icon"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Expander component label.",
+              "attribute": "label",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "expanded",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the expander is expanded.",
+              "attribute": "expanded",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "disabled",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the expander is disabled.",
+              "attribute": "disabled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "buttonAlignment",
+              "type": {
+                "text": "'left' | 'right'"
+              },
+              "default": "'right'",
+              "description": "Indicate where the Expander button should be positioned",
+              "attribute": "button-alignment",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_headerClick",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "MouseEvent"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_animationCompleted",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_expand",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_collapse",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderHeader",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderIcon",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<unknown>"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "expand",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when the expander is expanded."
+            },
+            {
+              "name": "collapse",
+              "type": {
+                "text": "CustomEvent"
+              },
+              "description": "Dispatched when the expander is collapsed."
+            }
+          ],
+          "attributes": [
+            {
+              "name": "label",
+              "type": {
+                "text": "string | undefined"
+              },
+              "description": "Expander component label.",
+              "fieldName": "label",
+              "attribute": "label"
+            },
+            {
+              "name": "expanded",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the expander is expanded.",
+              "fieldName": "expanded",
+              "attribute": "expanded"
+            },
+            {
+              "name": "disabled",
+              "type": {
+                "text": "boolean | undefined"
+              },
+              "description": "Indicator if the expander is disabled.",
+              "fieldName": "disabled",
+              "attribute": "disabled"
+            },
+            {
+              "name": "button-alignment",
+              "type": {
+                "text": "'left' | 'right'"
+              },
+              "default": "'right'",
+              "description": "Indicate where the Expander button should be positioned",
+              "fieldName": "buttonAlignment",
+              "attribute": "button-alignment"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "//Users/runner/work/omni-components/omni-components/src/core/OmniElement.js"
+          },
+          "tagName": "omni-expander",
+          "import": "```js\nimport '@capitec/omni-components/expander';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Expander",
+          "declaration": {
+            "name": "Expander",
+            "module": "/Users/runner/work/omni-components/omni-components/src/expander/Expander.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-expander",
+          "declaration": {
+            "name": "Expander",
+            "module": "/Users/runner/work/omni-components/omni-components/src/expander/Expander.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "/Users/runner/work/omni-components/omni-components/src/expander/ExpanderGroup.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Layout container that groups expanders.",
+          "name": "ExpanderGroup",
+          "cssProperties": [
+            {
+              "description": "Expander group min width.",
+              "name": "--omni-expander-group-container-min-width"
+            },
+            {
+              "description": "Expander group min height.",
+              "name": "--omni-expander-group-container-min-height"
+            },
+            {
+              "description": "Expander group container margin bottom.",
+              "name": "--omni-expander-group-container-margin-bottom"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
+              "name": "loading_indicator",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "description": "Default slot to slot multiple expanders.",
+              "name": "[Default Slot]"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "expandMode",
+              "type": {
+                "text": "'multiple' | 'single' | undefined"
+              },
+              "default": "'single'",
+              "description": "Expander component label.",
+              "attribute": "expand-mode",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "_expanderExpanded",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderLoading",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "TemplateResult | typeof nothing"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "renderAsync",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<unknown>"
+                }
+              },
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "expand-mode",
+              "type": {
+                "text": "'multiple' | 'single' | undefined"
+              },
+              "default": "'single'",
+              "description": "Expander component label.",
+              "fieldName": "expandMode",
+              "attribute": "expand-mode"
+            },
+            {
+              "name": "dir",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to set the base direction of text for display",
+              "fieldName": "dir",
+              "attribute": "dir",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            },
+            {
+              "name": "lang",
+              "type": {
+                "text": "string"
+              },
+              "description": "Used to identify the language of text content on the web",
+              "fieldName": "lang",
+              "attribute": "lang",
+              "inheritedFrom": {
+                "name": "OmniElement",
+                "module": "/Users/runner/work/omni-components/omni-components/src/core/OmniElement.ts"
+              }
+            }
+          ],
+          "superclass": {
+            "name": "OmniElement",
+            "module": "//Users/runner/work/omni-components/omni-components/src/core/OmniElement.js"
+          },
+          "tagName": "omni-expander-group",
+          "import": "```js\nimport '@capitec/omni-components/expander';\n```",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ExpanderGroup",
+          "declaration": {
+            "name": "ExpanderGroup",
+            "module": "/Users/runner/work/omni-components/omni-components/src/expander/ExpanderGroup.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "omni-expander-group",
+          "declaration": {
+            "name": "ExpanderGroup",
+            "module": "/Users/runner/work/omni-components/omni-components/src/expander/ExpanderGroup.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/expander/Expander.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander\n        data-testid=\"test-expander\"\n        label=\"${ifNotEmpty(args.label)}\"\n        ?disabled=\"${args.disabled}\"\n        ?expanded=\"${args.expanded}\"\n        button-alignment=\"${args.buttonAlignment}\"\n    >\n        ${args.expand_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('expand-icon', args.expand_icon))}` : nothing}\n        ${args.header_icon ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('header-icon', args.header_icon))}` : nothing}\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-expander>\n    `,\n    name: 'Interactive',\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' expanded', ' :expanded=\"true\"')\n                )\n        }\n    ],\n    args: {\n        label: 'Interactive Expander',\n        '[Default Slot]': raw`<omni-label label=\"The content of the expander\"></omni-label>`,\n        disabled: false,\n        expanded: false,\n        buttonAlignment: 'right',\n        expand_icon: '',\n        header_icon: ''\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Disabled",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander\n        data-testid=\"test-expander\"\n        label=\"${ifNotEmpty(args.label)}\"\n        ?disabled=\"${args.disabled}\"\n    >\n        <omni-label label=\"I shall not be seen\"></omni-label>\n    </omni-expander>\n    `,\n    name: 'Disabled',\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Disabled!.render!(args), undefined, (s) => s.replace(' disabled', ' :disabled=\"true\"'))\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander ${args.label ? ` label='${args.label}'` : ''} ${args.disabled ? ` disabled='${args.disabled}'` : ''}>\n    <OmniLabel label=\"I shall not be seen\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    description: 'Prevent interaction (expanding/collapsing).',\n    args: {\n        label: 'Disabled expander',\n        disabled: true\n    }\n}",
+          "description": "Prevent interaction (expanding/collapsing)."
+        },
+        {
+          "kind": "variable",
+          "name": "Button_Alignment",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander \n        data-testid=\"test-expander\"\n        label=\"${ifNotEmpty(args.label)}\"\n        button-alignment=\"${args.buttonAlignment}\"\n    >\n        <omni-label label='The content of the expander'></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander ${args.label ? ` label='${args.label}'` : ''} ${args.buttonAlignment ? ` button-alignment='${args.buttonAlignment}'` : ''}>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Button Alignment',\n    description: 'Toggle where the expand button should be oriented.',\n    args: {\n        label: 'Left aligned button',\n        buttonAlignment: 'left'\n    }\n}",
+          "description": "Toggle where the expand button should be oriented."
+        },
+        {
+          "kind": "variable",
+          "name": "Expanded",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander\n        data-testid=\"test-expander\"\n        label=\"${ifNotEmpty(args.label)}\"\n        expanded=\"${args.expanded}\"   \n    >\n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    name: 'Expanded',\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) => getSourceFromLit(Expanded!.render!(args), undefined, (s) => s.replace(' expanded', ' :expanded=\"true\"'))\n        },\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander ${args.label ? ` label='${args.label}'` : ''} ${args.expanded ? ` expanded='${args.expanded}'` : ''}>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    description: 'Toggle expander expanded state',\n    args: {\n        label: 'Expanded expander state',\n        expanded: true\n    }\n}",
+          "description": "Toggle expander expanded state"
+        },
+        {
+          "kind": "variable",
+          "name": "Expand_Icon",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander data-testid=\"test-expander\" label=\"${ifNotEmpty(args.label)}\">\n        ${unsafeHTML(args.expand_icon)}\n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () =>\n<OmniExpander${args.label ? ` label='${args.label}'` : ''}>\n    <svg slot=\"expand-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Slotted Expand Icon',\n    description: 'Custom slotted expand icon',\n    args: {\n        label: 'Slotted Expand Icon',\n        expand_icon: raw`<svg slot=\"expand-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>`\n    }\n}",
+          "description": "Custom slotted expand icon"
+        },
+        {
+          "kind": "variable",
+          "name": "Header_Icon",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander data-testid=\"test-expander\" label=\"${ifNotEmpty(args.label)}\">\n        ${unsafeHTML(args.header_icon)}       \n        <omni-label label=\"The content of the expander\"></omni-label>\n    </omni-expander>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpander } from \"@capitec/omni-components-react/expander\";\nimport { OmniLabel } from \"@capitec/omni-components-react/label\";\n\nconst App = () => \n<OmniExpander${args.label ? ` label='${args.label}'` : ''}>\n    <svg slot=\"header-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>\n    <OmniLabel label=\"The content of the expander\"></OmniLabel>\n</OmniExpander>;`\n        }\n    ],\n    name: 'Slotted Header Icon',\n    description: 'Custom slotted header icon',\n    args: {\n        label: 'Slotted Header Icon',\n        header_icon: raw`<svg slot=\"header-icon\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" width=\"100%\" height=\"100%\"><path d=\"m7.446 6.397.084.073L13 11.939l5.47-5.47a.75.75 0 0 1 1.133.977l-.073.084L14.061 13l5.47 5.47a.75.75 0 0 1-.977 1.133l-.084-.073L13 14.061l-5.47 5.47a.75.75 0 0 1-1.133-.977l.073-.084L11.939 13l-5.47-5.47a.75.75 0 0 1 .977-1.133Z\"/></svg>`\n    }\n}",
+          "description": "Custom slotted header icon"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/expander/Expander.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Disabled",
+          "declaration": {
+            "name": "Disabled",
+            "module": "src/expander/Expander.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Button_Alignment",
+          "declaration": {
+            "name": "Button_Alignment",
+            "module": "src/expander/Expander.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Expanded",
+          "declaration": {
+            "name": "Expanded",
+            "module": "src/expander/Expander.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Expand_Icon",
+          "declaration": {
+            "name": "Expand_Icon",
+            "module": "src/expander/Expander.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Header_Icon",
+          "declaration": {
+            "name": "Header_Icon",
+            "module": "src/expander/Expander.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/expander/ExpanderGroup.spec.ts",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/expander/ExpanderGroup.stories.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "Interactive",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander-group\n        data-testid=\"test-expander-group\"\n        expand-mode=\"${args.expandMode}\"\n    >\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-expander-group>\n    `,\n    name: 'Interactive',\n    description: () => html`<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> should be used if grouping multiple <code class=\"language-html\">&lt;omni-expander&gt;</code> components together. \n    </p>`,\n    args: {\n        expandMode: 'single',\n        '[Default Slot]': raw`<omni-expander label=\"First Expander\">\n            <omni-label label=\"First expander content\"></omni-label>\n        </omni-expander>\n        <omni-expander label=\"Second Expander\">\n            <omni-label label=\"Second expander content\"></omni-label>\n        </omni-expander>`\n    }\n}",
+          "description": "<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> should be used if grouping multiple <code class=\"language-html\">&lt;omni-expander&gt;</code> components together. \n    </p>"
+        },
+        {
+          "kind": "variable",
+          "name": "Expand_Mode",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-expander-group\n    data-testid=\"test-expander-group\"\n    expand-mode=\"${args.expandMode}\"\n    >\n        ${args['[Default Slot]'] ? html`${'\\r\\n'}${unsafeHTML(args['[Default Slot]'])}` : nothing}\n    </omni-expander-group>\n    `,\n    name: 'Expand Mode',\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniExpanderGroup, OmniExpander } from \"@capitec/omni-components-react/expander\";\n            import { OmniLabel } from \"@capitec/omni-components-react/label\";\n        \nconst App = () => \n<OmniExpanderGroup ${args.expandMode ? ` expand-mode='${args.expandMode}'` : ''}>\n    <OmniExpander label=\"First Expander\">\n        <OmniLabel label=\"First expander content\"></OmniLabel>\n    </OmniExpander>\n    <OmniExpander label=\"Second Expander\">\n        <OmniLabel label=\"Second expander content\"></OmniLabel>\n    </OmniExpander>\n</OmniExpanderGroup>;`\n        }\n    ],\n    description: () => html`<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> opens one <code class=\"language-html\">&lt;omni-expander&gt;</code> by default, to expand mutiple set the attribute <code class=\"language-js\">expand-mode=\"multiple\"</code>. \n    </p>`,\n    args: {\n        expandMode: 'multiple',\n        '[Default Slot]': raw`<omni-expander label=\"First Expander\">\n            <omni-label label=\"First expander content\"></omni-label>\n        </omni-expander>\n        <omni-expander label=\"Second Expander\">\n            <omni-label label=\"Second expander content\"></omni-label>\n        </omni-expander>`\n    }\n}",
+          "description": "<p>\n    The <code class=\"language-html\">&lt;omni-expander-group&gt;</code> opens one <code class=\"language-html\">&lt;omni-expander&gt;</code> by default, to expand mutiple set the attribute <code class=\"language-js\">expand-mode=\"multiple\"</code>. \n    </p>"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "Interactive",
+          "declaration": {
+            "name": "Interactive",
+            "module": "src/expander/ExpanderGroup.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Expand_Mode",
+          "declaration": {
+            "name": "Expand_Mode",
+            "module": "src/expander/ExpanderGroup.stories.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/expander/index.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./Expander.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "./ExpanderGroup.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/hyperlink/Hyperlink.spec.ts",
       "declarations": [],
       "exports": []

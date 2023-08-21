@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.6C4LMRM7.js";import{a as l,b as o}from"./chunk.S2K25ADN.js";import{a,b as t,e as p}from"./chunk.L3RZWW2F.js";import{j as i,m as r,p as d}from"./chunk.BF43NN75.js";r();d();var e=class extends s{constructor(){super(...arguments);this.buttonAlignment="right"}connectedCallback(){super.connectedCallback(),this.addEventListener("animationend",this._animationCompleted.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("animationend",this._animationCompleted.bind(this)),super.disconnectedCallback()}_headerClick(n){n.stopPropagation(),!this.disabled&&(this.expanded?this._collapse():this._expand())}_animationCompleted(){this.hasAttribute("expanding")&&(this.removeAttribute("expanding"),this.expanded=!0),this.hasAttribute("collapsing")&&(this.removeAttribute("collapsing"),this.expanded=!1)}_expand(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!0||this.hasAttribute("expanding"))return;this.removeAttribute("collapsing"),this.setAttribute("expanding","")}else this.expanded=!0;this.dispatchEvent(new CustomEvent("expand",{detail:{label:this.label}}))}_collapse(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!1||this.hasAttribute("collapsing"))return;this.removeAttribute("expanding"),this.setAttribute("collapsing","")}else this.expanded=!1;this.dispatchEvent(new CustomEvent("collapse",{detail:{label:this.label}}))}static get styles(){return[super.styles,a`
+import{h as s}from"./chunk.6C4LMRM7.js";import{a as p,b as o}from"./chunk.S2K25ADN.js";import{a,b as t,e as l}from"./chunk.L3RZWW2F.js";import{j as i,m as r,p as d}from"./chunk.BF43NN75.js";r();d();var e=class extends s{constructor(){super(...arguments);this.buttonAlignment="right"}connectedCallback(){super.connectedCallback(),this.addEventListener("animationend",this._animationCompleted.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("animationend",this._animationCompleted.bind(this)),super.disconnectedCallback()}_headerClick(n){n.stopPropagation(),!this.disabled&&(this.expanded?this._collapse():this._expand())}_animationCompleted(){this.hasAttribute("expanding")&&(this.removeAttribute("expanding"),this.expanded=!0),this.hasAttribute("collapsing")&&(this.removeAttribute("collapsing"),this.expanded=!1)}_expand(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!0||this.hasAttribute("expanding"))return;this.removeAttribute("collapsing"),this.setAttribute("expanding","")}else this.expanded=!0;this.dispatchEvent(new CustomEvent("expand",{detail:{label:this.label}}))}_collapse(){let{matches:n}=window.matchMedia("(prefers-reduced-motion: no-preference)");if(n){if(this.expanded===!1||this.hasAttribute("collapsing"))return;this.removeAttribute("expanding"),this.setAttribute("collapsing","")}else this.expanded=!1;this.dispatchEvent(new CustomEvent("collapse",{detail:{label:this.label}}))}static get styles(){return[super.styles,a`
 				:host {
 					min-height: var(--omni-expander-header-min-height, 50px);
 					max-height: var(--omni-expander-header-max-height, 50px);
@@ -41,8 +41,8 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as l,b as o}from"./chunk.S2K25A
                 
                 :host > .header > omni-label {
                     --omni-label-font-color: var(--omni-expander-header-label-font-color, var(--omni-font-color));
-					--omni-label-font-size: var(--omni-expander-header-label-font-size, var(--omni-font-size));
-					--omni-label-font-weight: var(--omni-expander-header-label-font-weight, var(--omni-font-weight));
+					--omni-label-default-font-size: var(--omni-expander-header-label-font-size, var(--omni-font-size));
+					--omni-label-default-font-weight: var(--omni-expander-header-label-font-weight, var(--omni-font-weight));
 					margin-right: auto;
 					cursor: pointer;
                 }
@@ -221,11 +221,11 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as l,b as o}from"./chunk.S2K25A
 
         `}_renderHeader(){return t`
         ${this.buttonAlignment==="left"?t`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
-        ${this.label?t`<omni-label label="${this.label}"></omni-label>`:p}
+        ${this.label?t`<omni-label label="${this.label}"></omni-label>`:l}
         ${this.buttonAlignment==="right"?t`<div class='expand-icon-container'><slot name='expand-icon'><omni-chevron-down-icon class='expand-icon'></omni-chevron-down-icon></slot></div>`:this._renderIcon()}
         `}_renderIcon(){return t`
         <div class='header-icon-container'>
             <slot name='header-icon'></slot>
         </div>
-        `}};i([o({type:String,reflect:!0})],e.prototype,"label",2),i([o({type:Boolean,reflect:!0})],e.prototype,"expanded",2),i([o({type:Boolean,reflect:!0})],e.prototype,"disabled",2),i([o({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=i([l("omni-expander")],e);export{e as a};
-//# sourceMappingURL=chunk.PPNL5O7U.js.map
+        `}};i([o({type:String,reflect:!0})],e.prototype,"label",2),i([o({type:Boolean,reflect:!0})],e.prototype,"expanded",2),i([o({type:Boolean,reflect:!0})],e.prototype,"disabled",2),i([o({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=i([p("omni-expander")],e);export{e as a};
+//# sourceMappingURL=chunk.VEJRH4TC.js.map

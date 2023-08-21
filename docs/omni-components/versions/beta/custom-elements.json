@@ -23482,6 +23482,12 @@
           "kind": "class",
           "description": "Control that can be used to display slotted content, for use within an Tab Group component.",
           "name": "Tab",
+          "cssProperties": [
+            {
+              "description": "Tab background.",
+              "name": "--omni-tab-background"
+            }
+          ],
           "slots": [
             {
               "description": "Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called",
@@ -23691,6 +23697,22 @@
               "name": "--omni-tab-header-font-weight"
             },
             {
+              "description": " Tab header tab min width.",
+              "name": "--omni-tab-header-min-width"
+            },
+            {
+              "description": "Tab header height.",
+              "name": "--omni-tab-header-height"
+            },
+            {
+              "description": "Tab header width.",
+              "name": "--omni-tab-header-width"
+            },
+            {
+              "description": "Tab header padding.",
+              "name": "--omni-tab-header-padding"
+            },
+            {
               "description": "Tab header disabled cursor.",
               "name": "--omni-tab-header-disabled-cursor"
             },
@@ -23704,19 +23726,19 @@
             },
             {
               "description": "Tab header tab height.",
-              "name": "--omni-tab-header-height"
+              "name": "--omni-tab-header-tab-height"
             },
             {
               "description": "Tab header tab min width.",
-              "name": "--omni-tab-header-min-width"
+              "name": "--omni-tab-header-tab-min-width"
             },
             {
               "description": "Tab header tab max width.",
-              "name": "--omni-tab-header-max-width"
+              "name": "--omni-tab-header-tab-max-width"
             },
             {
               "description": "Tab header tab margin.",
-              "name": "--omni-tab-header-margin"
+              "name": "--omni-tab-header-tab-margin"
             },
             {
               "description": "Tab header tab hover background.",
@@ -23946,6 +23968,22 @@
               "name": "--omni-tab-header-font-weight"
             },
             {
+              "description": " Tab header tab min width.",
+              "name": "--omni-tab-header-min-width"
+            },
+            {
+              "description": "Tab header height.",
+              "name": "--omni-tab-header-height"
+            },
+            {
+              "description": "Tab header width.",
+              "name": "--omni-tab-header-width"
+            },
+            {
+              "description": "Tab header padding.",
+              "name": "--omni-tab-header-padding"
+            },
+            {
               "description": "Tab header disabled cursor.",
               "name": "--omni-tab-header-disabled-cursor"
             },
@@ -23959,19 +23997,19 @@
             },
             {
               "description": "Tab header tab height.",
-              "name": "--omni-tab-header-height"
+              "name": "--omni-tab-header-tab-height"
             },
             {
               "description": "Tab header tab min width.",
-              "name": "--omni-tab-header-min-width"
+              "name": "--omni-tab-header-tab-min-width"
             },
             {
               "description": "Tab header tab max width.",
-              "name": "--omni-tab-header-max-width"
+              "name": "--omni-tab-header-tab-max-width"
             },
             {
               "description": "Tab header tab margin.",
-              "name": "--omni-tab-header-margin"
+              "name": "--omni-tab-header-tab-margin"
             },
             {
               "description": "Tab header tab hover background.",

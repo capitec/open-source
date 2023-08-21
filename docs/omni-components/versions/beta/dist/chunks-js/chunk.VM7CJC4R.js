@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25ADN.js";import{a as n,b as r,e as d}from"./chunk.L3RZWW2F.js";import{j as t,m as o,p as i}from"./chunk.BF43NN75.js";o();i();var a=class extends s{static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25ADN.js";import{a as d,b as r,e as n}from"./chunk.L3RZWW2F.js";import{j as t,m as i,p as o}from"./chunk.BF43NN75.js";i();o();var a=class extends s{static get styles(){return[super.styles,d`
 
                 /* host styles */
                 :host {
@@ -6,8 +6,11 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                     font-family: var(--omni-tab-header-font-family, var(--omni-font-family));
                     font-size: var(--omni-tab-header-font-size, var(--omni-font-size));
                     font-weight: var(--omni-tab-header-font-weight, var(--omni-font-weight));
+                    min-width: var(--omni-tab-header-min-width, 50px);
+                    width: var(--omni-tab-header-width, 100%);
+                    height: var(--omni-tab-header-height, 100%);
+                    padding: var(--omni-tab-header-padding);
                     cursor: pointer;
-
                 }
 
                 :host([data-disabled]){
@@ -29,10 +32,10 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
             
                 /* Tab */
                 :host > .tab {
-                    height: var(--omni-tab-header-height, 100%);
-                    min-width: var(--omni-tab-header-min-width, auto);
-                    max-width: var(--omni-tab-header-max-width, auto);
-                    margin: var(--omni-tab-header-margin, 6px);
+                    height: var(--omni-tab-header-tab-height, 100%);
+                    min-width: var(--omni-tab-header-tab-min-width, auto);
+                    max-width: var(--omni-tab-header-tab-max-width, auto);
+                    margin: var(--omni-tab-header-tab-margin, 6px);
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -49,7 +52,7 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                 :host > .indicator-bar {
                     height: var(--omni-tab-header-indicator-bar-height, 4px);
                     border-radius: var(--omni-tab-header-indicator-bar-border-radius, 100px 100px 0 0);
-                    width: var(--omni-tab-header-indicator-bar-width, auto);
+                    width: var(--omni-tab-header-indicator-bar-width, 100%);
                 }
 
 
@@ -64,7 +67,7 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                 <slot></slot>
             </div>
             <div class="indicator-bar">
-                ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:d}
+                ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:n}
             </div>
         `}};t([e({type:String,reflect:!0})],a.prototype,"for",2),t([e({type:Object,reflect:!1})],a.prototype,"data",2),a=t([h("omni-tab-header")],a);export{a};
-//# sourceMappingURL=chunk.QNDZZT7F.js.map
+//# sourceMappingURL=chunk.VM7CJC4R.js.map

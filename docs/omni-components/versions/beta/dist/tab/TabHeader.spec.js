@@ -6,7 +6,7 @@ test(`Tab Header - Advanced Behaviour`, async ({ page }) => {
         await expect(tabGroup).toHaveScreenshot('tab-group-initial.png');
         // Mock tab-select event.
         const tabSelect = await mockEventListener(tabGroup, 'tab-select');
-        //Get all the tab headers
+        // Get all the tab headers
         const nestedTabHeaders = tabGroup.locator('omni-tab-header');
         await expect(nestedTabHeaders).toHaveCount(4);
         // Get all the omni-tabs
@@ -26,7 +26,7 @@ test(`Tab Header - Advanced Behaviour`, async ({ page }) => {
         const svg = thirdTabHeaderIcon.locator('svg');
         // Click the svg this should set the third tab to be active.
         await svg.click();
-        //Confirm that the tab select event occurred.
+        // Confirm that the tab select event occurred.
         await expect(tabSelect).toBeCalledTimes(1);
         // Confirm that the first tab has the active attribute.
         await expect(tabs.nth(2)).toHaveAttribute('active', '');

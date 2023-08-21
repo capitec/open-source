@@ -17576,7 +17576,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Layout component that groups together content in an expanded box.",
+          "description": "Component that groups together content in an expanded box.",
           "name": "Expander",
           "cssProperties": [
             {
@@ -17885,14 +17885,16 @@
             {
               "name": "expand",
               "type": {
-                "text": "CustomEvent"
-              }
+                "text": "CustomEvent<{}>"
+              },
+              "description": "Dispatched when the expander is expanded."
             },
             {
               "name": "collapse",
               "type": {
-                "text": "CustomEvent"
-              }
+                "text": "CustomEvent<{}>"
+              },
+              "description": "Dispatched when the expander is collapsed."
             }
           ],
           "attributes": [
@@ -17994,7 +17996,7 @@
       "declarations": [
         {
           "kind": "class",
-          "description": "Layout container that groups expanders, allowing for automatic expanding and collapsing of sibling expander components.",
+          "description": "Layout container that groups expanders.",
           "name": "ExpanderGroup",
           "cssProperties": [
             {
@@ -18037,30 +18039,13 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_observer",
-              "type": {
-                "text": "MutationObserver | undefined"
-              },
-              "privacy": "private"
-            },
-            {
-              "kind": "method",
-              "name": "_collapseAllExpanders",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
               "kind": "method",
               "name": "_expanderExpanded",
               "parameters": [
                 {
-                  "name": "targetExpander",
+                  "name": "e",
                   "type": {
-                    "text": "Node"
+                    "text": "Event"
                   }
                 }
               ],

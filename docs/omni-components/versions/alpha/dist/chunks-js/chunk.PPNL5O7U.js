@@ -228,4 +228,4 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as l,b as o}from"./chunk.S2K25A
             <slot name='header-icon'></slot>
         </div>
         `}};i([o({type:String,reflect:!0})],e.prototype,"label",2),i([o({type:Boolean,reflect:!0})],e.prototype,"expanded",2),i([o({type:Boolean,reflect:!0})],e.prototype,"disabled",2),i([o({type:String,reflect:!0,attribute:"button-alignment"})],e.prototype,"buttonAlignment",2),e=i([l("omni-expander")],e);export{e as a};
-//# sourceMappingURL=chunk.KIDEBC6H.js.map
+//# sourceMappingURL=chunk.PPNL5O7U.js.map

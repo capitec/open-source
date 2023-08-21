@@ -61,6 +61,8 @@ test(`Expander - Expand Slotted Icon Behaviour`, async ({ page }) => {
         const header = expander.locator('.header');
         const expandIconContainer = header.locator('.expand-icon-container');
         await expect(expandIconContainer).toHaveCount(1);
+        const slotElement = expander.locator('slot[name="expand-icon"]');
+        await expect(slotElement).toHaveCount(1);
     });
 });
 test(`Expander - Header Slotted Icon Behaviour`, async ({ page }) => {
@@ -71,6 +73,8 @@ test(`Expander - Header Slotted Icon Behaviour`, async ({ page }) => {
         const header = expander.locator('.header');
         const headerIconContainer = header.locator('.header-icon-container');
         await expect(headerIconContainer).toHaveCount(1);
+        const slotElement = expander.locator('slot[name="header-icon"]');
+        await expect(slotElement).toHaveCount(1);
     });
 });
 //# sourceMappingURL=Expander.spec.js.map

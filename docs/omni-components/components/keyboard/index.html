@@ -81,7 +81,7 @@
                     </div>
                     <div class="header-version-section">
                         <div class="header-version" id="header-version-indicator">
-                            0.8.1
+                            0.9.0
                         </div>
                         <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
@@ -129,6 +129,13 @@
         </div>
         <div class="menu-item separator"><div class="line"></div></div>
         
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/alert">
+                Alert
+            </a>
+        </div>
         <div class="menu-item ">
             <a class="menu-link "
              
@@ -183,6 +190,20 @@
              
             href="./components/email-field">
                 Email Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander">
+                Expander
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander-group">
+                Expander Group
             </a>
         </div>
         <div class="menu-item ">
@@ -536,10 +557,7 @@
                                     <td data-label="Name" scope="row">attachMode</td>
                                     <td data-label="Attribute" scope="row">attach-mode&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">&#39;all&#39; | &#39;attribute&#39; | &#39;id&#39;</code></pre></td>
-                                    <td data-label="Description">The rule for the Keyboard to attach to inputs for showing on component focus.
-• `all` - The Keyboard will show on focus for all input related components unless opted out with `data-omni-keyboard-hidden` on the component.
-• `attribute` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute
-• `id` - The Keyboard will only show on focus for input related components with the `data-omni-keyboard-attach` attribute set equal to the Keyboard's id</td>
+                                    <td data-label="Description">The rule for the Keyboard to attach to inputs for showing on component focus.<br/>• <code>all</code> - The Keyboard will show on focus for all input related components unless opted out with <code>data-omni-keyboard-hidden</code> on the component.<br/>• <code>attribute</code> - The Keyboard will only show on focus for input related components with the <code>data-omni-keyboard-attach</code> attribute<br/>• <code>id</code> - The Keyboard will only show on focus for input related components with the <code>data-omni-keyboard-attach</code> attribute set equal to the Keyboard's id</td>
                                 </tr>
                                 
                                 <tr>
@@ -560,14 +578,14 @@
                                     <td data-label="Name" scope="row">clearLabel</td>
                                     <td data-label="Attribute" scope="row">clear-label&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                    <td data-label="Description">The text label to display on the clear button. The `clear` slot takes precedence over this label.</td>
+                                    <td data-label="Description">The text label to display on the clear button. The <code>clear</code> slot takes precedence over this label.</td>
                                 </tr>
                                 
                                 <tr>
                                     <td data-label="Name" scope="row">actionLabel</td>
                                     <td data-label="Attribute" scope="row">action-label&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
-                                    <td data-label="Description">The text label to display on the call to action button when `enterkeyhint` is not defined or `enterkeyhint="enter"`. The `action-enter` slot takes precedence over this label.</td>
+                                    <td data-label="Description">The text label to display on the call to action button when <code>enterkeyhint</code> is not defined or <code>enterkeyhint="enter"</code>. The <code>action-enter</code> slot takes precedence over this label.</td>
                                 </tr>
                                 
                                 <tr>
@@ -582,6 +600,37 @@
                                     <td data-label="Attribute" scope="row">lang&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                     <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Static Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">create</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - KeyboardInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Keyboard | undefined</code></pre></td>
+                                    <td data-label="Description">Creates a new Keyboard element with the provided context and appends it to the DOM (either to document body or to provided target parent element).</td>
                                 </tr>
                                 
                             </tbody>
@@ -609,7 +658,7 @@
                                 <tr>
                                     <td data-label="Attribute" scope="row"><pre><code class="language-js"> data-omni-keyboard-attach</code></pre></td>
                                     <td data-label="Type"><pre><code class="language-js">boolean | string</code></pre></td>
-                                    <td data-label="Description">Indicates that the Keyboard is enabled for that component when the Keyboard has `attach-mode="attribute"` or when the value is equal to the Keyboard's id and `attach-mode="id"`.</td>
+                                    <td data-label="Description">Indicates that the Keyboard is enabled for that component when the Keyboard has <code>attach-mode="attribute"</code> or when the value is equal to the Keyboard's id and <code>attach-mode="id"</code>.</td>
                                 </tr>
                                 
                                 <tr>
@@ -621,7 +670,7 @@
                                 <tr>
                                     <td data-label="Attribute" scope="row"><pre><code class="language-js"> data-omni-keyboard-mode</code></pre></td>
                                     <td data-label="Type"><pre><code class="language-js">InputMode</code></pre></td>
-                                    <td data-label="Description">Indicates that the Keyboard is to render in specified type of inputmode. Takes precedence over `inputmode` attribute.</td>
+                                    <td data-label="Description">Indicates that the Keyboard is to render in specified type of inputmode. Takes precedence over <code>inputmode</code> attribute.</td>
                                 </tr>
                                 
                                 <tr>
@@ -645,7 +694,7 @@
                                 <tr>
                                     <td data-label="Attribute" scope="row"><pre><code class="language-js"> data-omni-keyboard-no-display</code></pre></td>
                                     <td data-label="Type"><pre><code class="language-js">boolean</code></pre></td>
-                                    <td data-label="Description">Disables the Keyboard display value. Takes precedence over `data-omni-keyboard-mask`.</td>
+                                    <td data-label="Description">Disables the Keyboard display value. Takes precedence over <code>data-omni-keyboard-mask</code>.</td>
                                 </tr>
                                 
                             </tbody>

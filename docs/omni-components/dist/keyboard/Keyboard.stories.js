@@ -1,4 +1,4 @@
-import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";import"../chunks-js/chunk.GCYWZJAD.js";import"../chunks-js/chunk.BRGMWPWN.js";import"../chunks-js/chunk.RTZAZGF5.js";import"../chunks-js/chunk.UHBVMAOV.js";import"../chunks-js/chunk.KUQKUKJU.js";import"../chunks-js/chunk.BWVUO6QN.js";import"../chunks-js/chunk.TQPNYWWS.js";import"../chunks-js/chunk.REGOF75Z.js";import"../chunks-js/chunk.QQYYCG4R.js";import"../chunks-js/chunk.TUSCPOW2.js";import"../chunks-js/chunk.W3KHOOQU.js";import{a as g}from"../chunks-js/chunk.2BPWAJSU.js";import"../chunks-js/chunk.KJYSF6WH.js";import"../chunks-js/chunk.L6QSAJCX.js";import"../chunks-js/chunk.QG6QABZC.js";import"../chunks-js/chunk.6IDUWNO5.js";import"../chunks-js/chunk.OEV2RTUD.js";import"../chunks-js/chunk.YIANFESX.js";import"../chunks-js/chunk.4DK445VM.js";import"../chunks-js/chunk.YZDFU56K.js";import"../chunks-js/chunk.HNZHWZKQ.js";import"../chunks-js/chunk.HPU77XLS.js";import"../chunks-js/chunk.HJG3T5KA.js";import"../chunks-js/chunk.HEUUCQCP.js";import"../chunks-js/chunk.MSWL5RV6.js";import"../chunks-js/chunk.32VA26CG.js";import"../chunks-js/chunk.VGFLCN55.js";import"../chunks-js/chunk.QHKJCTSX.js";import"../chunks-js/chunk.HV7HPMP7.js";import"../chunks-js/chunk.VAH5TOPR.js";import"../chunks-js/chunk.5DQX5M47.js";import"../chunks-js/chunk.DZCGDWRW.js";import"../chunks-js/chunk.Y2FNDKPS.js";import"../chunks-js/chunk.5Y67EXLM.js";import"../chunks-js/chunk.DXJESG3Z.js";import{E as r,m as o,x as i}from"../chunks-js/chunk.TJTW5ASN.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.VW2P7YAN.js";import"../chunks-js/chunk.MYG5FMLT.js";import"../chunks-js/chunk.2EDJFZZN.js";import{a as n}from"../chunks-js/chunk.N3FDHMD3.js";import"../chunks-js/chunk.YX3UUKJ3.js";import"../chunks-js/chunk.XUUOUKOL.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.DGWR2I27.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.LUCH4Y6K.js";import"../chunks-js/chunk.PNTHLTQK.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as t,e as a}from"../chunks-js/chunk.L3RZWW2F.js";import{a as d,b as c,l as u,m as h,p as y}from"../chunks-js/chunk.BF43NN75.js";h();y();var q={title:"UI Components/Keyboard",component:"omni-keyboard"},l={render:e=>t`
+import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.GAR56573.js";import"../chunks-js/chunk.GCYWZJAD.js";import"../chunks-js/chunk.BRGMWPWN.js";import"../chunks-js/chunk.JRNEZBOT.js";import"../chunks-js/chunk.XPLI37QU.js";import"../chunks-js/chunk.KUQKUKJU.js";import"../chunks-js/chunk.BWVUO6QN.js";import"../chunks-js/chunk.GIJEY56Z.js";import"../chunks-js/chunk.REGOF75Z.js";import"../chunks-js/chunk.ZGOEUFUH.js";import"../chunks-js/chunk.TUSCPOW2.js";import"../chunks-js/chunk.ZGC2JEGM.js";import{a as g}from"../chunks-js/chunk.NQKCDLUX.js";import"../chunks-js/chunk.KJYSF6WH.js";import"../chunks-js/chunk.L6QSAJCX.js";import"../chunks-js/chunk.QG6QABZC.js";import"../chunks-js/chunk.M57NXLSG.js";import"../chunks-js/chunk.OEV2RTUD.js";import"../chunks-js/chunk.4DK445VM.js";import"../chunks-js/chunk.YZDFU56K.js";import"../chunks-js/chunk.HNZHWZKQ.js";import"../chunks-js/chunk.HPU77XLS.js";import"../chunks-js/chunk.HJG3T5KA.js";import"../chunks-js/chunk.HEUUCQCP.js";import"../chunks-js/chunk.MSWL5RV6.js";import"../chunks-js/chunk.QHKJCTSX.js";import"../chunks-js/chunk.32VA26CG.js";import"../chunks-js/chunk.O4FLUREX.js";import"../chunks-js/chunk.YIANFESX.js";import"../chunks-js/chunk.O6GY2A66.js";import"../chunks-js/chunk.MW4VXBNP.js";import"../chunks-js/chunk.DGWR2I27.js";import"../chunks-js/chunk.BKUUO7ED.js";import"../chunks-js/chunk.H4M5P4MF.js";import"../chunks-js/chunk.Y2FNDKPS.js";import{E as r,m as o,x as i}from"../chunks-js/chunk.7KM4B723.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.Z5LIJAXH.js";import"../chunks-js/chunk.UHIDETPL.js";import"../chunks-js/chunk.KPSG3GC4.js";import"../chunks-js/chunk.MDYAUJ3Z.js";import"../chunks-js/chunk.VTL5CONA.js";import{a as n}from"../chunks-js/chunk.5DDJQYYG.js";import"../chunks-js/chunk.3U7QFP2Q.js";import"../chunks-js/chunk.LB764BBD.js";import"../chunks-js/chunk.5Y67EXLM.js";import"../chunks-js/chunk.VK7R3VQL.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as t,e as a}from"../chunks-js/chunk.L3RZWW2F.js";import{a as d,b as c,l as u,m as h,p as y}from"../chunks-js/chunk.BF43NN75.js";h();y();var l={render:e=>t`
 
         <!-- Add the Keyboard once to the DOM -->    
         <omni-keyboard 
@@ -84,7 +84,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
     <span>Adding the <code>data-omni-keyboard-attach</code> attribute means the input field is opted in for the Keyboard.</span>
     <omni-text-field data-omni-keyboard-attach label="Opted In" tabindex="8"></omni-text-field> 
 </div>
-`,R=c(d({},l),{description:()=>t`
+`,G=c(d({},l),{description:()=>t`
     <span>When the <code>attach-mode</code> attribute is set to <code class="language-js">'attribute'</code> on the Keyboard, then the Keyboard will only react to supported inputs with the <code>data-omni-keyboard-attach</code> attribute without a value.</span>
     `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],render:e=>l.args.attachMode==="attribute"?p:t`
         <div class="keyboard-showcase">
@@ -106,14 +106,14 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
     <omni-text-field data-omni-keyboard-attach="keyboard-interactive" label="Text Field" tabindex="11"></omni-text-field> 
 
 </div>
-`,X=c(d({},l),{description:()=>t`
+`,q=c(d({},l),{description:()=>t`
     <span>When the <code>attach-mode</code> attribute is set to <code class="language-js">'id'</code> on the Keyboard, then it will only react to supported inputs with the <code>data-omni-keyboard-attach</code> attribute set equal to the Keyboard's id.</span>
     `,render:e=>l.args.attachMode==="id"?f:t`
     <div class="keyboard-showcase">
     <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have <code>attach-mode</code> attribute set to <code class="language-js">'id'</code>.</span>
         <omni-button @click="${()=>{l.args.attachMode="id",document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" class="docs-omni-component"><span>Update <code>attach-mode</code> to <code class="language-js">'id'</code></span></omni-button>
     </div>
-    `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],name:"Attach By Id"}),z=c(d({},l),{description:()=>t`
+    `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],name:"Attach By Id"}),R=c(d({},l),{description:()=>t`
     <span>When the <code>enterkeyhint</code> attribute is set on a supported input, the Keyboard's call to action button will react to it accordingly. It is supported as follows:
         <ul>
             <li><code class="language-js">'enter'</code> (Default) - The <code>action-enter</code> slot will apply to the call to action button. If not provided, the value defined with the <code>action-label</code> attribute on the keyboard will be displayed on the call to action button.</li>
@@ -162,7 +162,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
             <div class="keyboard-showcase">
                 <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have <code>attach-mode</code> attribute set to <code class="language-js">'attach-mode'</code>.</span>
                 <omni-button @click="${()=>{l.args.attachMode="all",document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" class="docs-omni-component"><span>Update <code>attach-mode</code> to <code class="language-js">'all'</code></span></omni-button>
-            </div>`,name:"Enter Key Hint Variations"}),J=c(d({},l),{description:()=>t`
+            </div>`,name:"Enter Key Hint Variations"}),X=c(d({},l),{description:()=>t`
     <span>The Keyboard supports masking of the input value on the display preview.</span>
     <span>Masking will apply to the following:
         <ul>
@@ -186,7 +186,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
             <div class="keyboard-showcase">
                 <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have <code>attach-mode</code> attribute set to <code class="language-js">'all'</code>.</span>
                 <omni-button @click="${()=>{l.args.attachMode="all",document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" class="docs-omni-component"><span>Update <code>attach-mode</code> to <code class="language-js">'all'</code></span></omni-button>
-            </div>`,name:"Masked Values"}),Q=c(d({},l),{description:()=>t`
+            </div>`,name:"Masked Values"}),z=c(d({},l),{description:()=>t`
     <span>When the <code>data-omni-keyboard-no-display</code> attribute is set on a supported input, the display preview on the Keyboard header will not be visible.</span>
     `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],render:e=>l.args.attachMode==="all"?t`
     <div class="keyboard-showcase">
@@ -201,7 +201,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
             <div class="keyboard-showcase">
                 <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have <code class="language-js">'attach-mode</code> attribute set to <code class="language-js">'all'</code>.</span>
                 <omni-button @click="${()=>{l.args.attachMode="all",document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" class="docs-omni-component"><span>Update <code class="language-js">'attach-mode'</code> to <code class="language-js">'all'</code></span></omni-button>
-            </div>`,name:"Hide Display Value"}),Y=c(d({},l),{description:()=>t`
+            </div>`,name:"Hide Display Value"}),J=c(d({},l),{description:()=>t`
     <span>When the <code>data-omni-keyboard-hidden</code> attribute is set on a supported input, the Keyboard will not apply to that input.</span>
     
     `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],render:e=>t`
@@ -213,7 +213,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
             <span>Input field with <code>data-omni-keyboard-hidden</code></span>
             <omni-text-field data-omni-keyboard-hidden label="No Keyboard" tabindex="32"></omni-text-field>
         </div>  
-  `,name:"Hide Keyboard"}),Z=c(d({},l),{description:()=>t`
+  `,name:"Hide Keyboard"}),Q=c(d({},l),{description:()=>t`
     <span>The Keyboard will react accordingly to the <code>data-omni-keyboard-mode</code> attribute on supported target elements.</span>
         
     `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],render:e=>l.args.attachMode==="all"?t`
@@ -229,7 +229,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
             <div class="keyboard-showcase">
                 <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have <code>attach-mode</code> attribute set to <code class="language-js">'all'</code>.</span>
                 <omni-button @click="${()=>{l.args.attachMode="all",document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" class="docs-omni-component"><span>Update <code>attach-mode</code> to <code class="language-js">'all'</code></span></omni-button>
-            </div>`,name:"Alternate Modes"}),ee={render:e=>t`
+            </div>`,name:"Alternate Modes"}),Y={render:e=>t`
 
     <!-- Add the Keyboard with slots to the DOM -->    
     <omni-keyboard id="keyboard-slots" 
@@ -289,7 +289,7 @@ import"../chunks-js/chunk.AQFJVA42.js";import"../chunks-js/chunk.K44JGD3K.js";im
 
     </div>
 
-  `,name:"Slotted Content",args:{clearLabel:"Clear",actionLabel:"Enter",closeLabel:"Close",spaceLabel:"Space",attachMode:"id","caps-off":i`<span class="center-inline">lower</span>`,"caps-on":i`<span class="center-inline">upper</span>`,"caps-lock":i`<span class="center-inline">UPPER</span>`,"action-done":i`<span class="center-inline">Done</span>`,"action-enter":i`<span class="center-inline">↵</span>`,"action-go":i`<span class="center-inline">Go</span>`,"action-next":i`<span class="center-inline">→</span>`,"action-previous":i`<span class="center-inline">←</span>`,"action-search":i`<span class="center-inline">Search</span>`,"action-send":i`<span class="center-inline">Send</span>`,backspace:i`<span class="center-inline">⌫</span>`,clear:i`<span class="center-inline">(X)</span>`,close:i`<span class="center-inline">^</span>`}},k,te={render:e=>{let m="keyboard-script-generated";return document.getElementById(m)||g.create({id:m,attachMode:e.attachMode,clearLabel:e.clearLabel,actionLabel:e.actionLabel,closeLabel:e.closeLabel,spaceLabel:e.spaceLabel,backspace:()=>{let s=document.createElement("span");s.textContent="\u232B",s.style.height="100%",s.style.display="inline-flex",s.style.alignItems="center";let b=s.style.color;return s.addEventListener("mouseenter",()=>{b=s.style.color,s.style.color="lightgreen"}),s.addEventListener("mouseleave",()=>{s.style.color=b}),s}}),t`
+  `,name:"Slotted Content",args:{clearLabel:"Clear",actionLabel:"Enter",closeLabel:"Close",spaceLabel:"Space",attachMode:"id","caps-off":i`<span class="center-inline">lower</span>`,"caps-on":i`<span class="center-inline">upper</span>`,"caps-lock":i`<span class="center-inline">UPPER</span>`,"action-done":i`<span class="center-inline">Done</span>`,"action-enter":i`<span class="center-inline">↵</span>`,"action-go":i`<span class="center-inline">Go</span>`,"action-next":i`<span class="center-inline">→</span>`,"action-previous":i`<span class="center-inline">←</span>`,"action-search":i`<span class="center-inline">Search</span>`,"action-send":i`<span class="center-inline">Send</span>`,backspace:i`<span class="center-inline">⌫</span>`,clear:i`<span class="center-inline">(X)</span>`,close:i`<span class="center-inline">^</span>`}},k,Z={render:e=>{let m="keyboard-script-generated";return document.getElementById(m)||g.create({id:m,attachMode:e.attachMode,clearLabel:e.clearLabel,actionLabel:e.actionLabel,closeLabel:e.closeLabel,spaceLabel:e.spaceLabel,backspace:()=>{let s=document.createElement("span");s.textContent="\u232B",s.style.height="100%",s.style.display="inline-flex",s.style.alignItems="center";let b=s.style.color;return s.addEventListener("mouseenter",()=>{b=s.style.color,s.style.color="lightgreen"}),s.addEventListener("mouseleave",()=>{s.style.color=b}),s}}),t`
             <div class="keyboard-showcase">
                 <span>Input field utilising Keyboard generated from a script.</span>
                 <omni-text-field data-omni-keyboard-attach="keyboard-script-generated" label="Keyboard from script" tabindex="49"></omni-text-field> 
@@ -381,7 +381,7 @@ Keyboard.create({
         }
     });
 <\/script>
-    `])))}]},ae=c(d({},l),{description:()=>t`
+    `])))}]},ee=c(d({},l),{description:()=>t`
     <span>The Keyboard supports vanilla native HTML <code class="language-html">&lt;input&gt;</code> and <code class="language-html">&lt;textarea&gt;</code> elements.</span>
     `,frameworkSources:[{framework:"HTML",load:()=>r(p),disableCodePen:!0}],render:e=>l.args.attachMode==="all"?t`
         <div class="keyboard-showcase">
@@ -408,5 +408,5 @@ Keyboard.create({
             <div class="keyboard-showcase">
                 <span>To illustrate this, update the <strong>Interactive</strong> Keyboard properties to have <code>attach-mode</code> attribute set to <code class="language-js">'all'</code>.</span>
                 <omni-button @click="${()=>{l.args.attachMode="all",document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" class="docs-omni-component"><span>Update <code class="language-js">attach-mode</code> to <code class="language-js">'all'</code></span></omni-button>
-            </div>`,name:"Vanilla Inputs"});export{Z as Alternate_Modes,R as Attach_By_Attribute,X as Attach_By_Id,z as Enter_Key_Hint_Variations,Q as Hide_Display_Value,Y as Hide_Keyboard,l as Interactive,J as Masked_Values,ee as Slotted_Content,ae as Vanilla_Inputs,te as Via_Script,q as default};
+            </div>`,name:"Vanilla Inputs"});export{Q as Alternate_Modes,G as Attach_By_Attribute,q as Attach_By_Id,R as Enter_Key_Hint_Variations,z as Hide_Display_Value,J as Hide_Keyboard,l as Interactive,X as Masked_Values,Y as Slotted_Content,ee as Vanilla_Inputs,Z as Via_Script};
 //# sourceMappingURL=Keyboard.stories.js.map

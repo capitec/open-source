@@ -81,7 +81,7 @@
                     </div>
                     <div class="header-version-section">
                         <div class="header-version" id="header-version-indicator">
-                            0.8.1
+                            0.9.0
                         </div>
                         <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
                     </div>
@@ -129,6 +129,13 @@
         </div>
         <div class="menu-item separator"><div class="line"></div></div>
         
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/alert">
+                Alert
+            </a>
+        </div>
         <div class="menu-item ">
             <a class="menu-link "
              
@@ -183,6 +190,20 @@
              
             href="./components/email-field">
                 Email Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander">
+                Expander
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander-group">
+                Expander Group
             </a>
         </div>
         <div class="menu-item ">
@@ -613,6 +634,13 @@
                             <tbody id="component-attributes">
                                 
                                 <tr>
+                                    <td data-label="Name" scope="row">value</td>
+                                    <td data-label="Attribute" scope="row">value&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt; | undefined</code></pre></td>
+                                    <td data-label="Description">Value entered into the form component.</td>
+                                </tr>
+                                
+                                <tr>
                                     <td data-label="Name" scope="row">items</td>
                                     <td data-label="Attribute" scope="row">items&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">SelectItems | ((filterValue?: string) =&gt; SelectItems) | undefined</code></pre></td>
@@ -676,13 +704,6 @@
                                 </tr>
                                 
                                 <tr>
-                                    <td data-label="Name" scope="row">value</td>
-                                    <td data-label="Attribute" scope="row">value&nbsp;</td>
-                                    <td data-label="Type"><pre><code class="language-js">string | number | Record&lt;string, unknown&gt; | undefined</code></pre></td>
-                                    <td data-label="Description">Value entered into the form component.</td>
-                                </tr>
-                                
-                                <tr>
                                     <td data-label="Name" scope="row">data</td>
                                     <td data-label="Attribute" scope="row">data&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">object | undefined</code></pre></td>
@@ -734,6 +755,12 @@
                             </tbody>
                         </table>
                     </div>
+                
+
+                
+                
+
+                
                 
 
                 

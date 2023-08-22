@@ -132,6 +132,13 @@
         <div class="menu-item ">
             <a class="menu-link "
              
+            href="./components/alert">
+                Alert
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
             href="./components/button">
                 Button
             </a>
@@ -183,6 +190,20 @@
              
             href="./components/email-field">
                 Email Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander">
+                Expander
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander-group">
+                Expander Group
             </a>
         </div>
         <div class="menu-item ">
@@ -515,6 +536,70 @@
                                     <td data-label="Attribute" scope="row">lang&nbsp;</td>
                                     <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
                                     <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Instance Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">showToast</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - ShowToastInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Toast</code></pre></td>
+                                    <td data-label="Description">Push a toast message onto the toast stack.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">showInstance</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">instance - Toast,
+options - ShowToastOptions</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Toast</code></pre></td>
+                                    <td data-label="Description">Push an existing toast instance onto the toast stack.</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Static Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">create</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - ToastStackInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">ToastStack | undefined</code></pre></td>
+                                    <td data-label="Description">Creates a new <code>&lt;omni-toast-stack&gt;</code> element with the provided context and appends it to the DOM (either to document body or to provided target parent element).</td>
                                 </tr>
                                 
                             </tbody>
@@ -886,22 +971,22 @@
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-stack-anchor-bottom</code></pre></td>
-                                        <td data-label="Description">The position from the bottom toast `position` is set to `bottom`, `bottom-left`, or `bottom-right`.</td>
+                                        <td data-label="Description">The position from the bottom toast <code>position</code> is set to <code>bottom</code>, <code>bottom-left</code>, or <code>bottom-right</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-stack-anchor-top</code></pre></td>
-                                        <td data-label="Description">The position from the bottom toast `position` is set to `top`, `top-left`, or `top-right`.</td>
+                                        <td data-label="Description">The position from the bottom toast <code>position</code> is set to <code>top</code>, <code>top-left</code>, or <code>top-right</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-stack-anchor-left</code></pre></td>
-                                        <td data-label="Description">The position from the bottom toast `position` is set to `left`, `top-left`, or `bottom-left`.</td>
+                                        <td data-label="Description">The position from the bottom toast <code>position</code> is set to <code>left</code>, <code>top-left</code>, or <code>bottom-left</code>.</td>
                                     </tr>
                                     
                                     <tr>
                                         <td data-label="Name" scope="row"><pre><code class="language-css">--omni-toast-stack-anchor-right</code></pre></td>
-                                        <td data-label="Description">The position from the bottom toast `position` is set to `right`, `top-right`, or `bottom-right`.</td>
+                                        <td data-label="Description">The position from the bottom toast <code>position</code> is set to <code>right</code>, <code>top-right</code>, or <code>bottom-right</code>.</td>
                                     </tr>
                                     
                                     <tr>

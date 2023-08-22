@@ -1,4 +1,5 @@
 
+export * from './alert/index.js';
 export * from './button/index.js';
 export * from './calendar/index.js';
 export * from './check/index.js';
@@ -7,6 +8,7 @@ export * from './color-field/index.js';
 export * from './currency-field/index.js';
 export * from './date-picker/index.js';
 export * from './email-field/index.js';
+export * from './expander/index.js';
 export * from './hyperlink/index.js';
 export * from './icon/index.js';
 export * from './icons/index.js';

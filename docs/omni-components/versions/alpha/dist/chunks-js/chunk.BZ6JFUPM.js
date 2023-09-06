@@ -1,4 +1,4 @@
-import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";import{a as n}from"./chunk.ERPIRXOO.js";import{a as d}from"./chunk.FT5UPVZS.js";import{a as f,b as s,c as l,d as u}from"./chunk.S2K25ADN.js";import{a as m,b as a,e as h}from"./chunk.L3RZWW2F.js";import{j as o,m as c,p}from"./chunk.BF43NN75.js";c();p();var t=class extends g{constructor(){super(...arguments);this.defaultLocale="en-US";this.locale=this.defaultLocale;this.date=this.value&&typeof this.value=="string"?n.fromISO(this.value).setLocale(this.locale):n.local();this._showCalendar=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._checkForBottomOfScreen(),await this._checkforMobile(),window.addEventListener("resize",this._checkForBottomOfScreen.bind(this)),window.addEventListener("scroll",this._checkForBottomOfScreen.bind(this)),window.addEventListener("resize",this._checkforMobile.bind(this)),window.addEventListener("scroll",this._checkforMobile.bind(this))}shouldUpdate(e){return e.has("value")&&(this.date=n.fromISO(this.value).setLocale(this.locale)),!0}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}async _checkForBottomOfScreen(){(visualViewport==null?void 0:visualViewport.height)-this.getBoundingClientRect().bottom<270?this._bottomOfViewport=!0:this._bottomOfViewport=!1}async _checkforMobile(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}_inputClick(e){if(this.disabled){e.preventDefault(),e.stopImmediatePropagation();return}let r=this.renderRoot.querySelector("#picker-container"),i=this.renderRoot.querySelector("#picker-dialog");(!e.composedPath()||!(r||i)||!(e.composedPath().includes(r)||e.composedPath().includes(i)))&&this._toggleCalendar()}_windowClick(e){let r=this.renderRoot.querySelector("#picker-dialog"),i=e.composedPath();i&&(!i.includes(this)||this._isMobile&&r&&i.findIndex(b=>b===r)===0)&&this._showCalendar&&this._toggleCalendar()}_toggleCalendar(){if(this._showCalendar){if(this._showCalendar=!1,this._isMobile){let e=this.renderRoot.querySelector("#picker-dialog");e&&e.close()}}else if(this._showCalendar=!0,this._isMobile){let e=this.renderRoot.querySelector("#picker-dialog");e&&e.showModal()}}_dateSelected(e){this.date=n.fromJSDate(e.detail.date),this.value=this.date.toISODate(),this.dispatchEvent(new CustomEvent("change",{detail:{date:this.date.toJSDate()}})),this._toggleCalendar()}static get styles(){return[super.styles,m`
+import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";import{a}from"./chunk.ERPIRXOO.js";import{a as d}from"./chunk.FT5UPVZS.js";import{a as f,b as s,c as l,d as u}from"./chunk.S2K25ADN.js";import{a as h,b as n,e as c}from"./chunk.L3RZWW2F.js";import{j as o,m as p,p as m}from"./chunk.BF43NN75.js";p();m();var t=class extends g{constructor(){super(...arguments);this.defaultLocale="en-US";this.locale=this.defaultLocale;this.date=this.value&&typeof this.value=="string"?a.fromISO(this.value).setLocale(this.locale):a.local();this._showCalendar=!1;this._bottomOfViewport=!1;this._isMobile=!1}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._inputClick.bind(this)),window.addEventListener("click",this._windowClick.bind(this))}async firstUpdated(){await this._checkForBottomOfScreen(),await this._checkforMobile(),window.addEventListener("resize",this._checkForBottomOfScreen.bind(this)),window.addEventListener("scroll",this._checkForBottomOfScreen.bind(this)),window.addEventListener("resize",this._checkforMobile.bind(this)),window.addEventListener("scroll",this._checkforMobile.bind(this))}shouldUpdate(e){return e.has("value")&&(this.date=a.fromISO(this.value).setLocale(this.locale)),!0}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}async _checkForBottomOfScreen(){(visualViewport==null?void 0:visualViewport.height)-this.getBoundingClientRect().bottom<270?this._bottomOfViewport=!0:this._bottomOfViewport=!1}async _checkforMobile(){(window.matchMedia?window.matchMedia("screen and (min-width: 767px)").matches:window.innerWidth>=767)?this._isMobile=!1:this._isMobile=!0}_inputClick(e){if(this.disabled){e.preventDefault(),e.stopImmediatePropagation();return}let r=this.renderRoot.querySelector("#picker-container"),i=this.renderRoot.querySelector("#picker-dialog");(!e.composedPath()||!(r||i)||!(e.composedPath().includes(r)||e.composedPath().includes(i)))&&this._toggleCalendar()}_windowClick(e){let r=this.renderRoot.querySelector("#picker-dialog"),i=e.composedPath();i&&(!i.includes(this)||this._isMobile&&r&&i.findIndex(b=>b===r)===0)&&this._showCalendar&&this._toggleCalendar()}_toggleCalendar(){if(this._showCalendar){if(this._showCalendar=!1,this._isMobile){let e=this.renderRoot.querySelector("#picker-dialog");e&&e.close()}}else if(this._showCalendar=!0,this._isMobile){let e=this.renderRoot.querySelector("#picker-dialog");e&&(console.log("Showing dialog"),e.showModal())}}_dateSelected(e){this.date=a.fromJSDate(e.detail.date),this.value=this.date.toISODate(),this.dispatchEvent(new CustomEvent("change",{detail:{date:this.date.toJSDate()}})),this._toggleCalendar()}static get styles(){return[super.styles,h`
                 /* Added to ensure that component has pointer cursor applied */
                 :host {
                     cursor: pointer;
@@ -123,33 +123,34 @@ import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";
                     transform: translateY(-100%);
                 }
                 }
-        `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return a`
+        `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return n`
             <input
                 class=${d(e)}
                 id="inputField"
                 type="text"
                 readonly
                 ?disabled=${this.disabled}
-                .value=${v(this.date&&this.date.isValid?this.date.toLocaleString(n.DATE_FULL):"")}
+                .value=${v(this.date&&this.date.isValid?this.date.toLocaleString(a.DATE_FULL):"")}
                 tabindex="${this.disabled?-1:0}" />
-        `}renderControl(){let e={"left-border":!0,disabled:this.disabled,error:this.error},r={control:!0,disabled:this.disabled,error:this.error},i={"control-icon":!0,disabled:this.disabled,error:this.error};return a` 
+        `}renderControl(){let e={"left-border":!0,disabled:this.disabled,error:this.error},r={control:!0,disabled:this.disabled,error:this.error},i={"control-icon":!0,disabled:this.disabled,error:this.error};return n` 
         <div class=${d(e)}></div>
         <div id="control" class=${d(r)} @click=${this.focus}>
                 <slot name="calendar">
                     <omni-calendar-icon class=${d(i)}></omni-calendar-icon>
                 </slot>            
          </div>
-        `}renderPicker(){return this._isMobile?a`
+        `}renderPicker(){return this._isMobile?n`
             <dialog id="picker-dialog" class="picker-dialog">
-                <omni-calendar 
-                    id="calendar" 
-                    locale=${this.locale} 
-                    .value=${this.value} 
-                    .minDate=${this.minDate}
-                    .maxDate=${this.maxDate} 
-                    @change=${e=>this._dateSelected(e)}>
-                </omni-calendar>
-            </dialog>`:this._showCalendar?a` 
+                ${this._showCalendar?n`
+                    <omni-calendar 
+                        id="calendar" 
+                        locale=${this.locale} 
+                        .value=${this.value} 
+                        .minDate=${this.minDate}
+                        .maxDate=${this.maxDate} 
+                        @change=${e=>this._dateSelected(e)}>
+                    </omni-calendar>`:c}
+            </dialog>`:this._showCalendar?n` 
             <div id="picker-container" class="picker-container ${this._bottomOfViewport?"bottom":""}">
                 <omni-calendar 
                   id="calendar" 
@@ -159,5 +160,5 @@ import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";
                   .maxDate=${this.maxDate} 
                   @change=${e=>this._dateSelected(e)}>
                 </omni-calendar>
-            </div>`:h}renderLabel(){return super.renderLabel(!0)}};o([u("#inputField")],t.prototype,"_inputElement",2),o([s({type:String,reflect:!0})],t.prototype,"locale",2),o([s({type:String,attribute:"min-date",reflect:!0})],t.prototype,"minDate",2),o([s({type:String,attribute:"max-date",reflect:!0})],t.prototype,"maxDate",2),o([l()],t.prototype,"date",2),o([l()],t.prototype,"_showCalendar",2),o([l()],t.prototype,"_bottomOfViewport",2),o([l()],t.prototype,"_isMobile",2),t=o([f("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.3F7O7QVM.js.map
+            </div>`:c}renderLabel(){return super.renderLabel(!0)}};o([u("#inputField")],t.prototype,"_inputElement",2),o([s({type:String,reflect:!0})],t.prototype,"locale",2),o([s({type:String,attribute:"min-date",reflect:!0})],t.prototype,"minDate",2),o([s({type:String,attribute:"max-date",reflect:!0})],t.prototype,"maxDate",2),o([l()],t.prototype,"date",2),o([l()],t.prototype,"_showCalendar",2),o([l()],t.prototype,"_bottomOfViewport",2),o([l()],t.prototype,"_isMobile",2),t=o([f("omni-date-picker")],t);export{t as a};
+//# sourceMappingURL=chunk.BZ6JFUPM.js.map

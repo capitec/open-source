@@ -64,7 +64,7 @@ import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";
                 }
 
                 .left-border {
-                    width: var(--omni-date-picker-control-left-border-width, 1px);
+                    width: var(--omni-date-picker-control-left-border-width, 2px);
                     background-color: var(--omni-date-picker-control-left-border-color,var(--omni-form-border-color));
                 }
 
@@ -160,4 +160,4 @@ import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";
                   @change=${e=>this._dateSelected(e)}>
                 </omni-calendar>
             </div>`:h}renderLabel(){return super.renderLabel(!0)}};o([u("#inputField")],t.prototype,"_inputElement",2),o([s({type:String,reflect:!0})],t.prototype,"locale",2),o([s({type:String,attribute:"min-date",reflect:!0})],t.prototype,"minDate",2),o([s({type:String,attribute:"max-date",reflect:!0})],t.prototype,"maxDate",2),o([l()],t.prototype,"date",2),o([l()],t.prototype,"_showCalendar",2),o([l()],t.prototype,"_bottomOfViewport",2),o([l()],t.prototype,"_isMobile",2),t=o([f("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.LAEAGTDE.js.map
+//# sourceMappingURL=chunk.5UVYFBWC.js.map

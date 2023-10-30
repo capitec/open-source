@@ -20278,15 +20278,6 @@
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "_value",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "''"
-            },
-            {
               "kind": "method",
               "name": "_setInputValue",
               "return": {
@@ -21006,15 +20997,6 @@
                 "text": "boolean | undefined"
               },
               "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_value",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "''"
             },
             {
               "kind": "method",

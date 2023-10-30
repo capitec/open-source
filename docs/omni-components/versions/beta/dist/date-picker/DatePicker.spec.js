@@ -32,6 +32,7 @@ test(`Date Picker - Visual and Behaviour`, async ({ page }) => {
         await yearButton.click({
             force: true
         });
+        // Compare screenshot of month grid.
         await expect(calendar).toHaveScreenshot('date-picker-calendar-months.png');
         const monthGrid = calendar.locator('.month-grid');
         await expect(monthGrid).toHaveCount(1);
@@ -44,7 +45,7 @@ test(`Date Picker - Visual and Behaviour`, async ({ page }) => {
         await expect(calendar).toHaveScreenshot('date-picker-calendar-days.png');
         const daysGrid = calendar.locator('.day-grid');
         await expect(daysGrid).toHaveCount(1);
-        //Find the day button at the specified position
+        // Find the day button at the specified position.
         const dayButton = calendar.locator('div.day > div.day-label').nth(15);
         await expect(dayButton).toHaveCount(1);
         await dayButton.click({

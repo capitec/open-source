@@ -24726,6 +24726,14 @@
           "name": "TabGroup",
           "cssProperties": [
             {
+              "description": "Tabs tab bar overflow x.",
+              "name": "--omni-tab-group-tab-bar-overflow-x"
+            },
+            {
+              "description": "Tabs tab bar overflow y.",
+              "name": "--omni-tab-group-tab-bar-overflow-y"
+            },
+            {
               "description": "Tabs tab bar width.",
               "name": "--omni-tab-group-tab-bar-width"
             },

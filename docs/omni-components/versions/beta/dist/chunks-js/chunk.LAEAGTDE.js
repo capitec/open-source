@@ -140,7 +140,7 @@ import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";
                 </slot>            
          </div>
         `}renderPicker(){return this._isMobile?a`
-            <dialog id="picker-dialog" class="picker-dialog">
+            <dialog id="picker-dialog" class="picker-dialog" @cancel="${e=>e.preventDefault()}">
                 <omni-calendar 
                     id="calendar" 
                     locale=${this.locale} 
@@ -160,4 +160,4 @@ import{a as v}from"./chunk.BKUUO7ED.js";import{a as g}from"./chunk.H4M5P4MF.js";
                   @change=${e=>this._dateSelected(e)}>
                 </omni-calendar>
             </div>`:h}renderLabel(){return super.renderLabel(!0)}};o([u("#inputField")],t.prototype,"_inputElement",2),o([s({type:String,reflect:!0})],t.prototype,"locale",2),o([s({type:String,attribute:"min-date",reflect:!0})],t.prototype,"minDate",2),o([s({type:String,attribute:"max-date",reflect:!0})],t.prototype,"maxDate",2),o([l()],t.prototype,"date",2),o([l()],t.prototype,"_showCalendar",2),o([l()],t.prototype,"_bottomOfViewport",2),o([l()],t.prototype,"_isMobile",2),t=o([f("omni-date-picker")],t);export{t as a};
-//# sourceMappingURL=chunk.KVDFOCW5.js.map
+//# sourceMappingURL=chunk.LAEAGTDE.js.map

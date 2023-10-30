@@ -1,4 +1,4 @@
-import{a as e}from"../chunks-js/chunk.XCXCHO25.js";import{a as r}from"../chunks-js/chunk.ERPIRXOO.js";import"../chunks-js/chunk.HUIMG7FG.js";import"../chunks-js/chunk.P7DBQE4Q.js";import"../chunks-js/chunk.KRAWXAJA.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as t}from"../chunks-js/chunk.L3RZWW2F.js";import{m as n,p as o}from"../chunks-js/chunk.BF43NN75.js";n();o();var l=r.local().plus({days:1}),m=l.toISODate(),g={render:a=>t`
+import{a as r}from"../chunks-js/chunk.ERPIRXOO.js";import"../chunks-js/chunk.HUIMG7FG.js";import"../chunks-js/chunk.P7DBQE4Q.js";import"../chunks-js/chunk.KRAWXAJA.js";import{a as e}from"../chunks-js/chunk.XCXCHO25.js";import"../chunks-js/chunk.FT5UPVZS.js";import"../chunks-js/chunk.6C4LMRM7.js";import"../chunks-js/chunk.S2K25ADN.js";import{b as t}from"../chunks-js/chunk.L3RZWW2F.js";import{m as n,p as o}from"../chunks-js/chunk.BF43NN75.js";n();o();var l=r.local().plus({days:1}),m=l.toISODate(),g={render:a=>t`
     <omni-calendar
         data-testid="test-calendar"
         locale="${e(a.locale)}"

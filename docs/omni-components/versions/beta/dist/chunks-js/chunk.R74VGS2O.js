@@ -138,6 +138,7 @@ import{a as p,b as c}from"./chunk.MDYAUJ3Z.js";import{a as i}from"./chunk.LB764B
                 }
       `]}render(){return t`
             <dialog part="dialog" class="modal" role="dialog" aria-modal="true"
+                    @cancel="${e=>e.preventDefault()}"
                     @click="${e=>this.notifyClickOutside(e)}" @touch="${e=>this.notifyClickOutside(e)}">
                 <div class="modal backdrop" part="backdrop">
                     <div class="container" ?no-fullscreen="${this.noFullscreen}" part="container">
@@ -159,4 +160,4 @@ import{a as p,b as c}from"./chunk.MDYAUJ3Z.js";import{a as i}from"./chunk.LB764B
             <div class="footer" part="footer">
                 <slot name="footer"></slot>
             </div>`}};r([n({type:String,attribute:"header-label",reflect:!0})],o.prototype,"headerLabel",2),r([n({type:String,attribute:"header-align",reflect:!0})],o.prototype,"headerAlign",2),r([n({type:Boolean,reflect:!0})],o.prototype,"hide",2),r([n({type:Boolean,attribute:"no-header",reflect:!0})],o.prototype,"noHeader",2),r([n({type:Boolean,attribute:"no-footer",reflect:!0})],o.prototype,"noFooter",2),r([n({type:Boolean,attribute:"no-fullscreen",reflect:!0})],o.prototype,"noFullscreen",2),r([u("dialog")],o.prototype,"dialog",2),o=r([h("omni-modal")],o);export{o as a};
-//# sourceMappingURL=chunk.KPSG3GC4.js.map
+//# sourceMappingURL=chunk.R74VGS2O.js.map

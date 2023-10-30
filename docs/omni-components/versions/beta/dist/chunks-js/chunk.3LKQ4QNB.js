@@ -269,7 +269,7 @@ import{a as w}from"./chunk.BKUUO7ED.js";import{a as y}from"./chunk.H4M5P4MF.js";
                                         `:l}
                         </div>`:l}
         `}renderPicker(){return this._isMobile?i`
-            <dialog id="items-dialog" class="items-dialog">
+            <dialog id="items-dialog" class="items-dialog" @cancel="${e=>e.preventDefault()}">
                 ${this._isMobile&&this.label?i`<div class="header">${this.label}</div>`:l}
                 ${this._renderSearchField()}
                 <div ${m(this._itemsMaxHeightChange)} id="items" class="items"> ${f(this._renderOptions(),i`<div>${this.renderLoading()}</div>`)}</div>
@@ -297,4 +297,4 @@ import{a as w}from"./chunk.BKUUO7ED.js";import{a as y}from"./chunk.H4M5P4MF.js";
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?i` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return i`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([p("#select")],t.prototype,"_selectElement",2),r([p("#searchField")],t.prototype,"_searchElement",2),r([a({reflect:!0,converter:{toAttribute(n){var h;try{return!n||typeof n=="string"?n:(h=JSON.stringify(n))!=null?h:null}catch(e){return n}},fromAttribute(n){try{return n&&typeof n=="string"&&(n.includes("{")||n.includes("["))?JSON.parse(n):n}catch(h){return n}}}})],t.prototype,"value",2),r([a({type:Array,reflect:!0})],t.prototype,"items",2),r([a({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([a({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([a({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([a({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([a({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([a({type:Object,reflect:!1})],t.prototype,"renderSelection",2),r([a({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([d()],t.prototype,"_popUp",2),r([d()],t.prototype,"_bottomOfViewport",2),r([d()],t.prototype,"_isMobile",2),r([d()],t.prototype,"_searchValue",2),t=r([b("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.ZBQ7676Y.js.map
+//# sourceMappingURL=chunk.3LKQ4QNB.js.map

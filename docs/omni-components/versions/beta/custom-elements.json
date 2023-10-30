@@ -1906,6 +1906,22 @@
               "name": "--omni-alert-description-padding-right"
             },
             {
+              "description": "Alert actions part top padding.",
+              "name": "--omni-alert-action-padding-top"
+            },
+            {
+              "description": "Alert actions part bottom padding.",
+              "name": "--omni-alert-action-padding-bottom"
+            },
+            {
+              "description": "Alert actions part left padding.",
+              "name": "--omni-alert-action-padding-left"
+            },
+            {
+              "description": "Alert actions part right padding.",
+              "name": "--omni-alert-action-padding-right"
+            },
+            {
               "description": "Alert action button(s) top padding.",
               "name": "--omni-alert-action-button-padding-top"
             },

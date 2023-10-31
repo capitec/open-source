@@ -47,9 +47,11 @@ test(`Pin Field - Behaviour`, async ({ page }) => {
         await expect(inputField).toHaveValue(number);
         await showSlotElement.click();
         await expect(pinField).toHaveScreenshot('pin-field-evaluate.png');
+        // Provide a invalid value.
         const invalidNumber = '56abc78';
         await pinField.evaluate((p, invalidNumber) => (p.value = invalidNumber), invalidNumber);
         await expect(pinField).toHaveScreenshot('pin-field-evaluate-invalid.png');
+        // Expected to be 5678 as the component should not allow non-numeric values.
         await expect(inputField).toHaveValue('5678');
         await expect(pinField).toHaveScreenshot('pin-field-invalid-value.png');
     });

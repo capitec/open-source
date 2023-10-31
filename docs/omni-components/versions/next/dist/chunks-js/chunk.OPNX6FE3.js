@@ -125,6 +125,11 @@ import{h}from"./chunk.6C4LMRM7.js";import{a as m,b as a,d as g}from"./chunk.S2K2
 				flex-direction: row;
 				justify-content: flex-end;
 				align-items: center;
+
+                padding-top: var(--omni-alert-action-padding-top, 0px);
+				padding-bottom: var(--omni-alert-action-padding-bottom, 0px);
+				padding-left: var(--omni-alert-action-padding-left, 0px);
+				padding-right: var(--omni-alert-action-padding-right, 0px);
 			}
 
             .actions.center {
@@ -247,4 +252,4 @@ import{h}from"./chunk.6C4LMRM7.js";import{a as m,b as a,d as g}from"./chunk.S2K2
                     </div>
 			</omni-modal>
 		`}};i([g("omni-modal")],r.prototype,"modal",2),i([a({type:String,reflect:!0})],r.prototype,"status",2),i([a({type:String,reflect:!0})],r.prototype,"message",2),i([a({type:String,attribute:"header-align",reflect:!0})],r.prototype,"headerAlign",2),i([a({type:String,reflect:!0})],r.prototype,"description",2),i([a({type:String,attribute:"description-align",reflect:!0})],r.prototype,"descriptionAlign",2),i([a({type:String,reflect:!0,attribute:"primary-action"})],r.prototype,"primaryAction",2),i([a({type:String,reflect:!0,attribute:"secondary-action"})],r.prototype,"secondaryAction",2),i([a({type:Boolean,reflect:!0,attribute:"enable-secondary"})],r.prototype,"enableSecondary",2),i([a({type:String,attribute:"action-align",reflect:!0})],r.prototype,"actionAlign",2),r=i([m("omni-alert")],r);export{r as a};
-//# sourceMappingURL=chunk.RKVIDJGI.js.map
+//# sourceMappingURL=chunk.OPNX6FE3.js.map

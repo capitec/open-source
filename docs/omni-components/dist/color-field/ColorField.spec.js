@@ -7,6 +7,7 @@ test(`Color Field - Visual and Behaviour`, async ({ page }) => {
         const field = page.locator('[data-testid]').first();
         const inputField = field.locator('#inputField');
         await expect(inputField).toHaveAttribute('type', 'color');
+        // Confirm that the component matches the screenshot
         await expect(field).toHaveScreenshot('color-field.png');
         await field.evaluate(async (f) => {
             f.value = '#F6B73C';

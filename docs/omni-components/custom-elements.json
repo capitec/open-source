@@ -1906,6 +1906,22 @@
               "name": "--omni-alert-description-padding-right"
             },
             {
+              "description": "Alert actions part top padding.",
+              "name": "--omni-alert-action-padding-top"
+            },
+            {
+              "description": "Alert actions part bottom padding.",
+              "name": "--omni-alert-action-padding-bottom"
+            },
+            {
+              "description": "Alert actions part left padding.",
+              "name": "--omni-alert-action-padding-left"
+            },
+            {
+              "description": "Alert actions part right padding.",
+              "name": "--omni-alert-action-padding-right"
+            },
+            {
               "description": "Alert action button(s) top padding.",
               "name": "--omni-alert-action-button-padding-top"
             },
@@ -20278,15 +20294,6 @@
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "_value",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "''"
-            },
-            {
               "kind": "method",
               "name": "_setInputValue",
               "return": {
@@ -21006,15 +21013,6 @@
                 "text": "boolean | undefined"
               },
               "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_value",
-              "type": {
-                "text": "string"
-              },
-              "privacy": "private",
-              "default": "''"
             },
             {
               "kind": "method",
@@ -24727,6 +24725,14 @@
           "description": "Component that displays content in tabs.",
           "name": "TabGroup",
           "cssProperties": [
+            {
+              "description": "Tabs tab bar overflow x.",
+              "name": "--omni-tab-group-tab-bar-overflow-x"
+            },
+            {
+              "description": "Tabs tab bar overflow y.",
+              "name": "--omni-tab-group-tab-bar-overflow-y"
+            },
             {
               "description": "Tabs tab bar width.",
               "name": "--omni-tab-group-tab-bar-width"

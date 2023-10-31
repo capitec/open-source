@@ -261,12 +261,16 @@ import{a as n}from"./chunk.FT5UPVZS.js";import{i as m}from"./chunk.6C4LMRM7.js";
                 ${this.renderHint()} ${this.renderError()}
             </div>
         `}renderPrefix(){return r}renderContent(){return r}renderLabel(l=!1){var d;let i={label:!0,error:(d=this.error)!=null?d:!1,disabled:this.disabled,"focused-static":l};return o`${this.label?o`<div class=${n(i)}><div>${this.label}</div></div>`:r}`}renderControl(){return r}renderPicker(){return r}renderHint(){return o`${this.hint&&!this.error?o`<div class="hint-label">${this.hint}</div>`:r}`}renderError(){return o`${this.error?o`<div class="error-label">${this.error}</div>`:r} `}renderClear(){return o`
-        <div class="clear-control">
-            ${this.clearable&&this.value&&!this.disabled?o`
-            <div id="clear-click" class="clear-click" @click="${l=>this._clearValue(l)}">
-                    <slot name="clear">
-                        <omni-clear-icon class="clear-icon"></omni-clear-icon>
-                    </slot>
-            </div>`:r}
-        </div>`}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({reflect:!0})],e.prototype,"value",2),t([a({type:Object,reflect:!0})],e.prototype,"data",2),t([a({type:String,reflect:!0})],e.prototype,"hint",2),t([a({type:String,reflect:!0})],e.prototype,"error",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
-//# sourceMappingURL=chunk.H4M5P4MF.js.map
+            ${this.clearable?o`
+                <div class="clear-control">
+                    ${this.clearable&&this.value&&!this.disabled?o`
+                    <div id="clear-click" class="clear-click" @click="${l=>this._clearValue(l)}">
+                        <slot name="clear">
+                            <omni-clear-icon class="clear-icon"></omni-clear-icon>
+                        </slot>
+                    </div>                    
+                    `:r}
+                </div>
+            `:r}
+        `}};t([a({type:String,reflect:!0})],e.prototype,"label",2),t([a({reflect:!0})],e.prototype,"value",2),t([a({type:Object,reflect:!0})],e.prototype,"data",2),t([a({type:String,reflect:!0})],e.prototype,"hint",2),t([a({type:String,reflect:!0})],e.prototype,"error",2),t([a({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([a({type:Boolean,reflect:!0})],e.prototype,"clearable",2);export{e as a};
+//# sourceMappingURL=chunk.UAZV7GSG.js.map

@@ -20,7 +20,7 @@ test(`Currency Field - Visual and Behaviour`, async ({ page }) => {
         const beforeinput = await mockEventListener(currencyField, 'beforeinput');
         const value = '120000015';
         await inputField.type(value);
-        // Check the following value as input value is formatted to currency value;
+        // Check the following value as input value is formatted to currency value.
         await expect(inputField).toHaveValue('1,200,000.15');
         await expect(beforeinput).toBeCalledTimes(value.length);
         // Backspacing to cover the removal of cents and cents separator

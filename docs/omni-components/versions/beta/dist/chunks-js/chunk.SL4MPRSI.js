@@ -8,6 +8,7 @@ import{a as y}from"./chunk.LB764BBD.js";import{h as T}from"./chunk.6C4LMRM7.js";
                 /* Tab bar */
                 :host > .tab-bar {
                     display: flex;
+                    flex-shrink: 0;
                     flex-direction: row;
                     align-items: center;
                     overflow-x: var(--omni-tab-group-tab-bar-overflow-x, auto);
@@ -34,4 +35,4 @@ import{a as y}from"./chunk.LB764BBD.js";import{h as T}from"./chunk.6C4LMRM7.js";
                 </div>
                 <slot @slotchange="${()=>this.requestUpdate()}"></slot>
         `}};b([g()],n.prototype,"_observer",2),n=b([A("omni-tab-group")],n);var s="active",c="disabled",d="data-active",q="data-disabled";export{n as a,s as b,c};
-//# sourceMappingURL=chunk.GF5BDNY3.js.map
+//# sourceMappingURL=chunk.SL4MPRSI.js.map

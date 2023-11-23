@@ -50,6 +50,7 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
             
 
                 :host > .indicator-bar {
+                    flex-shrink: 0;
                     height: var(--omni-tab-header-indicator-bar-height, 4px);
                     border-radius: var(--omni-tab-header-indicator-bar-border-radius, 100px 100px 0 0);
                     width: var(--omni-tab-header-indicator-bar-width, 100%);
@@ -70,4 +71,4 @@ import{h as s}from"./chunk.6C4LMRM7.js";import{a as h,b as e}from"./chunk.S2K25A
                 ${this.hasAttribute("data-active")?r`<div class="indicator"></div>`:n}
             </div>
         `}};t([e({type:String,reflect:!0})],a.prototype,"for",2),t([e({type:Object,reflect:!1})],a.prototype,"data",2),a=t([h("omni-tab-header")],a);export{a};
-//# sourceMappingURL=chunk.VM7CJC4R.js.map
+//# sourceMappingURL=chunk.DYVPLU7Z.js.map

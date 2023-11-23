@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/Next.icon.ts"],
+  "mappings": "oKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAAuBC,CAAe,CAChC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,aAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,gBAAgB,GAClBJ",
+  "names": ["init_define_process_argv", "init_global", "NextIcon", "DOMTreeElement_default", "x", "__decorateClass", "e"]
+}

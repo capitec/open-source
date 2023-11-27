@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/switch/index.ts"],
+  "mappings": "+CAAAA,IAAAC",
+  "names": ["init_define_process_argv", "init_global"]
+}

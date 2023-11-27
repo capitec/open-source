@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.6RBXNKJ6.js";import{a as b}from"./chunk.GCB5FYKQ.js";import{a as f}from"./chunk.77M5452K.js";import{a as m}from"./chunk.VVHFAJKZ.js";import{a as s,b as d,d as u}from"./chunk.2KHELDCI.js";import{a,b as l}from"./chunk.6H2RNHNO.js";import{j as t,m as r,p as o}from"./chunk.BF43NN75.js";r();o();var n=class extends b{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,c,i){super.attributeChangedCallback(e,c,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as p}from"./chunk.6RBXNKJ6.js";import{a as b}from"./chunk.GCB5FYKQ.js";import{a as m}from"./chunk.77M5452K.js";import{a as f}from"./chunk.VVHFAJKZ.js";import{a as s,b as d,d as u}from"./chunk.2KHELDCI.js";import{a,b as l}from"./chunk.6H2RNHNO.js";import{j as t,m as r,p as o}from"./chunk.BF43NN75.js";r();o();var n=class extends b{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,c,i){super.attributeChangedCallback(e,c,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -42,12 +42,12 @@ import{a as p}from"./chunk.6RBXNKJ6.js";import{a as b}from"./chunk.GCB5FYKQ.js";
                 }
             `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return l`
       <input
-        class=${m(e)}
+        class=${f(e)}
         id="inputField"
         type="number"
-        inputmode="${f(this.noNativeKeyboard?"none":void 0)}"
+        inputmode="${m(this.noNativeKeyboard?"none":void 0)}"
         .value=${p(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};t([u("#inputField")],n.prototype,"_inputElement",2),t([d({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],n.prototype,"noNativeKeyboard",2),n=t([s("omni-number-field")],n);export{n as a};
-//# sourceMappingURL=chunk.MBDSSMKT.js.map
+//# sourceMappingURL=chunk.JZJRU4NQ.js.map

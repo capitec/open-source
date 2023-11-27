@@ -1,4 +1,4 @@
-import{a as b}from"./chunk.VVHFAJKZ.js";import{h}from"./chunk.LAXESDIJ.js";import{a as d,b as e}from"./chunk.2KHELDCI.js";import{a as s,b as n,e as a}from"./chunk.6H2RNHNO.js";import{j as r,m as c,p as l}from"./chunk.BF43NN75.js";c();l();var t=class extends h{focus(){var o,i;(i=(o=this.shadowRoot)==null?void 0:o.getElementById("track"))==null||i.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._switchChecked()}_switchChecked(){let o=this.checked;this.checked=!o,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:o,new:this.checked},bubbles:!0}))}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let i=(o.code||"").toUpperCase();if(i==="SPACE"||i==="ENTER"||i==="NUMPADENTER")return this._switchChecked(),o.preventDefault()}static get styles(){return[super.styles,s`
+import{a as h}from"./chunk.VVHFAJKZ.js";import{h as b}from"./chunk.LAXESDIJ.js";import{a as d,b as e}from"./chunk.2KHELDCI.js";import{a as s,b as n,e as a}from"./chunk.6H2RNHNO.js";import{j as r,m as c,p as l}from"./chunk.BF43NN75.js";c();l();var t=class extends b{focus(){var o,i;(i=(o=this.shadowRoot)==null?void 0:o.getElementById("track"))==null||i.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._switchChecked()}_switchChecked(){let o=this.checked;this.checked=!o,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:o,new:this.checked},bubbles:!0}))}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let i=(o.code||"").toUpperCase();if(i==="SPACE"||i==="ENTER"||i==="NUMPADENTER")return this._switchChecked(),o.preventDefault()}static get styles(){return[super.styles,s`
         /* CONTAINER STYLES */
         .container {
           display: flex;
@@ -102,7 +102,7 @@ import{a as b}from"./chunk.VVHFAJKZ.js";import{h}from"./chunk.LAXESDIJ.js";impor
         }
       `]}render(){var o,i;return n`
             <div
-                class=${b({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(i=this.disabled)!=null?i:!1})}>
+                class=${h({container:!0,checked:(o=this.checked)!=null?o:!1,disabled:(i=this.disabled)!=null?i:!1})}>
                 <div id="content" @click="${this._click}" @keydown="${this._keyDown}">
                     <div id="track" class="track" tabindex="${this.disabled?"":0}"></div>
                     <div class="knob">
@@ -116,4 +116,4 @@ import{a as b}from"./chunk.VVHFAJKZ.js";import{h}from"./chunk.LAXESDIJ.js";impor
                 </label>
             </div>
         `}};r([e({type:String,reflect:!0})],t.prototype,"label",2),r([e({type:Object,reflect:!0})],t.prototype,"data",2),r([e({type:String,reflect:!0})],t.prototype,"hint",2),r([e({type:String,reflect:!0})],t.prototype,"error",2),r([e({type:Boolean,reflect:!0})],t.prototype,"checked",2),r([e({type:Boolean,reflect:!0})],t.prototype,"disabled",2),t=r([d("omni-switch")],t);export{t as a};
-//# sourceMappingURL=chunk.SIURCF57.js.map
+//# sourceMappingURL=chunk.D4UV3OSF.js.map

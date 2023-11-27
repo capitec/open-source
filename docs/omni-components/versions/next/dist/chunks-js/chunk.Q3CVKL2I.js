@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.VVHFAJKZ.js";import{h as c}from"./chunk.LAXESDIJ.js";import{a as l,b as t}from"./chunk.2KHELDCI.js";import{a as d,b as e,e as b}from"./chunk.6H2RNHNO.js";import{j as r,m as n,p as i}from"./chunk.BF43NN75.js";n();i();var o=class extends c{constructor(){super(...arguments);this.type="secondary";this.slotPosition="left"}static get styles(){return[super.styles,d`
+import{a as c}from"./chunk.VVHFAJKZ.js";import{h as m}from"./chunk.LAXESDIJ.js";import{a as l,b as t}from"./chunk.2KHELDCI.js";import{a as d,b as e,e as b}from"./chunk.6H2RNHNO.js";import{j as r,m as n,p as i}from"./chunk.BF43NN75.js";n();i();var o=class extends m{constructor(){super(...arguments);this.type="secondary";this.slotPosition="left"}static get styles(){return[super.styles,d`
                 :host {
                     box-sizing: border-box;
                     display: inline-flex;
@@ -260,7 +260,7 @@ import{a as m}from"./chunk.VVHFAJKZ.js";import{h as c}from"./chunk.LAXESDIJ.js";
             `]}render(){var a;return e`
             <button
                 id="button"
-                class=${m({button:!0,[`slot-${this.slotPosition}`]:this.label?this.slotPosition:!1,[`${this.type}`]:this.type,disabled:(a=this.disabled)!=null?a:!1})}
+                class=${c({button:!0,[`slot-${this.slotPosition}`]:this.label?this.slotPosition:!1,[`${this.type}`]:this.type,disabled:(a=this.disabled)!=null?a:!1})}
                 ?disabled=${this.disabled}
                 aria-disabled=${this.disabled?"true":"false"}
                 tabindex=${this.disabled?"-1":"0"}>
@@ -268,4 +268,4 @@ import{a as m}from"./chunk.VVHFAJKZ.js";import{h as c}from"./chunk.LAXESDIJ.js";
                 ${this.label?e`<label id="label" class="label">${this.label}</label>`:b}
             </button>
         `}};r([t({type:String,reflect:!0})],o.prototype,"type",2),r([t({type:String,reflect:!0})],o.prototype,"label",2),r([t({type:String,reflect:!0,attribute:"slot-position"})],o.prototype,"slotPosition",2),r([t({type:Boolean,reflect:!0})],o.prototype,"disabled",2),o=r([l("omni-button")],o);export{o as a};
-//# sourceMappingURL=chunk.ZLFDG5YN.js.map
+//# sourceMappingURL=chunk.Q3CVKL2I.js.map

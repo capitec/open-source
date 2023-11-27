@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.VVHFAJKZ.js";import{h as c}from"./chunk.LAXESDIJ.js";import{a as m,b as o}from"./chunk.2KHELDCI.js";import{a as s,b as t}from"./chunk.6H2RNHNO.js";import{j as e,m as n,p as l}from"./chunk.BF43NN75.js";n();l();var i=class extends c{constructor(){super(...arguments);this.size="default"}static get styles(){return[super.styles,s`
+import{a as c}from"./chunk.VVHFAJKZ.js";import{h as p}from"./chunk.LAXESDIJ.js";import{a as m,b as o}from"./chunk.2KHELDCI.js";import{a as s,b as t}from"./chunk.6H2RNHNO.js";import{j as e,m as n,p as l}from"./chunk.BF43NN75.js";n();l();var i=class extends p{constructor(){super(...arguments);this.size="default"}static get styles(){return[super.styles,s`
                 :host {
                     width: fit-content;
                     justify-content: center;
@@ -100,7 +100,7 @@ import{a as p}from"./chunk.VVHFAJKZ.js";import{h as c}from"./chunk.LAXESDIJ.js";
                 .svg-icon.default.symmetrical {
                     width: var(--omni-icon-size-default, 24px);
                 }
-            `]}render(){var a;let r=p({["svg-icon"]:!0,[`${this.size}`]:this.size,symmetrical:(a=this.symmetrical)!=null?a:!1});return this.icon?this.icon.startsWith("@material/")?t`<div class="material-icon ${this.size}">${this.icon.replace("@material/","")}</div>`:t`
+            `]}render(){var a;let r=c({["svg-icon"]:!0,[`${this.size}`]:this.size,symmetrical:(a=this.symmetrical)!=null?a:!1});return this.icon?this.icon.startsWith("@material/")?t`<div class="material-icon ${this.size}">${this.icon.replace("@material/","")}</div>`:t`
                 <img 
                     class=${r}
                     src="${this.icon}" 
@@ -110,4 +110,4 @@ import{a as p}from"./chunk.VVHFAJKZ.js";import{h as c}from"./chunk.LAXESDIJ.js";
                 <slot></slot>
             </div>
         `}};e([o({type:String,reflect:!0})],i.prototype,"size",2),e([o({type:String,reflect:!0})],i.prototype,"icon",2),e([o({type:Boolean,reflect:!0})],i.prototype,"symmetrical",2),i=e([m("omni-icon")],i);export{i as a};
-//# sourceMappingURL=chunk.BKR4BHUE.js.map
+//# sourceMappingURL=chunk.KJQ7PCHE.js.map

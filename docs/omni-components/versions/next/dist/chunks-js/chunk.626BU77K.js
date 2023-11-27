@@ -1,4 +1,4 @@
-import{a as b}from"./chunk.VVHFAJKZ.js";import{h as m}from"./chunk.LAXESDIJ.js";import{a as h,b as i}from"./chunk.2KHELDCI.js";import{a as s,b as t,e as c}from"./chunk.6H2RNHNO.js";import{j as n,m as l,p as d}from"./chunk.BF43NN75.js";l();d();var r=class extends m{connectedCallback(){super.connectedCallback(),this.tabIndex=this.disabled?-1:0,this.addEventListener("click",this._click)}focus(){var o,e;(e=(o=this.shadowRoot)==null?void 0:o.getElementById("content"))==null||e.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._toggleChecked(o)}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let e=(o.code||"").toUpperCase();if(e==="SPACE"||e==="ENTER")return this._toggleChecked(o),o.preventDefault()}_toggleChecked(o){let e=this.checked;this.checked=!e,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:e,new:this.checked}})),o.stopPropagation()}static get styles(){return[super.styles,s`
+import{a as m}from"./chunk.VVHFAJKZ.js";import{h as b}from"./chunk.LAXESDIJ.js";import{a as h,b as i}from"./chunk.2KHELDCI.js";import{a as s,b as t,e as c}from"./chunk.6H2RNHNO.js";import{j as n,m as l,p as d}from"./chunk.BF43NN75.js";l();d();var r=class extends b{connectedCallback(){super.connectedCallback(),this.tabIndex=this.disabled?-1:0,this.addEventListener("click",this._click)}focus(){var o,e;(e=(o=this.shadowRoot)==null?void 0:o.getElementById("content"))==null||e.focus()}_click(o){if(this.disabled)return o.stopImmediatePropagation();this._toggleChecked(o)}_keyDown(o){if(this.disabled)return o.stopImmediatePropagation();let e=(o.code||"").toUpperCase();if(e==="SPACE"||e==="ENTER")return this._toggleChecked(o),o.preventDefault()}_toggleChecked(o){let e=this.checked;this.checked=!e,this.dispatchEvent(new CustomEvent("value-change",{detail:{old:e,new:this.checked}})),o.stopPropagation()}static get styles(){return[super.styles,s`
         :host {
           outline: none;
         }
@@ -152,7 +152,7 @@ import{a as b}from"./chunk.VVHFAJKZ.js";import{h as m}from"./chunk.LAXESDIJ.js";
         }
       `]}render(){var o,e,a;return t`
             <div
-                class=${b({container:!0,indeterminate:(o=this.indeterminate)!=null?o:!1,checked:(e=this.checked)!=null?e:!1,disabled:(a=this.disabled)!=null?a:!1})}>
+                class=${m({container:!0,indeterminate:(o=this.indeterminate)!=null?o:!1,checked:(e=this.checked)!=null?e:!1,disabled:(a=this.disabled)!=null?a:!1})}>
                 <div id="content" @keydown="${this._keyDown}">
                     <div class="indicator">
                         ${this.indeterminate?t`
@@ -173,4 +173,4 @@ import{a as b}from"./chunk.VVHFAJKZ.js";import{h as m}from"./chunk.LAXESDIJ.js";
                 </label>
             </div>
         `}};n([i({type:String,reflect:!0})],r.prototype,"label",2),n([i({type:Object,reflect:!0})],r.prototype,"data",2),n([i({type:String,reflect:!0})],r.prototype,"hint",2),n([i({type:String,reflect:!0})],r.prototype,"error",2),n([i({type:Boolean,reflect:!0})],r.prototype,"checked",2),n([i({type:Boolean,reflect:!0})],r.prototype,"disabled",2),n([i({type:Boolean,reflect:!0})],r.prototype,"indeterminate",2),r=n([h("omni-check")],r);export{r as a};
-//# sourceMappingURL=chunk.MQ2U55IS.js.map
+//# sourceMappingURL=chunk.626BU77K.js.map

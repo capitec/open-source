@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.6RBXNKJ6.js";import{a as h}from"./chunk.GCB5FYKQ.js";import{a as d}from"./chunk.77M5452K.js";import{a as f}from"./chunk.VVHFAJKZ.js";import{a as s,b as l,d as c}from"./chunk.2KHELDCI.js";import{a,b as t}from"./chunk.6H2RNHNO.js";import{j as r,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var i=class extends h{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as m}from"./chunk.6RBXNKJ6.js";import{a as h}from"./chunk.GCB5FYKQ.js";import{a as f}from"./chunk.77M5452K.js";import{a as d}from"./chunk.VVHFAJKZ.js";import{a as s,b as l,d as c}from"./chunk.2KHELDCI.js";import{a,b as t}from"./chunk.6H2RNHNO.js";import{j as r,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var i=class extends h{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
                 .field {
                     flex: 1 1 auto;
 
@@ -48,12 +48,12 @@ import{a as m}from"./chunk.6RBXNKJ6.js";import{a as h}from"./chunk.GCB5FYKQ.js";
                 
             `]}renderPrefix(){return t`<omni-search-icon class="search-icon"></omni-search-icon>`}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return t`
             <input
-                class=${f(e)}
+                class=${d(e)}
                 id="inputField"
                 type="search"
-                inputmode="${d(this.noNativeKeyboard?"none":void 0)}"
+                inputmode="${f(this.noNativeKeyboard?"none":void 0)}"
                 .value=${m(this.value)}
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
         `}};r([c("#inputField")],i.prototype,"_inputElement",2),r([l({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],i.prototype,"noNativeKeyboard",2),i=r([s("omni-search-field")],i);export{i as a};
-//# sourceMappingURL=chunk.HMEFY7AC.js.map
+//# sourceMappingURL=chunk.NNJWXO5P.js.map

@@ -1,4 +1,4 @@
-import{a as x}from"./chunk.GCB5FYKQ.js";import{a as w}from"./chunk.77M5452K.js";import{a as b}from"./chunk.VVHFAJKZ.js";import{a as y,b as n,c as g,d as r}from"./chunk.2KHELDCI.js";import{a as v,b as o}from"./chunk.6H2RNHNO.js";import{j as i,m as u,p as h}from"./chunk.BF43NN75.js";u();h();var t=class extends x{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("focus",this._focusInput.bind(this),{capture:!0})}async firstUpdated(){this._setInputValue()}updated(e){var s,a,d,l,p,c,f,m;e.has("value")&&(this.value?((a=(s=this.container)==null?void 0:s.classList)==null||a.add("float-label"),(l=(d=this.container)==null?void 0:d.classList)==null||l.remove("no-float-label")):((c=(p=this.container)==null?void 0:p.classList)==null||c.remove("float-label"),(m=(f=this.container)==null?void 0:f.classList)==null||m.add("no-float-label")),this._setInputValue())}_setInputValue(){this._inputElement&&(this._inputElement.value=this.value)}_focusInput(){let e=this._inputElement;e&&setTimeout(function(){e.selectionStart=e.selectionEnd=1e4},0)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}_iconClicked(e){if(this.disabled)return e.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",e.stopPropagation()}static get styles(){return[super.styles,v`
+import{a as x}from"./chunk.GCB5FYKQ.js";import{a as b}from"./chunk.77M5452K.js";import{a as w}from"./chunk.VVHFAJKZ.js";import{a as y,b as n,c as g,d as r}from"./chunk.2KHELDCI.js";import{a as v,b as o}from"./chunk.6H2RNHNO.js";import{j as i,m as u,p as h}from"./chunk.BF43NN75.js";u();h();var t=class extends x{constructor(){super(...arguments);this.type="password"}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("focus",this._focusInput.bind(this),{capture:!0})}async firstUpdated(){this._setInputValue()}updated(e){var s,a,d,l,p,c,f,m;e.has("value")&&(this.value?((a=(s=this.container)==null?void 0:s.classList)==null||a.add("float-label"),(l=(d=this.container)==null?void 0:d.classList)==null||l.remove("no-float-label")):((c=(p=this.container)==null?void 0:p.classList)==null||c.remove("float-label"),(m=(f=this.container)==null?void 0:f.classList)==null||m.add("no-float-label")),this._setInputValue())}_setInputValue(){this._inputElement&&(this._inputElement.value=this.value)}_focusInput(){let e=this._inputElement;e&&setTimeout(function(){e.selectionStart=e.selectionEnd=1e4},0)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}_iconClicked(e){if(this.disabled)return e.stopImmediatePropagation();this.type==="password"?this.type="text":this.type="password",e.stopPropagation()}static get styles(){return[super.styles,v`
                 .control-box {
                     display: flex;
                     align-items: center;
@@ -65,11 +65,11 @@ import{a as x}from"./chunk.GCB5FYKQ.js";import{a as w}from"./chunk.77M5452K.js";
       </div>
     `}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return o`
       <input
-        class=${b(e)}
+        class=${w(e)}
         id="inputField"
         .type="${this.type}"
-        inputmode="${w(this.noNativeKeyboard?"none":void 0)}"
+        inputmode="${b(this.noNativeKeyboard?"none":void 0)}"
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};i([g()],t.prototype,"type",2),i([n({type:String,reflect:!1})],t.prototype,"value",2),i([n({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),i([r("#inputField")],t.prototype,"_inputElement",2),i([r(".container")],t.prototype,"container",2),t=i([y("omni-password-field")],t);export{t as a};
-//# sourceMappingURL=chunk.GQB7N5H2.js.map
+//# sourceMappingURL=chunk.4AJOFQFQ.js.map

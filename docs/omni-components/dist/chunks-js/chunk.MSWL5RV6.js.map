@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/icons/CapsOn.icon.ts"],
-  "mappings": "yKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAAyBC,CAAe,CAClC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,aAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,mBAAmB,GACrBJ",
-  "names": ["init_define_process_argv", "init_global", "CapsOnIcon", "DOMTreeElement_default", "y", "__decorateClass", "e"]
-}

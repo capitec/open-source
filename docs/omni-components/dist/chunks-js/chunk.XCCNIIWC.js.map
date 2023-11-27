@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/More.icon.ts"],
+  "mappings": "yKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAAuBC,CAAe,CAChC,QAAyB,CAC9B,OAAOC;AAAA;AAAA;AAAA;AAAA,SAKX,CACJ,EARaF,EAANG,EAAA,CADNC,EAAc,gBAAgB,GAClBJ",
+  "names": ["init_define_process_argv", "init_global", "MoreIcon", "DOMTreeElement_default", "x", "__decorateClass", "e"]
+}

@@ -14833,7 +14833,7 @@
               ],
               "return": {
                 "type": {
-                  "text": "any"
+                  "text": "string"
                 }
               }
             },

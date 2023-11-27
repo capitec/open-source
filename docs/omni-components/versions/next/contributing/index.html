@@ -420,7 +420,7 @@
 </li>
 <li>
 <p>Go to the Actions tab and enable workflow runs for the repository. (This is needed to generate screenshots for tests)</p>
- <img src="./.github/assets/enable-workflows.png" alt="Enabling Workflows" style="max-width: 100%; width: auto;"/>
+ <img src="https://github.com/capitec/omni-components/blob/main/.github/assets/enable-workflows.png?raw=true" alt="Enabling Workflows" style="max-width: 100%; width: auto;"/>
 </li>
 <li>
 <p>Add a <code>PROTECTED_TOKEN</code> secret for workflow runs with a <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token">personal access token</a> as its value. (Optional)</p>
@@ -428,7 +428,7 @@
 <li>This is to enable re-triggering of workflows when a workflow commits screenshots. If this is not set a new code commit will be required to trigger the next workflow as it uses the default <code>GITHUB_TOKEN</code> instead.</li>
 <li>See <a href="https://docs.github.com/en/actions/security-guides/automatic-token-authentication#using-the-github_token-in-a-workflow">Automatic token authentication</a> for detail.</li>
 </ul>
- <img src="./.github/assets/protected-token-creation.gif" alt="Protected token creation" style="max-width: 100%; width: auto;"/>
+ <img src="https://github.com/capitec/omni-components/blob/main/.github/assets/protected-token-creation.gif?raw=true" alt="Protected token creation" style="max-width: 100%; width: auto;"/>
 </li>
 <li>
 <p>Clone the forked repo, checkout your branch, and run <code>npm ci</code> inside the repository root.</p>
@@ -575,7 +575,7 @@
 </ul>
 <pre><code class="language-sh">npm run test-results 
 </code></pre>
-<img src="./.github/assets/test-results-report.gif" alt="Test Report" style="max-width: 100%; width: auto;"/>
+<img src="https://github.com/capitec/omni-components/blob/main/.github/assets/test-results-report.gif?raw=true" alt="Test Report" style="max-width: 100%; width: auto;"/>
 <blockquote>
 <p>🔶 NOTE: Screenshot testing only asserts during CI workflows, the report will locally only show current screenshots taken, but not perform any comparisons.</p>
 </blockquote>

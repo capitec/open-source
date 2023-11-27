@@ -6528,6 +6528,23 @@
             },
             {
               "kind": "method",
+              "name": "_blurOnEnter",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
               "name": "_keyInput",
               "return": {
                 "type": {

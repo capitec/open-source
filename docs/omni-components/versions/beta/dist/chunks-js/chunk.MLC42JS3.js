@@ -85,12 +85,14 @@ import{a as w}from"./chunk.RCKIRMAO.js";import{a as y}from"./chunk.X7FHWAJX.js";
 
                 /* Only applies styles to transform the control icon if on Desktop */
                 @media screen and (min-width: 767px) {
-                    .control.expanded {
+                    .control.expanded .arrow,
+                    .control.expanded ::slotted([slot='arrow']) {
                         transform: rotate(180deg);
                         transition: all linear 0.15s;
                     }
 
-                    .control.collapsed {
+                    .control.collapsed .arrow,
+                    .control.collapsed ::slotted([slot='arrow']) {
                         transform: none;
                         transition: all linear 0.15s;
                     }
@@ -289,7 +291,7 @@ import{a as w}from"./chunk.RCKIRMAO.js";import{a as y}from"./chunk.X7FHWAJX.js";
                         </slot>
                     `:l}
                 </div>
-            </div>`:l}renderControl(){let e={icon:!0,disabled:this.disabled,error:this.error};return i`
+            </div>`:l}renderControl(){let e={arrow:!0,icon:!0,disabled:this.disabled,error:this.error};return i`
         <div id="control" class="control ${this._popUp?"expanded":"collapsed"}" @click="${()=>this._controlClick()}">
             ${this._isMobile?i`<slot name="more"><omni-more-icon class=${c(e)}></omni-more-icon></slot>`:i`<slot name="arrow"><omni-chevron-down-icon class=${c(e)}></omni-chevron-down-icon></slot>`}
         </div>`}async _renderOptions(){let e=[],o=0;return typeof this.items=="function"?e=await this.items(this._searchValue):e=await this.items,Array.isArray(e)&&(this._searchValue&&this.filterItems&&typeof this.filterItems=="function"?e=await this.filterItems(this._searchValue,e):e=e.filter(s=>this._filterOption(s)),o=e.length),o===0?i`<div class="none">${this.emptyMessage}</div>`:e.map(s=>this._renderOption(s))}_filterOption(e){return this._searchValue?typeof e=="string"?e.toString().toLowerCase().includes(this._searchValue.toLowerCase()):!this.displayField||!e.hasOwnProperty(this.displayField)?!0:e[this.displayField].toString().toLowerCase().includes(this._searchValue.toLowerCase()):!0}_renderOption(e){return i` <div
@@ -297,4 +299,4 @@ import{a as w}from"./chunk.RCKIRMAO.js";import{a as y}from"./chunk.X7FHWAJX.js";
             @click="${()=>this._onItemClick(e)}">
             ${this.renderItem?i` <omni-render-element .data="${e}" .renderer="${this.renderItem}"></omni-render-element>`:typeof e!="string"&&this.displayField?e[this.displayField]:e}
         </div>`}renderLoading(){return i`<slot name="loading_indicator"><omni-loading-icon class="loading"></omni-loading-icon></slot>`}renderLabel(){return super.renderLabel(!0)}};r([p("#select")],t.prototype,"_selectElement",2),r([p("#searchField")],t.prototype,"_searchElement",2),r([a({reflect:!0,converter:{toAttribute(n){var h;try{return!n||typeof n=="string"?n:(h=JSON.stringify(n))!=null?h:null}catch(e){return n}},fromAttribute(n){try{return n&&typeof n=="string"&&(n.includes("{")||n.includes("["))?JSON.parse(n):n}catch(h){return n}}}})],t.prototype,"value",2),r([a({type:Array,reflect:!0})],t.prototype,"items",2),r([a({type:String,reflect:!0,attribute:"display-field"})],t.prototype,"displayField",2),r([a({type:String,reflect:!0,attribute:"id-field"})],t.prototype,"idField",2),r([a({type:String,reflect:!0,attribute:"empty-message"})],t.prototype,"emptyMessage",2),r([a({type:Boolean,reflect:!0})],t.prototype,"searchable",2),r([a({type:Object,reflect:!1})],t.prototype,"renderItem",2),r([a({type:Object,reflect:!1})],t.prototype,"renderSelection",2),r([a({type:Object,reflect:!1})],t.prototype,"filterItems",2),r([d()],t.prototype,"_popUp",2),r([d()],t.prototype,"_bottomOfViewport",2),r([d()],t.prototype,"_isMobile",2),r([d()],t.prototype,"_searchValue",2),t=r([b("omni-select")],t);export{t as a};
-//# sourceMappingURL=chunk.S2IUZHVP.js.map
+//# sourceMappingURL=chunk.MLC42JS3.js.map

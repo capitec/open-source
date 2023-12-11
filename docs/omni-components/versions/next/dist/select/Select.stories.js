@@ -1,4 +1,4 @@
-import"../chunks-js/chunk.4HRXEOVF.js";import"../chunks-js/chunk.XCCNIIWC.js";import"../chunks-js/chunk.7FZFKBOQ.js";import"../chunks-js/chunk.6RBXNKJ6.js";import{a as f,b as h,c as w,e as g,f as S,g as $,h as v}from"../chunks-js/chunk.TK7BLQR4.js";import"../chunks-js/chunk.GCB5FYKQ.js";import"../chunks-js/chunk.Q2DE3UYO.js";import"../chunks-js/chunk.SFBF6ZN2.js";import{E as s,m,x as a}from"../chunks-js/chunk.N4YSS3AO.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.KJQ7PCHE.js";import{a as l}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.R2JFHROS.js";import"../chunks-js/chunk.N2G7JZB7.js";import"../chunks-js/chunk.IMOBQWSU.js";import{a as o}from"../chunks-js/chunk.GGHQSTCM.js";import"../chunks-js/chunk.XTJU4JXQ.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.VVHFAJKZ.js";import"../chunks-js/chunk.LAXESDIJ.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as i,e as n}from"../chunks-js/chunk.6H2RNHNO.js";import{m as b,p as y}from"../chunks-js/chunk.BF43NN75.js";b();y();var d=[{id:"1",label:"Peter Parker"},{id:"2",label:"James Howlett"},{id:"3",label:"Tony Stark"},{id:"4",label:"Steve Rodgers"},{id:"5",label:"Bruce Banner"},{id:"6",label:"Wanda Maximoff"},{id:"7",label:"TChalla"},{id:"8",label:"Henry P. McCoy"},{id:"9",label:"Carl Lucas"},{id:"10",label:"Frank Castle"}],c=["Bruce Wayne","Clark Kent","Barry Allen","Arthur Curry","Hal Jordan"];async function F(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),e}async function C(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),I(e,c)}function I(e,t){return Array.isArray(t)&&e?t=t.filter(r=>k(e,r)):t}function k(e,t){return t.toString().toLowerCase().includes(e.toLowerCase())}var u={render:e=>i`
+import"../chunks-js/chunk.MLC42JS3.js";import"../chunks-js/chunk.XCCNIIWC.js";import"../chunks-js/chunk.7FZFKBOQ.js";import"../chunks-js/chunk.RCKIRMAO.js";import{a as f,b as h,c as w,e as g,f as S,g as $,h as v}from"../chunks-js/chunk.3LYDVUYG.js";import"../chunks-js/chunk.X7FHWAJX.js";import"../chunks-js/chunk.Q2DE3UYO.js";import{E as s,m,x as a}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import"../chunks-js/chunk.SG4R3JV5.js";import"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as o}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import{a as l}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.SFBF6ZN2.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as i,e as n}from"../chunks-js/chunk.6H2RNHNO.js";import{m as b,p as y}from"../chunks-js/chunk.BF43NN75.js";b();y();var d=[{id:"1",label:"Peter Parker"},{id:"2",label:"James Howlett"},{id:"3",label:"Tony Stark"},{id:"4",label:"Steve Rodgers"},{id:"5",label:"Bruce Banner"},{id:"6",label:"Wanda Maximoff"},{id:"7",label:"TChalla"},{id:"8",label:"Henry P. McCoy"},{id:"9",label:"Carl Lucas"},{id:"10",label:"Frank Castle"}],c=["Bruce Wayne","Clark Kent","Barry Allen","Arthur Curry","Hal Jordan"];async function F(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),e}async function C(e){return await new Promise(t=>setTimeout(()=>t(),2e3)),I(e,c)}function I(e,t){return Array.isArray(t)&&e?t=t.filter(r=>k(e,r)):t}function k(e,t){return t.toString().toLowerCase().includes(e.toLowerCase())}var u={render:e=>i`
         <omni-select
             data-testid="test-select"
             label="${l(e.label)}"
@@ -17,6 +17,10 @@ import"../chunks-js/chunk.4HRXEOVF.js";import"../chunks-js/chunk.XCCNIIWC.js";im
             empty-message="${e.emptyMessage}"
             >${e.prefix?i`${`\r
 `}${o(m("prefix",e.prefix))}`:n}
+            ${e.arrow?i`${`\r
+`}${o(m("arrow",e.arrow))}`:n}
+            ${e.more?i`${`\r
+`}${o(m("more",e.more))}`:n}
             ${e.clear?i`${`\r
 `}${o(m("clear",e.clear))}`:n}${e.suffix?i`${`\r
 `}${o(m("suffix",e.suffix))}`:n}
@@ -32,7 +36,7 @@ import"../chunks-js/chunk.4HRXEOVF.js";import"../chunks-js/chunk.XCCNIIWC.js";im
     const displayItems = ${JSON.stringify(e.items,void 0,2)};       
     const select = document.getElementById('omni-select');
     select.items = displayItems;
-<\/script>`)}],name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,clearable:!1,searchable:!1,prefix:"",suffix:"",clear:"",items:d,displayField:"label",idField:"id",loading_indicator:"",emptyMessage:"No items provided"}},A={render:e=>i`
+<\/script>`)}],name:"Interactive",args:{label:"Label",value:"",hint:"",error:"",disabled:!1,clearable:!1,searchable:!1,prefix:"",suffix:"",clear:"",arrow:"",more:"",items:d,displayField:"label",idField:"id",loading_indicator:"",emptyMessage:"No items provided"}},A={render:e=>i`
         <omni-select
             data-testid="test-select"
             label="${l(e.label)}"

@@ -1,13 +1,13 @@
-import{c}from"../chunks-js/chunk.T56R5BW7.js";import"../chunks-js/chunk.VM5ZZ5M3.js";import"../chunks-js/chunk.SFBF6ZN2.js";import{E as l,m as n,x as i}from"../chunks-js/chunk.N4YSS3AO.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.KJQ7PCHE.js";import{a as o}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.R2JFHROS.js";import"../chunks-js/chunk.N2G7JZB7.js";import"../chunks-js/chunk.IMOBQWSU.js";import{a as s}from"../chunks-js/chunk.GGHQSTCM.js";import"../chunks-js/chunk.XTJU4JXQ.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.Q3CVKL2I.js";import"../chunks-js/chunk.VVHFAJKZ.js";import"../chunks-js/chunk.LAXESDIJ.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as t,e as a}from"../chunks-js/chunk.6H2RNHNO.js";import{m as r,p as d}from"../chunks-js/chunk.BF43NN75.js";r();d();var u={render:e=>t`
+import{c}from"../chunks-js/chunk.L2URPN3J.js";import"../chunks-js/chunk.VM5ZZ5M3.js";import{E as l,m as n,x as i}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import"../chunks-js/chunk.SG4R3JV5.js";import"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as o}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.QRX6OAEP.js";import{a as s}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.SFBF6ZN2.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as t,e as a}from"../chunks-js/chunk.6H2RNHNO.js";import{m as r,p as d}from"../chunks-js/chunk.BF43NN75.js";r();d();var u={render:e=>t`
         <omni-toast
             data-testid="test-toast"
-            detail="${o(e.detail)}"
-            header="${o(e.header)}"
-            type="${o(e.type)}"
+            detail="${s(e.detail)}"
+            header="${s(e.header)}"
+            type="${s(e.type)}"
             ?closeable="${e.closeable}">
-            ${e.prefix?t`${s(n("prefix",e.prefix))}`:a}
-            ${s(e["[Default Slot]"])}
-            ${e.close?t`${s(n("close",e.close))}`:a}
+            ${e.prefix?t`${o(n("prefix",e.prefix))}`:a}
+            ${o(e["[Default Slot]"])}
+            ${e.close?t`${o(n("close",e.close))}`:a}
         </omni-toast>
     `,frameworkSources:[{framework:"Vue",load:e=>l(u.render(e)).replaceAll(" closeable",' :closeable="true"')}],name:"Interactive",args:{closeable:!1,detail:"The toast description",header:"The toast header",type:"success",prefix:void 0,"[Default Slot]":void 0,close:void 0}},j={description:()=>t`
     <div>
@@ -217,13 +217,13 @@ const App = () => <OmniButton label="Show Toast" onclick={showToast}/>;`}],name:
     `,render:e=>t`
         <omni-toast
             data-testid="test-toast"
-            detail="${o(e.detail)}"
-            header="${o(e.header)}"
-            type="${o(e.type)}"
+            detail="${s(e.detail)}"
+            header="${s(e.header)}"
+            type="${s(e.type)}"
             ?closeable="${e.closeable}">
-            ${e.prefix?t`${s(n("prefix",e.prefix))}`:a}
-            ${s(e["[Default Slot]"])}
-            ${e.close?t`${s(n("close",e.close))}`:a}
+            ${e.prefix?t`${o(n("prefix",e.prefix))}`:a}
+            ${o(e["[Default Slot]"])}
+            ${e.close?t`${o(n("close",e.close))}`:a}
         </omni-toast>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniToast } from "@capitec/omni-components-react/toast";
 
@@ -237,13 +237,13 @@ const App = () =>   <OmniToast${e.detail?` detail="${e.detail}"`:""}${e.header?`
     `,render:e=>t`
         <omni-toast
             data-testid="test-toast"
-            detail="${o(e.detail)}"
-            header="${o(e.header)}"
-            type="${o(e.type)}"
+            detail="${s(e.detail)}"
+            header="${s(e.header)}"
+            type="${s(e.type)}"
             ?closeable="${e.closeable}">
-            ${e.prefix?t`${s(n("prefix",e.prefix))}`:a}
-            ${s(e["[Default Slot]"])}
-            ${e.close?t`${s(n("close",e.close))}`:a}
+            ${e.prefix?t`${o(n("prefix",e.prefix))}`:a}
+            ${o(e["[Default Slot]"])}
+            ${e.close?t`${o(n("close",e.close))}`:a}
         </omni-toast>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniToast } from "@capitec/omni-components-react/toast";
 
@@ -256,13 +256,13 @@ const App = () =>   <OmniToast${e.detail?` detail="${e.detail}"`:""}${e.header?`
 </svg>`,"[Default Slot]":void 0,close:void 0}},m={description:()=>t`Add a close button to the <code class="language-html">&lt;omni-toast&gt;</code>.`,render:e=>t`
         <omni-toast
             data-testid="test-toast"
-            detail="${o(e.detail)}"
-            header="${o(e.header)}"
-            type="${o(e.type)}"
+            detail="${s(e.detail)}"
+            header="${s(e.header)}"
+            type="${s(e.type)}"
             ?closeable="${e.closeable}">
-            ${e.prefix?t`${s(n("prefix",e.prefix))}`:a}
-            ${s(e["[Default Slot]"])}
-            ${e.close?t`${s(n("close",e.close))}`:a}
+            ${e.prefix?t`${o(n("prefix",e.prefix))}`:a}
+            ${o(e["[Default Slot]"])}
+            ${e.close?t`${o(n("close",e.close))}`:a}
         </omni-toast>
     `,frameworkSources:[{framework:"Vue",load:e=>l(m.render(e)).replaceAll(" closeable",' :closeable="true"')},{framework:"React",load:e=>`import { OmniToast } from "@capitec/omni-components-react/toast";
 
@@ -273,13 +273,13 @@ const App = () => <OmniToast${e.detail?` detail="${e.detail}"`:""}${e.header?` h
     `,render:e=>t`
         <omni-toast
             data-testid="test-toast"
-            detail="${o(e.detail)}"
-            header="${o(e.header)}"
-            type="${o(e.type)}"
+            detail="${s(e.detail)}"
+            header="${s(e.header)}"
+            type="${s(e.type)}"
             ?closeable="${e.closeable}">
-            ${e.prefix?t`${s(n("prefix",e.prefix))}`:a}
-            ${s(e["[Default Slot]"])}
-            ${e.close?t`${s(n("close",e.close))}`:a}
+            ${e.prefix?t`${o(n("prefix",e.prefix))}`:a}
+            ${o(e["[Default Slot]"])}
+            ${e.close?t`${o(n("close",e.close))}`:a}
         </omni-toast>
     `,frameworkSources:[{framework:"Vue",load:e=>l(p.render(e)).replaceAll(" closeable",' :closeable="true"')},{framework:"React",load:e=>`import { OmniToast } from "@capitec/omni-components-react/toast";
 
@@ -310,13 +310,13 @@ const App = () =>   <OmniToast${e.detail?` detail="${e.detail}"`:""}${e.header?`
     `,render:e=>t`
         <omni-toast
             data-testid="test-toast"
-            detail="${o(e.detail)}"
-            header="${o(e.header)}"
-            type="${o(e.type)}"
+            detail="${s(e.detail)}"
+            header="${s(e.header)}"
+            type="${s(e.type)}"
             ?closeable="${e.closeable}">
-            ${e.prefix?t`${s(n("prefix",e.prefix))}`:a}
-            ${s(e["[Default Slot]"])}
-            ${e.close?t`${s(n("close",e.close))}`:a}
+            ${e.prefix?t`${o(n("prefix",e.prefix))}`:a}
+            ${o(e["[Default Slot]"])}
+            ${e.close?t`${o(n("close",e.close))}`:a}
         </omni-toast>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniToast } from "@capitec/omni-components-react/toast";
 

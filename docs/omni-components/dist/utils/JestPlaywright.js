@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import fs from 'fs';
 // import { platform } from 'os';
@@ -73,8 +74,7 @@ if (!process.env.CI && !process.env.PW_SCREENSHOT_TESTING) {
     });
 }
 async function withCoverage(page, testAction) {
-    var _a, _b, _c, _d;
-    const browserName = (_c = (_b = (_a = page.context()) === null || _a === void 0 ? void 0 : _a.browser()) === null || _b === void 0 ? void 0 : _b.browserType()) === null || _c === void 0 ? void 0 : _c.name();
+    const browserName = page.context()?.browser()?.browserType()?.name();
     // Uncomment for verbose logging from browser console.
     // await page.on('console', (msg) => {
     //     if (msg && msg.text) {
@@ -88,7 +88,7 @@ async function withCoverage(page, testAction) {
     //     }
     // });
     const url = page.url();
-    await page.goto(`http://${(_d = process.env.PLAYWRIGHT_HOST_ORIGIN) !== null && _d !== void 0 ? _d : 'localhost'}:6006`);
+    await page.goto(`http://${process.env.PLAYWRIGHT_HOST_ORIGIN ?? 'localhost'}:6006`);
     await page.evaluate(() => {
         window.sessionStorage.setItem('omni-docs-theme-selection', 'light');
         window.localStorage.setItem('omni-docs-framework-selection', 'HTML');
@@ -131,11 +131,10 @@ async function withCoverage(page, testAction) {
  */
 async function getStoryArgs(page, key, readySelector = '[data-testid]') {
     await page.waitForSelector(readySelector);
-    const args = await page.locator(`story-renderer[key=${key}]`).evaluate((storyRenderer) => { var _a; return (_a = storyRenderer === null || storyRenderer === void 0 ? void 0 : storyRenderer.story) === null || _a === void 0 ? void 0 : _a.args; });
+    const args = await page.locator(`story-renderer[key=${key}]`).evaluate((storyRenderer) => storyRenderer?.story?.args);
     return args;
 }
 async function mockEventListener(locatorOrHandle, eventName, callback) {
-    var _a;
     const tempFunction = `mock_${v4()}`;
     const eventFunction = fn();
     if (!locatorOrHandle) {
@@ -146,7 +145,7 @@ async function mockEventListener(locatorOrHandle, eventName, callback) {
         // Stringify Event https://stackoverflow.com/a/58416333
         function stringifyObject(object, maxDepth = 4, currentDepth = 0) {
             if (currentDepth > maxDepth)
-                return object === null || object === void 0 ? void 0 : object.toString();
+                return object?.toString();
             const obj = {};
             for (const key in object) {
                 let value = object[key];
@@ -189,7 +188,7 @@ async function mockEventListener(locatorOrHandle, eventName, callback) {
     };
     if (locatorOrHandle.ownerFrame) {
         const handle = locatorOrHandle;
-        page = (_a = (await handle.ownerFrame())) === null || _a === void 0 ? void 0 : _a.page();
+        page = (await handle.ownerFrame())?.page();
         await page.exposeFunction(tempFunction, pageFunction);
         await handle.evaluate(evalFunc, { tempFunction, eventName, fullEvent: Boolean(callback) });
     }

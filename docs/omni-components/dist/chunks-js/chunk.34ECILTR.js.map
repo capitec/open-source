@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/CapsLock.icon.ts"],
+  "mappings": "8KAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAA2BC,CAAe,CACpC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,aAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,qBAAqB,GACvBJ",
+  "names": ["init_define_process_argv", "init_global", "CapsLockIcon", "DOMTreeElement_default", "x", "__decorateClass", "t"]
+}

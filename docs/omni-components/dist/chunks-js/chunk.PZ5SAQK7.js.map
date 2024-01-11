@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/LockClosed.icon.ts"],
+  "mappings": "8KAAAA,IAAAC,IAqBO,IAAMC,EAAN,cAA6BC,CAAe,CACtC,QAAyB,CAC9B,OAAOC;AAAA;AAAA;AAAA,WAIX,CACJ,EAPaF,EAANG,EAAA,CADNC,EAAc,uBAAuB,GACzBJ",
+  "names": ["init_define_process_argv", "init_global", "LockClosedIcon", "DOMTreeElement_default", "x", "__decorateClass", "t"]
+}

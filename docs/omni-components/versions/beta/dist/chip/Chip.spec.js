@@ -21,7 +21,7 @@ test(`Chip - Label Behaviour`, async ({ page }) => {
         const args = await getStoryArgs(page, 'Label');
         const chip = page.locator('.Label').getByTestId('test-chip');
         await expect(chip).toHaveScreenshot('chip-initial.png');
-        await expect(chip.locator('#label')).toHaveText(args === null || args === void 0 ? void 0 : args.label);
+        await expect(chip.locator('#label')).toHaveText(args?.label);
     });
 });
 test(`Chip - Closable Behaviour`, async ({ page }) => {

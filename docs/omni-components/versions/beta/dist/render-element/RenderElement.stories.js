@@ -1,4 +1,4 @@
-import{m}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import"../chunks-js/chunk.SG4R3JV5.js";import"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as s}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as n,e as i}from"../chunks-js/chunk.6H2RNHNO.js";import{m as d,p as o}from"../chunks-js/chunk.BF43NN75.js";d();o();async function l(e){return await new Promise(t=>setTimeout(()=>t(),3e3)),n`<span>${JSON.stringify(e)}</span>`}async function c(e){await new Promise(r=>setTimeout(()=>r(),3e3));let t=document.createElement("span");return t.appendChild(document.createTextNode(JSON.stringify(e))),t.addEventListener("click",r=>alert("Clicked")),t}async function p(e){return await new Promise(t=>setTimeout(()=>t(),3e3)),`<span>${JSON.stringify(e)}</span>`}var v={frameworkSources:[{framework:"Vue",sourceParts:{jsFragment:()=>`import { html } from 'https://unpkg.com/lit/index.js?module';
+import{m}from"../chunks-js/chunk.W4QDIT72.js";import"../chunks-js/chunk.YISFJ54N.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.LNQK3SMD.js";import"../chunks-js/chunk.RI2XHZQE.js";import"../chunks-js/chunk.MRDDZJ5F.js";import"../chunks-js/chunk.3IMCJ7UD.js";import{a as s}from"../chunks-js/chunk.J37ISGRJ.js";import"../chunks-js/chunk.CDUHNCVH.js";import"../chunks-js/chunk.DUTPH62F.js";import"../chunks-js/chunk.R7EUQMUJ.js";import"../chunks-js/chunk.E2CUUU4Y.js";import"../chunks-js/chunk.Y6UVSDXK.js";import{d as n,g as i}from"../chunks-js/chunk.UDCULUBW.js";import{m as d,p as o}from"../chunks-js/chunk.BF43NN75.js";d();o();async function l(e){return await new Promise(t=>setTimeout(()=>t(),3e3)),n`<span>${JSON.stringify(e)}</span>`}async function c(e){await new Promise(r=>setTimeout(()=>r(),3e3));let t=document.createElement("span");return t.appendChild(document.createTextNode(JSON.stringify(e))),t.addEventListener("click",()=>alert("Clicked")),t}async function p(e){return await new Promise(t=>setTimeout(()=>t(),3e3)),`<span>${JSON.stringify(e)}</span>`}var O={frameworkSources:[{framework:"Vue",sourceParts:{jsFragment:()=>`import { html } from 'https://unpkg.com/lit/index.js?module';
 import { render } from 'https://unpkg.com/lit-html/lit-html.js?module';
 
 window.vueData = {
@@ -64,7 +64,7 @@ const App = () => <OmniRenderElement renderer={renderAsLit} data={{
 `}${s(m("loading_indicator",e.loading_indicator))}${`\r
 `}`:i}</omni-render-element
     >
-  `,args:{data:{hello:"world","other-data":!1},renderer:l,loading_indicator:""}},O={render:e=>((async()=>{let r;for(;!r;)await new Promise(a=>setTimeout(()=>a(),200)),r=document.getElementById("renderElI");r.renderer=e.renderer,r.data=e.data})(),n` <omni-render-element id="renderElI" data-testid="test-render"></omni-render-element> `),name:"HTML Element Instance",description:"Render an HTMLElement instance from the renderer function.",frameworkSources:[{framework:"Vue",sourceParts:{jsFragment:`window.vueData = {
+  `,args:{data:{hello:"world","other-data":!1},renderer:l,loading_indicator:""}},N={render:e=>((async()=>{let r;for(;!r;)await new Promise(a=>setTimeout(()=>a(),200)),r=document.getElementById("renderElI");r.renderer=e.renderer,r.data=e.data})(),n` <omni-render-element id="renderElI" data-testid="test-render"></omni-render-element> `),name:"HTML Element Instance",description:"Render an HTMLElement instance from the renderer function.",frameworkSources:[{framework:"Vue",sourceParts:{jsFragment:`window.vueData = {
     someData: {
         hello: 'world',
         'other-data': false
@@ -117,7 +117,7 @@ async function renderAsElement(data) {
 const App = () => <OmniRenderElement renderer={renderAsElement} data={{
                     hello: 'world',
                     'other-data': false
-                  }}/>;`}],args:{data:{hello:"world","other-data":!1},renderer:c}},N={render:e=>((async()=>{let r;for(;!r;)r=document.getElementById("renderElS"),r||await new Promise(a=>setTimeout(()=>a(),200));r.renderer=e.renderer,r.data=e.data})(),n` <omni-render-element id="renderElS" data-testid="test-render"> </omni-render-element> `),name:"HTML String",description:"Render a string from the renderer function as html.",frameworkSources:[{framework:"Vue",sourceParts:{jsFragment:`window.vueData = {
+                  }}/>;`}],args:{data:{hello:"world","other-data":!1},renderer:c}},v={render:e=>((async()=>{let r;for(;!r;)r=document.getElementById("renderElS"),r||await new Promise(a=>setTimeout(()=>a(),200));r.renderer=e.renderer,r.data=e.data})(),n` <omni-render-element id="renderElS" data-testid="test-render"> </omni-render-element> `),name:"HTML String",description:"Render a string from the renderer function as html.",frameworkSources:[{framework:"Vue",sourceParts:{jsFragment:`window.vueData = {
     someData: {
         hello: 'world',
         'other-data': false
@@ -155,5 +155,5 @@ async function renderAsString(data) {
 const App = () => <OmniRenderElement renderer={renderAsString} data={{
                     hello: 'world',
                     'other-data': false
-                  }}/>;`}],args:{data:{hello:"world","other-data":!1},renderer:p}};export{O as HTML_Element_Instance,N as HTML_String,v as Lit_Template};
+                  }}/>;`}],args:{data:{hello:"world","other-data":!1},renderer:p}};export{N as HTML_Element_Instance,v as HTML_String,O as Lit_Template};
 //# sourceMappingURL=RenderElement.stories.js.map

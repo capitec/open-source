@@ -1,4 +1,4 @@
-import{E as a,m as b,x as n}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import{a as A}from"../chunks-js/chunk.SG4R3JV5.js";import"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as s}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.QRX6OAEP.js";import{a as f}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as l,e as c}from"../chunks-js/chunk.6H2RNHNO.js";import{a as d,b as m,l as h,m as g,p as $}from"../chunks-js/chunk.BF43NN75.js";g();$();var r=e=>l`
+import{E as a,m as b,x as n}from"../chunks-js/chunk.W4QDIT72.js";import"../chunks-js/chunk.YISFJ54N.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.LNQK3SMD.js";import{a as A}from"../chunks-js/chunk.RI2XHZQE.js";import"../chunks-js/chunk.MRDDZJ5F.js";import"../chunks-js/chunk.3IMCJ7UD.js";import{a as s}from"../chunks-js/chunk.J37ISGRJ.js";import"../chunks-js/chunk.CDUHNCVH.js";import"../chunks-js/chunk.DUTPH62F.js";import"../chunks-js/chunk.E3E2TDLC.js";import{a as f}from"../chunks-js/chunk.C3AR2WR4.js";import"../chunks-js/chunk.R7EUQMUJ.js";import"../chunks-js/chunk.E2CUUU4Y.js";import"../chunks-js/chunk.Y6UVSDXK.js";import{d as l,g as c}from"../chunks-js/chunk.UDCULUBW.js";import{a as d,b as m,l as h,m as g,p as $}from"../chunks-js/chunk.BF43NN75.js";g();$();var r=e=>l`
         <omni-modal
             @click-outside="${()=>{e.hide=!0,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}"
             data-testid="test-modal"
@@ -231,7 +231,7 @@ const modal = Modal.show({
     headerAlign: 'right',
     id: 'some-id'
 });
-                `}},{framework:"HTML",load:e=>n(w||(w=h([`
+                `}},{framework:"HTML",load:()=>n(w||(w=h([`
                 <script type="module">                        
                         import { Modal } from '@capitec/omni-components/modal';
 
@@ -247,7 +247,7 @@ const modal = Modal.show({
                             id: 'some-id'
                         });
                 <\/script>
-            `])))},{framework:"React",load:e=>`import { Modal } from "@capitec/omni-components-react/modal";
+            `])))},{framework:"React",load:()=>`import { Modal } from "@capitec/omni-components-react/modal";
 
 const footerContainer = document.createElement('div');
 footerContainer.style.display = 'contents';

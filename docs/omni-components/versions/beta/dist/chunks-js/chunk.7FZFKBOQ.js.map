@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/icons/ChevronDown.icon.ts"],
-  "mappings": "yKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAA8BC,CAAe,CACvC,QAAyB,CAC9B,OAAOC;AAAA;AAAA;AAAA;AAAA,SAKX,CACJ,EARaF,EAANG,EAAA,CADNC,EAAc,wBAAwB,GAC1BJ",
-  "names": ["init_define_process_argv", "init_global", "ChevronDownIcon", "DOMTreeElement_default", "x", "__decorateClass", "e"]
-}

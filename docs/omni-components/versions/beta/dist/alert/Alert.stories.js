@@ -1,4 +1,4 @@
-import{a as m}from"../chunks-js/chunk.ALWYQK3Q.js";import{E as r,m as d,x as i}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import"../chunks-js/chunk.SG4R3JV5.js";import{b as f}from"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as l}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.QRX6OAEP.js";import{a as c}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as a,e as s}from"../chunks-js/chunk.6H2RNHNO.js";import{m as u,p}from"../chunks-js/chunk.BF43NN75.js";u();p();var O={title:"UI Components/Alert",component:"omni-alert"},n=(e,t)=>a`
+import{E as r,m as d,x as i}from"../chunks-js/chunk.W4QDIT72.js";import"../chunks-js/chunk.YISFJ54N.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.LNQK3SMD.js";import{a as m}from"../chunks-js/chunk.6SU4ENVT.js";import"../chunks-js/chunk.RI2XHZQE.js";import{b as f}from"../chunks-js/chunk.MRDDZJ5F.js";import"../chunks-js/chunk.3IMCJ7UD.js";import{a as l}from"../chunks-js/chunk.J37ISGRJ.js";import"../chunks-js/chunk.CDUHNCVH.js";import"../chunks-js/chunk.DUTPH62F.js";import"../chunks-js/chunk.E3E2TDLC.js";import{a as c}from"../chunks-js/chunk.C3AR2WR4.js";import"../chunks-js/chunk.R7EUQMUJ.js";import"../chunks-js/chunk.E2CUUU4Y.js";import"../chunks-js/chunk.Y6UVSDXK.js";import{d as a,g as s}from"../chunks-js/chunk.UDCULUBW.js";import{m as u,p}from"../chunks-js/chunk.BF43NN75.js";u();p();var O={title:"UI Components/Alert",component:"omni-alert"},n=(e,t)=>a`
         <omni-alert
             ${f(o=>{t&&t(o),o==null||o.show()})}
             @alert-close="${()=>{e.hide=!0,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}"
@@ -44,8 +44,8 @@ const onRef = e => {
 };`}}],name:"Interactive",args:{"status-indicator":"",header:"","[Default Slot]":"",primary:"",secondary:"",hide:!0,message:"Message Alert",description:"Additional context for the alert.",enableSecondary:void 0,status:void 0,headerAlign:void 0,descriptionAlign:void 0,primaryAction:void 0,secondaryAction:void 0,actionAlign:void 0}},V={description:()=>a`
     <div>
         Alerts can be shown programmatically using the static <code class="language-js">Alert.show()</code> function. 
-    <div>
-    `,render:e=>a`
+    </div>
+    `,render:()=>a`
         <omni-button
             data-testid="test-alert-show"
             label="Show Alert"
@@ -78,7 +78,7 @@ const showAlert = () => {
         message: 'Success!',
         description: 'It was successful.',
     });
-}`}},{framework:"React",load:e=>`import { OmniButton } from "@capitec/omni-components-react/button";
+}`}},{framework:"React",load:()=>`import { OmniButton } from "@capitec/omni-components-react/button";
 import { Alert } from '@capitec/omni-components-react/alert';
 
 const showAlert = () => {
@@ -92,13 +92,13 @@ const showAlert = () => {
 const App = () => <OmniButton label="Show Alert" onclick={showAlert}/>;`}],name:"Showing Alert Programmatically",args:{}},A="",H={description:()=>a`
     <div>
         Alerts can be asynchronously shown and awaited programmatically using the static <code class="language-js">Alert.showAsync()</code> function. 
-    <div>
-    `,render:e=>a`
+    </div>
+    `,render:()=>a`
         <omni-button
             data-testid="test-alert-show"
             label="Show Alert"
             @click="${()=>{m.showAsync({status:"info",message:"Async Alert!",description:`Click "Yes" for "primary" reason or "No" for "secondary" reason.
-If closed from script via the "hide" function on the Alert instance, the reason would be "auto".`,enableSecondary:!0,primaryAction:"Yes",secondaryAction:"No"}).then(t=>{A=t,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))})}}"
+If closed from script via the "hide" function on the Alert instance, the reason would be "auto".`,enableSecondary:!0,primaryAction:"Yes",secondaryAction:"No"}).then(e=>{A=e,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))})}}"
             >
         </omni-button>
         <div>${A}</div>
@@ -146,7 +146,7 @@ If closed from script via the "hide" function on the Alert instance, the reason 
         secondaryAction: 'No'
     });
     document.getElementById('reason').innerHTML = reason;
-};`}},{framework:"React",load:e=>`import { OmniButton } from "@capitec/omni-components-react/button";
+};`}},{framework:"React",load:()=>`import { OmniButton } from "@capitec/omni-components-react/button";
 import { Alert } from '@capitec/omni-components-react/alert';
 
 const showAlert = async () => {   
@@ -167,18 +167,18 @@ const App = () => <>
                     <div id="reason"></div>
                   </>;`}],name:"Showing Async Alert Programmatically",args:{}},T={description:()=>a`
     <div>
-        <p>Set the display status of the <code class="language-html">&lt;omni-alert&gt;</code>.<p>
+        <p>Set the display status of the <code class="language-html">&lt;omni-alert&gt;</code>.</p>
         <br/>
         <span>The <code>status</code> attribute supports the following options:
             <ul>
-                <li><code class="language-javascript">'success'</code> - Checkmark icon to indicate success.</li>
+                <li><code class="language-javascript">'success'</code> - Check mark icon to indicate success.</li>
                 <li><code class="language-javascript">'warning'</code> - Yield icon to indicate warning.</li>
                 <li><code class="language-javascript">'error'</code> - Exclamation icon to indicate error.</li>
                 <li><code class="language-javascript">'info'</code> - Information icon to indicate info.</li>
                 <li><code class="language-javascript">'none'</code> - No icon. (Default)</li>
             </ul>
         </span>
-    <div>
+    </div>
     `,render:e=>a`
         <omni-button data-testid="test-alert-btn" @click="${()=>{e.hide=!1,document.dispatchEvent(new CustomEvent("story-renderer-interactive-update",{bubbles:!0,composed:!0}))}}" label="Show Alert" ></omni-button>
         ${e.hide?s:n(e)}

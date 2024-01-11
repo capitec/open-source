@@ -14,7 +14,7 @@ test(`Toast Stack - Visual and Behaviour`, async ({ page }) => {
             .evaluateHandle((ts) => ts.showToast({ type: 'info', header: 'Test', detail: 'Test Info', closeable: true, duration: 2000 }))
             .then((r) => r.asElement());
         await expect(shown).toBeTruthy();
-        await expect(await (shown === null || shown === void 0 ? void 0 : shown.screenshot())).toMatchSnapshot('toast-shown.png');
+        await expect(await shown?.screenshot()).toMatchSnapshot('toast-shown.png');
         const toastStackRemove = await mockEventListener(shown, 'toast-stack-remove');
         await toastStack.evaluate((ts) => {
             ts.showToast({

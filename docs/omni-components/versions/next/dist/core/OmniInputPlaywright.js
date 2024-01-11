@@ -9,7 +9,7 @@ export const testLabelBehaviour = (tagName, storyExport = 'Label') => {
             await page.waitForSelector('[data-testid]', {});
             const args = await getStoryArgs(page, storyExport);
             const input = page.locator(`.${storyExport}`).getByTestId('test-field');
-            await expect(input.locator(`.label > div`)).toHaveText(args === null || args === void 0 ? void 0 : args.label);
+            await expect(input.locator(`.label > div`)).toHaveText(args?.label);
         });
     };
 };
@@ -22,7 +22,7 @@ export const testHintBehaviour = (tagName, storyExport = 'Hint') => {
             const input = page.locator(`.${storyExport}`).getByTestId('test-field');
             const hintElement = input.locator('.hint-label');
             await expect(hintElement).toHaveCount(1);
-            await expect(hintElement).toHaveText(args === null || args === void 0 ? void 0 : args.hint);
+            await expect(hintElement).toHaveText(args?.hint);
         });
     };
 };
@@ -35,20 +35,19 @@ export const testErrorBehaviour = (tagName, storyExport = 'Error_Label') => {
             const input = page.locator(`.${storyExport}`).getByTestId('test-field');
             const errorElement = input.locator('.error-label');
             await expect(errorElement).toHaveCount(1);
-            await expect(errorElement).toHaveText(args === null || args === void 0 ? void 0 : args.error);
+            await expect(errorElement).toHaveText(args?.error);
         });
     };
 };
 export const testValueBehaviour = (tagName, storyExport = 'Value') => {
     return async ({ page }) => {
         await withCoverage(page, async () => {
-            var _a;
             await page.goto(`/components/${asDirectoryName(tagName)}/`);
             await page.waitForSelector('[data-testid]', {});
             const args = await getStoryArgs(page, storyExport);
             const input = page.locator(`.${storyExport}`).getByTestId('test-field');
             const inputField = input.locator('input#inputField');
-            await expect(inputField).toHaveValue((_a = args === null || args === void 0 ? void 0 : args.value) === null || _a === void 0 ? void 0 : _a.toString());
+            await expect(inputField).toHaveValue(args?.value?.toString());
         });
     };
 };

@@ -1,0 +1,2 @@
+import{m as t,p as e}from"./chunk.BF43NN75.js";t();e();var o=class{constructor(s,r){this.storyPath=r,(this.host=s).addController(this)}async hostConnected(){this.story=await import(document.baseURI+this.storyPath),this.host.requestUpdate(),await this.host.updateComplete,this.host.dispatchEvent(new CustomEvent("component-render-complete",{bubbles:!0}))}};export{o as a};
+//# sourceMappingURL=chunk.32ZYBHOX.js.map

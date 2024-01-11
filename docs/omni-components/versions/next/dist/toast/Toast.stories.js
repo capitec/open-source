@@ -1,4 +1,4 @@
-import{c}from"../chunks-js/chunk.L2URPN3J.js";import"../chunks-js/chunk.VM5ZZ5M3.js";import{E as l,m as n,x as i}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import"../chunks-js/chunk.SG4R3JV5.js";import"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as o}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import"../chunks-js/chunk.QRX6OAEP.js";import{a as s}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.SFBF6ZN2.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as t,e as a}from"../chunks-js/chunk.6H2RNHNO.js";import{m as r,p as d}from"../chunks-js/chunk.BF43NN75.js";r();d();var u={render:e=>t`
+import{c}from"../chunks-js/chunk.IK3JAOM3.js";import"../chunks-js/chunk.XRXAHUDA.js";import{E as l,m as n,x as i}from"../chunks-js/chunk.LIHXMBR3.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.YISFJ54N.js";import"../chunks-js/chunk.TQF2Y64M.js";import"../chunks-js/chunk.FCGABMD4.js";import"../chunks-js/chunk.D5GPI5IO.js";import"../chunks-js/chunk.VXWK2PFN.js";import{a as o}from"../chunks-js/chunk.I4G3FJEU.js";import"../chunks-js/chunk.D57IHIAB.js";import"../chunks-js/chunk.DUTPH62F.js";import"../chunks-js/chunk.ALZCBY4J.js";import{a as s}from"../chunks-js/chunk.C3AR2WR4.js";import"../chunks-js/chunk.34WDYOTS.js";import"../chunks-js/chunk.ZJGON3BB.js";import"../chunks-js/chunk.P6J7VJ5B.js";import"../chunks-js/chunk.Y6UVSDXK.js";import{d as t,g as a}from"../chunks-js/chunk.UDCULUBW.js";import{m as r,p as d}from"../chunks-js/chunk.BF43NN75.js";r();d();var u={render:e=>t`
         <omni-toast
             data-testid="test-toast"
             detail="${s(e.detail)}"
@@ -12,8 +12,8 @@ import{c}from"../chunks-js/chunk.L2URPN3J.js";import"../chunks-js/chunk.VM5ZZ5M3
     `,frameworkSources:[{framework:"Vue",load:e=>l(u.render(e)).replaceAll(" closeable",' :closeable="true"')}],name:"Interactive",args:{closeable:!1,detail:"The toast description",header:"The toast header",type:"success",prefix:void 0,"[Default Slot]":void 0,close:void 0}},j={description:()=>t`
     <div>
         Toasts can be shown programmatically using the static <code class="language-js">Toast.show()</code> function. 
-    <div>
-    `,render:e=>t`
+    </div>
+    `,render:()=>t`
         <omni-button
             data-testid="test-toast-show"
             label="Show Toast"
@@ -46,7 +46,7 @@ const showToast = () => {
         header: 'Success!',
         detail: 'It was successful.'
     });
-}`}},{framework:"React",load:e=>`import { OmniButton } from "@capitec/omni-components-react/button";
+}`}},{framework:"React",load:()=>`import { OmniButton } from "@capitec/omni-components-react/button";
 import { Toast } from '@capitec/omni-components-react/toast';
 
 const showToast = () => {
@@ -60,8 +60,8 @@ const showToast = () => {
 const App = () => <OmniButton label="Show Toast" onclick={showToast}/>;`}],name:"Showing Toast Programmatically",args:{}},O={description:()=>t`
     <div>
        Programmatically shown Toasts can be configured using the static <code class="language-js">Toast.configure()</code> function. 
-    <div>
-    `,render:e=>t`
+    </div>
+    `,render:()=>t`
         <omni-button
             data-testid="test-toast-configure"
             label="Show Toast"
@@ -121,7 +121,7 @@ const showToast = () => {
         header: 'Success!',
         detail: 'It was successful.'
     });
-}`}},{framework:"React",load:e=>`import { OmniButton } from "@capitec/omni-components-react/button";
+}`}},{framework:"React",load:()=>`import { OmniButton } from "@capitec/omni-components-react/button";
 import { Toast } from '@capitec/omni-components-react/toast';
 
 Toast.configure({
@@ -144,8 +144,8 @@ const showToast = () => {
 const App = () => <OmniButton label="Show Toast" onclick={showToast}/>;`}],name:"Configure Toast Programmatically",args:{}},P={description:()=>t`
     <div>
         Toasts can be replaced instead of stacked when shown programmatically via the static <code class="language-js">Toast.show()</code> function by using the static <code class="language-js">Toast.configure()</code> function to set <code>stack</code> to <code class="language-js">false</code>. 
-    <div>
-    `,render:e=>t`
+    </div>
+    `,render:()=>t`
         <omni-button
             data-testid="test-toast-show"
             label="Show Toast"
@@ -194,7 +194,7 @@ const showToast = () => {
         // Defaults to 3000ms (or configured duration via Toast.configure function) when not specified. If set to 0 will be infinite (or until close clicked)
         duration: 0
     });
-}`}},{framework:"React",load:e=>`import { OmniButton } from "@capitec/omni-components-react/button";
+}`}},{framework:"React",load:()=>`import { OmniButton } from "@capitec/omni-components-react/button";
 import { Toast } from '@capitec/omni-components-react/toast';
 
 Toast.configure({ stack: false });

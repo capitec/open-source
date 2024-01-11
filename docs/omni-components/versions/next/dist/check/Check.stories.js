@@ -1,4 +1,4 @@
-import"../chunks-js/chunk.ILEUAQI7.js";import"../chunks-js/chunk.7R3LYBJG.js";import"../chunks-js/chunk.NTTJMZDK.js";import{E as n,m as a,x as l}from"../chunks-js/chunk.5CHB66EF.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.ZVGMNGQN.js";import"../chunks-js/chunk.AWN7JMZV.js";import"../chunks-js/chunk.SG4R3JV5.js";import"../chunks-js/chunk.ZAPR5LYJ.js";import"../chunks-js/chunk.FW3DTE4B.js";import{a as o}from"../chunks-js/chunk.BRAXTSQY.js";import"../chunks-js/chunk.JIWX2J4S.js";import"../chunks-js/chunk.77M5452K.js";import{a as i}from"../chunks-js/chunk.A5JWGKKF.js";import"../chunks-js/chunk.SFBF6ZN2.js";import"../chunks-js/chunk.PQH6VL5Y.js";import"../chunks-js/chunk.FMKVMQ43.js";import"../chunks-js/chunk.2KHELDCI.js";import{b as t,e as c}from"../chunks-js/chunk.6H2RNHNO.js";import{m as d,p as s}from"../chunks-js/chunk.BF43NN75.js";d();s();var m={render:e=>t`
+import"../chunks-js/chunk.SBFM2RIV.js";import"../chunks-js/chunk.DRIUQ7TC.js";import"../chunks-js/chunk.CUAVHP62.js";import{E as n,m as a,x as l}from"../chunks-js/chunk.LIHXMBR3.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.YISFJ54N.js";import"../chunks-js/chunk.TQF2Y64M.js";import"../chunks-js/chunk.FCGABMD4.js";import"../chunks-js/chunk.D5GPI5IO.js";import"../chunks-js/chunk.VXWK2PFN.js";import{a as o}from"../chunks-js/chunk.I4G3FJEU.js";import"../chunks-js/chunk.D57IHIAB.js";import"../chunks-js/chunk.DUTPH62F.js";import{a as i}from"../chunks-js/chunk.C3AR2WR4.js";import"../chunks-js/chunk.34WDYOTS.js";import"../chunks-js/chunk.ZJGON3BB.js";import"../chunks-js/chunk.P6J7VJ5B.js";import"../chunks-js/chunk.Y6UVSDXK.js";import{d as t,g as c}from"../chunks-js/chunk.UDCULUBW.js";import{m as d,p as s}from"../chunks-js/chunk.BF43NN75.js";d();s();var m={render:e=>t`
         <omni-check
             data-testid="test-check"
             label="${i(e.label)}"
@@ -25,7 +25,7 @@ const App = () => <OmniCheck${e.label?` label='${e.label}'`:""}${e.indeterminate
 
 const App = () => <OmniCheck${e.label?` label='${e.label}'`:""}${e.disabled?" disabled":""}/>;`},{framework:"Vue",load:e=>n(k.render(e),void 0,r=>r.replace(" disabled",' :disabled="true"').replace(" indeterminate",' :indeterminate="true"').replace(" checked",' :checked="true"'))}],description:"Prevent interaction (pointer events).",args:{label:"Disabled",disabled:!0}},z={render:()=>t`
         <omni-check data-testid="test-check">Slotted</omni-check>
-    `,frameworkSources:[{framework:"React",load:e=>`import { OmniCheck } from "@capitec/omni-components-react/check";
+    `,frameworkSources:[{framework:"React",load:()=>`import { OmniCheck } from "@capitec/omni-components-react/check";
 
 const App = () => <OmniCheck>
                     Slotted

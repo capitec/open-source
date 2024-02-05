@@ -124,10 +124,9 @@ test(`Select - Selection Render Behaviour`, async ({ page, isMobile }) => {
         const selectComponent = page.locator('.Selection_Renderer').getByTestId('test-select');
         selectComponent.waitFor({ state: 'visible', timeout: 300 });
         await expect(selectComponent).toHaveScreenshot('select-initial.png');
-        const valueChange = await mockEventListener(selectComponent, 'change');
         await selectComponent.evaluate(async (s) => {
             s.renderSelection = async (item) => {
-                await new Promise((resolve, reject) => {
+                await new Promise((resolve) => {
                     setTimeout(resolve, 10);
                 });
                 const i = document.createElement('i');

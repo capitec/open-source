@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../node_modules/lit-html/src/directives/live.ts", "../../node_modules/lit/directives/live.js"],
-  "mappings": "8KA2FaA,EAAOC,EA3EpB,cAA4BC,CAAAA,CAC1BC,YAAYC,EAAAA,CAEV,GADAC,MAAMD,CAAAA,EAGFA,EAASE,OAASC,EAASC,UAC3BJ,EAASE,OAASC,EAASE,WAC3BL,EAASE,OAASC,EAASG,kBAG7B,MAAUC,MACR,gEAAA,EAGJ,GAAA,CAAKC,EAAmBR,CAAAA,EACtB,MAAUO,MAAM,sDAAA,CAEnB,CAEDE,OAAOC,EAAAA,CACL,OAAOA,CACR,CAEQC,OAAOC,EAAAA,CAAsBF,CAAAA,EAAAA,CACpC,GAAIA,IAAUG,GAAYH,IAAUI,EAClC,OAAOJ,EAET,IAAMK,EAAUH,EAAKG,QACfC,EAAOJ,EAAKI,KAElB,GAAIJ,EAAKV,OAASC,EAASC,UAEzB,GAAIM,IAAWK,EAAgBC,GAC7B,OAAOH,UAEAD,EAAKV,OAASC,EAASG,mBAChC,GAAA,CAAA,CAAMI,IAAUK,EAAQE,aAAaD,CAAAA,EACnC,OAAOH,UAEAD,EAAKV,OAASC,EAASE,WAC5BU,EAAQG,aAAaF,CAAAA,IAAiBN,EAAPS,GACjC,OAAON,EAMX,OADAO,EAAkBR,CAAAA,EACXF,CACR,CAAA,CAAA,EChEHW,IAAAC",
-  "names": ["live", "directive", "Directive", "constructor", "partInfo", "super", "type", "PartType", "PROPERTY", "ATTRIBUTE", "BOOLEAN_ATTRIBUTE", "Error", "isSingleExpression", "render", "value", "update", "part", "noChange", "nothing", "element", "name", "hasAttribute", "getAttribute", "String", "setCommittedValue", "init_define_process_argv", "init_global"]
-}

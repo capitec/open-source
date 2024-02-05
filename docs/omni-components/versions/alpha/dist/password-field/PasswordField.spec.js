@@ -77,7 +77,7 @@ test(`Password Field - Custom Icon Slot Behaviour`, async ({ page }) => {
             force: true
         });
         await expect(passwordField).toHaveScreenshot('password-field-hide.png');
-        const foundSlottedSvgElement = await showSlotElement.evaluate((s) => Boolean(s === null || s === void 0 ? void 0 : s.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-open-icon')));
+        const foundSlottedSvgElement = await showSlotElement.evaluate((s) => Boolean(s?.assignedElements().find((e) => e.tagName.toLocaleLowerCase() === 'omni-lock-open-icon')));
         await expect(foundSlottedSvgElement).toBeTruthy();
     });
 });

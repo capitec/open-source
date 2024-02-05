@@ -14,6 +14,7 @@ export * from './icon/index.js';
 export * from './icons/index.js';
 export * from './keyboard/index.js';
 export * from './label/index.js';
+export * from './mobile-field/index.js';
 export * from './modal/index.js';
 export * from './number-field/index.js';
 export * from './password-field/index.js';

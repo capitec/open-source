@@ -1,4 +1,4 @@
-import { test, expect, mockEventListener, withCoverage } from '../utils/JestPlaywright.js';
+import { test, expect, mockEventListener, withCoverage, getStoryArgs } from '../utils/JestPlaywright.js';
 test(`Button - Visual Secondary`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/button/');
@@ -60,14 +60,14 @@ test(`Button - Type Behaviour`, async ({ page }) => {
         await page.goto('/components/button/');
         const button = page.locator('.Type').locator('[data-testid=test-button]');
         const buttonElement = button.locator('#button');
-        const foundPrimaryClass = await buttonElement.evaluate((btn) => btn === null || btn === void 0 ? void 0 : btn.classList.contains('primary'));
+        const foundPrimaryClass = await buttonElement.evaluate((btn) => btn?.classList.contains('primary'));
         await expect(foundPrimaryClass).toBeTruthy();
     });
 });
 test(`Button - Label Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/button/');
-        const args = await page.locator('story-renderer[key=Label]').evaluate((storyRenderer) => storyRenderer.story.args);
+        const args = await getStoryArgs(page, 'Label');
         const button = page.locator('.Label').locator('[data-testid=test-button]');
         const labelElement = button.locator('#label');
         await expect(labelElement).toHaveText(args.label);
@@ -90,7 +90,7 @@ test(`Button - Disabled Behaviour`, async ({ page }) => {
         const button = page.locator('.Disabled').locator('[data-testid=test-button]');
         const buttonElement = button.locator('#button');
         await expect(await buttonElement.isDisabled()).toBeTruthy();
-        const foundDisabledClass = await buttonElement.evaluate((btn) => btn === null || btn === void 0 ? void 0 : btn.classList.contains('disabled'));
+        const foundDisabledClass = await buttonElement.evaluate((btn) => btn?.classList.contains('disabled'));
         await expect(foundDisabledClass).toBeTruthy();
         await expect(buttonElement).toHaveClass(/disabled/);
         const click = await mockEventListener(button, 'click');

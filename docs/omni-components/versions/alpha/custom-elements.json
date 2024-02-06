@@ -22051,6 +22051,17 @@
             },
             {
               "kind": "field",
+              "name": "formatter",
+              "type": {
+                "text": "string"
+              },
+              "default": "'^+27[0-9]{9}$'",
+              "description": "Formatter provided to format the value.",
+              "attribute": "formatter",
+              "reflects": true
+            },
+            {
+              "kind": "field",
               "name": "noNativeKeyboard",
               "type": {
                 "text": "boolean | undefined"
@@ -22106,43 +22117,17 @@
             {
               "kind": "method",
               "name": "_sanitiseMobileValue",
-              "return": {
-                "type": {
-                  "text": "void"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_isMobileNumber",
               "parameters": [
                 {
-                  "name": "number",
+                  "name": "preFormattedValue",
                   "type": {
-                    "text": "string"
+                    "text": "number | string"
                   }
                 }
               ],
               "return": {
                 "type": {
-                  "text": "boolean"
-                }
-              }
-            },
-            {
-              "kind": "method",
-              "name": "_isNumber",
-              "parameters": [
-                {
-                  "name": "number",
-                  "type": {
-                    "text": "string"
-                  }
-                }
-              ],
-              "return": {
-                "type": {
-                  "text": "boolean"
+                  "text": "Promise<string>"
                 }
               }
             },
@@ -22471,6 +22456,16 @@
               "description": "Indicator if the component should allow the entry of a country code ie: +21 .",
               "fieldName": "countryCode",
               "attribute": "country-code"
+            },
+            {
+              "name": "formatter",
+              "type": {
+                "text": "string"
+              },
+              "default": "'^+27[0-9]{9}$'",
+              "description": "Formatter provided to format the value.",
+              "fieldName": "formatter",
+              "attribute": "formatter"
             },
             {
               "name": "no-native-keyboard",

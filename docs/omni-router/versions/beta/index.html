@@ -154,7 +154,12 @@
 <tbody><tr>
 <td><strong>name</strong></td>
 <td>string</td>
-<td>The registered custom-element tag name for your page web component, e.g. <code>&#39;view-login&#39;</code></td>
+<td>The unique identifier for the route, must be the tag name of the web component if tag is not set.</td>
+</tr>
+<tr>
+<td><strong>tag</strong></td>
+<td>string</td>
+<td>Optional, the registered custom-element tag name for your page web component, e.g. <code>&#39;view-login&#39;</code></td>
 </tr>
 <tr>
 <td><strong>title</strong></td>
@@ -342,20 +347,24 @@
 <td>Set the route that should be rendered when navigating to a route that does not exist.</td>
 </tr>
 <tr>
-<td><code>load(): Promise&lt;void&gt;</code></td>
+<td><code>load(): Promise&lt;boolean&gt;</code></td>
 <td>Navigate to the current browser URL path.</td>
 </tr>
 <tr>
-<td><code>push(path: string, state = {}): Promise\&lt;void\&gt;</code></td>
+<td><code>push(path: string, state = {}, animateOut = false): Promise&lt;boolean&gt;</code></td>
 <td>Push a new path onto the browser history stack and render it&#39;s registered route.</td>
 </tr>
 <tr>
-<td><code>replace(path: string, state = {}): Promise\&lt;void\&gt;</code></td>
+<td><code>replace(path: string, state = {}, animateOut = false): Promise&lt;boolean&gt;</code></td>
 <td>Update the current path in the browser history stack with a new path and render it&#39;s registered route.</td>
 </tr>
 <tr>
-<td><code>pop(): void</code></td>
-<td>Pops the current path in the browser history stack and navigate the previous path.</td>
+<td><code>pop(delta?: number): Promise&lt;boolean&gt;</code></td>
+<td>Pops the current path in the browser history stack and navigate the previous path, or specified number pages back.</td>
+</tr>
+<tr>
+<td><code>popToPath(path: string, before = false): Promise&lt;boolean&gt;</code></td>
+<td>Pops back in history to a previous path, removing all paths after this point from the stack.</td>
 </tr>
 </tbody></table>
 <br>
@@ -408,4 +417,5 @@
 </p>
 
 <br>
-<br></div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/RouterOutlet.html" class="tsd-kind-icon">Router<wbr/>Outlet</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Route" class="tsd-kind-icon">Route</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RouteAnimation" class="tsd-kind-icon">Route<wbr/>Animation</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RoutedLocation" class="tsd-kind-icon">Routed<wbr/>Location</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RouterEventCallback" class="tsd-kind-icon">Router<wbr/>Event<wbr/>Callback</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RouterEventType" class="tsd-kind-icon">Router<wbr/>Event<wbr/>Type</a></li><li class="tsd-kind-variable"><a href="modules.html#Router" class="tsd-kind-icon">Router</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
+<br>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-class"><a href="classes/RouterOutlet.html" class="tsd-kind-icon">Router<wbr/>Outlet</a></li><li class="tsd-kind-type-alias"><a href="modules.html#Route" class="tsd-kind-icon">Route</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RouteAnimation" class="tsd-kind-icon">Route<wbr/>Animation</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RoutedLocation" class="tsd-kind-icon">Routed<wbr/>Location</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RouterEventCallback" class="tsd-kind-icon">Router<wbr/>Event<wbr/>Callback</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RouterEventType" class="tsd-kind-icon">Router<wbr/>Event<wbr/>Type</a></li><li class="tsd-kind-variable"><a href="modules.html#Router" class="tsd-kind-icon">Router</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li><li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li></ul><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li><li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>

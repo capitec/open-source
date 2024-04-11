@@ -1,11 +1,11 @@
 {
   "repos": [
     {
-      "display": "Omni Widget",
-      "logo": "https://raw.githubusercontent.com/capitec/omni-widget/develop/docs/logos/omni.png",
-      "name": "omni-widget",
-      "description": "Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content.",
-      "version": "0.1.1"
+      "display": "Omni Router",
+      "logo": "https://raw.githubusercontent.com/capitec/omni-router/develop/docs/logos/omni.png",
+      "name": "omni-router",
+      "description": "Framework agnostic, zero dependency, client-side web component router",
+      "version": "0.2.1"
     },
     {
       "display": "Omni State",
@@ -15,18 +15,18 @@
       "version": "0.1.3"
     },
     {
-      "display": "Omni Router",
-      "logo": "https://raw.githubusercontent.com/capitec/omni-router/develop/docs/logos/omni.png",
-      "name": "omni-router",
-      "description": "Framework agnostic, zero dependency, client-side web component router",
-      "version": "0.2.1"
-    },
-    {
       "display": "Omni Components",
       "logo": "https://raw.githubusercontent.com/capitec/omni-components/develop/.tooling/eleventy/assets/images/logo.png",
       "name": "omni-components",
       "description": "Modern UI component library for mobile and web",
       "version": "0.11.0"
+    },
+    {
+      "display": "Omni Widget",
+      "logo": "https://raw.githubusercontent.com/capitec/omni-widget/develop/docs/logos/omni.png",
+      "name": "omni-widget",
+      "description": "Framework agnostic, zero dependency web utilities to enable embedding externally hosted web content.",
+      "version": "0.1.1"
     }
   ]
 }

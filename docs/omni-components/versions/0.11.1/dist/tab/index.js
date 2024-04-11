@@ -1,0 +1,2 @@
+import{a as e}from"../chunks-js/chunk.JBNQN2BB.js";import{a as f,b as m,c as p}from"../chunks-js/chunk.7BS3HOXT.js";import{a as t}from"../chunks-js/chunk.27HLJPSJ.js";import"../chunks-js/chunk.DUTPH62F.js";import"../chunks-js/chunk.P6J7VJ5B.js";import"../chunks-js/chunk.Y6UVSDXK.js";import"../chunks-js/chunk.UDCULUBW.js";import{m as o,p as r}from"../chunks-js/chunk.BF43NN75.js";o();r();export{e as Tab,f as TabGroup,t as TabHeader,m as activeAttribute,p as disabledAttribute};
+//# sourceMappingURL=index.js.map

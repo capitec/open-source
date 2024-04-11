@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/Calendar.icon.ts"],
+  "mappings": "oKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAA2BC,CAAe,CACpC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,SAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,oBAAoB,GACtBJ",
+  "names": ["init_define_process_argv", "init_global", "CalenderIcon", "DOMTreeElement_default", "x", "__decorateClass", "t"]
+}

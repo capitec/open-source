@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title></title>
+    <base href="/open-source/docs/omni-components/versions/0.11.2/" ><script>window.ELEVENTY_BASE_PATH = '/open-source/docs/omni-components/versions/0.11.2/'</script>
+    <link rel='shortcut icon' type='image/x-icon' href='./favicon.ico' />
+
+    <!-- For preload links below -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Hind Vadodara -->
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Vadodara&display=block" rel="preload stylesheet" as="style" crossorigin />
+
+    <!-- Material Icons --> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="preload stylesheet" as="style" crossorigin />
+
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-jsx.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+    <link id="theme-styles-link" rel="stylesheet preload" href="assets/css/themes.css" as="style">
+    <style id="theme-styles"></style>
+    <script src="https://cdn.jsdelivr.net/npm/cssbeautify@0.3.1/cssbeautify.js"></script>
+    <script>        
+        const themeStorageKey = 'omni-docs-theme-selection';
+        const customThemeCssKey = 'omni-docs-custom-theme-css';
+        const customThemeKey = 'custom';
+        const lightThemeKey = 'light';
+        const darkThemeKey = 'dark';
+        const themeStyle = document.getElementById('theme-styles');
+        
+        let darkThemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = window.sessionStorage.getItem(themeStorageKey);
+
+        let key = undefined;
+        if (darkThemePreferred && !storedTheme) {
+            key = darkThemeKey;            
+        } else if (storedTheme) {
+            key = storedTheme;
+        }
+
+        if (key && key !== lightThemeKey) {
+            document.documentElement.setAttribute('theme', key);
+            if (key === customThemeKey) {
+                let customCss = window.sessionStorage.getItem(customThemeCssKey);
+                if (customCss) {
+                    themeStyle.innerHTML = customCss;
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <script type="module" src="./dist/utils/StoryRenderer.js"></script>
+    <script type="module" src="./dist/omni-components.js"></script>
+    <script type="module" defer>
+        import { setupEleventy } from './dist/utils/StoryUtils.js';
+        setupEleventy();
+    </script>
+</head>
+<body>
+    <div dir="ltr">
+        <div class="container">
+            <header>
+                <div class="header-menu-button">
+                    <span class="material-icons">
+                        menu
+                    </span>
+                </div>
+                <div style="display: flex; position: relative;">
+                    <div class="header-logo">
+                        <div class="header-container" id="header-container">
+                            <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                            <div class="header-text" style="padding-left: 10px; font-weight: bold">Omni Components</div>
+                        </div>
+                    </div>
+                    <div class="header-version-section">
+                        <div class="header-version" id="header-version-indicator">
+                            0.11.2
+                        </div>
+                        <select class="docs-select header-version-select transparent" id="header-version-native-select"></select>
+                    </div>
+                </div>
+                <div class="header-actions">
+                    <span class="header-action-section">
+                        <omni-button class="docs-omni-component" id="header-search-button">
+                            <omni-icon icon="@material/search"></omni-icon>
+                        </omni-button>
+                    </span>
+                    <span class="header-action-section">
+                        <omni-select class="shrink-omni-select docs-omni-component" id="header-framework-select">
+                            <div slot="more"></div>
+                        </omni-select>
+                    </span>
+                    
+                    <span class="header-action-section">
+                        <omni-select class="shrink-omni-select docs-omni-component" id="header-theme-select" >
+                            <div slot="more"></div>
+                        </omni-select>
+                    </span>
+                    <a href="https://github.com/capitec/omni-components" target="_blank" class="docs-omni-component action hidden-after-760">                        
+                        <svg style="cursor: pointer;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </header>
+
+            
+
+<nav class="menu">
+    <div class="menu-container">
+        <div class="menu-item ">
+            <a class="menu-link "  href="./">Home</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./getting-started/">Getting Started</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./theme-support/">Theme Support</a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "  href="./contributing/">Contributing</a>
+        </div>
+        <div class="menu-item separator"><div class="line"></div></div>
+        
+        <div class="menu-item selected">
+            <a class="menu-link selected"
+            aria-current="page" 
+            href="./components/alert">
+                Alert
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/button">
+                Button
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/calendar">
+                Calendar
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/check">
+                Check
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/chip">
+                Chip
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/color-field">
+                Color Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/currency-field">
+                Currency Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/date-picker">
+                Date Picker
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/email-field">
+                Email Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander">
+                Expander
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/expander-group">
+                Expander Group
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/hyperlink">
+                Hyperlink
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/icon">
+                Icon
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/keyboard">
+                Keyboard
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/label">
+                Label
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/modal">
+                Modal
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/number-field">
+                Number Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/password-field">
+                Password Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/pin-field">
+                Pin Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radio">
+                Radio
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/radio-group">
+                Radio Group
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/render-element">
+                Render Element
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/search-field">
+                Search Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/select">
+                Select
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/switch">
+                Switch
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/tab">
+                Tab
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/tab-group">
+                Tab Group
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/tab-header">
+                Tab Header
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/text-field">
+                Text Field
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/toast">
+                Toast
+            </a>
+        </div>
+        <div class="menu-item ">
+            <a class="menu-link "
+             
+            href="./components/toast-stack">
+                Toast Stack
+            </a>
+        </div>
+    </div>
+</nav>
+            <main>
+    
+<div class="component-overlay">
+    <div class="lds-ripple"><div></div><div></div></div>
+</div>
+
+<article class="component">
+    <div class="component-meta">
+        <div class="component-name">Alert  </div>
+        <div class="component-desc">Component that displays an alert.</div> 
+        <div class="component-info">
+            <div class="component-info-item">
+                <div>Module</div>
+                <div class="component-info-item-code" id="html-imports">
+                    <pre><code class="language-js no-code-scroll" id="component-import-code">import &#39;@capitec/omni-components/alert&#39;;</code></pre>
+                    <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code');return false;">
+                        content_copy
+                    </span>
+                </div>           
+                <div class="component-info-item-code no-display" id="react-imports">
+                    <pre><code class="language-js no-code-scroll" id="component-import-code-react">import { OmniAlert } from &quot;@capitec/omni-components-react/alert&quot;;</code></pre>
+                    <span class="copy-icon material-icons" onclick="copyToClipboard('component-import-code-react');return false;">
+                        content_copy
+                    </span>
+                </div>
+            </div>
+            <div class="component-info-item">
+                <div>Source</div>
+                <div>
+                    <a href="https://github.com/capitec/omni-components/tree/develop/src/alert/Alert.ts" target="blank" class="component-info-item-link">
+                        <svg class="component-info-item-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="24" height="24" fill="currentColor">
+                            <path style="cursor: pointer;" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+            <div class="component-info-item">
+                <div>Packages</div>
+                <div>
+                    <a href="https://www.npmjs.com/package/@capitec/omni-components" target="blank" class="component-info-item-link" id="html-package">
+                        <img src="./assets/images/npm.svg" class="component-info-item-img">
+                        @capitec/omni-components
+                    </a>
+                    <a href="https://www.npmjs.com/package/@capitec/omni-components-react" target="blank" class="component-info-item-link no-display" id="react-package">
+                        <img src="./assets/images/npm.svg" class="component-info-item-img">
+                        @capitec/omni-components-react
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="component-tab-container">
+        <div class="component-tab-root">
+            <div class="component-tab-wrapper">
+                <div class="component-tab-list" role="tablist">
+                    <div role="tab" class="component-tab-button active" data-name="examples" onclick="openTab(event.currentTarget, 'examples')">Examples</div>
+                    <div role="tab" class="component-tab-button" data-name="docs" onclick="openTab(event.currentTarget, 'docs')">Docs</div>
+                    <div role="tab" class="component-tab-button" data-name="styles" onclick="openTab(event.currentTarget, 'styles')">Styles</div>
+                </div>
+            </div>
+            <div class="component-tab" id="examples" role="tabpanel" style="display: block;">
+                <div class="component-props-examples-wrapper">
+                    <div class="component-tab-content">
+                        <div class="component-stories">
+                            
+                            <div class="name" id="story-interactive">Interactive</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Interactive"
+                                interactive >
+                            </story-renderer>
+                            <div class="name" id="story-showing-alerts">Showing Alerts</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Showing_Alerts"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-showing-alerts-async">Showing Alerts Async</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Showing_Alerts_Async"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-status">Status</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Status"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-header-align">Header Align</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Header_Align"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-description-align">Description Align</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Description_Align"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-primary-action">Primary Action</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Primary_Action"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-secondary-action">Secondary Action</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Secondary_Action"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-action-align">Action Align</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Action_Align"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-status-indicator">Custom Status Indicator</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Custom_Status_Indicator"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-header">Custom Header</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Custom_Header"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-body">Custom Body</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Custom_Body"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-primary-action">Custom Primary Action</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Custom_Primary_Action"
+                                 >
+                            </story-renderer>
+                            <div class="name" id="story-custom-secondary-action">Custom Secondary Action</div>
+                            <story-renderer 
+                                path="./dist/alert/Alert.stories.js" 
+                                tag="omni-alert" 
+                                key="Custom_Secondary_Action"
+                                 >
+                            </story-renderer>
+                        </div>
+                        <div class="component-toc-wrapper">
+                            <div class="component-toc">
+                                
+                                    <a href="components/alert/#story-interactive" id="story-interactive-a" class="item">
+                                        Interactive
+                                    </a>
+                                    <a href="components/alert/#story-showing-alerts" id="story-showing-alerts-a" class="item">
+                                        Showing Alerts
+                                    </a>
+                                    <a href="components/alert/#story-showing-alerts-async" id="story-showing-alerts-async-a" class="item">
+                                        Showing Alerts Async
+                                    </a>
+                                    <a href="components/alert/#story-status" id="story-status-a" class="item">
+                                        Status
+                                    </a>
+                                    <a href="components/alert/#story-header-align" id="story-header-align-a" class="item">
+                                        Header Align
+                                    </a>
+                                    <a href="components/alert/#story-description-align" id="story-description-align-a" class="item">
+                                        Description Align
+                                    </a>
+                                    <a href="components/alert/#story-primary-action" id="story-primary-action-a" class="item">
+                                        Primary Action
+                                    </a>
+                                    <a href="components/alert/#story-secondary-action" id="story-secondary-action-a" class="item">
+                                        Secondary Action
+                                    </a>
+                                    <a href="components/alert/#story-action-align" id="story-action-align-a" class="item">
+                                        Action Align
+                                    </a>
+                                    <a href="components/alert/#story-custom-status-indicator" id="story-custom-status-indicator-a" class="item">
+                                        Custom Status Indicator
+                                    </a>
+                                    <a href="components/alert/#story-custom-header" id="story-custom-header-a" class="item">
+                                        Custom Header
+                                    </a>
+                                    <a href="components/alert/#story-custom-body" id="story-custom-body-a" class="item">
+                                        Custom Body
+                                    </a>
+                                    <a href="components/alert/#story-custom-primary-action" id="story-custom-primary-action-a" class="item">
+                                        Custom Primary Action
+                                    </a>
+                                    <a href="components/alert/#story-custom-secondary-action" id="story-custom-secondary-action-a" class="item">
+                                        Custom Secondary Action
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="component-tab" id="docs" role="tabpanel">
+
+                
+                
+                    <h2 class="component-props-table-header">Properties</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="attribute-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Attribute</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">status</td>
+                                    <td data-label="Attribute" scope="row">status&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;success&#39; | &#39;warning&#39; | &#39;error&#39; | &#39;info&#39; | &#39;none&#39;</code></pre></td>
+                                    <td data-label="Description">The alert status (Defaults to 'none').</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">message</td>
+                                    <td data-label="Attribute" scope="row">message&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">The alert header message.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">headerAlign</td>
+                                    <td data-label="Attribute" scope="row">header-align&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | undefined</code></pre></td>
+                                    <td data-label="Description">Header content horizontal alignment:<br/> - <code>left</code> Align header to the left.<br/> - <code>center</code> Align header to the center. (Default)<br/> - <code>right</code> Align header to the right.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">description</td>
+                                    <td data-label="Attribute" scope="row">description&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">The alert detail message.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">descriptionAlign</td>
+                                    <td data-label="Attribute" scope="row">description-align&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | undefined</code></pre></td>
+                                    <td data-label="Description">Description content horizontal alignment:<br/> - <code>left</code> Align description content to the left.<br/> - <code>center</code> Align description content to the center. (Default)<br/> - <code>right</code> Align description content to the right.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">primaryAction</td>
+                                    <td data-label="Attribute" scope="row">primary-action&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">The primary action button label (Defaults to 'Ok').</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">secondaryAction</td>
+                                    <td data-label="Attribute" scope="row">secondary-action&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string | undefined</code></pre></td>
+                                    <td data-label="Description">The secondary action button label (Defaults to 'Cancel').</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">enableSecondary</td>
+                                    <td data-label="Attribute" scope="row">enable-secondary&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">boolean | undefined</code></pre></td>
+                                    <td data-label="Description">If true, will provide a secondary action button.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">actionAlign</td>
+                                    <td data-label="Attribute" scope="row">action-align&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">&#39;left&#39; | &#39;center&#39; | &#39;right&#39; | &#39;stretch&#39; | undefined</code></pre></td>
+                                    <td data-label="Description">Action button(s) horizontal alignment:<br/> - <code>left</code> Align action button(s) to the left.<br/> - <code>center</code> Align action button(s) to the center.<br/> - <code>right</code> Align action button(s) to the right. (Default)<br/> - <code>stretch</code> Align action button(s) stretched to fill the horizontal space.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">dir</td>
+                                    <td data-label="Attribute" scope="row">dir&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Used to set the base direction of text for display</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">lang</td>
+                                    <td data-label="Attribute" scope="row">lang&nbsp;</td>
+                                    <td data-label="Type"><pre><code class="language-js">string</code></pre></td>
+                                    <td data-label="Description">Used to identify the language of text content on the web</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Instance Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">showAsync</td>
+                                    <td data-label="Parameters"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Promise&lt;&quot;auto&quot; | &quot;primary&quot; | &quot;secondary&quot;&gt;</code></pre></td>
+                                    <td data-label="Description">Show the <code>omni-alert</code> asynchronously, waits for it to close and returns the reason for close.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">show</td>
+                                    <td data-label="Parameters"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Alert</code></pre></td>
+                                    <td data-label="Description">Show the <code>omni-alert</code>.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">hide</td>
+                                    <td data-label="Parameters"><pre><code class="language-js"></code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">void</code></pre></td>
+                                    <td data-label="Description">Hide the <code>omni-alert</code> and remove the component from the DOM</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                    <h2 class="component-props-table-header">Static Functions</h2>
+                    
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Parameters</th>
+                                    <th scope="col">Returns</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-attributes">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">create</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - AlertInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Alert</code></pre></td>
+                                    <td data-label="Description">Create a global <code>omni-alert</code> element without showing it.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">show</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - AlertInit &amp; {
+            onClose?: (reason: &#39;auto&#39; | &#39;primary&#39; | &#39;secondary&#39;) =&gt; void;
+        }</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Alert</code></pre></td>
+                                    <td data-label="Description">Show a global <code>omni-alert</code> element.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">showAsync</td>
+                                    <td data-label="Parameters"><pre><code class="language-js">init - AlertInit</code></pre></td>
+                                    <td data-label="Returns"><pre><code class="language-js">Promise&lt;&quot;auto&quot; | &quot;primary&quot; | &quot;secondary&quot;&gt;</code></pre></td>
+                                    <td data-label="Description">Show a global <code>omni-alert</code> element asynchronously, waits for it to close and returns the reason for close.</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+
+                
+                
+                
+                
+                
+                    <h2 class="component-props-table-header">Events</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="event-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-events">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">alert-close</td>
+                                    <td data-label="Type"><pre><code class="language-js">CustomEvent</code></pre></td>
+                                    <td data-label="Description">Dispatched when the alert is closed.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">alert-action-click</td>
+                                    <td data-label="Type"><pre><code class="language-js">CustomEvent</code></pre></td>
+                                    <td data-label="Description">Dispatched when an alert action button is clicked.</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+                
+                
+                
+                    <h2 class="component-props-table-header">Types</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="type-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-types">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row">AlertInit</td>
+                                    <td data-label="Type"><pre><code class="language-js">{
+    /**
+     * The id to apply to the Alert element.
+     */
+    id?: string;
+
+    /**
+     * A function that returns, or an instance of content to render as the alert status indicator
+     */
+    statusIndicator?: RenderFunction | RenderResult;
+
+    /**
+     * A function that returns, or an instance of content to render in the alert header
+     */
+    header?: RenderFunction | RenderResult;
+
+    /**
+     * A function that returns, or an instance of content to render as alert body
+     */
+    body?: RenderFunction | RenderResult;
+
+    /**
+     * A function that returns, or an instance of content to render as the alert primary action
+     */
+    primary?: RenderFunction | RenderResult;
+
+    /**
+     * A function that returns, or an instance of content to render as the alert secondary action
+     */
+    secondary?: RenderFunction | RenderResult;
+
+    /**
+     * The alert status (Defaults to &#39;none&#39;).
+     */
+    status?: &#39;success&#39; | &#39;warning&#39; | &#39;error&#39; | &#39;info&#39; | &#39;none&#39;;
+
+    /**
+     * The alert header message.
+     */
+    message?: string;
+
+    /**
+     * Header content horizontal alignment:
+     *  - `left` Align header to the left.
+     *  - `center` Align header to the center. (Default)
+     *  - `right` Align header to the right.
+     */
+    headerAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39;;
+
+    /**
+     * The alert detail message.
+     */
+    description?: string;
+
+    /**
+     * Description content horizontal alignment:
+     *  - `left` Align description content to the left.
+     *  - `center` Align description content to the center. (Default)
+     *  - `right` Align description content to the right.
+     */
+    descriptionAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39;;
+
+    /**
+     * The primary action button label (Defaults to &#39;Ok&#39;).
+     */
+    primaryAction?: string;
+
+    /**
+     * The secondary action button label (Defaults to &#39;Cancel&#39;).
+     */
+    secondaryAction?: string;
+
+    /**
+     * If true, will provide a secondary action button.
+     */
+    enableSecondary?: boolean;
+
+    /**
+     * Action button(s) horizontal alignment:
+     *  - `left` Align action button(s) to the left.
+     *  - `center` Align action button(s) to the center.
+     *  - `right` Align action button(s) to the right. (Default)
+     *  - `stretch` Align action button(s) stretched to fill the horizontal space.
+     */
+    actionAlign?: &#39;left&#39; | &#39;center&#39; | &#39;right&#39; | &#39;stretch&#39;;
+}</code></pre></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+                                
+                
+                
+                    <h2 class="component-props-table-header">Slots</h2>
+                    <div class="docs-search-area">
+                        <omni-search-field id="slot-search"></omni-search-field>
+                    </div>
+                    <div class="component-props-table-wrapper">
+                        <table class="component-props-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody id="component-slots">
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">loading_indicator</code></pre></td>
+                                    <td data-label="Description">Used to define content that is displayed while async rendering is awaiting, or when renderLoading() is implicitly called</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">status-indicator</code></pre></td>
+                                    <td data-label="Description">Content to render as the status indicator instead of default status icons.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">header</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component message area.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">[Default Slot]</code></pre></td>
+                                    <td data-label="Description">Content to render inside the component description body.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">primary</code></pre></td>
+                                    <td data-label="Description">Content to render as the primary action button.</td>
+                                </tr>
+                                
+                                <tr>
+                                    <td data-label="Name" scope="row"><pre><code class="language-js">secondary</code></pre></td>
+                                    <td data-label="Description">Content to render as the secondary action button.</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                
+            </div>
+            <div class="component-tab" id="styles" role="tabpanel">
+                
+                    
+                    
+                        <h2 class="component-props-table-header" >Theme Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Theme Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Theme Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-color</code></pre></td>
+                                        <td data-label="Description">Theme primary color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme primary hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-primary-active-color</code></pre></td>
+                                        <td data-label="Description">Theme primary active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-color</code></pre></td>
+                                        <td data-label="Description">Theme accent color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme accent hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-accent-active-color</code></pre></td>
+                                        <td data-label="Description">Theme accent active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-color</code></pre></td>
+                                        <td data-label="Description">Theme background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-hover-color</code></pre></td>
+                                        <td data-label="Description">Theme background hover color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-background-active-color</code></pre></td>
+                                        <td data-label="Description">Theme background active color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-color</code></pre></td>
+                                        <td data-label="Description">Theme font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-border-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-disabled-background-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-font-color</code></pre></td>
+                                        <td data-label="Description">Theme disabled background color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-error-border-color</code></pre></td>
+                                        <td data-label="Description">Theme error border color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-hint-font-color</code></pre></td>
+                                        <td data-label="Description">Theme hint font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-inactive-color</code></pre></td>
+                                        <td data-label="Description">Theme inactive color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow-color</code></pre></td>
+                                        <td data-label="Description">Theme inactive color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-family</code></pre></td>
+                                        <td data-label="Description">Theme font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-size</code></pre></td>
+                                        <td data-label="Description">Theme font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-font-weight</code></pre></td>
+                                        <td data-label="Description">Theme font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-radius</code></pre></td>
+                                        <td data-label="Description">Theme border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-border-width</code></pre></td>
+                                        <td data-label="Description">Theme border width.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-theme-box-shadow</code></pre></td>
+                                        <td data-label="Description">Theme box shadow.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
+                    
+                    
+                        <h2 class="component-props-table-header" >Component Variables</h2>
+                        <div class="docs-search-area">
+                            <omni-search-field class="css-category" data-category="Component Variables"></omni-search-field>
+                        </div>
+                        <div class="component-props-table-wrapper">
+                            <table class="component-props-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody data-category="Component Variables" class="component-css-props">
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-min-width</code></pre></td>
+                                        <td data-label="Description">Minimum width for alert.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-max-width</code></pre></td>
+                                        <td data-label="Description">Maximum width for alert.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-border</code></pre></td>
+                                        <td data-label="Description">Alert border.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-border-radius</code></pre></td>
+                                        <td data-label="Description">Alert border radius.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-box-shadow</code></pre></td>
+                                        <td data-label="Description">Alert box shadow.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-animation-duration</code></pre></td>
+                                        <td data-label="Description">Alert fade in and out animation duration.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-padding-top</code></pre></td>
+                                        <td data-label="Description">Alert content top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Alert content bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-padding-left</code></pre></td>
+                                        <td data-label="Description">Alert content left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-padding-right</code></pre></td>
+                                        <td data-label="Description">Alert content right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-font-color</code></pre></td>
+                                        <td data-label="Description">Alert header font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-font-family</code></pre></td>
+                                        <td data-label="Description">Alert header font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-font-size</code></pre></td>
+                                        <td data-label="Description">Alert header font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-font-weight</code></pre></td>
+                                        <td data-label="Description">Alert header font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-line-height</code></pre></td>
+                                        <td data-label="Description">Alert header line height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-background</code></pre></td>
+                                        <td data-label="Description">Alert header background.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-padding-top</code></pre></td>
+                                        <td data-label="Description">Alert header top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Alert header bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-padding-left</code></pre></td>
+                                        <td data-label="Description">Alert header left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-padding-right</code></pre></td>
+                                        <td data-label="Description">Alert header right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-font-color</code></pre></td>
+                                        <td data-label="Description">Alert description font color.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-font-family</code></pre></td>
+                                        <td data-label="Description">Alert description font family.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-font-size</code></pre></td>
+                                        <td data-label="Description">Alert description font size.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-font-weight</code></pre></td>
+                                        <td data-label="Description">Alert description font weight.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-line-height</code></pre></td>
+                                        <td data-label="Description">Alert description line height.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-padding-top</code></pre></td>
+                                        <td data-label="Description">Alert description top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Alert description bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-padding-left</code></pre></td>
+                                        <td data-label="Description">Alert description left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-description-padding-right</code></pre></td>
+                                        <td data-label="Description">Alert description right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-padding-top</code></pre></td>
+                                        <td data-label="Description">Alert actions part top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Alert actions part bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-padding-left</code></pre></td>
+                                        <td data-label="Description">Alert actions part left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-padding-right</code></pre></td>
+                                        <td data-label="Description">Alert actions part right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-padding-top</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-padding-left</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-padding-right</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-internal-padding-top</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) internal top padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-internal-padding-bottom</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) internal bottom padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-internal-padding-left</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) internal left padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-action-button-internal-padding-right</code></pre></td>
+                                        <td data-label="Description">Alert action button(s) internal right padding.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-horizontal-gap</code></pre></td>
+                                        <td data-label="Description">Alert header horizontal space between status indicator and header content.</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td data-label="Name" scope="row"><pre><code class="language-css">--omni-alert-header-status-size</code></pre></td>
+                                        <td data-label="Description">Alert header status indicator symmetrical size.</td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+</main>
+
+            <footer>
+                <div class="logo">
+                    <img src="./assets/images/logo.png" width="30" height: "30" alt="logo">
+                    <div style="font-weight: bold">Omni Components</div>
+                </div>
+                <div class="links">
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/CONTRIBUTING.md" target="_blank">Contribute</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/blob/develop/LICENSE" target="_blank">License</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://github.com/capitec/omni-components/discussions" target="_blank">Discussions</a>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="item">
+                        <a href="https://www.npmjs.com/package/@capitec/omni-components" target="_blank">Packages</a>
+                    </div>
+                </div>
+                <div class="copyright" style="">Copyright &copy; 2024</div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

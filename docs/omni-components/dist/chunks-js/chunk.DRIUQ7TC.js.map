@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/icons/Indeterminate.icon.ts"],
-  "mappings": "8KAAAA,IAAAC,IAqBO,IAAMC,EAAN,cAAgCC,CAAe,CACzC,QAAyB,CAC9B,OAAOC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAOX,CACJ,EAVaF,EAANG,EAAA,CADNC,EAAc,yBAAyB,GAC3BJ",
-  "names": ["init_define_process_argv", "init_global", "IndeterminateIcon", "DOMTreeElement_default", "x", "__decorateClass", "t"]
-}

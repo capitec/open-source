@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/icons/Clear.icon.ts"],
+  "mappings": "8KAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAAwBC,CAAe,CACjC,QAAyB,CAC9B,OAAOC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,SAQX,CACJ,EAXaF,EAANG,EAAA,CADNC,EAAc,iBAAiB,GACnBJ",
+  "names": ["init_define_process_argv", "init_global", "ClearIcon", "DOMTreeElement_default", "ke", "__decorateClass", "t"]
+}

@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/icons/CapsOff.icon.ts"],
-  "mappings": "yKAAAA,IAAAC,IAsBO,IAAMC,EAAN,cAA0BC,CAAe,CACnC,QAAyB,CAC9B,OAAOC;AAAA;AAAA,SAGX,CACJ,EANaF,EAANG,EAAA,CADNC,EAAc,oBAAoB,GACtBJ",
-  "names": ["init_define_process_argv", "init_global", "CapsOffIcon", "DOMTreeElement_default", "x", "__decorateClass", "t"]
-}

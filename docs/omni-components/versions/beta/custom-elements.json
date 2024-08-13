@@ -4547,6 +4547,51 @@
               "privacy": "private"
             },
             {
+              "kind": "field",
+              "name": "bottomOfViewport",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "isMobile",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "searchValue",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "popUp",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "searchElement",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "itemsContainer",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "selectElement",
+              "privacy": "protected"
+            },
+            {
+              "kind": "field",
+              "name": "_windowClickBound",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_checkScreenDimensionsBound",
+              "privacy": "private"
+            },
+            {
               "kind": "method",
               "name": "_inputClick",
               "parameters": [
@@ -4694,6 +4739,15 @@
             },
             {
               "kind": "method",
+              "name": "_renderSelectionLoading",
+              "return": {
+                "type": {
+                  "text": "any"
+                }
+              }
+            },
+            {
+              "kind": "method",
               "name": "renderPicker",
               "privacy": "protected",
               "return": {
@@ -4708,10 +4762,46 @@
             },
             {
               "kind": "method",
+              "name": "_renderDesktopPicker",
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderMobilePicker",
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderMobileHeader",
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1> | unique symbol"
+                }
+              }
+            },
+            {
+              "kind": "method",
               "name": "_renderSearchField",
               "return": {
                 "type": {
                   "text": "TemplateResult<1> | unique symbol"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderSearchClear",
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1>"
                 }
               }
             },
@@ -4731,10 +4821,70 @@
             },
             {
               "kind": "method",
+              "name": "_renderDesktopControl",
+              "return": {
+                "type": {
+                  "text": "unknown"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "controlIcon",
+                  "type": {
+                    "text": "ClassInfo"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "_renderMobileControl",
+              "return": {
+                "type": {
+                  "text": "unknown"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "controlIcon",
+                  "type": {
+                    "text": "ClassInfo"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
               "name": "_renderOptions",
               "return": {
                 "type": {
                   "text": "Promise<TemplateResult<1> | TemplateResult<1>[]>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderItems",
+              "parameters": [
+                {
+                  "name": "items",
+                  "type": {
+                    "text": "SelectTypes"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1>[]"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderEmptyOptions",
+              "return": {
+                "type": {
+                  "text": "TemplateResult<1>"
                 }
               }
             },
@@ -4769,6 +4919,32 @@
               "return": {
                 "type": {
                   "text": "TemplateResult<1>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderItemLoading",
+              "return": {
+                "type": {
+                  "text": "any"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_renderOptionSeparator",
+              "parameters": [
+                {
+                  "name": "_item",
+                  "type": {
+                    "text": "Record<string, unknown> | string"
+                  }
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "symbol"
                 }
               }
             },
@@ -8665,7 +8841,7 @@
           ],
           "return": {
             "type": {
-              "text": "Promise<any>"
+              "text": "Promise<string>"
             }
           }
         },
@@ -15940,6 +16116,21 @@
               },
               "privacy": "private",
               "default": "false"
+            },
+            {
+              "kind": "field",
+              "name": "_windowClickBound",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_checkForBottomOfScreenBound",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "_checkForMobileBound",
+              "privacy": "private"
             },
             {
               "kind": "method",

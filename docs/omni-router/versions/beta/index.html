@@ -162,6 +162,11 @@
 <td>Optional, the registered custom-element tag name for your page web component, e.g. <code>&#39;view-login&#39;</code></td>
 </tr>
 <tr>
+<td><strong>path</strong></td>
+<td>string</td>
+<td>The relative URL path for the route to set in the browser navigation bar, e.g. <code>&#39;/login&#39;</code></td>
+</tr>
+<tr>
 <td><strong>title</strong></td>
 <td>string</td>
 <td>The window title to show when the route is loaded, e.g. <code>&#39;Login&#39;</code></td>
@@ -170,6 +175,11 @@
 <td><strong>animation</strong></td>
 <td>string</td>
 <td>Optional, animation to apply when loading the route. Can be one of <code>fade</code>, <code>slide</code>, <code>pop</code></td>
+</tr>
+<tr>
+<td><strong>cache</strong></td>
+<td>boolean</td>
+<td>Optional, indicator if the route template should be cached and reused, or recreated every time the route is navigated to.</td>
 </tr>
 <tr>
 <td><strong>load</strong></td>
@@ -277,6 +287,19 @@
 <tr>
 <td>navigation-started</td>
 <td>Fired after the route page has completely rendered on screen, e.g. after it was fully animated in.</td>
+</tr>
+</tbody></table>
+<p>The <code>&lt;omni-router&gt;</code> tag provides the following functions:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clearCache(): void</code></td>
+<td>Clear the cache of route components.</td>
 </tr>
 </tbody></table>
 <br>

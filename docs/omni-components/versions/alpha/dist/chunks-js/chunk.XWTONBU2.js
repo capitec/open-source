@@ -92,7 +92,6 @@ import{a as p,b as c}from"./chunk.YRSGKD7J.js";import{a as i}from"./chunk.3F3IIF
                     background: var(--omni-modal-body-background, var(--omni-background-color));
                     line-height: 24px;
                     overflow: var(--omni-modal-body-overflow, auto);
-                    min-width: var(--omni-modal-body-min-width, auto);
                 }
 
                 .body[no-header] {                    
@@ -162,4 +161,4 @@ import{a as p,b as c}from"./chunk.YRSGKD7J.js";import{a as i}from"./chunk.3F3IIF
             <div class="footer" part="footer">
                 <slot name="footer"></slot>
             </div>`}};r([n({type:String,attribute:"header-label",reflect:!0})],o.prototype,"headerLabel",2),r([n({type:String,attribute:"header-align",reflect:!0})],o.prototype,"headerAlign",2),r([n({type:Boolean,reflect:!0})],o.prototype,"hide",2),r([n({type:Boolean,attribute:"no-header",reflect:!0})],o.prototype,"noHeader",2),r([n({type:Boolean,attribute:"no-footer",reflect:!0})],o.prototype,"noFooter",2),r([n({type:Boolean,attribute:"no-fullscreen",reflect:!0})],o.prototype,"noFullscreen",2),r([u("dialog")],o.prototype,"dialog",2),o=r([h("omni-modal")],o);export{o as a};
-//# sourceMappingURL=chunk.QJY2IGJG.js.map
+//# sourceMappingURL=chunk.XWTONBU2.js.map

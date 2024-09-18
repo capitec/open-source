@@ -1,0 +1,48 @@
+import{a as f}from"./chunk.APNKRDWQ.js";import{a as u}from"./chunk.QQ4KC6E2.js";import{a as m}from"./chunk.YTU7KEBB.js";import{a as l,b as d,d as s}from"./chunk.4PFNWG2J.js";import{a as r,d as a}from"./chunk.63YMDT6M.js";import{j as i,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var t=class extends u{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keyup",this._blurOnEnter.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}_keyInput(){let e=this._inputElement;this.value=e.value}static get styles(){return[super.styles,r`
+                .field {
+                flex: 1 1 auto;
+
+                border: none;
+                background: none;
+                box-shadow: none;
+                outline: 0;
+                padding: 0;
+                margin: 0;
+
+                text-align: var(--omni-email-field-text-align, left);
+
+                color: var(--omni-email-field-font-color, var(--omni-font-color));
+                font-family: var(--omni-email-field-font-family, var(--omni-font-family));
+                font-size: var(--omni-email-field-font-size, var(--omni-font-size));
+                font-weight: var(--omni-email-field-font-weight, var(--omni-font-weight));
+                padding: var(--omni-email-field-padding, 10px);
+
+                height: var(--omni-email-field-height, 100%);
+                width: var(--omni-email-field-width, 100%);
+                }
+                
+                .field.disabled {
+                    color: var(--omni-email-field-disabled-font-color, #7C7C7C);
+                }
+
+                .field.error {
+                    color: var(--omni-email-field-error-font-color, var(--omni-font-color));
+                }
+                
+                /* Grant the ability to set the hover color when cursor hovers over auto selectable options */
+                input:-webkit-autofill,
+                input:-webkit-autofill:focus {
+                    transition: var(--omni-email-field-autofill-hover-transition) !important;
+                }
+            `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return a`
+      <input
+        class=${m(e)}
+        id="inputField"
+        inputmode="${this.noNativeKeyboard?"none":"email"}"
+        data-omni-keyboard-mode="email"
+        type="email"
+        .value=${f(this.value)}
+        ?readOnly=${this.disabled}
+        tabindex="${this.disabled?-1:0}" />
+    `}};i([s("#inputField")],t.prototype,"_inputElement",2),i([d({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),t=i([l("omni-email-field")],t);export{t as a};
+//# sourceMappingURL=chunk.3WZOOCFD.js.map

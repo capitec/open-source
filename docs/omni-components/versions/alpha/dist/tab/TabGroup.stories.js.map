@@ -2,5 +2,5 @@
   "version": 3,
   "sources": ["../../src/tab/TabGroup.stories.ts"],
   "mappings": "m1BAAAA,IAAAC,IAeO,IAAMC,EAA0C,CACnD,OAASC,GAAeC;AAAA;AAAA,UAElBD,EAAK,OAASC,IAAO;AAAA,IAASC,EAAWC,EAAa,SAAUH,EAAK,MAAM,CAAC,IAAMI;AAAA,UAClFJ,EAAK,kBAAoBC,IAAO;AAAA,IAASC,EAAWF,EAAK,iBAAiB,IAAMI;AAAA;AAAA,EAGtF,iBAAkB,CACd,CACI,UAAW,MACX,KAAOJ,GACHK,EAAiBN,EAAa,OAAQC,CAAI,EAAG,OAAYM,GACrDA,EAAE,QAAQ,UAAW,iBAAiB,EAAE,QAAQ,YAAa,mBAAmB,CACpF,CACR,CACJ,EACA,KAAM,cACN,YAAa,IAAML;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,MAQnB,KAAM,CACF,OAAQ,GACR,iBAAkBM;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,YAStB,CACJ",
-  "names": ["init_define_process_argv", "init_global", "Interactive", "args", "x", "o", "assignToSlot", "T", "getSourceFromLit", "s", "raw"]
+  "names": ["init_define_process_argv", "init_global", "Interactive", "args", "ke", "ae", "assignToSlot", "D", "getSourceFromLit", "s", "raw"]
 }

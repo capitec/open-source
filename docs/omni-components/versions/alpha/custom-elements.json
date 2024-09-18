@@ -768,6 +768,10 @@
               "name": "--omni-modal-max-height"
             },
             {
+              "description": "Min width for modal content container.",
+              "name": "--omni-modal-min-width"
+            },
+            {
               "description": "Font color for modal header.",
               "name": "--omni-modal-header-font-color"
             },
@@ -834,10 +838,6 @@
             {
               "description": "Overflow for modal body.",
               "name": "--omni-modal-body-overflow"
-            },
-            {
-              "description": "Min width for modal body.",
-              "name": "--omni-modal-body-min-width"
             },
             {
               "description": "Top border radius for modal body when there is no header.",

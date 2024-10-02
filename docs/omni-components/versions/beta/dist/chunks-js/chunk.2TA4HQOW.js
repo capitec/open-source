@@ -1,4 +1,4 @@
-import{a as p}from"./chunk.APNKRDWQ.js";import{a as b}from"./chunk.QQ4KC6E2.js";import{a as f}from"./chunk.3F3IIFA7.js";import{a as m}from"./chunk.YTU7KEBB.js";import{a as s,b as d,d as u}from"./chunk.4PFNWG2J.js";import{a,d as l}from"./chunk.63YMDT6M.js";import{j as t,m as r,p as o}from"./chunk.BF43NN75.js";r();o();var n=class extends b{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async attributeChangedCallback(e,c,i){super.attributeChangedCallback(e,c,i),e==="value"&&new RegExp("^[0-9]+$").test(i)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as p}from"./chunk.APNKRDWQ.js";import{a as h}from"./chunk.QQ4KC6E2.js";import{a as m}from"./chunk.3F3IIFA7.js";import{a as f}from"./chunk.YTU7KEBB.js";import{a as d,b as i,d as u}from"./chunk.4PFNWG2J.js";import{a as l,d as s}from"./chunk.63YMDT6M.js";import{j as n,m as o,p as a}from"./chunk.BF43NN75.js";o();a();var t=class extends h{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keydown",this._keyDown.bind(this),{capture:!0})}async firstUpdated(){this.value!==null&&this.value!==void 0&&this.maxLength&&(this._inputElement.value=String(this.value).slice(0,this.maxLength))}async attributeChangedCallback(e,v,r){super.attributeChangedCallback(e,v,r),e==="value"&&new RegExp("^[0-9]+$").test(r)}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyDown(e){if(e.key>="a"&&e.key<="z"){e.preventDefault();return}}_keyInput(){let e=this._inputElement;(e==null?void 0:e.value)&&this.maxLength&&e.value.length>this.maxLength&&(e.value=e.value.slice(0,this.maxLength)),this.value=e==null?void 0:e.value}static get styles(){return[super.styles,l`
                 .field {
                     flex: 1 1 auto;
 
@@ -40,14 +40,14 @@ import{a as p}from"./chunk.APNKRDWQ.js";import{a as b}from"./chunk.QQ4KC6E2.js";
                 input[type='number'] {
                 -moz-appearance: textfield; /* Firefox */
                 }
-            `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return l`
+            `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return s`
       <input
-        class=${m(e)}
+        class=${f(e)}
         id="inputField"
         type="number"
-        inputmode="${f(this.noNativeKeyboard?"none":void 0)}"
+        inputmode="${m(this.noNativeKeyboard?"none":void 0)}"
         .value=${p(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
-    `}};t([u("#inputField")],n.prototype,"_inputElement",2),t([d({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],n.prototype,"noNativeKeyboard",2),n=t([s("omni-number-field")],n);export{n as a};
-//# sourceMappingURL=chunk.UOG665R4.js.map
+    `}};n([u("#inputField")],t.prototype,"_inputElement",2),n([i({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),n([i({type:Number,reflect:!0,attribute:"max-length"})],t.prototype,"maxLength",2),t=n([d("omni-number-field")],t);export{t as a};
+//# sourceMappingURL=chunk.2TA4HQOW.js.map

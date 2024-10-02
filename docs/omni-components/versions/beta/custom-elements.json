@@ -3376,6 +3376,16 @@
               "reflects": true
             },
             {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "attribute": "max-length",
+              "reflects": true
+            },
+            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -3710,6 +3720,15 @@
               "description": "Disables native on screen keyboards for the component.",
               "fieldName": "noNativeKeyboard",
               "attribute": "no-native-keyboard"
+            },
+            {
+              "name": "max-length",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "fieldName": "maxLength",
+              "attribute": "max-length"
             },
             {
               "name": "label",
@@ -6685,6 +6704,16 @@
               "reflects": true
             },
             {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "attribute": "max-length",
+              "reflects": true
+            },
+            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -7036,6 +7065,15 @@
               "description": "Disables native on screen keyboards for the component.",
               "fieldName": "noNativeKeyboard",
               "attribute": "no-native-keyboard"
+            },
+            {
+              "name": "max-length",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "fieldName": "maxLength",
+              "attribute": "max-length"
             },
             {
               "name": "label",
@@ -17035,6 +17073,16 @@
               "reflects": true
             },
             {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "attribute": "max-length",
+              "reflects": true
+            },
+            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -17388,6 +17436,15 @@
               "attribute": "no-native-keyboard"
             },
             {
+              "name": "max-length",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "fieldName": "maxLength",
+              "attribute": "max-length"
+            },
+            {
               "name": "label",
               "type": {
                 "text": "string | undefined"
@@ -17596,9 +17653,18 @@
           "kind": "variable",
           "name": "Interactive",
           "type": {
-            "text": "ComponentStoryFormat<BaseArgs>"
+            "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: ''\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-email-field\n      data-testid=\"test-email-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-email-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        maxLength: undefined\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Length",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-email-field\n            data-testid=\"test-email-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            max-length=${ifDefined(args.maxLength)}>\n        </omni-email-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniEmailField } from \"@capitec/omni-components-react/email-field\";\n\nconst App = () => <OmniEmailField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? ` max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the character input length based on the value provided to the email field.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    }\n}",
+          "description": "Limit the character input length based on the value provided to the email field."
         },
         {
           "kind": "variable",
@@ -17643,6 +17709,14 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/email-field/EmailField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Length",
+          "declaration": {
+            "name": "Max_Length",
             "module": "src/email-field/EmailField.stories.ts"
           }
         },
@@ -19777,6 +19851,16 @@
               "reflects": true
             },
             {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "attribute": "max-length",
+              "reflects": true
+            },
+            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -20128,6 +20212,15 @@
               "description": "Disables native on screen keyboards for the component.",
               "fieldName": "noNativeKeyboard",
               "attribute": "no-native-keyboard"
+            },
+            {
+              "name": "max-length",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "fieldName": "maxLength",
+              "attribute": "max-length"
             },
             {
               "name": "label",
@@ -20483,6 +20576,16 @@
               },
               "description": "Disables native on screen keyboards for the component.",
               "attribute": "no-native-keyboard",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "maxLength",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "attribute": "max-length",
               "reflects": true
             },
             {
@@ -20856,6 +20959,15 @@
               "description": "Disables native on screen keyboards for the component.",
               "fieldName": "noNativeKeyboard",
               "attribute": "no-native-keyboard"
+            },
+            {
+              "name": "max-length",
+              "type": {
+                "text": "number | undefined"
+              },
+              "description": "Maximum character input length.",
+              "fieldName": "maxLength",
+              "attribute": "max-length"
             },
             {
               "name": "value",
@@ -22349,9 +22461,18 @@
           "kind": "variable",
           "name": "Interactive",
           "type": {
-            "text": "ComponentStoryFormat<BaseArgs>"
+            "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-number-field\n      data-testid=\"test-number-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-number-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        clear: ''\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-number-field\n      data-testid=\"test-number-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-number-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        maxLength: undefined\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Length",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-number-field\n            data-testid=\"test-number-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            max-length=${ifDefined(args.maxLength)}>\n        </omni-number-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniNumberField } from \"@capitec/omni-components-react/number-field\";\n\nconst App = () => <OmniNumberField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? ` max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the numeric input length based on the value provided.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    }\n}",
+          "description": "Limit the numeric input length based on the value provided."
         },
         {
           "kind": "variable",
@@ -22396,6 +22517,14 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/number-field/NumberField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Length",
+          "declaration": {
+            "name": "Max_Length",
             "module": "src/number-field/NumberField.stories.ts"
           }
         },
@@ -22489,7 +22618,16 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-password-field\n      data-testid=\"test-password-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-password-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        hide: '',\n        show: ''\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-password-field\n      data-testid=\"test-password-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-password-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        hide: '',\n        show: ''\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Length",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-password-field\n            data-testid=\"test-password-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            max-length=${ifDefined(args.maxLength)}>\n        </omni-password-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniPasswordField } from \"@capitec/omni-components-react/password-field\";\n\nconst App = () => <OmniPasswordField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? ` max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the character input length based on the value provided.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    }\n}",
+          "description": "Limit the character input length based on the value provided."
         },
         {
           "kind": "variable",
@@ -22533,8 +22671,8 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-password-field data-testid=\"test-password-field\" label=\"${ifNotEmpty(args.label)}\" ?disabled=\"${args.disabled}\">\n      <omni-lock-open-icon style=\"fill: orange;\" slot=\"show\"></omni-lock-open-icon>\n      <omni-lock-closed-icon style=\"fill: lightgreen;\" slot=\"hide\"></omni-lock-closed-icon>\n    </omni-password-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniPasswordField } from \"@capitec/omni-components-react/password-field\";\nimport { OmniLockClosedIcon,OmniLockOpenIcon } from \"@capitec/omni-components-react/icons\";\n\nconst App = () => <OmniPasswordField${args.label ? ` label='${args.label}'` : ''}${args.disabled ? ` disabled` : ''}>\n                    <OmniLockOpenIcon style={{fill: 'orange'}} slot=\"show\"/>\n                    <OmniLockClosedIcon style={{fill: 'lightgreen'}} slot=\"hide\"/>\n                  </OmniPasswordField>;`\n        }\n    ],\n    name: 'Custom Icon Slot',\n    description: 'Set html content to display as the visibility indicators of the field.',\n    args: {\n        label: 'Custom Icon Slot'\n    }\n}",
-          "description": "Set html content to display as the visibility indicators of the field."
+          "default": "{\n    render: (args: Args) => html`\n    <omni-password-field data-testid=\"test-password-field\" label=\"${ifNotEmpty(args.label)}\" ?disabled=\"${args.disabled}\">\n      <omni-lock-open-icon style=\"fill: orange;\" slot=\"show\"></omni-lock-open-icon>\n      <omni-lock-closed-icon style=\"fill: lightgreen;\" slot=\"hide\"></omni-lock-closed-icon>\n    </omni-password-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniPasswordField } from \"@capitec/omni-components-react/password-field\";\nimport { OmniLockClosedIcon,OmniLockOpenIcon } from \"@capitec/omni-components-react/icons\";\n\nconst App = () => <OmniPasswordField${args.label ? ` label='${args.label}'` : ''}${args.disabled ? ` disabled` : ''}>\n                    <OmniLockOpenIcon style={{fill: 'orange'}} slot=\"show\"/>\n                    <OmniLockClosedIcon style={{fill: 'lightgreen'}} slot=\"hide\"/>\n                  </OmniPasswordField>;`\n        }\n    ],\n    name: 'Custom Icon Slot',\n    description: 'Set html content to display as the visibility indicators of the password field.',\n    args: {\n        label: 'Custom Icon Slot'\n    }\n}",
+          "description": "Set html content to display as the visibility indicators of the password field."
         }
       ],
       "exports": [
@@ -22543,6 +22681,14 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/password-field/PasswordField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Length",
+          "declaration": {
+            "name": "Max_Length",
             "module": "src/password-field/PasswordField.stories.ts"
           }
         },
@@ -22644,7 +22790,7 @@
           "type": {
             "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${args.maxLength}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-pin-field\n      data-testid=\"test-pin-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.hide ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('hide', args.hide))}` : nothing}${\n        args.show ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('show', args.show))}` : nothing\n    }</omni-pin-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        hide: '',\n        show: '',\n        maxLength: undefined\n    }\n}"
         },
         {
           "kind": "variable",
@@ -23897,9 +24043,18 @@
           "kind": "variable",
           "name": "Interactive",
           "type": {
-            "text": "ComponentStoryFormat<BaseArgs>"
+            "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n        <omni-search-field\n            data-testid=\"test-search-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-search-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: ''\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n        <omni-search-field\n            data-testid=\"test-search-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            max-length=${ifDefined(args.maxLength)}\n            hint=\"${ifNotEmpty(args.hint)}\"\n            error=\"${ifNotEmpty(args.error)}\"\n            ?disabled=\"${args.disabled}\"\n            ?clearable=\"${args.clearable}\">${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n            ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-search-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        maxLength: undefined\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Length",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n        <omni-search-field\n            data-testid=\"test-search-field\"\n            label=\"${ifNotEmpty(args.label)}\"\n            value=\"${args.value}\"\n            max-length=${ifDefined(args.maxLength)}>\n        </omni-search-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniSearchField } from \"@capitec/omni-components-react/search-field\";\n\nconst App = () => <OmniSearchField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? ` max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the character input length based on the value provided.',\n    args: {\n        label: 'Max Length',\n        maxLength: 5\n    }\n}",
+          "description": "Limit the character input length based on the value provided."
         },
         {
           "kind": "variable",
@@ -23944,6 +24099,14 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/search-field/SearchField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Length",
+          "declaration": {
+            "name": "Max_Length",
             "module": "src/search-field/SearchField.stories.ts"
           }
         },
@@ -25407,9 +25570,18 @@
           "kind": "variable",
           "name": "Interactive",
           "type": {
-            "text": "ComponentStoryFormat<BaseArgs>"
+            "text": "ComponentStoryFormat<Args>"
           },
-          "default": "{\n    render: (args: BaseArgs) => html`\n    <omni-text-field\n      data-testid=\"test-text-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-text-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: ''\n    }\n}"
+          "default": "{\n    render: (args: Args) => html`\n    <omni-text-field\n      data-testid=\"test-text-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}\n      hint=\"${ifNotEmpty(args.hint)}\"\n      error=\"${ifNotEmpty(args.error)}\"\n      ?disabled=\"${args.disabled}\"\n      ?clearable=\"${args.clearable}\"\n      >${args.prefix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('prefix', args.prefix))}` : nothing}\n      ${args.clear ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('clear', args.clear))}` : nothing}${\n        args.suffix ? html`${'\\r\\n'}${unsafeHTML(assignToSlot('suffix', args.suffix))}` : nothing\n    }${args.prefix || args.suffix || args.clear ? '\\r\\n' : nothing}</omni-text-field>\n  `,\n    frameworkSources: [\n        {\n            framework: 'Vue',\n            load: (args) =>\n                getSourceFromLit(Interactive!.render!(args), undefined, (s) =>\n                    s.replace(' disabled', ' :disabled=\"true\"').replace(' clearable', ' :clearable=\"true\"')\n                )\n        }\n    ],\n    name: 'Interactive',\n    args: {\n        label: 'Label',\n        value: '',\n        hint: '',\n        error: '',\n        disabled: false,\n        clearable: false,\n        prefix: '',\n        suffix: '',\n        clear: '',\n        maxLength: undefined\n    }\n}"
+        },
+        {
+          "kind": "variable",
+          "name": "Max_Length",
+          "type": {
+            "text": "ComponentStoryFormat<Args>"
+          },
+          "default": "{\n    render: (args: Args) => html`\n    <omni-text-field\n      data-testid=\"test-text-field\"\n      label=\"${ifNotEmpty(args.label)}\"\n      value=\"${args.value}\"\n      max-length=${ifDefined(args.maxLength)}>\n    </omni-text-field>\n    `,\n    frameworkSources: [\n        {\n            framework: 'React',\n            load: (args) => `import { OmniTextField } from \"@capitec/omni-components-react/text-field\";\n\nconst App = () => <OmniTextField${args.label ? ` label='${args.label}'` : ''}${args.value ? ` value='${args.value}'` : ''}${\n                args.maxLength ? `max-length='${args.maxLength}'` : ''\n            }/>;`\n        }\n    ],\n    name: 'Max Length',\n    description: 'Limit the character input length of the text field based on the value provided',\n    args: {\n        label: 'Max Length',\n        maxLength: 5,\n        value: 'SomeLongValue'\n    }\n}",
+          "description": "Limit the character input length of the text field based on the value provided"
         },
         {
           "kind": "variable",
@@ -25454,6 +25626,14 @@
           "name": "Interactive",
           "declaration": {
             "name": "Interactive",
+            "module": "src/text-field/TextField.stories.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Max_Length",
+          "declaration": {
+            "name": "Max_Length",
             "module": "src/text-field/TextField.stories.ts"
           }
         },

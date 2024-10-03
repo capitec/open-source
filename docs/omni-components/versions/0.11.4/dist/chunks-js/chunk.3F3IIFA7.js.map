@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/lit-html/src/directives/if-defined.ts", "../../node_modules/lit/directives/if-defined.js"],
+  "mappings": "+FAcO,IAAMA,EAAgBC,GAAaA,GAAAA,KAAAA,EAASC,ECdnDC,IAAAC",
+  "names": ["ifDefined", "value", "nothing", "init_define_process_argv", "init_global"]
+}

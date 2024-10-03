@@ -8,18 +8,18 @@
       "version": "0.1.1"
     },
     {
+      "display": "Omni Components",
+      "logo": "https://raw.githubusercontent.com/capitec/omni-components/develop/.tooling/eleventy/assets/images/logo.png",
+      "name": "omni-components",
+      "description": "Modern UI component library for mobile and web",
+      "version": "0.11.4"
+    },
+    {
       "display": "Omni State",
       "logo": "https://raw.githubusercontent.com/capitec/omni-state/develop/docs/logos/omni.png",
       "name": "omni-state",
       "description": "Simple web app state and storage management",
       "version": "0.1.3"
-    },
-    {
-      "display": "Omni Components",
-      "logo": "https://raw.githubusercontent.com/capitec/omni-components/develop/.tooling/eleventy/assets/images/logo.png",
-      "name": "omni-components",
-      "description": "Modern UI component library for mobile and web",
-      "version": "0.11.3"
     },
     {
       "display": "Omni Router",

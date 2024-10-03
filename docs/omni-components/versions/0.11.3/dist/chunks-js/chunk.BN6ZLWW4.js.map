@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../src/core/DOMTreeElement.ts"],
+  "mappings": "uFAAAA,IAAAC,IAKO,IAAeC,EAAf,cAAsCC,CAAW,CAC3C,mBAAoB,CACzB,MAAM,kBAAkB,EAExB,KAAK,MAAM,QAAU;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,cAUf,KAAK,MAAM;AAAA,SAErB,CAGmB,kBAAmB,CAClC,OAAO,IACX,CACJ,EAEOC,EAAQF",
+  "names": ["init_define_process_argv", "init_global", "DOMTreeElement", "h", "DOMTreeElement_default"]
+}

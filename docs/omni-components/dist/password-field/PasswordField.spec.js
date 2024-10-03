@@ -28,21 +28,27 @@ test(`Password Field - Visual and Behaviour`, async ({ page }) => {
         await expect(passwordField).toHaveScreenshot('password-field-value.png');
     });
 });
-test(`Password Field - Behaviour`, async ({ page }) => {
+test(`Password Field - Max Length Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/password-field/');
         await page.evaluate(() => document.fonts.ready);
-        const passwordField = page.locator('[data-testid]').first();
-        await expect(passwordField).toHaveScreenshot('password-field-initial.png');
-        const showSlotElement = passwordField.locator('slot[name=show]');
-        await showSlotElement.click();
-        const hideSlotElement = passwordField.locator('slot[name=hide]');
-        await hideSlotElement.click();
+        const container = page.locator('.Max_Length');
+        const passwordField = container.locator('[data-testid]').first();
+        passwordField.evaluate(async (t) => {
+            t.value = '';
+            t.maxLength = 4;
+            await t.updateComplete;
+        });
+        // Confirm that the component matches the provided screenshot.
+        await expect(passwordField).toHaveScreenshot('password-field.png');
+        const inputFn = await mockEventListener(passwordField, 'input');
         const inputField = passwordField.locator('#inputField');
-        const valueUpdate = 'Value Update';
-        await passwordField.evaluate((p, valueUpdate) => (p.value = valueUpdate), valueUpdate);
-        await expect(inputField).toHaveValue(valueUpdate);
-        await expect(passwordField).toHaveScreenshot('password-field-value-update.png');
+        const typedValue = 'Tests';
+        const value = 'Test';
+        await inputField.type(typedValue);
+        await expect(passwordField).toHaveScreenshot('password-field-value.png');
+        await expect(inputField).toHaveValue(value);
+        await expect(inputFn).toBeCalledTimes(typedValue.length);
     });
 });
 test('Password Field - Label Behaviour', testLabelBehaviour('omni-password-field'));

@@ -1,4 +1,4 @@
-import{a as m}from"./chunk.APNKRDWQ.js";import{a as h}from"./chunk.QQ4KC6E2.js";import{a as d}from"./chunk.3F3IIFA7.js";import{a as f}from"./chunk.YTU7KEBB.js";import{a as s,b as l,d as c}from"./chunk.4PFNWG2J.js";import{a,d as t}from"./chunk.63YMDT6M.js";import{j as r,m as o,p as n}from"./chunk.BF43NN75.js";o();n();var i=class extends h{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0})}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;this.value=e==null?void 0:e.value}static get styles(){return[super.styles,a`
+import{a as f}from"./chunk.APNKRDWQ.js";import{a as m}from"./chunk.QQ4KC6E2.js";import{a as d}from"./chunk.3F3IIFA7.js";import{a as h}from"./chunk.YTU7KEBB.js";import{a as l,b as n,d as c}from"./chunk.4PFNWG2J.js";import{a as s,d as r}from"./chunk.63YMDT6M.js";import{j as i,m as o,p as a}from"./chunk.BF43NN75.js";o();a();var t=class extends m{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keyup",this._blurOnEnter.bind(this),{capture:!0})}async firstUpdated(){this.value!==null&&this.value!==void 0&&this.maxLength&&(this._inputElement.value=String(this.value).slice(0,this.maxLength))}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;(e==null?void 0:e.value)&&this.maxLength&&e.value.length>this.maxLength&&(e.value=e.value.slice(0,this.maxLength)),this.value=e==null?void 0:e.value}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}static get styles(){return[super.styles,s`
                 .field {
                     flex: 1 1 auto;
 
@@ -45,15 +45,21 @@ import{a as m}from"./chunk.APNKRDWQ.js";import{a as h}from"./chunk.QQ4KC6E2.js";
                 input[type="search"]::-webkit-search-results-decoration {
                   -webkit-appearance:none;
                 }
+
+                /* Grant the ability to set the hover color when cursor hovers over auto selectable options */
+                input:-webkit-autofill,
+                input:-webkit-autofill:focus {
+                    transition: var(--omni-search-field-autofill-hover-transition) !important;
+                }
                 
-            `]}renderPrefix(){return t`<omni-search-icon class="search-icon"></omni-search-icon>`}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return t`
+            `]}renderPrefix(){return r`<omni-search-icon class="search-icon"></omni-search-icon>`}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return r`
             <input
-                class=${f(e)}
+                class=${h(e)}
                 id="inputField"
                 type="search"
                 inputmode="${d(this.noNativeKeyboard?"none":void 0)}"
-                .value=${m(this.value)}
+                .value=${f(this.value)}
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
-        `}};r([c("#inputField")],i.prototype,"_inputElement",2),r([l({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],i.prototype,"noNativeKeyboard",2),i=r([s("omni-search-field")],i);export{i as a};
-//# sourceMappingURL=chunk.YIYSC7AZ.js.map
+        `}};i([c("#inputField")],t.prototype,"_inputElement",2),i([n({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),i([n({type:Number,reflect:!0,attribute:"max-length"})],t.prototype,"maxLength",2),t=i([l("omni-search-field")],t);export{t as a};
+//# sourceMappingURL=chunk.XLGBRV5H.js.map

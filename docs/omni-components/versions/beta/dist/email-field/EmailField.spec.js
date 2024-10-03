@@ -4,6 +4,7 @@ test(`Email Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/email-field/');
         await page.evaluate(() => document.fonts.ready);
+        // Locate the email field component.
         const emailField = page.locator('[data-testid]').first();
         emailField.evaluate(async (t) => {
             t.value = '';
@@ -13,6 +14,7 @@ test(`Email Field - Visual and Behaviour`, async ({ page }) => {
         await expect(emailField).toHaveScreenshot('email-field.png');
         const inputFn = await mockEventListener(emailField, 'input');
         const inputField = emailField.locator('#inputField');
+        // Update component value.
         const value = 'johndoe@gmail.com';
         await inputField.type(value);
         await expect(inputField).toHaveValue(value);

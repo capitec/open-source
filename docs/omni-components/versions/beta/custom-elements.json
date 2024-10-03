@@ -764,6 +764,10 @@
               "name": "--omni-modal-max-width"
             },
             {
+              "description": "Min width for modal content container.",
+              "name": "--omni-modal-min-width"
+            },
+            {
               "description": "Max height for modal content container.",
               "name": "--omni-modal-max-height"
             },
@@ -3354,6 +3358,10 @@
             {
               "description": "Search field label left margin.",
               "name": "--omni-search-field-label-left-margin"
+            },
+            {
+              "description": "Search field suggestions input hover color.",
+              "name": "--omni-search-field-autofill-hover-transition"
             }
           ],
           "members": [
@@ -3406,6 +3414,23 @@
             {
               "kind": "method",
               "name": "_keyInput",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "_blurOnEnter",
+              "parameters": [
+                {
+                  "name": "e",
+                  "type": {
+                    "text": "KeyboardEvent"
+                  }
+                }
+              ],
               "return": {
                 "type": {
                   "text": "void"
@@ -6682,6 +6707,10 @@
             {
               "description": "Text field error font color.",
               "name": "--omni-text-field-font-color"
+            },
+            {
+              "description": "Text field input auto fill hover state transition.",
+              "name": "--omni-text-field-autofill-hover-transition"
             }
           ],
           "members": [
@@ -17051,6 +17080,10 @@
             {
               "description": "Email field error font color.",
               "name": "--omni-email-field-error-font-color"
+            },
+            {
+              "description": "Email field suggestions input hover color.",
+              "name": "--omni-email-field-autofill-hover-transition"
             }
           ],
           "members": [
@@ -19829,6 +19862,10 @@
             {
               "description": "Number field error font color.",
               "name": "--omni-number-field-error-font-color"
+            },
+            {
+              "description": "Number field suggestions input hover color.",
+              "name": "--omni-number-field-autofill-hover-transition"
             }
           ],
           "members": [
@@ -21221,6 +21258,10 @@
             {
               "description": "Pin field error font color.",
               "name": "--omni-pin-field-error-font-color"
+            },
+            {
+              "description": "Pin field suggestions input hover color.",
+              "name": "--omni-pin-field-autofill-hover-transition"
             }
           ],
           "slots": [

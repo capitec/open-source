@@ -4,6 +4,7 @@ test(`Search Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/search-field/');
         await page.evaluate(() => document.fonts.ready);
+        // Locate the search field component.
         const searchField = page.locator('[data-testid]').first();
         searchField.evaluate(async (t) => {
             t.value = '';

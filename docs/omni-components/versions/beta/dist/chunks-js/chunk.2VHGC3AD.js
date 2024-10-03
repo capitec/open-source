@@ -40,6 +40,12 @@ import{a as p}from"./chunk.APNKRDWQ.js";import{a as h}from"./chunk.QQ4KC6E2.js";
                 input[type='number'] {
                 -moz-appearance: textfield; /* Firefox */
                 }
+
+                /* Grant the ability to set the hover color when cursor hovers over auto selectable options */
+                input:-webkit-autofill,
+                input:-webkit-autofill:focus {
+                    transition: var(--omni-number-field-autofill-hover-transition) !important;
+                }
             `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return s`
       <input
         class=${f(e)}
@@ -50,4 +56,4 @@ import{a as p}from"./chunk.APNKRDWQ.js";import{a as h}from"./chunk.QQ4KC6E2.js";
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};n([u("#inputField")],t.prototype,"_inputElement",2),n([i({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),n([i({type:Number,reflect:!0,attribute:"max-length"})],t.prototype,"maxLength",2),t=n([d("omni-number-field")],t);export{t as a};
-//# sourceMappingURL=chunk.2TA4HQOW.js.map
+//# sourceMappingURL=chunk.2VHGC3AD.js.map

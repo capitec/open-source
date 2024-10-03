@@ -5,6 +5,7 @@ test(`Text Field - Visual and Behaviour`, async ({ page }) => {
         await page.goto('/components/text-field/');
         await page.evaluate(() => document.fonts.ready);
         await page.waitForSelector('[data-testid]', {});
+        // Locate text field component.
         const textField = page.locator('[data-testid]').first();
         textField.evaluate(async (t) => {
             t.value = '';

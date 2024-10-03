@@ -4,6 +4,7 @@ test(`Pin Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/pin-field/');
         await page.evaluate(() => document.fonts.ready);
+        // Locate the pin field component
         const pinField = page.locator('[data-testid]').first();
         pinField.evaluate(async (t) => {
             t.value = '';

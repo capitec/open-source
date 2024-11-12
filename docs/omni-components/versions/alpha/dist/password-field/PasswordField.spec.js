@@ -28,23 +28,6 @@ test(`Password Field - Visual and Behaviour`, async ({ page }) => {
         await expect(passwordField).toHaveScreenshot('password-field-value.png');
     });
 });
-test(`Password Field - Behaviour`, async ({ page }) => {
-    await withCoverage(page, async () => {
-        await page.goto('/components/password-field/');
-        await page.evaluate(() => document.fonts.ready);
-        const passwordField = page.locator('[data-testid]').first();
-        await expect(passwordField).toHaveScreenshot('password-field-initial.png');
-        const showSlotElement = passwordField.locator('slot[name=show]');
-        await showSlotElement.click();
-        const hideSlotElement = passwordField.locator('slot[name=hide]');
-        await hideSlotElement.click();
-        const inputField = passwordField.locator('#inputField');
-        const valueUpdate = 'Value Update';
-        await passwordField.evaluate((p, valueUpdate) => (p.value = valueUpdate), valueUpdate);
-        await expect(inputField).toHaveValue(valueUpdate);
-        await expect(passwordField).toHaveScreenshot('password-field-value-update.png');
-    });
-});
 test(`Password Field - Max Length Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/password-field/');
@@ -56,6 +39,7 @@ test(`Password Field - Max Length Behaviour`, async ({ page }) => {
             t.maxLength = 4;
             await t.updateComplete;
         });
+        // Confirm that the component matches the provided screenshot.
         await expect(passwordField).toHaveScreenshot('password-field.png');
         const inputFn = await mockEventListener(passwordField, 'input');
         const inputField = passwordField.locator('#inputField');

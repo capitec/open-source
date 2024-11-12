@@ -1,9 +1,9 @@
-import"../chunks-js/chunk.ZSJPKRLH.js";import"../chunks-js/chunk.WL7VXR5S.js";import"../chunks-js/chunk.T4SDHHUM.js";import"../chunks-js/chunk.GUDVHTPA.js";import"../chunks-js/chunk.ZUGOSYS3.js";import"../chunks-js/chunk.KMIMSVOG.js";import{a as m,b as p,c,d as f,e as w,f as b,g as h,h as x,i as $}from"../chunks-js/chunk.WTSDFIPJ.js";import"../chunks-js/chunk.QQ4KC6E2.js";import"../chunks-js/chunk.PBJBFOZO.js";import{E as d,m as i}from"../chunks-js/chunk.VT33ZWJV.js";import"../chunks-js/chunk.VRVI2LVR.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.NLDNET67.js";import"../chunks-js/chunk.XWTONBU2.js";import"../chunks-js/chunk.YRSGKD7J.js";import"../chunks-js/chunk.6DDAVEXD.js";import{a as t}from"../chunks-js/chunk.2T6FOQVU.js";import"../chunks-js/chunk.BNDN7Y77.js";import{a as n}from"../chunks-js/chunk.3F3IIFA7.js";import{a as l}from"../chunks-js/chunk.W7VHYLAH.js";import"../chunks-js/chunk.BN6ZLWW4.js";import"../chunks-js/chunk.YTU7KEBB.js";import"../chunks-js/chunk.ZTHUBORR.js";import"../chunks-js/chunk.4PFNWG2J.js";import{d as o,g as r}from"../chunks-js/chunk.63YMDT6M.js";import{m as s,p as a}from"../chunks-js/chunk.BF43NN75.js";s();a();var S={render:e=>o`
+import"../chunks-js/chunk.FCW2VJBX.js";import"../chunks-js/chunk.WL7VXR5S.js";import"../chunks-js/chunk.T4SDHHUM.js";import"../chunks-js/chunk.GUDVHTPA.js";import"../chunks-js/chunk.ZUGOSYS3.js";import"../chunks-js/chunk.KMIMSVOG.js";import{a as m,b as p,c,d as f,e as w,f as b,g as h,h as x,i as $}from"../chunks-js/chunk.AFWAFKII.js";import"../chunks-js/chunk.B6J23Y56.js";import"../chunks-js/chunk.PBJBFOZO.js";import{E as d,m as i}from"../chunks-js/chunk.NXMGYN5J.js";import"../chunks-js/chunk.HWW7Q3DW.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.FPKTYYRH.js";import"../chunks-js/chunk.ROSXE42L.js";import"../chunks-js/chunk.WLLX574P.js";import"../chunks-js/chunk.B24VSKLO.js";import{a as t}from"../chunks-js/chunk.DJIVMBLF.js";import"../chunks-js/chunk.JOXUPYMK.js";import{a as s}from"../chunks-js/chunk.3F3IIFA7.js";import{a as l}from"../chunks-js/chunk.W7VHYLAH.js";import"../chunks-js/chunk.BN6ZLWW4.js";import"../chunks-js/chunk.263MQTZQ.js";import"../chunks-js/chunk.O3UNTVN7.js";import"../chunks-js/chunk.4PFNWG2J.js";import{d as o,g as r}from"../chunks-js/chunk.63YMDT6M.js";import{m as a,p as n}from"../chunks-js/chunk.BF43NN75.js";a();n();var S={render:e=>o`
     <omni-password-field
       data-testid="test-password-field"
       label="${l(e.label)}"
       value="${e.value}"
-      max-length=${e.maxLength}
+      max-length=${s(e.maxLength)}
       hint="${l(e.hint)}"
       error="${l(e.error)}"
       ?disabled="${e.disabled}"
@@ -19,7 +19,7 @@ import"../chunks-js/chunk.ZSJPKRLH.js";import"../chunks-js/chunk.WL7VXR5S.js";im
             data-testid="test-password-field"
             label="${l(e.label)}"
             value="${e.value}"
-            max-length=${n(e.maxLength)}>
+            max-length=${s(e.maxLength)}>
         </omni-password-field>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniPasswordField } from "@capitec/omni-components-react/password-field";
 
@@ -34,5 +34,5 @@ import { OmniLockClosedIcon,OmniLockOpenIcon } from "@capitec/omni-components-re
 const App = () => <OmniPasswordField${e.label?` label='${e.label}'`:""}${e.disabled?" disabled":""}>
                     <OmniLockOpenIcon style={{fill: 'orange'}} slot="show"/>
                     <OmniLockClosedIcon style={{fill: 'lightgreen'}} slot="hide"/>
-                  </OmniPasswordField>;`}],name:"Custom Icon Slot",description:"Set html content to display as the visibility indicators of the field.",args:{label:"Custom Icon Slot"}};export{K as Clearable,Q as Custom_Clear_Slot,Y as Custom_Icon_Slot,X as Disabled,G as Error_Label,z as Hint,S as Interactive,q as Label,j as Max_Length,U as Prefix,W as Suffix,J as Value};
+                  </OmniPasswordField>;`}],name:"Custom Icon Slot",description:"Set html content to display as the visibility indicators of the password field.",args:{label:"Custom Icon Slot"}};export{K as Clearable,Q as Custom_Clear_Slot,Y as Custom_Icon_Slot,X as Disabled,G as Error_Label,z as Hint,S as Interactive,q as Label,j as Max_Length,U as Prefix,W as Suffix,J as Value};
 //# sourceMappingURL=PasswordField.stories.js.map

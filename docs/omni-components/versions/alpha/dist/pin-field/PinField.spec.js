@@ -4,6 +4,7 @@ test(`Pin Field - Visual and Behaviour`, async ({ page }) => {
     await withCoverage(page, async () => {
         await page.goto('/components/pin-field/');
         await page.evaluate(() => document.fonts.ready);
+        // Locate the pin field component
         const pinField = page.locator('[data-testid]').first();
         pinField.evaluate(async (t) => {
             t.value = '';
@@ -70,6 +71,7 @@ test(`Pin Field - Max Length Behaviour`, async ({ page }) => {
         await expect(pinField).toHaveScreenshot('pin-field.png');
         const inputFn = await mockEventListener(pinField, 'input');
         const inputField = pinField.locator('#inputField');
+        // The value typed in the pin field.
         const typedValue = '12345678910';
         const value = '1234';
         await inputField.type(typedValue);

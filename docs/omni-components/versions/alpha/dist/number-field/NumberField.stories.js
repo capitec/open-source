@@ -1,9 +1,9 @@
-import"../chunks-js/chunk.2VHGC3AD.js";import{a as d,b as u,c as b,d as s,e as x,f as c,g as p,h as $,i as h}from"../chunks-js/chunk.WTSDFIPJ.js";import"../chunks-js/chunk.APNKRDWQ.js";import"../chunks-js/chunk.QQ4KC6E2.js";import"../chunks-js/chunk.PBJBFOZO.js";import{E as f,m as l}from"../chunks-js/chunk.VT33ZWJV.js";import"../chunks-js/chunk.VRVI2LVR.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.NLDNET67.js";import"../chunks-js/chunk.XWTONBU2.js";import"../chunks-js/chunk.YRSGKD7J.js";import"../chunks-js/chunk.6DDAVEXD.js";import{a as n}from"../chunks-js/chunk.2T6FOQVU.js";import"../chunks-js/chunk.BNDN7Y77.js";import{a as m}from"../chunks-js/chunk.3F3IIFA7.js";import{a as o}from"../chunks-js/chunk.W7VHYLAH.js";import"../chunks-js/chunk.BN6ZLWW4.js";import"../chunks-js/chunk.YTU7KEBB.js";import"../chunks-js/chunk.ZTHUBORR.js";import"../chunks-js/chunk.4PFNWG2J.js";import{d as r,g as t}from"../chunks-js/chunk.63YMDT6M.js";import{m as i,p as a}from"../chunks-js/chunk.BF43NN75.js";i();a();var A={render:e=>r`
+import"../chunks-js/chunk.3EPPRX5U.js";import"../chunks-js/chunk.CHB6HBKV.js";import{a as u,b as d,c as b,d as s,e as x,f as p,g as c,h as $,i as h}from"../chunks-js/chunk.AFWAFKII.js";import"../chunks-js/chunk.B6J23Y56.js";import"../chunks-js/chunk.PBJBFOZO.js";import{E as f,m as l}from"../chunks-js/chunk.NXMGYN5J.js";import"../chunks-js/chunk.HWW7Q3DW.js";import"../chunks-js/chunk.H2SV3XAM.js";import"../chunks-js/chunk.U46MGZPC.js";import"../chunks-js/chunk.FPKTYYRH.js";import"../chunks-js/chunk.ROSXE42L.js";import"../chunks-js/chunk.WLLX574P.js";import"../chunks-js/chunk.B24VSKLO.js";import{a as n}from"../chunks-js/chunk.DJIVMBLF.js";import"../chunks-js/chunk.JOXUPYMK.js";import{a as i}from"../chunks-js/chunk.3F3IIFA7.js";import{a as o}from"../chunks-js/chunk.W7VHYLAH.js";import"../chunks-js/chunk.BN6ZLWW4.js";import"../chunks-js/chunk.263MQTZQ.js";import"../chunks-js/chunk.O3UNTVN7.js";import"../chunks-js/chunk.4PFNWG2J.js";import{d as r,g as t}from"../chunks-js/chunk.63YMDT6M.js";import{m as a,p as m}from"../chunks-js/chunk.BF43NN75.js";a();m();var A={render:e=>r`
     <omni-number-field
       data-testid="test-number-field"
       label="${o(e.label)}"
       value="${e.value}"
-      max-length=${e.maxLength}
+      max-length=${i(e.maxLength)}
       hint="${o(e.hint)}"
       error="${o(e.error)}"
       ?disabled="${e.disabled}"
@@ -19,9 +19,9 @@ import"../chunks-js/chunk.2VHGC3AD.js";import{a as d,b as u,c as b,d as s,e as x
             data-testid="test-number-field"
             label="${o(e.label)}"
             value="${e.value}"
-            max-length=${m(e.maxLength)}>
+            max-length=${i(e.maxLength)}>
         </omni-number-field>
     `,frameworkSources:[{framework:"React",load:e=>`import { OmniNumberField } from "@capitec/omni-components-react/number-field";
 
-const App = () => <OmniNumberField${e.label?` label='${e.label}'`:""}${e.value?` value='${e.value}'`:""}${e.maxLength?` max-length='${e.maxLength}'`:""}/>;`}],name:"Max Length",description:"Limit the character input length based on the value provided.",args:{label:"Max Length",maxLength:5}},T=d("omni-number-field"),R=u("omni-number-field"),j=b("omni-number-field"),q=s("omni-number-field",123),z=p("omni-number-field",123),G=$("omni-number-field",123),J=x("omni-number-field"),K=c("omni-number-field"),Q=h("omni-number-field",123);export{z as Clearable,G as Custom_Clear_Slot,Q as Disabled,j as Error_Label,R as Hint,A as Interactive,T as Label,P as Max_Length,J as Prefix,K as Suffix,q as Value};
+const App = () => <OmniNumberField${e.label?` label='${e.label}'`:""}${e.value?` value='${e.value}'`:""}${e.maxLength?` max-length='${e.maxLength}'`:""}/>;`}],name:"Max Length",description:"Limit the numeric input length based on the value provided.",args:{label:"Max Length",maxLength:5}},T=u("omni-number-field"),R=d("omni-number-field"),j=b("omni-number-field"),q=s("omni-number-field",123),z=c("omni-number-field",123),G=$("omni-number-field",123),J=x("omni-number-field"),K=p("omni-number-field"),Q=h("omni-number-field",123);export{z as Clearable,G as Custom_Clear_Slot,Q as Disabled,j as Error_Label,R as Hint,A as Interactive,T as Label,P as Max_Length,J as Prefix,K as Suffix,q as Value};
 //# sourceMappingURL=NumberField.stories.js.map

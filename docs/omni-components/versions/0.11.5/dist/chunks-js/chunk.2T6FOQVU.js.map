@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": ["../../node_modules/lit-html/src/directives/unsafe-html.ts", "../../node_modules/lit/directives/unsafe-html.js"],
+  "mappings": "4JAWM,IAAOA,EAAP,cAAmCC,CAAAA,CAOvC,YAAYC,EAAAA,CAEV,GADAC,MAAMD,CAAAA,EAJAE,KAAMC,GAAYC,EAKpBJ,EAASK,OAASC,EAASC,MAC7B,MAAUC,MAELN,KAAKO,YAA2CC,cADnD,uCAAA,CAKL,CAED,OAAOC,EAAAA,CACL,GAAIA,IAAUP,GAAWO,GAAS,KAEhC,OADAT,KAAKU,GAAAA,OACGV,KAAKC,GAASQ,EAExB,GAAIA,IAAUE,EACZ,OAAOF,EAET,GAAoB,OAATA,GAAS,SAClB,MAAUH,MAELN,KAAKO,YAA2CC,cADnD,mCAAA,EAKJ,GAAIC,IAAUT,KAAKC,GACjB,OAAOD,KAAKU,GAEdV,KAAKC,GAASQ,EACd,IAAMG,EAAU,CAACH,CAAAA,EAKjB,OAHCG,EAAgBC,IAAMD,EAGfZ,KAAKU,GAAkB,CAI7BI,WAAiBd,KAAKO,YACnBQ,WACHH,QAAAA,EACAI,OAAQ,CAAA,CAAA,CAEX,CAAA,EAlDMpB,EAAaY,cAAG,aAChBZ,EAAUmB,WAJC,EAAA,IAkEPE,EAAaC,EAAUtB,CAAAA,EC3EpCuB,IAAAC",
+  "names": ["UnsafeHTMLDirective", "Directive", "partInfo", "super", "this", "_value", "nothing", "type", "PartType", "CHILD", "Error", "constructor", "directiveName", "value", "_templateResult", "noChange", "strings", "raw", "_$litType$", "resultType", "values", "unsafeHTML", "directive", "init_define_process_argv", "init_global"]
+}

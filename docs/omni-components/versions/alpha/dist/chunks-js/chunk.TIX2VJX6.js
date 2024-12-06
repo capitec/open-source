@@ -1,4 +1,4 @@
-import{a as u}from"./chunk.APNKRDWQ.js";import{a as f}from"./chunk.QQ4KC6E2.js";import{a as m}from"./chunk.YTU7KEBB.js";import{a as s,b as n,d}from"./chunk.4PFNWG2J.js";import{a,d as l}from"./chunk.63YMDT6M.js";import{j as i,m as o,p as r}from"./chunk.BF43NN75.js";o();r();var t=class extends f{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keyup",this._blurOnEnter.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("input",this._keyInput.bind(this),!0),this.removeEventListener("keyup",this._blurOnEnter.bind(this),!0),super.disconnectedCallback()}async firstUpdated(){this.value!==null&&this.value!==void 0&&this.maxLength&&(this._inputElement.value=String(this.value).slice(0,this.maxLength))}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}_keyInput(){let e=this._inputElement;(e==null?void 0:e.value)&&this.maxLength&&e.value.length>this.maxLength&&(e.value=e.value.slice(0,this.maxLength)),this.value=e.value}static get styles(){return[super.styles,a`
+import{a as m}from"./chunk.APNKRDWQ.js";import{a as f}from"./chunk.QQ4KC6E2.js";import{a as u}from"./chunk.YTU7KEBB.js";import{a as s,b as n,d}from"./chunk.4PFNWG2J.js";import{a,d as l}from"./chunk.63YMDT6M.js";import{j as i,m as o,p as r}from"./chunk.BF43NN75.js";o();r();var t=class extends f{constructor(){super();this._boundInputEventListener=this._keyInput.bind(this),this._boundKeyUpEventListener=this._blurOnEnter.bind(this)}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._boundInputEventListener,{capture:!0}),this.addEventListener("keyup",this._boundKeyUpEventListener,{capture:!0})}disconnectedCallback(){this.removeEventListener("input",this._boundInputEventListener,!0),this.removeEventListener("keyup",this._boundKeyUpEventListener,!0),super.disconnectedCallback()}async firstUpdated(){this.value!==null&&this.value!==void 0&&this.maxLength&&(this._inputElement.value=String(this.value).slice(0,this.maxLength))}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}_keyInput(){let e=this._inputElement;(e==null?void 0:e.value)&&this.maxLength&&e.value.length>this.maxLength&&(e.value=e.value.slice(0,this.maxLength)),this.value=e.value}static get styles(){return[super.styles,a`
                 .field {
                 flex: 1 1 auto;
 
@@ -36,13 +36,13 @@ import{a as u}from"./chunk.APNKRDWQ.js";import{a as f}from"./chunk.QQ4KC6E2.js";
                 }
             `]}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return l`
       <input
-        class=${m(e)}
+        class=${u(e)}
         id="inputField"
         inputmode="${this.noNativeKeyboard?"none":"email"}"
         data-omni-keyboard-mode="email"
         type="email"
-        .value=${u(this.value)}
+        .value=${m(this.value)}
         ?readOnly=${this.disabled}
         tabindex="${this.disabled?-1:0}" />
     `}};i([d("#inputField")],t.prototype,"_inputElement",2),i([n({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),i([n({type:Number,reflect:!0,attribute:"max-length"})],t.prototype,"maxLength",2),t=i([s("omni-email-field")],t);export{t as a};
-//# sourceMappingURL=chunk.HO6IWBVH.js.map
+//# sourceMappingURL=chunk.TIX2VJX6.js.map

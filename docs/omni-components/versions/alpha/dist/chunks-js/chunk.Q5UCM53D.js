@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.ZTHUBORR.js";import{a,b as i}from"./chunk.4PFNWG2J.js";import{a as n,d as l}from"./chunk.63YMDT6M.js";import{j as t,m as r,p as o}from"./chunk.BF43NN75.js";r();o();var e=class extends s{constructor(){super(...arguments);this.target="_self"}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._click.bind(this))}disconnectedCallback(){this.removeEventListener("click",this._click.bind(this)),super.disconnectedCallback()}_click(c){if(this.disabled)return c.stopImmediatePropagation()}static get styles(){return[super.styles,n`
+import{h as s}from"./chunk.ZTHUBORR.js";import{a,b as i}from"./chunk.4PFNWG2J.js";import{a as o,d as l}from"./chunk.63YMDT6M.js";import{j as t,m as r,p as n}from"./chunk.BF43NN75.js";r();n();var e=class extends s{constructor(){super();this.target="_self";this._boundClickEventListener=this._click.bind(this)}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._boundClickEventListener)}disconnectedCallback(){this.removeEventListener("click",this._boundClickEventListener),super.disconnectedCallback()}_click(c){if(this.disabled)return c.stopImmediatePropagation()}static get styles(){return[super.styles,o`
                 :host {
                 display: inline-block;
                 }
@@ -45,4 +45,4 @@ import{h as s}from"./chunk.ZTHUBORR.js";import{a,b as i}from"./chunk.4PFNWG2J.js
                 ${this.label}<slot></slot>
             </a>
         `}};t([i({type:String,reflect:!0})],e.prototype,"label",2),t([i({type:String,reflect:!0})],e.prototype,"href",2),t([i({type:String,reflect:!0})],e.prototype,"target",2),t([i({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([i({type:Boolean,reflect:!0})],e.prototype,"inline",2),t([i({type:String,reflect:!0})],e.prototype,"size",2),e=t([a("omni-hyperlink")],e);export{e as a};
-//# sourceMappingURL=chunk.ZY7J4C7S.js.map
+//# sourceMappingURL=chunk.Q5UCM53D.js.map

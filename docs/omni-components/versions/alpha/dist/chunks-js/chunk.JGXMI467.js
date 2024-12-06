@@ -1,4 +1,4 @@
-import{a as u}from"./chunk.APNKRDWQ.js";import{a as f}from"./chunk.QQ4KC6E2.js";import{a as d}from"./chunk.3F3IIFA7.js";import{a as h}from"./chunk.YTU7KEBB.js";import{a as l,b as n,d as c}from"./chunk.4PFNWG2J.js";import{a as s,d as r}from"./chunk.63YMDT6M.js";import{j as i,m as o,p as a}from"./chunk.BF43NN75.js";o();a();var t=class extends f{connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._keyInput.bind(this),{capture:!0}),this.addEventListener("keyup",this._blurOnEnter.bind(this),{capture:!0})}disconnectedCallback(){this.removeEventListener("input",this._keyInput.bind(this),!0),this.removeEventListener("keyup",this._blurOnEnter.bind(this),!0),super.disconnectedCallback()}async firstUpdated(){this.value!==null&&this.value!==void 0&&this.maxLength&&(this._inputElement.value=String(this.value).slice(0,this.maxLength))}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;(e==null?void 0:e.value)&&this.maxLength&&e.value.length>this.maxLength&&(e.value=e.value.slice(0,this.maxLength)),this.value=e==null?void 0:e.value}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}static get styles(){return[super.styles,s`
+import{a as h}from"./chunk.APNKRDWQ.js";import{a as f}from"./chunk.QQ4KC6E2.js";import{a as c}from"./chunk.3F3IIFA7.js";import{a as u}from"./chunk.YTU7KEBB.js";import{a as l,b as r,d}from"./chunk.4PFNWG2J.js";import{a as s,d as n}from"./chunk.63YMDT6M.js";import{j as i,m as o,p as a}from"./chunk.BF43NN75.js";o();a();var t=class extends f{constructor(){super();this._boundInputEventListener=this._keyInput.bind(this),this._boundKeyUpEventListener=this._blurOnEnter.bind(this)}connectedCallback(){super.connectedCallback(),this.addEventListener("input",this._boundInputEventListener,{capture:!0}),this.addEventListener("keyup",this._boundKeyUpEventListener,{capture:!0})}disconnectedCallback(){this.removeEventListener("input",this._boundInputEventListener,!0),this.removeEventListener("keyup",this._boundKeyUpEventListener,!0),super.disconnectedCallback()}async firstUpdated(){this.value!==null&&this.value!==void 0&&this.maxLength&&(this._inputElement.value=String(this.value).slice(0,this.maxLength))}focus(e){this._inputElement?this._inputElement.focus(e):super.focus(e)}_keyInput(){let e=this._inputElement;(e==null?void 0:e.value)&&this.maxLength&&e.value.length>this.maxLength&&(e.value=e.value.slice(0,this.maxLength)),this.value=e==null?void 0:e.value}_blurOnEnter(e){(e.code==="Enter"||e.keyCode===13)&&e.currentTarget.blur()}static get styles(){return[super.styles,s`
                 .field {
                     flex: 1 1 auto;
 
@@ -52,14 +52,14 @@ import{a as u}from"./chunk.APNKRDWQ.js";import{a as f}from"./chunk.QQ4KC6E2.js";
                     transition: var(--omni-search-field-autofill-hover-transition) !important;
                 }
                 
-            `]}renderPrefix(){return r`<omni-search-icon class="search-icon"></omni-search-icon>`}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return r`
+            `]}renderPrefix(){return n`<omni-search-icon class="search-icon"></omni-search-icon>`}renderContent(){let e={field:!0,disabled:this.disabled,error:this.error};return n`
             <input
-                class=${h(e)}
+                class=${u(e)}
                 id="inputField"
                 type="search"
-                inputmode="${d(this.noNativeKeyboard?"none":void 0)}"
-                .value=${u(this.value)}
+                inputmode="${c(this.noNativeKeyboard?"none":void 0)}"
+                .value=${h(this.value)}
                 ?readOnly=${this.disabled}
                 tabindex="${this.disabled?-1:0}" />
-        `}};i([c("#inputField")],t.prototype,"_inputElement",2),i([n({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),i([n({type:Number,reflect:!0,attribute:"max-length"})],t.prototype,"maxLength",2),t=i([l("omni-search-field")],t);export{t as a};
-//# sourceMappingURL=chunk.KX7LM4YZ.js.map
+        `}};i([d("#inputField")],t.prototype,"_inputElement",2),i([r({type:Boolean,reflect:!0,attribute:"no-native-keyboard"})],t.prototype,"noNativeKeyboard",2),i([r({type:Number,reflect:!0,attribute:"max-length"})],t.prototype,"maxLength",2),t=i([l("omni-search-field")],t);export{t as a};
+//# sourceMappingURL=chunk.JGXMI467.js.map

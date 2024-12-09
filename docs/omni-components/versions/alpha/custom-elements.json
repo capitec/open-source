@@ -3398,20 +3398,6 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_boundInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundKeyUpEventListener",
-              "type": {
-                "text": "(e: KeyboardEvent) => void"
-              }
-            },
-            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -6156,13 +6142,6 @@
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "_boundInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
               "kind": "method",
               "name": "_keyInput",
               "return": {
@@ -6766,20 +6745,6 @@
               "description": "Maximum character input length.",
               "attribute": "max-length",
               "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "_boundInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundKeyUpEventListener",
-              "type": {
-                "text": "(e: KeyboardEvent) => void"
-              }
             },
             {
               "kind": "method",
@@ -11442,13 +11407,6 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_boundClickEventListener",
-              "type": {
-                "text": "(e: MouseEvent) => void"
-              }
-            },
-            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -14988,48 +14946,6 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_boundClickEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundFocusEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundBlurEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundBeforeInputEventListener",
-              "type": {
-                "text": "(e: InputEvent) => void"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundPasteEventListener",
-              "type": {
-                "text": "(e: ClipboardEvent) => void"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundKeyUpEventListener",
-              "type": {
-                "text": "(e: KeyboardEvent) => void"
-              }
-            },
-            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -17204,20 +17120,6 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_boundInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundKeyUpEventListener",
-              "type": {
-                "text": "(e: KeyboardEvent) => void"
-              }
-            },
-            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -18145,13 +18047,6 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_boundAnimationEndEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
               "kind": "method",
               "name": "_headerClick",
               "parameters": [
@@ -18424,13 +18319,6 @@
               "description": "Expander component label.",
               "attribute": "expand-mode",
               "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "_boundExpandEventListener",
-              "type": {
-                "text": "EventListener"
-              }
             },
             {
               "kind": "method",
@@ -18897,13 +18785,6 @@
               "description": "Size of the Hyperlink text.",
               "attribute": "size",
               "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "_boundClickEventListener",
-              "type": {
-                "text": "(e: MouseEvent) => void"
-              }
             },
             {
               "kind": "method",
@@ -20021,20 +19902,6 @@
               "reflects": true
             },
             {
-              "kind": "field",
-              "name": "_boundInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundKeyDownEventListener",
-              "type": {
-                "text": "(e: KeyboardEvent) => void"
-              }
-            },
-            {
               "kind": "method",
               "name": "focus",
               "return": {
@@ -20779,20 +20646,6 @@
               "privacy": "private"
             },
             {
-              "kind": "field",
-              "name": "_boundInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundFocusEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
               "kind": "method",
               "name": "_setInputValue",
               "return": {
@@ -21525,27 +21378,6 @@
                 "text": "boolean | undefined"
               },
               "privacy": "private"
-            },
-            {
-              "kind": "field",
-              "name": "_boundBeforeInputEventListener",
-              "type": {
-                "text": "(e: InputEvent) => void"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundOnInputEventListener",
-              "type": {
-                "text": "EventListener"
-              }
-            },
-            {
-              "kind": "field",
-              "name": "_boundOnKeyUpEventListener",
-              "type": {
-                "text": "(e: KeyboardEvent) => void"
-              }
             },
             {
               "kind": "method",
@@ -24664,14 +24496,6 @@
               },
               "privacy": "private",
               "default": "[]"
-            },
-            {
-              "kind": "field",
-              "name": "_boundClickEventListener",
-              "type": {
-                "text": "(e: MouseEvent) => void"
-              },
-              "privacy": "private"
             },
             {
               "kind": "method",

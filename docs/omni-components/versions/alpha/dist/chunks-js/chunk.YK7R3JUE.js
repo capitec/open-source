@@ -1,4 +1,4 @@
-import{h as s}from"./chunk.ZTHUBORR.js";import{a,b as i}from"./chunk.4PFNWG2J.js";import{a as o,d as l}from"./chunk.63YMDT6M.js";import{j as t,m as r,p as n}from"./chunk.BF43NN75.js";r();n();var e=class extends s{constructor(){super();this.target="_self";this._boundClickEventListener=this._click.bind(this)}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._boundClickEventListener)}disconnectedCallback(){this.removeEventListener("click",this._boundClickEventListener),super.disconnectedCallback()}_click(c){if(this.disabled)return c.stopImmediatePropagation()}static get styles(){return[super.styles,o`
+import{h as s}from"./chunk.ZTHUBORR.js";import{a as l,b as r}from"./chunk.4PFNWG2J.js";import{a as n,d as a}from"./chunk.63YMDT6M.js";import{j as t,m as o,p as i}from"./chunk.BF43NN75.js";o();i();var e=class extends s{constructor(){super(...arguments);this.target="_self"}connectedCallback(){super.connectedCallback(),this.addEventListener("click",this._click.bind(this))}_click(m){if(this.disabled)return m.stopImmediatePropagation()}static get styles(){return[super.styles,n`
                 :host {
                 display: inline-block;
                 }
@@ -40,9 +40,9 @@ import{h as s}from"./chunk.ZTHUBORR.js";import{a,b as i}from"./chunk.4PFNWG2J.js
                 color: var(--omni-hyperlink-color-visited, #3a3a3a);
                 text-decoration: var(--omni-hyperlink-text-decorator-visited, none);
                 }
-            `]}render(){return l`
+            `]}render(){return a`
             <a class="hyperlink" href="${this.href?this.href:"javascript:void(0)"}" .target="${this.target}" tabindex="0">
                 ${this.label}<slot></slot>
             </a>
-        `}};t([i({type:String,reflect:!0})],e.prototype,"label",2),t([i({type:String,reflect:!0})],e.prototype,"href",2),t([i({type:String,reflect:!0})],e.prototype,"target",2),t([i({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([i({type:Boolean,reflect:!0})],e.prototype,"inline",2),t([i({type:String,reflect:!0})],e.prototype,"size",2),e=t([a("omni-hyperlink")],e);export{e as a};
-//# sourceMappingURL=chunk.Q5UCM53D.js.map
+        `}};t([r({type:String,reflect:!0})],e.prototype,"label",2),t([r({type:String,reflect:!0})],e.prototype,"href",2),t([r({type:String,reflect:!0})],e.prototype,"target",2),t([r({type:Boolean,reflect:!0})],e.prototype,"disabled",2),t([r({type:Boolean,reflect:!0})],e.prototype,"inline",2),t([r({type:String,reflect:!0})],e.prototype,"size",2),e=t([l("omni-hyperlink")],e);export{e as a};
+//# sourceMappingURL=chunk.YK7R3JUE.js.map

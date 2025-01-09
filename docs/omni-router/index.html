@@ -177,6 +177,16 @@
 <td>Optional, animation to apply when loading the route. Can be one of <code>fade</code>, <code>slide</code>, <code>pop</code></td>
 </tr>
 <tr>
+<td><strong>theme</strong></td>
+<td>string</td>
+<td>Optional, CSS class name to attach to the route page when loading, useful to apply page level theme variables. Note the <code>dom=&quot;light&quot;</code> attribute has to be set for this option to take effect.</td>
+</tr>
+<tr>
+<td><strong>metadata</strong></td>
+<td>object</td>
+<td>Optional, metadata to store on the route.</td>
+</tr>
+<tr>
 <td><strong>cache</strong></td>
 <td>boolean</td>
 <td>Optional, indicator if the route template should be cached and reused, or recreated every time the route is navigated to.</td>
@@ -272,6 +282,23 @@
 <a href="#router-tag" id="router-tag" style="color: inherit; text-decoration: none;">
   <h3>Router Tag</h3>
 </a>
+<p>The <code>&lt;omni-router&gt;</code> tag exposes the following attributes:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>dom=&quot;shadow&quot;</code></td>
+<td>Attached as shadow DOM to the router, preventing page level CSS from inheriting into the loaded route pages. This is the default.</td>
+</tr>
+<tr>
+<td><code>dom=&quot;light&quot;</code></td>
+<td>Render the router in the parent element DOM, allowing for CSS values to inherit into the loaded route pages.</td>
+</tr>
+</tbody></table>
 <p>The <code>&lt;omni-router&gt;</code> tag dispatches the following events, that may be useful to subscribe to when wanting to apply changes to a page while a route is lazy loading, e.g. show a loading indicator.</p>
 <table>
 <thead>
